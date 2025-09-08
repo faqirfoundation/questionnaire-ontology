@@ -1,0 +1,23 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ucum: <https://unitsofmeasure.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/qrquestion_01_hours_slept_en> a faqir:QuestionRepresentation ;
+    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/question_01_hours_slept> ;
+    ns1:questionRepresentationLanguage "en" ;
+    ns1:questionRepresentationText "How many hours did you sleep last night?" .
+
+<https://pods.faqir.org/question_01_hours_slept> a faqir:Question ;
+    faqir:questionHasAnswer <https://pods.faqir.org/answer_01_hours_slept_01> ;
+    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrquestion_01_hours_slept_en> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_01_hours_slept_q01> ;
+    faqir:questionType fhir:decimal ;
+    ns1:questionNumericalParams [ a faqir:NumericalParams ;
+            ucum:units ucum:h ;
+            ns2:numericalPrecision 2 ] ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_hours_slept" .
+

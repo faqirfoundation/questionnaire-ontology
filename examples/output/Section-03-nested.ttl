@@ -1,0 +1,14 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/section_03_EQ_VAS> a faqir:Section ;
+    faqir:sectionAuthoredByOrg <https://www.faqir.org> ;
+    faqir:sectionHasOrderedQuestion <https://pods.faqir.org/orderedquestion_07_EQ_VAS_s01> ;
+    faqir:sectionInOrderedSection <https://pods.faqir.org/orderedsection_03_EQ_VAS_s02> ;
+    ns1:sectionLabel "Section 03: VAS." .
+
+<https://pods.faqir.org/orderedquestion_07_EQ_VAS_s01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_07_EQ_VAS> ;
+    ns1:questionOrder 1 .
+

@@ -1,0 +1,47 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/questionnaire_01_simple> a faqir:Questionnaire ;
+    faqir:questionnaireHasOrderedQuestion <https://pods.faqir.org/orderedquestion_01_hours_slept_q01>,
+        <https://pods.faqir.org/orderedquestion_02_hospitalRelease_date_q01>,
+        <https://pods.faqir.org/orderedquestion_03_emergency_contact_name_q01>,
+        <https://pods.faqir.org/orderedquestion_04_AcWh1_q01>,
+        <https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_01_q01>,
+        <https://pods.faqir.org/orderedquestion_07_EQ_5D_5L_02_q01>,
+        <https://pods.faqir.org/orderedquestion_07_EQ_VAS_q01> ;
+    faqir:questionnaireHasQuestionnaireResponse <https://pods.faqir.org/response_01_simple> ;
+    ns1:questionnaireLabel "Simple Questionnaire: 1 question of each type" ;
+    ns1:questionnaireLastUpdated "2025-07-11T10:35:00+00:00"^^xsd:dateTime ;
+    ns1:questionnaireStatus fhir:resource-status-draft ;
+    ns1:questionnaireVersion "1.0.0" .
+
+<https://pods.faqir.org/orderedquestion_01_hours_slept_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_01_hours_slept> ;
+    ns1:questionOrder 5 .
+
+<https://pods.faqir.org/orderedquestion_02_hospitalRelease_date_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_02_hospitalRelease_date> ;
+    ns1:questionOrder 4 .
+
+<https://pods.faqir.org/orderedquestion_03_emergency_contact_name_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_03_emergency_contact_name> ;
+    ns1:questionOrder 6 .
+
+<https://pods.faqir.org/orderedquestion_04_AcWh1_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_04_AcWh1> ;
+    ns1:questionOrder 7 .
+
+<https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_01_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_06_EQ_5D_5L_01> ;
+    ns1:questionOrder 1 .
+
+<https://pods.faqir.org/orderedquestion_07_EQ_5D_5L_02_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_07_EQ_5D_5L_02> ;
+    ns1:questionOrder 2 .
+
+<https://pods.faqir.org/orderedquestion_07_EQ_VAS_q01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_07_EQ_VAS> ;
+    ns1:questionOrder 3 .
+

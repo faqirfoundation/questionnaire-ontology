@@ -1,0 +1,48 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/qrFoIn0_en> a faqir:QuestionRepresentation ;
+    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/FoIn0> ;
+    ns1:questionRepresentationLanguage "en" ;
+    ns1:questionRepresentationText "Are you aware of your index joint in bed at night ?" .
+
+<https://pods.faqir.org/qrFoIn0_es> a faqir:QuestionRepresentation ;
+    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/FoIn0> ;
+    ns1:questionRepresentationLanguage "es-ES" ;
+    ns1:questionRepresentationText "¿Eres consciente de tu articulación índice en la cama por la noche?" .
+
+<https://pods.faqir.org/qrFoIn0_nl> a faqir:QuestionRepresentation ;
+    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/FoIn0> ;
+    ns1:questionRepresentationLanguage "nl" ;
+    ns1:questionRepresentationText "“Ben je je bewust van je indexgewricht in bed 's nachts?”" .
+
+<https://pods.faqir.org/FoIn0> a faqir:Question ;
+    faqir:questionAuthoredByOrg <https://www.moveup.care/> ;
+    faqir:questionHasAnswer <https://pods.faqir.org/aFoIn0> ;
+    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrFoIn0_en>,
+        <https://pods.faqir.org/qrFoIn0_es>,
+        <https://pods.faqir.org/qrFoIn0_nl> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedQuestion/orderedFoIn0> ;
+    faqir:questionType fhir:choice ;
+    faqir:questionUsedInScoreDefinition <https://pods.faqir.org/TFJSK> ;
+    ns1:questionCodingParams [ a faqir:ValueCoding ;
+            ns2:code "1" ;
+            ns2:display "Almost never" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "4" ;
+            ns2:display "Mostly" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "3" ;
+            ns2:display "Sometimes" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "2" ;
+            ns2:display "Seldom" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "0" ;
+            ns2:display "Never" ] ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_index_joint_bed_night" .
+

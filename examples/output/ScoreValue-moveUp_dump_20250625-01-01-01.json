@@ -1,0 +1,14 @@
+{
+  "scoreValueId": "https://pods.faqir.org/svTFJSK",
+  "scoreDefinitionType": "numerical_integer",
+  "scoreValueBasedOnScoreDefinition": "https://pods.faqir.org/TFJSK",
+  "scoreValueDerivedFromQuestionnaireResponse": [
+    "https://pods.faqir.org/moveup-id/d60d04dbe47a164a"
+  ],
+  "scoreValueTimeStamp": "2021-08-27T00:00:01.000800+00:00",
+  "scoreValueStatus": "valid",
+  "scoreValueNumerical": {
+    "numericalValue": 2
+  },
+  "@type": "ScoreValue"
+}

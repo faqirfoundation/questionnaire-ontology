@@ -1,0 +1,29 @@
+---
+questionId: "https://pods.faqir.org/questionnaire/Fowh11"
+questionTag: "q_index_joint_favourite_sport"
+questionHasQuestionRepresentation:
+  - questionRepresentationId: "https://pods.faqir.org/qrFowh11_en"
+    questionRepresentationText: "Are you aware of your index joint when you are doing your favourite sport?"
+    questionRepresentationLanguage: "en"
+    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh11"
+questionRequired: false
+questionType: choice
+questionCodingParams:
+  - code: "0"
+    display: "Never"
+  - code: "1"
+    display: "Almost never"
+  - code: "2"
+    display: "Seldom"
+  - code: "3"
+    display: "Sometimes"
+  - code: "4"
+    display: "Mostly"
+questionAuthoredByOrg:  
+  - "https://www.moveup.care/"
+questionInOrderedQuestion:
+  - "https://pods.faqir.org/orderedQuestion/orderedFowh11"
+questionHasAnswer:
+  - "https://pods.faqir.org/questionnaire/aFowh11" #all from section in QuestionnaireResponse, no unique URI
+questionUsedInScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

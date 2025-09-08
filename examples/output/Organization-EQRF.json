@@ -1,0 +1,14 @@
+{
+  "organizationId": "https://euroqol.org/",
+  "organizationLabel": "EuroQol Research Foundation",
+  "organizationType": "research",
+  "organizationAuthorsQuestion": [
+    "https://pods.faqir.org/question_06_EQ_5D_5L_01",
+    "https://pods.faqir.org/question_05_EQ_5D_5L_01",
+    "https://pods.faqir.org/question_06_EQ_5D_5L_02",
+    "https://pods.faqir.org/question_07_EQ_5D_5L_02",
+    "https://pods.faqir.org/questionnaire/question_05_EQ_VAS",
+    "https://pods.faqir.org/question_07_EQ_VAS"
+  ],
+  "@type": "Organization"
+}

@@ -1,0 +1,161 @@
+
+classDiagram
+direction TB
+    class Vault {
+        <<Entity>>
+	    +vaultId: xs:string
+    }
+
+    class Organization {
+        <<Entity>>/Users/henarmartinsantos/Desktop/FAQIR/PACSOI/dataModel/datamodel/src/datamodel/schema/questionnaire/questionnaire_classes.yaml
+	    +organizationId: xs:string/Users/henarmartinsantos/Desktop/FAQIR/PACSOI/dataModel/datamodel/src/data/examples/invalid/simple_questionnaire/Answer-01-hours_slept-01.yaml
+        +organizationLabel: xs:string
+        +organizationType: OrganizationType
+    }
+
+    class Procedure {
+        <<Entity>>
+	    +procedureId: xs:string
+        +procedureLabel: xs:string
+        +procedureDescription: xs:string
+    }
+
+    class QuestionnaireResponse {
+        <<Entity>>
+	    +id questionnaireResponseId : string
+	    +questionnaireResponseStatus : string
+	    +questionnaireResponseTimeStamp : datetime
+        +questionnaireResponseLastUpdated : datetime
+    }
+
+    class Questionnaire {
+        <<Entity>>
+	    +id questionnaireId: string
+	    +questionnaireLabel : string
+	    +questionnaireProvider : string (recommended)
+	    +questionnaireStatus : string 
+        +questionnaireVersion : string
+        +questionnaireLastUpdated : datetime
+    }
+
+    class Section {
+        <<Entity>>
+	    +id sectionId : string
+	    +rdfs:label sectionLabel : string
+    }
+
+    class Question {
+        <<Entity>>
+	  +id questionId : string
+	  +questionLabel : string
+      +questionRequired : bool
+	  +questionType : QuestionType
+      +questionNumericalParams : NumericalParams (if questionType=decimal/numberInterval)
+      +questionIntervalParams : IntervalParams (if questionType=numberInterval)
+      +questionCodingParams : ValueCoding (if questionType=choice/openChoice)
+    }
+
+    class Answer {
+        <<Entity>>
+	  +id answerId : string
+      +answerTimeStamp: datetime
+      +isEmptyAnswer : bool 
+	  +questionType : QuestionType
+      +answerValueNumerical : ValueNumerical (if questionType=decimal/numberInterval)
+      +answerValueString : ValueString array (if questionType=choice/openChoice/text)
+      +answerValueDateTime : ValueDateTime (if questionType=dateTime)
+    }
+
+    class UnitOfMeasure {
+        <<enumeration>>
+	  kg
+      g
+      lb
+      cm
+      m
+      h
+      min
+    }
+
+    class OrganizationType {
+        <<enumeration>>
+        hospital
+        government
+        professional
+        research
+    }
+
+    class QuestionType {
+        <<enumeration>>
+	    choice
+      openChoice
+      numberInterval
+      decimal
+      dateTime
+      text
+    }
+
+    class ValueString {
+        <<Value>>
+	    +stringValue : string
+    }
+
+    class ValueCoding {
+        <<Value>>
+	    +code: string
+	    +display: string
+    }
+
+    class ValueDateTime {
+        <<Value>>
+	    +dateTimeValue : dateTime
+    }
+
+    class ValueNumerical {
+        <<Value>>
+	    +numericalValue : decimal
+    }
+
+    class NumericalParams {
+	    +numericalUnit : UnitOfMeasure
+	    +numericalPrecision : integer
+    }
+
+    class IntervalParams {
+	    +minValue: float
+	    +minLabel: string
+	    +maxValue: float
+	    +maxLabel: string
+    }
+
+    note for ValueCoding "For questionType=openChoice, the last ValueCoding must be: {valueCoding: {'code': '-1', 'display': 'Other'}}"
+
+    Vault --> "0..*" QuestionnaireResponse : "hasQuestionnaireResponse"
+    Vault --> "1" Organization : "vaultManagedByOrg"
+    QuestionnaireResponse --> "1" Vault : "questionnaireResponseBySubject"
+    QuestionnaireResponse --> "1" Questionnaire : "responseToQuestionnaire"
+    QuestionnaireResponse "1" --> "1..*" Answer : "responseHasAnswer"
+    Organization --> "0..*" Vault : "organizationManagesVault"
+    Organization --> "0..*" Procedure : "organizationPerformesProcedure"
+    Organization --> "0..*" Questionnaire : "organizationAuthorsQuestionnaire"
+    Organization --> "0..*" Section : "organizationAuthorsSection"
+    Organization --> "0..*" Question : "organizationAuthorsQuestion"
+    Procedure --> "0..*" Organization : "procedurerformedByOrganization"
+    Procedure --> "0..*" Questionnaire : "procedureHasQuestionnaire"
+    Questionnaire --> "0..*" QuestionnaireResponse : "questionnaireHasResponse"
+    Questionnaire --> "0..1" Organization : "questionnaireAuthoredByOrg"
+    Questionnaire --> "0..*" Section : "questionnaireHasSection"
+    Questionnaire --> "0..*" Question : "questionnaireHasQuestion"
+    Questionnaire --> "0..*" Procedure : "questionnairePartOfProcedure"
+    Section --> "0..*" Questionnaire : "sectionPartOfQuestionnaire"
+    Section --> "0..1" Organization : "sectionAuthoredByOrg"
+    Section "0..*" <--> "0..*" Section : "sectionHasSection" / "sectionPartOfSection"
+    Section --> "1" Questionnaire : "sectionPartOfQuestionnaire"
+    Section --> "0..*" Question : "sectionHasQuestion"
+    Question --> "0..*" Section : "questionPartOfSection"
+    Question --> "0..*" Answer : "questionHasAnswer"
+    Question --> "1..*" Questionnaire : "questionPartOfQuestionnaire"
+    Question --> "0..*" Organization : "questionAuthoredByOrg"
+    Answer --> "1" QuestionnaireResponse : "answerInResponse"
+    Answer --> "1" Question : "answerToQuestion"
+

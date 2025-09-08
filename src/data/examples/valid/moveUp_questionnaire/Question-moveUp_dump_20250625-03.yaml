@@ -1,0 +1,29 @@
+---
+questionId: "https://pods.faqir.org/Fowh2"
+questionTag: "q_index_joint_walking_15min"
+questionHasQuestionRepresentation:
+  - questionRepresentationId: "https://pods.faqir.org/qrFowh2_en"
+    questionRepresentationText: "Are you aware of your index joint when you are walking for more than 15 minutes?"
+    questionRepresentationLanguage: "en"
+    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh2"
+questionRequired: false
+questionAuthoredByOrg:  
+  - "https://www.moveup.care/"
+questionType: choice
+questionCodingParams:
+  - code: "0"
+    display: "Never"
+  - code: "1"
+    display: "Almost never"
+  - code: "2"
+    display: "Seldom"
+  - code: "3"
+    display: "Sometimes"
+  - code: "4"
+    display: "Mostly"
+questionInOrderedQuestion:
+  - "https://pods.faqir.org/orderedQuestion/orderedFowh2"
+questionHasAnswer:
+  - "https://pods.faqir.org/aFowh2"
+questionUsedInScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

@@ -1,0 +1,10 @@
+questionnaireResponseId: https://pods.faqir.org/response_03_nested_section
+questionnaireResponseBySubject: https://pods.faqir.org/123
+questionnaireResponseToQuestionnaire: https://pods.faqir.org/questionnaire_03_nested_section
+questionnaireResponseHasAnswer:
+- https://pods.faqir.org/answer_05_EQ_5D_5L_01_03
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_03
+- https://pods.faqir.org/answer_07_EQ_VAS_03
+questionnaireResponseStatus: completed
+questionnaireResponseTimeStamp: '2025-07-11T10:35:00+00:00'
+questionnaireResponseLastUpdated: '2025-07-11T10:35:00+00:00'

@@ -1,0 +1,23 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/entities/organization/> .
+
+<https://www.moveup.care/> a faqir:Organization ;
+    faqir:organizationAuthorsQuestion <https://pods.faqir.org/FoIn0>,
+        <https://pods.faqir.org/Fowh1>,
+        <https://pods.faqir.org/Fowh10>,
+        <https://pods.faqir.org/Fowh2>,
+        <https://pods.faqir.org/Fowh3>,
+        <https://pods.faqir.org/Fowh4>,
+        <https://pods.faqir.org/Fowh5>,
+        <https://pods.faqir.org/Fowh6>,
+        <https://pods.faqir.org/Fowh7>,
+        <https://pods.faqir.org/Fowh8>,
+        <https://pods.faqir.org/Fowh9>,
+        <https://pods.faqir.org/question_04_AcWh1>,
+        <https://pods.faqir.org/questionnaire/Fowh11> ;
+    faqir:organizationAuthorsQuestionnaire <https://pods.faqir.org/bx6F2K6h3CDKCadPo> ;
+    faqir:organizationAuthorsScoreDefinition <https://pods.faqir.org/TFJSK> ;
+    faqir:organizationAuthorsSection <https://pods.faqir.org/7eTPK5NLGTv8jeTW5> ;
+    ns1:organizationLabel "MoveUp" ;
+    ns1:organizationType <https://www.hl7.org/fhir/organization-type#bus> .
+

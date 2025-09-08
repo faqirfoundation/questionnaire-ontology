@@ -1,0 +1,6 @@
+{
+   "datamodel": "https://w3id.org/faqir/datamodel/",
+   "linkml": "https://w3id.org/linkml/",
+   "loinc": "https://loinc.org/",
+   "ucum": "https://unitsofmeasure.org/"
+}

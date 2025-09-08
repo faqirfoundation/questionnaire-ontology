@@ -1,0 +1,9 @@
+---
+answerId: "https://pods.faqir.org/answer_05_EQ_5D_5L_01_03"
+answerInQuestionnaireResponse: "https://pods.faqir.org/response_03_nested_section"
+answerToQuestion: "https://pods.faqir.org/question_05_EQ_5D_5L_01"
+questionType: choice
+answerIsEmpty: false
+answerTimeStamp: "2025-07-11T10:35:07Z"
+answerValueString:
+  - stringValue: "1"

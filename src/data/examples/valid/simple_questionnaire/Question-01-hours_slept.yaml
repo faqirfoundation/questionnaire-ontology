@@ -1,0 +1,17 @@
+---
+questionId: "https://pods.faqir.org/question_01_hours_slept"
+questionTag: "q_hours_slept"
+questionHasQuestionRepresentation:
+  - questionRepresentationId: "https://pods.faqir.org/qrquestion_01_hours_slept_en"
+    questionRepresentationText: "How many hours did you sleep last night?"
+    questionRepresentationLanguage: "en"
+    questionRepresentationOfQuestion: "https://pods.faqir.org/question_01_hours_slept"
+questionRequired: false
+questionType: decimal
+questionInOrderedQuestion:
+  - "https://pods.faqir.org/orderedquestion_01_hours_slept_q01"
+questionNumericalParams:
+  numericalUnit: "h"
+  numericalPrecision: 2
+questionHasAnswer:
+  - "https://pods.faqir.org/answer_01_hours_slept_01"

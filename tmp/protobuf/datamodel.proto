@@ -1,0 +1,216 @@
+ syntax="proto3";
+ package
+// metamodel_version: 1.7.0
+// Answer in the questionnaire response.
+message Answer
+ {
+  questionnaireResponse answerInQuestionnaireResponse = 0
+  question answerToQuestion = 0
+  questionType questionType = 0
+  uriorcurie answerId = 0
+  valueNumerical answerValueNumerical = 0
+ repeated  valueString answerValueString = 0
+  valueDateTime answerValueDateTime = 0
+  boolean answerIsEmpty = 0
+  datetime answerTimeStamp = 0
+ }
+// Structured full name.
+message FullName
+ {
+  string firstName = 0
+  string middleName = 0
+  string familyName = 0
+ }
+// Parameters for interval values, including minimum and maximum values.
+message IntervalParams
+ {
+  float minValue = 0
+  string minLabel = 0
+  float maxValue = 0
+  string maxLabel = 0
+ }
+// Base class for metadata tracking (e.g. schema versioning & last updated).
+message Metadata
+ {
+  datetime lastUpdated = 0
+ }
+// Parameters for quantitative values, including unit and precision.
+message NumericalParams
+ {
+  unitOfMeasure numericalUnit = 0
+  integer numericalPrecision = 0
+ }
+// Question's position within a specific questionnaire or section.
+message OrderedQuestion
+ {
+  question orderedQuestionHasQuestion = 0
+  questionnaire orderedQuestionPartOfQuestionnaire = 0
+  section orderedQuestionPartOfSection = 0
+  uriorcurie orderedQuestionId = 0
+  integer questionOrder = 0
+ }
+// Section's position within a specific questionnaire or section.
+message OrderedSection
+ {
+  section orderedSectionHasSection = 0
+  questionnaire orderedSectionPartOfQuestionnaire = 0
+  section orderedSectionPartOfSection = 0
+  uriorcurie orderedSectionId = 0
+  integer sectionOrder = 0
+ }
+// An entity acting in a healthcare context
+message Organization
+ {
+ repeated  questionnaire organizationAuthorsQuestionnaire = 0
+ repeated  section organizationAuthorsSection = 0
+ repeated  question organizationAuthorsQuestion = 0
+ repeated  scoreDefinition organizationAuthorsScoreDefinition = 0
+ repeated  vault organizationManagesVault = 0
+  uriorcurie organizationId = 0
+  string organizationLabel = 0
+  organizationType organizationType = 0
+ }
+// A clinical or administrative process that uses resources like questionnaires
+message Procedure
+ {
+ repeated  organization procedurePerformedByOrg = 0
+ repeated  questionnaire procedureHasQuestionnaire = 0
+  uriorcurie procedureId = 0
+  string procedureLabel = 0
+  string procedureDescription = 0
+ }
+// A question in the questionnaire.
+message Question
+ {
+  questionType questionType = 0
+ repeated  questionRepresentation questionHasQuestionRepresentation = 0
+ repeated  organization questionAuthoredByOrg = 0
+ repeated  orderedQuestion questionInOrderedQuestion = 0
+ repeated  answer questionHasAnswer = 0
+ repeated  scoreDefinition questionUsedInScoreDefinition = 0
+  uriorcurie questionId = 0
+  string questionTag = 0
+  numericalParams questionNumericalParams = 0
+ repeated  valueCoding questionCodingParams = 0
+  intervalParams questionIntervalParams = 0
+  boolean questionRequired = 0
+ }
+// A questionnaire that can be answered (collection of questions).
+message Questionnaire
+ {
+ repeated  questionnaireResponse questionnaireHasQuestionnaireResponse = 0
+ repeated  orderedQuestion questionnaireHasOrderedQuestion = 0
+ repeated  orderedSection questionnaireHasOrderedSection = 0
+ repeated  organization questionnaireAuthoredByOrg = 0
+ repeated  procedure questionnairePartOfProcedure = 0
+  uriorcurie questionnaireId = 0
+  string questionnaireLabel = 0
+  questionnaireStatus questionnaireStatus = 0
+  string questionnaireVersion = 0
+  datetime questionnaireLastUpdated = 0
+ }
+// A response to a questionnaire (collection of answers).
+message QuestionnaireResponse
+ {
+  vault questionnaireResponseBySubject = 0
+  questionnaire questionnaireResponseToQuestionnaire = 0
+ repeated  answer questionnaireResponseHasAnswer = 0
+ repeated  scoreValue questionnaireResponseHasDerivedScoreValue = 0
+  uriorcurie questionnaireResponseId = 0
+  questionnaireResponseStatus questionnaireResponseStatus = 0
+  datetime questionnaireResponseTimeStamp = 0
+  datetime questionnaireResponseLastUpdated = 0
+ }
+// The text representation of the question, in a specific language.
+message QuestionRepresentation
+ {
+  question questionRepresentationOfQuestion = 0
+  uriorcurie questionRepresentationId = 0
+  string questionRepresentationText = 0
+  string questionRepresentationLanguage = 0
+ }
+// A score calculated from questions.
+message ScoreDefinition
+ {
+  scoreType scoreDefinitionType = 0
+ repeated  scoreParameter scoreDefinitionHasScoreParameter = 0
+ repeated  question scoreDefinitionUsesQuestion = 0
+ repeated  scoreValue scoreDefinitionHasScoreValue = 0
+ repeated  organization scoreDefinitionAuthoredByOrg = 0
+  uriorcurie scoreDefinitionId = 0
+  string scoreDefinitionLabel = 0
+  intervalParams scoreDefinitionIntervalParams = 0
+  string scoreDefinitionFormula = 0
+ repeated  string scoreDefinitionCategories = 0
+  string scoreDefinitionInterpretationGuide = 0
+ }
+// Parameters for score definitions, such as min/max values, categories or constants needed.
+message ScoreParameter
+ {
+  scoreDefinition scoreParameterPartOfScoreDefinition = 0
+  uriorcurie scoreParameterId = 0
+  string scoreParameterLabel = 0
+  scoreParameterType scoreParameterType = 0
+  valueNumerical scoreParameterValueNumerical = 0
+  valueDateTime scoreParameterValueDateTime = 0
+ }
+// The score value calculated from a QuestionnaireResponse following a ScoreDefinition.
+message ScoreValue
+ {
+  scoreType scoreDefinitionType = 0
+  scoreDefinition scoreValueBasedOnScoreDefinition = 0
+ repeated  questionnaireResponse scoreValueDerivedFromQuestionnaireResponse = 0
+  uriorcurie scoreValueId = 0
+  valueString scoreValueString = 0
+  valueNumerical scoreValueNumerical = 0
+  datetime scoreValueTimeStamp = 0
+  scoreValueStatus scoreValueStatus = 0
+ }
+// A section of questions in the questionnaire.
+message Section
+ {
+ repeated  orderedQuestion sectionHasOrderedQuestion = 0
+ repeated  orderedSection sectionHasOrderedSection = 0
+ repeated  orderedSection sectionInOrderedSection = 0
+ repeated  organization sectionAuthoredByOrg = 0
+  uriorcurie sectionId = 0
+  string sectionLabel = 0
+ }
+// A coded value with a unique code for each display text, typically used for standardized questionnaires.
+message ValueCoding
+ {
+  string code = 0
+  string display = 0
+ }
+// A date and time value, typically in ISO 8601 format.
+message ValueDateTime
+ {
+  datetime dateTimeValue = 0
+ }
+// Base class for quantitative values, they may have units and precision.
+message ValueNumerical
+ {
+  decimal numericalValue = 0
+ }
+// A string value, typically used for text or identifiers.
+message ValueString
+ {
+  string stringValue = 0
+ }
+// The FAQIR healthdata vault.
+message Vault
+ {
+  datetime lastUpdated = 0
+ repeated  questionnaireResponse hasQuestionnaireResponse = 0
+  organization vaultManagedByOrg = 0
+  uriorcurie vaultId = 0
+  datetime birthdate = 0
+  weight weight = 0
+  fullName fullName = 0
+ }
+// Weight.
+message Weight
+ {
+  decimal numericalValue = 0
+  weightType weightType = 0
+ }

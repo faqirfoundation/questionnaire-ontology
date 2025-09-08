@@ -1,0 +1,79 @@
+{
+   "datamodel": "https://w3id.org/faqir/datamodel/",
+   "euVoc": "http://publications.europa.eu/resource/authority/resource-type/",
+   "faqir": "https://faqir.org/datamodel/",
+   "fhir": "https://www.hl7.org/fhir/",
+   "linkml": "https://w3id.org/linkml/",
+   "loinc": "https://loinc.org/",
+   "prov": "https://www.w3.org/TR/prov-overview/",
+   "questionnaire": "https://w3id.org/faqir/datamodel/questionnaire/",
+   "schema": "http://schema.org/",
+   "shex": "http://www.w3.org/ns/shex#",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "types": "https://w3id.org/faqir/datamodel/core/types",
+   "ucum": "https://unitsofmeasure.org/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#",
+   "Answer": {
+      "@id": "faqir:Answer"
+   },
+   "IntervalParams": {
+      "@id": "faqir:IntervalParams"
+   },
+   "Metadata": {
+      "@id": "faqir:Metadata"
+   },
+   "NumericalParams": {
+      "@id": "faqir:NumericalParams"
+   },
+   "OrderedQuestion": {
+      "@id": "faqir:OrderedQuestion"
+   },
+   "OrderedSection": {
+      "@id": "faqir:OrderedSection"
+   },
+   "Organization": {
+      "@id": "faqir:Organization"
+   },
+   "Procedure": {
+      "@id": "faqir:Procedure"
+   },
+   "Question": {
+      "@id": "faqir:Question"
+   },
+   "Questionnaire": {
+      "@id": "faqir:Questionnaire"
+   },
+   "QuestionnaireResponse": {
+      "@id": "faqir:QuestionnaireResponse"
+   },
+   "QuestionRepresentation": {
+      "@id": "faqir:QuestionRepresentation"
+   },
+   "ScoreDefinition": {
+      "@id": "faqir:ScoreDefinition"
+   },
+   "ScoreParameter": {
+      "@id": "faqir:ScoreParameter"
+   },
+   "ScoreValue": {
+      "@id": "faqir:ScoreValue"
+   },
+   "Section": {
+      "@id": "faqir:Section"
+   },
+   "ValueCoding": {
+      "@id": "faqir:ValueCoding"
+   },
+   "ValueDateTime": {
+      "@id": "faqir:ValueDateTime"
+   },
+   "ValueNumerical": {
+      "@id": "faqir:ValueNumerical"
+   },
+   "ValueString": {
+      "@id": "faqir:ValueString"
+   },
+   "Vault": {
+      "@id": "faqir:vault"
+   }
+}

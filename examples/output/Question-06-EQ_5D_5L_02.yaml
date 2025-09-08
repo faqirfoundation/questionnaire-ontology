@@ -1,0 +1,35 @@
+questionId: https://pods.faqir.org/question_06_EQ_5D_5L_02
+questionType: choice
+questionHasQuestionRepresentation:
+- questionRepresentationId: https://pods.faqir.org/qrquestion_06_EQ_5D_5L_02_en
+  questionRepresentationOfQuestion: https://pods.faqir.org/question_06_EQ_5D_5L_02
+  questionRepresentationText: Under each heading, please tick the ONE box that best
+    describes your health TODAY. SELF-CARE.
+  questionRepresentationLanguage: en
+questionTag: q_EQ_5D_5L_02
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s01
+- https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s02
+questionHasAnswer:
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_01
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_02
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_03
+questionCodingParams:
+  '1':
+    code: '1'
+    display: I have no problems washing or dressing myself
+  '2':
+    code: '2'
+    display: I have slight problems washing or dressing myself
+  '3':
+    code: '3'
+    display: I have moderate problems washing or dressing myself
+  '4':
+    code: '4'
+    display: I have severe problems washing or dressing myself
+  '5':
+    code: '5'
+    display: I am unable to wash or dress myself
+questionRequired: false

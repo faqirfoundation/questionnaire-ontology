@@ -1,0 +1,25 @@
+---
+id: https://w3id.org/faqir/datamodel/questionnaire/general_slots
+name: questionnaire_general_slots
+
+prefixes:
+  datamodel: https://w3id.org/faqir/datamodel/
+  fhir: https://www.hl7.org/fhir/
+  schema: http://schema.org/
+  faqir: https://faqir.org/datamodel/
+
+slots:      
+  # Question slots
+  questionType:
+    description: "Type of the question (e.g., choice, openChoice, numberInterval,
+      decimal, dateTime, text). Determines valid answers."
+    range: QuestionType
+    required: true
+    slot_uri: "faqir:questionType"
+
+  # ScoreDefinition slots
+  scoreDefinitionType:
+    description: "Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values."
+    range: ScoreType
+    required: true
+    slot_uri: "faqir:scoreDefinitionType"

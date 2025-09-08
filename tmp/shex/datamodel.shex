@@ -1,0 +1,346 @@
+# metamodel_version: 1.7.0
+BASE <https://w3id.org/faqir/datamodel/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX fhir: <https://www.hl7.org/fhir/>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX loinc: <https://loinc.org/>
+PREFIX ucum: <https://unitsofmeasure.org/>
+PREFIX faqir: <https://faqir.org/datamodel/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/Answer_tes> (  faqir:answerInQuestionnaireResponse
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
+          faqir:answerToQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
+          faqir:questionType [ fhir:choice fhir:open-choice fhir:number fhir:decimal fhir:dateTime fhir:string ] ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueString> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueDateTime>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueDateTime> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/answerIsEmpty> @linkml:Boolean ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> @linkml:Datetime
+       ) ;
+       rdf:type [ faqir:Answer ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/vault/FullName> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/vault/FullName_tes> (  <https://w3id.org/faqir/datamodel/vault/first_name> @linkml:String
+          ? ;
+          <https://w3id.org/faqir/datamodel/vault/middle_name> @linkml:String ? ;
+          <https://w3id.org/faqir/datamodel/vault/family_name> @linkml:String ?
+       ) ;
+       rdf:type [ <https://w3id.org/faqir/datamodel/vault/FullName> ] ?
+    )
+}
+
+<https://w3id.org/faqir/datamodel/core/types/IntervalParams> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/core/types/IntervalParams_tes> (  <https://w3id.org/faqir/datamodel/core/types/minValue>
+          @linkml:Float ;
+          <https://w3id.org/faqir/datamodel/core/types/minLabel> @linkml:String ? ;
+          <https://w3id.org/faqir/datamodel/core/types/maxValue> @linkml:Float ;
+          <https://w3id.org/faqir/datamodel/core/types/maxLabel> @linkml:String ?
+       ) ;
+       rdf:type [ faqir:IntervalParams ] ?
+    )
+}
+
+<https://w3id.org/faqir/datamodel/core/versions/Metadata>  (
+    CLOSED {
+       (  $<https://w3id.org/faqir/datamodel/core/versions/Metadata_tes>
+          <https://w3id.org/faqir/datamodel/core/versions/lastUpdated> @linkml:Datetime ;
+          rdf:type [ faqir:Metadata ] ?
+       )
+    } OR @<https://w3id.org/faqir/datamodel/vault/Vault>
+)
+
+<https://w3id.org/faqir/datamodel/core/types/NumericalParams> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/core/types/NumericalParams_tes> (  ucum:units [ ucum:kg ucum:g ucum:lb_av ucum:cm ucum:m
+             ucum:h ucum:min ] ? ;
+          <https://w3id.org/faqir/datamodel/core/types/numericalPrecision> @linkml:Integer ?
+       ) ;
+       rdf:type [ faqir:NumericalParams ] ?
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion_tes> (  faqir:orderedQuestionHasQuestion
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
+          faqir:orderedQuestionPartOfQuestionnaire @<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ? ;
+          faqir:orderedQuestionPartOfSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> @linkml:Integer
+       ) ;
+       rdf:type [ faqir:OrderedQuestion ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection_tes> (  faqir:orderedSectionHasSection
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
+          faqir:orderedSectionPartOfQuestionnaire @<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ? ;
+          faqir:orderedSectionPartOfSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionOrder> @linkml:Integer
+       ) ;
+       rdf:type [ faqir:OrderedSection ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/entities/organization/Organization> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/entities/organization/Organization_tes> (  faqir:organizationAuthorsQuestionnaire
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> * ;
+          faqir:organizationAuthorsSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/Section> * ;
+          faqir:organizationAuthorsQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> * ;
+          faqir:organizationAuthorsScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> * ;
+          faqir:organizationManagesVault @<https://w3id.org/faqir/datamodel/vault/Vault> * ;
+          <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/entities/organization/organizationType> [
+             <https://www.hl7.org/fhir/organization-type#prov> <https://www.hl7.org/fhir/organization-type#gov>
+             <https://www.hl7.org/fhir/organization-type#ind> <https://www.hl7.org/fhir/organization-type#edu>
+             <https://www.hl7.org/fhir/organization-type#bus> ]
+       ) ;
+       rdf:type [ faqir:Organization ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/entities/procedure/Procedure> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/entities/procedure/Procedure_tes> (  faqir:procedurePerformedByOrg
+          @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
+          faqir:procedureHasQuestionnaire @<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> * ;
+          <https://w3id.org/faqir/datamodel/entities/procedure/procedureLabel> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> @linkml:String ?
+       ) ;
+       rdf:type [ faqir:Procedure ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/Question_tes> (  faqir:questionType [ fhir:choice fhir:open-choice
+             fhir:number fhir:decimal fhir:dateTime fhir:string ] ;
+          faqir:questionHasQuestionRepresentation @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation>
+          + ;
+          faqir:questionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
+          faqir:questionInOrderedQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
+          faqir:questionHasAnswer @<https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> * ;
+          faqir:questionUsedInScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams>
+          @<https://w3id.org/faqir/datamodel/core/types/NumericalParams> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueCoding> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams>
+          @<https://w3id.org/faqir/datamodel/core/types/IntervalParams> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> @linkml:Boolean ?
+       ) ;
+       rdf:type [ faqir:Question ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire_tes> (  faqir:questionnaireHasQuestionnaireResponse
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> * ;
+          faqir:questionnaireHasOrderedQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
+          faqir:questionnaireHasOrderedSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> * ;
+          faqir:questionnaireAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
+          faqir:questionnairePartOfProcedure @<https://w3id.org/faqir/datamodel/entities/procedure/Procedure> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> [ fhir:resource-status-draft
+             fhir:resource-status-active fhir:resource-status-retired fhir:resource-status-unknown ] ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> @linkml:Datetime
+       ) ;
+       rdf:type [ faqir:Questionnaire ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse_tes> (  faqir:questionnaireResponseBySubject
+          @<https://w3id.org/faqir/datamodel/vault/Vault> ;
+          faqir:questionnaireResponseToQuestionnaire @<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
+          faqir:questionnaireResponseHasAnswer @<https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> + ;
+          faqir:questionnaireResponseHasDerivedScoreValue @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> [
+             fhir:questionnaire-answers-status-in-progress fhir:questionnaire-answers-status-completed
+             fhir:questionnaire-answers-status-amended fhir:questionnaire-answers-status-entered-in-error
+             fhir:questionnaire-answers-status-stopped ] ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> @linkml:Datetime ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> @linkml:Datetime
+       ) ;
+       rdf:type [ faqir:QuestionnaireResponse ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation_tes> ( 
+          faqir:questionRepresentationOfQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationText> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationLanguage> @linkml:String
+       ) ;
+       rdf:type [ faqir:QuestionRepresentation ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition_tes> (  faqir:scoreDefinitionType [ xsd:float
+             xsd:integer xsd:float xsd:float xsd:float xsd:NMTOKENS ] ;
+          faqir:scoreDefinitionHasScoreParameter @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> * ;
+          faqir:scoreDefinitionUsesQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> + ;
+          faqir:scoreDefinitionHasScoreValue @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> * ;
+          faqir:scoreDefinitionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams>
+          @<https://w3id.org/faqir/datamodel/core/types/IntervalParams> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionCategories> @linkml:String * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> @linkml:String ?
+       ) ;
+       rdf:type [ faqir:ScoreDefinition ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter_tes> (  faqir:scoreParameterPartOfScoreDefinition
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> [ xsd:float xsd:dateTime ] ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueDateTime> ?
+       ) ;
+       rdf:type [ faqir:ScoreParameter ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue_tes> (  faqir:scoreDefinitionType [ xsd:float
+             xsd:integer xsd:float xsd:float xsd:float xsd:NMTOKENS ] ;
+          faqir:scoreValueBasedOnScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
+          faqir:scoreValueDerivedFromQuestionnaireResponse
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> + ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueString> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical>
+          @<https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ? ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> @linkml:Datetime ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueStatus> [
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#valid>
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#incomplete>
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#estimated>
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#warning>
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#error>
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#pending>
+             <https://w3id.org/faqir/datamodel/questionnaire/enums/ScoreValueStatus#amended> ]
+       ) ;
+       rdf:type [ faqir:ScoreValue ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/questionnaire/classes/Section> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/Section_tes> (  faqir:sectionHasOrderedQuestion
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
+          faqir:sectionHasOrderedSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> * ;
+          faqir:sectionInOrderedSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> * ;
+          faqir:sectionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> @linkml:String
+       ) ;
+       rdf:type [ faqir:Section ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/core/types/ValueCoding> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/core/types/ValueCoding_tes> (  <https://w3id.org/faqir/datamodel/core/types/code>
+          @linkml:String ;
+          <https://w3id.org/faqir/datamodel/core/types/display> @linkml:String
+       ) ;
+       rdf:type [ faqir:ValueCoding ] ?
+    )
+}
+
+<https://w3id.org/faqir/datamodel/core/types/ValueDateTime> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/core/types/ValueDateTime_tes> <https://w3id.org/faqir/datamodel/core/types/dateTimeValue>
+       @linkml:Datetime ? ;
+       rdf:type [ faqir:ValueDateTime ] ?
+    )
+}
+
+<https://w3id.org/faqir/datamodel/core/types/ValueNumerical>  (
+    CLOSED {
+       (  $<https://w3id.org/faqir/datamodel/core/types/ValueNumerical_tes>
+          <https://w3id.org/faqir/datamodel/core/types/numericalValue> @linkml:Decimal ;
+          rdf:type [ faqir:ValueNumerical ] ?
+       )
+    } OR @<https://w3id.org/faqir/datamodel/vault/Weight>
+)
+
+<https://w3id.org/faqir/datamodel/core/types/ValueString> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/core/types/ValueString_tes> <https://w3id.org/faqir/datamodel/core/types/stringValue>
+       @linkml:String ;
+       rdf:type [ faqir:ValueString ] ?
+    )
+}
+
+<https://w3id.org/faqir/datamodel/vault/Vault> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/vault/Vault_tes> (  &<https://w3id.org/faqir/datamodel/core/versions/Metadata_tes> ;
+          rdf:type [ faqir:Metadata ] ? ;
+          <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse>
+          @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> * ;
+          <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg>
+          @<https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
+          <https://w3id.org/faqir/datamodel/vault/birthdate> @linkml:Datetime ? ;
+          <https://w3id.org/faqir/datamodel/vault/weight> @<https://w3id.org/faqir/datamodel/vault/Weight> ? ;
+          <https://w3id.org/faqir/datamodel/vault/full_name> @<https://w3id.org/faqir/datamodel/vault/FullName> ?
+       ) ;
+       rdf:type [ faqir:vault ]
+    )
+}
+
+<https://w3id.org/faqir/datamodel/vault/Weight> CLOSED {
+    (  $<https://w3id.org/faqir/datamodel/vault/Weight_tes> (  &<https://w3id.org/faqir/datamodel/core/types/ValueNumerical_tes> ;
+          rdf:type [ faqir:ValueNumerical ] ? ;
+          <https://w3id.org/faqir/datamodel/vault/weightType> [ loinc:3141-9 loinc:3142-7 ]
+       ) ;
+       rdf:type [ <https://w3id.org/faqir/datamodel/vault/Weight> ] ?
+    )
+}
+

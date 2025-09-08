@@ -1,0 +1,19 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/response_01_simple> a faqir:QuestionnaireResponse ;
+    faqir:questionnaireResponseBySubject <https://pods.faqir.org/123> ;
+    faqir:questionnaireResponseHasAnswer <https://pods.faqir.org/answer_01_hours_slept_01>,
+        <https://pods.faqir.org/answer_02_hospitalRelease_date_01>,
+        <https://pods.faqir.org/answer_03_emergency_contact_name_01>,
+        <https://pods.faqir.org/answer_04_AcWh1_01>,
+        <https://pods.faqir.org/answer_05_EQ_VAS_01>,
+        <https://pods.faqir.org/answer_06_EQ_5D_5L_01_01>,
+        <https://pods.faqir.org/answer_07_EQ_5D_5L_02_01> ;
+    faqir:questionnaireResponseToQuestionnaire <https://pods.faqir.org/questionnaire_01_simple> ;
+    ns1:questionnaireResponseLastUpdated "2025-07-11T10:35:00+00:00"^^xsd:dateTime ;
+    ns1:questionnaireResponseStatus fhir:questionnaire-answers-status-completed ;
+    ns1:questionnaireResponseTimeStamp "2025-07-11T10:35:00+00:00"^^xsd:dateTime .
+

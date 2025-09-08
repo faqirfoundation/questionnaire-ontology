@@ -1,0 +1,31 @@
+{
+  "scoreDefinitionId": "https://pods.faqir.org/TFJSK",
+  "scoreDefinitionType": "numerical_integer",
+  "scoreDefinitionUsesQuestion": [
+    "https://pods.faqir.org/FoIn0",
+    "https://pods.faqir.org/Fowh1",
+    "https://pods.faqir.org/Fowh2",
+    "https://pods.faqir.org/Fowh3",
+    "https://pods.faqir.org/Fowh4",
+    "https://pods.faqir.org/Fowh5",
+    "https://pods.faqir.org/Fowh6",
+    "https://pods.faqir.org/Fowh7",
+    "https://pods.faqir.org/Fowh8",
+    "https://pods.faqir.org/Fowh9",
+    "https://pods.faqir.org/Fowh10",
+    "https://pods.faqir.org/Fowh11"
+  ],
+  "scoreDefinitionLabel": "Total Forgotten Joint Score Knee (/100) (een hoge score geeft een hogere mate van “vergeten” weer, dat wil zeggen een lager bewustzijn van het kunstgewricht) score",
+  "scoreDefinitionFormula": "Unknown",
+  "scoreDefinitionHasScoreValue": [
+    "https://pods.faqir.org/svTFJSK"
+  ],
+  "scoreDefinitionAuthoredByOrg": [
+    "https://www.moveup.care/"
+  ],
+  "scoreDefinitionIntervalParams": {
+    "minValue": 0.0,
+    "maxValue": 100.0
+  },
+  "@type": "ScoreDefinition"
+}

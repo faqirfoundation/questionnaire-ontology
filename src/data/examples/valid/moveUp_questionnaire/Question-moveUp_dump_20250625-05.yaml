@@ -1,0 +1,29 @@
+---
+questionId: "https://pods.faqir.org/Fowh4"
+questionTag: "q_index_joint_car"
+questionHasQuestionRepresentation:
+  - questionRepresentationId: "https://pods.faqir.org/qrFowh4_en"
+    questionRepresentationText: "Are you aware of your index joint when you are traveling in a car ?"
+    questionRepresentationLanguage: "en"
+    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh4"
+questionRequired: false
+questionAuthoredByOrg:  
+  - "https://www.moveup.care/"
+questionType: choice
+questionCodingParams:
+  - code: "0"
+    display: "Never"
+  - code: "1"
+    display: "Almost never"
+  - code: "2"
+    display: "Seldom"
+  - code: "3"
+    display: "Sometimes"
+  - code: "4"
+    display: "Mostly"
+questionInOrderedQuestion:
+  - "https://pods.faqir.org/orderedQuestion/orderedFowh4"
+questionHasAnswer:
+  - "https://pods.faqir.org/aFowh4"
+questionUsedInScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

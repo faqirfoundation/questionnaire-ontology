@@ -1,0 +1,120 @@
+classDiagram
+direction TB
+    class Vault {
+        <<Entity>>
+	    +vaultId: xs:string
+    }
+
+    class QuestionnaireResponse {
+        <<Entity>>
+	    +id questionnaireResponseId : string
+	    +questionnaireResponseStatus : string
+	    +questionnaireResponseDateTime : datetime
+      +lastUpdated : datetime (recommended)
+      +schemaVersion : string (recommended)
+    }
+
+    class Questionnaire {
+        <<Entity>>
+	    +id questionnaireId: string
+	    +questionnaireLabel : string
+    }
+
+    class Section {
+        <<Entity>>
+	    +id sectionId : string
+	    +rdfs:label sectionLabel : string
+    }
+
+    class Question {
+        <<Entity>>
+	    +id questionId : string
+	    +questionLabel : string
+      +questionRequired : bool
+	    +questionType : QuestionType
+      +numericalQuestionParams : NumericalParams (if questionType=decimal/numberInterval)
+      +intervalQuestionParams : IntervalParams (if questionType=numberInterval)
+      +codingQuestionParams : ValueCoding (if questionType=choice/openChoice)
+    }
+
+    class Answer {
+        <<Entity>>
+	    +id answerId : string
+	    +qestionType : QuestionType
+      +isEmptyAnswer : bool 
+      +answerValue : array OR null (recommended)
+    }
+
+    class UnitOfMeasure {
+        <<enumeration>>
+	    kg
+      g
+      lb
+      cm
+      m
+    }
+
+    class QuestionType {
+        <<enumeration>>
+	    choice
+      openChoice
+      numberInterval
+      decimal
+      dateTime
+      text
+    }
+
+    class ValueString {
+        <<Value>>
+	    +stringValue : string
+    }
+
+    class ValueCoding {
+        <<Value>>
+	    +code: string
+	    +display: string
+    }
+
+    class ValueDateTime {
+        <<Value>>
+	    +dateTimeValue : dateTime
+    }
+
+    class ValueNumerical {
+        <<Value>>
+	    +numericalValue : decimal
+    }
+
+    class NumericalParams {
+	    +numericalUnit : UnitOfMeasure
+	    +numericalPrecision : integer
+    }
+
+    class IntervalParams {
+	    +minValue: ValueNumerical
+	    +maxValue: ValueNumerical
+    }
+
+    note for ValueCoding "For type=openChoice, the last ValueCoding must be: {valueCoding: {'code': '-1', 'display': 'Other'}}"
+
+    Vault --> "0..*" QuestionnaireResponse : "hasQuestionnaireResponse"
+    QuestionnaireResponse --> "1" Vault : "bySubject"
+    QuestionnaireResponse --> "1" Questionnaire : "isResponseFor"
+    QuestionnaireResponse "1" --> "1..*" Answer : "hasResponseAnswer"
+    Questionnaire --> "0..*" QuestionnaireResponse : "hasResponse"
+    Questionnaire --> "0..*" Section : "questionnaireHasSection"
+    Questionnaire --> "1..*" Question : "questionnaireHasQuestion"
+    Section --> "1..*" Questionnaire : "sectionPartOfQuestionnaire"
+    Section "0..*" <--> "0..*" Section : "sectionHasSection" / "sectionPartOfSection"
+    Section --> "1" Questionnaire : "moveUp_partOfQuestionnaire"
+    Section --> "0..*" Question : "sectionHasQuestion"
+    Question --> "0..*" Section : "questionPartOfSection"
+    Question --> "0..*" Answer : "hasAnswer"
+    Question --> "1..*" Questionnaire : "partOfQuestionnaire"
+    Answer --> "1" QuestionnaireResponse : "isAnswerIn"
+    Answer --> "1" Question : "toQuestion"
+
+    Answer --|> "0..1" ValueString : if questionType=choice/openChoice/text
+    Answer --|> "0..1" ValueNumerical : if questionType=decimal/numberInterval
+    Answer --|> "0..1" ValueDateTime : if questionType=date
+
