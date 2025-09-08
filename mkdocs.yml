@@ -1,5 +1,5 @@
 ---
-site_name: "datamodel"
+site_name: "questionnaire_ontology"
 theme:
   name: material
   # palette:
@@ -17,8 +17,8 @@ nav:
   # - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://faqirinstitute.github.io/datamodel
-repo_url: https://github.com/faqir/datamodel
+site_url: https://faqirinstitute.github.io/questionnaire_ontology
+repo_url: https://github.com/faqir/questionnaire_ontology
 markdown_extensions:
   - tables
 extra_javascript:

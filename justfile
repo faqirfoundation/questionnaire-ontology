@@ -128,6 +128,10 @@ _test-schema:
 
 # Run Python unit tests with pytest
 _test-python:
+    @if ! poetry run python -c "import pytest" 2>/dev/null; then \
+        echo "pytest not found, installing..." && \
+        poetry add -D pytest; \
+    fi
     poetry run python -m pytest
 
 # Run example tests
@@ -153,8 +157,8 @@ _gendoc: _ensure_docdir
 # Generate python classes
 _gen-python: _generate_python_classes
     linkml generate python \
-        src/datamodel/schema/datamodel.yaml \
-        > src/datamodel/datamodel/datamodel.py    
+        src/questionnaire_ontology/schema/datamodel.yaml \
+        > src/questionnaire_ontology/datamodel/datamodel.py    
 
 # Build docs and run test server
 testdoc: _gendoc _gen-python _serve
@@ -198,8 +202,8 @@ _ensure_docdir:
     -mkdir -p {{docdir}}
 
 _generate_python_classes:
-    -mkdir -p src/datamodel/schema
-    -mkdir -p src/datamodel/datamodel
+    -mkdir -p src/questionnaire_ontology/schema
+    -mkdir -p src/questionnaire_ontology/datamodel
 
 _ensure_examples_output:
     -mkdir -p examples/output

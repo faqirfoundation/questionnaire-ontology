@@ -7,10 +7,10 @@
 ###### schema definition variables, used by makefile
 
 # Note: makefile variables should not be quoted, as makefile handles quoting differently than bash
-LINKML_SCHEMA_NAME="datamodel"
+LINKML_SCHEMA_NAME="questionnaire_ontology"
 LINKML_SCHEMA_AUTHOR="Bram Hautekiet <Bram.Hautekiet@faqir.eu>"
-LINKML_SCHEMA_DESCRIPTION="The datamodel used in faqir vaults."
-LINKML_SCHEMA_SOURCE_PATH="src/datamodel/schema/datamodel.yaml"
+LINKML_SCHEMA_DESCRIPTION="The questionnaire ontology designed by FAQIR."
+LINKML_SCHEMA_SOURCE_PATH="src/questionnaire_ontology/schema/datamodel.yaml"
 LINKML_SCHEMA_GOOGLE_SHEET_MODULE="personinfo_enums"
 LINKML_SCHEMA_GOOGLE_SHEET_ID="1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ"
 LINKML_SCHEMA_GOOGLE_SHEET_TABS="personinfo enums"

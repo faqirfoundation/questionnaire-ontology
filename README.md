@@ -1,4 +1,4 @@
-# FAQIR Datamodel for vaults
+# FAQIR Questionnaire Ontology
 
 ## Website
 
@@ -9,10 +9,10 @@
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-  * [datamodel](src/datamodel)
-    * [schema](src/datamodel/schema) -- LinkML schema
+  * [questionnaire_ontology](src/questionnaire_ontology)
+    * [schema](src/questionnaire_ontology/schema) -- LinkML schema
       (edit this)
-    * [datamodel](src/datamodel/datamodel) -- generated
+    * [datamodel](src/questionnaire_ontology/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
 

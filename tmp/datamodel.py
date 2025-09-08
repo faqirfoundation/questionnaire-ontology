@@ -1,5 +1,5 @@
 # Auto generated from datamodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-01T17:57:48
+# Generation date: 2025-09-08T18:08:02
 # Schema: datamodel
 #
 # id: https://w3id.org/faqir/datamodel

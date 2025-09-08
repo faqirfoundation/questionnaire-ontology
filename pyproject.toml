@@ -3,14 +3,14 @@ requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
 
 [project]
-name = "datamodel"
-description = "The datamodel used in faqir vaults."
+name = "questionnaire_ontology"
+description = "The questionnaire ontology designed by FAQIR."
 authors = [
   {name = "Bram Hautekiet", email = "Bram.Hautekiet@faqir.eu"},
 ]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/datamodel/schema", "project"]
+include = ["README.md", "src/questionnaire_ontology/schema", "project"]
 
 requires-python = ">=3.9,<4.0"
 
@@ -39,3 +39,4 @@ mkdocs-mermaid2-plugin = ">=1.1.1"
 schemasheets = ">=0.1.14"
 jupyter = ">=1.0.0"
 mknotebooks = ">= 0.8.0"
+pytest = "^8.4.2"
