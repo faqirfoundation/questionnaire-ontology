@@ -2,7 +2,7 @@
 
 ## Website
 
-[https://faqirinstitute.github.io/datamodel/](https://faqirinstitute.github.io/datamodel/) -> _Has to be enabled in the settings_
+[https://faqirinstitute.github.io/questionnaire_ontology/](https://faqirinstitute.github.io/questionnaire_ontology/) -> _Has to be enabled in the settings_
 
 ## Repository Structure
 
