@@ -1,12 +1,8 @@
 questionId: https://pods.faqir.org/Fowh7
 questionType: choice
-questionHasQuestionRepresentation:
-- questionRepresentationId: https://pods.faqir.org/qrFowh7_en
-  questionRepresentationOfQuestion: https://pods.faqir.org/Fowh7
-  questionRepresentationText: Are you aware of your index joint when you are standing
-    up from a low-sitting position?
-  questionRepresentationLanguage: en
 questionTag: q_index_joint_standing_up_low_sitting
+questionLabel: Are you aware of your index joint when you are standing up from a low-sitting
+  position?
 questionAuthoredByOrg:
 - https://www.moveup.care/
 questionInOrderedQuestion:

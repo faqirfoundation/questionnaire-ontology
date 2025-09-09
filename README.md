@@ -116,6 +116,7 @@ Individual questions with type-specific parameters and validation rules
 Attributes: 
 * ```questionId```: Identifier. Unique valid urorcurie. Required.
 * ```questionTag```: String. Internal English identifier, e.g., 'q_pain_level'. Required.
+* ```questionLabel```: String. The text of the question itself, which is displayed to the user. Required.
 * ```questionRequired```: Boolean. Indicates whether answering this question is mandatory (true) or it's optional (false). If absent, false.
 * ```questionType```: Required. Not multivalued. Valid QuestionType values:
     * ```choice```: Predefined options (single or multiple selection)
@@ -162,11 +163,6 @@ Attributes:
         * Not multivalued
 
 Relationships:
-* ```questionHasQuestionRepresentation```: 
-    * [Question](#Question) --> [QuestionRepresentation](#QuestionRepresentation)
-    * Required
-    * Multivalued
-    * Inverse: [```questionRepresentationOfQuestion```](#questionRepresentationOfQuestion)
 * ```questionAuthoredByOrg```: 
     * [Question](#Question) --> [Organization](#Organization)
     * Not required
@@ -187,9 +183,6 @@ Relationships:
     * Not required
     * Multivalued
     * Inverse: [```scoreDefinitionUsesQuestion```](#scoreDefinitionUsesQuestion)
-
-##### QuestionRepresentation
-![alt text](diagrams/image-14.png)
 
 ##### OrderedQuestion 
 Question wrapper. States the question's relative position within a questionnaire or section. Question order values must be unique per questionnaire or section.

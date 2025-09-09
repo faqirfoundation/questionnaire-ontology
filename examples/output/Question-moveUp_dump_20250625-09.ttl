@@ -1,36 +1,31 @@
 @prefix faqir: <https://faqir.org/datamodel/> .
 @prefix fhir: <https://www.hl7.org/fhir/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
-@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://pods.faqir.org/Fowh8> a faqir:Question ;
     faqir:questionAuthoredByOrg <https://www.moveup.care/> ;
     faqir:questionHasAnswer <https://pods.faqir.org/aFowh8> ;
-    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrFowh8_en> ;
     faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedQuestion/orderedFowh8> ;
     faqir:questionType fhir:choice ;
     faqir:questionUsedInScoreDefinition <https://pods.faqir.org/TFJSK> ;
-    ns2:questionCodingParams [ a faqir:ValueCoding ;
-            ns1:code "4" ;
-            ns1:display "Mostly" ],
+    ns1:questionCodingParams [ a faqir:ValueCoding ;
+            ns2:code "1" ;
+            ns2:display "Almost never" ],
         [ a faqir:ValueCoding ;
-            ns1:code "2" ;
-            ns1:display "Seldom" ],
+            ns2:code "4" ;
+            ns2:display "Mostly" ],
         [ a faqir:ValueCoding ;
-            ns1:code "3" ;
-            ns1:display "Sometimes" ],
+            ns2:code "2" ;
+            ns2:display "Seldom" ],
         [ a faqir:ValueCoding ;
-            ns1:code "0" ;
-            ns1:display "Never" ],
+            ns2:code "0" ;
+            ns2:display "Never" ],
         [ a faqir:ValueCoding ;
-            ns1:code "1" ;
-            ns1:display "Almost never" ] ;
-    ns2:questionRequired false ;
-    ns2:questionTag "q_index_joint_standing_long_periods" .
-
-<https://pods.faqir.org/qrFowh8_en> a faqir:QuestionRepresentation ;
-    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/Fowh8> ;
-    ns2:questionRepresentationLanguage "en" ;
-    ns2:questionRepresentationText "Are you aware of your index joint when you are standing for long periods of time?" .
+            ns2:code "3" ;
+            ns2:display "Sometimes" ] ;
+    ns1:questionLabel "Are you aware of your index joint when you are standing for long periods of time?" ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_index_joint_standing_long_periods" .
 

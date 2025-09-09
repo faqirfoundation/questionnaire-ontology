@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/question_03_emergency_contact_name"
 questionTag: "q_emergency_contact_name"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrquestion_emergency_contact_name_01_en"
-    questionRepresentationText: "Please, provide the name of your emergency contact."
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/question_emergency_contact_name_01"
+questionLabel: "Please, provide the name of your emergency contact."
 questionRequired: true
 questionType: text
 questionInOrderedQuestion:

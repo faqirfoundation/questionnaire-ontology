@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/question_06_EQ_5D_5L_02",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrquestion_06_EQ_5D_5L_02_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/question_06_EQ_5D_5L_02",
-      "questionRepresentationText": "Under each heading, please tick the ONE box that best describes your health TODAY. SELF-CARE.",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_EQ_5D_5L_02",
+  "questionLabel": "Under each heading, please tick the ONE box that best describes your health TODAY. SELF-CARE.",
   "questionAuthoredByOrg": [
     "https://euroqol.org/"
   ],

@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/Fowh9",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFowh9_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/Fowh9",
-      "questionRepresentationText": "Are you aware of your index joint when you are doing housework or gardening?",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_index_joint_housework_gardening",
+  "questionLabel": "Are you aware of your index joint when you are doing housework or gardening?",
   "questionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

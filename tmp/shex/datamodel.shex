@@ -157,13 +157,12 @@ linkml:Sparqlpath xsd:string
 <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> CLOSED {
     (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/Question_tes> (  faqir:questionType [ fhir:choice fhir:open-choice
              fhir:number fhir:decimal fhir:dateTime fhir:string ] ;
-          faqir:questionHasQuestionRepresentation @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation>
-          + ;
           faqir:questionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
           faqir:questionInOrderedQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
           faqir:questionHasAnswer @<https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> * ;
           faqir:questionUsedInScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> * ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> @linkml:String ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> @linkml:String ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams>
           @<https://w3id.org/faqir/datamodel/core/types/NumericalParams> ? ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams>
@@ -207,16 +206,6 @@ linkml:Sparqlpath xsd:string
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> @linkml:Datetime
        ) ;
        rdf:type [ faqir:QuestionnaireResponse ]
-    )
-}
-
-<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation> CLOSED {
-    (  $<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation_tes> ( 
-          faqir:questionRepresentationOfQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
-          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationText> @linkml:String ;
-          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationLanguage> @linkml:String
-       ) ;
-       rdf:type [ faqir:QuestionRepresentation ]
     )
 }
 

@@ -1,12 +1,8 @@
 questionId: https://pods.faqir.org/Fowh1
 questionType: choice
-questionHasQuestionRepresentation:
-- questionRepresentationId: https://pods.faqir.org/qrFowh1_en
-  questionRepresentationOfQuestion: https://pods.faqir.org/Fowh1
-  questionRepresentationText: Are you aware of your index joint when you are sitting
-    on a chair for more than 1 hour ?
-  questionRepresentationLanguage: en
 questionTag: q_index_joint_sitting_chair
+questionLabel: Are you aware of your index joint when you are sitting on a chair for
+  more than 1 hour ?
 questionAuthoredByOrg:
 - https://www.moveup.care/
 questionInOrderedQuestion:

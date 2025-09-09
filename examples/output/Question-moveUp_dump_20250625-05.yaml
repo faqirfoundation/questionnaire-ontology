@@ -1,12 +1,7 @@
 questionId: https://pods.faqir.org/Fowh4
 questionType: choice
-questionHasQuestionRepresentation:
-- questionRepresentationId: https://pods.faqir.org/qrFowh4_en
-  questionRepresentationOfQuestion: https://pods.faqir.org/Fowh4
-  questionRepresentationText: Are you aware of your index joint when you are traveling
-    in a car ?
-  questionRepresentationLanguage: en
 questionTag: q_index_joint_car
+questionLabel: Are you aware of your index joint when you are traveling in a car ?
 questionAuthoredByOrg:
 - https://www.moveup.care/
 questionInOrderedQuestion:

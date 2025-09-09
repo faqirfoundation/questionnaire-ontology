@@ -76,15 +76,10 @@
 --     * Slot: questionType Description: Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.
 --     * Slot: questionId Description: The unique identifier for a question in the questionnaire.
 --     * Slot: questionTag Description: Internal English identifier, e.g., 'q_pain_level'.
+--     * Slot: questionLabel Description: The text of the question itself, which is displayed to the user.
 --     * Slot: questionRequired Description: Indicates whether answering this question is mandatory (true) or it's optional (false).
 --     * Slot: questionNumericalParams_id Description: Unit and Precision limiting the quantitative answer for the question.
 --     * Slot: questionIntervalParams_id Description: Minimum and Maximum limiting the range the answer must be in for the question.
--- # Class: "QuestionRepresentation" Description: "The text representation of the question, in a specific language."
---     * Slot: questionRepresentationOfQuestion Description: The Question that this QuestionRepresentation describes.
---     * Slot: questionRepresentationId Description: The unique identifier for the question representation.
---     * Slot: questionRepresentationText Description: The text of the question as presented to the user.
---     * Slot: questionRepresentationLanguage Description: The language of the question text, represented as a BCP 47 language tag (e.g., 'en', 'fr', 'es').
---     * Slot: Question_questionId Description: Autocreated FK slot
 -- # Class: "Questionnaire" Description: "A questionnaire that can be answered (collection of questions)."
 --     * Slot: questionnaireId Description: The unique identifier for the questionnaire.
 --     * Slot: questionnaireLabel Description: The label or title of the questionnaire, which is displayed to the user.
@@ -300,6 +295,7 @@ CREATE TABLE "Question" (
 	"questionType" VARCHAR(14) NOT NULL, 
 	"questionId" TEXT NOT NULL, 
 	"questionTag" TEXT NOT NULL, 
+	"questionLabel" TEXT NOT NULL, 
 	"questionRequired" BOOLEAN, 
 	"questionNumericalParams_id" INTEGER, 
 	"questionIntervalParams_id" INTEGER, 
@@ -410,16 +406,6 @@ CREATE TABLE "OrderedQuestion" (
 	FOREIGN KEY("orderedQuestionPartOfSection") REFERENCES "Section" ("sectionId"), 
 	FOREIGN KEY("Questionnaire_questionnaireId") REFERENCES "Questionnaire" ("questionnaireId"), 
 	FOREIGN KEY("Section_sectionId") REFERENCES "Section" ("sectionId")
-);
-CREATE TABLE "QuestionRepresentation" (
-	"questionRepresentationOfQuestion" TEXT NOT NULL, 
-	"questionRepresentationId" TEXT NOT NULL, 
-	"questionRepresentationText" TEXT NOT NULL, 
-	"questionRepresentationLanguage" TEXT NOT NULL, 
-	"Question_questionId" TEXT, 
-	PRIMARY KEY ("questionRepresentationId"), 
-	FOREIGN KEY("questionRepresentationOfQuestion") REFERENCES "Question" ("questionId"), 
-	FOREIGN KEY("Question_questionId") REFERENCES "Question" ("questionId")
 );
 CREATE TABLE "ScoreParameter" (
 	"scoreParameterPartOfScoreDefinition" TEXT NOT NULL, 

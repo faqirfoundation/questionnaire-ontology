@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/question_05_EQ_5D_5L_01"
 questionTag: "q_EQ_5D_5L_01"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrquestion_05_EQ_5D_5L_01_en"
-    questionRepresentationText: "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY."
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/question_05_EQ_5D_5L_01"
+questionLabel: "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY."
 questionRequired: false
 questionType: choice
 questionAuthoredByOrg:  

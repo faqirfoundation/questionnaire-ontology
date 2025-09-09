@@ -1,17 +1,13 @@
 ---
 questionId: "https://pods.faqir.org/questionnaire/question_05_EQ_VAS"
 questionTag: "q_EQ_VAS"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrquestion_07_EQ_VAS_en"
-    questionRepresentationText: | 
-      "We would like to know how good or bad your health is TODAY.
-      This scale is numbered from 0 to 100.
-      100 means the *best* health you can imagine.
-      0 means the *worst* health you can imagine.
-      Mark an X on the scale to indicate how your health is TODAY.
-      Now, please write the number you marked on the scale."
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/question_07_EQ_VAS"
+questionLabel: | 
+  "We would like to know how good or bad your health is TODAY.
+  This scale is numbered from 0 to 100.
+  100 means the *best* health you can imagine.
+  0 means the *worst* health you can imagine.
+  Mark an X on the scale to indicate how your health is TODAY.
+  Now, please write the number you marked on the scale."
 questionRequired: false
 questionType: numberInterval
 questionAuthoredByOrg: 

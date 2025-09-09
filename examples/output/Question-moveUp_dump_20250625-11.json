@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/Fowh10",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFowh10_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/Fowh10",
-      "questionRepresentationText": "Are you aware of your index joint when you are taking a walk/hiking?",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_index_joint_walking_hiking",
+  "questionLabel": "Are you aware of your index joint when you are taking a walk/hiking?",
   "questionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

@@ -83,13 +83,13 @@ message Procedure
 message Question
  {
   questionType questionType = 0
- repeated  questionRepresentation questionHasQuestionRepresentation = 0
  repeated  organization questionAuthoredByOrg = 0
  repeated  orderedQuestion questionInOrderedQuestion = 0
  repeated  answer questionHasAnswer = 0
  repeated  scoreDefinition questionUsedInScoreDefinition = 0
   uriorcurie questionId = 0
   string questionTag = 0
+  string questionLabel = 0
   numericalParams questionNumericalParams = 0
  repeated  valueCoding questionCodingParams = 0
   intervalParams questionIntervalParams = 0
@@ -120,14 +120,6 @@ message QuestionnaireResponse
   questionnaireResponseStatus questionnaireResponseStatus = 0
   datetime questionnaireResponseTimeStamp = 0
   datetime questionnaireResponseLastUpdated = 0
- }
-// The text representation of the question, in a specific language.
-message QuestionRepresentation
- {
-  question questionRepresentationOfQuestion = 0
-  uriorcurie questionRepresentationId = 0
-  string questionRepresentationText = 0
-  string questionRepresentationLanguage = 0
  }
 // A score calculated from questions.
 message ScoreDefinition

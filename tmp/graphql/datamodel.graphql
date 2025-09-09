@@ -165,13 +165,13 @@ type Procedure
 type Question
   {
     questionType: QuestionType!
-    questionHasQuestionRepresentation: [QuestionRepresentation]!
     questionAuthoredByOrg: [Organization]
     questionInOrderedQuestion: [OrderedQuestion]
     questionHasAnswer: [Answer]
     questionUsedInScoreDefinition: [ScoreDefinition]
     questionId: Uriorcurie!
     questionTag: String!
+    questionLabel: String!
     questionNumericalParams: NumericalParams
     questionCodingParams: [ValueCoding]
     questionIntervalParams: IntervalParams
@@ -202,14 +202,6 @@ type QuestionnaireResponse
     questionnaireResponseStatus: QuestionnaireResponseStatus!
     questionnaireResponseTimeStamp: Datetime!
     questionnaireResponseLastUpdated: Datetime!
-  }
-
-type QuestionRepresentation
-  {
-    questionRepresentationOfQuestion: Question!
-    questionRepresentationId: Uriorcurie!
-    questionRepresentationText: String!
-    questionRepresentationLanguage: String!
   }
 
 type ScoreDefinition

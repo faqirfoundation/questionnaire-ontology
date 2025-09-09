@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/Fowh5",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFowh5_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/Fowh5",
-      "questionRepresentationText": "Are you aware of your index joint when you are climbing stairs?",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_index_joint_stairs",
+  "questionLabel": "Are you aware of your index joint when you are climbing stairs?",
   "questionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

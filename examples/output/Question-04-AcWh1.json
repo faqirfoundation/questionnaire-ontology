@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/question_04_AcWh1",
   "questionType": "openChoice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrquestion_04_AcWh1_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/question_04_AcWh1",
-      "questionRepresentationText": "What activities did you do today?",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_AcWh1",
+  "questionLabel": "What activities did you do today?",
   "questionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

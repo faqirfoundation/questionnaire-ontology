@@ -1,12 +1,8 @@
 questionId: https://pods.faqir.org/Fowh6
 questionType: choice
-questionHasQuestionRepresentation:
-- questionRepresentationId: https://pods.faqir.org/qrFowh6_en
-  questionRepresentationOfQuestion: https://pods.faqir.org/Fowh6
-  questionRepresentationText: Are you aware of your index joint when you are walking
-    on uneven ground ?
-  questionRepresentationLanguage: en
 questionTag: q_index_joint_walking_uneven_ground
+questionLabel: Are you aware of your index joint when you are walking on uneven ground
+  ?
 questionAuthoredByOrg:
 - https://www.moveup.care/
 questionInOrderedQuestion:

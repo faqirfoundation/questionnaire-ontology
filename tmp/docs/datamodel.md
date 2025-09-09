@@ -23,7 +23,6 @@ The datamodel used in faqir vaults.
  * [Organization](Organization.md) - An entity acting in a healthcare context
  * [Procedure](Procedure.md) - A clinical or administrative process that uses resources like questionnaires
  * [Question](Question.md) - A question in the questionnaire.
- * [QuestionRepresentation](QuestionRepresentation.md) - The text representation of the question, in a specific language.
  * [Questionnaire](Questionnaire.md) - A questionnaire that can be answered (collection of questions).
  * [QuestionnaireResponse](QuestionnaireResponse.md) - A response to a questionnaire (collection of answers).
  * [ScoreDefinition](ScoreDefinition.md) - A score calculated from questions.
@@ -87,17 +86,13 @@ The datamodel used in faqir vaults.
  * [➞procedureLabel](procedure__procedureLabel.md) - Name of the procedure.
  * [questionAuthoredByOrg](questionAuthoredByOrg.md) - The organization that has designed this Question.
  * [questionHasAnswer](questionHasAnswer.md) - The Answer to this Question.
- * [questionHasQuestionRepresentation](questionHasQuestionRepresentation.md) - QuestionRepresentations that describe the question in each language.
  * [questionInOrderedQuestion](questionInOrderedQuestion.md) - OrderedQuestions that this Question is indexed in.
- * [questionRepresentationOfQuestion](questionRepresentationOfQuestion.md) - The Question that this QuestionRepresentation describes.
- * [➞questionRepresentationId](questionRepresentation__questionRepresentationId.md) - The unique identifier for the question representation.
- * [➞questionRepresentationLanguage](questionRepresentation__questionRepresentationLanguage.md) - The language of the question text, represented as a BCP 47 language tag (e.g., 'en', 'fr', 'es').
- * [➞questionRepresentationText](questionRepresentation__questionRepresentationText.md) - The text of the question as presented to the user.
  * [questionType](questionType.md) - Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.
  * [questionUsedInScoreDefinition](questionUsedInScoreDefinition.md) - The ScoreDefinition that this Question is used in.
  * [➞questionCodingParams](question__questionCodingParams.md) - Code and Display of each option offered as answer to the choice or open-choice question.
  * [➞questionId](question__questionId.md) - The unique identifier for a question in the questionnaire.
  * [➞questionIntervalParams](question__questionIntervalParams.md) - Minimum and Maximum limiting the range the answer must be in for the question.
+ * [➞questionLabel](question__questionLabel.md) - The text of the question itself, which is displayed to the user.
  * [➞questionNumericalParams](question__questionNumericalParams.md) - Unit and Precision limiting the quantitative answer for the question.
  * [➞questionRequired](question__questionRequired.md) - Indicates whether answering this question is mandatory (true) or it's optional (false).
  * [➞questionTag](question__questionTag.md) - Internal English identifier, e.g., 'q_pain_level'.

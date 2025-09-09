@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/question_01_hours_slept"
 questionTag: "q_hours_slept"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrquestion_01_hours_slept_en"
-    questionRepresentationText: "How many hours did you sleep last night?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/question_01_hours_slept"
+questionLabel: "How many hours did you sleep last night?"
 questionRequired: false
 questionType: decimal
 questionPartOfQuestionnaire: 

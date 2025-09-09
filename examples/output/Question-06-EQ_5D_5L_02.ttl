@@ -1,38 +1,33 @@
 @prefix faqir: <https://faqir.org/datamodel/> .
 @prefix fhir: <https://www.hl7.org/fhir/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
-@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://pods.faqir.org/qrquestion_06_EQ_5D_5L_02_en> a faqir:QuestionRepresentation ;
-    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/question_06_EQ_5D_5L_02> ;
-    ns2:questionRepresentationLanguage "en" ;
-    ns2:questionRepresentationText "Under each heading, please tick the ONE box that best describes your health TODAY. SELF-CARE." .
 
 <https://pods.faqir.org/question_06_EQ_5D_5L_02> a faqir:Question ;
     faqir:questionAuthoredByOrg <https://euroqol.org/> ;
     faqir:questionHasAnswer <https://pods.faqir.org/answer_06_EQ_5D_5L_02_01>,
         <https://pods.faqir.org/answer_06_EQ_5D_5L_02_02>,
         <https://pods.faqir.org/answer_06_EQ_5D_5L_02_03> ;
-    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrquestion_06_EQ_5D_5L_02_en> ;
     faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s01>,
         <https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s02> ;
     faqir:questionType fhir:choice ;
-    ns2:questionCodingParams [ a faqir:ValueCoding ;
-            ns1:code "4" ;
-            ns1:display "I have severe problems washing or dressing myself" ],
+    ns1:questionCodingParams [ a faqir:ValueCoding ;
+            ns2:code "5" ;
+            ns2:display "I am unable to wash or dress myself" ],
         [ a faqir:ValueCoding ;
-            ns1:code "3" ;
-            ns1:display "I have moderate problems washing or dressing myself" ],
+            ns2:code "1" ;
+            ns2:display "I have no problems washing or dressing myself" ],
         [ a faqir:ValueCoding ;
-            ns1:code "2" ;
-            ns1:display "I have slight problems washing or dressing myself" ],
+            ns2:code "2" ;
+            ns2:display "I have slight problems washing or dressing myself" ],
         [ a faqir:ValueCoding ;
-            ns1:code "5" ;
-            ns1:display "I am unable to wash or dress myself" ],
+            ns2:code "4" ;
+            ns2:display "I have severe problems washing or dressing myself" ],
         [ a faqir:ValueCoding ;
-            ns1:code "1" ;
-            ns1:display "I have no problems washing or dressing myself" ] ;
-    ns2:questionRequired false ;
-    ns2:questionTag "q_EQ_5D_5L_02" .
+            ns2:code "3" ;
+            ns2:display "I have moderate problems washing or dressing myself" ] ;
+    ns1:questionLabel "Under each heading, please tick the ONE box that best describes your health TODAY. SELF-CARE." ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_EQ_5D_5L_02" .
 

@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh5"
 questionTag: "q_index_joint_stairs"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh5_en"
-    questionRepresentationText: "Are you aware of your index joint when you are climbing stairs?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh5"
+questionLabel: "Are you aware of your index joint when you are climbing stairs?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

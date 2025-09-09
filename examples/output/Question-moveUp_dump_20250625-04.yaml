@@ -1,12 +1,8 @@
 questionId: https://pods.faqir.org/Fowh3
 questionType: choice
-questionHasQuestionRepresentation:
-- questionRepresentationId: https://pods.faqir.org/qrFowh3_en
-  questionRepresentationOfQuestion: https://pods.faqir.org/Fowh3
-  questionRepresentationText: Are you aware of your index joint when you are taking
-    a bath/shower ?
-  questionRepresentationLanguage: en
 questionTag: q_index_joint_bath_shower
+questionLabel: Are you aware of your index joint when you are taking a bath/shower
+  ?
 questionAuthoredByOrg:
 - https://www.moveup.care/
 questionInOrderedQuestion:

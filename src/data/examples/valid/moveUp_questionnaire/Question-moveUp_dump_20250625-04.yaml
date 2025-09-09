@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh3"
 questionTag: "q_index_joint_bath_shower"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh3_en"
-    questionRepresentationText: "Are you aware of your index joint when you are taking a bath/shower ?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh3"
+questionLabel: "Are you aware of your index joint when you are taking a bath/shower ?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

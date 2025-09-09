@@ -46,9 +46,6 @@
    "QuestionnaireResponse": {
       "@id": "faqir:QuestionnaireResponse"
    },
-   "QuestionRepresentation": {
-      "@id": "faqir:QuestionRepresentation"
-   },
    "ScoreDefinition": {
       "@id": "faqir:ScoreDefinition"
    },

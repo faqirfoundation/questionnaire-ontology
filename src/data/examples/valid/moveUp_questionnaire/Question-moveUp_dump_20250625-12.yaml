@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/questionnaire/Fowh11"
 questionTag: "q_index_joint_favourite_sport"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh11_en"
-    questionRepresentationText: "Are you aware of your index joint when you are doing your favourite sport?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh11"
+questionLabel: "Are you aware of your index joint when you are doing your favourite sport?"
 questionRequired: false
 questionType: choice
 questionCodingParams:

@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh7"
 questionTag: "q_index_joint_standing_up_low_sitting"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh7_en"
-    questionRepresentationText: "Are you aware of your index joint when you are standing up from a low-sitting position?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh7"
+questionLabel: "Are you aware of your index joint when you are standing up from a low-sitting position?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

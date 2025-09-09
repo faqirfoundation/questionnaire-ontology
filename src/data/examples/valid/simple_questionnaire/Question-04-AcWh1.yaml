@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/question_04_AcWh1"
 questionTag: "q_AcWh1"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrquestion_04_AcWh1_en"
-    questionRepresentationText: "What activities did you do today?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/question_04_AcWh1"
+questionLabel: "What activities did you do today?"
 questionRequired: false
 questionType: openChoice
 questionAuthoredByOrg:  

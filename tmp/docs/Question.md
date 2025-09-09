@@ -6,14 +6,13 @@ A question in the questionnaire.
 URI: [datamodel:Question](https://w3id.org/faqir/datamodel/Question)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[QuestionRepresentation],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionId:uriorcurie;questionTag:string;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[QuestionRepresentation]<questionHasQuestionRepresentation%201..*-++[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[QuestionRepresentation]-%20questionRepresentationOfQuestion%201..1>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[QuestionRepresentation],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionId:uriorcurie;questionTag:string;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[QuestionRepresentation]<questionHasQuestionRepresentation%201..*-++[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[QuestionRepresentation]-%20questionRepresentationOfQuestion%201..1>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionId:uriorcurie;questionTag:string;questionLabel:string;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionId:uriorcurie;questionTag:string;questionLabel:string;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])
 
 ## Referenced by Class
 
  *  **[Answer](Answer.md)** *[answerToQuestion](answerToQuestion.md)*  <sub>1..1</sub>  **[Question](Question.md)**
  *  **[OrderedQuestion](OrderedQuestion.md)** *[orderedQuestionHasQuestion](orderedQuestionHasQuestion.md)*  <sub>1..1</sub>  **[Question](Question.md)**
  *  **[Organization](Organization.md)** *[organizationAuthorsQuestion](organizationAuthorsQuestion.md)*  <sub>0..\*</sub>  **[Question](Question.md)**
- *  **[QuestionRepresentation](QuestionRepresentation.md)** *[questionRepresentationOfQuestion](questionRepresentationOfQuestion.md)*  <sub>1..1</sub>  **[Question](Question.md)**
  *  **[ScoreDefinition](ScoreDefinition.md)** *[scoreDefinitionUsesQuestion](scoreDefinitionUsesQuestion.md)*  <sub>1..\*</sub>  **[Question](Question.md)**
 
 ## Attributes
@@ -24,9 +23,6 @@ URI: [datamodel:Question](https://w3id.org/faqir/datamodel/Question)
  * [questionType](questionType.md)  <sub>1..1</sub>
      * Description: Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.
      * Range: [QuestionType](QuestionType.md)
- * [questionHasQuestionRepresentation](questionHasQuestionRepresentation.md)  <sub>1..\*</sub>
-     * Description: QuestionRepresentations that describe the question in each language.
-     * Range: [QuestionRepresentation](QuestionRepresentation.md)
  * [questionAuthoredByOrg](questionAuthoredByOrg.md)  <sub>0..\*</sub>
      * Description: The organization that has designed this Question.
      * Range: [Organization](Organization.md)
@@ -44,6 +40,9 @@ URI: [datamodel:Question](https://w3id.org/faqir/datamodel/Question)
      * Range: [Uriorcurie](types/Uriorcurie.md)
  * [➞questionTag](question__questionTag.md)  <sub>1..1</sub>
      * Description: Internal English identifier, e.g., 'q_pain_level'.
+     * Range: [String](types/String.md)
+ * [➞questionLabel](question__questionLabel.md)  <sub>1..1</sub>
+     * Description: The text of the question itself, which is displayed to the user.
      * Range: [String](types/String.md)
  * [➞questionNumericalParams](question__questionNumericalParams.md)  <sub>0..1</sub>
      * Description: Unit and Precision limiting the quantitative answer for the question.

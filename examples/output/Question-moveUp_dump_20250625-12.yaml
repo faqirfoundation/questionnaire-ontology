@@ -1,12 +1,8 @@
 questionId: https://pods.faqir.org/questionnaire/Fowh11
 questionType: choice
-questionHasQuestionRepresentation:
-- questionRepresentationId: https://pods.faqir.org/qrFowh11_en
-  questionRepresentationOfQuestion: https://pods.faqir.org/Fowh11
-  questionRepresentationText: Are you aware of your index joint when you are doing
-    your favourite sport?
-  questionRepresentationLanguage: en
 questionTag: q_index_joint_favourite_sport
+questionLabel: Are you aware of your index joint when you are doing your favourite
+  sport?
 questionAuthoredByOrg:
 - https://www.moveup.care/
 questionInOrderedQuestion:

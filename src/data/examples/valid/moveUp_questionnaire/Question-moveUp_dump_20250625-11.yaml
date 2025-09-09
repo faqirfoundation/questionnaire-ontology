@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh10"
 questionTag: "q_index_joint_walking_hiking"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh10_en"
-    questionRepresentationText: "Are you aware of your index joint when you are taking a walk/hiking?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh10"
+questionLabel: "Are you aware of your index joint when you are taking a walk/hiking?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

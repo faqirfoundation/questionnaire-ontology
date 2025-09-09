@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh1"
 questionTag: "q_index_joint_sitting_chair"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh1_en"
-    questionRepresentationText: "Are you aware of your index joint when you are sitting on a chair for more than 1 hour ?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh1"
+questionLabel: "Are you aware of your index joint when you are sitting on a chair for more than 1 hour ?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

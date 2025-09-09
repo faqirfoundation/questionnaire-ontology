@@ -7,30 +7,25 @@
 <https://pods.faqir.org/Fowh4> a faqir:Question ;
     faqir:questionAuthoredByOrg <https://www.moveup.care/> ;
     faqir:questionHasAnswer <https://pods.faqir.org/aFowh4> ;
-    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrFowh4_en> ;
     faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedQuestion/orderedFowh4> ;
     faqir:questionType fhir:choice ;
     faqir:questionUsedInScoreDefinition <https://pods.faqir.org/TFJSK> ;
     ns1:questionCodingParams [ a faqir:ValueCoding ;
-            ns2:code "1" ;
-            ns2:display "Almost never" ],
+            ns2:code "4" ;
+            ns2:display "Mostly" ],
         [ a faqir:ValueCoding ;
             ns2:code "2" ;
             ns2:display "Seldom" ],
         [ a faqir:ValueCoding ;
-            ns2:code "0" ;
-            ns2:display "Never" ],
-        [ a faqir:ValueCoding ;
-            ns2:code "4" ;
-            ns2:display "Mostly" ],
+            ns2:code "1" ;
+            ns2:display "Almost never" ],
         [ a faqir:ValueCoding ;
             ns2:code "3" ;
-            ns2:display "Sometimes" ] ;
+            ns2:display "Sometimes" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "0" ;
+            ns2:display "Never" ] ;
+    ns1:questionLabel "Are you aware of your index joint when you are traveling in a car ?" ;
     ns1:questionRequired false ;
     ns1:questionTag "q_index_joint_car" .
-
-<https://pods.faqir.org/qrFowh4_en> a faqir:QuestionRepresentation ;
-    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/Fowh4> ;
-    ns1:questionRepresentationLanguage "en" ;
-    ns1:questionRepresentationText "Are you aware of your index joint when you are traveling in a car ?" .
 

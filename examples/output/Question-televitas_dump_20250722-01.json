@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/86904b4a-989b-4e6e-8c0e-16714f18eeb8",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qr86904b4a-989b-4e6e-8c0e-16714f18eeb8",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/86904b4a-989b-4e6e-8c0e-16714f18eeb8",
-      "questionRepresentationText": "UNKNOWN",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_unknown_televitas",
+  "questionLabel": "UNKNOWN",
   "questionAuthoredByOrg": [
     "https://televitas.com/"
   ],

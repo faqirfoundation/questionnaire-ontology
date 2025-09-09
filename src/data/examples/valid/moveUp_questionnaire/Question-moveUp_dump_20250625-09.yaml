@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh8"
 questionTag: "q_index_joint_standing_long_periods"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh8_en"
-    questionRepresentationText: "Are you aware of your index joint when you are standing for long periods of time?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh8"
+questionLabel: "Are you aware of your index joint when you are standing for long periods of time?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

@@ -584,13 +584,6 @@
                         "null"
                     ]
                 },
-                "questionHasQuestionRepresentation": {
-                    "description": "QuestionRepresentations that describe the question in each language.",
-                    "items": {
-                        "$ref": "#/$defs/QuestionRepresentation"
-                    },
-                    "type": "array"
-                },
                 "questionId": {
                     "description": "The unique identifier for a question in the questionnaire.",
                     "type": "string"
@@ -615,6 +608,10 @@
                         }
                     ],
                     "description": "Minimum and Maximum limiting the range the answer must be in for the question."
+                },
+                "questionLabel": {
+                    "description": "The text of the question itself, which is displayed to the user.",
+                    "type": "string"
                 },
                 "questionNumericalParams": {
                     "anyOf": [
@@ -655,42 +652,11 @@
             },
             "required": [
                 "questionType",
-                "questionHasQuestionRepresentation",
                 "questionId",
-                "questionTag"
+                "questionTag",
+                "questionLabel"
             ],
             "title": "Question",
-            "type": "object"
-        },
-        "QuestionRepresentation": {
-            "additionalProperties": false,
-            "description": "The text representation of the question, in a specific language.",
-            "properties": {
-                "questionRepresentationId": {
-                    "description": "The unique identifier for the question representation.",
-                    "type": "string"
-                },
-                "questionRepresentationLanguage": {
-                    "description": "The language of the question text, represented as a BCP 47 language tag (e.g., 'en', 'fr', 'es').",
-                    "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
-                    "type": "string"
-                },
-                "questionRepresentationOfQuestion": {
-                    "description": "The Question that this QuestionRepresentation describes.",
-                    "type": "string"
-                },
-                "questionRepresentationText": {
-                    "description": "The text of the question as presented to the user.",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "questionRepresentationOfQuestion",
-                "questionRepresentationId",
-                "questionRepresentationText",
-                "questionRepresentationLanguage"
-            ],
-            "title": "QuestionRepresentation",
             "type": "object"
         },
         "QuestionType": {

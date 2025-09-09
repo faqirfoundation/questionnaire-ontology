@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/question_05_EQ_5D_5L_01",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrquestion_05_EQ_5D_5L_01_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/question_05_EQ_5D_5L_01",
-      "questionRepresentationText": "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY.",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_EQ_5D_5L_01",
+  "questionLabel": "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY.",
   "questionAuthoredByOrg": [
     "https://euroqol.org/"
   ],

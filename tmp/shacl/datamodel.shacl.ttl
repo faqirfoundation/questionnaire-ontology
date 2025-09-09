@@ -8,7 +8,7 @@
 <https://faqir.org/datamodel/Metadata> a sh:NodeShape ;
     sh:closed true ;
     sh:description "Base class for metadata tracking (e.g. schema versioning & last updated)." ;
-    sh:ignoredProperties ( <https://w3id.org/faqir/datamodel/vault/weight> <https://w3id.org/faqir/datamodel/vault/full_name> <https://w3id.org/faqir/datamodel/vault/vaultId> <https://w3id.org/faqir/datamodel/vault/birthdate> <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> rdf:type ) ;
+    sh:ignoredProperties ( <https://w3id.org/faqir/datamodel/vault/full_name> <https://w3id.org/faqir/datamodel/vault/weight> rdf:type <https://w3id.org/faqir/datamodel/vault/birthdate> <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> <https://w3id.org/faqir/datamodel/vault/vaultId> <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> ) ;
     sh:property [ sh:datatype xsd:dateTime ;
             sh:description "The date and time when the entity was last updated." ;
             sh:maxCount 1 ;
@@ -40,17 +40,7 @@
     sh:closed true ;
     sh:description "A clinical or administrative process that uses resources like questionnaires" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/Organization> ;
-            sh:description "Organization that manages and perfomes this procedure." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/procedurePerformedByOrg> ],
-        [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
-            sh:description "Questionnaires part of this procedure." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/procedureHasQuestionnaire> ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "Name of the procedure." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -68,74 +58,36 @@
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
-            sh:path <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ] ;
-    sh:targetClass <https://faqir.org/datamodel/Procedure> .
-
-<https://faqir.org/datamodel/QuestionRepresentation> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "The text representation of the question, in a specific language." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "The language of the question text, represented as a BCP 47 language tag (e.g., 'en', 'fr', 'es')." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationLanguage> ;
-            sh:pattern "^[a-z]{2}(-[A-Z]{2})?$" ],
-        [ sh:datatype xsd:anyURI ;
-            sh:description "The unique identifier for the question representation." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
+            sh:path <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ],
+        [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
+            sh:description "Questionnaires part of this procedure." ;
+            sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationId> ],
-        [ sh:datatype xsd:string ;
-            sh:description "The text of the question as presented to the user." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationText> ],
-        [ sh:class <https://faqir.org/datamodel/Question> ;
-            sh:description "The Question that this QuestionRepresentation describes." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
+            sh:path <https://faqir.org/datamodel/procedureHasQuestionnaire> ],
+        [ sh:class <https://faqir.org/datamodel/Organization> ;
+            sh:description "Organization that manages and perfomes this procedure." ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/questionRepresentationOfQuestion> ] ;
-    sh:targetClass <https://faqir.org/datamodel/QuestionRepresentation> .
+            sh:path <https://faqir.org/datamodel/procedurePerformedByOrg> ] ;
+    sh:targetClass <https://faqir.org/datamodel/Procedure> .
 
 <https://faqir.org/datamodel/ScoreParameter> a sh:NodeShape ;
     sh:closed true ;
     sh:description "Parameters for score definitions, such as min/max values, categories or constants needed." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/ValueNumerical> ;
-            sh:description "Numerical value parameter (e.g., 0.785, 82)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical> ],
-        [ sh:datatype xsd:anyURI ;
-            sh:description "Unique identifier for the score parameter." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ],
-        [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
+    sh:property [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
             sh:description "The ScoreDefinition(s) that this ScoreParameter is part of." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path <https://faqir.org/datamodel/scoreParameterPartOfScoreDefinition> ],
-        [ sh:description "Type of parameter: numerical or dateTime." ;
-            sh:in ( xsd:float xsd:dateTime ) ;
+        [ sh:class <https://faqir.org/datamodel/ValueNumerical> ;
+            sh:description "Numerical value parameter (e.g., 0.785, 82)." ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical> ],
         [ sh:datatype xsd:string ;
             sh:description "Label or title of the parameter. Standard English name." ;
             sh:maxCount 1 ;
@@ -143,12 +95,25 @@
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> ],
+        [ sh:description "Type of parameter: numerical or dateTime." ;
+            sh:in ( xsd:float xsd:dateTime ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
         [ sh:class <https://faqir.org/datamodel/ValueDateTime> ;
             sh:description "DateTime value parameter formatted as YYYY-MM-DDThh:mm:ss+zz:zz." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 5 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ] ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "Unique identifier for the score parameter." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ] ;
     sh:targetClass <https://faqir.org/datamodel/ScoreParameter> .
 
 <https://faqir.org/datamodel/ValueCoding> a sh:NodeShape ;
@@ -176,17 +141,17 @@
     sh:description "Structured full name." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "Middle name." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/faqir/datamodel/vault/middle_name> ],
-        [ sh:datatype xsd:string ;
             sh:description "Given or first name." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path <https://w3id.org/faqir/datamodel/vault/first_name> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Middle name." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/faqir/datamodel/vault/middle_name> ],
         [ sh:datatype xsd:string ;
             sh:description "Family or last name." ;
             sh:maxCount 1 ;
@@ -199,39 +164,46 @@
     sh:closed true ;
     sh:description "Weight." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:decimal ;
+    sh:property [ sh:description "The type of weight measurement, e.g. measured or stated." ;
+            sh:in ( loinc:3141-9 loinc:3142-7 ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/faqir/datamodel/vault/weightType> ],
+        [ sh:datatype xsd:decimal ;
             sh:description "The quantitative value, which can be an integer or a float." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
-            sh:path <https://w3id.org/faqir/datamodel/core/types/numericalValue> ],
-        [ sh:description "The type of weight measurement, e.g. measured or stated." ;
-            sh:in ( loinc:3141-9 loinc:3142-7 ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/faqir/datamodel/vault/weightType> ] ;
+            sh:path <https://w3id.org/faqir/datamodel/core/types/numericalValue> ] ;
     sh:targetClass <https://w3id.org/faqir/datamodel/vault/Weight> .
 
 <https://faqir.org/datamodel/Answer> a sh:NodeShape ;
     sh:closed true ;
     sh:description "Answer in the questionnaire response." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/QuestionnaireResponse> ;
-            sh:description "The QuestionnaireResponse that this Answer is part of." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/answerInQuestionnaireResponse> ],
-        [ sh:datatype xsd:anyURI ;
+    sh:property [ sh:datatype xsd:anyURI ;
             sh:description "The unique identifier for an answer in the questionnaire response." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ],
+        [ sh:class <https://faqir.org/datamodel/Question> ;
+            sh:description "The Question that this Answer is for." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/answerToQuestion> ],
+        [ sh:class <https://faqir.org/datamodel/QuestionnaireResponse> ;
+            sh:description "The QuestionnaireResponse that this Answer is part of." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/answerInQuestionnaireResponse> ],
         [ sh:class <https://faqir.org/datamodel/ValueDateTime> ;
             sh:description "The value of the answer to a dateTime type of question, which is a datetime value." ;
             sh:maxCount 1 ;
@@ -244,55 +216,43 @@
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerIsEmpty> ],
-        [ sh:datatype xsd:dateTime ;
-            sh:description "The exact date and time when the answer was provided." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
         [ sh:class <https://faqir.org/datamodel/ValueNumerical> ;
             sh:description "The value of the answer to a decimal or numberInterval type of question, which is a numeric value." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 4 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical> ],
-        [ sh:class <https://faqir.org/datamodel/Question> ;
-            sh:description "The Question that this Answer is for." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/answerToQuestion> ],
-        [ sh:class <https://faqir.org/datamodel/ValueString> ;
-            sh:description "The value of the answer to a choice, openChoice or text type of question, which is a stringValue." ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString> ],
         [ sh:description "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers." ;
             sh:in ( fhir:choice fhir:open-choice fhir:number fhir:decimal fhir:dateTime fhir:string ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/questionType> ] ;
+            sh:path <https://faqir.org/datamodel/questionType> ],
+        [ sh:class <https://faqir.org/datamodel/ValueString> ;
+            sh:description "The value of the answer to a choice, openChoice or text type of question, which is a stringValue." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString> ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The exact date and time when the answer was provided." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ] ;
     sh:targetClass <https://faqir.org/datamodel/Answer> .
 
 <https://faqir.org/datamodel/IntervalParams> a sh:NodeShape ;
     sh:closed true ;
     sh:description "Parameters for interval values, including minimum and maximum values." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "The label for the maximum value of the interval." ;
+    sh:property [ sh:datatype xsd:float ;
+            sh:description "The maximum value of the interval." ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/faqir/datamodel/core/types/maxLabel> ],
-        [ sh:datatype xsd:string ;
-            sh:description "The label for the minimum value of the interval." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
+            sh:order 2 ;
+            sh:path <https://w3id.org/faqir/datamodel/core/types/maxValue> ],
         [ sh:datatype xsd:float ;
             sh:description "The minimum value of the interval." ;
             sh:maxCount 1 ;
@@ -300,13 +260,18 @@
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path <https://w3id.org/faqir/datamodel/core/types/minValue> ],
-        [ sh:datatype xsd:float ;
-            sh:description "The maximum value of the interval." ;
+        [ sh:datatype xsd:string ;
+            sh:description "The label for the minimum value of the interval." ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/faqir/datamodel/core/types/maxValue> ] ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The label for the maximum value of the interval." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/faqir/datamodel/core/types/maxLabel> ] ;
     sh:targetClass <https://faqir.org/datamodel/IntervalParams> .
 
 <https://faqir.org/datamodel/ScoreValue> a sh:NodeShape ;
@@ -319,19 +284,6 @@
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 4 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString> ],
-        [ sh:datatype xsd:dateTime ;
-            sh:description "Timestamp when the score value was calculated." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> ],
-        [ sh:description "Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values." ;
-            sh:in ( xsd:float xsd:integer xsd:float xsd:float xsd:float xsd:NMTOKENS ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/scoreDefinitionType> ],
         [ sh:description "Status of the score value, e.g., draft, final." ;
             sh:in ( "valid" "incomplete" "estimated" "warning" "error" "pending" "amended" ) ;
             sh:maxCount 1 ;
@@ -350,20 +302,33 @@
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 5 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical> ],
-        [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
-            sh:description "The ScoreDefinition that this ScoreValue is based on." ;
+        [ sh:datatype xsd:dateTime ;
+            sh:description "Timestamp when the score value was calculated." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/scoreValueBasedOnScoreDefinition> ],
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> ],
         [ sh:datatype xsd:anyURI ;
             sh:description "Unique identifier for the score value." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ] ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ],
+        [ sh:description "Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values." ;
+            sh:in ( xsd:float xsd:integer xsd:float xsd:float xsd:float xsd:NMTOKENS ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/scoreDefinitionType> ],
+        [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
+            sh:description "The ScoreDefinition that this ScoreValue is based on." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/scoreValueBasedOnScoreDefinition> ] ;
     sh:targetClass <https://faqir.org/datamodel/ScoreValue> .
 
 <https://faqir.org/datamodel/ValueDateTime> a sh:NodeShape ;
@@ -402,23 +367,6 @@
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path <https://w3id.org/faqir/datamodel/vault/vaultId> ],
-        [ sh:class <https://faqir.org/datamodel/QuestionnaireResponse> ;
-            sh:description "QuestionnaireResponse authored by this vault's user." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> ],
-        [ sh:datatype xsd:dateTime ;
-            sh:description "The date of birth." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/faqir/datamodel/vault/birthdate> ],
-        [ sh:class <https://w3id.org/faqir/datamodel/vault/Weight> ;
-            sh:description "The weight of the vault's user." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/faqir/datamodel/vault/weight> ],
         [ sh:class <https://w3id.org/faqir/datamodel/vault/FullName> ;
             sh:description "The full name of the vault's user." ;
             sh:maxCount 1 ;
@@ -426,12 +374,29 @@
             sh:order 5 ;
             sh:path <https://w3id.org/faqir/datamodel/vault/full_name> ],
         [ sh:datatype xsd:dateTime ;
+            sh:description "The date of birth." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/faqir/datamodel/vault/birthdate> ],
+        [ sh:class <https://faqir.org/datamodel/QuestionnaireResponse> ;
+            sh:description "QuestionnaireResponse authored by this vault's user." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> ],
+        [ sh:datatype xsd:dateTime ;
             sh:description "The date and time when the entity was last updated." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
             sh:path <https://w3id.org/faqir/datamodel/core/versions/lastUpdated> ],
+        [ sh:class <https://w3id.org/faqir/datamodel/vault/Weight> ;
+            sh:description "The weight of the vault's user." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/faqir/datamodel/vault/weight> ],
         [ sh:class <https://faqir.org/datamodel/Organization> ;
             sh:description "Organization managing this vault." ;
             sh:maxCount 1 ;
@@ -445,25 +410,13 @@
     sh:closed true ;
     sh:description "Question's position within a specific questionnaire or section." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
-            sh:description "The Questionnaire that this Question is part of in the specified order." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/orderedQuestionPartOfQuestionnaire> ],
-        [ sh:datatype xsd:anyURI ;
+    sh:property [ sh:datatype xsd:anyURI ;
             sh:description "The unique identifier for the ordered question." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedQuestionId> ],
-        [ sh:class <https://faqir.org/datamodel/Section> ;
-            sh:description "The Section that this Question is part of in the specified order." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/orderedQuestionPartOfSection> ],
         [ sh:datatype xsd:integer ;
             sh:description "Question position in the questionnaire or section (1-based index)." ;
             sh:maxCount 1 ;
@@ -472,25 +425,44 @@
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> ],
+        [ sh:class <https://faqir.org/datamodel/Section> ;
+            sh:description "The Section that this Question is part of in the specified order." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path <https://faqir.org/datamodel/orderedQuestionPartOfSection> ],
         [ sh:class <https://faqir.org/datamodel/Question> ;
             sh:description "Question indexed in this OrderedQuestion." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/orderedQuestionHasQuestion> ] ;
+            sh:path <https://faqir.org/datamodel/orderedQuestionHasQuestion> ],
+        [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
+            sh:description "The Questionnaire that this Question is part of in the specified order." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/orderedQuestionPartOfQuestionnaire> ] ;
     sh:targetClass <https://faqir.org/datamodel/OrderedQuestion> .
 
 <https://faqir.org/datamodel/OrderedSection> a sh:NodeShape ;
     sh:closed true ;
     sh:description "Section's position within a specific questionnaire or section." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
-            sh:description "The Questionnaire that this Section is part of in the specified order." ;
+    sh:property [ sh:class <https://faqir.org/datamodel/Section> ;
+            sh:description "Section indexed in this OrderedSection." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/orderedSectionHasSection> ],
+        [ sh:class <https://faqir.org/datamodel/Section> ;
+            sh:description "The Section that this Section is part of in the specified order." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/orderedSectionPartOfQuestionnaire> ],
+            sh:order 2 ;
+            sh:path <https://faqir.org/datamodel/orderedSectionPartOfSection> ],
         [ sh:datatype xsd:anyURI ;
             sh:description "The unique identifier for the ordered Section." ;
             sh:maxCount 1 ;
@@ -498,19 +470,12 @@
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedSectionId> ],
-        [ sh:class <https://faqir.org/datamodel/Section> ;
-            sh:description "The Section that this Section is part of in the specified order." ;
+        [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
+            sh:description "The Questionnaire that this Section is part of in the specified order." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/orderedSectionPartOfSection> ],
-        [ sh:class <https://faqir.org/datamodel/Section> ;
-            sh:description "Section indexed in this OrderedSection." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/orderedSectionHasSection> ],
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/orderedSectionPartOfQuestionnaire> ],
         [ sh:datatype xsd:integer ;
             sh:description "Section position in the questionnaire or section (1-based index)." ;
             sh:maxCount 1 ;
@@ -534,22 +499,100 @@
             sh:path <https://w3id.org/faqir/datamodel/core/types/numericalValue> ] ;
     sh:targetClass <https://faqir.org/datamodel/ValueNumerical> .
 
-<https://faqir.org/datamodel/QuestionnaireResponse> a sh:NodeShape ;
+<https://faqir.org/datamodel/Question> a sh:NodeShape ;
     sh:closed true ;
-    sh:description "A response to a questionnaire (collection of answers)." ;
+    sh:description "A question in the questionnaire." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:dateTime ;
-            sh:description "The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished)." ;
+    sh:property [ sh:class <https://faqir.org/datamodel/IntervalParams> ;
+            sh:description "Minimum and Maximum limiting the range the answer must be in for the question." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The text of the question itself, which is displayed to the user." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
+        [ sh:class <https://faqir.org/datamodel/NumericalParams> ;
+            sh:description "Unit and Precision limiting the quantitative answer for the question." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
+        [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
+            sh:description "The ScoreDefinition that this Question is used in." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path <https://faqir.org/datamodel/questionUsedInScoreDefinition> ],
+        [ sh:class <https://faqir.org/datamodel/Answer> ;
+            sh:description "The Answer to this Question." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path <https://faqir.org/datamodel/questionHasAnswer> ],
+        [ sh:class <https://faqir.org/datamodel/Organization> ;
+            sh:description "The organization that has designed this Question." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/questionAuthoredByOrg> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Internal English identifier, e.g., 'q_pain_level'." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
-        [ sh:class <https://faqir.org/datamodel/ScoreValue> ;
-            sh:description "The ScoreValue that is calculated from this QuestionnaireResponse's answers." ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
+        [ sh:class <https://faqir.org/datamodel/ValueCoding> ;
+            sh:description "Code and Display of each option offered as answer to the choice or open-choice question." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams> ],
+        [ sh:class <https://faqir.org/datamodel/OrderedQuestion> ;
+            sh:description "OrderedQuestions that this Question is indexed in." ;
             sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path <https://faqir.org/datamodel/questionnaireResponseHasDerivedScoreValue> ],
+            sh:order 2 ;
+            sh:path <https://faqir.org/datamodel/questionInOrderedQuestion> ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The unique identifier for a question in the questionnaire." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Indicates whether answering this question is mandatory (true) or it's optional (false)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
+        [ sh:description "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers." ;
+            sh:in ( fhir:choice fhir:open-choice fhir:number fhir:decimal fhir:dateTime fhir:string ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/questionType> ] ;
+    sh:targetClass <https://faqir.org/datamodel/Question> .
+
+<https://faqir.org/datamodel/QuestionnaireResponse> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A response to a questionnaire (collection of answers)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://faqir.org/datamodel/vault> ;
+            sh:description "The subject that has authored this QuestionnaireResponse." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/questionnaireResponseBySubject> ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the questionnaire response was last updated." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ],
         [ sh:datatype xsd:anyURI ;
             sh:description "The unique identifier for a specific questionnaire response." ;
             sh:maxCount 1 ;
@@ -563,19 +606,18 @@
             sh:minCount 1 ;
             sh:order 5 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> ],
-        [ sh:class <https://faqir.org/datamodel/vault> ;
-            sh:description "The subject that has authored this QuestionnaireResponse." ;
+        [ sh:class <https://faqir.org/datamodel/ScoreValue> ;
+            sh:description "The ScoreValue that is calculated from this QuestionnaireResponse's answers." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path <https://faqir.org/datamodel/questionnaireResponseHasDerivedScoreValue> ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished)." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/questionnaireResponseBySubject> ],
-        [ sh:class <https://faqir.org/datamodel/Answer> ;
-            sh:description "The Answer that is part of this QuestionnaireResponse." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/questionnaireResponseHasAnswer> ],
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
         [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
             sh:description "The Questionnaire that this QuestionnaireResponse is for." ;
             sh:maxCount 1 ;
@@ -583,26 +625,33 @@
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path <https://faqir.org/datamodel/questionnaireResponseToQuestionnaire> ],
-        [ sh:datatype xsd:dateTime ;
-            sh:description "The date and time when the questionnaire response was last updated." ;
-            sh:maxCount 1 ;
+        [ sh:class <https://faqir.org/datamodel/Answer> ;
+            sh:description "The Answer that is part of this QuestionnaireResponse." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ] ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path <https://faqir.org/datamodel/questionnaireResponseHasAnswer> ] ;
     sh:targetClass <https://faqir.org/datamodel/QuestionnaireResponse> .
 
 <https://faqir.org/datamodel/ScoreDefinition> a sh:NodeShape ;
     sh:closed true ;
     sh:description "A score calculated from questions." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "Label or title of the score definition." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
+    sh:property [ sh:class <https://faqir.org/datamodel/Organization> ;
+            sh:description "The Organization that has created this ScoreDefinition." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path <https://faqir.org/datamodel/scoreDefinitionAuthoredByOrg> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Categories for categorical scores." ;
             sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> ],
+            sh:order 9 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionCategories> ],
+        [ sh:class <https://faqir.org/datamodel/ScoreParameter> ;
+            sh:description "The ScoreParameter that is required for this ScoreDefinition." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/scoreDefinitionHasScoreParameter> ],
         [ sh:datatype xsd:anyURI ;
             sh:description "Unique identifier for the score definition." ;
             sh:maxCount 1 ;
@@ -611,26 +660,25 @@
             sh:order 5 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
         [ sh:datatype xsd:string ;
-            sh:description "Categories for categorical scores." ;
+            sh:description "The formula used to calculate the score." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionCategories> ],
+            sh:order 8 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
         [ sh:class <https://faqir.org/datamodel/IntervalParams> ;
             sh:description "Minimum and maximum values for numerical_percentage and numerical_z_score scores." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 7 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams> ],
-        [ sh:class <https://faqir.org/datamodel/ScoreParameter> ;
-            sh:description "The ScoreParameter that is required for this ScoreDefinition." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/scoreDefinitionHasScoreParameter> ],
-        [ sh:class <https://faqir.org/datamodel/Organization> ;
-            sh:description "The Organization that has created this ScoreDefinition." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path <https://faqir.org/datamodel/scoreDefinitionAuthoredByOrg> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Label or title of the score definition." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> ],
         [ sh:class <https://faqir.org/datamodel/ScoreValue> ;
             sh:description "The ScoreValue that is calculated following this ScoreDefinition." ;
             sh:nodeKind sh:IRI ;
@@ -642,13 +690,6 @@
             sh:nodeKind sh:Literal ;
             sh:order 10 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> ],
-        [ sh:datatype xsd:string ;
-            sh:description "The formula used to calculate the score." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
         [ sh:description "Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values." ;
             sh:in ( xsd:float xsd:integer xsd:float xsd:float xsd:float xsd:NMTOKENS ) ;
             sh:maxCount 1 ;
@@ -667,11 +708,11 @@
     sh:closed true ;
     sh:description "A section of questions in the questionnaire." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/OrderedQuestion> ;
-            sh:description "The Question that is part of this Section, with their display order." ;
+    sh:property [ sh:class <https://faqir.org/datamodel/OrderedSection> ;
+            sh:description "The Section that is part of this Section." ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/sectionHasOrderedQuestion> ],
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/sectionHasOrderedSection> ],
         [ sh:datatype xsd:string ;
             sh:description "The label or title of the section, which is displayed to the user." ;
             sh:maxCount 1 ;
@@ -679,11 +720,11 @@
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> ],
-        [ sh:class <https://faqir.org/datamodel/Organization> ;
-            sh:description "The Organization that has created this Section." ;
+        [ sh:class <https://faqir.org/datamodel/OrderedQuestion> ;
+            sh:description "The Question that is part of this Section, with their display order." ;
             sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path <https://faqir.org/datamodel/sectionAuthoredByOrg> ],
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/sectionHasOrderedQuestion> ],
         [ sh:datatype xsd:anyURI ;
             sh:description "The unique identifier for a section in the questionnaire." ;
             sh:maxCount 1 ;
@@ -691,11 +732,11 @@
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionId> ],
-        [ sh:class <https://faqir.org/datamodel/OrderedSection> ;
-            sh:description "The Section that is part of this Section." ;
+        [ sh:class <https://faqir.org/datamodel/Organization> ;
+            sh:description "The Organization that has created this Section." ;
             sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/sectionHasOrderedSection> ],
+            sh:order 3 ;
+            sh:path <https://faqir.org/datamodel/sectionAuthoredByOrg> ],
         [ sh:class <https://faqir.org/datamodel/OrderedSection> ;
             sh:description "OrderedSections that this Section is indexed in." ;
             sh:nodeKind sh:IRI ;
@@ -703,86 +744,34 @@
             sh:path <https://faqir.org/datamodel/sectionInOrderedSection> ] ;
     sh:targetClass <https://faqir.org/datamodel/Section> .
 
-<https://faqir.org/datamodel/Question> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A question in the questionnaire." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
-            sh:description "The ScoreDefinition that this Question is used in." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path <https://faqir.org/datamodel/questionUsedInScoreDefinition> ],
-        [ sh:class <https://faqir.org/datamodel/IntervalParams> ;
-            sh:description "Minimum and Maximum limiting the range the answer must be in for the question." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 10 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams> ],
-        [ sh:class <https://faqir.org/datamodel/Answer> ;
-            sh:description "The Answer to this Question." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path <https://faqir.org/datamodel/questionHasAnswer> ],
-        [ sh:datatype xsd:anyURI ;
-            sh:description "The unique identifier for a question in the questionnaire." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
-        [ sh:class <https://faqir.org/datamodel/QuestionRepresentation> ;
-            sh:description "QuestionRepresentations that describe the question in each language." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/questionHasQuestionRepresentation> ],
-        [ sh:class <https://faqir.org/datamodel/ValueCoding> ;
-            sh:description "Code and Display of each option offered as answer to the choice or open-choice question." ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 9 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams> ],
-        [ sh:datatype xsd:string ;
-            sh:description "Internal English identifier, e.g., 'q_pain_level'." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
-        [ sh:description "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers." ;
-            sh:in ( fhir:choice fhir:open-choice fhir:number fhir:decimal fhir:dateTime fhir:string ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/questionType> ],
-        [ sh:class <https://faqir.org/datamodel/NumericalParams> ;
-            sh:description "Unit and Precision limiting the quantitative answer for the question." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
-        [ sh:class <https://faqir.org/datamodel/OrderedQuestion> ;
-            sh:description "OrderedQuestions that this Question is indexed in." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path <https://faqir.org/datamodel/questionInOrderedQuestion> ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Indicates whether answering this question is mandatory (true) or it's optional (false)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 11 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
-        [ sh:class <https://faqir.org/datamodel/Organization> ;
-            sh:description "The organization that has designed this Question." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/questionAuthoredByOrg> ] ;
-    sh:targetClass <https://faqir.org/datamodel/Question> .
-
 <https://faqir.org/datamodel/Questionnaire> a sh:NodeShape ;
     sh:closed true ;
     sh:description "A questionnaire that can be answered (collection of questions)." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
+    sh:property [ sh:class <https://faqir.org/datamodel/Procedure> ;
+            sh:description "Procedure this questionnaire is part of." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path <https://faqir.org/datamodel/questionnairePartOfProcedure> ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The unique identifier for the questionnaire." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
+        [ sh:description "The status of the questionnaire, indicating whether it is draft, active, retired or unknown." ;
+            sh:in ( fhir:resource-status-draft fhir:resource-status-active fhir:resource-status-retired fhir:resource-status-unknown ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
+        [ sh:class <https://faqir.org/datamodel/OrderedQuestion> ;
+            sh:description "The Question that is part of this Questionnaire, with their display order." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/questionnaireHasOrderedQuestion> ],
+        [ sh:datatype xsd:string ;
             sh:description "The label or title of the questionnaire, which is displayed to the user." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -796,34 +785,6 @@
             sh:nodeKind sh:Literal ;
             sh:order 9 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> ],
-        [ sh:class <https://faqir.org/datamodel/OrderedQuestion> ;
-            sh:description "The Question that is part of this Questionnaire, with their display order." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/questionnaireHasOrderedQuestion> ],
-        [ sh:datatype xsd:anyURI ;
-            sh:description "The unique identifier for the questionnaire." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
-        [ sh:class <https://faqir.org/datamodel/OrderedSection> ;
-            sh:description "The Section that is part of this Questionnaire, with their display order." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/questionnaireHasOrderedSection> ],
-        [ sh:class <https://faqir.org/datamodel/Organization> ;
-            sh:description "The Organization that has created this Questionnaire." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path <https://faqir.org/datamodel/questionnaireAuthoredByOrg> ],
-        [ sh:description "The status of the questionnaire, indicating whether it is draft, active, retired or unknown." ;
-            sh:in ( fhir:resource-status-draft fhir:resource-status-active fhir:resource-status-retired fhir:resource-status-unknown ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
         [ sh:datatype xsd:string ;
             sh:description "Version of the questionnaire." ;
             sh:maxCount 1 ;
@@ -832,11 +793,16 @@
             sh:order 8 ;
             sh:path <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> ;
             sh:pattern "^\\d+\\.\\d+\\.\\d+$" ],
-        [ sh:class <https://faqir.org/datamodel/Procedure> ;
-            sh:description "Procedure this questionnaire is part of." ;
+        [ sh:class <https://faqir.org/datamodel/Organization> ;
+            sh:description "The Organization that has created this Questionnaire." ;
             sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path <https://faqir.org/datamodel/questionnairePartOfProcedure> ],
+            sh:order 3 ;
+            sh:path <https://faqir.org/datamodel/questionnaireAuthoredByOrg> ],
+        [ sh:class <https://faqir.org/datamodel/OrderedSection> ;
+            sh:description "The Section that is part of this Questionnaire, with their display order." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path <https://faqir.org/datamodel/questionnaireHasOrderedSection> ],
         [ sh:class <https://faqir.org/datamodel/QuestionnaireResponse> ;
             sh:description "The QuestionnaireResponse that is associated with this Questionnaire." ;
             sh:nodeKind sh:IRI ;
@@ -848,49 +814,49 @@
     sh:closed true ;
     sh:description "An entity acting in a healthcare context" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "Type of organization." ;
-            sh:in ( <https://www.hl7.org/fhir/organization-type#prov> <https://www.hl7.org/fhir/organization-type#gov> <https://www.hl7.org/fhir/organization-type#ind> <https://www.hl7.org/fhir/organization-type#edu> <https://www.hl7.org/fhir/organization-type#bus> ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
-        [ sh:class <https://faqir.org/datamodel/Section> ;
-            sh:description "Section created by this organization." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <https://faqir.org/datamodel/organizationAuthorsSection> ],
-        [ sh:datatype xsd:anyURI ;
+    sh:property [ sh:datatype xsd:anyURI ;
             sh:description "Unique identifier of the organization." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ],
+        [ sh:class <https://faqir.org/datamodel/Section> ;
+            sh:description "Section created by this organization." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path <https://faqir.org/datamodel/organizationAuthorsSection> ],
+        [ sh:class <https://faqir.org/datamodel/vault> ;
+            sh:description "Vault managed by this organization." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path <https://faqir.org/datamodel/organizationManagesVault> ],
+        [ sh:class <https://faqir.org/datamodel/Question> ;
+            sh:description "Question created by this organization." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path <https://faqir.org/datamodel/organizationAuthorsQuestion> ],
+        [ sh:description "Type of organization." ;
+            sh:in ( <https://www.hl7.org/fhir/organization-type#prov> <https://www.hl7.org/fhir/organization-type#gov> <https://www.hl7.org/fhir/organization-type#ind> <https://www.hl7.org/fhir/organization-type#edu> <https://www.hl7.org/fhir/organization-type#bus> ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
         [ sh:class <https://faqir.org/datamodel/ScoreDefinition> ;
             sh:description "Score definition created by this organization." ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path <https://faqir.org/datamodel/organizationAuthorsScoreDefinition> ],
+        [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
+            sh:description "Questionnaire created by this organization." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <https://faqir.org/datamodel/organizationAuthorsQuestionnaire> ],
         [ sh:datatype xsd:string ;
             sh:description "Name of the organization." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
-            sh:path <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
-        [ sh:class <https://faqir.org/datamodel/Questionnaire> ;
-            sh:description "Questionnaire created by this organization." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <https://faqir.org/datamodel/organizationAuthorsQuestionnaire> ],
-        [ sh:class <https://faqir.org/datamodel/Question> ;
-            sh:description "Question created by this organization." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path <https://faqir.org/datamodel/organizationAuthorsQuestion> ],
-        [ sh:class <https://faqir.org/datamodel/vault> ;
-            sh:description "Vault managed by this organization." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path <https://faqir.org/datamodel/organizationManagesVault> ] ;
+            sh:path <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ] ;
     sh:targetClass <https://faqir.org/datamodel/Organization> .
 

@@ -167,16 +167,6 @@ slots:
     slot_uri: "faqir:questionUsedInScoreDefinition"
     inverse: scoreDefinitionUsesQuestion
 
-  questionHasQuestionRepresentation:
-    description: "QuestionRepresentations that describe the question in each language."
-    domain: Question
-    range: QuestionRepresentation
-    required: true
-    multivalued: true
-    inlined_as_list: true # Important to be able to express it nested in YAML
-    slot_uri: "faqir:questionHasQuestionRepresentation"
-    inverse: questionRepresentationOfQuestion
-
   #OrderedQuestion relationships
   orderedQuestionHasQuestion:
     description: "Question indexed in this OrderedQuestion."
@@ -208,16 +198,6 @@ slots:
     mappings:
       - "fhir:Questionnaire.item"
     inverse: sectionHasOrderedQuestion 
-
-  # QuestionRepresentation relationships
-  questionRepresentationOfQuestion:
-    description: "The Question that this QuestionRepresentation describes."
-    domain: QuestionRepresentation
-    range: Question
-    required: true
-    multivalued: false
-    slot_uri: "faqir:questionRepresentationOfQuestion"
-    inverse: questionHasQuestionRepresentation
 
   # Section relationships
   sectionHasOrderedQuestion:

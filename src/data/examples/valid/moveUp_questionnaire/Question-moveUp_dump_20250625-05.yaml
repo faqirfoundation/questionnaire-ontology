@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh4"
 questionTag: "q_index_joint_car"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh4_en"
-    questionRepresentationText: "Are you aware of your index joint when you are traveling in a car ?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh4"
+questionLabel: "Are you aware of your index joint when you are traveling in a car ?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

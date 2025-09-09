@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/Fowh2",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFowh2_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/Fowh2",
-      "questionRepresentationText": "Are you aware of your index joint when you are walking for more than 15 minutes?",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_index_joint_walking_15min",
+  "questionLabel": "Are you aware of your index joint when you are walking for more than 15 minutes?",
   "questionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

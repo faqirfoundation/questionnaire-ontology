@@ -1,15 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/question_01_hours_slept",
   "questionType": "decimal",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrquestion_01_hours_slept_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/question_01_hours_slept",
-      "questionRepresentationText": "How many hours did you sleep last night?",
-      "questionRepresentationLanguage": "en"
-    }
-  ],
   "questionTag": "q_hours_slept",
+  "questionLabel": "How many hours did you sleep last night?",
   "questionInOrderedQuestion": [
     "https://pods.faqir.org/orderedquestion_01_hours_slept_q01"
   ],

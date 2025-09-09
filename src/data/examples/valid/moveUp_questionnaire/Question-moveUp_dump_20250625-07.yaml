@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/Fowh6"
 questionTag: "q_index_joint_walking_uneven_ground"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrFowh6_en"
-    questionRepresentationText: "Are you aware of your index joint when you are walking on uneven ground ?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/Fowh6"
+questionLabel: "Are you aware of your index joint when you are walking on uneven ground ?"
 questionRequired: false
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"

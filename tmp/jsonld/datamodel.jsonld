@@ -1255,28 +1255,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "questionHasQuestionRepresentation",
-      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionHasQuestionRepresentation",
-      "description": "QuestionRepresentations that describe the question in each language.",
-      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots",
-      "mappings": [
-        "https://faqir.org/datamodel/questionHasQuestionRepresentation"
-      ],
-      "domain": "Question",
-      "slot_uri": "https://faqir.org/datamodel/questionHasQuestionRepresentation",
-      "owner": "Question",
-      "domain_of": [
-        "Question"
-      ],
-      "inverse": "questionRepresentationOfQuestion",
-      "range": "QuestionRepresentation",
-      "required": true,
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "orderedQuestionHasQuestion",
       "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionHasQuestion",
       "description": "Question indexed in this OrderedQuestion.",
@@ -1331,25 +1309,6 @@
       ],
       "inverse": "sectionHasOrderedQuestion",
       "range": "Section",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "questionRepresentationOfQuestion",
-      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionRepresentationOfQuestion",
-      "description": "The Question that this QuestionRepresentation describes.",
-      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots",
-      "mappings": [
-        "https://faqir.org/datamodel/questionRepresentationOfQuestion"
-      ],
-      "domain": "QuestionRepresentation",
-      "slot_uri": "https://faqir.org/datamodel/questionRepresentationOfQuestion",
-      "owner": "QuestionRepresentation",
-      "domain_of": [
-        "QuestionRepresentation"
-      ],
-      "inverse": "questionHasQuestionRepresentation",
-      "range": "Question",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2207,6 +2166,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "question__questionLabel",
+      "description": "The text of the question itself, which is displayed to the user.",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
+      "slot_uri": "https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel",
+      "alias": "questionLabel",
+      "owner": "Question",
+      "domain_of": [
+        "Question"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "question__questionNumericalParams",
       "description": "Unit and Precision limiting the quantitative answer for the question.",
       "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
@@ -2264,50 +2237,6 @@
         "Question"
       ],
       "range": "boolean",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "questionRepresentation__questionRepresentationId",
-      "description": "The unique identifier for the question representation.",
-      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
-      "slot_uri": "https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationId",
-      "identifier": true,
-      "alias": "questionRepresentationId",
-      "owner": "QuestionRepresentation",
-      "domain_of": [
-        "QuestionRepresentation"
-      ],
-      "range": "uriorcurie",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "questionRepresentation__questionRepresentationText",
-      "description": "The text of the question as presented to the user.",
-      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
-      "slot_uri": "https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationText",
-      "alias": "questionRepresentationText",
-      "owner": "QuestionRepresentation",
-      "domain_of": [
-        "QuestionRepresentation"
-      ],
-      "range": "string",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "questionRepresentation__questionRepresentationLanguage",
-      "description": "The language of the question text, represented as a BCP 47 language tag (e.g., 'en', 'fr', 'es').",
-      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
-      "slot_uri": "https://w3id.org/faqir/datamodel/questionnaire/classes/questionRepresentationLanguage",
-      "alias": "questionRepresentationLanguage",
-      "owner": "QuestionRepresentation",
-      "domain_of": [
-        "QuestionRepresentation"
-      ],
-      "range": "string",
-      "required": true,
-      "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
       "@type": "SlotDefinition"
     },
     {
@@ -3409,13 +3338,13 @@
       ],
       "slots": [
         "questionType",
-        "questionHasQuestionRepresentation",
         "questionAuthoredByOrg",
         "questionInOrderedQuestion",
         "questionHasAnswer",
         "questionUsedInScoreDefinition",
         "question__questionId",
         "question__questionTag",
+        "question__questionLabel",
         "question__questionNumericalParams",
         "question__questionCodingParams",
         "question__questionIntervalParams",
@@ -3434,6 +3363,13 @@
         {
           "name": "questionTag",
           "description": "Internal English identifier, e.g., 'q_pain_level'.",
+          "range": "string",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "questionLabel",
+          "description": "The text of the question itself, which is displayed to the user.",
           "range": "string",
           "required": true,
           "@type": "SlotDefinition"
@@ -3555,49 +3491,6 @@
           "@type": "ClassRule"
         }
       ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "QuestionRepresentation",
-      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionRepresentation",
-      "description": "The text representation of the question, in a specific language.",
-      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
-      "mappings": [
-        "faqir:QuestionRepresentation"
-      ],
-      "slots": [
-        "questionRepresentationOfQuestion",
-        "questionRepresentation__questionRepresentationId",
-        "questionRepresentation__questionRepresentationText",
-        "questionRepresentation__questionRepresentationLanguage"
-      ],
-      "slot_usage": {},
-      "attributes": [
-        {
-          "name": "questionRepresentationId",
-          "description": "The unique identifier for the question representation.",
-          "identifier": true,
-          "range": "uriorcurie",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "questionRepresentationText",
-          "description": "The text of the question as presented to the user.",
-          "range": "string",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "questionRepresentationLanguage",
-          "description": "The language of the question text, represented as a BCP 47 language tag (e.g., 'en', 'fr', 'es').",
-          "range": "string",
-          "required": true,
-          "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
-          "@type": "SlotDefinition"
-        }
-      ],
-      "class_uri": "https://faqir.org/datamodel/QuestionRepresentation",
       "@type": "ClassDefinition"
     },
     {
@@ -4120,7 +4013,7 @@
   "source_file": "datamodel.yaml",
   "source_file_date": "2025-08-22T13:25:34",
   "source_file_size": 780,
-  "generation_date": "2025-09-08T18:08:02",
+  "generation_date": "2025-09-09T11:37:40",
   "@type": "SchemaDefinition",
   "@context": [
     "tmp/jsonld/datamodel.context.jsonld",

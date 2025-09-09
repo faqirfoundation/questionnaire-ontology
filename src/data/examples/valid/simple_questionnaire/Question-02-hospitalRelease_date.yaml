@@ -1,11 +1,7 @@
 ---
 questionId: "https://pods.faqir.org/question_02_hospitalRelease_date"
 questionTag: "q_hospitalRelease_date"
-questionHasQuestionRepresentation:
-  - questionRepresentationId: "https://pods.faqir.org/qrquestion_02_hospitalRelease_date_en"
-    questionRepresentationText: "When did you leave the hospital?"
-    questionRepresentationLanguage: "en"
-    questionRepresentationOfQuestion: "https://pods.faqir.org/question_02_hospitalRelease_date"
+questionLabel: "When did you leave the hospital?"
 questionRequired: false
 questionType: dateTime
 questionInOrderedQuestion: 

@@ -1,27 +1,8 @@
 {
   "questionId": "https://pods.faqir.org/FoIn0",
   "questionType": "choice",
-  "questionHasQuestionRepresentation": [
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFoIn0_en",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/FoIn0",
-      "questionRepresentationText": "Are you aware of your index joint in bed at night ?",
-      "questionRepresentationLanguage": "en"
-    },
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFoIn0_nl",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/FoIn0",
-      "questionRepresentationText": "“Ben je je bewust van je indexgewricht in bed 's nachts?”",
-      "questionRepresentationLanguage": "nl"
-    },
-    {
-      "questionRepresentationId": "https://pods.faqir.org/qrFoIn0_es",
-      "questionRepresentationOfQuestion": "https://pods.faqir.org/FoIn0",
-      "questionRepresentationText": "¿Eres consciente de tu articulación índice en la cama por la noche?",
-      "questionRepresentationLanguage": "es-ES"
-    }
-  ],
   "questionTag": "q_index_joint_bed_night",
+  "questionLabel": "Are you aware of your index joint in bed at night ?",
   "questionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

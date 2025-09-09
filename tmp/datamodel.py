@@ -1,5 +1,5 @@
 # Auto generated from datamodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-08T18:08:02
+# Generation date: 2025-09-09T11:37:40
 # Schema: datamodel
 #
 # id: https://w3id.org/faqir/datamodel
@@ -258,10 +258,6 @@ class OrderedQuestionOrderedQuestionId(URIorCURIE):
 
 
 class QuestionQuestionId(URIorCURIE):
-    pass
-
-
-class QuestionRepresentationQuestionRepresentationId(URIorCURIE):
     pass
 
 
@@ -857,8 +853,8 @@ class Question(YAMLRoot):
 
     questionId: Union[str, QuestionQuestionId] = None
     questionType: Union[str, "QuestionType"] = None
-    questionHasQuestionRepresentation: Union[dict[Union[str, QuestionRepresentationQuestionRepresentationId], Union[dict, "QuestionRepresentation"]], list[Union[dict, "QuestionRepresentation"]]] = empty_dict()
     questionTag: str = None
+    questionLabel: str = None
     questionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
     questionInOrderedQuestion: Optional[Union[Union[str, OrderedQuestionOrderedQuestionId], list[Union[str, OrderedQuestionOrderedQuestionId]]]] = empty_list()
     questionHasAnswer: Optional[Union[Union[str, AnswerAnswerId], list[Union[str, AnswerAnswerId]]]] = empty_list()
@@ -879,14 +875,15 @@ class Question(YAMLRoot):
         if not isinstance(self.questionType, QuestionType):
             self.questionType = QuestionType(self.questionType)
 
-        if self._is_empty(self.questionHasQuestionRepresentation):
-            self.MissingRequiredField("questionHasQuestionRepresentation")
-        self._normalize_inlined_as_list(slot_name="questionHasQuestionRepresentation", slot_type=QuestionRepresentation, key_name="questionRepresentationId", keyed=True)
-
         if self._is_empty(self.questionTag):
             self.MissingRequiredField("questionTag")
         if not isinstance(self.questionTag, str):
             self.questionTag = str(self.questionTag)
+
+        if self._is_empty(self.questionLabel):
+            self.MissingRequiredField("questionLabel")
+        if not isinstance(self.questionLabel, str):
+            self.questionLabel = str(self.questionLabel)
 
         if not isinstance(self.questionAuthoredByOrg, list):
             self.questionAuthoredByOrg = [self.questionAuthoredByOrg] if self.questionAuthoredByOrg is not None else []
@@ -914,47 +911,6 @@ class Question(YAMLRoot):
 
         if self.questionRequired is not None and not isinstance(self.questionRequired, Bool):
             self.questionRequired = Bool(self.questionRequired)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class QuestionRepresentation(YAMLRoot):
-    """
-    The text representation of the question, in a specific language.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["QuestionRepresentation"]
-    class_class_curie: ClassVar[str] = "faqir:QuestionRepresentation"
-    class_name: ClassVar[str] = "QuestionRepresentation"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.QuestionRepresentation
-
-    questionRepresentationId: Union[str, QuestionRepresentationQuestionRepresentationId] = None
-    questionRepresentationOfQuestion: Union[str, QuestionQuestionId] = None
-    questionRepresentationText: str = None
-    questionRepresentationLanguage: str = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.questionRepresentationId):
-            self.MissingRequiredField("questionRepresentationId")
-        if not isinstance(self.questionRepresentationId, QuestionRepresentationQuestionRepresentationId):
-            self.questionRepresentationId = QuestionRepresentationQuestionRepresentationId(self.questionRepresentationId)
-
-        if self._is_empty(self.questionRepresentationOfQuestion):
-            self.MissingRequiredField("questionRepresentationOfQuestion")
-        if not isinstance(self.questionRepresentationOfQuestion, QuestionQuestionId):
-            self.questionRepresentationOfQuestion = QuestionQuestionId(self.questionRepresentationOfQuestion)
-
-        if self._is_empty(self.questionRepresentationText):
-            self.MissingRequiredField("questionRepresentationText")
-        if not isinstance(self.questionRepresentationText, str):
-            self.questionRepresentationText = str(self.questionRepresentationText)
-
-        if self._is_empty(self.questionRepresentationLanguage):
-            self.MissingRequiredField("questionRepresentationLanguage")
-        if not isinstance(self.questionRepresentationLanguage, str):
-            self.questionRepresentationLanguage = str(self.questionRepresentationLanguage)
 
         super().__post_init__(**kwargs)
 
@@ -1660,9 +1616,6 @@ slots.questionAuthoredByOrg = Slot(uri=FAQIR.questionAuthoredByOrg, name="questi
 slots.questionUsedInScoreDefinition = Slot(uri=FAQIR.questionUsedInScoreDefinition, name="questionUsedInScoreDefinition", curie=FAQIR.curie('questionUsedInScoreDefinition'),
                    model_uri=DATAMODEL.questionUsedInScoreDefinition, domain=Question, range=Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]])
 
-slots.questionHasQuestionRepresentation = Slot(uri=FAQIR.questionHasQuestionRepresentation, name="questionHasQuestionRepresentation", curie=FAQIR.curie('questionHasQuestionRepresentation'),
-                   model_uri=DATAMODEL.questionHasQuestionRepresentation, domain=Question, range=Union[dict[Union[str, QuestionRepresentationQuestionRepresentationId], Union[dict, "QuestionRepresentation"]], list[Union[dict, "QuestionRepresentation"]]])
-
 slots.orderedQuestionHasQuestion = Slot(uri=FAQIR.orderedQuestionHasQuestion, name="orderedQuestionHasQuestion", curie=FAQIR.curie('orderedQuestionHasQuestion'),
                    model_uri=DATAMODEL.orderedQuestionHasQuestion, domain=OrderedQuestion, range=Union[str, QuestionQuestionId])
 
@@ -1671,9 +1624,6 @@ slots.orderedQuestionPartOfQuestionnaire = Slot(uri=FAQIR.orderedQuestionPartOfQ
 
 slots.orderedQuestionPartOfSection = Slot(uri=FAQIR.orderedQuestionPartOfSection, name="orderedQuestionPartOfSection", curie=FAQIR.curie('orderedQuestionPartOfSection'),
                    model_uri=DATAMODEL.orderedQuestionPartOfSection, domain=OrderedQuestion, range=Optional[Union[str, SectionSectionId]], mappings = [FHIR["Questionnaire.item"]])
-
-slots.questionRepresentationOfQuestion = Slot(uri=FAQIR.questionRepresentationOfQuestion, name="questionRepresentationOfQuestion", curie=FAQIR.curie('questionRepresentationOfQuestion'),
-                   model_uri=DATAMODEL.questionRepresentationOfQuestion, domain=QuestionRepresentation, range=Union[str, QuestionQuestionId])
 
 slots.sectionHasOrderedQuestion = Slot(uri=FAQIR.sectionHasOrderedQuestion, name="sectionHasOrderedQuestion", curie=FAQIR.curie('sectionHasOrderedQuestion'),
                    model_uri=DATAMODEL.sectionHasOrderedQuestion, domain=Section, range=Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]], mappings = [FHIR["Questionnaire.item.where(type='question')"]])
@@ -1837,6 +1787,9 @@ slots.question__questionId = Slot(uri=QUESTIONNAIRE['classes/questionId'], name=
 slots.question__questionTag = Slot(uri=QUESTIONNAIRE['classes/questionTag'], name="question__questionTag", curie=QUESTIONNAIRE.curie('classes/questionTag'),
                    model_uri=DATAMODEL.question__questionTag, domain=None, range=str)
 
+slots.question__questionLabel = Slot(uri=QUESTIONNAIRE['classes/questionLabel'], name="question__questionLabel", curie=QUESTIONNAIRE.curie('classes/questionLabel'),
+                   model_uri=DATAMODEL.question__questionLabel, domain=None, range=str)
+
 slots.question__questionNumericalParams = Slot(uri=QUESTIONNAIRE['classes/questionNumericalParams'], name="question__questionNumericalParams", curie=QUESTIONNAIRE.curie('classes/questionNumericalParams'),
                    model_uri=DATAMODEL.question__questionNumericalParams, domain=None, range=Optional[Union[dict, NumericalParams]])
 
@@ -1848,16 +1801,6 @@ slots.question__questionIntervalParams = Slot(uri=QUESTIONNAIRE['classes/questio
 
 slots.question__questionRequired = Slot(uri=QUESTIONNAIRE['classes/questionRequired'], name="question__questionRequired", curie=QUESTIONNAIRE.curie('classes/questionRequired'),
                    model_uri=DATAMODEL.question__questionRequired, domain=None, range=Optional[Union[bool, Bool]], mappings = [FHIR["Questionnaire.item.required"]])
-
-slots.questionRepresentation__questionRepresentationId = Slot(uri=QUESTIONNAIRE['classes/questionRepresentationId'], name="questionRepresentation__questionRepresentationId", curie=QUESTIONNAIRE.curie('classes/questionRepresentationId'),
-                   model_uri=DATAMODEL.questionRepresentation__questionRepresentationId, domain=None, range=URIRef)
-
-slots.questionRepresentation__questionRepresentationText = Slot(uri=QUESTIONNAIRE['classes/questionRepresentationText'], name="questionRepresentation__questionRepresentationText", curie=QUESTIONNAIRE.curie('classes/questionRepresentationText'),
-                   model_uri=DATAMODEL.questionRepresentation__questionRepresentationText, domain=None, range=str)
-
-slots.questionRepresentation__questionRepresentationLanguage = Slot(uri=QUESTIONNAIRE['classes/questionRepresentationLanguage'], name="questionRepresentation__questionRepresentationLanguage", curie=QUESTIONNAIRE.curie('classes/questionRepresentationLanguage'),
-                   model_uri=DATAMODEL.questionRepresentation__questionRepresentationLanguage, domain=None, range=str,
-                   pattern=re.compile(r'^[a-z]{2}(-[A-Z]{2})?$'))
 
 slots.questionnaire__questionnaireId = Slot(uri=QUESTIONNAIRE['classes/questionnaireId'], name="questionnaire__questionnaireId", curie=QUESTIONNAIRE.curie('classes/questionnaireId'),
                    model_uri=DATAMODEL.questionnaire__questionnaireId, domain=None, range=URIRef)

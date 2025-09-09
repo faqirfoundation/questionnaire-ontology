@@ -1,39 +1,34 @@
 @prefix faqir: <https://faqir.org/datamodel/> .
 @prefix fhir: <https://www.hl7.org/fhir/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
-@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://pods.faqir.org/qrquestion_05_EQ_5D_5L_01_en> a faqir:QuestionRepresentation ;
-    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/question_05_EQ_5D_5L_01> ;
-    ns1:questionRepresentationLanguage "en" ;
-    ns1:questionRepresentationText "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY." .
 
 <https://pods.faqir.org/question_05_EQ_5D_5L_01> a faqir:Question ;
     faqir:questionAuthoredByOrg <https://euroqol.org/> ;
     faqir:questionHasAnswer <https://pods.faqir.org/answer_05_EQ_5D_5L_01_01>,
         <https://pods.faqir.org/answer_05_EQ_5D_5L_01_02>,
         <https://pods.faqir.org/answer_05_EQ_5D_5L_01_03> ;
-    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrquestion_05_EQ_5D_5L_01_en> ;
     faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_05_EQ_5D_5L_01_s01>,
         <https://pods.faqir.org/orderedquestion_05_EQ_5D_5L_01_s02>,
         <https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_01_q01> ;
     faqir:questionType fhir:choice ;
-    ns1:questionCodingParams [ a faqir:ValueCoding ;
-            ns2:code "4" ;
-            ns2:display "I have severe problems in walking about" ],
+    ns2:questionCodingParams [ a faqir:ValueCoding ;
+            ns1:code "1" ;
+            ns1:display "I have no problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "1" ;
-            ns2:display "I have no problems in walking about" ],
+            ns1:code "5" ;
+            ns1:display "I am unable to walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "5" ;
-            ns2:display "I am unable to walking about" ],
+            ns1:code "2" ;
+            ns1:display "I have slight problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "2" ;
-            ns2:display "I have slight problems in walking about" ],
+            ns1:code "3" ;
+            ns1:display "I have moderate problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "3" ;
-            ns2:display "I have moderate problems in walking about" ] ;
-    ns1:questionRequired false ;
-    ns1:questionTag "q_EQ_5D_5L_01" .
+            ns1:code "4" ;
+            ns1:display "I have severe problems in walking about" ] ;
+    ns2:questionLabel "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY." ;
+    ns2:questionRequired false ;
+    ns2:questionTag "q_EQ_5D_5L_01" .
 

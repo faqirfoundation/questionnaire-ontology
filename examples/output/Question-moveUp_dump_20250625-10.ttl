@@ -1,36 +1,31 @@
 @prefix faqir: <https://faqir.org/datamodel/> .
 @prefix fhir: <https://www.hl7.org/fhir/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
-@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://pods.faqir.org/Fowh9> a faqir:Question ;
     faqir:questionAuthoredByOrg <https://www.moveup.care/> ;
     faqir:questionHasAnswer <https://pods.faqir.org/aFowh9> ;
-    faqir:questionHasQuestionRepresentation <https://pods.faqir.org/qrFowh9_en> ;
     faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedQuestion/orderedFowh9> ;
     faqir:questionType fhir:choice ;
     faqir:questionUsedInScoreDefinition <https://pods.faqir.org/TFJSK> ;
-    ns1:questionCodingParams [ a faqir:ValueCoding ;
-            ns2:code "2" ;
-            ns2:display "Seldom" ],
+    ns2:questionCodingParams [ a faqir:ValueCoding ;
+            ns1:code "1" ;
+            ns1:display "Almost never" ],
         [ a faqir:ValueCoding ;
-            ns2:code "1" ;
-            ns2:display "Almost never" ],
+            ns1:code "3" ;
+            ns1:display "Sometimes" ],
         [ a faqir:ValueCoding ;
-            ns2:code "0" ;
-            ns2:display "Never" ],
+            ns1:code "2" ;
+            ns1:display "Seldom" ],
         [ a faqir:ValueCoding ;
-            ns2:code "4" ;
-            ns2:display "Mostly" ],
+            ns1:code "4" ;
+            ns1:display "Mostly" ],
         [ a faqir:ValueCoding ;
-            ns2:code "3" ;
-            ns2:display "Sometimes" ] ;
-    ns1:questionRequired false ;
-    ns1:questionTag "q_index_joint_housework_gardening" .
-
-<https://pods.faqir.org/qrFowh9_en> a faqir:QuestionRepresentation ;
-    faqir:questionRepresentationOfQuestion <https://pods.faqir.org/Fowh9> ;
-    ns1:questionRepresentationLanguage "en" ;
-    ns1:questionRepresentationText "Are you aware of your index joint when you are doing housework or gardening?" .
+            ns1:code "0" ;
+            ns1:display "Never" ] ;
+    ns2:questionLabel "Are you aware of your index joint when you are doing housework or gardening?" ;
+    ns2:questionRequired false ;
+    ns2:questionTag "q_index_joint_housework_gardening" .
 
