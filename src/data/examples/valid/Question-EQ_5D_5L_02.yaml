@@ -1,12 +1,13 @@
 ---
-questionId: "https://pods.faqir.org/question_06_EQ_5D_5L_02"
+questionId: "https://pods.faqir.org/question_EQ_5D_5L_02"
 questionTag: "q_EQ_5D_5L_02"
-questionLabel: "Under each heading, please tick the ONE box that best describes your health TODAY. SELF-CARE."
+questionLabel: "SELF-CARE. Please tick the ONE box that best describes your health TODAY."
 questionRequired: false
 questionType: choice
 questionAuthoredByOrg:  
   - "https://euroqol.org/"
 questionInOrderedQuestion: 
+  - "https://pods.faqir.org/orderedquestion_EQ_5D_5L_02"
   - "https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s01"
   - "https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s02"
 questionCodingParams:
@@ -21,6 +22,7 @@ questionCodingParams:
   - code: "5"
     display: "I am unable to wash or dress myself"
 questionHasAnswer:
+  - "https://pods.faqir.org/answer_EQ_5D_5L_02_a01"
   - "https://pods.faqir.org/answer_06_EQ_5D_5L_02_01"
   - "https://pods.faqir.org/answer_06_EQ_5D_5L_02_02"
   - "https://pods.faqir.org/answer_06_EQ_5D_5L_02_03"

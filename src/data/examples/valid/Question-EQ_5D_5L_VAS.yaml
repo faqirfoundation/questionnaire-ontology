@@ -1,6 +1,6 @@
 ---
-questionId: "https://pods.faqir.org/question_07_EQ_VAS"
-questionTag: "q_EQ_VAS"
+questionId: "https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS"
+questionTag: "q_EQ_5D_5L_EQ_VAS"
 questionLabel: | 
   "We would like to know how good or bad your health is TODAY.
   This scale is numbered from 0 to 100.
@@ -13,7 +13,7 @@ questionType: numberInterval
 questionAuthoredByOrg:  
   - "https://euroqol.org/"
 questionInOrderedQuestion: 
-  - "https://pods.faqir.org/orderedquestion_07_EQ_VAS_s01"
+  - "https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS"
 questionIntervalParams:
   minValue: 0
   maxValue: 100
@@ -22,6 +22,4 @@ questionIntervalParams:
 questionNumericalParams:
   numericalPrecision: 0
 questionHasAnswer:
-  - "https://pods.faqir.org/answer_07_EQ_VAS_01"
-  - "https://pods.faqir.org/answer_07_EQ_VAS_02"
-  - "https://pods.faqir.org/answer_07_EQ_VAS_03"
+  - "https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01"

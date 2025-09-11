@@ -180,6 +180,7 @@ linkml:Sparqlpath xsd:string
           @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> * ;
           faqir:questionnaireHasOrderedQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
           faqir:questionnaireHasOrderedSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> * ;
+          faqir:questionnaireUsesScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> * ;
           faqir:questionnaireAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
           faqir:questionnairePartOfProcedure @<https://w3id.org/faqir/datamodel/entities/procedure/Procedure> * ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> @linkml:String ;
@@ -216,6 +217,8 @@ linkml:Sparqlpath xsd:string
           faqir:scoreDefinitionUsesQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> + ;
           faqir:scoreDefinitionHasScoreValue @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> * ;
           faqir:scoreDefinitionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
+          faqir:scoreDefinitionUsedByQuestionnare @<https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> * ;
+          faqir:scoreDefinitionUsedBySection @<https://w3id.org/faqir/datamodel/questionnaire/classes/Section> * ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> @linkml:String ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams>
           @<https://w3id.org/faqir/datamodel/core/types/IntervalParams> ? ;
@@ -270,6 +273,7 @@ linkml:Sparqlpath xsd:string
           @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
           faqir:sectionHasOrderedSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> * ;
           faqir:sectionInOrderedSection @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> * ;
+          faqir:sectionUsesScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> * ;
           faqir:sectionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> @linkml:String
        ) ;

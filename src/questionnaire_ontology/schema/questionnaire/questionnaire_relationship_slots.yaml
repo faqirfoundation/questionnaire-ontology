@@ -50,6 +50,15 @@ slots:
     slot_uri: "faqir:questionnaireResponseHasDerivedScoreValue"
     inverse: scoreValueDerivedFromQuestionnaireResponse
 
+  questionnaireUsesScoreDefinition:
+    description: "The ScoreDefinition that is applied in this Questionnaire."
+    domain: Questionnaire
+    range: ScoreDefinition
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionnaireUsesScoreDefinition"
+    inverse: scoreDefinitionUsedByQuestionnare
+
   # Answer relationships
   answerInQuestionnaireResponse:
     description: "The QuestionnaireResponse that this Answer is part of."
@@ -244,6 +253,15 @@ slots:
       - "fhir:Questionnaire.author"
     inverse: organizationAuthorsSection
 
+  sectionUsesScoreDefinition:
+    description: "The ScoreDefinition that is applied in this Section."
+    domain: Section
+    range: ScoreDefinition
+    required: false
+    multivalued: true
+    slot_uri: "faqir:sectionUsesScoreDefinition"
+    inverse: scoreDefinitionUsedBySection
+
   # OrderedSection relationships 
   orderedSectionPartOfQuestionnaire:
     description: "The Questionnaire that this Section is part of in the specified order."
@@ -314,6 +332,24 @@ slots:
     mappings:
       - "fhir:Questionnaire.author"
     inverse: organizationAuthorsScoreDefinition
+
+  scoreDefinitionUsedByQuestionnare:
+    description: "The Questionnaires that this ScoreDefinition is applied in."
+    domain: ScoreDefinition
+    range: Questionnaire
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionUsedByQuestionnare"
+    inverse: questionnaireUsesScoreDefinition
+
+  scoreDefinitionUsedBySection:
+    description: "The Sections that this ScoreDefinition is applied in."
+    domain: ScoreDefinition
+    range: Section
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionUsedBySection"
+    inverse: sectionUsesScoreDefinition
 
   # ScoreParameter relationships
   scoreParameterPartOfScoreDefinition:

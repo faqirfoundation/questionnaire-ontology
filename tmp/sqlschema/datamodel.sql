@@ -170,6 +170,9 @@
 -- # Class: "Questionnaire_questionnaireHasQuestionnaireResponse" Description: ""
 --     * Slot: Questionnaire_questionnaireId Description: Autocreated FK slot
 --     * Slot: questionnaireHasQuestionnaireResponse_questionnaireResponseId Description: The QuestionnaireResponse that is associated with this Questionnaire.
+-- # Class: "Questionnaire_questionnaireUsesScoreDefinition" Description: ""
+--     * Slot: Questionnaire_questionnaireId Description: Autocreated FK slot
+--     * Slot: questionnaireUsesScoreDefinition_scoreDefinitionId Description: The ScoreDefinition that is applied in this Questionnaire.
 -- # Class: "Questionnaire_questionnaireAuthoredByOrg" Description: ""
 --     * Slot: Questionnaire_questionnaireId Description: Autocreated FK slot
 --     * Slot: questionnaireAuthoredByOrg_organizationId Description: The Organization that has created this Questionnaire.
@@ -179,6 +182,9 @@
 -- # Class: "Section_sectionInOrderedSection" Description: ""
 --     * Slot: Section_sectionId Description: Autocreated FK slot
 --     * Slot: sectionInOrderedSection_orderedSectionId Description: OrderedSections that this Section is indexed in.
+-- # Class: "Section_sectionUsesScoreDefinition" Description: ""
+--     * Slot: Section_sectionId Description: Autocreated FK slot
+--     * Slot: sectionUsesScoreDefinition_scoreDefinitionId Description: The ScoreDefinition that is applied in this Section.
 -- # Class: "Section_sectionAuthoredByOrg" Description: ""
 --     * Slot: Section_sectionId Description: Autocreated FK slot
 --     * Slot: sectionAuthoredByOrg_organizationId Description: The Organization that has created this Section.
@@ -194,6 +200,12 @@
 -- # Class: "ScoreDefinition_scoreDefinitionAuthoredByOrg" Description: ""
 --     * Slot: ScoreDefinition_scoreDefinitionId Description: Autocreated FK slot
 --     * Slot: scoreDefinitionAuthoredByOrg_organizationId Description: The Organization that has created this ScoreDefinition.
+-- # Class: "ScoreDefinition_scoreDefinitionUsedByQuestionnare" Description: ""
+--     * Slot: ScoreDefinition_scoreDefinitionId Description: Autocreated FK slot
+--     * Slot: scoreDefinitionUsedByQuestionnare_questionnaireId Description: The Questionnaires that this ScoreDefinition is applied in.
+-- # Class: "ScoreDefinition_scoreDefinitionUsedBySection" Description: ""
+--     * Slot: ScoreDefinition_scoreDefinitionId Description: Autocreated FK slot
+--     * Slot: scoreDefinitionUsedBySection_sectionId Description: The Sections that this ScoreDefinition is applied in.
 -- # Class: "ScoreDefinition_scoreDefinitionCategories" Description: ""
 --     * Slot: ScoreDefinition_scoreDefinitionId Description: Autocreated FK slot
 --     * Slot: scoreDefinitionCategories Description: Categories for categorical scores.
@@ -474,12 +486,26 @@ CREATE TABLE "Question_questionCodingParams" (
 	FOREIGN KEY("Question_questionId") REFERENCES "Question" ("questionId"), 
 	FOREIGN KEY("questionCodingParams_id") REFERENCES "ValueCoding" (id)
 );
+CREATE TABLE "Questionnaire_questionnaireUsesScoreDefinition" (
+	"Questionnaire_questionnaireId" TEXT, 
+	"questionnaireUsesScoreDefinition_scoreDefinitionId" TEXT, 
+	PRIMARY KEY ("Questionnaire_questionnaireId", "questionnaireUsesScoreDefinition_scoreDefinitionId"), 
+	FOREIGN KEY("Questionnaire_questionnaireId") REFERENCES "Questionnaire" ("questionnaireId"), 
+	FOREIGN KEY("questionnaireUsesScoreDefinition_scoreDefinitionId") REFERENCES "ScoreDefinition" ("scoreDefinitionId")
+);
 CREATE TABLE "Section_sectionInOrderedSection" (
 	"Section_sectionId" TEXT, 
 	"sectionInOrderedSection_orderedSectionId" TEXT, 
 	PRIMARY KEY ("Section_sectionId", "sectionInOrderedSection_orderedSectionId"), 
 	FOREIGN KEY("Section_sectionId") REFERENCES "Section" ("sectionId"), 
 	FOREIGN KEY("sectionInOrderedSection_orderedSectionId") REFERENCES "OrderedSection" ("orderedSectionId")
+);
+CREATE TABLE "Section_sectionUsesScoreDefinition" (
+	"Section_sectionId" TEXT, 
+	"sectionUsesScoreDefinition_scoreDefinitionId" TEXT, 
+	PRIMARY KEY ("Section_sectionId", "sectionUsesScoreDefinition_scoreDefinitionId"), 
+	FOREIGN KEY("Section_sectionId") REFERENCES "Section" ("sectionId"), 
+	FOREIGN KEY("sectionUsesScoreDefinition_scoreDefinitionId") REFERENCES "ScoreDefinition" ("scoreDefinitionId")
 );
 CREATE TABLE "ScoreDefinition_scoreDefinitionUsesQuestion" (
 	"ScoreDefinition_scoreDefinitionId" TEXT, 
@@ -494,6 +520,20 @@ CREATE TABLE "ScoreDefinition_scoreDefinitionAuthoredByOrg" (
 	PRIMARY KEY ("ScoreDefinition_scoreDefinitionId", "scoreDefinitionAuthoredByOrg_organizationId"), 
 	FOREIGN KEY("ScoreDefinition_scoreDefinitionId") REFERENCES "ScoreDefinition" ("scoreDefinitionId"), 
 	FOREIGN KEY("scoreDefinitionAuthoredByOrg_organizationId") REFERENCES "Organization" ("organizationId")
+);
+CREATE TABLE "ScoreDefinition_scoreDefinitionUsedByQuestionnare" (
+	"ScoreDefinition_scoreDefinitionId" TEXT, 
+	"scoreDefinitionUsedByQuestionnare_questionnaireId" TEXT, 
+	PRIMARY KEY ("ScoreDefinition_scoreDefinitionId", "scoreDefinitionUsedByQuestionnare_questionnaireId"), 
+	FOREIGN KEY("ScoreDefinition_scoreDefinitionId") REFERENCES "ScoreDefinition" ("scoreDefinitionId"), 
+	FOREIGN KEY("scoreDefinitionUsedByQuestionnare_questionnaireId") REFERENCES "Questionnaire" ("questionnaireId")
+);
+CREATE TABLE "ScoreDefinition_scoreDefinitionUsedBySection" (
+	"ScoreDefinition_scoreDefinitionId" TEXT, 
+	"scoreDefinitionUsedBySection_sectionId" TEXT, 
+	PRIMARY KEY ("ScoreDefinition_scoreDefinitionId", "scoreDefinitionUsedBySection_sectionId"), 
+	FOREIGN KEY("ScoreDefinition_scoreDefinitionId") REFERENCES "ScoreDefinition" ("scoreDefinitionId"), 
+	FOREIGN KEY("scoreDefinitionUsedBySection_sectionId") REFERENCES "Section" ("sectionId")
 );
 CREATE TABLE "ScoreDefinition_scoreDefinitionCategories" (
 	"ScoreDefinition_scoreDefinitionId" TEXT, 

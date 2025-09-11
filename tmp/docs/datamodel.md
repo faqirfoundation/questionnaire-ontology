@@ -109,6 +109,7 @@ The datamodel used in faqir vaults.
  * [➞questionnaireResponseLastUpdated](questionnaireResponse__questionnaireResponseLastUpdated.md) - The date and time when the questionnaire response was last updated.
  * [➞questionnaireResponseStatus](questionnaireResponse__questionnaireResponseStatus.md) - The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
  * [➞questionnaireResponseTimeStamp](questionnaireResponse__questionnaireResponseTimeStamp.md) - The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished).
+ * [questionnaireUsesScoreDefinition](questionnaireUsesScoreDefinition.md) - The ScoreDefinition that is applied in this Questionnaire.
  * [➞questionnaireId](questionnaire__questionnaireId.md) - The unique identifier for the questionnaire.
  * [➞questionnaireLabel](questionnaire__questionnaireLabel.md) - The label or title of the questionnaire, which is displayed to the user.
  * [➞questionnaireLastUpdated](questionnaire__questionnaireLastUpdated.md) - The date and time when the questionnaire was last updated.
@@ -118,6 +119,8 @@ The datamodel used in faqir vaults.
  * [scoreDefinitionHasScoreParameter](scoreDefinitionHasScoreParameter.md) - The ScoreParameter that is required for this ScoreDefinition.
  * [scoreDefinitionHasScoreValue](scoreDefinitionHasScoreValue.md) - The ScoreValue that is calculated following this ScoreDefinition.
  * [scoreDefinitionType](scoreDefinitionType.md) - Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values.
+ * [scoreDefinitionUsedByQuestionnare](scoreDefinitionUsedByQuestionnare.md) - The Questionnaires that this ScoreDefinition is applied in.
+ * [scoreDefinitionUsedBySection](scoreDefinitionUsedBySection.md) - The Sections that this ScoreDefinition is applied in.
  * [scoreDefinitionUsesQuestion](scoreDefinitionUsesQuestion.md) - The Question(s) that this ScoreDefinition is based on.
  * [➞scoreDefinitionCategories](scoreDefinition__scoreDefinitionCategories.md) - Categories for categorical scores.
  * [➞scoreDefinitionFormula](scoreDefinition__scoreDefinitionFormula.md) - The formula used to calculate the score.
@@ -142,6 +145,7 @@ The datamodel used in faqir vaults.
  * [sectionHasOrderedQuestion](sectionHasOrderedQuestion.md) - The Question that is part of this Section, with their display order.
  * [sectionHasOrderedSection](sectionHasOrderedSection.md) - The Section that is part of this Section.
  * [sectionInOrderedSection](sectionInOrderedSection.md) - OrderedSections that this Section is indexed in.
+ * [sectionUsesScoreDefinition](sectionUsesScoreDefinition.md) - The ScoreDefinition that is applied in this Section.
  * [➞sectionId](section__sectionId.md) - The unique identifier for a section in the questionnaire.
  * [➞sectionLabel](section__sectionLabel.md) - The label or title of the section, which is displayed to the user.
  * [➞code](valueCoding__code.md) - The code representing the value (e.g. code '1' for display 'Yes').

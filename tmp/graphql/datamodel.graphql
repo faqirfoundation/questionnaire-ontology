@@ -183,6 +183,7 @@ type Questionnaire
     questionnaireHasQuestionnaireResponse: [QuestionnaireResponse]
     questionnaireHasOrderedQuestion: [OrderedQuestion]
     questionnaireHasOrderedSection: [OrderedSection]
+    questionnaireUsesScoreDefinition: [ScoreDefinition]
     questionnaireAuthoredByOrg: [Organization]
     questionnairePartOfProcedure: [Procedure]
     questionnaireId: Uriorcurie!
@@ -211,6 +212,8 @@ type ScoreDefinition
     scoreDefinitionUsesQuestion: [Question]!
     scoreDefinitionHasScoreValue: [ScoreValue]
     scoreDefinitionAuthoredByOrg: [Organization]
+    scoreDefinitionUsedByQuestionnare: [Questionnaire]
+    scoreDefinitionUsedBySection: [Section]
     scoreDefinitionId: Uriorcurie!
     scoreDefinitionLabel: String!
     scoreDefinitionIntervalParams: IntervalParams
@@ -246,6 +249,7 @@ type Section
     sectionHasOrderedQuestion: [OrderedQuestion]
     sectionHasOrderedSection: [OrderedSection]
     sectionInOrderedSection: [OrderedSection]
+    sectionUsesScoreDefinition: [ScoreDefinition]
     sectionAuthoredByOrg: [Organization]
     sectionId: Uriorcurie!
     sectionLabel: String!

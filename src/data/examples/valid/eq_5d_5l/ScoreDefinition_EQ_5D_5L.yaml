@@ -1,0 +1,38 @@
+---
+scoreDefinitionId: "https://pods.faqir.org/sdEQ_5D_5L"
+scoreDefinitionLabel: "EQ-5D-5L score"
+scoreDefinitionType: numerical_integer
+scoreDefinitionIntervalParams:
+  minValue: 11111
+  maxValue: 99999
+scoreDefinitionFormula: |
+  Each state is referred to by a 5-digit code: each digit representing the answer to each question or dimension (e.g. 12345).
+  - Missing values are preferably coded as ‘9’.
+  - Ambiguous values (e.g. two boxes are ticked for a single dimension) should
+  be treated as missing values.
+  
+scoreDefinitionInterpretationGuide: |
+    A total of 3125 possible health states are defined in this way. 
+    LEVEL 1: indicating no problem
+    LEVEL 2: indicating slight problems
+    LEVEL 3: indicating moderate problems
+    LEVEL 4: indicating severe problems
+    LEVEL 5: indicating unable to/extreme problems
+scoreDefinitionUsesQuestion:
+  - "https://pods.faqir.org/FoIn0"
+  - "https://pods.faqir.org/Fowh1"
+  - "https://pods.faqir.org/Fowh2"
+  - "https://pods.faqir.org/Fowh3"
+  - "https://pods.faqir.org/Fowh4"
+  - "https://pods.faqir.org/Fowh5"
+  - "https://pods.faqir.org/Fowh6"
+  - "https://pods.faqir.org/Fowh7"
+  - "https://pods.faqir.org/Fowh8"
+  - "https://pods.faqir.org/Fowh9"
+  - "https://pods.faqir.org/Fowh10"
+  - "https://pods.faqir.org/Fowh11"
+scoreDefinitionHasScoreValue:
+  - "https://pods.faqir.org/svTFJSK"
+scoreDefinitionAuthoredByOrg:
+  - "https://www.moveup.care/"
+

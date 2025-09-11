@@ -1,29 +1,311 @@
-## Question-televitas_dump_20250722-01
+## Answer-EQ_5D_5L_EQ_VAS-a01
+### Input
+```yaml
+answerId: https://pods.faqir.org/questionnaire/answer_EQ_5D_5L_EQ_VAS_a01
+answerInQuestionnaireResponse: https://pods.faqir.org/questionnaire/response_EQ_5D_5L_01
+answerIsEmpty: false
+answerTimeStamp: '2025-07-11T10:35:11Z'
+answerToQuestion: https://pods.faqir.org/questionnaire/question_EQ_5D_5L_EQ_VAS
+answerValueNumerical:
+  numericalValue: 83
+questionType: numberInterval
+
+```
+## Question-EQ_5D_5L_02
 ### Input
 ```yaml
 questionAuthoredByOrg:
-- https://televitas.com/
+- https://euroqol.org/
 questionCodingParams:
 - code: '1'
-  display: UNKNOWN
+  display: I have no problems washing or dressing myself
 - code: '2'
-  display: UNKNOWN
+  display: I have slight problems washing or dressing myself
 - code: '3'
-  display: UNKNOWN
+  display: I have moderate problems washing or dressing myself
 - code: '4'
-  display: UNKNOWN
+  display: I have severe problems washing or dressing myself
 - code: '5'
-  display: UNKNOWN
+  display: I am unable to wash or dress myself
 questionHasAnswer:
-- https://pods.faqir.org/questionnaire/fd785369911fe91bfd2c194d92fa84c3c2e452ea1bc6e1d1e0eed57c01f49828
-- https://pods.faqir.org/questionnaire/db173223a5620d49bca6e65617af6d8ca0bbe9d86501ceb3e45663d72be00752
-- https://pods.faqir.org/questionnaire/40394acf0427365726b53f8d1f45beb6e489dd85b82238cb01dd3c20561a711d
-questionId: https://pods.faqir.org/86904b4a-989b-4e6e-8c0e-16714f18eeb8
+- https://pods.faqir.org/answer_EQ_5D_5L_02_a01
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_01
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_02
+- https://pods.faqir.org/answer_06_EQ_5D_5L_02_03
+questionId: https://pods.faqir.org/question_EQ_5D_5L_02
 questionInOrderedQuestion:
-- https://pods.faqir.org/ordered86904b4a-989b-4e6e-8c0e-16714f18eeb8
-questionLabel: UNKNOWN
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_02
+- https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s01
+- https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_02_s02
+questionLabel: SELF-CARE. Please tick the ONE box that best describes your health
+  TODAY.
 questionRequired: false
-questionTag: q_unknown_televitas
+questionTag: q_EQ_5D_5L_02
+questionType: choice
+
+```
+## Answer-EQ_5D_5L_03-a01
+### Input
+```yaml
+answerId: https://pods.faqir.org/answer_EQ_5D_5L_03_a01
+answerInQuestionnaireResponse: https://pods.faqir.org/response_EQ_5D_5L_01
+answerIsEmpty: false
+answerTimeStamp: '2025-07-11T10:35:05Z'
+answerToQuestion: https://pods.faqir.org/question_EQ_5D_5L_03
+answerValueString:
+- stringValue: '3'
+questionType: choice
+
+```
+## Answer-EQ_5D_5L_02-a01
+### Input
+```yaml
+answerId: https://pods.faqir.org/answer_EQ_5D_5L_02_a01
+answerInQuestionnaireResponse: https://pods.faqir.org/response_EQ_5D_5L_01
+answerIsEmpty: true
+answerTimeStamp: '2025-07-11T10:35:08Z'
+answerToQuestion: https://pods.faqir.org/question_EQ_5D_5L_02
+answerValueString: []
+questionType: choice
+
+```
+## Question-EQ_5D_5L_03
+### Input
+```yaml
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionCodingParams:
+- code: '1'
+  display: I have no problems doing my usual activities
+- code: '2'
+  display: I have slight problems doing my usual activities
+- code: '3'
+  display: I have moderate problems doing my usual activities
+- code: '4'
+  display: I have severe problems doing my usual activities
+- code: '5'
+  display: I am unable to do my usual activities
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_03_a01
+questionId: https://pods.faqir.org/question_EQ_5D_5L_03
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_03
+questionLabel: USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities).
+  Please tick the ONE box that best describes your health TODAY.
+questionRequired: false
+questionTag: q_EQ_5D_5L_03
+questionType: choice
+
+```
+## QuestionnaireResponse-EQ_5D_5L-01
+### Input
+```yaml
+questionnaireResponseBySubject: https://pods.faqir.org/123
+questionnaireResponseHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_01_a01
+- https://pods.faqir.org/answer_EQ_5D_5L_02_a01
+- https://pods.faqir.org/answer_EQ_5D_5L_03_a01
+- https://pods.faqir.org/answer_EQ_5D_5L_04_a01
+- https://pods.faqir.org/answer_EQ_5D_5L_05_a01
+- https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01
+questionnaireResponseId: https://pods.faqir.org/response_EQ_5D_5L_01
+questionnaireResponseLastUpdated: '2025-07-11T10:35:00Z'
+questionnaireResponseStatus: completed
+questionnaireResponseTimeStamp: '2025-07-11T10:35:00Z'
+questionnaireResponseToQuestionnaire: https://pods.faqir.org/questionnaire_EQ_5D_5L
+
+```
+## Question-EQ_5D_5L_04
+### Input
+```yaml
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionCodingParams:
+- code: '1'
+  display: I have no pain or discomfort
+- code: '2'
+  display: I have slight pain or discomfort
+- code: '3'
+  display: I have moderate pain or discomfort
+- code: '4'
+  display: I have severe pain or discomfort
+- code: '5'
+  display: I have extreme pain or discomfort
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_04_a01
+questionId: https://pods.faqir.org/question_EQ_5D_5L_04
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_04
+questionLabel: PAIN / DISCOMFORT. Please tick the ONE box that best describes your
+  health TODAY.
+questionRequired: false
+questionTag: q_EQ_5D_5L_04
+questionType: choice
+
+```
+## Questionnaire-EQ-5D-5L
+### Input
+```yaml
+questionnaireHasOrderedQuestion:
+- orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_01
+  orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_01
+  questionOrder: 1
+- orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_02
+  orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_02
+  questionOrder: 2
+- orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_03
+  orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_03
+  questionOrder: 3
+- orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_04
+  orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_04
+  questionOrder: 4
+- orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_05
+  orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_05
+  questionOrder: 5
+- orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS
+  orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS
+  questionOrder: 6
+questionnaireHasQuestionnaireResponse:
+- https://pods.faqir.org/response_EQ_5D_5L_01
+questionnaireId: https://pods.faqir.org/questionnaire_EQ_5D_5L
+questionnaireLabel: EQ-5D-5L
+questionnaireLastUpdated: '2025-09-09T11:52:00Z'
+questionnaireStatus: active
+questionnaireVersion: 1.0.0
+
+```
+## Answer-EQ_5D_5L_04-a01
+### Input
+```yaml
+answerId: https://pods.faqir.org/answer_EQ_5D_5L_04_a01
+answerInQuestionnaireResponse: https://pods.faqir.org/response_EQ_5D_5L_01
+answerIsEmpty: false
+answerTimeStamp: '2025-07-11T10:35:05Z'
+answerToQuestion: https://pods.faqir.org/question_EQ_5D_5L_04
+answerValueString:
+- stringValue: '2'
+questionType: choice
+
+```
+## Answer-EQ_5D_5L_05-a01
+### Input
+```yaml
+answerId: https://pods.faqir.org/answer_EQ_5D_5L_05_a01
+answerInQuestionnaireResponse: https://pods.faqir.org/response_EQ_5D_5L_01
+answerIsEmpty: false
+answerTimeStamp: '2025-07-11T10:35:05Z'
+answerToQuestion: https://pods.faqir.org/question_EQ_5D_5L_05
+answerValueString:
+- stringValue: '1'
+questionType: choice
+
+```
+## Question-EQ_5D_5L_05
+### Input
+```yaml
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionCodingParams:
+- code: '1'
+  display: I am not anxious or depressed
+- code: '2'
+  display: I am slightly anxious or depressed
+- code: '3'
+  display: I am moderately anxious or depressed
+- code: '4'
+  display: I am severely anxious or depressed
+- code: '5'
+  display: I am extremely anxious or depressed
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_05_a01
+questionId: https://pods.faqir.org/question_EQ_5D_5L_05
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_05
+questionLabel: ANXIETY / DEPRESSION. Please tick the ONE box that best describes your
+  health TODAY.
+questionRequired: false
+questionTag: q_EQ_5D_5L_05
+questionType: choice
+
+```
+## Answer-EQ_5D_5L_01-a01
+### Input
+```yaml
+answerId: https://pods.faqir.org/answer_EQ_5D_5L_01_a01
+answerInQuestionnaireResponse: https://pods.faqir.org/c
+answerIsEmpty: false
+answerTimeStamp: '2025-07-11T10:35:05Z'
+answerToQuestion: https://pods.faqir.org/question_EQ_5D_5L_01
+answerValueString:
+- stringValue: '1'
+questionType: choice
+
+```
+## Question-EQ_5D_5L_VAS
+### Input
+```yaml
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01
+questionId: https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS
+questionIntervalParams:
+  maxLabel: The best health you can imagine
+  maxValue: 100
+  minLabel: The worst health you can imagine
+  minValue: 0
+questionLabel: '"We would like to know how good or bad your health is TODAY.
+
+  This scale is numbered from 0 to 100.
+
+  100 means the *best* health you can imagine.
+
+  0 means the *worst* health you can imagine.
+
+  Mark an X on the scale to indicate how your health is TODAY.
+
+  Now, please write the number you marked on the scale."
+
+  '
+questionNumericalParams:
+  numericalPrecision: 0
+questionRequired: false
+questionTag: q_EQ_5D_5L_EQ_VAS
+questionType: numberInterval
+
+```
+## Question-EQ_5D_5L_01
+### Input
+```yaml
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionCodingParams:
+- code: '1'
+  display: I have no problems in walking about
+- code: '2'
+  display: I have slight problems in walking about
+- code: '3'
+  display: I have moderate problems in walking about
+- code: '4'
+  display: I have severe problems in walking about
+- code: '5'
+  display: I am unable to walking about
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_01_a01
+- https://pods.faqir.org/answer_05_EQ_5D_5L_01_01
+- https://pods.faqir.org/answer_05_EQ_5D_5L_01_02
+- https://pods.faqir.org/answer_05_EQ_5D_5L_01_03
+questionId: https://pods.faqir.org/question_EQ_5D_5L_01
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_01
+- https://pods.faqir.org/orderedquestion_05_EQ_5D_5L_01_s01
+- https://pods.faqir.org/orderedquestion_05_EQ_5D_5L_01_s02
+- https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_01_q01
+questionLabel: MOBILITY. Please tick the ONE box that best describes your health TODAY.
+questionRequired: false
+questionTag: q_EQ_5D_5L_01
 questionType: choice
 
 ```

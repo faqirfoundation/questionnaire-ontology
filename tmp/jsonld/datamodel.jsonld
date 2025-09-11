@@ -1035,6 +1035,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "questionnaireUsesScoreDefinition",
+      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireUsesScoreDefinition",
+      "description": "The ScoreDefinition that is applied in this Questionnaire.",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots",
+      "mappings": [
+        "https://faqir.org/datamodel/questionnaireUsesScoreDefinition"
+      ],
+      "domain": "Questionnaire",
+      "slot_uri": "https://faqir.org/datamodel/questionnaireUsesScoreDefinition",
+      "owner": "Questionnaire",
+      "domain_of": [
+        "Questionnaire"
+      ],
+      "inverse": "scoreDefinitionUsedByQuestionnare",
+      "range": "ScoreDefinition",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "answerInQuestionnaireResponse",
       "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerInQuestionnaireResponse",
       "description": "The QuestionnaireResponse that this Answer is part of.",
@@ -1395,6 +1414,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sectionUsesScoreDefinition",
+      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionUsesScoreDefinition",
+      "description": "The ScoreDefinition that is applied in this Section.",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots",
+      "mappings": [
+        "https://faqir.org/datamodel/sectionUsesScoreDefinition"
+      ],
+      "domain": "Section",
+      "slot_uri": "https://faqir.org/datamodel/sectionUsesScoreDefinition",
+      "owner": "Section",
+      "domain_of": [
+        "Section"
+      ],
+      "inverse": "scoreDefinitionUsedBySection",
+      "range": "ScoreDefinition",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "orderedSectionPartOfQuestionnaire",
       "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire",
       "description": "The Questionnaire that this Section is part of in the specified order.",
@@ -1526,6 +1564,44 @@
       ],
       "inverse": "organizationAuthorsScoreDefinition",
       "range": "Organization",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "scoreDefinitionUsedByQuestionnare",
+      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedByQuestionnare",
+      "description": "The Questionnaires that this ScoreDefinition is applied in.",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots",
+      "mappings": [
+        "https://faqir.org/datamodel/scoreDefinitionUsedByQuestionnare"
+      ],
+      "domain": "ScoreDefinition",
+      "slot_uri": "https://faqir.org/datamodel/scoreDefinitionUsedByQuestionnare",
+      "owner": "ScoreDefinition",
+      "domain_of": [
+        "ScoreDefinition"
+      ],
+      "inverse": "questionnaireUsesScoreDefinition",
+      "range": "Questionnaire",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "scoreDefinitionUsedBySection",
+      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedBySection",
+      "description": "The Sections that this ScoreDefinition is applied in.",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/relationship_slots",
+      "mappings": [
+        "https://faqir.org/datamodel/scoreDefinitionUsedBySection"
+      ],
+      "domain": "ScoreDefinition",
+      "slot_uri": "https://faqir.org/datamodel/scoreDefinitionUsedBySection",
+      "owner": "ScoreDefinition",
+      "domain_of": [
+        "ScoreDefinition"
+      ],
+      "inverse": "sectionUsesScoreDefinition",
+      "range": "Section",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -3507,6 +3583,7 @@
         "questionnaireHasQuestionnaireResponse",
         "questionnaireHasOrderedQuestion",
         "questionnaireHasOrderedSection",
+        "questionnaireUsesScoreDefinition",
         "questionnaireAuthoredByOrg",
         "questionnairePartOfProcedure",
         "questionnaire__questionnaireId",
@@ -3634,6 +3711,7 @@
         "sectionHasOrderedQuestion",
         "sectionHasOrderedSection",
         "sectionInOrderedSection",
+        "sectionUsesScoreDefinition",
         "sectionAuthoredByOrg",
         "section__sectionId",
         "section__sectionLabel"
@@ -3673,6 +3751,8 @@
         "scoreDefinitionUsesQuestion",
         "scoreDefinitionHasScoreValue",
         "scoreDefinitionAuthoredByOrg",
+        "scoreDefinitionUsedByQuestionnare",
+        "scoreDefinitionUsedBySection",
         "scoreDefinition__scoreDefinitionId",
         "scoreDefinition__scoreDefinitionLabel",
         "scoreDefinition__scoreDefinitionIntervalParams",
@@ -4013,7 +4093,7 @@
   "source_file": "datamodel.yaml",
   "source_file_date": "2025-08-22T13:25:34",
   "source_file_size": 780,
-  "generation_date": "2025-09-09T11:37:40",
+  "generation_date": "2025-09-11T17:38:45",
   "@type": "SchemaDefinition",
   "@context": [
     "tmp/jsonld/datamodel.context.jsonld",

@@ -25,7 +25,6 @@ Name: datamodel
 | [Question](Question.md) | A question in the questionnaire |
 | [Questionnaire](Questionnaire.md) | A questionnaire that can be answered (collection of questions) |
 | [QuestionnaireResponse](QuestionnaireResponse.md) | A response to a questionnaire (collection of answers) |
-| [QuestionRepresentation](QuestionRepresentation.md) | The text representation of the question, in a specific language |
 | [ScoreDefinition](ScoreDefinition.md) | A score calculated from questions |
 | [ScoreParameter](ScoreParameter.md) | Parameters for score definitions, such as min/max values, categories or const... |
 | [ScoreValue](ScoreValue.md) | The score value calculated from a QuestionnaireResponse following a ScoreDefi... |
@@ -93,10 +92,10 @@ Name: datamodel
 | [questionAuthoredByOrg](questionAuthoredByOrg.md) | The organization that has designed this Question |
 | [questionCodingParams](questionCodingParams.md) | Code and Display of each option offered as answer to the choice or open-choic... |
 | [questionHasAnswer](questionHasAnswer.md) | The Answer to this Question |
-| [questionHasQuestionRepresentation](questionHasQuestionRepresentation.md) | QuestionRepresentations that describe the question in each language |
 | [questionId](questionId.md) | The unique identifier for a question in the questionnaire |
 | [questionInOrderedQuestion](questionInOrderedQuestion.md) | OrderedQuestions that this Question is indexed in |
 | [questionIntervalParams](questionIntervalParams.md) | Minimum and Maximum limiting the range the answer must be in for the question |
+| [questionLabel](questionLabel.md) | The text of the question itself, which is displayed to the user |
 | [questionnaireAuthoredByOrg](questionnaireAuthoredByOrg.md) | The Organization that has created this Questionnaire |
 | [questionnaireHasOrderedQuestion](questionnaireHasOrderedQuestion.md) | The Question that is part of this Questionnaire, with their display order |
 | [questionnaireHasOrderedSection](questionnaireHasOrderedSection.md) | The Section that is part of this Questionnaire, with their display order |
@@ -117,10 +116,6 @@ Name: datamodel
 | [questionnaireVersion](questionnaireVersion.md) | Version of the questionnaire |
 | [questionNumericalParams](questionNumericalParams.md) | Unit and Precision limiting the quantitative answer for the question |
 | [questionOrder](questionOrder.md) | Question position in the questionnaire or section (1-based index) |
-| [questionRepresentationId](questionRepresentationId.md) | The unique identifier for the question representation |
-| [questionRepresentationLanguage](questionRepresentationLanguage.md) | The language of the question text, represented as a BCP 47 language tag (e |
-| [questionRepresentationOfQuestion](questionRepresentationOfQuestion.md) | The Question that this QuestionRepresentation describes |
-| [questionRepresentationText](questionRepresentationText.md) | The text of the question as presented to the user |
 | [questionRequired](questionRequired.md) | Indicates whether answering this question is mandatory (true) or it's optiona... |
 | [questionTag](questionTag.md) | Internal English identifier, e |
 | [questionType](questionType.md) | Type of the question (e |

@@ -1,12 +1,13 @@
 ---
-questionId: "https://pods.faqir.org/question_05_EQ_5D_5L_01"
+questionId: "https://pods.faqir.org/question_EQ_5D_5L_01"
 questionTag: "q_EQ_5D_5L_01"
-questionLabel: "Under each heading, please tick the ONE box that best describes your health TODAY. MOBILITY."
+questionLabel: "MOBILITY. Please tick the ONE box that best describes your health TODAY."
 questionRequired: false
 questionType: choice
 questionAuthoredByOrg:  
   - "https://euroqol.org/"
 questionInOrderedQuestion: 
+  - "https://pods.faqir.org/orderedquestion_EQ_5D_5L_01"
   - "https://pods.faqir.org/orderedquestion_05_EQ_5D_5L_01_s01"
   - "https://pods.faqir.org/orderedquestion_05_EQ_5D_5L_01_s02"
   - "https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_01_q01"
@@ -22,6 +23,7 @@ questionCodingParams:
   - code: "5"
     display: "I am unable to walking about"
 questionHasAnswer:
+  - "https://pods.faqir.org/answer_EQ_5D_5L_01_a01"
   - "https://pods.faqir.org/answer_05_EQ_5D_5L_01_01"
   - "https://pods.faqir.org/answer_05_EQ_5D_5L_01_02"
   - "https://pods.faqir.org/answer_05_EQ_5D_5L_01_03"

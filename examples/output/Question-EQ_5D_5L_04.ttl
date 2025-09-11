@@ -1,0 +1,30 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_04> a faqir:Question ;
+    faqir:questionAuthoredByOrg <https://euroqol.org/> ;
+    faqir:questionHasAnswer <https://pods.faqir.org/answer_EQ_5D_5L_04_a01> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_04> ;
+    faqir:questionType fhir:choice ;
+    ns2:questionCodingParams [ a faqir:ValueCoding ;
+            ns1:code "3" ;
+            ns1:display "I have moderate pain or discomfort" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "2" ;
+            ns1:display "I have slight pain or discomfort" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "1" ;
+            ns1:display "I have no pain or discomfort" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "5" ;
+            ns1:display "I have extreme pain or discomfort" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "4" ;
+            ns1:display "I have severe pain or discomfort" ] ;
+    ns2:questionLabel "PAIN / DISCOMFORT. Please tick the ONE box that best describes your health TODAY." ;
+    ns2:questionRequired false ;
+    ns2:questionTag "q_EQ_5D_5L_04" .
+

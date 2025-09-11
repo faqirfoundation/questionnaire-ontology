@@ -1,5 +1,5 @@
 # Auto generated from datamodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-09T11:37:40
+# Generation date: 2025-09-11T17:38:46
 # Schema: datamodel
 #
 # id: https://w3id.org/faqir/datamodel
@@ -935,6 +935,7 @@ class Questionnaire(YAMLRoot):
     questionnaireHasQuestionnaireResponse: Optional[Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]]] = empty_list()
     questionnaireHasOrderedQuestion: Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]] = empty_dict()
     questionnaireHasOrderedSection: Optional[Union[dict[Union[str, OrderedSectionOrderedSectionId], Union[dict, "OrderedSection"]], list[Union[dict, "OrderedSection"]]]] = empty_dict()
+    questionnaireUsesScoreDefinition: Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]] = empty_list()
     questionnaireAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
     questionnairePartOfProcedure: Optional[Union[Union[str, ProcedureProcedureId], list[Union[str, ProcedureProcedureId]]]] = empty_list()
 
@@ -971,6 +972,10 @@ class Questionnaire(YAMLRoot):
         self._normalize_inlined_as_list(slot_name="questionnaireHasOrderedQuestion", slot_type=OrderedQuestion, key_name="orderedQuestionId", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="questionnaireHasOrderedSection", slot_type=OrderedSection, key_name="orderedSectionId", keyed=True)
+
+        if not isinstance(self.questionnaireUsesScoreDefinition, list):
+            self.questionnaireUsesScoreDefinition = [self.questionnaireUsesScoreDefinition] if self.questionnaireUsesScoreDefinition is not None else []
+        self.questionnaireUsesScoreDefinition = [v if isinstance(v, ScoreDefinitionScoreDefinitionId) else ScoreDefinitionScoreDefinitionId(v) for v in self.questionnaireUsesScoreDefinition]
 
         if not isinstance(self.questionnaireAuthoredByOrg, list):
             self.questionnaireAuthoredByOrg = [self.questionnaireAuthoredByOrg] if self.questionnaireAuthoredByOrg is not None else []
@@ -1043,6 +1048,7 @@ class Section(YAMLRoot):
     sectionHasOrderedQuestion: Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]] = empty_dict()
     sectionHasOrderedSection: Optional[Union[dict[Union[str, OrderedSectionOrderedSectionId], Union[dict, OrderedSection]], list[Union[dict, OrderedSection]]]] = empty_dict()
     sectionInOrderedSection: Optional[Union[Union[str, OrderedSectionOrderedSectionId], list[Union[str, OrderedSectionOrderedSectionId]]]] = empty_list()
+    sectionUsesScoreDefinition: Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]] = empty_list()
     sectionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1063,6 +1069,10 @@ class Section(YAMLRoot):
         if not isinstance(self.sectionInOrderedSection, list):
             self.sectionInOrderedSection = [self.sectionInOrderedSection] if self.sectionInOrderedSection is not None else []
         self.sectionInOrderedSection = [v if isinstance(v, OrderedSectionOrderedSectionId) else OrderedSectionOrderedSectionId(v) for v in self.sectionInOrderedSection]
+
+        if not isinstance(self.sectionUsesScoreDefinition, list):
+            self.sectionUsesScoreDefinition = [self.sectionUsesScoreDefinition] if self.sectionUsesScoreDefinition is not None else []
+        self.sectionUsesScoreDefinition = [v if isinstance(v, ScoreDefinitionScoreDefinitionId) else ScoreDefinitionScoreDefinitionId(v) for v in self.sectionUsesScoreDefinition]
 
         if not isinstance(self.sectionAuthoredByOrg, list):
             self.sectionAuthoredByOrg = [self.sectionAuthoredByOrg] if self.sectionAuthoredByOrg is not None else []
@@ -1091,6 +1101,8 @@ class ScoreDefinition(YAMLRoot):
     scoreDefinitionHasScoreParameter: Optional[Union[Union[str, ScoreParameterScoreParameterId], list[Union[str, ScoreParameterScoreParameterId]]]] = empty_list()
     scoreDefinitionHasScoreValue: Optional[Union[Union[str, ScoreValueScoreValueId], list[Union[str, ScoreValueScoreValueId]]]] = empty_list()
     scoreDefinitionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
+    scoreDefinitionUsedByQuestionnare: Optional[Union[Union[str, QuestionnaireQuestionnaireId], list[Union[str, QuestionnaireQuestionnaireId]]]] = empty_list()
+    scoreDefinitionUsedBySection: Optional[Union[Union[str, SectionSectionId], list[Union[str, SectionSectionId]]]] = empty_list()
     scoreDefinitionIntervalParams: Optional[Union[dict, IntervalParams]] = None
     scoreDefinitionCategories: Optional[Union[str, list[str]]] = empty_list()
     scoreDefinitionInterpretationGuide: Optional[str] = None
@@ -1133,6 +1145,14 @@ class ScoreDefinition(YAMLRoot):
         if not isinstance(self.scoreDefinitionAuthoredByOrg, list):
             self.scoreDefinitionAuthoredByOrg = [self.scoreDefinitionAuthoredByOrg] if self.scoreDefinitionAuthoredByOrg is not None else []
         self.scoreDefinitionAuthoredByOrg = [v if isinstance(v, OrganizationOrganizationId) else OrganizationOrganizationId(v) for v in self.scoreDefinitionAuthoredByOrg]
+
+        if not isinstance(self.scoreDefinitionUsedByQuestionnare, list):
+            self.scoreDefinitionUsedByQuestionnare = [self.scoreDefinitionUsedByQuestionnare] if self.scoreDefinitionUsedByQuestionnare is not None else []
+        self.scoreDefinitionUsedByQuestionnare = [v if isinstance(v, QuestionnaireQuestionnaireId) else QuestionnaireQuestionnaireId(v) for v in self.scoreDefinitionUsedByQuestionnare]
+
+        if not isinstance(self.scoreDefinitionUsedBySection, list):
+            self.scoreDefinitionUsedBySection = [self.scoreDefinitionUsedBySection] if self.scoreDefinitionUsedBySection is not None else []
+        self.scoreDefinitionUsedBySection = [v if isinstance(v, SectionSectionId) else SectionSectionId(v) for v in self.scoreDefinitionUsedBySection]
 
         if self.scoreDefinitionIntervalParams is not None and not isinstance(self.scoreDefinitionIntervalParams, IntervalParams):
             self.scoreDefinitionIntervalParams = IntervalParams(**as_dict(self.scoreDefinitionIntervalParams))
@@ -1583,6 +1603,9 @@ slots.questionnaireResponseHasAnswer = Slot(uri=FAQIR.questionnaireResponseHasAn
 slots.questionnaireResponseHasDerivedScoreValue = Slot(uri=FAQIR.questionnaireResponseHasDerivedScoreValue, name="questionnaireResponseHasDerivedScoreValue", curie=FAQIR.curie('questionnaireResponseHasDerivedScoreValue'),
                    model_uri=DATAMODEL.questionnaireResponseHasDerivedScoreValue, domain=QuestionnaireResponse, range=Optional[Union[Union[str, ScoreValueScoreValueId], list[Union[str, ScoreValueScoreValueId]]]])
 
+slots.questionnaireUsesScoreDefinition = Slot(uri=FAQIR.questionnaireUsesScoreDefinition, name="questionnaireUsesScoreDefinition", curie=FAQIR.curie('questionnaireUsesScoreDefinition'),
+                   model_uri=DATAMODEL.questionnaireUsesScoreDefinition, domain=Questionnaire, range=Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]])
+
 slots.answerInQuestionnaireResponse = Slot(uri=FAQIR.answerInQuestionnaireResponse, name="answerInQuestionnaireResponse", curie=FAQIR.curie('answerInQuestionnaireResponse'),
                    model_uri=DATAMODEL.answerInQuestionnaireResponse, domain=Answer, range=Union[str, QuestionnaireResponseQuestionnaireResponseId], mappings = [FHIR["QuestionnaireResponse.item.answer"]])
 
@@ -1637,6 +1660,9 @@ slots.sectionInOrderedSection = Slot(uri=FAQIR.sectionInOrderedSection, name="se
 slots.sectionAuthoredByOrg = Slot(uri=FAQIR.sectionAuthoredByOrg, name="sectionAuthoredByOrg", curie=FAQIR.curie('sectionAuthoredByOrg'),
                    model_uri=DATAMODEL.sectionAuthoredByOrg, domain=Section, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]], mappings = [FHIR["Questionnaire.author"]])
 
+slots.sectionUsesScoreDefinition = Slot(uri=FAQIR.sectionUsesScoreDefinition, name="sectionUsesScoreDefinition", curie=FAQIR.curie('sectionUsesScoreDefinition'),
+                   model_uri=DATAMODEL.sectionUsesScoreDefinition, domain=Section, range=Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]])
+
 slots.orderedSectionPartOfQuestionnaire = Slot(uri=FAQIR.orderedSectionPartOfQuestionnaire, name="orderedSectionPartOfQuestionnaire", curie=FAQIR.curie('orderedSectionPartOfQuestionnaire'),
                    model_uri=DATAMODEL.orderedSectionPartOfQuestionnaire, domain=OrderedSection, range=Optional[Union[str, QuestionnaireQuestionnaireId]], mappings = [FHIR["Questionnaire.item"]])
 
@@ -1657,6 +1683,12 @@ slots.scoreDefinitionHasScoreValue = Slot(uri=FAQIR.scoreDefinitionHasScoreValue
 
 slots.scoreDefinitionAuthoredByOrg = Slot(uri=FAQIR.scoreDefinitionAuthoredByOrg, name="scoreDefinitionAuthoredByOrg", curie=FAQIR.curie('scoreDefinitionAuthoredByOrg'),
                    model_uri=DATAMODEL.scoreDefinitionAuthoredByOrg, domain=ScoreDefinition, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]], mappings = [FHIR["Questionnaire.author"]])
+
+slots.scoreDefinitionUsedByQuestionnare = Slot(uri=FAQIR.scoreDefinitionUsedByQuestionnare, name="scoreDefinitionUsedByQuestionnare", curie=FAQIR.curie('scoreDefinitionUsedByQuestionnare'),
+                   model_uri=DATAMODEL.scoreDefinitionUsedByQuestionnare, domain=ScoreDefinition, range=Optional[Union[Union[str, QuestionnaireQuestionnaireId], list[Union[str, QuestionnaireQuestionnaireId]]]])
+
+slots.scoreDefinitionUsedBySection = Slot(uri=FAQIR.scoreDefinitionUsedBySection, name="scoreDefinitionUsedBySection", curie=FAQIR.curie('scoreDefinitionUsedBySection'),
+                   model_uri=DATAMODEL.scoreDefinitionUsedBySection, domain=ScoreDefinition, range=Optional[Union[Union[str, SectionSectionId], list[Union[str, SectionSectionId]]]])
 
 slots.scoreParameterPartOfScoreDefinition = Slot(uri=FAQIR.scoreParameterPartOfScoreDefinition, name="scoreParameterPartOfScoreDefinition", curie=FAQIR.curie('scoreParameterPartOfScoreDefinition'),
                    model_uri=DATAMODEL.scoreParameterPartOfScoreDefinition, domain=ScoreParameter, range=Union[str, ScoreDefinitionScoreDefinitionId])

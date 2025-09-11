@@ -95,9 +95,14 @@ Relationships:
     * Inverse: [```orderedQuestionPartOfQuestionnaire```](#orderedQuestionPartOfQuestionnaire)
 * ```questionnaireHasOrderedSection```:
     * [Questionnaire](#Questionnaire) --> [OrderedSection](#OrderedSection)
-    * Not required.
+    * Not required
     * Multivalued & inlined (ordered)
     * Inverse: [```orderedSectionPartOfQuestionnaire```](#orderedSectionPartOfQuestionnaire)
+* ```questionnaireUsesScoreDefinition```:
+    * [Questionnaire](#Questionnaire) --> [ScoreDefinition](#ScoreDefinition)
+    * Not required
+    * Multivalued 
+    * Inverse: [```scoreDefinitionUsedByQuestionnare```](#scoreDefinitionUsedByQuestionnare)
 * ```questionnaireAuthoredByOrg```:
     * [Questionnaire](#Questionnaire) --> [Organization](#Organization)
     * Not required
@@ -233,6 +238,11 @@ Relationships:
     * Not required
     * Multivalued
     * Inverse: [```orderedSectionHasSection```](#orderedSectionHasSection)
+* ```sectionUsesScoreDefinition```: Points back to the wrapper OrderedSections.
+    * [Section](#Section) --> [ScoreDefinition](#ScoreDefinition)
+    * Not required
+    * Multivalued
+    * Inverse: [```scoreDefinitionUsedBySection```](#scoreDefinitionUsedBySection)
 * ```sectionAuthoredByOrg```: 
     * [Section](#Section) --> [Organization](#Organization)
     * Not required
@@ -373,6 +383,16 @@ Relationships:
     * Required
     * Multivalued
     * Inverse: [```questionUsedInScoreDefinition```](#questionUsedInScoreDefinition)
+* ```scoreDefinitionUsedByQuestionnaire```: Questionnaires that this ScoreDefinition is applied in.
+    * [ScoreDefinition](#ScoreDefinition) --> [Questionnaire](#Questionnaire)
+    * Not required
+    * Multivalued
+    * Inverse: [```questionnaireUsesScoreDefinition```](#questionnaireUsesScoreDefinition)
+* ```scoreDefinitionUsedBySection```: Sections that this ScoreDefinition is applied in.
+    * [ScoreDefinition](#ScoreDefinition) --> [Section](#Section)
+    * Not required
+    * Multivalued
+    * Inverse: [```sectionUsesScoreDefinition```](#sectionUsesScoreDefinition)
 * ```scoreDefinitionHasScoreValue```:
     * [ScoreDefinition](#ScoreDefinition) --> [ScoreValue](#ScoreValue)
     * Not required

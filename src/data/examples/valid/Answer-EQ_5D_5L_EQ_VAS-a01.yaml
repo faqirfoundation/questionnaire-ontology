@@ -1,0 +1,10 @@
+---
+answerId: "https://pods.faqir.org/questionnaire/answer_EQ_5D_5L_EQ_VAS_a01"
+answerInQuestionnaireResponse: "https://pods.faqir.org/questionnaire/response_EQ_5D_5L_01"
+answerToQuestion: "https://pods.faqir.org/questionnaire/question_EQ_5D_5L_EQ_VAS"
+questionType: numberInterval
+answerIsEmpty: false
+answerTimeStamp: "2025-07-11T10:35:11Z"
+answerValueNumerical:
+  numericalValue: 83
+  

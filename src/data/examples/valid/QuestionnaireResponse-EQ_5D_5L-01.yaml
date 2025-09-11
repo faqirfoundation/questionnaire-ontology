@@ -1,0 +1,14 @@
+---
+questionnaireResponseId: "https://pods.faqir.org/response_EQ_5D_5L_01"
+questionnaireResponseLastUpdated: "2025-07-11T10:35:00Z"
+questionnaireResponseStatus: completed 
+questionnaireResponseTimeStamp: "2025-07-11T10:35:00Z"
+questionnaireResponseBySubject: "https://pods.faqir.org/123"
+questionnaireResponseToQuestionnaire: "https://pods.faqir.org/questionnaire_EQ_5D_5L"
+questionnaireResponseHasAnswer:
+  - "https://pods.faqir.org/answer_EQ_5D_5L_01_a01"
+  - "https://pods.faqir.org/answer_EQ_5D_5L_02_a01"
+  - "https://pods.faqir.org/answer_EQ_5D_5L_03_a01"
+  - "https://pods.faqir.org/answer_EQ_5D_5L_04_a01"
+  - "https://pods.faqir.org/answer_EQ_5D_5L_05_a01"
+  - "https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01"

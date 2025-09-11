@@ -303,6 +303,7 @@ classes:
       - questionnaireHasQuestionnaireResponse
       - questionnaireHasOrderedQuestion
       - questionnaireHasOrderedSection
+      - questionnaireUsesScoreDefinition
       - questionnaireAuthoredByOrg
       - questionnairePartOfProcedure
     #rules:
@@ -369,6 +370,7 @@ classes:
       - sectionHasOrderedQuestion
       - sectionHasOrderedSection
       - sectionInOrderedSection
+      - sectionUsesScoreDefinition
       - sectionAuthoredByOrg
     #rules:
     ###  #- _RulesContainer/section_structure_rule #- <<: *section_structure_rule \n\t _from: _RulesContainer
@@ -431,6 +433,8 @@ classes:
       - scoreDefinitionUsesQuestion
       - scoreDefinitionHasScoreValue
       - scoreDefinitionAuthoredByOrg
+      - scoreDefinitionUsedByQuestionnare
+      - scoreDefinitionUsedBySection
     rules:
       - description: "If scoreDefinitionType is 'categorical', scoreDefinitionCategories is required."
         preconditions:

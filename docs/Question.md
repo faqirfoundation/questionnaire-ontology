@@ -53,17 +53,6 @@ URI: [faqir:Question](https://faqir.org/datamodel/Question)
     
 
         
-      Question : questionHasQuestionRepresentation
-        
-          
-    
-        
-        
-        Question --> "1..*" QuestionRepresentation : questionHasQuestionRepresentation
-        click QuestionRepresentation href "../QuestionRepresentation"
-    
-
-        
       Question : questionId
         
       Question : questionInOrderedQuestion
@@ -87,6 +76,8 @@ URI: [faqir:Question](https://faqir.org/datamodel/Question)
         click IntervalParams href "../IntervalParams"
     
 
+        
+      Question : questionLabel
         
       Question : questionNumericalParams
         
@@ -139,13 +130,13 @@ URI: [faqir:Question](https://faqir.org/datamodel/Question)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [questionType](questionType.md) | 1 <br/> [QuestionType](QuestionType.md) | Type of the question (e | direct |
-| [questionHasQuestionRepresentation](questionHasQuestionRepresentation.md) | 1..* <br/> [QuestionRepresentation](QuestionRepresentation.md) | QuestionRepresentations that describe the question in each language | direct |
 | [questionAuthoredByOrg](questionAuthoredByOrg.md) | * <br/> [Organization](Organization.md) | The organization that has designed this Question | direct |
 | [questionInOrderedQuestion](questionInOrderedQuestion.md) | * <br/> [OrderedQuestion](OrderedQuestion.md) | OrderedQuestions that this Question is indexed in | direct |
 | [questionHasAnswer](questionHasAnswer.md) | * <br/> [Answer](Answer.md) | The Answer to this Question | direct |
 | [questionUsedInScoreDefinition](questionUsedInScoreDefinition.md) | * <br/> [ScoreDefinition](ScoreDefinition.md) | The ScoreDefinition that this Question is used in | direct |
 | [questionId](questionId.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | The unique identifier for a question in the questionnaire | direct |
 | [questionTag](questionTag.md) | 1 <br/> [String](String.md) | Internal English identifier, e | direct |
+| [questionLabel](questionLabel.md) | 1 <br/> [String](String.md) | The text of the question itself, which is displayed to the user | direct |
 | [questionNumericalParams](questionNumericalParams.md) | 0..1 <br/> [NumericalParams](NumericalParams.md) | Unit and Precision limiting the quantitative answer for the question | direct |
 | [questionCodingParams](questionCodingParams.md) | * <br/> [ValueCoding](ValueCoding.md) | Code and Display of each option offered as answer to the choice or open-choic... | direct |
 | [questionIntervalParams](questionIntervalParams.md) | 0..1 <br/> [IntervalParams](IntervalParams.md) | Minimum and Maximum limiting the range the answer must be in for the question | direct |
@@ -162,12 +153,10 @@ URI: [faqir:Question](https://faqir.org/datamodel/Question)
 | [Organization](Organization.md) | [organizationAuthorsQuestion](organizationAuthorsQuestion.md) | range | [Question](Question.md) |
 | [Answer](Answer.md) | [answerToQuestion](answerToQuestion.md) | range | [Question](Question.md) |
 | [OrderedQuestion](OrderedQuestion.md) | [orderedQuestionHasQuestion](orderedQuestionHasQuestion.md) | range | [Question](Question.md) |
-| [Question](Question.md) | [questionHasQuestionRepresentation](questionHasQuestionRepresentation.md) | domain | [Question](Question.md) |
 | [Question](Question.md) | [questionAuthoredByOrg](questionAuthoredByOrg.md) | domain | [Question](Question.md) |
 | [Question](Question.md) | [questionInOrderedQuestion](questionInOrderedQuestion.md) | domain | [Question](Question.md) |
 | [Question](Question.md) | [questionHasAnswer](questionHasAnswer.md) | domain | [Question](Question.md) |
 | [Question](Question.md) | [questionUsedInScoreDefinition](questionUsedInScoreDefinition.md) | domain | [Question](Question.md) |
-| [QuestionRepresentation](QuestionRepresentation.md) | [questionRepresentationOfQuestion](questionRepresentationOfQuestion.md) | range | [Question](Question.md) |
 | [ScoreDefinition](ScoreDefinition.md) | [scoreDefinitionUsesQuestion](scoreDefinitionUsesQuestion.md) | range | [Question](Question.md) |
 
 
@@ -221,7 +210,6 @@ mappings:
 - skos:Concept
 slots:
 - questionType
-- questionHasQuestionRepresentation
 - questionAuthoredByOrg
 - questionInOrderedQuestion
 - questionHasAnswer
@@ -240,6 +228,15 @@ attributes:
   questionTag:
     name: questionTag
     description: Internal English identifier, e.g., 'q_pain_level'.
+    from_schema: https://w3id.org/faqir/datamodel/questionnaire/classes
+    rank: 1000
+    domain_of:
+    - Question
+    range: string
+    required: true
+  questionLabel:
+    name: questionLabel
+    description: The text of the question itself, which is displayed to the user.
     from_schema: https://w3id.org/faqir/datamodel/questionnaire/classes
     rank: 1000
     domain_of:
@@ -372,6 +369,17 @@ attributes:
     - Question
     range: string
     required: true
+  questionLabel:
+    name: questionLabel
+    description: The text of the question itself, which is displayed to the user.
+    from_schema: https://w3id.org/faqir/datamodel/questionnaire/classes
+    rank: 1000
+    alias: questionLabel
+    owner: Question
+    domain_of:
+    - Question
+    range: string
+    required: true
   questionNumericalParams:
     name: questionNumericalParams
     description: Unit and Precision limiting the quantitative answer for the question.
@@ -438,23 +446,6 @@ attributes:
     - Question
     range: QuestionType
     required: true
-  questionHasQuestionRepresentation:
-    name: questionHasQuestionRepresentation
-    description: QuestionRepresentations that describe the question in each language.
-    from_schema: https://w3id.org/faqir/datamodel
-    rank: 1000
-    domain: Question
-    slot_uri: faqir:questionHasQuestionRepresentation
-    alias: questionHasQuestionRepresentation
-    owner: Question
-    domain_of:
-    - Question
-    inverse: questionRepresentationOfQuestion
-    range: QuestionRepresentation
-    required: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   questionAuthoredByOrg:
     name: questionAuthoredByOrg
     description: The organization that has designed this Question.

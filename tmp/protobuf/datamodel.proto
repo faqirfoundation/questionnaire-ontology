@@ -101,6 +101,7 @@ message Questionnaire
  repeated  questionnaireResponse questionnaireHasQuestionnaireResponse = 0
  repeated  orderedQuestion questionnaireHasOrderedQuestion = 0
  repeated  orderedSection questionnaireHasOrderedSection = 0
+ repeated  scoreDefinition questionnaireUsesScoreDefinition = 0
  repeated  organization questionnaireAuthoredByOrg = 0
  repeated  procedure questionnairePartOfProcedure = 0
   uriorcurie questionnaireId = 0
@@ -129,6 +130,8 @@ message ScoreDefinition
  repeated  question scoreDefinitionUsesQuestion = 0
  repeated  scoreValue scoreDefinitionHasScoreValue = 0
  repeated  organization scoreDefinitionAuthoredByOrg = 0
+ repeated  questionnaire scoreDefinitionUsedByQuestionnare = 0
+ repeated  section scoreDefinitionUsedBySection = 0
   uriorcurie scoreDefinitionId = 0
   string scoreDefinitionLabel = 0
   intervalParams scoreDefinitionIntervalParams = 0
@@ -164,6 +167,7 @@ message Section
  repeated  orderedQuestion sectionHasOrderedQuestion = 0
  repeated  orderedSection sectionHasOrderedSection = 0
  repeated  orderedSection sectionInOrderedSection = 0
+ repeated  scoreDefinition sectionUsesScoreDefinition = 0
  repeated  organization sectionAuthoredByOrg = 0
   uriorcurie sectionId = 0
   string sectionLabel = 0
