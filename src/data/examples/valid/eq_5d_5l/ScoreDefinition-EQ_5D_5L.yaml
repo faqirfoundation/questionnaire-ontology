@@ -7,10 +7,10 @@ scoreDefinitionIntervalParams:
   maxValue: 99999
 scoreDefinitionFormula: |
   Each state is referred to by a 5-digit code: each digit representing the answer to each question or dimension (e.g. 12345).
+  The first digit represents the level selected for mobility, the second for self-care, the third for usual activities, the fourth for pain/discomfort and the fifth for anxiety/depression.
   - Missing values are preferably coded as ‘9’.
   - Ambiguous values (e.g. two boxes are ticked for a single dimension) should
   be treated as missing values.
-  
 scoreDefinitionInterpretationGuide: |
     A total of 3125 possible health states are defined in this way. 
     LEVEL 1: indicating no problem
@@ -19,20 +19,15 @@ scoreDefinitionInterpretationGuide: |
     LEVEL 4: indicating severe problems
     LEVEL 5: indicating unable to/extreme problems
 scoreDefinitionUsesQuestion:
-  - "https://pods.faqir.org/FoIn0"
-  - "https://pods.faqir.org/Fowh1"
-  - "https://pods.faqir.org/Fowh2"
-  - "https://pods.faqir.org/Fowh3"
-  - "https://pods.faqir.org/Fowh4"
-  - "https://pods.faqir.org/Fowh5"
-  - "https://pods.faqir.org/Fowh6"
-  - "https://pods.faqir.org/Fowh7"
-  - "https://pods.faqir.org/Fowh8"
-  - "https://pods.faqir.org/Fowh9"
-  - "https://pods.faqir.org/Fowh10"
-  - "https://pods.faqir.org/Fowh11"
+  - "https://pods.faqir.org/question_EQ_5D_5L_01"
+  - "https://pods.faqir.org/question_EQ_5D_5L_02"
+  - "https://pods.faqir.org/question_EQ_5D_5L_03"
+  - "https://pods.faqir.org/question_EQ_5D_5L_04"
+  - "https://pods.faqir.org/question_EQ_5D_5L_05"
 scoreDefinitionHasScoreValue:
-  - "https://pods.faqir.org/svTFJSK"
+  - "https://pods.faqir.org/svEQ_5D_5L_01"
 scoreDefinitionAuthoredByOrg:
-  - "https://www.moveup.care/"
+  - "https://euroqol.org/"
+scoreDefinitionUsedByQuestionnare:
+  - "https://pods.faqir.org/questionnaire_EQ_5D_5L"
 

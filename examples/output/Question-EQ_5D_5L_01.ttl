@@ -1,7 +1,7 @@
 @prefix faqir: <https://faqir.org/datamodel/> .
 @prefix fhir: <https://www.hl7.org/fhir/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
-@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://pods.faqir.org/question_EQ_5D_5L_01> a faqir:Question ;
@@ -15,22 +15,22 @@
         <https://pods.faqir.org/orderedquestion_06_EQ_5D_5L_01_q01>,
         <https://pods.faqir.org/orderedquestion_EQ_5D_5L_01> ;
     faqir:questionType fhir:choice ;
-    ns1:questionCodingParams [ a faqir:ValueCoding ;
-            ns2:code "5" ;
-            ns2:display "I am unable to walking about" ],
+    ns2:questionCodingParams [ a faqir:ValueCoding ;
+            ns1:code "3" ;
+            ns1:display "I have moderate problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "2" ;
-            ns2:display "I have slight problems in walking about" ],
+            ns1:code "4" ;
+            ns1:display "I have severe problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "3" ;
-            ns2:display "I have moderate problems in walking about" ],
+            ns1:code "1" ;
+            ns1:display "I have no problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "4" ;
-            ns2:display "I have severe problems in walking about" ],
+            ns1:code "2" ;
+            ns1:display "I have slight problems in walking about" ],
         [ a faqir:ValueCoding ;
-            ns2:code "1" ;
-            ns2:display "I have no problems in walking about" ] ;
-    ns1:questionLabel "MOBILITY. Please tick the ONE box that best describes your health TODAY." ;
-    ns1:questionRequired false ;
-    ns1:questionTag "q_EQ_5D_5L_01" .
+            ns1:code "5" ;
+            ns1:display "I am unable to walking about" ] ;
+    ns2:questionLabel "MOBILITY. Please tick the ONE box that best describes your health TODAY." ;
+    ns2:questionRequired false ;
+    ns2:questionTag "q_EQ_5D_5L_01" .
 

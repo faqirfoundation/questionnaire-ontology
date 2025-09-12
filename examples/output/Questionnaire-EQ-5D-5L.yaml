@@ -24,3 +24,6 @@ questionnaireHasOrderedQuestion:
 - orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS
   orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS
   questionOrder: 6
+questionnaireUsesScoreDefinition:
+- https://pods.faqir.org/sdEQ_5D_5L
+- https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS

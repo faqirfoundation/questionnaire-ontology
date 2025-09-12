@@ -18,17 +18,17 @@
             ns1:code "3" ;
             ns1:display "I have moderate problems washing or dressing myself" ],
         [ a faqir:ValueCoding ;
-            ns1:code "5" ;
-            ns1:display "I am unable to wash or dress myself" ],
-        [ a faqir:ValueCoding ;
-            ns1:code "2" ;
-            ns1:display "I have slight problems washing or dressing myself" ],
-        [ a faqir:ValueCoding ;
             ns1:code "1" ;
             ns1:display "I have no problems washing or dressing myself" ],
         [ a faqir:ValueCoding ;
             ns1:code "4" ;
-            ns1:display "I have severe problems washing or dressing myself" ] ;
+            ns1:display "I have severe problems washing or dressing myself" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "2" ;
+            ns1:display "I have slight problems washing or dressing myself" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "5" ;
+            ns1:display "I am unable to wash or dress myself" ] ;
     ns2:questionLabel "SELF-CARE. Please tick the ONE box that best describes your health TODAY." ;
     ns2:questionRequired false ;
     ns2:questionTag "q_EQ_5D_5L_02" .

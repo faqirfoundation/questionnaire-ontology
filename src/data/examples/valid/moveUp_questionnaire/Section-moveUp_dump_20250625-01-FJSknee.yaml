@@ -40,3 +40,5 @@ sectionHasOrderedQuestion:
     orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh11"
 sectionAuthoredByOrg:  
   - "https://www.moveup.care/"
+sectionUsesScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

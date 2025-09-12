@@ -34,23 +34,23 @@
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalPrecision> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalPrecision> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/UnitOfMeasure> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalUnit> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalUnit> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalUnit> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:Integer [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:integer ;
                                 owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalPrecision> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalPrecision> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalPrecision> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalUnit> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/UnitOfMeasure> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalUnit> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalUnit> ] ;
     skos:definition "Parameters for quantitative values, including unit and precision." ;
     skos:exactMatch <https://faqir.org/datamodel/NumericalParams> ;
     skos:inScheme types: .
@@ -59,23 +59,23 @@
         linkml:ClassDefinition ;
     rdfs:label "ValueCoding" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/display> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/display> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/code> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/code> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/display> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/code> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/display> ] ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/display> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/code> ] ;
     skos:definition "A coded value with a unique code for each display text, typically used for standardized questionnaires." ;
     skos:exactMatch <https://faqir.org/datamodel/ValueCoding> ;
     skos:inScheme types: ;
@@ -85,13 +85,13 @@
         linkml:ClassDefinition ;
     rdfs:label "Metadata" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/versions/lastUpdated> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/versions/lastUpdated> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/versions/lastUpdated> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/versions/lastUpdated> ] ;
     skos:definition "Base class for metadata tracking (e.g. schema versioning & last updated)." ;
     skos:exactMatch <https://faqir.org/datamodel/Metadata> ;
@@ -110,32 +110,32 @@
         linkml:ClassDefinition ;
     rdfs:label "FullName" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/first_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/family_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/middle_name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/family_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/middle_name> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/first_name> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/family_name> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/first_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/family_name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/middle_name> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/first_name> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/first_name> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/family_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/middle_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/middle_name> ] ;
     skos:definition "Structured full name." ;
     skos:inScheme datamodel:vault .
 
@@ -227,41 +227,41 @@ ucum:min a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "IntervalParams" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Float ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minValue> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxValue> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxLabel> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxLabel> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minValue> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxValue> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Float ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxValue> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minValue> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minValue> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minValue> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxLabel> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxValue> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minValue> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxValue> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/minLabel> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/maxLabel> ] ;
     skos:definition "Parameters for interval values, including minimum and maximum values." ;
     skos:exactMatch <https://faqir.org/datamodel/IntervalParams> ;
     skos:inScheme types: .
@@ -270,10 +270,10 @@ ucum:min a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ValueDateTime" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom linkml:Datetime ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/dateTimeValue> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/dateTimeValue> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -290,10 +290,10 @@ ucum:min a owl:Class,
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/stringValue> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/stringValue> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/stringValue> ] ;
     skos:definition "A string value, typically used for text or identifiers." ;
     skos:exactMatch <https://faqir.org/datamodel/ValueString> ;
@@ -326,10 +326,10 @@ ucum:min a owl:Class,
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/:WeightType> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/weightType> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/weightType> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/weightType> ],
         <https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ;
     skos:definition "Weight." ;
@@ -1150,13 +1150,13 @@ ucum:kg a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ValueNumerical" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalValue> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:Decimal ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalValue> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalValue> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/core/types/numericalValue> ] ;
     skos:definition "Base class for quantitative values, they may have units and precision." ;
     skos:exactMatch <https://faqir.org/datamodel/ValueNumerical> ;
@@ -1271,41 +1271,41 @@ xsd:integer a owl:Class,
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureId> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureLabel> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureHasQuestionnaire> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedurePerformedByOrg> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureLabel> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureId> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedurePerformedByOrg> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureHasQuestionnaire> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureId> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureLabel> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedurePerformedByOrg> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureLabel> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureLabel> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/procedure/procedureDescription> ] ;
     skos:definition "A clinical or administrative process that uses resources like questionnaires" ;
     skos:exactMatch <https://faqir.org/datamodel/Procedure> ;
     skos:inScheme <https://w3id.org/faqir/datamodel/entities/procedure> ;
@@ -1315,47 +1315,32 @@ xsd:integer a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ScoreParameter" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreParameterPartOfScoreDefinition> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueDateTime> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreParameterPartOfScoreDefinition> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterId> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/ScoreParameterType> ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreParameterPartOfScoreDefinition> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> ],
@@ -1363,11 +1348,26 @@ xsd:integer a owl:Class,
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreParameterPartOfScoreDefinition> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreParameterPartOfScoreDefinition> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/ScoreParameterType> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterType> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueDateTime> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterLabel> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreParameterValueNumerical> ] ;
     skos:definition "Parameters for score definitions, such as min/max values, categories or constants needed." ;
     skos:exactMatch <https://faqir.org/datamodel/ScoreParameter> ;
     skos:inScheme questionnaire:classes .
@@ -1442,56 +1442,56 @@ xsd:integer a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Vault" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/weight> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/full_name> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/full_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/Weight> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/weight> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/weight> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/birthdate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/full_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/birthdate> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultId> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/hasQuestionnaireResponse> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultId> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/full_name> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/birthdate> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/FullName> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/vault/full_name> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/birthdate> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/weight> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/birthdate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/birthdate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/vault/vaultManagedByOrg> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/Weight> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/vault/weight> ],
         <https://w3id.org/faqir/datamodel/core/versions/Metadata> ;
     skos:definition "The FAQIR healthdata vault." ;
     skos:exactMatch <https://faqir.org/datamodel/vault> ;
@@ -1512,41 +1512,35 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ScoreValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueBasedOnScoreDefinition> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueStatus> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Datetime ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical> ],
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueDerivedFromQuestionnaireResponse> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueDerivedFromQuestionnaireResponse> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical> ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueBasedOnScoreDefinition> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom <https://faqir.org/datamodel/ScoreValueStatus> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueStatus> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueStatus> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueBasedOnScoreDefinition> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueString> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueBasedOnScoreDefinition> ],
@@ -1554,32 +1548,38 @@ xsd:float a owl:Class,
             owl:allValuesFrom <https://faqir.org/datamodel/ScoreType> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/ScoreValueStatus> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueStatus> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueString> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueDerivedFromQuestionnaireResponse> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueTimeStamp> ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueNumerical> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueDerivedFromQuestionnaireResponse> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueString> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreValueBasedOnScoreDefinition> ],
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueStatus> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreValueId> ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ] ;
     skos:definition "The score value calculated from a QuestionnaireResponse following a ScoreDefinition." ;
     skos:exactMatch <https://faqir.org/datamodel/ScoreValue> ;
     skos:inScheme questionnaire:classes .
@@ -1603,10 +1603,46 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Answer" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueDateTime> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueDateTime> ],
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerInQuestionnaireResponse> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueString> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/QuestionType> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerToQuestion> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerInQuestionnaireResponse> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueDateTime> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerIsEmpty> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -1615,71 +1651,35 @@ xsd:float a owl:Class,
             owl:allValuesFrom linkml:Boolean ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerIsEmpty> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/QuestionType> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerInQuestionnaireResponse> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerToQuestion> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueDateTime> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerToQuestion> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerIsEmpty> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueString> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerToQuestion> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerIsEmpty> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueDateTime> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueDateTime> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString> ],
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/answerInQuestionnaireResponse> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerTimeStamp> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/answerId> ] ;
     skos:definition "Answer in the questionnaire response." ;
     skos:exactMatch <https://faqir.org/datamodel/Answer> ;
     skos:inScheme questionnaire:classes ;
@@ -1689,38 +1689,29 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "OrderedQuestion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedQuestionId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedQuestionId> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionHasQuestion> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionHasQuestion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfQuestionnaire> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionHasQuestion> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedQuestionId> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfQuestionnaire> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:Integer [ a rdfs:Datatype ;
@@ -1729,13 +1720,22 @@ xsd:float a owl:Class,
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfQuestionnaire> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedQuestionId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionHasQuestion> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfQuestionnaire> ] ;
     owl:hasKey ( <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfSection> ),
         ( <https://w3id.org/faqir/datamodel/questionnaire/classes/questionOrder> <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedQuestionPartOfQuestionnaire> ) ;
     skos:definition "Question's position within a specific questionnaire or section." ;
@@ -1746,36 +1746,6 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "OrderedSection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedSectionId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedSectionId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionHasSection> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionHasSection> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:Integer [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:integer ;
@@ -1785,14 +1755,44 @@ xsd:float a owl:Class,
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionOrder> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedSectionId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionHasSection> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionOrder> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionHasSection> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedSectionId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionOrder> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionHasSection> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/orderedSectionId> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ] ;
     owl:hasKey ( <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionOrder> <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfSection> ),
         ( <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionOrder> <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/orderedSectionPartOfQuestionnaire> ) ;
     skos:definition "Section's position within a specific questionnaire or section." ;
@@ -1821,71 +1821,71 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "QuestionnaireResponse" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseToQuestionnaire> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/Vault> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseBySubject> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasDerivedScoreValue> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseToQuestionnaire> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseBySubject> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasAnswer> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasDerivedScoreValue> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseToQuestionnaire> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseId> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasAnswer> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseId> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseBySubject> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/QuestionnaireResponseStatus> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasDerivedScoreValue> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseToQuestionnaire> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasAnswer> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/Vault> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseBySubject> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/QuestionnaireResponseStatus> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Datetime ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseLastUpdated> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseHasAnswer> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseId> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseStatus> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseId> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseBySubject> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseTimeStamp> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireResponseBySubject> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireResponseId> ] ;
     skos:definition "A response to a questionnaire (collection of answers)." ;
     skos:exactMatch <https://faqir.org/datamodel/QuestionnaireResponse> ;
     skos:inScheme questionnaire:classes .
@@ -1926,98 +1926,98 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Question" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Boolean ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/QuestionType> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/NumericalParams> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionInOrderedQuestion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionUsedInScoreDefinition> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionInOrderedQuestion> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionUsedInScoreDefinition> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueCoding> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionAuthoredByOrg> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionInOrderedQuestion> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/QuestionType> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionType> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionAuthoredByOrg> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionHasAnswer> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/IntervalParams> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionAuthoredByOrg> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionUsedInScoreDefinition> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/NumericalParams> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionInOrderedQuestion> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/ValueCoding> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionHasAnswer> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionAuthoredByOrg> ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionNumericalParams> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionId> ] ;
     skos:definition "A question in the questionnaire." ;
     skos:exactMatch <https://faqir.org/datamodel/Question> ;
     skos:inScheme questionnaire:classes ;
@@ -2031,14 +2031,29 @@ xsd:float a owl:Class,
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionAuthoredByOrg> ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionAuthoredByOrg> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionHasOrderedSection> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionHasOrderedQuestion> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionHasOrderedSection> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionInOrderedSection> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionUsesScoreDefinition> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionUsesScoreDefinition> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionHasOrderedQuestion> ],
@@ -2046,17 +2061,8 @@ xsd:float a owl:Class,
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionId> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionInOrderedSection> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionInOrderedSection> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionUsesScoreDefinition> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionHasOrderedSection> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> ],
@@ -2064,17 +2070,11 @@ xsd:float a owl:Class,
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionId> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionInOrderedSection> ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionUsesScoreDefinition> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/sectionHasOrderedQuestion> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionLabel> ] ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/sectionId> ] ;
     skos:definition "A section of questions in the questionnaire." ;
     skos:exactMatch <https://faqir.org/datamodel/Section> ;
     skos:inScheme questionnaire:classes ;
@@ -2084,8 +2084,29 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Organization" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/OrganizationType> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestionnaire> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestion> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestion> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsScoreDefinition> ],
@@ -2093,53 +2114,32 @@ xsd:float a owl:Class,
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/OrganizationType> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestion> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationType> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/Vault> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationManagesVault> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsSection> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestionnaire> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsScoreDefinition> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/vault/Vault> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationManagesVault> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationLabel> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsSection> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestion> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsQuestionnaire> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationId> ] ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/entities/organization/organizationAuthorsSection> ] ;
     skos:definition "An entity acting in a healthcare context" ;
     skos:exactMatch <https://faqir.org/datamodel/Organization> ;
     skos:inScheme <https://w3id.org/faqir/datamodel/entities/organization> ;
@@ -2149,65 +2149,14 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Questionnaire" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireUsesScoreDefinition> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedSection> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasQuestionnaireResponse> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedSection> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnairePartOfProcedure> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedQuestion> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireAuthoredByOrg> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedQuestion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://faqir.org/datamodel/QuestionnaireStatus> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasQuestionnaireResponse> ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:String [ a rdfs:Datatype ;
@@ -2215,23 +2164,74 @@ xsd:float a owl:Class,
                                 owl:withRestrictions ( [ xsd:pattern "^\\d+\\.\\d+\\.\\d+$" ] ) ] ) ] ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Datetime ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/procedure/Procedure> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnairePartOfProcedure> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireUsesScoreDefinition> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasQuestionnaireResponse> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedQuestion> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireUsesScoreDefinition> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnairePartOfProcedure> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/procedure/Procedure> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnairePartOfProcedure> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://faqir.org/datamodel/QuestionnaireStatus> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedSection> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireVersion> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireAuthoredByOrg> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireAuthoredByOrg> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedSection> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/questionnaireHasOrderedSection> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireStatus> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLastUpdated> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/questionnaireLabel> ] ;
     skos:definition "A questionnaire that can be answered (collection of questions)." ;
     skos:exactMatch <https://faqir.org/datamodel/Questionnaire> ;
     skos:inScheme questionnaire:classes ;
@@ -2242,11 +2242,47 @@ xsd:float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ScoreDefinition" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsesQuestion> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionHasScoreParameter> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsesQuestion> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionAuthoredByOrg> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/IntervalParams> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://faqir.org/datamodel/ScoreType> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
@@ -2254,92 +2290,96 @@ xsd:float a owl:Class,
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionHasScoreValue> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionHasScoreValue> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionAuthoredByOrg> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionHasScoreValue> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedByQuestionnare> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsesQuestion> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/core/types/IntervalParams> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionHasScoreParameter> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionHasScoreParameter> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionIntervalParams> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionCategories> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Section> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedBySection> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionCategories> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionFormula> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionCategories> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedByQuestionnare> ],
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedBySection> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsesQuestion> ],
+            owl:allValuesFrom <https://w3id.org/faqir/datamodel/questionnaire/classes/Questionnaire> ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedByQuestionnare> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/faqir/datamodel/entities/organization/Organization> ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionAuthoredByOrg> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionId> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionLabel> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/relationship_slots/scoreDefinitionUsedBySection> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/faqir/datamodel/questionnaire/classes/scoreDefinitionInterpretationGuide> ] ;
     skos:definition "A score calculated from questions." ;
     skos:exactMatch <https://faqir.org/datamodel/ScoreDefinition> ;
     skos:inScheme questionnaire:classes .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:answerValueDateTime> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty <https://w3id.org/faqir/datamodel/:answerIsEmpty> ;
+                            owl:someValuesFrom linkml:String ] [ a owl:Restriction ;
+                            owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
+                            owl:someValuesFrom "dateTime" ] ) ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:answerValueNumerical> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty <https://w3id.org/faqir/datamodel/:answerIsEmpty> ;
+                            owl:someValuesFrom linkml:String ] [ a owl:Restriction ;
+                            owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
+                            owl:someValuesFrom [ a rdfs:Datatype ;
+                                    owl:oneOf ( "decimal" "numberInterval" ) ] ] ) ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreValueString> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
+                owl:someValuesFrom "categorical" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionCategories> ;
+            owl:someValuesFrom linkml:String ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
+                owl:someValuesFrom "categorical" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterValueDateTime> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterType> ;
+                owl:someValuesFrom "dateTime" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> ) .
 
 [] rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty <https://w3id.org/faqir/datamodel/:answerValueString> ;
@@ -2352,82 +2392,12 @@ xsd:float a owl:Class,
                                     owl:oneOf ( "choice" "openChoice" "text" ) ] ] ) ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ) .
 
 [] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterValueDateTime> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterType> ;
-                owl:someValuesFrom "dateTime" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionIntervalParams> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
-                owl:someValuesFrom [ a rdfs:Datatype ;
-                        owl:oneOf ( "numerical_percentage" "numerical_z_score" ) ] ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreValueString> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
-                owl:someValuesFrom "categorical" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterValueNumerical> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterType> ;
-                owl:someValuesFrom "numerical" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreValueNumerical> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
-                owl:someValuesFrom [ a rdfs:Datatype ;
-                        owl:oneOf ( "numerical_continuous" "numerical_integer" "numerical_percentage" "numerical_z_score" "numerical_t_score" ) ] ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:questionNumericalParams> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
-                owl:someValuesFrom "decimal" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty <https://w3id.org/faqir/datamodel/:questionCodingParams> ;
             owl:someValuesFrom owl:Thing ] ;
     owl:intersectionOf ( [ a owl:Restriction ;
                 owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
                 owl:someValuesFrom [ a rdfs:Datatype ;
                         owl:oneOf ( "choice" "openChoice" ) ] ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:answerValueDateTime> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ owl:intersectionOf ( [ a owl:Restriction ;
-                            owl:onProperty <https://w3id.org/faqir/datamodel/:answerIsEmpty> ;
-                            owl:someValuesFrom linkml:String ] [ a owl:Restriction ;
-                            owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
-                            owl:someValuesFrom "dateTime" ] ) ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionCategories> ;
-            owl:someValuesFrom linkml:String ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
-                owl:someValuesFrom "categorical" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ) .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <https://w3id.org/faqir/datamodel/:answerValueNumerical> ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ owl:intersectionOf ( [ a owl:Restriction ;
-                            owl:onProperty <https://w3id.org/faqir/datamodel/:answerIsEmpty> ;
-                            owl:someValuesFrom linkml:String ] [ a owl:Restriction ;
-                            owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
-                            owl:someValuesFrom [ a rdfs:Datatype ;
-                                    owl:oneOf ( "decimal" "numberInterval" ) ] ] ) ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> ) .
 
 [] rdfs:subClassOf [ owl:intersectionOf ( [ a owl:Restriction ;
                         owl:onProperty <https://w3id.org/faqir/datamodel/:questionIntervalParams> ;
@@ -2438,7 +2408,37 @@ xsd:float a owl:Class,
                 owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
                 owl:someValuesFrom "numberInterval" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ) .
 
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreValueNumerical> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
+                owl:someValuesFrom [ a rdfs:Datatype ;
+                        owl:oneOf ( "numerical_continuous" "numerical_integer" "numerical_percentage" "numerical_z_score" "numerical_t_score" ) ] ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreValue> ) .
+
 [] owl:intersectionOf ( [ a owl:Restriction ;
                 owl:onProperty <https://w3id.org/faqir/datamodel/:numericalUnit> ;
                 owl:someValuesFrom linkml:String ] <https://w3id.org/faqir/datamodel/vault/Weight> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:questionNumericalParams> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:questionType> ;
+                owl:someValuesFrom "decimal" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterValueNumerical> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreParameterType> ;
+                owl:someValuesFrom "numerical" ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreParameter> ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionIntervalParams> ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty <https://w3id.org/faqir/datamodel/:scoreDefinitionType> ;
+                owl:someValuesFrom [ a rdfs:Datatype ;
+                        owl:oneOf ( "numerical_percentage" "numerical_z_score" ) ] ] <https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> ) .
 

@@ -1,0 +1,10 @@
+---
+scoreValueId: "https://pods.faqir.org/svEQ_5D_5L_01"
+scoreValueBasedOnScoreDefinition: "https://pods.faqir.org/sdEQ_5D_5L"
+scoreValueDerivedFromQuestionnaireResponse: 
+  - "https://pods.faqir.org/response_EQ_5D_5L_01"
+scoreValueStatus: valid
+scoreDefinitionType: numerical_integer
+scoreValueTimeStamp: "2025-07-11T10:55:00Z"
+scoreValueNumerical:
+  numericalValue: 12345

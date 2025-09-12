@@ -6,6 +6,8 @@ scoreDefinitionFormula: "Unknown"
 scoreDefinitionIntervalParams:
   - minValue: 0 # No list
     maxValue: 100
+scoreDefinitionUsedBySection: 
+  - "https://pods.faqir.org/7eTPK5NLGTv8jeTW5"
 scoreDefinitionUsesQuestion: "https://pods.faqir.org/FoIn0" # Array
 scoreDefinitionHasScoreValue:
   - "https://pods.faqir.org/svTFJSK"

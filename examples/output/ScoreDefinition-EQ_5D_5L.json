@@ -1,0 +1,28 @@
+{
+  "scoreDefinitionId": "https://pods.faqir.org/sdEQ_5D_5L",
+  "scoreDefinitionType": "numerical_integer",
+  "scoreDefinitionUsesQuestion": [
+    "https://pods.faqir.org/question_EQ_5D_5L_01",
+    "https://pods.faqir.org/question_EQ_5D_5L_02",
+    "https://pods.faqir.org/question_EQ_5D_5L_03",
+    "https://pods.faqir.org/question_EQ_5D_5L_04",
+    "https://pods.faqir.org/question_EQ_5D_5L_05"
+  ],
+  "scoreDefinitionLabel": "EQ-5D-5L score",
+  "scoreDefinitionFormula": "Each state is referred to by a 5-digit code: each digit representing the answer to each question or dimension (e.g. 12345).\nThe first digit represents the level selected for mobility, the second for self-care, the third for usual activities, the fourth for pain/discomfort and the fifth for anxiety/depression.\n- Missing values are preferably coded as ‘9’.\n- Ambiguous values (e.g. two boxes are ticked for a single dimension) should\nbe treated as missing values.\n",
+  "scoreDefinitionHasScoreValue": [
+    "https://pods.faqir.org/svEQ_5D_5L_01"
+  ],
+  "scoreDefinitionAuthoredByOrg": [
+    "https://euroqol.org/"
+  ],
+  "scoreDefinitionUsedByQuestionnare": [
+    "https://pods.faqir.org/questionnaire_EQ_5D_5L"
+  ],
+  "scoreDefinitionIntervalParams": {
+    "minValue": 11111.0,
+    "maxValue": 99999.0
+  },
+  "scoreDefinitionInterpretationGuide": "A total of 3125 possible health states are defined in this way. \nLEVEL 1: indicating no problem\nLEVEL 2: indicating slight problems\nLEVEL 3: indicating moderate problems\nLEVEL 4: indicating severe problems\nLEVEL 5: indicating unable to/extreme problems\n",
+  "@type": "ScoreDefinition"
+}

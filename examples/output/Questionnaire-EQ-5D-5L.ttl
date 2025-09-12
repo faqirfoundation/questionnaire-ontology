@@ -11,6 +11,8 @@
         <https://pods.faqir.org/orderedquestion_EQ_5D_5L_05>,
         <https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS> ;
     faqir:questionnaireHasQuestionnaireResponse <https://pods.faqir.org/response_EQ_5D_5L_01> ;
+    faqir:questionnaireUsesScoreDefinition <https://pods.faqir.org/sdEQ_5D_5L>,
+        <https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS> ;
     ns1:questionnaireLabel "EQ-5D-5L" ;
     ns1:questionnaireLastUpdated "2025-09-09T11:52:00+00:00"^^xsd:dateTime ;
     ns1:questionnaireStatus fhir:resource-status-active ;

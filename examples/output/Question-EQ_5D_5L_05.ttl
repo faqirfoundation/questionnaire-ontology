@@ -13,17 +13,17 @@
             ns1:code "5" ;
             ns1:display "I am extremely anxious or depressed" ],
         [ a faqir:ValueCoding ;
+            ns1:code "3" ;
+            ns1:display "I am moderately anxious or depressed" ],
+        [ a faqir:ValueCoding ;
             ns1:code "1" ;
             ns1:display "I am not anxious or depressed" ],
-        [ a faqir:ValueCoding ;
-            ns1:code "2" ;
-            ns1:display "I am slightly anxious or depressed" ],
         [ a faqir:ValueCoding ;
             ns1:code "4" ;
             ns1:display "I am severely anxious or depressed" ],
         [ a faqir:ValueCoding ;
-            ns1:code "3" ;
-            ns1:display "I am moderately anxious or depressed" ] ;
+            ns1:code "2" ;
+            ns1:display "I am slightly anxious or depressed" ] ;
     ns2:questionLabel "ANXIETY / DEPRESSION. Please tick the ONE box that best describes your health TODAY." ;
     ns2:questionRequired false ;
     ns2:questionTag "q_EQ_5D_5L_05" .

@@ -63,6 +63,9 @@
       "questionOrder": 12
     }
   ],
+  "sectionUsesScoreDefinition": [
+    "https://pods.faqir.org/TFJSK"
+  ],
   "sectionAuthoredByOrg": [
     "https://www.moveup.care/"
   ],

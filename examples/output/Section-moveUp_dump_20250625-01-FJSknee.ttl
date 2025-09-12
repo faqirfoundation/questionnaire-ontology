@@ -16,6 +16,7 @@
         <https://pods.faqir.org/orderedFowh7>,
         <https://pods.faqir.org/orderedFowh8>,
         <https://pods.faqir.org/orderedFowh9> ;
+    faqir:sectionUsesScoreDefinition <https://pods.faqir.org/TFJSK> ;
     ns1:sectionLabel "Forgotten Joint Score - Knee (NL-FR-EN-DE-IT)" .
 
 <https://pods.faqir.org/orderedFoIn0> a faqir:OrderedQuestion ;

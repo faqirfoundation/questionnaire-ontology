@@ -37,5 +37,7 @@ sectionHasOrderedQuestion:
 - orderedQuestionId: https://pods.faqir.org/orderedFowh11
   orderedQuestionHasQuestion: https://pods.faqir.org/Fowh11
   questionOrder: 12
+sectionUsesScoreDefinition:
+- https://pods.faqir.org/TFJSK
 sectionAuthoredByOrg:
 - https://www.moveup.care/

@@ -69,6 +69,20 @@ answerValueString: []
 questionType: choice
 
 ```
+## ScoreValue-EQ_5D_5L_EQ_VAS_01
+### Input
+```yaml
+scoreDefinitionType: numerical_integer
+scoreValueBasedOnScoreDefinition: https://pods.faqir.org/sdEQ_5D_5L
+scoreValueDerivedFromQuestionnaireResponse:
+- https://pods.faqir.org/response_EQ_5D_5L_01
+scoreValueId: https://pods.faqir.org/svEQ_5D_5L_01
+scoreValueNumerical:
+  numericalValue: 12345
+scoreValueStatus: valid
+scoreValueTimeStamp: '2025-07-11T10:55:00Z'
+
+```
 ## Question-EQ_5D_5L_03
 ### Input
 ```yaml
@@ -113,6 +127,20 @@ questionnaireResponseLastUpdated: '2025-07-11T10:35:00Z'
 questionnaireResponseStatus: completed
 questionnaireResponseTimeStamp: '2025-07-11T10:35:00Z'
 questionnaireResponseToQuestionnaire: https://pods.faqir.org/questionnaire_EQ_5D_5L
+
+```
+## ScoreValue-EQ_5D_5L_01
+### Input
+```yaml
+scoreDefinitionType: numerical_integer
+scoreValueBasedOnScoreDefinition: https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS
+scoreValueDerivedFromQuestionnaireResponse:
+- https://pods.faqir.org/response_EQ_5D_5L_01
+scoreValueId: https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS_01
+scoreValueNumerical:
+  numericalValue: 77
+scoreValueStatus: valid
+scoreValueTimeStamp: '2025-07-11T10:55:00Z'
 
 ```
 ## Question-EQ_5D_5L_04
@@ -171,6 +199,9 @@ questionnaireId: https://pods.faqir.org/questionnaire_EQ_5D_5L
 questionnaireLabel: EQ-5D-5L
 questionnaireLastUpdated: '2025-09-09T11:52:00Z'
 questionnaireStatus: active
+questionnaireUsesScoreDefinition:
+- https://pods.faqir.org/sdEQ_5D_5L
+- https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS
 questionnaireVersion: 1.0.0
 
 ```
@@ -228,6 +259,48 @@ questionTag: q_EQ_5D_5L_05
 questionType: choice
 
 ```
+## ScoreDefinition-EQ_5D_5L_EQ_VAS
+### Input
+```yaml
+scoreDefinitionAuthoredByOrg:
+- https://euroqol.org/
+scoreDefinitionFormula: 'Simply the numerical answer of the EQ-VAS question.
+
+  - Missing values are preferably coded as 999.
+
+  '
+scoreDefinitionHasScoreValue:
+- https://pods.faqir.org/svEQ_5D_5L_EQ_VAS_01
+scoreDefinitionId: https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS
+scoreDefinitionInterpretationGuide: 'User''s own perceived health on the day of the
+  questionnaire completion.
+
+  This scale is numbered from 0 to 100.
+
+  100 means the *best* health you can imagine.
+
+  0 means the *worst* health you can imagine.
+
+  If there is a discrepancy between where the respondent has placed the X and the
+  number
+
+  he/she has written in the box, administrators should use the number in the box (this
+  is
+
+  only relevant for the Paper Self-Complete version).
+
+  '
+scoreDefinitionIntervalParams:
+  maxValue: 999
+  minValue: 0
+scoreDefinitionLabel: EQ-5D-5L EQ-VAS score
+scoreDefinitionType: numerical_integer
+scoreDefinitionUsedByQuestionnare:
+- https://pods.faqir.org/questionnaire_EQ_5D_5L
+scoreDefinitionUsesQuestion:
+- https://pods.faqir.org/q_EQ_5D_5L_EQ_VAS
+
+```
 ## Answer-EQ_5D_5L_01-a01
 ### Input
 ```yaml
@@ -239,6 +312,39 @@ answerToQuestion: https://pods.faqir.org/question_EQ_5D_5L_01
 answerValueString:
 - stringValue: '1'
 questionType: choice
+
+```
+## ScoreDefinition-EQ_5D_5L
+### Input
+```yaml
+scoreDefinitionAuthoredByOrg:
+- https://euroqol.org/
+scoreDefinitionFormula: "Each state is referred to by a 5-digit code: each digit representing\
+  \ the answer to each question or dimension (e.g. 12345).\nThe first digit represents\
+  \ the level selected for mobility, the second for self-care, the third for usual\
+  \ activities, the fourth for pain/discomfort and the fifth for anxiety/depression.\n\
+  - Missing values are preferably coded as \u20189\u2019.\n- Ambiguous values (e.g.\
+  \ two boxes are ticked for a single dimension) should\nbe treated as missing values.\n"
+scoreDefinitionHasScoreValue:
+- https://pods.faqir.org/svEQ_5D_5L_01
+scoreDefinitionId: https://pods.faqir.org/sdEQ_5D_5L
+scoreDefinitionInterpretationGuide: "A total of 3125 possible health states are defined\
+  \ in this way. \nLEVEL 1: indicating no problem\nLEVEL 2: indicating slight problems\n\
+  LEVEL 3: indicating moderate problems\nLEVEL 4: indicating severe problems\nLEVEL\
+  \ 5: indicating unable to/extreme problems\n"
+scoreDefinitionIntervalParams:
+  maxValue: 99999
+  minValue: 11111
+scoreDefinitionLabel: EQ-5D-5L score
+scoreDefinitionType: numerical_integer
+scoreDefinitionUsedByQuestionnare:
+- https://pods.faqir.org/questionnaire_EQ_5D_5L
+scoreDefinitionUsesQuestion:
+- https://pods.faqir.org/question_EQ_5D_5L_01
+- https://pods.faqir.org/question_EQ_5D_5L_02
+- https://pods.faqir.org/question_EQ_5D_5L_03
+- https://pods.faqir.org/question_EQ_5D_5L_04
+- https://pods.faqir.org/question_EQ_5D_5L_05
 
 ```
 ## Question-EQ_5D_5L_VAS
@@ -307,5 +413,26 @@ questionLabel: MOBILITY. Please tick the ONE box that best describes your health
 questionRequired: false
 questionTag: q_EQ_5D_5L_01
 questionType: choice
+
+```
+## ScoreDefinition-01
+### Input
+```yaml
+scoreDefinitionAuthoredByOrg:
+- https://www.moveup.care/
+scoreDefinitionFormula: Unknown
+scoreDefinitionHasScoreValue:
+- https://pods.faqir.org/svTFJSK
+scoreDefinitionId: https://pods.faqir.org/TFJSK
+scoreDefinitionIntervalParams:
+- maxValue: 100
+  minValue: 0
+scoreDefinitionLabel: "Total Forgotten Joint Score Knee (/100) (een hoge score geeft\
+  \ een hogere mate van \u201Cvergeten\u201D weer, dat wil zeggen een lager bewustzijn\
+  \ van het kunstgewricht) score"
+scoreDefinitionType: numerical_integer
+scoreDefinitionUsedBySection:
+- https://pods.faqir.org/7eTPK5NLGTv8jeTW5
+scoreDefinitionUsesQuestion: https://pods.faqir.org/FoIn0
 
 ```

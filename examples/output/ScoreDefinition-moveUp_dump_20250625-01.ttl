@@ -1,12 +1,13 @@
 @prefix faqir: <https://faqir.org/datamodel/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
-@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://pods.faqir.org/TFJSK> a faqir:ScoreDefinition ;
     faqir:scoreDefinitionAuthoredByOrg <https://www.moveup.care/> ;
     faqir:scoreDefinitionHasScoreValue <https://pods.faqir.org/svTFJSK> ;
     faqir:scoreDefinitionType xsd:integer ;
+    faqir:scoreDefinitionUsedBySection <https://pods.faqir.org/7eTPK5NLGTv8jeTW5> ;
     faqir:scoreDefinitionUsesQuestion <https://pods.faqir.org/FoIn0>,
         <https://pods.faqir.org/Fowh1>,
         <https://pods.faqir.org/Fowh10>,
@@ -19,9 +20,9 @@
         <https://pods.faqir.org/Fowh7>,
         <https://pods.faqir.org/Fowh8>,
         <https://pods.faqir.org/Fowh9> ;
-    ns1:scoreDefinitionFormula "Unknown" ;
-    ns1:scoreDefinitionIntervalParams [ a faqir:IntervalParams ;
-            ns2:maxValue "100.0"^^xsd:float ;
-            ns2:minValue "0.0"^^xsd:float ] ;
-    ns1:scoreDefinitionLabel "Total Forgotten Joint Score Knee (/100) (een hoge score geeft een hogere mate van “vergeten” weer, dat wil zeggen een lager bewustzijn van het kunstgewricht) score" .
+    ns2:scoreDefinitionFormula "Unknown" ;
+    ns2:scoreDefinitionIntervalParams [ a faqir:IntervalParams ;
+            ns1:maxValue "100.0"^^xsd:float ;
+            ns1:minValue "0.0"^^xsd:float ] ;
+    ns2:scoreDefinitionLabel "Total Forgotten Joint Score Knee (/100) (een hoge score geeft een hogere mate van “vergeten” weer, dat wil zeggen een lager bewustzijn van het kunstgewricht) score" .
 

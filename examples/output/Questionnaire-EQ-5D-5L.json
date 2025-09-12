@@ -39,5 +39,9 @@
       "questionOrder": 6
     }
   ],
+  "questionnaireUsesScoreDefinition": [
+    "https://pods.faqir.org/sdEQ_5D_5L",
+    "https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS"
+  ],
   "@type": "Questionnaire"
 }

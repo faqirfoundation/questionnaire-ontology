@@ -25,3 +25,6 @@ questionnaireHasOrderedQuestion:
     orderedQuestionHasQuestion: "https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS"
 questionnaireHasQuestionnaireResponse:
   - "https://pods.faqir.org/response_EQ_5D_5L_01"
+questionnaireUsesScoreDefinition:
+  - "https://pods.faqir.org/sdEQ_5D_5L"
+  - "https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS"

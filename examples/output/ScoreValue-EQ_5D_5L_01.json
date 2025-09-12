@@ -1,0 +1,14 @@
+{
+  "scoreValueId": "https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS_01",
+  "scoreDefinitionType": "numerical_integer",
+  "scoreValueBasedOnScoreDefinition": "https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS",
+  "scoreValueDerivedFromQuestionnaireResponse": [
+    "https://pods.faqir.org/response_EQ_5D_5L_01"
+  ],
+  "scoreValueTimeStamp": "2025-07-11T10:55:00+00:00",
+  "scoreValueStatus": "valid",
+  "scoreValueNumerical": {
+    "numericalValue": 77
+  },
+  "@type": "ScoreValue"
+}

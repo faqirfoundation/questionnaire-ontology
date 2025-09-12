@@ -1,0 +1,24 @@
+{
+  "scoreDefinitionId": "https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS",
+  "scoreDefinitionType": "numerical_integer",
+  "scoreDefinitionUsesQuestion": [
+    "https://pods.faqir.org/q_EQ_5D_5L_EQ_VAS"
+  ],
+  "scoreDefinitionLabel": "EQ-5D-5L EQ-VAS score",
+  "scoreDefinitionFormula": "Simply the numerical answer of the EQ-VAS question.\n- Missing values are preferably coded as 999.\n",
+  "scoreDefinitionHasScoreValue": [
+    "https://pods.faqir.org/svEQ_5D_5L_EQ_VAS_01"
+  ],
+  "scoreDefinitionAuthoredByOrg": [
+    "https://euroqol.org/"
+  ],
+  "scoreDefinitionUsedByQuestionnare": [
+    "https://pods.faqir.org/questionnaire_EQ_5D_5L"
+  ],
+  "scoreDefinitionIntervalParams": {
+    "minValue": 0.0,
+    "maxValue": 999.0
+  },
+  "scoreDefinitionInterpretationGuide": "User's own perceived health on the day of the questionnaire completion.\nThis scale is numbered from 0 to 100.\n100 means the *best* health you can imagine.\n0 means the *worst* health you can imagine.\nIf there is a discrepancy between where the respondent has placed the X and the number\nhe/she has written in the box, administrators should use the number in the box (this is\nonly relevant for the Paper Self-Complete version).\n",
+  "@type": "ScoreDefinition"
+}
