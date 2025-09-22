@@ -4,9 +4,10 @@
   "answerToQuestion": "https://pods.faqir.org/question_01_hours_slept",
   "questionType": "decimal",
   "answerTimeStamp": "2025-07-11T10:35:01+00:00",
-  "answerIsEmpty": false,
+  "questionMultivaluedAnswer": false,
   "answerValueNumerical": {
     "numericalValue": 6.75
   },
+  "answerIsEmpty": false,
   "@type": "Answer"
 }

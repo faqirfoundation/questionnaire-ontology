@@ -4,6 +4,7 @@ questionTag: "q_AcWh1"
 questionLabel: "What activities did you do today?"
 questionRequired: false
 questionType: openChoice
+questionMultivaluedAnswer: true
 questionAuthoredByOrg:  
   - "https://www.moveup.care/"
 questionInOrderedQuestion:

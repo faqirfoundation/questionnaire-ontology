@@ -12,6 +12,7 @@
   "questionHasAnswer": [
     "https://pods.faqir.org/answer_04_AcWh1_01"
   ],
+  "questionMultivaluedAnswer": true,
   "questionCodingParams": {
     "0": {
       "code": "0",
@@ -78,6 +79,7 @@
       "display": "Other"
     }
   },
+  "questionCodingOrdinal": false,
   "questionRequired": false,
   "@type": "Question"
 }

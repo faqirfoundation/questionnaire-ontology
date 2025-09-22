@@ -6,4 +6,4 @@ questionType: decimal
 answerIsEmpty: false
 answerTimeStamp: "2021-08-27T00:00:01.0008Z"
 answerValueNumerical:
-  numericalValue: "6.75"
+  - numericalValue: "6.75"

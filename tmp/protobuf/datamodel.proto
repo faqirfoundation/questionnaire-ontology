@@ -7,6 +7,7 @@ message Answer
   questionnaireResponse answerInQuestionnaireResponse = 0
   question answerToQuestion = 0
   questionType questionType = 0
+  boolean questionMultivaluedAnswer = 0
   uriorcurie answerId = 0
   valueNumerical answerValueNumerical = 0
  repeated  valueString answerValueString = 0
@@ -86,12 +87,14 @@ message Question
  repeated  organization questionAuthoredByOrg = 0
  repeated  orderedQuestion questionInOrderedQuestion = 0
  repeated  answer questionHasAnswer = 0
+  boolean questionMultivaluedAnswer = 0
  repeated  scoreDefinition questionUsedInScoreDefinition = 0
   uriorcurie questionId = 0
   string questionTag = 0
   string questionLabel = 0
   numericalParams questionNumericalParams = 0
  repeated  valueCoding questionCodingParams = 0
+  boolean questionCodingOrdinal = 0
   intervalParams questionIntervalParams = 0
   boolean questionRequired = 0
  }

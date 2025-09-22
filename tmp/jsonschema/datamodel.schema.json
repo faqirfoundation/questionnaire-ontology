@@ -34,6 +34,31 @@
                             "answerIsEmpty": {},
                             "questionType": {
                                 "enum": [
+                                    "decimal",
+                                    "numberInterval"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "answerIsEmpty",
+                            "questionType"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "answerValueNumerical": {}
+                        },
+                        "required": [
+                            "answerValueNumerical"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "answerIsEmpty": {},
+                            "questionType": {
+                                "enum": [
                                     "choice",
                                     "openChoice",
                                     "text"
@@ -51,6 +76,56 @@
                         },
                         "required": [
                             "answerValueString"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "answerIsEmpty": {},
+                            "questionType": {
+                                "enum": [
+                                    "choice",
+                                    "openChoice",
+                                    "text"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "answerIsEmpty",
+                            "questionType"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "answerValueString": {}
+                        },
+                        "required": [
+                            "answerValueString"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "answerIsEmpty": {},
+                            "questionType": {
+                                "enum": [
+                                    "dateTime"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "answerIsEmpty",
+                            "questionType"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "answerValueDateTime": {}
+                        },
+                        "required": [
+                            "answerValueDateTime"
                         ]
                     }
                 },
@@ -134,6 +209,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "questionMultivaluedAnswer": {
+                    "description": "Indicates whether this question allows multiple answers (true) or it's single answer (false).",
+                    "type": [
+                        "boolean",
                         "null"
                     ]
                 },
@@ -564,6 +646,13 @@
                         "null"
                     ]
                 },
+                "questionCodingOrdinal": {
+                    "description": "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "questionCodingParams": {
                     "description": "Code and Display of each option offered as answer to the choice or open-choice question.",
                     "items": {
@@ -612,6 +701,13 @@
                 "questionLabel": {
                     "description": "The text of the question itself, which is displayed to the user.",
                     "type": "string"
+                },
+                "questionMultivaluedAnswer": {
+                    "description": "Indicates whether this question allows multiple answers (true) or it's single answer (false).",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
                 },
                 "questionNumericalParams": {
                     "anyOf": [

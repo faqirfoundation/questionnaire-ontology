@@ -153,6 +153,7 @@ Attributes:
     * ```display```: String. The human-readable display text for the code (e.g. code '1' for display 'Yes').
         * Required
         * Not multivalued
+* ```questionCodingOrdinal```: Boolean. Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical). If absent, false.
 * ```questionIntervalParams```: Minimum and Maximum limiting the range the answer must be in for the question. Required if *questionType* is *numberInterval*. Subattributes:
     * ```minValue```: Float. The minimum value of the interval.
         * Required.
@@ -166,6 +167,7 @@ Attributes:
     * ```maxLabel```: String. 
         * Not required
         * Not multivalued
+* ```questionMultivaluedAnswer```: Boolean. Indicates whether this question allows multivalued answers (true) or it's single answer (false). If absent, false. Attribute used for its Anserws' multivalued validation.
 
 Relationships:
 * ```questionAuthoredByOrg```: 
@@ -320,7 +322,8 @@ Attributes:
 * ```answerId```: Identifier. Unique valid urorcurie. Required.
 * ```answerTimeStamp```: xsd:dateTime. ISO 8601 format. The exact date and time when the answer was provided. Required. 
 * ```answerIsEmpty```: Boolean. True if the answer was left intentionally empty (question not responded intentionally). If absent, False.
-* ```questionType```: Type of the question this is answer for. Required. Not multivalued. [Temporary value to facilitate validation]
+* ```questionType```: Type of the question this is answer for. Required. Not multivalued. [Temporary attribute to facilitate validation]
+* ```questionMultivaluedAnswer```: Boolean. Indicates whether this question allows multivalued answers (true) or it's single answer (false). If absent, false. Attribute used for its Anserws' multivalued validation. [Temporary attribute to facilitate validation]
 * ```answerValueNumerical```: ValueNumerical. Required if `questionType` is `decimal` or `numberInterval`.  Subattributes:
     * `numericalValue`: decimal. Required.
 * ```answerValueString```: ValueString. Required if `questionType` is `choice`, `openChoice` or `text`, which is a stringValue. Subattributes:

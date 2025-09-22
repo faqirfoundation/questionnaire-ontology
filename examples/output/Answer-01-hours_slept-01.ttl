@@ -7,6 +7,7 @@
 <https://pods.faqir.org/answer_01_hours_slept_01> a faqir:Answer ;
     faqir:answerInQuestionnaireResponse <https://pods.faqir.org/response_01_simple> ;
     faqir:answerToQuestion <https://pods.faqir.org/question_01_hours_slept> ;
+    faqir:questionMultipleAnswer false ;
     faqir:questionType fhir:decimal ;
     ns1:answerIsEmpty false ;
     ns1:answerTimeStamp "2025-07-11T10:35:01+00:00"^^xsd:dateTime ;

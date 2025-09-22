@@ -52,6 +52,7 @@ linkml:Sparqlpath xsd:string
           @<https://w3id.org/faqir/datamodel/questionnaire/classes/QuestionnaireResponse> ;
           faqir:answerToQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/Question> ;
           faqir:questionType [ fhir:choice fhir:open-choice fhir:number fhir:decimal fhir:dateTime fhir:string ] ;
+          faqir:questionMultipleAnswer @linkml:Boolean ? ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueNumerical>
           @<https://w3id.org/faqir/datamodel/core/types/ValueNumerical> ? ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/answerValueString>
@@ -160,6 +161,7 @@ linkml:Sparqlpath xsd:string
           faqir:questionAuthoredByOrg @<https://w3id.org/faqir/datamodel/entities/organization/Organization> * ;
           faqir:questionInOrderedQuestion @<https://w3id.org/faqir/datamodel/questionnaire/classes/OrderedQuestion> * ;
           faqir:questionHasAnswer @<https://w3id.org/faqir/datamodel/questionnaire/classes/Answer> * ;
+          faqir:questionMultipleAnswer @linkml:Boolean ? ;
           faqir:questionUsedInScoreDefinition @<https://w3id.org/faqir/datamodel/questionnaire/classes/ScoreDefinition> * ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionTag> @linkml:String ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionLabel> @linkml:String ;
@@ -167,6 +169,7 @@ linkml:Sparqlpath xsd:string
           @<https://w3id.org/faqir/datamodel/core/types/NumericalParams> ? ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingParams>
           @<https://w3id.org/faqir/datamodel/core/types/ValueCoding> * ;
+          <https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingOrdinal> @linkml:Boolean ? ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionIntervalParams>
           @<https://w3id.org/faqir/datamodel/core/types/IntervalParams> ? ;
           <https://w3id.org/faqir/datamodel/questionnaire/classes/questionRequired> @linkml:Boolean ?

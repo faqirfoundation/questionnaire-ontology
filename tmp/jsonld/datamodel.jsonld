@@ -937,6 +937,24 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "questionMultivaluedAnswer",
+      "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/general_slots/questionMultivaluedAnswer",
+      "description": "Indicates whether this question allows multiple answers (true) or it's single answer (false).",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/general_slots",
+      "mappings": [
+        "https://faqir.org/datamodel/questionMultipleAnswer"
+      ],
+      "slot_uri": "https://faqir.org/datamodel/questionMultipleAnswer",
+      "ifabsent": "False",
+      "owner": "Question",
+      "domain_of": [
+        "Answer",
+        "Question"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "scoreDefinitionType",
       "definition_uri": "https://w3id.org/faqir/datamodel/questionnaire/general_slots/scoreDefinitionType",
       "description": "Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values.",
@@ -2285,6 +2303,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "question__questionCodingOrdinal",
+      "description": "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).",
+      "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
+      "slot_uri": "https://w3id.org/faqir/datamodel/questionnaire/classes/questionCodingOrdinal",
+      "ifabsent": "False",
+      "alias": "questionCodingOrdinal",
+      "owner": "Question",
+      "domain_of": [
+        "Question"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "question__questionIntervalParams",
       "description": "Minimum and Maximum limiting the range the answer must be in for the question.",
       "from_schema": "https://w3id.org/faqir/datamodel/questionnaire/classes",
@@ -3171,6 +3203,7 @@
         "answerInQuestionnaireResponse",
         "answerToQuestion",
         "questionType",
+        "questionMultivaluedAnswer",
         "answer__answerId",
         "answer__answerValueNumerical",
         "answer__answerValueString",
@@ -3262,12 +3295,50 @@
                   "JsonObj(Validation='numberInterval answerValueNumerical must be between minValue and maxValue')"
                 ],
                 "required": true,
+                "multivalued": true,
                 "@type": "SlotDefinition"
               }
             ],
             "@type": "AnonymousClassExpression"
           },
-          "description": "If questionType is 'decimal' or 'numberInterval', answerValueNumerical is required.",
+          "description": "If questionType is 'decimal' or 'numberInterval', answerValueNumerical is required. If questionMultivaluedAnswer is true, answerValueNumerical must be multivalued.",
+          "@type": "ClassRule"
+        },
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "answerIsEmpty",
+                "id_prefixes": [
+                  "False"
+                ],
+                "@type": "SlotDefinition"
+              },
+              {
+                "name": "questionType",
+                "equals_string_in": [
+                  "decimal",
+                  "numberInterval"
+                ],
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "answerValueNumerical",
+                "comments": [
+                  "JsonObj(Validation='numberInterval answerValueNumerical must be between minValue and maxValue')"
+                ],
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "If questionType is 'decimal' or 'numberInterval', answerValueNumerical is required. If questionMultivaluedAnswer is false, answerValueNumerical must not be multivalued.",
           "@type": "ClassRule"
         },
         {
@@ -3306,7 +3377,79 @@
             ],
             "@type": "AnonymousClassExpression"
           },
-          "description": "If questionType is 'choice', 'openChoice', or 'text', answerValueString is required.",
+          "description": "If questionType is 'choice', 'openChoice', or 'text', answerValueString is required. If questionMultivaluedAnswer is true, answerValueString must be multivalued.",
+          "@type": "ClassRule"
+        },
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "answerIsEmpty",
+                "id_prefixes": [
+                  "False"
+                ],
+                "@type": "SlotDefinition"
+              },
+              {
+                "name": "questionType",
+                "equals_string_in": [
+                  "choice",
+                  "openChoice",
+                  "text"
+                ],
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "answerValueString",
+                "comments": [
+                  "JsonObj(Validation=\"if choice/openChoice, answerValueString must be a list of strings representing the selected options: codes from the Question's ValueCoding.\")"
+                ],
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "If questionType is 'choice', 'openChoice', or 'text', answerValueString is required. If questionMultivaluedAnswer is false, answerValueString must not be multivalued.",
+          "@type": "ClassRule"
+        },
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "answerIsEmpty",
+                "id_prefixes": [
+                  "False"
+                ],
+                "@type": "SlotDefinition"
+              },
+              {
+                "name": "questionType",
+                "equals_string_in": [
+                  "dateTime"
+                ],
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "answerValueDateTime",
+                "required": true,
+                "multivalued": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "If questionType is 'dateTime', answerValueDateTime is required. If questionMultivaluedAnswer is true, answerValueDateTime must be multivalued.",
           "@type": "ClassRule"
         },
         {
@@ -3339,7 +3482,7 @@
             ],
             "@type": "AnonymousClassExpression"
           },
-          "description": "If questionType is 'dateTime', answerValueDateTime is required.",
+          "description": "If questionType is 'dateTime', answerValueDateTime is required. If questionMultivaluedAnswer is false, answerValueDateTime must not be multivalued.",
           "@type": "ClassRule"
         }
       ],
@@ -3417,12 +3560,14 @@
         "questionAuthoredByOrg",
         "questionInOrderedQuestion",
         "questionHasAnswer",
+        "questionMultivaluedAnswer",
         "questionUsedInScoreDefinition",
         "question__questionId",
         "question__questionTag",
         "question__questionLabel",
         "question__questionNumericalParams",
         "question__questionCodingParams",
+        "question__questionCodingOrdinal",
         "question__questionIntervalParams",
         "question__questionRequired"
       ],
@@ -3461,6 +3606,13 @@
           "description": "Code and Display of each option offered as answer to the choice or open-choice question.",
           "range": "ValueCoding",
           "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "questionCodingOrdinal",
+          "description": "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).",
+          "ifabsent": "False",
+          "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
@@ -4093,7 +4245,7 @@
   "source_file": "datamodel.yaml",
   "source_file_date": "2025-08-22T13:25:34",
   "source_file_size": 780,
-  "generation_date": "2025-09-12T09:11:07",
+  "generation_date": "2025-09-22T17:57:54",
   "@type": "SchemaDefinition",
   "@context": [
     "tmp/jsonld/datamodel.context.jsonld",

@@ -89,6 +89,7 @@ type Answer
     answerInQuestionnaireResponse: QuestionnaireResponse!
     answerToQuestion: Question!
     questionType: QuestionType!
+    questionMultivaluedAnswer: Boolean
     answerId: Uriorcurie!
     answerValueNumerical: ValueNumerical
     answerValueString: [ValueString]
@@ -168,12 +169,14 @@ type Question
     questionAuthoredByOrg: [Organization]
     questionInOrderedQuestion: [OrderedQuestion]
     questionHasAnswer: [Answer]
+    questionMultivaluedAnswer: Boolean
     questionUsedInScoreDefinition: [ScoreDefinition]
     questionId: Uriorcurie!
     questionTag: String!
     questionLabel: String!
     questionNumericalParams: NumericalParams
     questionCodingParams: [ValueCoding]
+    questionCodingOrdinal: Boolean
     questionIntervalParams: IntervalParams
     questionRequired: Boolean
   }

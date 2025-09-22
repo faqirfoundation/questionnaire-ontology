@@ -4,23 +4,24 @@
   "answerToQuestion": "https://pods.faqir.org/question_04_AcWh1",
   "questionType": "openChoice",
   "answerTimeStamp": "2025-07-11T10:35:04+00:00",
-  "answerIsEmpty": false,
-  "answerValueString": [
-    {
+  "questionMultivaluedAnswer": false,
+  "answerValueString": {
+    "3": {
       "stringValue": "3"
     },
-    {
+    "7": {
       "stringValue": "7"
     },
-    {
+    "12": {
       "stringValue": "12"
     },
-    {
+    "-1": {
       "stringValue": "-1"
     },
-    {
+    "Aqua gymnastics": {
       "stringValue": "Aqua gymnastics"
     }
-  ],
+  },
+  "answerIsEmpty": false,
   "@type": "Answer"
 }

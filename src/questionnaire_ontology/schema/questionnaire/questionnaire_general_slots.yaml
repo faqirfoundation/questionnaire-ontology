@@ -17,6 +17,12 @@ slots:
     required: true
     slot_uri: "faqir:questionType"
 
+  questionMultivaluedAnswer:
+    description: "Indicates whether this question allows multiple answers (true) or it's single answer (false)."
+    range: boolean
+    ifabsent: false
+    slot_uri: "faqir:questionMultipleAnswer"
+
   # ScoreDefinition slots
   scoreDefinitionType:
     description: "Type of score: numerical_continuous, numerical_integer, numerical_percentage, numerical_z_score, numerical_t_score or categorical. Determines valid score values."

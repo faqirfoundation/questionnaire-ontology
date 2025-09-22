@@ -8,7 +8,9 @@
 <https://pods.faqir.org/question_01_hours_slept> a faqir:Question ;
     faqir:questionHasAnswer <https://pods.faqir.org/answer_01_hours_slept_01> ;
     faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_01_hours_slept_q01> ;
+    faqir:questionMultipleAnswer false ;
     faqir:questionType fhir:decimal ;
+    ns1:questionCodingOrdinal false ;
     ns1:questionLabel "How many hours did you sleep last night?" ;
     ns1:questionNumericalParams [ a faqir:NumericalParams ;
             ucum:units ucum:h ;

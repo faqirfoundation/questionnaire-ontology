@@ -8,6 +8,7 @@ questionInOrderedQuestion:
 - https://pods.faqir.org/orderedquestion_04_AcWh1_q01
 questionHasAnswer:
 - https://pods.faqir.org/answer_04_AcWh1_01
+questionMultivaluedAnswer: true
 questionCodingParams:
   '0':
     code: '0'
@@ -57,4 +58,5 @@ questionCodingParams:
   '-1':
     code: '-1'
     display: Other
+questionCodingOrdinal: false
 questionRequired: false

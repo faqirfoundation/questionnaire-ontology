@@ -4,6 +4,7 @@ questionTag: "q_hours_slept"
 questionLabel: "How many hours did you sleep last night?"
 questionRequired: false
 questionType: decimal
+questionMultivaluedAnswer: false
 questionPartOfQuestionnaire: 
   - "https://pods.faqir.org/questionnaire_01_simple"
 questionNumericalParams:

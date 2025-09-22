@@ -1,5 +1,5 @@
 # Auto generated from datamodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-12T09:11:07
+# Generation date: 2025-09-22T17:57:54
 # Schema: datamodel
 #
 # id: https://w3id.org/faqir/datamodel
@@ -751,6 +751,7 @@ class Answer(YAMLRoot):
     answerToQuestion: Union[str, QuestionQuestionId] = None
     questionType: Union[str, "QuestionType"] = None
     answerTimeStamp: Union[str, XSDDateTime] = None
+    questionMultivaluedAnswer: Optional[Union[bool, Bool]] = False
     answerValueNumerical: Optional[Union[dict, ValueNumerical]] = None
     answerValueString: Optional[Union[Union[dict, ValueString], list[Union[dict, ValueString]]]] = empty_list()
     answerValueDateTime: Optional[Union[dict, ValueDateTime]] = None
@@ -781,6 +782,9 @@ class Answer(YAMLRoot):
             self.MissingRequiredField("answerTimeStamp")
         if not isinstance(self.answerTimeStamp, XSDDateTime):
             self.answerTimeStamp = XSDDateTime(self.answerTimeStamp)
+
+        if self.questionMultivaluedAnswer is not None and not isinstance(self.questionMultivaluedAnswer, Bool):
+            self.questionMultivaluedAnswer = Bool(self.questionMultivaluedAnswer)
 
         if self.answerValueNumerical is not None and not isinstance(self.answerValueNumerical, ValueNumerical):
             self.answerValueNumerical = ValueNumerical(**as_dict(self.answerValueNumerical))
@@ -858,9 +862,11 @@ class Question(YAMLRoot):
     questionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
     questionInOrderedQuestion: Optional[Union[Union[str, OrderedQuestionOrderedQuestionId], list[Union[str, OrderedQuestionOrderedQuestionId]]]] = empty_list()
     questionHasAnswer: Optional[Union[Union[str, AnswerAnswerId], list[Union[str, AnswerAnswerId]]]] = empty_list()
+    questionMultivaluedAnswer: Optional[Union[bool, Bool]] = False
     questionUsedInScoreDefinition: Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]] = empty_list()
     questionNumericalParams: Optional[Union[dict, NumericalParams]] = None
     questionCodingParams: Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]] = empty_list()
+    questionCodingOrdinal: Optional[Union[bool, Bool]] = False
     questionIntervalParams: Optional[Union[dict, IntervalParams]] = None
     questionRequired: Optional[Union[bool, Bool]] = False
 
@@ -897,6 +903,9 @@ class Question(YAMLRoot):
             self.questionHasAnswer = [self.questionHasAnswer] if self.questionHasAnswer is not None else []
         self.questionHasAnswer = [v if isinstance(v, AnswerAnswerId) else AnswerAnswerId(v) for v in self.questionHasAnswer]
 
+        if self.questionMultivaluedAnswer is not None and not isinstance(self.questionMultivaluedAnswer, Bool):
+            self.questionMultivaluedAnswer = Bool(self.questionMultivaluedAnswer)
+
         if not isinstance(self.questionUsedInScoreDefinition, list):
             self.questionUsedInScoreDefinition = [self.questionUsedInScoreDefinition] if self.questionUsedInScoreDefinition is not None else []
         self.questionUsedInScoreDefinition = [v if isinstance(v, ScoreDefinitionScoreDefinitionId) else ScoreDefinitionScoreDefinitionId(v) for v in self.questionUsedInScoreDefinition]
@@ -905,6 +914,9 @@ class Question(YAMLRoot):
             self.questionNumericalParams = NumericalParams(**as_dict(self.questionNumericalParams))
 
         self._normalize_inlined_as_dict(slot_name="questionCodingParams", slot_type=ValueCoding, key_name="code", keyed=False)
+
+        if self.questionCodingOrdinal is not None and not isinstance(self.questionCodingOrdinal, Bool):
+            self.questionCodingOrdinal = Bool(self.questionCodingOrdinal)
 
         if self.questionIntervalParams is not None and not isinstance(self.questionIntervalParams, IntervalParams):
             self.questionIntervalParams = IntervalParams(**as_dict(self.questionIntervalParams))
@@ -1588,6 +1600,9 @@ slots.procedureHasQuestionnaire = Slot(uri=FAQIR.procedureHasQuestionnaire, name
 slots.questionType = Slot(uri=FAQIR.questionType, name="questionType", curie=FAQIR.curie('questionType'),
                    model_uri=DATAMODEL.questionType, domain=None, range=Union[str, "QuestionType"])
 
+slots.questionMultivaluedAnswer = Slot(uri=FAQIR.questionMultipleAnswer, name="questionMultivaluedAnswer", curie=FAQIR.curie('questionMultipleAnswer'),
+                   model_uri=DATAMODEL.questionMultivaluedAnswer, domain=None, range=Optional[Union[bool, Bool]])
+
 slots.scoreDefinitionType = Slot(uri=FAQIR.scoreDefinitionType, name="scoreDefinitionType", curie=FAQIR.curie('scoreDefinitionType'),
                    model_uri=DATAMODEL.scoreDefinitionType, domain=None, range=Union[str, "ScoreType"])
 
@@ -1827,6 +1842,9 @@ slots.question__questionNumericalParams = Slot(uri=QUESTIONNAIRE['classes/questi
 
 slots.question__questionCodingParams = Slot(uri=QUESTIONNAIRE['classes/questionCodingParams'], name="question__questionCodingParams", curie=QUESTIONNAIRE.curie('classes/questionCodingParams'),
                    model_uri=DATAMODEL.question__questionCodingParams, domain=None, range=Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]])
+
+slots.question__questionCodingOrdinal = Slot(uri=QUESTIONNAIRE['classes/questionCodingOrdinal'], name="question__questionCodingOrdinal", curie=QUESTIONNAIRE.curie('classes/questionCodingOrdinal'),
+                   model_uri=DATAMODEL.question__questionCodingOrdinal, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.question__questionIntervalParams = Slot(uri=QUESTIONNAIRE['classes/questionIntervalParams'], name="question__questionIntervalParams", curie=QUESTIONNAIRE.curie('classes/questionIntervalParams'),
                    model_uri=DATAMODEL.question__questionIntervalParams, domain=None, range=Optional[Union[dict, IntervalParams]])

@@ -87,8 +87,10 @@ The datamodel used in faqir vaults.
  * [questionAuthoredByOrg](questionAuthoredByOrg.md) - The organization that has designed this Question.
  * [questionHasAnswer](questionHasAnswer.md) - The Answer to this Question.
  * [questionInOrderedQuestion](questionInOrderedQuestion.md) - OrderedQuestions that this Question is indexed in.
+ * [questionMultivaluedAnswer](questionMultivaluedAnswer.md) - Indicates whether this question allows multiple answers (true) or it's single answer (false).
  * [questionType](questionType.md) - Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.
  * [questionUsedInScoreDefinition](questionUsedInScoreDefinition.md) - The ScoreDefinition that this Question is used in.
+ * [➞questionCodingOrdinal](question__questionCodingOrdinal.md) - Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).
  * [➞questionCodingParams](question__questionCodingParams.md) - Code and Display of each option offered as answer to the choice or open-choice question.
  * [➞questionId](question__questionId.md) - The unique identifier for a question in the questionnaire.
  * [➞questionIntervalParams](question__questionIntervalParams.md) - Minimum and Maximum limiting the range the answer must be in for the question.

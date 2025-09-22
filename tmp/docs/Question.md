@@ -6,7 +6,7 @@ A question in the questionnaire.
 URI: [datamodel:Question](https://w3id.org/faqir/datamodel/Question)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionId:uriorcurie;questionTag:string;questionLabel:string;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionId:uriorcurie;questionTag:string;questionLabel:string;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionMultivaluedAnswer:boolean%20%3F;questionId:uriorcurie;questionTag:string;questionLabel:string;questionCodingOrdinal:boolean%20%3F;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueCoding],[ScoreDefinition],[IntervalParams]<questionIntervalParams%200..1-++[Question&#124;questionType:QuestionType;questionMultivaluedAnswer:boolean%20%3F;questionId:uriorcurie;questionTag:string;questionLabel:string;questionCodingOrdinal:boolean%20%3F;questionRequired:boolean%20%3F],[ValueCoding]<questionCodingParams%200..*-++[Question],[NumericalParams]<questionNumericalParams%200..1-++[Question],[ScoreDefinition]<questionUsedInScoreDefinition%200..*-%20[Question],[Answer]<questionHasAnswer%200..*-%20[Question],[OrderedQuestion]<questionInOrderedQuestion%200..*-%20[Question],[Organization]<questionAuthoredByOrg%200..*-%20[Question],[Answer]-%20answerToQuestion%201..1>[Question],[OrderedQuestion]-%20orderedQuestionHasQuestion%201..1>[Question],[Organization]-%20organizationAuthorsQuestion%200..*>[Question],[ScoreDefinition]-%20scoreDefinitionUsesQuestion%201..*>[Question],[Organization],[OrderedQuestion],[NumericalParams],[IntervalParams],[Answer])
 
 ## Referenced by Class
 
@@ -32,6 +32,9 @@ URI: [datamodel:Question](https://w3id.org/faqir/datamodel/Question)
  * [questionHasAnswer](questionHasAnswer.md)  <sub>0..\*</sub>
      * Description: The Answer to this Question.
      * Range: [Answer](Answer.md)
+ * [questionMultivaluedAnswer](questionMultivaluedAnswer.md)  <sub>0..1</sub>
+     * Description: Indicates whether this question allows multiple answers (true) or it's single answer (false).
+     * Range: [Boolean](types/Boolean.md)
  * [questionUsedInScoreDefinition](questionUsedInScoreDefinition.md)  <sub>0..\*</sub>
      * Description: The ScoreDefinition that this Question is used in.
      * Range: [ScoreDefinition](ScoreDefinition.md)
@@ -50,6 +53,9 @@ URI: [datamodel:Question](https://w3id.org/faqir/datamodel/Question)
  * [➞questionCodingParams](question__questionCodingParams.md)  <sub>0..\*</sub>
      * Description: Code and Display of each option offered as answer to the choice or open-choice question.
      * Range: [ValueCoding](ValueCoding.md)
+ * [➞questionCodingOrdinal](question__questionCodingOrdinal.md)  <sub>0..1</sub>
+     * Description: Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).
+     * Range: [Boolean](types/Boolean.md)
  * [➞questionIntervalParams](question__questionIntervalParams.md)  <sub>0..1</sub>
      * Description: Minimum and Maximum limiting the range the answer must be in for the question.
      * Range: [IntervalParams](IntervalParams.md)

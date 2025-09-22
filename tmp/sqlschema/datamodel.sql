@@ -59,6 +59,7 @@
 --     * Slot: answerInQuestionnaireResponse Description: The QuestionnaireResponse that this Answer is part of.
 --     * Slot: answerToQuestion Description: The Question that this Answer is for.
 --     * Slot: questionType Description: Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.
+--     * Slot: questionMultivaluedAnswer Description: Indicates whether this question allows multiple answers (true) or it's single answer (false).
 --     * Slot: answerId Description: The unique identifier for an answer in the questionnaire response.
 --     * Slot: answerIsEmpty Description: True if the answer is intentionally empty.
 --     * Slot: answerTimeStamp Description: The exact date and time when the answer was provided.
@@ -74,9 +75,11 @@
 --     * Slot: Section_sectionId Description: Autocreated FK slot
 -- # Class: "Question" Description: "A question in the questionnaire."
 --     * Slot: questionType Description: Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.
+--     * Slot: questionMultivaluedAnswer Description: Indicates whether this question allows multiple answers (true) or it's single answer (false).
 --     * Slot: questionId Description: The unique identifier for a question in the questionnaire.
 --     * Slot: questionTag Description: Internal English identifier, e.g., 'q_pain_level'.
 --     * Slot: questionLabel Description: The text of the question itself, which is displayed to the user.
+--     * Slot: questionCodingOrdinal Description: Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).
 --     * Slot: questionRequired Description: Indicates whether answering this question is mandatory (true) or it's optional (false).
 --     * Slot: questionNumericalParams_id Description: Unit and Precision limiting the quantitative answer for the question.
 --     * Slot: questionIntervalParams_id Description: Minimum and Maximum limiting the range the answer must be in for the question.
@@ -305,9 +308,11 @@ CREATE TABLE "Vault" (
 );
 CREATE TABLE "Question" (
 	"questionType" VARCHAR(14) NOT NULL, 
+	"questionMultivaluedAnswer" BOOLEAN, 
 	"questionId" TEXT NOT NULL, 
 	"questionTag" TEXT NOT NULL, 
 	"questionLabel" TEXT NOT NULL, 
+	"questionCodingOrdinal" BOOLEAN, 
 	"questionRequired" BOOLEAN, 
 	"questionNumericalParams_id" INTEGER, 
 	"questionIntervalParams_id" INTEGER, 
@@ -545,6 +550,7 @@ CREATE TABLE "Answer" (
 	"answerInQuestionnaireResponse" TEXT NOT NULL, 
 	"answerToQuestion" TEXT NOT NULL, 
 	"questionType" VARCHAR(14) NOT NULL, 
+	"questionMultivaluedAnswer" BOOLEAN, 
 	"answerId" TEXT NOT NULL, 
 	"answerIsEmpty" BOOLEAN, 
 	"answerTimeStamp" DATETIME NOT NULL, 

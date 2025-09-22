@@ -74,7 +74,7 @@ classes:
       answerValueString: # Redefined in rules
         description: "The value of the answer to a choice, openChoice or text type of question, which is a stringValue."
         range: ValueString
-        multivalued: true 
+        multivalued: true #false While validation fails
         required: false 
         mappings:
           - "fhir:QuestionnaireResponse.item.answer.valueString"
@@ -97,13 +97,31 @@ classes:
       - answerInQuestionnaireResponse
       - answerToQuestion
       - questionType # Type of the question this answer is for, guarantee matching Question slot
+      - questionMultivaluedAnswer # Whether this answer can be multivalued
     rules:
-      - description: "If questionType is 'decimal' or 'numberInterval', answerValueNumerical is required."
+      - description: "If questionType is 'decimal' or 'numberInterval', answerValueNumerical is required. If questionMultivaluedAnswer is true, answerValueNumerical must be multivalued."
         preconditions:
           slot_conditions:
             answerIsEmpty: false   
             questionType:
               equals_string_in: ["decimal", "numberInterval"]  # Only validate if questionType is 'decimal'
+            #questionMultivaluedAnswer: 
+            #  equals_expression: true
+        postconditions:
+          slot_conditions:
+            answerValueNumerical:
+              required: true
+              multivalued: true
+              comments:
+                "Validation": "numberInterval answerValueNumerical must be between minValue and maxValue"
+      - description: "If questionType is 'decimal' or 'numberInterval', answerValueNumerical is required. If questionMultivaluedAnswer is false, answerValueNumerical must not be multivalued."
+        preconditions:
+          slot_conditions:
+            answerIsEmpty: false   
+            questionType:
+              equals_string_in: ["decimal", "numberInterval"]  # Only validate if questionType is 'decimal'
+            #questionMultivaluedAnswer: 
+            #  equals_expression: false
         postconditions:
           slot_conditions:
             answerValueNumerical:
@@ -111,12 +129,14 @@ classes:
               multivalued: false
               comments:
                 "Validation": "numberInterval answerValueNumerical must be between minValue and maxValue"
-      - description: "If questionType is 'choice', 'openChoice', or 'text', answerValueString is required."
+      - description: "If questionType is 'choice', 'openChoice', or 'text', answerValueString is required. If questionMultivaluedAnswer is true, answerValueString must be multivalued."
         preconditions:
           slot_conditions:
             answerIsEmpty: false
             questionType:
               equals_string_in: ["choice", "openChoice", "text"]  # Only validate if questionType is 'choice'
+            #questionMultivaluedAnswer: 
+            #  equals_expression: true
         postconditions:
           slot_conditions:
             answerValueString: # Just codings
@@ -124,12 +144,42 @@ classes:
               multivalued: true
               comments:
                 "Validation": "if choice/openChoice, answerValueString must be a list of strings representing the selected options: codes from the Question's ValueCoding."
-      - description: "If questionType is 'dateTime', answerValueDateTime is required."
+      - description: "If questionType is 'choice', 'openChoice', or 'text', answerValueString is required. If questionMultivaluedAnswer is false, answerValueString must not be multivalued."
+        preconditions:
+          slot_conditions:
+            answerIsEmpty: false
+            questionType:
+              equals_string_in: ["choice", "openChoice", "text"]  # Only validate if questionType is 'choice'
+            #questionMultivaluedAnswer: 
+            #  equals_expression: false
+        postconditions:
+          slot_conditions:
+            answerValueString: # Just codings
+              required: true 
+              multivalued: false
+              comments:
+                "Validation": "if choice/openChoice, answerValueString must be a list of strings representing the selected options: codes from the Question's ValueCoding."
+      - description: "If questionType is 'dateTime', answerValueDateTime is required. If questionMultivaluedAnswer is true, answerValueDateTime must be multivalued."
         preconditions:
           slot_conditions:
             answerIsEmpty: false
             questionType:
               equals_string_in: ["dateTime"]  # Only validate if questionType is 'dateTime'
+            #questionMultivaluedAnswer: 
+            #  equals_expression: true
+        postconditions:
+          slot_conditions:
+            answerValueDateTime:
+              required: true
+              multivalued: true
+      - description: "If questionType is 'dateTime', answerValueDateTime is required. If questionMultivaluedAnswer is false, answerValueDateTime must not be multivalued."
+        preconditions:
+          slot_conditions:
+            answerIsEmpty: false
+            questionType:
+              equals_string_in: ["dateTime"]  # Only validate if questionType is 'dateTime'
+            #questionMultivaluedAnswer: 
+            #  equals_expression: false
         postconditions:
           slot_conditions:
             answerValueDateTime:
@@ -192,7 +242,7 @@ classes:
         description: "Internal English identifier, e.g., 'q_pain_level'."
         range: string
         required: true
-      questionLabel: #SLOT is_a ????
+      questionLabel: 
         description: "The text of the question itself, which is displayed to the user."
         range: string
         required: true
@@ -206,6 +256,10 @@ classes:
         range: ValueCoding
         multivalued: true
         required: false
+      questionCodingOrdinal:
+        description: "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical)."
+        range: boolean
+        ifabsent: false
       questionIntervalParams:
         description: "Minimum and Maximum limiting the range the answer must be in for the question."
         range: IntervalParams
@@ -222,6 +276,7 @@ classes:
       - questionAuthoredByOrg
       - questionInOrderedQuestion
       - questionHasAnswer
+      - questionMultivaluedAnswer
       - questionUsedInScoreDefinition
     rules:
       - description: "If questionType is 'choice' or 'openChoice', questionCodingParams is required."

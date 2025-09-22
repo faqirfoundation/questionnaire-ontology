@@ -3,10 +3,16 @@ answerInQuestionnaireResponse: https://pods.faqir.org/response_01_simple
 answerToQuestion: https://pods.faqir.org/question_04_AcWh1
 questionType: openChoice
 answerTimeStamp: '2025-07-11T10:35:04+00:00'
-answerIsEmpty: false
+questionMultivaluedAnswer: false
 answerValueString:
-- stringValue: '3'
-- stringValue: '7'
-- stringValue: '12'
-- stringValue: '-1'
-- stringValue: Aqua gymnastics
+  '3':
+    stringValue: '3'
+  '7':
+    stringValue: '7'
+  '12':
+    stringValue: '12'
+  '-1':
+    stringValue: '-1'
+  Aqua gymnastics:
+    stringValue: Aqua gymnastics
+answerIsEmpty: false
