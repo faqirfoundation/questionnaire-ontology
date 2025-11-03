@@ -10,7 +10,7 @@ imports:
 
 classes:
   Procedure:
-    description: "A clinical or administrative process that uses resources like questionnaires"
+    description: "A clinical or administrative process that uses resources like questionnaires and observations."
     class_uri: "faqir:Procedure"
     mappings:
       - "fhir:Procedure"
