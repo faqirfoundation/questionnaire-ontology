@@ -1,0 +1,127 @@
+---
+id: https://w3id.org/faqir/datamodel/core/types #_id 
+name: types
+
+prefixes:
+    linkml: https://w3id.org/linkml/
+    ucum: https://unitsofmeasure.org/
+    xsd: http://www.w3.org/2001/XMLSchema#
+    faqir: https://faqir.org/datamodel/
+
+imports:
+    - https://w3id.org/linkml/types #linkml:types
+
+classes:
+  #TemporalValue:
+  #  slots:
+  #    - timestamp
+  #    - effective_date
+
+  ValueNumerical:
+    description: "Base class for quantitative values, they may have units and precision."
+    class_uri: "faqir:ValueNumerical"
+    attributes:
+      numericalValue:
+        description: "The quantitative value, which can be an integer or a float."
+        range: decimal
+        required: true
+
+  NumericalParams:
+    description: "Parameters for quantitative values, including unit and precision."
+    class_uri: "faqir:NumericalParams"
+    attributes: 
+      numericalUnit:
+        description: "The unit of measure for the quantitative value, from UCUM standard."
+        range: UnitOfMeasure
+        required: false
+        slot_uri: "ucum:units"
+      numericalPrecision:
+        description: "The precision of the quantitative value, e.g. number of decimal places."
+        range: integer
+        minimum_value: 0
+        required: false
+  
+  IntervalParams:
+    description: "Parameters for interval values, including minimum and maximum values."
+    class_uri: "faqir:IntervalParams" 
+    attributes:
+      minValue:
+        description: "The minimum value of the interval."
+        range: float # ValueNumerical
+        required: true
+      minLabel:
+        description: "The label for the minimum value of the interval."
+        range: string # ValueString
+        required: false
+      maxValue:
+        description: "The maximum value of the interval."
+        range: float # ValueNumerical
+        required: true
+      maxLabel:
+        description: "The label for the maximum value of the interval."
+        range: string # ValueString
+        required: false
+
+  ValueString:
+    description: "A string value, typically used for text or identifiers."
+    class_uri: "faqir:ValueString"
+    mappings:
+      - "xsd:string"
+    attributes:
+      stringValue:
+        description: "The string value, which can be any text."
+        range: string
+        required: true
+
+  ValueDateTime:
+    description: "A date and time value, typically in ISO 8601 format."
+    class_uri: "faqir:ValueDateTime"
+    mappings: 
+      - "xsd:dateTime"
+    attributes:
+      dateTimeValue:
+        description: "The date and time value in ISO 8601 format."
+        range: datetime
+
+  ValueCoding:
+    description: "A coded value with a unique code for each display text, typically used for standardized questionnaires."
+    class_uri: "faqir:ValueCoding"
+    mappings:
+      - "fhir:Coding"
+    attributes: 
+      code:
+        description: "The code representing the value (e.g. code '1' for display 'Yes')."
+        range: string
+        required: true
+      display:
+        description: "The human-readable display text for the code (e.g. code '1' for display 'Yes')."
+        range: string
+        required: true
+
+enums:
+  UnitOfMeasure:
+    description: "Allowed units from UCUM standard."
+    enum_uri: "faqir:UnitOfMeasure"
+    permissible_values:
+      kg:
+        description: "Kilograms"
+        meaning: "ucum:kg"
+      g:
+        description: "Grams"
+        meaning: "ucum:g"
+      lb:
+        description: "Pounds"
+        meaning: "ucum:lb_av"
+      cm:
+        description: "Centimeters"
+        meaning: "ucum:cm"
+      m:
+        description: "Meters"
+        meaning: "ucum:m"
+      h:
+        description: "Hours"
+        meaning: "ucum:h"
+      min:
+        description: "Minutes"
+        meaning: "ucum:min"
+      # Add other units as needed

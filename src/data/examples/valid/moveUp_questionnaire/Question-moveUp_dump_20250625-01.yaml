@@ -1,0 +1,25 @@
+---
+questionId: "https://pods.faqir.org/FoIn0"
+questionTag: "q_index_joint_bed_night"
+questionLabel: "Are you aware of your index joint in bed at night ?"
+questionRequired: false
+questionAuthoredByOrg: 
+  - "https://www.moveup.care/"
+questionType: choice
+questionCodingParams:
+  - code: "0"
+    display: "Never"
+  - code: "1"
+    display: "Almost never"
+  - code: "2"
+    display: "Seldom"
+  - code: "3"
+    display: "Sometimes"
+  - code: "4"
+    display: "Mostly"
+questionInOrderedQuestion:
+  - "https://pods.faqir.org/orderedQuestion/orderedFoIn0"
+questionHasAnswer:
+  - "https://pods.faqir.org/aFoIn0"
+questionUsedInScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

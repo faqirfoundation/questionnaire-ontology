@@ -1,0 +1,30 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/question_07_EQ_VAS> a faqir:Question ;
+    faqir:questionAuthoredByOrg <https://euroqol.org/> ;
+    faqir:questionHasAnswer <https://pods.faqir.org/answer_07_EQ_VAS_01>,
+        <https://pods.faqir.org/answer_07_EQ_VAS_02>,
+        <https://pods.faqir.org/answer_07_EQ_VAS_03> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_07_EQ_VAS_s01> ;
+    faqir:questionType fhir:number ;
+    ns1:questionIntervalParams [ a faqir:IntervalParams ;
+            ns2:maxLabel "The best health you can imagine" ;
+            ns2:maxValue "100.0"^^xsd:float ;
+            ns2:minLabel "The worst health you can imagine" ;
+            ns2:minValue "0.0"^^xsd:float ] ;
+    ns1:questionLabel """"We would like to know how good or bad your health is TODAY.
+This scale is numbered from 0 to 100.
+100 means the *best* health you can imagine.
+0 means the *worst* health you can imagine.
+Mark an X on the scale to indicate how your health is TODAY.
+Now, please write the number you marked on the scale."
+""" ;
+    ns1:questionNumericalParams [ a faqir:NumericalParams ;
+            ns2:numericalPrecision 0 ] ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_EQ_VAS" .
+

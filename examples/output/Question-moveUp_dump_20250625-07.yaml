@@ -1,0 +1,30 @@
+questionId: https://pods.faqir.org/Fowh6
+questionType: choice
+questionTag: q_index_joint_walking_uneven_ground
+questionLabel: Are you aware of your index joint when you are walking on uneven ground
+  ?
+questionAuthoredByOrg:
+- https://www.moveup.care/
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedQuestion/orderedFowh6
+questionHasAnswer:
+- https://pods.faqir.org/aFowh6
+questionUsedInScoreDefinition:
+- https://pods.faqir.org/TFJSK
+questionCodingParams:
+  '0':
+    code: '0'
+    display: Never
+  '1':
+    code: '1'
+    display: Almost never
+  '2':
+    code: '2'
+    display: Seldom
+  '3':
+    code: '3'
+    display: Sometimes
+  '4':
+    code: '4'
+    display: Mostly
+questionRequired: false

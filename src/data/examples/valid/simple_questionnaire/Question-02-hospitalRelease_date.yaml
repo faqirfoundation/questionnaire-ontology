@@ -1,0 +1,10 @@
+---
+questionId: "https://pods.faqir.org/question_02_hospitalRelease_date"
+questionTag: "q_hospitalRelease_date"
+questionLabel: "When did you leave the hospital?"
+questionRequired: false
+questionType: dateTime
+questionInOrderedQuestion: 
+  - "https://pods.faqir.org/orderedquestion_02_hospitalRelease_date_q01"
+questionHasAnswer:
+  - "https://pods.faqir.org/answer_02_hospitalRelease_date_01"

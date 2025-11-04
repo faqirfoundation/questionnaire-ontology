@@ -1,0 +1,12 @@
+{
+  "answerId": "https://pods.faqir.org/answer_02_hospitalRelease_date_01",
+  "answerInQuestionnaireResponse": "https://pods.faqir.org/response_01_simple",
+  "answerToQuestion": "https://pods.faqir.org/question_02_hospitalRelease_date",
+  "questionType": "dateTime",
+  "answerTimeStamp": "2025-07-11T10:35:02+00:00",
+  "answerIsEmpty": false,
+  "answerValueDateTime": {
+    "dateTimeValue": "2023-08-14T00:00:00+00:00"
+  },
+  "@type": "Answer"
+}

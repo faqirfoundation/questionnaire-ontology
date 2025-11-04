@@ -1,0 +1,33 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/sdEQ_5D_5L> a faqir:ScoreDefinition ;
+    faqir:scoreDefinitionAuthoredByOrg <https://euroqol.org/> ;
+    faqir:scoreDefinitionHasScoreValue <https://pods.faqir.org/svEQ_5D_5L_01> ;
+    faqir:scoreDefinitionType xsd:integer ;
+    faqir:scoreDefinitionUsedByQuestionnare <https://pods.faqir.org/questionnaire_EQ_5D_5L> ;
+    faqir:scoreDefinitionUsesQuestion <https://pods.faqir.org/question_EQ_5D_5L_01>,
+        <https://pods.faqir.org/question_EQ_5D_5L_02>,
+        <https://pods.faqir.org/question_EQ_5D_5L_03>,
+        <https://pods.faqir.org/question_EQ_5D_5L_04>,
+        <https://pods.faqir.org/question_EQ_5D_5L_05> ;
+    ns1:scoreDefinitionFormula """Each state is referred to by a 5-digit code: each digit representing the answer to each question or dimension (e.g. 12345).
+The first digit represents the level selected for mobility, the second for self-care, the third for usual activities, the fourth for pain/discomfort and the fifth for anxiety/depression.
+- Missing values are preferably coded as ‘9’.
+- Ambiguous values (e.g. two boxes are ticked for a single dimension) should
+be treated as missing values.
+""" ;
+    ns1:scoreDefinitionInterpretationGuide """A total of 3125 possible health states are defined in this way. 
+LEVEL 1: indicating no problem
+LEVEL 2: indicating slight problems
+LEVEL 3: indicating moderate problems
+LEVEL 4: indicating severe problems
+LEVEL 5: indicating unable to/extreme problems
+""" ;
+    ns1:scoreDefinitionIntervalParams [ a faqir:IntervalParams ;
+            ns2:maxValue "99999.0"^^xsd:float ;
+            ns2:minValue "11111.0"^^xsd:float ] ;
+    ns1:scoreDefinitionLabel "EQ-5D-5L score" .
+

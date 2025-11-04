@@ -1,0 +1,14 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS_01> a faqir:ScoreValue ;
+    faqir:scoreDefinitionType xsd:integer ;
+    faqir:scoreValueBasedOnScoreDefinition <https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS> ;
+    faqir:scoreValueDerivedFromQuestionnaireResponse <https://pods.faqir.org/response_EQ_5D_5L_01> ;
+    ns1:scoreValueNumerical [ a faqir:ValueNumerical ;
+            ns2:numericalValue 77.0 ] ;
+    ns1:scoreValueStatus "valid" ;
+    ns1:scoreValueTimeStamp "2025-07-11T10:55:00+00:00"^^xsd:dateTime .
+

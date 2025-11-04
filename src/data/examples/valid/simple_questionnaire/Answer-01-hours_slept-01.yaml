@@ -1,0 +1,9 @@
+---
+answerId: "https://pods.faqir.org/answer_01_hours_slept_01"
+answerInQuestionnaireResponse: "https://pods.faqir.org/response_01_simple"
+answerToQuestion: "https://pods.faqir.org/question_01_hours_slept"
+questionType: decimal
+answerIsEmpty: false
+answerTimeStamp: "2025-07-11T10:35:01Z"
+answerValueNumerical:
+  numericalValue: 6.75

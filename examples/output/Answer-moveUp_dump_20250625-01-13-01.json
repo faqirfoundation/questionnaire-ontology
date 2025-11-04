@@ -1,0 +1,14 @@
+{
+  "answerId": "https://pods.faqir.org/aFowh11",
+  "answerInQuestionnaireResponse": "https://pods.faqir.org/d60d04dbe47a164a",
+  "answerToQuestion": "https://pods.faqir.org/Fowh11",
+  "questionType": "choice",
+  "answerTimeStamp": "2021-08-27T00:00:13+00:00",
+  "answerIsEmpty": false,
+  "answerValueString": [
+    {
+      "stringValue": "4"
+    }
+  ],
+  "@type": "Answer"
+}

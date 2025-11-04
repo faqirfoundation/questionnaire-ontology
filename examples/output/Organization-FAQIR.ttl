@@ -1,0 +1,9 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/entities/organization/> .
+
+<https://www.faqir.org> a faqir:Organization ;
+    faqir:organizationAuthorsSection <https://pods.faqir.org/section_03_EQ_VAS> ;
+    faqir:organizationManagesVault <https://pods.faqir.org/123> ;
+    ns1:organizationLabel "FAQIR Foundation" ;
+    ns1:organizationType <https://www.hl7.org/fhir/organization-type#edu> .
+

@@ -1,0 +1,44 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/questionnaire_EQ_5D_5L> a faqir:Questionnaire ;
+    faqir:questionnaireHasOrderedQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_01>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_02>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_03>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_04>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_05>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS> ;
+    faqir:questionnaireHasQuestionnaireResponse <https://pods.faqir.org/response_EQ_5D_5L_01> ;
+    faqir:questionnaireUsesScoreDefinition <https://pods.faqir.org/sdEQ_5D_5L>,
+        <https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS> ;
+    ns1:questionnaireLabel "EQ-5D-5L" ;
+    ns1:questionnaireLastUpdated "2025-09-09T11:52:00+00:00"^^xsd:dateTime ;
+    ns1:questionnaireStatus fhir:resource-status-active ;
+    ns1:questionnaireVersion "1.0.0" .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_01> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_EQ_5D_5L_01> ;
+    ns1:questionOrder 1 .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_02> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_EQ_5D_5L_02> ;
+    ns1:questionOrder 2 .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_03> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_EQ_5D_5L_03> ;
+    ns1:questionOrder 3 .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_04> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_EQ_5D_5L_04> ;
+    ns1:questionOrder 4 .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_05> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_EQ_5D_5L_05> ;
+    ns1:questionOrder 5 .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS> a faqir:OrderedQuestion ;
+    faqir:orderedQuestionHasQuestion <https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS> ;
+    ns1:questionOrder 6 .
+

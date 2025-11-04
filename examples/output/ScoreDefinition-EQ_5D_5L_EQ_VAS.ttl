@@ -1,0 +1,27 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS> a faqir:ScoreDefinition ;
+    faqir:scoreDefinitionAuthoredByOrg <https://euroqol.org/> ;
+    faqir:scoreDefinitionHasScoreValue <https://pods.faqir.org/svEQ_5D_5L_EQ_VAS_01> ;
+    faqir:scoreDefinitionType xsd:integer ;
+    faqir:scoreDefinitionUsedByQuestionnare <https://pods.faqir.org/questionnaire_EQ_5D_5L> ;
+    faqir:scoreDefinitionUsesQuestion <https://pods.faqir.org/q_EQ_5D_5L_EQ_VAS> ;
+    ns1:scoreDefinitionFormula """Simply the numerical answer of the EQ-VAS question.
+- Missing values are preferably coded as 999.
+""" ;
+    ns1:scoreDefinitionInterpretationGuide """User's own perceived health on the day of the questionnaire completion.
+This scale is numbered from 0 to 100.
+100 means the *best* health you can imagine.
+0 means the *worst* health you can imagine.
+If there is a discrepancy between where the respondent has placed the X and the number
+he/she has written in the box, administrators should use the number in the box (this is
+only relevant for the Paper Self-Complete version).
+""" ;
+    ns1:scoreDefinitionIntervalParams [ a faqir:IntervalParams ;
+            ns2:maxValue "999.0"^^xsd:float ;
+            ns2:minValue "0.0"^^xsd:float ] ;
+    ns1:scoreDefinitionLabel "EQ-5D-5L EQ-VAS score" .
+

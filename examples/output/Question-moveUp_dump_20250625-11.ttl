@@ -1,0 +1,31 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/Fowh10> a faqir:Question ;
+    faqir:questionAuthoredByOrg <https://www.moveup.care/> ;
+    faqir:questionHasAnswer <https://pods.faqir.org/aFowh10> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedQuestion/orderedFowh10> ;
+    faqir:questionType fhir:choice ;
+    faqir:questionUsedInScoreDefinition <https://pods.faqir.org/TFJSK> ;
+    ns1:questionCodingParams [ a faqir:ValueCoding ;
+            ns2:code "0" ;
+            ns2:display "Never" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "4" ;
+            ns2:display "Mostly" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "3" ;
+            ns2:display "Sometimes" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "1" ;
+            ns2:display "Almost never" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "2" ;
+            ns2:display "Seldom" ] ;
+    ns1:questionLabel "Are you aware of your index joint when you are taking a walk/hiking?" ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_index_joint_walking_hiking" .
+

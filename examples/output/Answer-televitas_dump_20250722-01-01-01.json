@@ -1,0 +1,14 @@
+{
+  "answerId": "https://pods.faqir.org/fd785369911fe91bfd2c194d92fa84c3c2e452ea1bc6e1d1e0eed57c01f49828",
+  "answerInQuestionnaireResponse": "https://pods.faqir.org/fdb99cea-245c-4a14-a6ec-b94473a87db2",
+  "answerToQuestion": "https://pods.faqir.org/86904b4a-989b-4e6e-8c0e-16714f18eeb8",
+  "questionType": "choice",
+  "answerTimeStamp": "2025-07-11T10:35:01+00:00",
+  "answerIsEmpty": false,
+  "answerValueString": [
+    {
+      "stringValue": "5"
+    }
+  ],
+  "@type": "Answer"
+}

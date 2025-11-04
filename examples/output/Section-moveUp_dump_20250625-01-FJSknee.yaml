@@ -1,0 +1,43 @@
+sectionId: https://pods.faqir.org/7eTPK5NLGTv8jeTW5
+sectionLabel: Forgotten Joint Score - Knee (NL-FR-EN-DE-IT)
+sectionHasOrderedQuestion:
+- orderedQuestionId: https://pods.faqir.org/orderedFoIn0
+  orderedQuestionHasQuestion: https://pods.faqir.org/FoIn0
+  questionOrder: 1
+- orderedQuestionId: https://pods.faqir.org/orderedFowh1
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh1
+  questionOrder: 2
+- orderedQuestionId: https://pods.faqir.org/orderedFowh2
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh2
+  questionOrder: 3
+- orderedQuestionId: https://pods.faqir.org/orderedFowh3
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh3
+  questionOrder: 4
+- orderedQuestionId: https://pods.faqir.org/orderedFowh4
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh4
+  questionOrder: 5
+- orderedQuestionId: https://pods.faqir.org/orderedFowh5
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh5
+  questionOrder: 6
+- orderedQuestionId: https://pods.faqir.org/orderedFowh6
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh6
+  questionOrder: 7
+- orderedQuestionId: https://pods.faqir.org/orderedFowh7
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh7
+  questionOrder: 8
+- orderedQuestionId: https://pods.faqir.org/orderedFowh8
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh8
+  questionOrder: 9
+- orderedQuestionId: https://pods.faqir.org/orderedFowh9
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh9
+  questionOrder: 10
+- orderedQuestionId: https://pods.faqir.org/orderedFowh10
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh10
+  questionOrder: 11
+- orderedQuestionId: https://pods.faqir.org/orderedFowh11
+  orderedQuestionHasQuestion: https://pods.faqir.org/Fowh11
+  questionOrder: 12
+sectionUsesScoreDefinition:
+- https://pods.faqir.org/TFJSK
+sectionAuthoredByOrg:
+- https://www.moveup.care/

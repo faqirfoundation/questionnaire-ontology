@@ -1,0 +1,112 @@
+{
+    "$defs": {
+        "FullName": {
+            "additionalProperties": false,
+            "description": "Structured full name",
+            "properties": {
+                "family_name": {
+                    "description": "Family or last name",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "first_name": {
+                    "description": "Given or first name",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "middle_name": {
+                    "description": "Middle name",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FullName",
+            "type": "object"
+        },
+        "Vault": {
+            "additionalProperties": false,
+            "description": "The FAQIR healthdata vault",
+            "properties": {
+                "birthdate": {
+                    "description": "The date of birth",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "full_name": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FullName"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "id": {
+                    "description": "The unique identifier for a vault.",
+                    "pattern": "^https://pods.faqir.org/[^\\s]++$",
+                    "type": "string"
+                },
+                "weight": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/WeightC"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Vault",
+            "type": "object"
+        },
+        "WeightC": {
+            "additionalProperties": false,
+            "description": "Weight",
+            "properties": {
+                "mass_in_kg": {
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/$defs/WeightType"
+                }
+            },
+            "required": [
+                "type",
+                "mass_in_kg"
+            ],
+            "title": "WeightC",
+            "type": "object"
+        },
+        "WeightType": {
+            "description": "Allowed LOINC codes for weight",
+            "enum": [
+                "BODY WEIGHT MEASURED",
+                "BODY WEIGHT STATED"
+            ],
+            "title": "WeightType",
+            "type": "string"
+        }
+    },
+    "$id": "https://w3id.org/faqir/datamodel",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "datamodel",
+    "type": "object",
+    "version": null
+}

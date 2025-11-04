@@ -1,0 +1,31 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/FoIn0> a faqir:Question ;
+    faqir:questionAuthoredByOrg <https://www.moveup.care/> ;
+    faqir:questionHasAnswer <https://pods.faqir.org/aFoIn0> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedQuestion/orderedFoIn0> ;
+    faqir:questionType fhir:choice ;
+    faqir:questionUsedInScoreDefinition <https://pods.faqir.org/TFJSK> ;
+    ns2:questionCodingParams [ a faqir:ValueCoding ;
+            ns1:code "0" ;
+            ns1:display "Never" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "1" ;
+            ns1:display "Almost never" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "2" ;
+            ns1:display "Seldom" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "3" ;
+            ns1:display "Sometimes" ],
+        [ a faqir:ValueCoding ;
+            ns1:code "4" ;
+            ns1:display "Mostly" ] ;
+    ns2:questionLabel "Are you aware of your index joint in bed at night ?" ;
+    ns2:questionRequired false ;
+    ns2:questionTag "q_index_joint_bed_night" .
+

@@ -1,0 +1,15 @@
+---
+scoreDefinitionId: "https://pods.faqir.org/TFJSK"
+scoreDefinitionLabel: "Total Forgotten Joint Score Knee (/100) (een hoge score geeft een hogere mate van “vergeten” weer, dat wil zeggen een lager bewustzijn van het kunstgewricht) score"
+scoreDefinitionType: numerical_integer
+scoreDefinitionFormula: "Unknown"
+scoreDefinitionIntervalParams:
+  - minValue: 0 # No list
+    maxValue: 100
+scoreDefinitionUsedBySection: 
+  - "https://pods.faqir.org/7eTPK5NLGTv8jeTW5"
+scoreDefinitionUsesQuestion: "https://pods.faqir.org/FoIn0" # Array
+scoreDefinitionHasScoreValue:
+  - "https://pods.faqir.org/svTFJSK"
+scoreDefinitionAuthoredByOrg:
+  - "https://www.moveup.care/"

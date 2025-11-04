@@ -1,0 +1,25 @@
+---
+questionId: "https://pods.faqir.org/Fowh9"
+questionTag: "q_index_joint_housework_gardening"
+questionLabel: "Are you aware of your index joint when you are doing housework or gardening?"
+questionRequired: false
+questionAuthoredByOrg:  
+  - "https://www.moveup.care/"
+questionType: choice
+questionCodingParams:
+  - code: "0"
+    display: "Never"
+  - code: "1"
+    display: "Almost never"
+  - code: "2"
+    display: "Seldom"
+  - code: "3"
+    display: "Sometimes"
+  - code: "4"
+    display: "Mostly"
+questionInOrderedQuestion:
+  - "https://pods.faqir.org/orderedQuestion/orderedFowh9"
+questionHasAnswer:
+  - "https://pods.faqir.org/aFowh9"
+questionUsedInScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

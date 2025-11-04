@@ -1,0 +1,10 @@
+---
+scoreValueId: "https://pods.faqir.org/svTFJSK"
+scoreValueBasedOnScoreDefinition: "https://pods.faqir.org/TFJSK"
+scoreValueDerivedFromQuestionnaireResponse: 
+  - "https://pods.faqir.org/moveup-id/d60d04dbe47a164a"
+scoreValueStatus: valid
+scoreDefinitionType: numerical_integer
+scoreValueTimeStamp: "2021-08-27T00:00:01.0008Z"
+scoreValueNumerical:
+  numericalValue: 2

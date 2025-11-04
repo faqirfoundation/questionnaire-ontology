@@ -1,0 +1,30 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_03> a faqir:Question ;
+    faqir:questionAuthoredByOrg <https://euroqol.org/> ;
+    faqir:questionHasAnswer <https://pods.faqir.org/answer_EQ_5D_5L_03_a01> ;
+    faqir:questionInOrderedQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_03> ;
+    faqir:questionType fhir:choice ;
+    ns1:questionCodingParams [ a faqir:ValueCoding ;
+            ns2:code "3" ;
+            ns2:display "I have moderate problems doing my usual activities" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "5" ;
+            ns2:display "I am unable to do my usual activities" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "4" ;
+            ns2:display "I have severe problems doing my usual activities" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "1" ;
+            ns2:display "I have no problems doing my usual activities" ],
+        [ a faqir:ValueCoding ;
+            ns2:code "2" ;
+            ns2:display "I have slight problems doing my usual activities" ] ;
+    ns1:questionLabel "USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities). Please tick the ONE box that best describes your health TODAY." ;
+    ns1:questionRequired false ;
+    ns1:questionTag "q_EQ_5D_5L_03" .
+

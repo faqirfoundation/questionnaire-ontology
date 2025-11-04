@@ -1,0 +1,28 @@
+questionId: https://pods.faqir.org/question_EQ_5D_5L_03
+questionType: choice
+questionTag: q_EQ_5D_5L_03
+questionLabel: USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities).
+  Please tick the ONE box that best describes your health TODAY.
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_03
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_03_a01
+questionCodingParams:
+  '1':
+    code: '1'
+    display: I have no problems doing my usual activities
+  '2':
+    code: '2'
+    display: I have slight problems doing my usual activities
+  '3':
+    code: '3'
+    display: I have moderate problems doing my usual activities
+  '4':
+    code: '4'
+    display: I have severe problems doing my usual activities
+  '5':
+    code: '5'
+    display: I am unable to do my usual activities
+questionRequired: false

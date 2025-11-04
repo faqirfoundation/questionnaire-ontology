@@ -1,0 +1,111 @@
+---
+id: https://w3id.org/faqir/datamodel/entities/organization
+name: organization
+description: "Entities (hospitals, companies, individuals) that create or manage resources"
+
+prefixes:
+  prov: https://www.w3.org/TR/prov-overview/ 
+  faqir: https://faqir.org/datamodel/
+
+imports:
+  - ../core/identifiers  
+
+classes:
+  Organization:
+    description: "An entity acting in a healthcare context"
+    class_uri: "faqir:Organization" 
+    mappings:
+      - "fhir:Organization"
+    attributes:
+      organizationId:
+        description: "Unique identifier of the organization."
+        range: uriorcurie
+        identifier: true  
+      organizationLabel:
+        description: "Name of the organization."
+        range: string
+        required: true
+      organizationType:
+        description: "Type of organization."
+        range: OrganizationType
+        required: true
+    slots:
+      - organizationAuthorsQuestionnaire
+      - organizationAuthorsSection
+      - organizationAuthorsQuestion
+      - organizationAuthorsScoreDefinition
+      - organizationManagesVault
+
+enums:
+  OrganizationType:
+    description: "Type of organization: hospital, government, professional, research or serviceProvider."
+    enum_uri: "faqir:OrganizationType"
+    permissible_values:
+      hospital:
+        meaning: "fhir:organization-type#prov"
+      government:
+        meaning: "fhir:organization-type#gov"
+      professional:
+        meaning: "fhir:organization-type#ind"  # For solo practitioners
+      research:
+        meaning: "fhir:organization-type#edu"
+      serviceProvider:
+        meaning: "fhir:organization-type#bus"
+
+slots:
+  organizationAuthorsQuestionnaire:
+    description: "Questionnaire created by this organization."
+    domain: Organization
+    range: Questionnaire
+    required: false
+    multivalued: true 
+    slot_uri: "faqir:organizationAuthorsQuestionnaire"
+    mappings:
+      - "prov:wasAssociatedWith"  # PROV-O for provenance
+    inverse: questionnaireAuthoredByOrg 
+  organizationAuthorsSection:
+    description: "Section created by this organization."
+    domain: Organization
+    range: Section
+    required: false
+    multivalued: true 
+    slot_uri: "faqir:organizationAuthorsSection"
+    mappings:
+      - "prov:wasAssociatedWith"  # PROV-O for provenance
+    inverse: sectionAuthoredByOrg
+  organizationAuthorsQuestion:
+    description: "Question created by this organization."
+    domain: Organization
+    range: Question
+    required: false
+    multivalued: true 
+    slot_uri: "faqir:organizationAuthorsQuestion"
+    mappings:
+      - "prov:wasAssociatedWith"  # PROV-O for provenance
+    inverse: questionAuthoredByOrg 
+  organizationAuthorsScoreDefinition:
+    description: "Score definition created by this organization."
+    domain: Organization
+    range: ScoreDefinition
+    required: false
+    multivalued: true 
+    slot_uri: "faqir:organizationAuthorsScoreDefinition"
+    mappings:
+      - "prov:wasAssociatedWith"  # PROV-O for provenance
+    inverse: scoreDefinitionAuthoredByOrg 
+  organizationManagesVault:
+    description: "Vault managed by this organization."
+    domain: Organization
+    range: Vault
+    required: false
+    multivalued: true
+    slot_uri: "faqir:organizationManagesVault"
+    inverse: vaultManagedByOrg
+  organizationPerformsProcedure:
+    description: "Procedure managed and performed by this organization."
+    domain: Organization
+    range: Procedure
+    required: false
+    multivalued: true
+    slot_uri: "faqir:organizationPerformsProcedure"
+    inverse: procedurePerformedByOrg

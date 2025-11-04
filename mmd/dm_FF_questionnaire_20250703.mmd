@@ -1,0 +1,117 @@
+classDiagram
+direction TB
+    class Patient {
+        <<Entity>>
+	    +patientId: xs:string
+    }
+
+    class QuestionnaireResponse {
+        <<Entity>>
+	    +id questionnaireResponseId: xs:string
+	    +dct:created creationDate : xsd:dateTime
+	    +moveUp:status responseStatus : fhir:Questionnaire.status
+    }
+
+    class Questionnaire {
+        <<Entity>>
+	    +id questionnaireId: xs:string
+	    +rdfs:label questionnaireLabel : xs:string
+    }
+
+    class Section {
+        <<Entity>>
+	    +id sectionId : xs:string
+	    +rdfs:label sectionLabel : xs:string
+    }
+
+    class Question {
+        <<Entity>>
+	    +id questionId : xs:string
+	    +rdfs:label questionLabel : xs:string
+	    +questionType QuestionType
+    }
+
+    class Answer {
+        <<Entity>>
+	    +id answerId : xs:string
+	    +answerType QuestionType
+    }
+
+    class AnswerOption {
+        <<Value>>
+	    rdf:list 
+    }
+
+    class QuestionType {
+        <<enumeration>>
+	    choice
+        open-choice
+        decimal
+        number
+        date
+        text
+    }
+
+    class rdf {
+        <<Value>>
+	    rdf:nil // Empty Array
+    }
+
+    class ValueString {
+        <<Value>>
+	    +rdf:type : xsd:string
+    }
+
+    class ValueDecimal {
+        <<Value>>
+	    +rdf:type : xsd:decimal OR xsd:integer
+    }
+
+    class ValueCoding {
+        <<Value>>
+	    +code: xsd:string
+	    +display: xsd:string
+    }
+
+    class minValue {
+        <<Value>>
+        rdf:type : xsd:integer
+    }
+
+    class maxValue {
+        <<Value>>
+        rdf:type : xsd:integer
+    }
+
+    class ValueDate {
+        <<Value>>
+	    +rdf:type : xsd:dateTime
+    }
+
+    note for ValueCoding "For type=open-choice, the last ValueCoding must be: {valueCoding: {'code': '-1', 'display': 'Other'}}"
+    note for Answer "answerType must be the same as QuestionType"
+
+    Patient --> "0..*" QuestionnaireResponse : "moveUp_hasQuestionnarieResponse"
+    QuestionnaireResponse --> "1" Patient : "bySubject"
+    QuestionnaireResponse --> "1" Questionnaire : "moveUp_isResponseFor"
+    QuestionnaireResponse "1" --> "1..*" Answer : "moveUp_hasAnswer"
+    Questionnaire --> "0..*" QuestionnaireResponse : "moveUp_hasResponse"
+    Questionnaire --> "0..*" Section : "moveUp_hasSection"
+    Questionnaire --> "1..*" Question : "moveUp_hasQuestion"
+    Section "0..*" --> "0..*" Section
+    Section --> "1" Questionnaire : "moveUp_partOfQuestionnaire"
+    Section --> "1..*" Question : "moveUp_hasQuestion"
+    Question --> "0..*" Section : "moveUp_partOfSection"
+    Question --> "1..*" Questionnaire : "partOfQuestionnaire"
+    Answer "0..*" --> "1" Question : "moveUp_toQuestion"
+    Answer --|> "0..1" AnswerOption  : if type=choice/open-choice/number
+    AnswerOption --|> "0..*" ValueCoding : if type=choice/open-choice
+    AnswerOption --|> "1" minValue : if type=number
+    AnswerOption --|> "1" maxValue : if type=number
+    AnswerOption --|> "1" ValueCoding : if type=number 
+    Answer --|> "0..1" ValueDecimal : if type=decimal
+    AnswerOption --|> "0..1" ValueString : if type=open-choice
+    Answer --|> "0..1" ValueString : if type=text
+    Answer --|> "0..1" ValueDate : if type=date
+    Answer --|> "0..1" rdf
+

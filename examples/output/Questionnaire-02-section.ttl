@@ -1,0 +1,17 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/questionnaire_02_section> a faqir:Questionnaire ;
+    faqir:questionnaireHasOrderedSection <https://pods.faqir.org/questionnaire/orderedsection_01_EQ_5D_5L> ;
+    faqir:questionnaireHasQuestionnaireResponse <https://pods.faqir.org/questionnaire/response_02_section> ;
+    ns1:questionnaireLabel "Simple Questionnaire: 1 section" ;
+    ns1:questionnaireLastUpdated "2025-07-11T10:35:00+00:00"^^xsd:dateTime ;
+    ns1:questionnaireStatus fhir:resource-status-draft ;
+    ns1:questionnaireVersion "1.0.0" .
+
+<https://pods.faqir.org/questionnaire/orderedsection_01_EQ_5D_5L> a faqir:OrderedSection ;
+    faqir:orderedSectionHasSection <https://pods.faqir.org/section_01_EQ_5D_5L> ;
+    ns1:sectionOrder 1 .
+

@@ -1,0 +1,6 @@
+---
+organizationId: "https://www.faqir.org"
+organizationLabel: "FAQIR Foundation"
+organizationType: research
+organizationManagesVault: "https://pods.faqir.org/123"
+organizationAuthorsAnswer: "https://pods.faqir.org/answer_02_hospitalRelease_date_01" #Orgs can author Questionnaires, Sections or Questions

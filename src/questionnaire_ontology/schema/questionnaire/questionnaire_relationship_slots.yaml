@@ -1,0 +1,381 @@
+---
+id: https://w3id.org/faqir/datamodel/questionnaire/relationship_slots
+name: questionnaire_relationship_slots
+
+prefixes:
+  fhir: https://www.hl7.org/fhir/
+  faqir: https://faqir.org/datamodel/
+
+slots:
+  # QuestionnaireResponse relationships
+  questionnaireResponseBySubject:
+    description: "The subject that has authored this QuestionnaireResponse."
+    domain: QuestionnaireResponse
+    range: Vault
+    required: true
+    multivalued: false
+    slot_uri: "faqir:questionnaireResponseBySubject"
+    mappings:
+      - "fhir:questionnaireResponse.subject"
+    inverse: hasQuestionnaireResponse
+
+  questionnaireResponseToQuestionnaire:
+    description: "The Questionnaire that this QuestionnaireResponse is for."
+    domain: QuestionnaireResponse
+    range: Questionnaire
+    required: true
+    multivalued: false
+    slot_uri: "faqir:questionnaireResponseToQuestionnaire"
+    mappings:
+      - "fhir:questionnaireResponse.questionnaire"
+    inverse: questionnaireHasQuestionnaireResponse
+
+  questionnaireResponseHasAnswer:
+    description: "The Answer that is part of this QuestionnaireResponse."
+    domain: QuestionnaireResponse
+    range: Answer
+    required: true
+    multivalued: true
+    slot_uri: "faqir:questionnaireResponseHasAnswer"
+    mappings:
+      - "fhir:questionnaireResponse.item.answer"
+    inverse: answerInQuestionnaireResponse
+
+  questionnaireResponseHasDerivedScoreValue:
+    description: "The ScoreValue that is calculated from this QuestionnaireResponse's answers."
+    domain: QuestionnaireResponse
+    range: ScoreValue
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionnaireResponseHasDerivedScoreValue"
+    inverse: scoreValueDerivedFromQuestionnaireResponse
+
+  questionnaireUsesScoreDefinition:
+    description: "The ScoreDefinition that is applied in this Questionnaire."
+    domain: Questionnaire
+    range: ScoreDefinition
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionnaireUsesScoreDefinition"
+    inverse: scoreDefinitionUsedByQuestionnare
+
+  # Answer relationships
+  answerInQuestionnaireResponse:
+    description: "The QuestionnaireResponse that this Answer is part of."
+    domain: Answer
+    range: QuestionnaireResponse
+    required: true
+    multivalued: false
+    slot_uri: "faqir:answerInQuestionnaireResponse"
+    mappings:
+      - "fhir:QuestionnaireResponse.item.answer" 
+    inverse: questionnaireResponseHasAnswer
+
+  answerToQuestion:
+    description: "The Question that this Answer is for."
+    domain: Answer
+    range: Question
+    required: true
+    multivalued: false
+    slot_uri: "faqir:answerToQuestion"
+    mappings:
+      - "fhir:QuestionnaireResponse.item.answer.question"
+    inverse: questionHasAnswer
+
+  # Questionnaire relationships
+  questionnaireHasQuestionnaireResponse:
+    description: "The QuestionnaireResponse that is associated with this Questionnaire."
+    domain: Questionnaire
+    range: QuestionnaireResponse
+    multivalued: true
+    slot_uri: "faqir:questionnaireHasQuestionnaireResponse"
+    mappings:
+      - "fhir:QuestionnaireResponse"
+    inverse: questionnaireResponseToQuestionnaire
+
+  questionnaireHasOrderedQuestion:
+    description: "The Question that is part of this Questionnaire, with their display order."
+    domain: Questionnaire
+    range: OrderedQuestion
+    multivalued: true
+    inlined_as_list: true # Critical for ordered list
+    required: false
+    slot_uri: "faqir:questionnaireHasOrderedQuestion"
+    mappings:
+      - "fhir:Questionnaire.item.where(type='question')"
+    inverse: orderedQuestionPartOfQuestionnaire     
+
+  questionnaireHasOrderedSection:
+    description: "The Section that is part of this Questionnaire, with their display order."
+    domain: Questionnaire
+    range: OrderedSection
+    multivalued: true
+    inlined_as_list: true # Critical for ordered list
+    required: false
+    slot_uri: "faqir:questionnaireHasOrderedSection"
+    mappings:
+      - "fhir:Questionnaire.item.where(type='group')"
+    inverse: orderedSectionPartOfQuestionnaire  
+
+  questionnaireAuthoredByOrg:
+    description: "The Organization that has created this Questionnaire."
+    domain: Questionnaire
+    range: Organization
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionnaireAuthoredByOrg"
+    mappings:
+      - "fhir:Questionnaire.author"
+    inverse: organizationAuthorsQuestionnaire    
+
+  questionnairePartOfProcedure:
+    description: "Procedure this questionnaire is part of."   
+    domain: Questionnaire
+    range: Procedure
+    required: false
+    multivalued: true 
+    slot_uri: "faqir:questionnairePartOfProcedure"
+    inverse: procedureHasQuestionnaire
+
+  # Question relationships
+  questionInOrderedQuestion:
+    description: "OrderedQuestions that this Question is indexed in."
+    domain: Question
+    range: OrderedQuestion
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionInOrderedQuestion"
+    inverse: orderedQuestionHasQuestion
+
+  questionHasAnswer:
+    description: "The Answer to this Question."
+    domain: Question
+    range: Answer
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionHasAnswer"
+    mappings:
+      - "fhir:Questionnaire.item.answer"
+    inverse: answerToQuestion
+
+  questionAuthoredByOrg:
+    description: "The organization that has designed this Question."
+    domain: Question
+    range: Organization
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionAuthoredByOrg"
+    inverse: organizationAuthorsQuestion
+
+  questionUsedInScoreDefinition:
+    description: "The ScoreDefinition that this Question is used in."
+    domain: Question
+    range: ScoreDefinition
+    required: false
+    multivalued: true
+    slot_uri: "faqir:questionUsedInScoreDefinition"
+    inverse: scoreDefinitionUsesQuestion
+
+  #OrderedQuestion relationships
+  orderedQuestionHasQuestion:
+    description: "Question indexed in this OrderedQuestion."
+    domain: OrderedQuestion
+    range: Question
+    required: true
+    multivalued: false
+    slot_uri: "faqir:orderedQuestionHasQuestion"
+    inverse: questionInOrderedQuestion
+
+  orderedQuestionPartOfQuestionnaire:
+    description: "The Questionnaire that this Question is part of in the specified order."
+    domain: OrderedQuestion
+    range: Questionnaire
+    required: false
+    multivalued: false
+    slot_uri: "faqir:orderedQuestionPartOfQuestionnaire"
+    mappings:
+      - "fhir:Questionnaire.item"
+    inverse: questionnaireHasOrderedQuestion  
+
+  orderedQuestionPartOfSection:
+    description: "The Section that this Question is part of in the specified order."
+    domain: OrderedQuestion
+    range: Section
+    required: false
+    multivalued: false
+    slot_uri: "faqir:orderedQuestionPartOfSection"
+    mappings:
+      - "fhir:Questionnaire.item"
+    inverse: sectionHasOrderedQuestion 
+
+  # Section relationships
+  sectionHasOrderedQuestion:
+    description: "The Question that is part of this Section, with their display order."
+    domain: Section
+    range: OrderedQuestion
+    multivalued: true
+    inlined_as_list: true # Critical for ordered list
+    required: false
+    slot_uri: "faqir:sectionHasOrderedQuestion"
+    mappings:
+      - "fhir:Questionnaire.item.where(type='question')"
+    inverse: orderedQuestionPartOfSection  
+
+  sectionHasOrderedSection:
+    description: "The Section that is part of this Section."
+    domain: Section
+    range: OrderedSection
+    multivalued: true
+    inlined_as_list: true # Critical for ordered list
+    required: false
+    slot_uri: "faqir:sectionHasOrderedSection"
+    mappings:
+      - "fhir:Questionnaire.item.where(type='group')"
+    inverse: orderedSectionPartOfSection   
+
+  sectionInOrderedSection:
+    description: "OrderedSections that this Section is indexed in."
+    domain: Section
+    range: OrderedSection
+    required: false
+    multivalued: true
+    slot_uri: "faqir:sectionInOrderedSection"
+    inverse: orderedSectionHasSection
+
+  sectionAuthoredByOrg:
+    description: "The Organization that has created this Section."
+    domain: Section
+    range: Organization
+    required: false
+    multivalued: true
+    slot_uri: "faqir:sectionAuthoredByOrg"
+    mappings:
+      - "fhir:Questionnaire.author"
+    inverse: organizationAuthorsSection
+
+  sectionUsesScoreDefinition:
+    description: "The ScoreDefinition that is applied in this Section."
+    domain: Section
+    range: ScoreDefinition
+    required: false
+    multivalued: true
+    slot_uri: "faqir:sectionUsesScoreDefinition"
+    inverse: scoreDefinitionUsedBySection
+
+  # OrderedSection relationships 
+  orderedSectionPartOfQuestionnaire:
+    description: "The Questionnaire that this Section is part of in the specified order."
+    domain: OrderedSection
+    range: Questionnaire
+    required: false
+    multivalued: false
+    slot_uri: "faqir:orderedSectionPartOfQuestionnaire"
+    mappings:
+      - "fhir:Questionnaire.item"
+    inverse: questionnaireHasOrderedSection  
+
+  orderedSectionPartOfSection:
+    description: "The Section that this Section is part of in the specified order."
+    domain: OrderedSection
+    range: Section
+    required: false
+    multivalued: false
+    slot_uri: "faqir:orderedSectionPartOfSection"
+    mappings:
+      - "fhir:Questionnaire.item"
+    inverse: sectionHasOrderedSection 
+
+  orderedSectionHasSection:
+    description: "Section indexed in this OrderedSection."
+    domain: OrderedSection
+    range: Section
+    required: true
+    multivalued: false
+    slot_uri: "faqir:orderedSectionHasSection"
+    inverse: sectionInOrderedSection
+
+  # ScoreDefinition relationships
+  scoreDefinitionHasScoreParameter:
+    description: "The ScoreParameter that is required for this ScoreDefinition."
+    domain: ScoreDefinition
+    range: ScoreParameter
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionHasScoreParameter"
+    inverse: scoreParameterPartOfScoreDefinition
+
+  scoreDefinitionUsesQuestion:
+    description: "The Question(s) that this ScoreDefinition is based on."
+    domain: ScoreDefinition
+    range: Question
+    required: true
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionUsesQuestion"
+    inverse: questionUsedInScoreDefinition
+
+  scoreDefinitionHasScoreValue:
+    description: "The ScoreValue that is calculated following this ScoreDefinition."
+    domain: ScoreDefinition
+    range: ScoreValue
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionHasScoreValue"
+    inverse: scoreValueBasedOnScoreDefinition
+
+  scoreDefinitionAuthoredByOrg:
+    description: "The Organization that has created this ScoreDefinition."
+    domain: ScoreDefinition
+    range: Organization
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionAuthoredByOrg"
+    mappings:
+      - "fhir:Questionnaire.author"
+    inverse: organizationAuthorsScoreDefinition
+
+  scoreDefinitionUsedByQuestionnare:
+    description: "The Questionnaires that this ScoreDefinition is applied in."
+    domain: ScoreDefinition
+    range: Questionnaire
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionUsedByQuestionnare"
+    inverse: questionnaireUsesScoreDefinition
+
+  scoreDefinitionUsedBySection:
+    description: "The Sections that this ScoreDefinition is applied in."
+    domain: ScoreDefinition
+    range: Section
+    required: false
+    multivalued: true
+    slot_uri: "faqir:scoreDefinitionUsedBySection"
+    inverse: sectionUsesScoreDefinition
+
+  # ScoreParameter relationships
+  scoreParameterPartOfScoreDefinition:
+    description: "The ScoreDefinition(s) that this ScoreParameter is part of."
+    domain: ScoreParameter
+    range: ScoreDefinition
+    required: true
+    multivalued: false
+    slot_uri: "faqir:scoreParameterPartOfScoreDefinition"
+    inverse: scoreDefinitionHasScoreParameter
+
+  # ScoreValue relationships
+  scoreValueBasedOnScoreDefinition:
+    description: "The ScoreDefinition that this ScoreValue is based on."
+    domain: ScoreValue
+    range: ScoreDefinition
+    required: true
+    multivalued: false
+    slot_uri: "faqir:scoreValueBasedOnScoreDefinition"
+    inverse: scoreDefinitionHasScoreValue
+
+  scoreValueDerivedFromQuestionnaireResponse:
+    description: "The QuestionnaireResponse that contains the answers this ScoreValue is calculated from."
+    domain: ScoreValue
+    range: QuestionnaireResponse
+    required: true
+    multivalued: true
+    slot_uri: "faqir:scoreValueDerivedFromQuestionnaireResponse"
+    inverse: questionnaireResponseHasDerivedScoreValue

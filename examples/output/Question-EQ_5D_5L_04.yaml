@@ -1,0 +1,28 @@
+questionId: https://pods.faqir.org/question_EQ_5D_5L_04
+questionType: choice
+questionTag: q_EQ_5D_5L_04
+questionLabel: PAIN / DISCOMFORT. Please tick the ONE box that best describes your
+  health TODAY.
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_EQ_5D_5L_04
+questionHasAnswer:
+- https://pods.faqir.org/answer_EQ_5D_5L_04_a01
+questionCodingParams:
+  '1':
+    code: '1'
+    display: I have no pain or discomfort
+  '2':
+    code: '2'
+    display: I have slight pain or discomfort
+  '3':
+    code: '3'
+    display: I have moderate pain or discomfort
+  '4':
+    code: '4'
+    display: I have severe pain or discomfort
+  '5':
+    code: '5'
+    display: I have extreme pain or discomfort
+questionRequired: false

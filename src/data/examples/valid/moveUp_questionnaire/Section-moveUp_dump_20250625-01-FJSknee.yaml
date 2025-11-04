@@ -1,0 +1,44 @@
+---
+sectionId: "https://pods.faqir.org/7eTPK5NLGTv8jeTW5"
+sectionLabel: "Forgotten Joint Score - Knee (NL-FR-EN-DE-IT)"
+sectionHasOrderedQuestion:
+  - orderedQuestionId: "https://pods.faqir.org/orderedFoIn0"
+    questionOrder: 1
+    orderedQuestionHasQuestion: "https://pods.faqir.org/FoIn0"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh1"
+    questionOrder: 2
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh1"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh2"
+    questionOrder: 3
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh2"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh3"
+    questionOrder: 4
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh3"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh4"
+    questionOrder: 5
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh4"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh5"
+    questionOrder: 6
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh5"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh6"
+    questionOrder: 7
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh6"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh7"
+    questionOrder: 8
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh7"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh8"
+    questionOrder: 9
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh8"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh9"
+    questionOrder: 10
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh9"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh10"
+    questionOrder: 11
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh10"
+  - orderedQuestionId: "https://pods.faqir.org/orderedFowh11"
+    questionOrder: 12
+    orderedQuestionHasQuestion: "https://pods.faqir.org/Fowh11"
+sectionAuthoredByOrg:  
+  - "https://www.moveup.care/"
+sectionUsesScoreDefinition:
+  - "https://pods.faqir.org/TFJSK"

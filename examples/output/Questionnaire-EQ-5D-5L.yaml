@@ -1,0 +1,29 @@
+questionnaireId: https://pods.faqir.org/questionnaire_EQ_5D_5L
+questionnaireLabel: EQ-5D-5L
+questionnaireStatus: active
+questionnaireVersion: 1.0.0
+questionnaireLastUpdated: '2025-09-09T11:52:00+00:00'
+questionnaireHasQuestionnaireResponse:
+- https://pods.faqir.org/response_EQ_5D_5L_01
+questionnaireHasOrderedQuestion:
+- orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_01
+  orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_01
+  questionOrder: 1
+- orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_02
+  orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_02
+  questionOrder: 2
+- orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_03
+  orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_03
+  questionOrder: 3
+- orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_04
+  orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_04
+  questionOrder: 4
+- orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_05
+  orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_05
+  questionOrder: 5
+- orderedQuestionId: https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS
+  orderedQuestionHasQuestion: https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS
+  questionOrder: 6
+questionnaireUsesScoreDefinition:
+- https://pods.faqir.org/sdEQ_5D_5L
+- https://pods.faqir.org/sdEQ_5D_5L_EQ_VAS

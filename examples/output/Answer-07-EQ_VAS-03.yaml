@@ -1,0 +1,8 @@
+answerId: https://pods.faqir.org/answer_07_EQ_VAS_03
+answerInQuestionnaireResponse: https://pods.faqir.org/response_03_nested_section
+answerToQuestion: https://pods.faqir.org/question_07_EQ_VAS
+questionType: numberInterval
+answerTimeStamp: '2025-07-11T10:35:13+00:00'
+answerIsEmpty: false
+answerValueNumerical:
+  numericalValue: 83

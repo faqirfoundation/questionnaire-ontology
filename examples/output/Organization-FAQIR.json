@@ -1,0 +1,12 @@
+{
+  "organizationId": "https://www.faqir.org",
+  "organizationLabel": "FAQIR Foundation",
+  "organizationType": "research",
+  "organizationAuthorsSection": [
+    "https://pods.faqir.org/section_03_EQ_VAS"
+  ],
+  "organizationManagesVault": [
+    "https://pods.faqir.org/123"
+  ],
+  "@type": "Organization"
+}

@@ -1,0 +1,27 @@
+---
+questionId: "https://pods.faqir.org/questionnaire/question_05_EQ_VAS"
+questionTag: "q_EQ_VAS"
+questionLabel: | 
+  "We would like to know how good or bad your health is TODAY.
+  This scale is numbered from 0 to 100.
+  100 means the *best* health you can imagine.
+  0 means the *worst* health you can imagine.
+  Mark an X on the scale to indicate how your health is TODAY.
+  Now, please write the number you marked on the scale."
+questionRequired: false
+questionType: numberInterval
+questionAuthoredByOrg: 
+  - "https://euroqol.org/"
+questionPartOfQuestionnaire: # This is a Question, not an OrderedQuestion, it only points to its ordered wrapper
+  - "https://pods.faqir.org/questionnaire/questionnaire_01_simple"
+#questionInOrderedQuestion:
+#  - "https://pods.faqir.org/orderedquestion_05_EQ_VAS_q01"
+questionIntervalParams:
+  - minValue: 0 # The 4 parameters should be an item of a list
+  - maxValue: 100
+  - minLabel: "The worst health you can imagine"
+  - maxLabel: "The best health you can imagine"
+questionNumericalParams:
+  numericalPrecision: 0
+questionHasAnswer:
+  - "https://pods.faqir.org/questionnaire/answer_05_EQ_VAS_01"

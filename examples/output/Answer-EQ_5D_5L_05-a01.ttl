@@ -1,0 +1,15 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix fhir: <https://www.hl7.org/fhir/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/questionnaire/classes/> .
+@prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pods.faqir.org/answer_EQ_5D_5L_05_a01> a faqir:Answer ;
+    faqir:answerInQuestionnaireResponse <https://pods.faqir.org/response_EQ_5D_5L_01> ;
+    faqir:answerToQuestion <https://pods.faqir.org/question_EQ_5D_5L_05> ;
+    faqir:questionType fhir:choice ;
+    ns1:answerIsEmpty false ;
+    ns1:answerTimeStamp "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
+    ns1:answerValueString [ a faqir:ValueString ;
+            ns2:stringValue "1" ] .
+

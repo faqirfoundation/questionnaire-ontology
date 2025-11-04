@@ -1,0 +1,14 @@
+questionId: https://pods.faqir.org/question_01_hours_slept
+questionType: decimal
+questionTag: q_hours_slept
+questionLabel: How many hours did you sleep last night?
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_01_hours_slept_q01
+questionHasAnswer:
+- https://pods.faqir.org/answer_01_hours_slept_01
+questionMultivaluedAnswer: false
+questionNumericalParams:
+  numericalUnit: h
+  numericalPrecision: 2
+questionCodingOrdinal: false
+questionRequired: false

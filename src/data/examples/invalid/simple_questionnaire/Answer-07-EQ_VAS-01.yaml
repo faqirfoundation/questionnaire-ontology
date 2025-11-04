@@ -1,0 +1,9 @@
+---
+answerId: "https://pods.faqir.org/answer_07_EQ_VAS_01"
+answerInQuestionnaireResponse: "https://pods.faqir.org/questionnaire_01_simple"
+#answerToQuestion: "https://pods.faqir.org/question_07_EQ_VAS"
+questionType: numberInterval
+answerIsEmpty: false
+answerTimeStamp: "2021-08-27T00:00:01.0008Z"
+answerValueNumerical:
+  numericalValue: 83

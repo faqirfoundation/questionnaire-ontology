@@ -1,0 +1,32 @@
+questionId: https://pods.faqir.org/question_07_EQ_VAS
+questionType: numberInterval
+questionTag: q_EQ_VAS
+questionLabel: '"We would like to know how good or bad your health is TODAY.
+
+  This scale is numbered from 0 to 100.
+
+  100 means the *best* health you can imagine.
+
+  0 means the *worst* health you can imagine.
+
+  Mark an X on the scale to indicate how your health is TODAY.
+
+  Now, please write the number you marked on the scale."
+
+  '
+questionAuthoredByOrg:
+- https://euroqol.org/
+questionInOrderedQuestion:
+- https://pods.faqir.org/orderedquestion_07_EQ_VAS_s01
+questionHasAnswer:
+- https://pods.faqir.org/answer_07_EQ_VAS_01
+- https://pods.faqir.org/answer_07_EQ_VAS_02
+- https://pods.faqir.org/answer_07_EQ_VAS_03
+questionNumericalParams:
+  numericalPrecision: 0
+questionIntervalParams:
+  minValue: 0.0
+  maxValue: 100.0
+  minLabel: The worst health you can imagine
+  maxLabel: The best health you can imagine
+questionRequired: false

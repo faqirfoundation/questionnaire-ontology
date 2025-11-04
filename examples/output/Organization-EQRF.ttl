@@ -1,0 +1,13 @@
+@prefix faqir: <https://faqir.org/datamodel/> .
+@prefix ns1: <https://w3id.org/faqir/datamodel/entities/organization/> .
+
+<https://euroqol.org/> a faqir:Organization ;
+    faqir:organizationAuthorsQuestion <https://pods.faqir.org/question_05_EQ_5D_5L_01>,
+        <https://pods.faqir.org/question_06_EQ_5D_5L_01>,
+        <https://pods.faqir.org/question_06_EQ_5D_5L_02>,
+        <https://pods.faqir.org/question_07_EQ_5D_5L_02>,
+        <https://pods.faqir.org/question_07_EQ_VAS>,
+        <https://pods.faqir.org/questionnaire/question_05_EQ_VAS> ;
+    ns1:organizationLabel "EuroQol Research Foundation" ;
+    ns1:organizationType <https://www.hl7.org/fhir/organization-type#edu> .
+

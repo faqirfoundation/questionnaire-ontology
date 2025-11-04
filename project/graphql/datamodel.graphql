@@ -1,0 +1,28 @@
+# metamodel_version: 1.7.0
+enum WeightType
+  {
+    BODY_WEIGHT_MEASURED
+    BODY_WEIGHT_STATED
+  }
+
+type FullName
+  {
+    firstName: String
+    middleName: String
+    familyName: String
+  }
+
+type Vault
+  {
+    id: Uriorcurie!
+    fullName: FullName
+    birthdate: Date
+    weight: WeightC
+  }
+
+type WeightC
+  {
+    type: WeightType!
+    massInKg: Float!
+  }
+
