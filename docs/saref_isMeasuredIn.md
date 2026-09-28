@@ -22,8 +22,8 @@ Alias: saref_isMeasuredIn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
 | [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
+| [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
 
 
 

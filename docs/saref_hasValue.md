@@ -25,8 +25,8 @@ Alias: saref_hasValue
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | The status of the questionnaire response, indicating whether it is 	'in-progr... |  yes  |
 | [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | The status of the questionnaire, indicating whether it is 	draft, active, ret... |  yes  |
-| [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
 | [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
+| [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
 
 
 

@@ -158,10 +158,22 @@ _gendoc: _ensure_docdir
 _gen-python: _generate_python_classes
     linkml generate python \
         src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
-        > src/questionnaire_ontology/datamodel/datamodel.py    
+        > src/questionnaire_ontology/datamodel/questionnaire_ontology.py  
+        
+# Generate OWL 
+_gen-owl: _generate_owl_classes
+    linkml generate owl \
+        src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
+        > project/owl/questionnaire_ontology.owl.ttl  
+        
+# Generate python classes
+_gen-shacl: _generate_shacl_classes
+    linkml generate shacl \
+        src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
+        > project/shacl/questionnaire_ontology.shacl.ttl    
 
 # Build docs and run test server
-testdoc: _gendoc _gen-python _serve
+testdoc: _gendoc _gen-python _gen-owl _gen-shacl _serve
 
 # Run documentation server
 _serve:
@@ -203,7 +215,15 @@ _ensure_docdir:
 
 _generate_python_classes:
     -mkdir -p src/questionnaire_ontology/schema
-    -mkdir -p src/questionnaire_ontology/questionnaire_ontology
+    -mkdir -p src/questionnaire_ontology/datamodel
+
+_generate_owl_classes:
+    -mkdir -p src/questionnaire_ontology/schema
+    -mkdir -p project/owl
+
+_generate_shacl_classes:
+    -mkdir -p src/questionnaire_ontology/schema
+    -mkdir -p project/shacl
 
 _ensure_examples_output:
     -mkdir -p examples/output

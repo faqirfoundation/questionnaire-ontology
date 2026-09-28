@@ -23,8 +23,8 @@ Alias: fhir_valueAttachement
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | The status of the questionnaire, indicating whether it is 	draft, active, ret... |  no  |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | The status of the questionnaire response, indicating whether it is 	'in-progr... |  no  |
+| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | The status of the questionnaire, indicating whether it is 	draft, active, ret... |  no  |
 
 
 
