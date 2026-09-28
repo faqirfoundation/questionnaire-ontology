@@ -6,7 +6,7 @@
 
 <https://pods.faqir.org/answer_05_EQ_5D_5L_01_02> a faqir:Answer ;
     faqir:answerInQuestionnaireResponse <https://pods.faqir.org/response_02_section> ;
-    faqir:answerToQuestion <https://pods.faqir.org/question_05_EQ_5D_5L_01> ;
+    faqir:answerToQuestion <https://pods.faqir.org/question_EQ_5D_5L_02> ;
     faqir:questionType fhir:choice ;
     ns1:answerIsEmpty false ;
     ns1:answerTimeStamp "2025-07-11T10:35:06+00:00"^^xsd:dateTime ;

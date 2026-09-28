@@ -4,7 +4,7 @@
 @prefix ns2: <https://w3id.org/faqir/datamodel/core/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://pods.faqir.org/questionnaire/answer_05_EQ_VAS_01> a faqir:Answer ;
+<https://pods.faqir.org/questionnaire/answer_07_EQ_VAS_01> a faqir:Answer ;
     faqir:answerInQuestionnaireResponse <https://pods.faqir.org/questionnaire/response_01_simple> ;
     faqir:answerToQuestion <https://pods.faqir.org/questionnaire/question_05_EQ_VAS> ;
     faqir:questionType fhir:number ;
