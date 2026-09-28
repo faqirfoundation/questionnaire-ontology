@@ -1,9 +1,0 @@
----
-answerId: "https://pods.faqir.org/answer_02_hospitalRelease_date_01"
-answerInQuestionnaireResponse: "https://pods.faqir.org/questionnaireResponse_01_simple"
-answerToQuestion: "https://pods.faqir.org/question_02_hospitalRelease_date"
-questionType: dateTime
-answerIsEmpty: false
-answerTimeStamp: "2021-08-27T00:00:01.0008Z"
-answerValueDateTime:
-  dateTimeValue: "14/08/2023" # The date format should be YYYY-MM-DD

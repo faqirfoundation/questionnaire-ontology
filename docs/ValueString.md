@@ -9,7 +9,7 @@ _A string value, typically used for text or identifiers._
 
 
 
-URI: [faqir:ValueString](https://faqir.org/datamodel/ValueString)
+URI: [phro:ValueString](https://ns.faqir.org/phr-o#ValueString)
 
 
 
@@ -35,7 +35,7 @@ URI: [faqir:ValueString](https://faqir.org/datamodel/ValueString)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [stringValue](stringValue.md) | 1 <br/> [String](String.md) | The string value, which can be any text | direct |
+| [stringValue](stringValue.md) | 0..1 <br/> [String](String.md) | The string value, which can be any text | direct |
 
 
 
@@ -45,8 +45,7 @@ URI: [faqir:ValueString](https://faqir.org/datamodel/ValueString)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Answer](Answer.md) | [answerValueString](answerValueString.md) | range | [ValueString](ValueString.md) |
-| [ScoreValue](ScoreValue.md) | [scoreValueString](scoreValueString.md) | range | [ValueString](ValueString.md) |
+| [QoAnswer](QoAnswer.md) | [qo_answerValue](qo_answerValue.md) | any_of[range] | [ValueString](ValueString.md) |
 
 
 
@@ -64,7 +63,7 @@ URI: [faqir:ValueString](https://faqir.org/datamodel/ValueString)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -73,9 +72,8 @@ URI: [faqir:ValueString](https://faqir.org/datamodel/ValueString)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | faqir:ValueString |
-| native | https://w3id.org/faqir/datamodel/ValueString |
-| undefined | xsd:string |
+| self | phro:ValueString |
+| native | qo:ValueString |
 
 
 
@@ -93,20 +91,18 @@ URI: [faqir:ValueString](https://faqir.org/datamodel/ValueString)
 ```yaml
 name: ValueString
 description: A string value, typically used for text or identifiers.
-from_schema: https://w3id.org/faqir/datamodel
-mappings:
-- xsd:string
+from_schema: https://ns.faqir.org/q-o
 attributes:
   stringValue:
     name: stringValue
     description: The string value, which can be any text.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: xsd:string
     domain_of:
     - ValueString
     range: string
-    required: true
-class_uri: faqir:ValueString
+class_uri: phro:ValueString
 
 ```
 </details>
@@ -117,22 +113,20 @@ class_uri: faqir:ValueString
 ```yaml
 name: ValueString
 description: A string value, typically used for text or identifiers.
-from_schema: https://w3id.org/faqir/datamodel
-mappings:
-- xsd:string
+from_schema: https://ns.faqir.org/q-o
 attributes:
   stringValue:
     name: stringValue
     description: The string value, which can be any text.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: xsd:string
     alias: stringValue
     owner: ValueString
     domain_of:
     - ValueString
     range: string
-    required: true
-class_uri: faqir:ValueString
+class_uri: phro:ValueString
 
 ```
 </details>

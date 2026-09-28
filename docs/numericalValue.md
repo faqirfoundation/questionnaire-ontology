@@ -9,7 +9,7 @@ _The quantitative value, which can be an integer or a float._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/numericalValue](https://w3id.org/faqir/datamodel/numericalValue)
+URI: [phro:numericalValue](https://ns.faqir.org/phr-o#numericalValue)
 Alias: numericalValue
 
 <!-- no inheritance hierarchy -->
@@ -22,8 +22,7 @@ Alias: numericalValue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Weight](Weight.md) | Weight |  no  |
-| [ValueNumerical](ValueNumerical.md) | Base class for quantitative values, they may have units and precision |  no  |
+| [ValueNumerical](ValueNumerical.md) |  |  no  |
 
 
 
@@ -52,7 +51,7 @@ Alias: numericalValue
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -61,8 +60,8 @@ Alias: numericalValue
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/numericalValue |
-| native | https://w3id.org/faqir/datamodel/numericalValue |
+| self | phro:numericalValue |
+| native | qo:numericalValue |
 
 
 
@@ -73,8 +72,9 @@ Alias: numericalValue
 ```yaml
 name: numericalValue
 description: The quantitative value, which can be an integer or a float.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: phro:numericalValue
 alias: numericalValue
 owner: ValueNumerical
 domain_of:

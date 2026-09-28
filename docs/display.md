@@ -3,13 +3,13 @@
 # Slot: display 
 
 
-_The human-readable display text for the code (e.g. code '1' for display 'Yes')._
+_The human-readable display text for the code (e.g. code '1' for value 'Yes')._
 
 
 
 
 
-URI: [https://w3id.org/faqir/datamodel/display](https://w3id.org/faqir/datamodel/display)
+URI: [fhir:display](http://hl7.org/fhir/display)
 Alias: display
 
 <!-- no inheritance hierarchy -->
@@ -51,7 +51,7 @@ Alias: display
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -60,8 +60,8 @@ Alias: display
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/display |
-| native | https://w3id.org/faqir/datamodel/display |
+| self | fhir:display |
+| native | qo:display |
 
 
 
@@ -71,10 +71,11 @@ Alias: display
 <details>
 ```yaml
 name: display
-description: The human-readable display text for the code (e.g. code '1' for display
+description: The human-readable display text for the code (e.g. code '1' for value
   'Yes').
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: fhir:display
 alias: display
 owner: ValueCoding
 domain_of:

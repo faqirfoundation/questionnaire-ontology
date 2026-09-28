@@ -1,9 +1,0 @@
----
-answerId: "https://pods.faqir.org/questionnaire/answer_04_AcWh1_01"
-answerInQuestionnaireResponse: "https://pods.faqir.org/questionnaire/questionnaireResponse_01_simple"
-answerToQuestion: "https://pods.faqir.org/questionnaire/question_04_AcWh1"
-questionType: openChoice
-answerIsEmpty: false
-answerTimeStamp: "2021-08-27T00:00:01.0008Z"
-answerValueString:
-  - "3"

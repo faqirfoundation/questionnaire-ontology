@@ -1,0 +1,3588 @@
+{
+  "name": "Questionnaire-Ontology",
+  "description": "FAQIR Questionnaire Ontology",
+  "title": "Questionnaire-Ontology",
+  "see_also": [
+    "https://github.com/faqirfoundation/questionnaire-ontology"
+  ],
+  "id": "https://ns.faqir.org/q-o",
+  "version": "2.0.0",
+  "imports": [
+    "https://w3id.org/linkml/types"
+  ],
+  "license": "Apache Software License 2.0",
+  "prefixes": [
+    {
+      "prefix_prefix": "dcterms",
+      "prefix_reference": "http://purl.org/dc/terms/"
+    },
+    {
+      "prefix_prefix": "fhir",
+      "prefix_reference": "http://hl7.org/fhir/"
+    },
+    {
+      "prefix_prefix": "foaf",
+      "prefix_reference": "http://xmlns.com/foaf/0.1/"
+    },
+    {
+      "prefix_prefix": "omop",
+      "prefix_reference": "https://www.ohdsi.org/data-standardization/"
+    },
+    {
+      "prefix_prefix": "openEHR",
+      "prefix_reference": "http://openehr.org/v1/StructureDefinition/"
+    },
+    {
+      "prefix_prefix": "owl",
+      "prefix_reference": "http://www.w3.org/2002/07/owl#"
+    },
+    {
+      "prefix_prefix": "phro",
+      "prefix_reference": "https://ns.faqir.org/phr-o#"
+    },
+    {
+      "prefix_prefix": "prov",
+      "prefix_reference": "http://www.w3.org/ns/prov#"
+    },
+    {
+      "prefix_prefix": "qo",
+      "prefix_reference": "https://ns.faqir.org/q-o#"
+    },
+    {
+      "prefix_prefix": "rdf",
+      "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    },
+    {
+      "prefix_prefix": "rdfs",
+      "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    {
+      "prefix_prefix": "saref",
+      "prefix_reference": "https://saref.etsi.org/core/"
+    },
+    {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    },
+    {
+      "prefix_prefix": "snomed",
+      "prefix_reference": "http://snomed.info/id/"
+    },
+    {
+      "prefix_prefix": "sosa",
+      "prefix_reference": "http://www.w3.org/ns/sosa/"
+    },
+    {
+      "prefix_prefix": "ssn",
+      "prefix_reference": "https://www.w3.org/TR/vocab-ssn/"
+    },
+    {
+      "prefix_prefix": "sphn",
+      "prefix_reference": "https://biomedit.ch/rdf/sphn-schema/sphn#"
+    },
+    {
+      "prefix_prefix": "sulo",
+      "prefix_reference": "https://aidava-dev.github.io/sulo/ontospy/index.html"
+    },
+    {
+      "prefix_prefix": "s4ehaw",
+      "prefix_reference": "https://saref.etsi.org/saref4ehaw/"
+    },
+    {
+      "prefix_prefix": "time",
+      "prefix_reference": "http://www.w3.org/2006/time#"
+    },
+    {
+      "prefix_prefix": "ucum",
+      "prefix_reference": "https://unitsofmeasure.org/"
+    },
+    {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "default_prefix": "qo",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "curie",
+      "definition_uri": "https://w3id.org/linkml/Curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "Curie",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "qo_QuestionType",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionType",
+      "description": "The type of question asked in the questionnaire. It defines the expected answer format.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "enum_uri": "qo:QuestionType",
+      "permissible_values": [
+        {
+          "text": "choice",
+          "description": "A question with predefined options to choose from. Multiple choices may be allowed.",
+          "meaning": "http://hl7.org/fhir/item-type#coding",
+          "mappings": [
+            "fhir:QuestionnaireResponse.item.answer.valueCoding"
+          ]
+        },
+        {
+          "text": "openChoice",
+          "description": "A question with predefined options to choose from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple choices may be allowed.",
+          "meaning": "qo:open-choice",
+          "narrow_mappings": [
+            "fhir:QuestionnaireResponse.item.answer.valueCoding"
+          ]
+        },
+        {
+          "text": "numberInterval",
+          "description": "A question that expects a numeric answer in between a minimum and maximum value.",
+          "meaning": "qo:numberInterval",
+          "narrow_mappings": [
+            "fhir:QuestionnaireResponse.item.answer.valueInteger",
+            "xsd:decimal",
+            "xsd:integer",
+            "xsd:float"
+          ]
+        },
+        {
+          "text": "decimal",
+          "description": "A question that expects a numerical answer, either integer or float.",
+          "meaning": "http://hl7.org/fhir/item-type#decimal",
+          "narrow_mappings": [
+            "xsd:decimal",
+            "xsd:integer",
+            "xsd:float"
+          ]
+        },
+        {
+          "text": "time",
+          "description": "Question with a time (hour:minute:second) answer independent of date. (valueTime).",
+          "meaning": "http://hl7.org/fhir/item-type#time",
+          "mappings": [
+            "xsd:time"
+          ]
+        },
+        {
+          "text": "dateTime",
+          "description": "A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+zz:zz.",
+          "meaning": "http://hl7.org/fhir/item-type#dateTime",
+          "mappings": [
+            "xsd:dateTime"
+          ]
+        },
+        {
+          "text": "text",
+          "description": "A question that expects a free text answer.",
+          "meaning": "http://hl7.org/fhir/item-type#string",
+          "mappings": [
+            "xsd:string",
+            "xsd2:text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "qo_QuestionnaireStatusEnum",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionnaireStatusEnum",
+      "description": "Questionnaires must have one of the following status (FHIR inspired): ",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "enum_uri": "qo:QuestionnaireStatus",
+      "permissible_values": [
+        {
+          "text": "draft",
+          "description": "This resource is still under development and is not yet considered to be ready for normal use.",
+          "meaning": "fhir:resource-status-draft",
+          "mappings": [
+            "fhir:codesystem-resource-status.html#resource-status-draft"
+          ]
+        },
+        {
+          "text": "active",
+          "description": "This resource is ready for normal use.",
+          "meaning": "fhir:resource-status-active",
+          "mappings": [
+            "fhir:codesystem-resource-status.html#resource-status-active"
+          ]
+        },
+        {
+          "text": "retired",
+          "description": "This resource has been withdrawn or superseded and should no longer be used.",
+          "meaning": "fhir:resource-status-retired",
+          "mappings": [
+            "fhir:codesystem-resource-status.html#resource-status-inactive"
+          ]
+        },
+        {
+          "text": "unknown",
+          "description": "The authoring system does not know which of the status values currently applies for this resource. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, it's just not known which one.",
+          "meaning": "fhir:resource-status-unknown",
+          "mappings": [
+            "fhir:codesystem-resource-status.html#resource-status-unknown"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "qo_QuestionnaireResponseStatusEnum",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionnaireResponseStatusEnum",
+      "description": "The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "enum_uri": "qo:QuestionnaireResponseStatus",
+      "permissible_values": [
+        {
+          "text": "in_progress",
+          "description": "This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it.",
+          "meaning": "fhir:questionnaire-answers-status-in-progress",
+          "mappings": [
+            "fhir:valueset-resource-status.html"
+          ]
+        },
+        {
+          "text": "completed",
+          "description": "This QuestionnaireResponse has been filled out with answers and the current content is regarded as definitive.",
+          "meaning": "fhir:questionnaire-answers-status-completed",
+          "mappings": [
+            "fhir:valueset-resource-status.html"
+          ]
+        },
+        {
+          "text": "amended",
+          "description": "This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards.",
+          "meaning": "fhir:questionnaire-answers-status-amended",
+          "mappings": [
+            "fhir:valueset-resource-status.html"
+          ]
+        },
+        {
+          "text": "entered_in_error",
+          "description": "This QuestionnaireResponse was entered in error and voided.",
+          "meaning": "fhir:questionnaire-answers-status-entered-in-error",
+          "mappings": [
+            "fhir:valueset-resource-status.html"
+          ]
+        },
+        {
+          "text": "stopped",
+          "description": "This QuestionnaireResponse has been partially filled out with answers but has been abandoned. No subsequent changes can be made.",
+          "meaning": "fhir:questionnaire-answers-status-stopped",
+          "mappings": [
+            "fhir:valueset-resource-status.html"
+          ]
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "name": "rdfs_label",
+      "definition_uri": "https://ns.faqir.org/q-o#rdfs_label",
+      "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#label",
+      "owner": "OwlThing",
+      "domain_of": [
+        "OwlThing"
+      ],
+      "range": "string",
+      "required": true,
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "rdfs_comment",
+      "definition_uri": "https://ns.faqir.org/q-o#rdfs_comment",
+      "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#comment"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "owner": "OwlThing",
+      "domain_of": [
+        "OwlThing"
+      ],
+      "range": "string",
+      "required": true,
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "owl_versionInfo",
+      "definition_uri": "https://ns.faqir.org/q-o#owl_versionInfo",
+      "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/2002/07/owl#versionInfo"
+      ],
+      "close_mappings": [
+        "https://saref.etsi.org/core/hasVersion"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/2002/07/owl#versionInfo",
+      "owner": "OwlThing",
+      "domain_of": [
+        "OwlThing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dcterms_isPartOf",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_isPartOf",
+      "description": "A related resource in which the described resource is physically or logically included.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/isPartOf"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://purl.org/dc/terms/isPartOf",
+      "owner": "dcterms_isPartOf",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "inverse": "dcterms_hasPart",
+      "range": "OwlThing",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dcterms_hasPart",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_hasPart",
+      "description": "A related resource that is included either physically or logically in the described resource.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://purl.org/dc/terms/hasPart",
+      "owner": "dcterms_hasPart",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "inverse": "dcterms_isPartOf",
+      "range": "OwlThing",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_type",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_type",
+      "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#type"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "https://biomedit.ch/rdf/sphn-schema/sphn#hasTypeCode"
+      ],
+      "narrow_mappings": [
+        "http://schema.org/procedureType"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/ns/prov#type",
+      "owner": "prov_type",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhir_status",
+      "definition_uri": "https://ns.faqir.org/q-o#fhir_status",
+      "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/resource-status"
+      ],
+      "is_a": "saref_hasPropertyValue",
+      "domain": "OwlThing",
+      "slot_uri": "http://hl7.org/fhir/resource-status",
+      "owner": "fhir_status",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "range": "SarefPropertyValue",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dcterms_creator",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_creator",
+      "description": "An entity responsible for making the resource.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/creator"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://purl.org/dc/terms/creator",
+      "owner": "dcterms_creator",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "range": "FoafAgent",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "saref_hasProperty",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_hasProperty",
+      "description": "Links a feature kind or a feature of interest to one of its properties.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/hasProperty",
+        "https://www.w3.org/TR/vocab-ssn/hasProperty"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "https://saref.etsi.org/core/hasProperty",
+      "owner": "saref_hasProperty",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "range": "SarefProperty",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "saref_hasPropertyValue",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_hasPropertyValue",
+      "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/hasPropertyValue"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "https://saref.etsi.org/core/hasPropertyValue",
+      "owner": "saref_hasPropertyValue",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "range": "SarefPropertyValue",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_hadPrimarySource",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_hadPrimarySource",
+      "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#hadPrimarySource"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/ns/prov#hadPrimarySource",
+      "owner": "OwlThing",
+      "domain_of": [
+        "OwlThing"
+      ],
+      "range": "ProvEntity",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_wasGeneratedBy",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_wasGeneratedBy",
+      "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#wasGeneratedBy"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "owner": "OwlThing",
+      "domain_of": [
+        "OwlThing"
+      ],
+      "inverse": "prov_generated",
+      "range": "SuloProcess",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_generatedAtTime",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_generatedAtTime",
+      "description": "The time at which an entity was completely created and is available for use.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#generatedAtTime"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/ns/prov#generatedAtTime",
+      "owner": "prov_generatedAtTime",
+      "domain_of": [
+        "FoafAgent",
+        "SuloProcess",
+        "ProvEntity"
+      ],
+      "range": "datetime",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_generated",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_generated",
+      "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#generated"
+      ],
+      "domain": "SuloProcess",
+      "slot_uri": "http://www.w3.org/ns/prov#generated",
+      "owner": "prov_generated",
+      "inverse": "prov_wasGeneratedBy",
+      "range": "OwlThing",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_wasAttributedTo",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_wasAttributedTo",
+      "description": "Attribution is the ascribing of an entity to an agent.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#wasAttributedTo"
+      ],
+      "domain": "ProvEntity",
+      "slot_uri": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "owner": "ProvEntity",
+      "domain_of": [
+        "ProvEntity"
+      ],
+      "range": "FoafAgent",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_qualifiedAttribution",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_qualifiedAttribution",
+      "description": "Attribution is the ascribing of an entity to an agent. When an entity e is attributed to agent ag, entity e was generated by some unspecified activity that in turn was associated to agent ag. Thus, this relation is useful when the activity is not known, or irrelevant.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#qualifiedAttribution"
+      ],
+      "domain": "OwlThing",
+      "slot_uri": "http://www.w3.org/ns/prov#qualifiedAttribution",
+      "owner": "prov_qualifiedAttribution",
+      "range": "ProvAttribution",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_startedAtTime",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_startedAtTime",
+      "description": "The time at which an activity started.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#startedAtTime"
+      ],
+      "domain": "SuloProcess",
+      "slot_uri": "http://www.w3.org/ns/prov#startedAtTime",
+      "owner": "prov_startedAtTime",
+      "domain_of": [
+        "TimeInterval"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_endedAtTime",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_endedAtTime",
+      "description": "The time at which an activity ended.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#endedAtTime"
+      ],
+      "domain": "SuloProcess",
+      "slot_uri": "http://www.w3.org/ns/prov#endedAtTime",
+      "owner": "prov_endedAtTime",
+      "domain_of": [
+        "TimeInterval"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prov_atTime",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_atTime",
+      "description": "The time at which an InstantaneousEvent occurred.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#atTime",
+        "https://saref.etsi.org/core/hasTimestamp",
+        "http://hl7.org/fhir/DeviceMetric.calibration.time",
+        "http://www.w3.org/ns/sosa/phenomenonTime"
+      ],
+      "domain": "SuloProcess",
+      "slot_uri": "http://www.w3.org/ns/prov#atTime",
+      "owner": "prov_atTime",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "time_hasDuration",
+      "definition_uri": "https://ns.faqir.org/q-o#time_hasDuration",
+      "description": "Duration of a temporal entity, expressed as a scaled value or nominal value",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/2006/time#hasDuration",
+        "https://biomedit.ch/rdf/sphn-schema/sphn#hasDuration"
+      ],
+      "slot_uri": "http://www.w3.org/2006/time#hasDuration",
+      "range": "TimeDuration",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dcterms_created",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_created",
+      "description": "The date and time when the entity was created.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/created"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/created",
+      "owner": "ProvEntity",
+      "domain_of": [
+        "ProvEntity"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dcterms_modified",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_modified",
+      "description": "The date and time when the entity was last updated.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/modified"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/modified",
+      "owner": "ProvEntity",
+      "domain_of": [
+        "ProvEntity"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "saref_isValueOfProperty",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_isValueOfProperty",
+      "description": "Links a property value to the property or property of interest it is a value of.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/isValueOfProperty"
+      ],
+      "domain": "SarefPropertyValue",
+      "slot_uri": "https://saref.etsi.org/core/isValueOfProperty",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "SarefProperty",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "saref_isMeasuredIn",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_isMeasuredIn",
+      "description": "A relationship identifying the unit of measure used for a certain entity.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/isMeasuredIn"
+      ],
+      "slot_uri": "https://saref.etsi.org/core/isMeasuredIn",
+      "owner": "TimeDuration",
+      "domain_of": [
+        "QuantityValue",
+        "TimeDuration"
+      ],
+      "range": "uriorcurie",
+      "pattern": "^ucum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhir_valueReference",
+      "definition_uri": "https://ns.faqir.org/q-o#fhir_valueReference",
+      "description": "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/valueReference"
+      ],
+      "slot_uri": "http://hl7.org/fhir/valueReference",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "saref_hasValue",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_hasValue",
+      "description": "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/hasValue"
+      ],
+      "slot_uri": "https://saref.etsi.org/core/hasValue",
+      "owner": "TimeDuration",
+      "domain_of": [
+        "SarefPropertyValue",
+        "QuantityValue",
+        "TimeDuration"
+      ],
+      "range": "string",
+      "any_of": [
+        {
+          "range": "integer",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "float",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "double",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "decimal",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "date",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "datetime",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "uriorcurie",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "s4ehaw_minimumValue",
+      "definition_uri": "https://ns.faqir.org/q-o#s4ehaw_minimumValue",
+      "description": "The minimum allowable value of a measurement.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/saref4ehaw/minimumValue"
+      ],
+      "slot_uri": "https://saref.etsi.org/saref4ehaw/minimumValue",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "s4ehaw_maximumValue",
+      "definition_uri": "https://ns.faqir.org/q-o#s4ehaw_maximumValue",
+      "description": "The maximum allowable value of a measurement.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/saref4ehaw/maximumValue"
+      ],
+      "slot_uri": "https://saref.etsi.org/saref4ehaw/maximumValue",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_multivalued",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_multivalued",
+      "description": "Indicates whether this question allows multiple answers (true) or it's single answer (false).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#multivalued"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#multivalued",
+      "ifabsent": "False",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_order",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_order",
+      "description": "Position in the questionnaire or section (1-based index).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#order"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#order",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedSection",
+        "QoOrderedQuestion"
+      ],
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_hardValidity",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hardValidity",
+      "description": "if true, the temporal duration is a strict deadline; if false, it is an orientative guideline.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hardValidity"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#hardValidity",
+      "ifabsent": "False",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedQuestion"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_temporalValidity",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_temporalValidity",
+      "description": "The time duration during which the answer is considered valid.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#temporalValidity"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#temporalValidity",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedQuestion"
+      ],
+      "range": "TimeDuration",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_conditionalValidity",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_conditionalValidity",
+      "description": "a condition (expressed in a machine-readable rule language) that would invalidate the answer earlier than the temporal duration, e.g., 'a documented smoking cessation intervention' invalidates the answer to 'Do you smoke?''.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#conditionalValidity"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#conditionalValidity",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedQuestion"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_question",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_question",
+      "description": "Question indexed in this OrderedQuestion.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#question"
+      ],
+      "is_a": "dcterms_hasPart",
+      "domain": "QoOrderedQuestion",
+      "slot_uri": "https://ns.faqir.org/q-o#question",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedQuestion"
+      ],
+      "range": "QoQuestion",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_hasOrderedQuestion",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasOrderedQuestion",
+      "description": "The Question that is part of this Questionnaire or Section, with their display order.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasOrderedQuestion"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.where(type='question')"
+      ],
+      "is_a": "dcterms_hasPart",
+      "domain": "OwlThing",
+      "slot_uri": "https://ns.faqir.org/q-o#hasOrderedQuestion",
+      "owner": "QoSection",
+      "domain_of": [
+        "QoQuestionnaire",
+        "QoSection"
+      ],
+      "range": "QoOrderedQuestion",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_hasOrderedSection",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasOrderedSection",
+      "description": "The Section that is part of this Questionnaire or Section, with their display order.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasOrderedSection"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.where(type='group')"
+      ],
+      "is_a": "dcterms_hasPart",
+      "domain": "OwlThing",
+      "slot_uri": "https://ns.faqir.org/q-o#hasOrderedSection",
+      "owner": "QoSection",
+      "domain_of": [
+        "QoQuestionnaire",
+        "QoSection"
+      ],
+      "range": "QoOrderedSection",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_section",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_section",
+      "description": "Section indexed in this OrderedSection.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#section"
+      ],
+      "is_a": "dcterms_hasPart",
+      "domain": "QoOrderedSection",
+      "slot_uri": "https://ns.faqir.org/q-o#section",
+      "owner": "QoOrderedSection",
+      "domain_of": [
+        "QoOrderedSection"
+      ],
+      "range": "QoSection",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_responds",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_responds",
+      "description": "The Questionnaire that this QuestionnaireResponse is for.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#responds"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/questionnaireResponse.questionnaire"
+      ],
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "https://ns.faqir.org/q-o#responds",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "range": "QoQuestionnaire",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_hasAnswer",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasAnswer",
+      "description": "The Answer that is part of this QuestionnaireResponse.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasAnswer"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/questionnaireResponse.item.answer"
+      ],
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "https://ns.faqir.org/q-o#hasAnswer",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "range": "QoAnswer",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_toQuestion",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_toQuestion",
+      "description": "The Question that this Answer is for.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#toQuestion"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/QuestionnaireResponse.item.answer.question"
+      ],
+      "domain": "QoAnswer",
+      "slot_uri": "https://ns.faqir.org/q-o#toQuestion",
+      "owner": "QoAnswer",
+      "domain_of": [
+        "QoAnswer"
+      ],
+      "range": "QoQuestion",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sarefProperty__fhir_referenceRange",
+      "description": "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/Observation.referenceRange"
+      ],
+      "slot_uri": "http://hl7.org/fhir/Observation.referenceRange",
+      "alias": "fhir_referenceRange",
+      "owner": "SarefProperty",
+      "domain_of": [
+        "SarefProperty"
+      ],
+      "range": "FhirReferenceRange",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sarefPropertyValue__fhir_valueCodeableConcept",
+      "description": "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/valueCodeableConcept"
+      ],
+      "slot_uri": "http://hl7.org/fhir/valueCodeableConcept",
+      "alias": "fhir_valueCodeableConcept",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "ValueCoding",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sarefPropertyValue__fhir_valueRange",
+      "description": "A set of ordered Quantity values defined by a low and high limit.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/valueRange"
+      ],
+      "slot_uri": "http://hl7.org/fhir/valueRange",
+      "alias": "fhir_valueRange",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "FhirReferenceRange",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sarefPropertyValue__fhir_valueRatio",
+      "description": "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/valueRatio"
+      ],
+      "slot_uri": "http://hl7.org/fhir/valueRatio",
+      "alias": "fhir_valueRatio",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "FhirValueRatio",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sarefPropertyValue__fhir_valuePeriod",
+      "description": "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013').",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/valuePeriod"
+      ],
+      "slot_uri": "http://hl7.org/fhir/valuePeriod",
+      "alias": "fhir_valuePeriod",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "TimeInterval",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sarefPropertyValue__fhir_valueAttachement",
+      "description": "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/valueAttachement"
+      ],
+      "slot_uri": "http://hl7.org/fhir/valueAttachement",
+      "alias": "fhir_valueAttachement",
+      "owner": "SarefPropertyValue",
+      "domain_of": [
+        "SarefPropertyValue"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "numericalParams__numericalUnit",
+      "description": "The unit of measure for the quantitative value, from UCUM standard.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://unitsofmeasure.org/units"
+      ],
+      "slot_uri": "https://unitsofmeasure.org/units",
+      "alias": "numericalUnit",
+      "owner": "NumericalParams",
+      "domain_of": [
+        "NumericalParams"
+      ],
+      "range": "uriorcurie",
+      "pattern": "^ucum:",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "numericalParams__numericalPrecision",
+      "description": "The precision of the quantitative value, e.g. number of decimal places.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#precision"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#precision",
+      "alias": "numericalPrecision",
+      "owner": "NumericalParams",
+      "domain_of": [
+        "NumericalParams"
+      ],
+      "range": "integer",
+      "minimum_value": 0,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "valueCoding__code",
+      "description": "The code representing the value (e.g. code '1' for value 'Yes').",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/code"
+      ],
+      "slot_uri": "http://hl7.org/fhir/code",
+      "alias": "code",
+      "owner": "ValueCoding",
+      "domain_of": [
+        "ValueCoding"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "valueCoding__display",
+      "description": "The human-readable display text for the code (e.g. code '1' for value 'Yes').",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/display"
+      ],
+      "slot_uri": "http://hl7.org/fhir/display",
+      "alias": "display",
+      "owner": "ValueCoding",
+      "domain_of": [
+        "ValueCoding"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhirValueRatio__numerator",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/numerator"
+      ],
+      "slot_uri": "http://hl7.org/fhir/numerator",
+      "alias": "numerator",
+      "owner": "FhirValueRatio",
+      "domain_of": [
+        "FhirValueRatio"
+      ],
+      "range": "QuantityValue",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhirValueRatio__denominator",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/denominator"
+      ],
+      "slot_uri": "http://hl7.org/fhir/denominator",
+      "alias": "denominator",
+      "owner": "FhirValueRatio",
+      "domain_of": [
+        "FhirValueRatio"
+      ],
+      "range": "QuantityValue",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "intervalParams__minValue",
+      "description": "The minimum value of the interval.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#minValue"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#minValue",
+      "alias": "minValue",
+      "owner": "IntervalParams",
+      "domain_of": [
+        "IntervalParams"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "intervalParams__minLabel",
+      "description": "The label for the minimum value of the interval.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#minLabel"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#minLabel",
+      "alias": "minLabel",
+      "owner": "IntervalParams",
+      "domain_of": [
+        "IntervalParams"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "intervalParams__maxValue",
+      "description": "The maximum value of the interval.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#maxValue"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#maxValue",
+      "alias": "maxValue",
+      "owner": "IntervalParams",
+      "domain_of": [
+        "IntervalParams"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "intervalParams__maxLabel",
+      "description": "The label for the maximum value of the interval.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#maxLabel"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#maxLabel",
+      "alias": "maxLabel",
+      "owner": "IntervalParams",
+      "domain_of": [
+        "IntervalParams"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhirReferenceRange__lowRange",
+      "description": "Low range, if relevant.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#lowRange"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#lowRange",
+      "alias": "lowRange",
+      "owner": "FhirReferenceRange",
+      "domain_of": [
+        "FhirReferenceRange"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhirReferenceRange__highRange",
+      "description": "High range, if relevant.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#highRange"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#highRange",
+      "alias": "highRange",
+      "owner": "FhirReferenceRange",
+      "domain_of": [
+        "FhirReferenceRange"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fhirReferenceRange__normalValue",
+      "description": "Normal value, if relevant.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/phr-o#normalValue"
+      ],
+      "slot_uri": "https://ns.faqir.org/phr-o#normalValue",
+      "alias": "normalValue",
+      "owner": "FhirReferenceRange",
+      "domain_of": [
+        "FhirReferenceRange"
+      ],
+      "range": "QuantityValue",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoOrderedQuestion__qo_required",
+      "description": "Whether the question can be left un-answered (false) or an answer is mandatory (true).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#required"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.required"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#required",
+      "alias": "qo_required",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedQuestion"
+      ],
+      "range": "boolean",
+      "required": true,
+      "minimum_value": 1,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoQuestion__qo_tag",
+      "description": "Internal English identifier, e.g., 'q_pain_level'.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#tag"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#tag",
+      "alias": "qo_tag",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "range": "string",
+      "required": true,
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoQuestion__qo_numericalParams",
+      "description": "Unit and Precision limiting the quantitative answer for the question.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#numericalParams"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#numericalParams",
+      "alias": "qo_numericalParams",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "range": "NumericalParams",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoQuestion__qo_codingParams",
+      "description": "Code and Display of each option offered as answer to the choice or open-choice question.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#codingParams"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#codingParams",
+      "alias": "qo_codingParams",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "range": "ValueCoding",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoQuestion__qo_codingOrdinal",
+      "description": "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#codingOrdinal"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#codingOrdinal",
+      "ifabsent": "False",
+      "alias": "qo_codingOrdinal",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoQuestion__qo_intervalParams",
+      "description": "Minimum and Maximum limiting the range the answer must be in for the question.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#intervalParams"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#intervalParams",
+      "alias": "qo_intervalParams",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "range": "IntervalParams",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoAnswer__qo_answerValue",
+      "description": "The value of the answer to: a decimal or numberInterval type of question, which is a numeric value; a choice, openChoice or text type of question, which is a stringValue; dateTime type of question, which is a datetime value.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#answerValue"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/QuestionnaireResponse.item.answer"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#answerValue",
+      "alias": "qo_answerValue",
+      "owner": "QoAnswer",
+      "domain_of": [
+        "QoAnswer"
+      ],
+      "range": "string",
+      "any_of": [
+        {
+          "range": "float",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "datetime",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qoAnswer__qo_isEmpty",
+      "description": "True if the answer is intentionally left empty.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#isEmpty"
+      ],
+      "slot_uri": "https://ns.faqir.org/q-o#isEmpty",
+      "ifabsent": "False",
+      "alias": "qo_isEmpty",
+      "owner": "QoAnswer",
+      "domain_of": [
+        "QoAnswer"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_dcterms_created",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_created",
+      "description": "The date and time when the questionnaire was created.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/created"
+      ],
+      "is_a": "dcterms_created",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "http://purl.org/dc/terms/created",
+      "alias": "dcterms_created",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_created",
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_dcterms_modified",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_modified",
+      "description": "The date and time when the questionnaire was last updated.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/modified",
+        "http://www.w3.org/ns/prov#endedAtTime",
+        "http://hl7.org/fhir/Questionnaire.date"
+      ],
+      "is_a": "dcterms_modified",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "http://purl.org/dc/terms/modified",
+      "alias": "dcterms_modified",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_modified",
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_dcterms_creator",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_creator",
+      "description": "The Organization that has created this Questionnaire.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/creator",
+        "http://hl7.org/fhir/Questionnaire.author"
+      ],
+      "is_a": "dcterms_creator",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "http://purl.org/dc/terms/creator",
+      "alias": "dcterms_creator",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_creator",
+      "range": "ProvOrganization",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_dcterms_isPartOf",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_isPartOf",
+      "description": "Process this questionnaire is part of.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/isPartOf"
+      ],
+      "is_a": "dcterms_isPartOf",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "http://purl.org/dc/terms/isPartOf",
+      "alias": "dcterms_isPartOf",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_isPartOf",
+      "range": "SuloProcess",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_fhir_status",
+      "definition_uri": "https://ns.faqir.org/q-o#fhir_status",
+      "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/resource-status"
+      ],
+      "is_a": "fhir_status",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "http://hl7.org/fhir/resource-status",
+      "alias": "fhir_status",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "fhir_status",
+      "range": "QoQuestionnaireStatus",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_qo_hasOrderedQuestion",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasOrderedQuestion",
+      "description": "The Question that is part of this Questionnaire or Section, with their display order.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasOrderedQuestion"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.where(type='question')"
+      ],
+      "is_a": "qo_hasOrderedQuestion",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "https://ns.faqir.org/q-o#hasOrderedQuestion",
+      "alias": "qo_hasOrderedQuestion",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "qo_hasOrderedQuestion",
+      "range": "QoOrderedQuestion",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Questionnaire_qo_hasOrderedSection",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasOrderedSection",
+      "description": "The Section that is part of this Questionnaire or Section, with their display order.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasOrderedSection"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.where(type='group')"
+      ],
+      "is_a": "qo_hasOrderedSection",
+      "domain": "QoQuestionnaire",
+      "slot_uri": "https://ns.faqir.org/q-o#hasOrderedSection",
+      "alias": "qo_hasOrderedSection",
+      "owner": "QoQuestionnaire",
+      "domain_of": [
+        "QoQuestionnaire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "qo_hasOrderedSection",
+      "range": "QoOrderedSection",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireStatus_saref_hasValue",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_hasValue",
+      "description": "The status of the questionnaire, indicating whether it is \tdraft, active, retired or unknown.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/hasValue"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.status"
+      ],
+      "is_a": "saref_hasValue",
+      "domain": "QoQuestionnaireStatus",
+      "slot_uri": "https://saref.etsi.org/core/hasValue",
+      "alias": "saref_hasValue",
+      "owner": "QoQuestionnaireStatus",
+      "domain_of": [
+        "QoQuestionnaireStatus"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "saref_hasValue",
+      "range": "qo_QuestionnaireStatusEnum",
+      "required": true,
+      "any_of": [
+        {
+          "range": "integer",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "float",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "double",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "decimal",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "date",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "datetime",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "uriorcurie",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_OrderedSection_qo_order",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_order",
+      "description": "Section position in the questionnaire or section (1-based index).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#order"
+      ],
+      "is_a": "qo_order",
+      "domain": "QoOrderedSection",
+      "slot_uri": "https://ns.faqir.org/q-o#order",
+      "alias": "qo_order",
+      "owner": "QoOrderedSection",
+      "domain_of": [
+        "QoOrderedSection"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "qo_order",
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Section_dcterms_creator",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_creator",
+      "description": "An entity responsible for making the resource.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/creator",
+        "http://hl7.org/fhir/Questionnaire.author"
+      ],
+      "is_a": "dcterms_creator",
+      "domain": "QoSection",
+      "slot_uri": "http://purl.org/dc/terms/creator",
+      "alias": "dcterms_creator",
+      "owner": "QoSection",
+      "domain_of": [
+        "QoSection"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_creator",
+      "range": "ProvOrganization",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Section_qo_hasOrderedQuestion",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasOrderedQuestion",
+      "description": "The Question that is part of this Questionnaire or Section, with their display order.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasOrderedQuestion"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.where(type='question')"
+      ],
+      "is_a": "qo_hasOrderedQuestion",
+      "domain": "QoSection",
+      "slot_uri": "https://ns.faqir.org/q-o#hasOrderedQuestion",
+      "alias": "qo_hasOrderedQuestion",
+      "owner": "QoSection",
+      "domain_of": [
+        "QoSection"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "qo_hasOrderedQuestion",
+      "range": "QoOrderedQuestion",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Section_qo_hasOrderedSection",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_hasOrderedSection",
+      "description": "The Section that is part of this Questionnaire or Section, with their display order.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#hasOrderedSection"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/Questionnaire.item.where(type='group')"
+      ],
+      "is_a": "qo_hasOrderedSection",
+      "domain": "QoSection",
+      "slot_uri": "https://ns.faqir.org/q-o#hasOrderedSection",
+      "alias": "qo_hasOrderedSection",
+      "owner": "QoSection",
+      "domain_of": [
+        "QoSection"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "qo_hasOrderedSection",
+      "range": "QoOrderedSection",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_OrderedQuestion_qo_order",
+      "definition_uri": "https://ns.faqir.org/q-o#qo_order",
+      "description": "Question position in the questionnaire or section (1-based index).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://ns.faqir.org/q-o#order"
+      ],
+      "is_a": "qo_order",
+      "domain": "QoOrderedQuestion",
+      "slot_uri": "https://ns.faqir.org/q-o#order",
+      "alias": "qo_order",
+      "owner": "QoOrderedQuestion",
+      "domain_of": [
+        "QoOrderedQuestion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "qo_order",
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Question_prov_type",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_type",
+      "description": "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#type"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "https://biomedit.ch/rdf/sphn-schema/sphn#hasTypeCode"
+      ],
+      "narrow_mappings": [
+        "http://schema.org/procedureType"
+      ],
+      "is_a": "prov_type",
+      "domain": "QoQuestion",
+      "slot_uri": "http://www.w3.org/ns/prov#type",
+      "alias": "prov_type",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "prov_type",
+      "range": "qo_QuestionType",
+      "required": true,
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Question_dcterms_creator",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_creator",
+      "description": "An entity responsible for making the resource.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/creator"
+      ],
+      "is_a": "dcterms_creator",
+      "domain": "QoQuestion",
+      "slot_uri": "http://purl.org/dc/terms/creator",
+      "alias": "dcterms_creator",
+      "owner": "QoQuestion",
+      "domain_of": [
+        "QoQuestion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_creator",
+      "range": "ProvOrganization",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireResponse_dcterms_created",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_created",
+      "description": "The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/created",
+        "http://hl7.org/fhir/QuestionnaireResponse.authored"
+      ],
+      "is_a": "dcterms_created",
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "http://purl.org/dc/terms/created",
+      "alias": "dcterms_created",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_created",
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireResponse_dcterms_modified",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_modified",
+      "description": "The date and time when the questionnaire response was last updated.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/modified",
+        "http://www.w3.org/ns/prov#endedAtTime"
+      ],
+      "is_a": "dcterms_modified",
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "http://purl.org/dc/terms/modified",
+      "alias": "dcterms_modified",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_modified",
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireResponse_dcterms_isPartOf",
+      "definition_uri": "https://ns.faqir.org/q-o#dcterms_isPartOf",
+      "description": "Process this questionnaire response instance is part of.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://purl.org/dc/terms/isPartOf"
+      ],
+      "is_a": "dcterms_isPartOf",
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "http://purl.org/dc/terms/isPartOf",
+      "alias": "dcterms_isPartOf",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dcterms_isPartOf",
+      "range": "SuloProcess",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireResponse_prov_wasAttributedTo",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_wasAttributedTo",
+      "description": "Attribution is the ascribing of an entity to an agent.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#wasAttributedTo"
+      ],
+      "is_a": "prov_wasAttributedTo",
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "alias": "prov_wasAttributedTo",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "prov_wasAttributedTo",
+      "range": "FoafPerson",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireResponse_fhir_status",
+      "definition_uri": "https://ns.faqir.org/q-o#fhir_status",
+      "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://hl7.org/fhir/resource-status"
+      ],
+      "is_a": "fhir_status",
+      "domain": "QoQuestionnaireResponse",
+      "slot_uri": "http://hl7.org/fhir/resource-status",
+      "alias": "fhir_status",
+      "owner": "QoQuestionnaireResponse",
+      "domain_of": [
+        "QoQuestionnaireResponse"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "fhir_status",
+      "range": "QoQuestionnaireResponseStatus",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_QuestionnaireResponseStatus_saref_hasValue",
+      "definition_uri": "https://ns.faqir.org/q-o#saref_hasValue",
+      "description": "The status of the questionnaire response, indicating whether it is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "https://saref.etsi.org/core/hasValue"
+      ],
+      "narrow_mappings": [
+        "http://hl7.org/fhir/QuestionnaireResponse.status"
+      ],
+      "is_a": "saref_hasValue",
+      "domain": "QoQuestionnaireResponseStatus",
+      "slot_uri": "https://saref.etsi.org/core/hasValue",
+      "alias": "saref_hasValue",
+      "owner": "QoQuestionnaireResponseStatus",
+      "domain_of": [
+        "QoQuestionnaireResponseStatus"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "saref_hasValue",
+      "range": "qo_QuestionnaireResponseStatusEnum",
+      "required": true,
+      "any_of": [
+        {
+          "range": "integer",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "float",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "double",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "decimal",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "date",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "datetime",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "uriorcurie",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qo_Answer_prov_generatedAtTime",
+      "definition_uri": "https://ns.faqir.org/q-o#prov_generatedAtTime",
+      "description": "The time at which an entity was completely created and is available for use.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "http://www.w3.org/ns/prov#generatedAtTime"
+      ],
+      "is_a": "prov_generatedAtTime",
+      "domain": "QoAnswer",
+      "slot_uri": "http://www.w3.org/ns/prov#generatedAtTime",
+      "alias": "prov_generatedAtTime",
+      "owner": "QoAnswer",
+      "domain_of": [
+        "QoAnswer"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "prov_generatedAtTime",
+      "range": "datetime",
+      "required": true,
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "OwlThing",
+      "definition_uri": "https://ns.faqir.org/q-o#OwlThing",
+      "description": "This defines IOT as the set of OWL individuals.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "owl:Thing"
+      ],
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2002/07/owl#Thing",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProvAttribution",
+      "definition_uri": "https://ns.faqir.org/q-o#ProvAttribution",
+      "description": "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ].",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "prov:Attribution"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/ns/prov#Attribution",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FoafAgent",
+      "definition_uri": "https://ns.faqir.org/q-o#FoafAgent",
+      "description": "An agent (eg. person, group, software or physical artifact).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "foaf:Agent",
+        "prov:Agent"
+      ],
+      "is_a": "OwlThing",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://xmlns.com/foaf/0.1/Agent",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FoafPerson",
+      "definition_uri": "https://ns.faqir.org/q-o#FoafPerson",
+      "description": "A person.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "foaf:Person",
+        "omop:Person",
+        "fhir:Person",
+        "schema:Person"
+      ],
+      "is_a": "FoafAgent",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://xmlns.com/foaf/0.1/Person",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProvOrganization",
+      "definition_uri": "https://ns.faqir.org/q-o#ProvOrganization",
+      "description": "An organization is a social or legal institution such as a company, society, etc.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "prov:Organization"
+      ],
+      "exact_mappings": [
+        "fhir:Organization",
+        "foaf:Organization",
+        "openEHR:Organisation"
+      ],
+      "is_a": "FoafAgent",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/ns/prov#Organization",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SuloProcess",
+      "definition_uri": "https://ns.faqir.org/q-o#SuloProcess",
+      "description": "a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "sulo:Process",
+        "prov:Activity"
+      ],
+      "is_a": "OwlThing",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "S4ehawActivity",
+      "definition_uri": "https://ns.faqir.org/q-o#S4ehawActivity",
+      "description": "The activity of a patient/user, i.e. daily and nocturnal activities.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "s4ehaw:activity"
+      ],
+      "is_a": "SuloProcess",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://saref.etsi.org/saref4ehaw/activity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FhirProcedure",
+      "definition_uri": "https://ns.faqir.org/q-o#FhirProcedure",
+      "description": "An action that is being or was performed on an individual or entity",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "fhir:Procedure"
+      ],
+      "is_a": "SuloProcess",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://hl7.org/fhir/Procedure",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProvEntity",
+      "definition_uri": "https://ns.faqir.org/q-o#ProvEntity",
+      "description": "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "prov:Entity",
+        "sulo:Object"
+      ],
+      "is_a": "OwlThing",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/ns/prov#Entity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SarefProperty",
+      "definition_uri": "https://ns.faqir.org/q-o#SarefProperty",
+      "description": "Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A property can apply to different features of interest.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "saref:Property"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "sarefProperty__fhir_referenceRange"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "fhir_referenceRange",
+          "description": "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used.",
+          "slot_uri": "fhir:Observation.referenceRange",
+          "range": "FhirReferenceRange",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://saref.etsi.org/core/Property",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SarefPropertyValue",
+      "definition_uri": "https://ns.faqir.org/q-o#SarefPropertyValue",
+      "description": "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "saref:PropertyValue",
+        "sosa:Result"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "prov_atTime",
+        "saref_hasValue",
+        "saref_isValueOfProperty",
+        "fhir_valueReference",
+        "sarefPropertyValue__fhir_valueCodeableConcept",
+        "sarefPropertyValue__fhir_valueRange",
+        "sarefPropertyValue__fhir_valueRatio",
+        "sarefPropertyValue__fhir_valuePeriod",
+        "sarefPropertyValue__fhir_valueAttachement"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "fhir_valueCodeableConcept",
+          "description": "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data.",
+          "slot_uri": "fhir:valueCodeableConcept",
+          "range": "ValueCoding",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "fhir_valueRange",
+          "description": "A set of ordered Quantity values defined by a low and high limit.",
+          "slot_uri": "fhir:valueRange",
+          "range": "FhirReferenceRange",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "fhir_valueRatio",
+          "description": "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio.",
+          "slot_uri": "fhir:valueRatio",
+          "range": "FhirValueRatio",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "fhir_valuePeriod",
+          "description": "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013').",
+          "slot_uri": "fhir:valuePeriod",
+          "range": "TimeInterval",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "fhir_valueAttachement",
+          "description": "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type.",
+          "slot_uri": "fhir:valueAttachement",
+          "range": "uriorcurie",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://saref.etsi.org/core/PropertyValue",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QuantityValue",
+      "definition_uri": "https://ns.faqir.org/q-o#QuantityValue",
+      "description": "A measured amount (or an amount that can potentially be measured).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "fhir:datatypes.Quantity"
+      ],
+      "slots": [
+        "saref_isMeasuredIn",
+        "saref_hasValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://hl7.org/fhir/datatypes.Quantity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NumericalParams",
+      "definition_uri": "https://ns.faqir.org/q-o#NumericalParams",
+      "description": "Parameters for quantitative values, including unit and precision.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "phro:NumericalParams"
+      ],
+      "slots": [
+        "numericalParams__numericalUnit",
+        "numericalParams__numericalPrecision"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "numericalUnit",
+          "description": "The unit of measure for the quantitative value, from UCUM standard.",
+          "slot_uri": "ucum:units",
+          "range": "uriorcurie",
+          "pattern": "^ucum:",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "numericalPrecision",
+          "description": "The precision of the quantitative value, e.g. number of decimal places.",
+          "slot_uri": "phro:precision",
+          "range": "integer",
+          "minimum_value": 0,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://ns.faqir.org/phr-o#NumericalParams",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ValueCoding",
+      "definition_uri": "https://ns.faqir.org/q-o#ValueCoding",
+      "description": "A coded value with a unique code for each display text, typically used for standardized questionnaires.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "fhir:Coding"
+      ],
+      "slots": [
+        "valueCoding__code",
+        "valueCoding__display"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "code",
+          "description": "The code representing the value (e.g. code '1' for value 'Yes').",
+          "slot_uri": "fhir:code",
+          "range": "string",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "display",
+          "description": "The human-readable display text for the code (e.g. code '1' for value 'Yes').",
+          "slot_uri": "fhir:display",
+          "range": "string",
+          "required": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://hl7.org/fhir/Coding",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FhirValueRatio",
+      "definition_uri": "https://ns.faqir.org/q-o#FhirValueRatio",
+      "description": "A ratio of two Quantity values - a numerator and a denominator",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "fhir:datatype.Ratio"
+      ],
+      "slots": [
+        "fhirValueRatio__numerator",
+        "fhirValueRatio__denominator"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "numerator",
+          "slot_uri": "fhir:numerator",
+          "range": "QuantityValue",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "denominator",
+          "slot_uri": "fhir:denominator",
+          "range": "QuantityValue",
+          "required": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://hl7.org/fhir/datatype.Ratio",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IntervalParams",
+      "definition_uri": "https://ns.faqir.org/q-o#IntervalParams",
+      "description": "Parameters for interval values, including minimum and maximum values.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "phro:IntervalParams"
+      ],
+      "slots": [
+        "intervalParams__minValue",
+        "intervalParams__minLabel",
+        "intervalParams__maxValue",
+        "intervalParams__maxLabel"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "minValue",
+          "description": "The minimum value of the interval.",
+          "slot_uri": "phro:minValue",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "minLabel",
+          "description": "The label for the minimum value of the interval.",
+          "slot_uri": "phro:minLabel",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "maxValue",
+          "description": "The maximum value of the interval.",
+          "slot_uri": "phro:maxValue",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "maxLabel",
+          "description": "The label for the maximum value of the interval.",
+          "slot_uri": "phro:maxLabel",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://ns.faqir.org/phr-o#IntervalParams",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TimeInterval",
+      "definition_uri": "https://ns.faqir.org/q-o#TimeInterval",
+      "description": "A temporal entity with an extent or duration",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "time:Interval"
+      ],
+      "slots": [
+        "prov_startedAtTime",
+        "prov_endedAtTime"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2006/time#Interval",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TimeDuration",
+      "definition_uri": "https://ns.faqir.org/q-o#TimeDuration",
+      "description": "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "time:Duration"
+      ],
+      "slots": [
+        "saref_hasValue",
+        "saref_isMeasuredIn"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2006/time#Duration",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FhirReferenceRange",
+      "definition_uri": "https://ns.faqir.org/q-o#FhirReferenceRange",
+      "description": "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "fhir:Observation.referenceRange"
+      ],
+      "slots": [
+        "fhirReferenceRange__lowRange",
+        "fhirReferenceRange__highRange",
+        "fhirReferenceRange__normalValue"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "lowRange",
+          "description": "Low range, if relevant.",
+          "slot_uri": "phro:lowRange",
+          "range": "QuantityValue",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "highRange",
+          "description": "High range, if relevant.",
+          "slot_uri": "phro:highRange",
+          "range": "QuantityValue",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "normalValue",
+          "description": "Normal value, if relevant.",
+          "slot_uri": "phro:normalValue",
+          "range": "QuantityValue",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://hl7.org/fhir/Observation.referenceRange",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoQuestionnaire",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionnaire",
+      "description": "A questionnaire that can be answered (collection of questions).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:Questionnaire"
+      ],
+      "narrow_mappings": [
+        "fhir:Questionnaire"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "prov_type",
+        "dcterms_hasPart",
+        "prov_generatedAtTime",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_Questionnaire_qo_hasOrderedQuestion",
+        "qo_Questionnaire_qo_hasOrderedSection",
+        "qo_Questionnaire_dcterms_created",
+        "qo_Questionnaire_dcterms_modified",
+        "qo_Questionnaire_dcterms_creator",
+        "qo_Questionnaire_dcterms_isPartOf",
+        "qo_Questionnaire_fhir_status"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://ns.faqir.org/q-o#Questionnaire",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoQuestionnaireStatus",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionnaireStatus",
+      "description": "The status of the questionnaire, indicating whether it is \tdraft, active, retired or unknown.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:QuestionnaireStatus"
+      ],
+      "is_a": "SarefPropertyValue",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "prov_atTime",
+        "saref_isValueOfProperty",
+        "fhir_valueReference",
+        "sarefPropertyValue__fhir_valueCodeableConcept",
+        "sarefPropertyValue__fhir_valueRange",
+        "sarefPropertyValue__fhir_valueRatio",
+        "sarefPropertyValue__fhir_valuePeriod",
+        "sarefPropertyValue__fhir_valueAttachement",
+        "qo_QuestionnaireStatus_saref_hasValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://ns.faqir.org/q-o#QuestionnaireStatus",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoOrderedSection",
+      "definition_uri": "https://ns.faqir.org/q-o#QoOrderedSection",
+      "description": "Section's position within a specific questionnaire or section.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:OrderedSection"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_section",
+        "qo_OrderedSection_qo_order"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://ns.faqir.org/q-o#OrderedSection",
+      "unique_keys": [
+        {
+          "unique_key_name": "unique_section_order_per_questionnaire",
+          "unique_key_slots": [
+            "qo_order"
+          ],
+          "description": "Section order values must be unique",
+          "@type": "UniqueKey"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoSection",
+      "definition_uri": "https://ns.faqir.org/q-o#QoSection",
+      "description": "A section of questions in the questionnaire.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:Section"
+      ],
+      "narrow_mappings": [
+        "fhir:Questionnaire.item.where(type='group')"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_Section_qo_hasOrderedQuestion",
+        "qo_Section_qo_hasOrderedSection",
+        "qo_Section_dcterms_creator"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://ns.faqir.org/q-o#Section",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoOrderedQuestion",
+      "definition_uri": "https://ns.faqir.org/q-o#QoOrderedQuestion",
+      "description": "Question's position within a specific questionnaire or section.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:OrderedQuestion"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_question",
+        "qo_hardValidity",
+        "qo_temporalValidity",
+        "qo_conditionalValidity",
+        "qo_OrderedQuestion_qo_order",
+        "qoOrderedQuestion__qo_required"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "qo_required",
+          "description": "Whether the question can be left un-answered (false) or an answer is mandatory (true).",
+          "narrow_mappings": [
+            "fhir:Questionnaire.item.required"
+          ],
+          "slot_uri": "qo:required",
+          "range": "boolean",
+          "required": true,
+          "minimum_value": 1,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://ns.faqir.org/q-o#OrderedQuestion",
+      "unique_keys": [
+        {
+          "unique_key_name": "unique_question_order_per_questionnaire",
+          "unique_key_slots": [
+            "qo_order"
+          ],
+          "description": "Question order values must be unique",
+          "@type": "UniqueKey"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoQuestion",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestion",
+      "description": "A question.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:Question"
+      ],
+      "narrow_mappings": [
+        "fhir:Questionnaire.item.where(type='question')"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_multivalued",
+        "qoQuestion__qo_tag",
+        "qoQuestion__qo_numericalParams",
+        "qoQuestion__qo_codingParams",
+        "qoQuestion__qo_codingOrdinal",
+        "qoQuestion__qo_intervalParams",
+        "qo_Question_prov_type",
+        "qo_Question_dcterms_creator"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "qo_tag",
+          "description": "Internal English identifier, e.g., 'q_pain_level'.",
+          "slot_uri": "qo:tag",
+          "range": "string",
+          "required": true,
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "qo_numericalParams",
+          "description": "Unit and Precision limiting the quantitative answer for the question.",
+          "slot_uri": "qo:numericalParams",
+          "range": "NumericalParams",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "qo_codingParams",
+          "description": "Code and Display of each option offered as answer to the choice or open-choice question.",
+          "slot_uri": "qo:codingParams",
+          "range": "ValueCoding",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "qo_codingOrdinal",
+          "description": "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).",
+          "slot_uri": "qo:codingOrdinal",
+          "ifabsent": "False",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "qo_intervalParams",
+          "description": "Minimum and Maximum limiting the range the answer must be in for the question.",
+          "slot_uri": "qo:intervalParams",
+          "range": "IntervalParams",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://ns.faqir.org/q-o#Question",
+      "rules": [
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "prov_type",
+                "equals_string_in": [
+                  "choice",
+                  "openChoice"
+                ],
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "qo_codingParams",
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "If prov_type is 'choice' or 'openChoice', codingParams is required.",
+          "@type": "ClassRule"
+        },
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "prov_type",
+                "equals_string_in": [
+                  "numberInterval"
+                ],
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "qo_numericalParams",
+                "required": true,
+                "@type": "SlotDefinition"
+              },
+              {
+                "name": "qo_intervalParams",
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "If prov_type is 'numberInterval', numericalParams and intervalParams are required.",
+          "@type": "ClassRule"
+        },
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "prov_type",
+                "equals_string_in": [
+                  "decimal"
+                ],
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "qo_numericalParams",
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "If prov_type is 'decimal', numericalParams is required.",
+          "@type": "ClassRule"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoQuestionnaireResponse",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionnaireResponse",
+      "description": "A response to a questionnaire (collection of answers).",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:QuestionnaireResponse"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_type",
+        "dcterms_hasPart",
+        "prov_generatedAtTime",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_responds",
+        "qo_hasAnswer",
+        "qo_QuestionnaireResponse_dcterms_created",
+        "qo_QuestionnaireResponse_dcterms_modified",
+        "qo_QuestionnaireResponse_dcterms_isPartOf",
+        "qo_QuestionnaireResponse_prov_wasAttributedTo",
+        "qo_QuestionnaireResponse_fhir_status"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://ns.faqir.org/q-o#QuestionnaireResponse",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoQuestionnaireResponseStatus",
+      "definition_uri": "https://ns.faqir.org/q-o#QoQuestionnaireResponseStatus",
+      "description": "The status of the questionnaire response, indicating whether it is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:QuestionnaireResponseStatus"
+      ],
+      "is_a": "SarefPropertyValue",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "prov_generatedAtTime",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "prov_atTime",
+        "saref_isValueOfProperty",
+        "fhir_valueReference",
+        "sarefPropertyValue__fhir_valueCodeableConcept",
+        "sarefPropertyValue__fhir_valueRange",
+        "sarefPropertyValue__fhir_valueRatio",
+        "sarefPropertyValue__fhir_valuePeriod",
+        "sarefPropertyValue__fhir_valueAttachement",
+        "qo_QuestionnaireResponseStatus_saref_hasValue"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://ns.faqir.org/q-o#QuestionnaireResponseStatus",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QoAnswer",
+      "definition_uri": "https://ns.faqir.org/q-o#QoAnswer",
+      "description": "Answer in the questionnaire response.",
+      "from_schema": "https://ns.faqir.org/q-o",
+      "mappings": [
+        "qo:Answer",
+        "fhir:QuestionnaireResponse.item.answer"
+      ],
+      "is_a": "ProvEntity",
+      "slots": [
+        "owl_versionInfo",
+        "rdfs_label",
+        "rdfs_comment",
+        "prov_hadPrimarySource",
+        "prov_wasGeneratedBy",
+        "prov_wasAttributedTo",
+        "dcterms_created",
+        "dcterms_modified",
+        "prov_type",
+        "dcterms_hasPart",
+        "dcterms_isPartOf",
+        "fhir_status",
+        "dcterms_creator",
+        "saref_hasProperty",
+        "saref_hasPropertyValue",
+        "qo_toQuestion",
+        "qoAnswer__qo_answerValue",
+        "qoAnswer__qo_isEmpty",
+        "qo_Answer_prov_generatedAtTime"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "qo_answerValue",
+          "description": "The value of the answer to: a decimal or numberInterval type of question, which is a numeric value; a choice, openChoice or text type of question, which is a stringValue; dateTime type of question, which is a datetime value.",
+          "narrow_mappings": [
+            "fhir:QuestionnaireResponse.item.answer"
+          ],
+          "slot_uri": "qo:answerValue",
+          "any_of": [
+            {
+              "range": "float",
+              "@type": "AnonymousSlotExpression"
+            },
+            {
+              "range": "string",
+              "@type": "AnonymousSlotExpression"
+            },
+            {
+              "range": "datetime",
+              "@type": "AnonymousSlotExpression"
+            }
+          ],
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "qo_isEmpty",
+          "description": "True if the answer is intentionally left empty.",
+          "slot_uri": "qo:isEmpty",
+          "ifabsent": "False",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://ns.faqir.org/q-o#Answer",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "questionnaire_ontology.yaml",
+  "source_file_date": "2026-09-28T17:48:01",
+  "source_file_size": 41571,
+  "generation_date": "2026-09-28T17:50:41",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "tmp/jsonld/questionnaire_ontology.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://ns.faqir.org/q-o#"
+    }
+  ]
+}

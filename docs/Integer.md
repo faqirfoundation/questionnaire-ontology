@@ -32,7 +32,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:integer |
-| native | https://w3id.org/faqir/datamodel/integer |
+| native | qo:integer |
 | exact | schema:Integer |
 
 

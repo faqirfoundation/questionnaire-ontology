@@ -1,9 +1,0 @@
-@prefix faqir: <https://faqir.org/datamodel/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/entities/organization/> .
-
-<https://televitas.com/> a faqir:Organization ;
-    faqir:organizationAuthorsQuestion <https://pods.faqir.org/86904b4a-989b-4e6e-8c0e-16714f18eeb8> ;
-    faqir:organizationAuthorsQuestionnaire <https://pods.faqir.org/e4c9de20-7834-4c7e-b97c-f58b296eaf07> ;
-    ns1:organizationLabel "Televitas" ;
-    ns1:organizationType <https://www.hl7.org/fhir/organization-type#bus> .
-

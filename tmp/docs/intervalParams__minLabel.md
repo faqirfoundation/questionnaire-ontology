@@ -3,7 +3,7 @@
 
 The label for the minimum value of the interval.
 
-URI: [datamodel:intervalParams__minLabel](https://w3id.org/faqir/datamodel/intervalParams__minLabel)
+URI: [qo:intervalParams__minLabel](https://ns.faqir.org/q-o#intervalParams__minLabel)
 
 
 ## Domain and Range
@@ -19,3 +19,9 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 ## Used by
 
  * [IntervalParams](IntervalParams.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | phro:minLabel |

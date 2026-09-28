@@ -32,7 +32,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:string |
-| native | https://w3id.org/faqir/datamodel/string |
+| native | qo:string |
 | exact | schema:Text |
 
 

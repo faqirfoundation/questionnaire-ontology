@@ -9,7 +9,7 @@ _The label for the maximum value of the interval._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/maxLabel](https://w3id.org/faqir/datamodel/maxLabel)
+URI: [phro:maxLabel](https://ns.faqir.org/phr-o#maxLabel)
 Alias: maxLabel
 
 <!-- no inheritance hierarchy -->
@@ -49,7 +49,7 @@ Alias: maxLabel
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -58,8 +58,8 @@ Alias: maxLabel
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/maxLabel |
-| native | https://w3id.org/faqir/datamodel/maxLabel |
+| self | phro:maxLabel |
+| native | qo:maxLabel |
 
 
 
@@ -70,8 +70,9 @@ Alias: maxLabel
 ```yaml
 name: maxLabel
 description: The label for the maximum value of the interval.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: phro:maxLabel
 alias: maxLabel
 owner: IntervalParams
 domain_of:

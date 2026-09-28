@@ -3,15 +3,10 @@
 
 A date and time value, typically in ISO 8601 format.
 
-URI: [datamodel:ValueDateTime](https://w3id.org/faqir/datamodel/ValueDateTime)
+URI: [qo:ValueDateTime](https://ns.faqir.org/q-o#ValueDateTime)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Answer]++-%20answerValueDateTime%200..1>[ValueDateTime&#124;dateTimeValue:datetime%20%3F],[ScoreParameter]++-%20scoreParameterValueDateTime%200..1>[ValueDateTime],[ScoreParameter],[Answer])](https://yuml.me/diagram/nofunky;dir:TB/class/[Answer]++-%20answerValueDateTime%200..1>[ValueDateTime&#124;dateTimeValue:datetime%20%3F],[ScoreParameter]++-%20scoreParameterValueDateTime%200..1>[ValueDateTime],[ScoreParameter],[Answer])
-
-## Referenced by Class
-
- *  **None** *[➞answerValueDateTime](answer__answerValueDateTime.md)*  <sub>0..1</sub>  **[ValueDateTime](ValueDateTime.md)**
- *  **None** *[➞scoreParameterValueDateTime](scoreParameter__scoreParameterValueDateTime.md)*  <sub>0..1</sub>  **[ValueDateTime](ValueDateTime.md)**
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueDateTime&#124;dateTimeValue:datetime%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[ValueDateTime&#124;dateTimeValue:datetime%20%3F])
 
 ## Attributes
 
@@ -26,5 +21,4 @@ URI: [datamodel:ValueDateTime](https://w3id.org/faqir/datamodel/ValueDateTime)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | faqir:ValueDateTime |
-|  | | xsd:dateTime |
+| **Mappings:** | | phro:ValueDateTime |

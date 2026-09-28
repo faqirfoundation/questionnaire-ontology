@@ -42,7 +42,7 @@ gen_ts_args := env_var_or_default("LINKML_GENERATORS_TYPESCRIPT_ARGS", "")
 # Directory variables
 src := "src"
 dest := "project"
-pymodel := src / schema_name / "datamodel"
+pymodel := src / schema_name / "questionnaire_ontology"
 docdir := "docs"
 exampledir := "examples"
 
@@ -157,7 +157,7 @@ _gendoc: _ensure_docdir
 # Generate python classes
 _gen-python: _generate_python_classes
     linkml generate python \
-        src/questionnaire_ontology/schema/datamodel.yaml \
+        src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
         > src/questionnaire_ontology/datamodel/datamodel.py    
 
 # Build docs and run test server
@@ -203,7 +203,7 @@ _ensure_docdir:
 
 _generate_python_classes:
     -mkdir -p src/questionnaire_ontology/schema
-    -mkdir -p src/questionnaire_ontology/datamodel
+    -mkdir -p src/questionnaire_ontology/questionnaire_ontology
 
 _ensure_examples_output:
     -mkdir -p examples/output

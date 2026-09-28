@@ -3,12 +3,12 @@
 
 The unit of measure for the quantitative value, from UCUM standard.
 
-URI: [datamodel:numericalParams__numericalUnit](https://w3id.org/faqir/datamodel/numericalParams__numericalUnit)
+URI: [qo:numericalParams__numericalUnit](https://ns.faqir.org/q-o#numericalParams__numericalUnit)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [UnitOfMeasure](UnitOfMeasure.md)
+None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 

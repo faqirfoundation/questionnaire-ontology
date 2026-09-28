@@ -1,0 +1,487 @@
+# metamodel_version: 1.7.0
+# version: 2.0.0
+enum QoQuestionnaireResponseStatusEnum
+  {
+    in_progress
+    completed
+    amended
+    entered_in_error
+    stopped
+  }
+
+enum QoQuestionnaireStatusEnum
+  {
+    draft
+    active
+    retired
+    unknown
+  }
+
+enum QoQuestionType
+  {
+    choice
+    openChoice
+    numberInterval
+    decimal
+    time
+    dateTime
+    text
+  }
+
+type FhirProcedure
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type FhirReferenceRange
+  {
+    lowRange: QuantityValue
+    highRange: QuantityValue
+    normalValue: [QuantityValue]
+  }
+
+type FhirValueRatio
+  {
+    numerator: QuantityValue!
+    denominator: QuantityValue!
+  }
+
+type FoafAgent
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type FoafPerson
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type IntervalParams
+  {
+    minValue: Float
+    minLabel: String
+    maxValue: Float
+    maxLabel: String
+  }
+
+type NumericalParams
+  {
+    numericalUnit: Uriorcurie
+    numericalPrecision: Integer
+  }
+
+type OwlThing
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+  }
+
+type ProvAttribution
+  {
+  }
+
+type ProvEntity
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type ProvOrganization
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type QoAnswer
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoToQuestion: QoQuestion!
+    qoAnswerValue: String
+    qoIsEmpty: Boolean
+    provGeneratedAtTime: [Datetime]!
+  }
+
+type QoOrderedQuestion
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoQuestion: QoQuestion!
+    qoHardValidity: Boolean
+    qoTemporalValidity: TimeDuration!
+    qoConditionalValidity: String!
+    qoOrder: Integer!
+    qoRequired: Boolean!
+  }
+
+type QoOrderedSection
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoSection: QoSection!
+    qoOrder: Integer!
+  }
+
+type QoQuestion
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoMultivalued: Boolean
+    qoTag: [String]!
+    qoNumericalParams: NumericalParams
+    qoCodingParams: [ValueCoding]
+    qoCodingOrdinal: Boolean
+    qoIntervalParams: IntervalParams
+    provType: [QoQuestionType]!
+    dctermsCreator: [ProvOrganization]!
+  }
+
+type QoQuestionnaire
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoHasOrderedQuestion: [QoOrderedQuestion]
+    qoHasOrderedSection: [QoOrderedSection]
+    dctermsCreated: Datetime!
+    dctermsModified: Datetime!
+    dctermsCreator: [ProvOrganization]!
+    dctermsIsPartOf: [SuloProcess]
+    fhirStatus: [QoQuestionnaireStatus]!
+  }
+
+type QoQuestionnaireResponse
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoResponds: QoQuestionnaire!
+    qoHasAnswer: [QoAnswer]!
+    dctermsCreated: Datetime!
+    dctermsModified: Datetime!
+    dctermsIsPartOf: [SuloProcess]
+    provWasAttributedTo: [FoafPerson]!
+    fhirStatus: [QoQuestionnaireResponseStatus]!
+  }
+
+type QoQuestionnaireResponseStatus
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    provAtTime: Datetime
+    sarefIsValueOfProperty: SarefProperty
+    fhirValueReference: Uriorcurie
+    fhirValueCodeableConcept: ValueCoding
+    fhirValueRange: FhirReferenceRange
+    fhirValueRatio: FhirValueRatio
+    fhirValuePeriod: TimeInterval
+    fhirValueAttachement: Uriorcurie
+    sarefHasValue: QoQuestionnaireResponseStatusEnum!
+  }
+
+type QoQuestionnaireStatus
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    provAtTime: Datetime
+    sarefIsValueOfProperty: SarefProperty
+    fhirValueReference: Uriorcurie
+    fhirValueCodeableConcept: ValueCoding
+    fhirValueRange: FhirReferenceRange
+    fhirValueRatio: FhirValueRatio
+    fhirValuePeriod: TimeInterval
+    fhirValueAttachement: Uriorcurie
+    sarefHasValue: QoQuestionnaireStatusEnum!
+  }
+
+type QoSection
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    qoHasOrderedQuestion: [QoOrderedQuestion]
+    qoHasOrderedSection: [QoOrderedSection]
+    dctermsCreator: [ProvOrganization]!
+  }
+
+type QuantityValue
+  {
+    sarefIsMeasuredIn: Uriorcurie
+    sarefHasValue: String
+  }
+
+type S4ehawActivity
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type SarefProperty
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    fhirReferenceRange: FhirReferenceRange
+  }
+
+type SarefPropertyValue
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provWasAttributedTo: [FoafAgent]
+    dctermsCreated: Datetime
+    dctermsModified: Datetime
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+    provAtTime: Datetime
+    sarefHasValue: String
+    sarefIsValueOfProperty: SarefProperty
+    fhirValueReference: Uriorcurie
+    fhirValueCodeableConcept: ValueCoding
+    fhirValueRange: FhirReferenceRange
+    fhirValueRatio: FhirValueRatio
+    fhirValuePeriod: TimeInterval
+    fhirValueAttachement: Uriorcurie
+  }
+
+type SuloProcess
+  {
+    owlVersionInfo: String
+    rdfsLabel: [String]!
+    rdfsComment: [String]!
+    provHadPrimarySource: [ProvEntity]
+    provWasGeneratedBy: [SuloProcess]
+    provType: [Uriorcurie]
+    dctermsHasPart: [OwlThing]
+    dctermsIsPartOf: [OwlThing]
+    provGeneratedAtTime: [Datetime]
+    fhirStatus: [SarefPropertyValue]
+    dctermsCreator: [FoafAgent]
+    sarefHasProperty: [SarefProperty]
+    sarefHasPropertyValue: [SarefPropertyValue]
+  }
+
+type TimeDuration
+  {
+    sarefHasValue: String
+    sarefIsMeasuredIn: Uriorcurie
+  }
+
+type TimeInterval
+  {
+    provStartedAtTime: Datetime
+    provEndedAtTime: Datetime
+  }
+
+type ValueCoding
+  {
+    code: String!
+    display: String!
+  }
+

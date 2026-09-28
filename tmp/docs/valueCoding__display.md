@@ -1,9 +1,9 @@
 
 # Slot: display
 
-The human-readable display text for the code (e.g. code '1' for display 'Yes').
+The human-readable display text for the code (e.g. code '1' for value 'Yes').
 
-URI: [datamodel:valueCoding__display](https://w3id.org/faqir/datamodel/valueCoding__display)
+URI: [qo:valueCoding__display](https://ns.faqir.org/q-o#valueCoding__display)
 
 
 ## Domain and Range
@@ -19,3 +19,9 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [ValueCoding](ValueCoding.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | fhir:display |

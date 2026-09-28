@@ -32,7 +32,9 @@ Alias: numericalUnit
 
 ## Properties
 
-* Range: [UnitOfMeasure](UnitOfMeasure.md)
+* Range: [Uriorcurie](Uriorcurie.md)
+
+* Regex pattern: `^ucum:`
 
 
 
@@ -49,7 +51,7 @@ Alias: numericalUnit
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -59,7 +61,7 @@ Alias: numericalUnit
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | ucum:units |
-| native | https://w3id.org/faqir/datamodel/numericalUnit |
+| native | qo:numericalUnit |
 
 
 
@@ -70,15 +72,16 @@ Alias: numericalUnit
 ```yaml
 name: numericalUnit
 description: The unit of measure for the quantitative value, from UCUM standard.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: ucum:units
 alias: numericalUnit
 owner: NumericalParams
 domain_of:
 - NumericalParams
-range: UnitOfMeasure
+range: uriorcurie
 required: false
+pattern: '^ucum:'
 
 ```
 </details>

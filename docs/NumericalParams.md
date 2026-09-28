@@ -9,7 +9,7 @@ _Parameters for quantitative values, including unit and precision._
 
 
 
-URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
+URI: [phro:NumericalParams](https://ns.faqir.org/phr-o#NumericalParams)
 
 
 
@@ -24,15 +24,6 @@ URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
         
       NumericalParams : numericalUnit
         
-          
-    
-        
-        
-        NumericalParams --> "0..1" UnitOfMeasure : numericalUnit
-        click UnitOfMeasure href "../UnitOfMeasure"
-    
-
-        
       
 ```
 
@@ -46,7 +37,7 @@ URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [numericalUnit](numericalUnit.md) | 0..1 <br/> [UnitOfMeasure](UnitOfMeasure.md) | The unit of measure for the quantitative value, from UCUM standard | direct |
+| [numericalUnit](numericalUnit.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The unit of measure for the quantitative value, from UCUM standard | direct |
 | [numericalPrecision](numericalPrecision.md) | 0..1 <br/> [Integer](Integer.md) | The precision of the quantitative value, e | direct |
 
 
@@ -57,7 +48,7 @@ URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Question](Question.md) | [questionNumericalParams](questionNumericalParams.md) | range | [NumericalParams](NumericalParams.md) |
+| [QoQuestion](QoQuestion.md) | [qo_numericalParams](qo_numericalParams.md) | range | [NumericalParams](NumericalParams.md) |
 
 
 
@@ -75,7 +66,7 @@ URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -84,8 +75,8 @@ URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | faqir:NumericalParams |
-| native | https://w3id.org/faqir/datamodel/NumericalParams |
+| self | phro:NumericalParams |
+| native | qo:NumericalParams |
 
 
 
@@ -103,29 +94,31 @@ URI: [faqir:NumericalParams](https://faqir.org/datamodel/NumericalParams)
 ```yaml
 name: NumericalParams
 description: Parameters for quantitative values, including unit and precision.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 attributes:
   numericalUnit:
     name: numericalUnit
     description: The unit of measure for the quantitative value, from UCUM standard.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: ucum:units
     domain_of:
     - NumericalParams
-    range: UnitOfMeasure
+    range: uriorcurie
     required: false
+    pattern: '^ucum:'
   numericalPrecision:
     name: numericalPrecision
     description: The precision of the quantitative value, e.g. number of decimal places.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:precision
     domain_of:
     - NumericalParams
     range: integer
     required: false
     minimum_value: 0
-class_uri: faqir:NumericalParams
+class_uri: phro:NumericalParams
 
 ```
 </details>
@@ -136,25 +129,27 @@ class_uri: faqir:NumericalParams
 ```yaml
 name: NumericalParams
 description: Parameters for quantitative values, including unit and precision.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 attributes:
   numericalUnit:
     name: numericalUnit
     description: The unit of measure for the quantitative value, from UCUM standard.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: ucum:units
     alias: numericalUnit
     owner: NumericalParams
     domain_of:
     - NumericalParams
-    range: UnitOfMeasure
+    range: uriorcurie
     required: false
+    pattern: '^ucum:'
   numericalPrecision:
     name: numericalPrecision
     description: The precision of the quantitative value, e.g. number of decimal places.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:precision
     alias: numericalPrecision
     owner: NumericalParams
     domain_of:
@@ -162,7 +157,7 @@ attributes:
     range: integer
     required: false
     minimum_value: 0
-class_uri: faqir:NumericalParams
+class_uri: phro:NumericalParams
 
 ```
 </details>

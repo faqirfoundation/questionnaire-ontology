@@ -9,7 +9,7 @@ _The precision of the quantitative value, e.g. number of decimal places._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/numericalPrecision](https://w3id.org/faqir/datamodel/numericalPrecision)
+URI: [phro:precision](https://ns.faqir.org/phr-o#precision)
 Alias: numericalPrecision
 
 <!-- no inheritance hierarchy -->
@@ -51,7 +51,7 @@ Alias: numericalPrecision
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -60,8 +60,8 @@ Alias: numericalPrecision
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/numericalPrecision |
-| native | https://w3id.org/faqir/datamodel/numericalPrecision |
+| self | phro:precision |
+| native | qo:numericalPrecision |
 
 
 
@@ -72,8 +72,9 @@ Alias: numericalPrecision
 ```yaml
 name: numericalPrecision
 description: The precision of the quantitative value, e.g. number of decimal places.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: phro:precision
 alias: numericalPrecision
 owner: NumericalParams
 domain_of:

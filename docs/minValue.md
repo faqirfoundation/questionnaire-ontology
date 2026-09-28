@@ -9,7 +9,7 @@ _The minimum value of the interval._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/minValue](https://w3id.org/faqir/datamodel/minValue)
+URI: [phro:minValue](https://ns.faqir.org/phr-o#minValue)
 Alias: minValue
 
 <!-- no inheritance hierarchy -->
@@ -34,8 +34,6 @@ Alias: minValue
 
 * Range: [Float](Float.md)
 
-* Required: True
-
 
 
 
@@ -51,7 +49,7 @@ Alias: minValue
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -60,8 +58,8 @@ Alias: minValue
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/minValue |
-| native | https://w3id.org/faqir/datamodel/minValue |
+| self | phro:minValue |
+| native | qo:minValue |
 
 
 
@@ -72,14 +70,15 @@ Alias: minValue
 ```yaml
 name: minValue
 description: The minimum value of the interval.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: phro:minValue
 alias: minValue
 owner: IntervalParams
 domain_of:
 - IntervalParams
 range: float
-required: true
+required: false
 
 ```
 </details>

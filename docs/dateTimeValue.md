@@ -9,7 +9,7 @@ _The date and time value in ISO 8601 format._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/dateTimeValue](https://w3id.org/faqir/datamodel/dateTimeValue)
+URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 Alias: dateTimeValue
 
 <!-- no inheritance hierarchy -->
@@ -49,7 +49,7 @@ Alias: dateTimeValue
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -58,8 +58,8 @@ Alias: dateTimeValue
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/dateTimeValue |
-| native | https://w3id.org/faqir/datamodel/dateTimeValue |
+| self | xsd:dateTime |
+| native | qo:dateTimeValue |
 
 
 
@@ -70,8 +70,9 @@ Alias: dateTimeValue
 ```yaml
 name: dateTimeValue
 description: The date and time value in ISO 8601 format.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: xsd:dateTime
 alias: dateTimeValue
 owner: ValueDateTime
 domain_of:

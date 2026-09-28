@@ -9,7 +9,7 @@ _The string value, which can be any text._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/stringValue](https://w3id.org/faqir/datamodel/stringValue)
+URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 Alias: stringValue
 
 <!-- no inheritance hierarchy -->
@@ -34,8 +34,6 @@ Alias: stringValue
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -51,7 +49,7 @@ Alias: stringValue
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -60,8 +58,8 @@ Alias: stringValue
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/stringValue |
-| native | https://w3id.org/faqir/datamodel/stringValue |
+| self | xsd:string |
+| native | qo:stringValue |
 
 
 
@@ -72,14 +70,14 @@ Alias: stringValue
 ```yaml
 name: stringValue
 description: The string value, which can be any text.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: xsd:string
 alias: stringValue
 owner: ValueString
 domain_of:
 - ValueString
 range: string
-required: true
 
 ```
 </details>

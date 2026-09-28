@@ -1,0 +1,3662 @@
+{
+    "$defs": {
+        "FhirProcedure": {
+            "additionalProperties": false,
+            "description": "An action that is being or was performed on an individual or entity",
+            "properties": {
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "FhirProcedure",
+            "type": "object"
+        },
+        "FhirReferenceRange": {
+            "additionalProperties": false,
+            "description": "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used.",
+            "properties": {
+                "highRange": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "High range, if relevant."
+                },
+                "lowRange": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Low range, if relevant."
+                },
+                "normalValue": {
+                    "description": "Normal value, if relevant.",
+                    "items": {
+                        "$ref": "#/$defs/QuantityValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FhirReferenceRange",
+            "type": "object"
+        },
+        "FhirValueRatio": {
+            "additionalProperties": false,
+            "description": "A ratio of two Quantity values - a numerator and a denominator",
+            "properties": {
+                "denominator": {
+                    "$ref": "#/$defs/QuantityValue"
+                },
+                "numerator": {
+                    "$ref": "#/$defs/QuantityValue"
+                }
+            },
+            "required": [
+                "numerator",
+                "denominator"
+            ],
+            "title": "FhirValueRatio",
+            "type": "object"
+        },
+        "FoafAgent": {
+            "additionalProperties": false,
+            "description": "An agent (eg. person, group, software or physical artifact).",
+            "properties": {
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "FoafAgent",
+            "type": "object"
+        },
+        "FoafPerson": {
+            "additionalProperties": false,
+            "description": "A person.",
+            "properties": {
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "FoafPerson",
+            "type": "object"
+        },
+        "IntervalParams": {
+            "additionalProperties": false,
+            "description": "Parameters for interval values, including minimum and maximum values.",
+            "properties": {
+                "maxLabel": {
+                    "description": "The label for the maximum value of the interval.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "maxValue": {
+                    "description": "The maximum value of the interval.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "minLabel": {
+                    "description": "The label for the minimum value of the interval.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "minValue": {
+                    "description": "The minimum value of the interval.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IntervalParams",
+            "type": "object"
+        },
+        "NumericalParams": {
+            "additionalProperties": false,
+            "description": "Parameters for quantitative values, including unit and precision.",
+            "properties": {
+                "numericalPrecision": {
+                    "description": "The precision of the quantitative value, e.g. number of decimal places.",
+                    "minimum": 0,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "numericalUnit": {
+                    "description": "The unit of measure for the quantitative value, from UCUM standard.",
+                    "pattern": "^ucum:",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "NumericalParams",
+            "type": "object"
+        },
+        "OwlThing": {
+            "additionalProperties": false,
+            "description": "This defines IOT as the set of OWL individuals.",
+            "properties": {
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "OwlThing",
+            "type": "object"
+        },
+        "ProvAttribution": {
+            "additionalProperties": false,
+            "description": "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ].",
+            "title": "ProvAttribution",
+            "type": "object"
+        },
+        "ProvEntity": {
+            "additionalProperties": false,
+            "description": "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "ProvEntity",
+            "type": "object"
+        },
+        "ProvOrganization": {
+            "additionalProperties": false,
+            "description": "An organization is a social or legal institution such as a company, society, etc.",
+            "properties": {
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "ProvOrganization",
+            "type": "object"
+        },
+        "QoAnswer": {
+            "additionalProperties": false,
+            "description": "Answer in the questionnaire response.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_answerValue": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The value of the answer to: a decimal or numberInterval type of question, which is a numeric value; a choice, openChoice or text type of question, which is a stringValue; dateTime type of question, which is a datetime value.",
+                    "type": "string"
+                },
+                "qo_isEmpty": {
+                    "description": "True if the answer is intentionally left empty.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "qo_toQuestion": {
+                    "$ref": "#/$defs/QoQuestion",
+                    "description": "The Question that this Answer is for."
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "qo_toQuestion",
+                "prov_generatedAtTime",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoAnswer",
+            "type": "object"
+        },
+        "QoOrderedQuestion": {
+            "additionalProperties": false,
+            "description": "Question's position within a specific questionnaire or section.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_conditionalValidity": {
+                    "description": "a condition (expressed in a machine-readable rule language) that would invalidate the answer earlier than the temporal duration, e.g., 'a documented smoking cessation intervention' invalidates the answer to 'Do you smoke?''.",
+                    "type": "string"
+                },
+                "qo_hardValidity": {
+                    "description": "if true, the temporal duration is a strict deadline; if false, it is an orientative guideline.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "qo_order": {
+                    "description": "Question position in the questionnaire or section (1-based index).",
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "qo_question": {
+                    "description": "Question indexed in this OrderedQuestion.",
+                    "items": {
+                        "$ref": "#/$defs/QoQuestion"
+                    },
+                    "type": "array"
+                },
+                "qo_required": {
+                    "description": "Whether the question can be left un-answered (false) or an answer is mandatory (true).",
+                    "minimum": 1,
+                    "type": "boolean"
+                },
+                "qo_temporalValidity": {
+                    "$ref": "#/$defs/TimeDuration",
+                    "description": "The time duration during which the answer is considered valid."
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "qo_question",
+                "qo_temporalValidity",
+                "qo_conditionalValidity",
+                "qo_order",
+                "qo_required",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoOrderedQuestion",
+            "type": "object"
+        },
+        "QoOrderedSection": {
+            "additionalProperties": false,
+            "description": "Section's position within a specific questionnaire or section.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_order": {
+                    "description": "Section position in the questionnaire or section (1-based index).",
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "qo_section": {
+                    "description": "Section indexed in this OrderedSection.",
+                    "items": {
+                        "$ref": "#/$defs/QoSection"
+                    },
+                    "type": "array"
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "qo_section",
+                "qo_order",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoOrderedSection",
+            "type": "object"
+        },
+        "QoQuestion": {
+            "additionalProperties": false,
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "prov_type": {
+                                "enum": [
+                                    "choice",
+                                    "openChoice"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "prov_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "qo_codingParams": {}
+                        },
+                        "required": [
+                            "qo_codingParams"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "prov_type": {
+                                "enum": [
+                                    "numberInterval"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "prov_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "qo_intervalParams": {},
+                            "qo_numericalParams": {}
+                        },
+                        "required": [
+                            "qo_numericalParams",
+                            "qo_intervalParams"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "prov_type": {
+                                "enum": [
+                                    "decimal"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "prov_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "qo_numericalParams": {}
+                        },
+                        "required": [
+                            "qo_numericalParams"
+                        ]
+                    }
+                }
+            ],
+            "description": "A question.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/ProvOrganization"
+                    },
+                    "type": "array"
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers.",
+                    "items": {
+                        "$ref": "#/$defs/QoQuestionType"
+                    },
+                    "type": "array"
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_codingOrdinal": {
+                    "description": "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical).",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "qo_codingParams": {
+                    "description": "Code and Display of each option offered as answer to the choice or open-choice question.",
+                    "items": {
+                        "$ref": "#/$defs/ValueCoding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_intervalParams": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/IntervalParams"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Minimum and Maximum limiting the range the answer must be in for the question."
+                },
+                "qo_multivalued": {
+                    "description": "Indicates whether this question allows multiple answers (true) or it's single answer (false).",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "qo_numericalParams": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/NumericalParams"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Unit and Precision limiting the quantitative answer for the question."
+                },
+                "qo_tag": {
+                    "description": "Internal English identifier, e.g., 'q_pain_level'.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "qo_tag",
+                "prov_type",
+                "dcterms_creator",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoQuestion",
+            "type": "object"
+        },
+        "QoQuestionType": {
+            "description": "The type of question asked in the questionnaire. It defines the expected answer format.",
+            "enum": [
+                "choice",
+                "openChoice",
+                "numberInterval",
+                "decimal",
+                "time",
+                "dateTime",
+                "text"
+            ],
+            "title": "QoQuestionType",
+            "type": "string"
+        },
+        "QoQuestionnaire": {
+            "additionalProperties": false,
+            "description": "A questionnaire that can be answered (collection of questions).",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the questionnaire was created.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "dcterms_creator": {
+                    "description": "The Organization that has created this Questionnaire.",
+                    "items": {
+                        "$ref": "#/$defs/ProvOrganization"
+                    },
+                    "type": "array"
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "Process this questionnaire is part of.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the questionnaire was last updated.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "fhir_status": {
+                    "$ref": "#/$defs/QoQuestionnaireStatus",
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state."
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_hasOrderedQuestion": {
+                    "description": "The Question that is part of this Questionnaire or Section, with their display order.",
+                    "items": {
+                        "$ref": "#/$defs/QoOrderedQuestion"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_hasOrderedSection": {
+                    "description": "The Section that is part of this Questionnaire or Section, with their display order.",
+                    "items": {
+                        "$ref": "#/$defs/QoOrderedSection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "dcterms_created",
+                "dcterms_modified",
+                "fhir_status",
+                "dcterms_creator",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoQuestionnaire",
+            "type": "object"
+        },
+        "QoQuestionnaireResponse": {
+            "additionalProperties": false,
+            "description": "A response to a questionnaire (collection of answers).",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished).",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "Process this questionnaire response instance is part of.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the questionnaire response was last updated.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "fhir_status": {
+                    "$ref": "#/$defs/QoQuestionnaireResponseStatus",
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state."
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "$ref": "#/$defs/FoafPerson",
+                    "description": "Attribution is the ascribing of an entity to an agent."
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_hasAnswer": {
+                    "description": "The Answer that is part of this QuestionnaireResponse.",
+                    "items": {
+                        "$ref": "#/$defs/QoAnswer"
+                    },
+                    "type": "array"
+                },
+                "qo_responds": {
+                    "$ref": "#/$defs/QoQuestionnaire",
+                    "description": "The Questionnaire that this QuestionnaireResponse is for."
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "qo_responds",
+                "qo_hasAnswer",
+                "prov_wasAttributedTo",
+                "dcterms_created",
+                "dcterms_modified",
+                "fhir_status",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoQuestionnaireResponse",
+            "type": "object"
+        },
+        "QoQuestionnaireResponseStatus": {
+            "additionalProperties": false,
+            "description": "The status of the questionnaire response, indicating whether it is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_valueAttachement": {
+                    "description": "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_valueCodeableConcept": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueCoding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data."
+                },
+                "fhir_valuePeriod": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TimeInterval"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')."
+                },
+                "fhir_valueRange": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirReferenceRange"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A set of ordered Quantity values defined by a low and high limit."
+                },
+                "fhir_valueRatio": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirValueRatio"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio."
+                },
+                "fhir_valueReference": {
+                    "description": "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_atTime": {
+                    "description": "The time at which an InstantaneousEvent occurred.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasValue": {
+                    "$ref": "#/$defs/QoQuestionnaireResponseStatusEnum",
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The status of the questionnaire response, indicating whether it is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+                },
+                "saref_isValueOfProperty": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SarefProperty"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Links a property value to the property or property of interest it is a value of."
+                }
+            },
+            "required": [
+                "saref_hasValue",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoQuestionnaireResponseStatus",
+            "type": "object"
+        },
+        "QoQuestionnaireResponseStatusEnum": {
+            "description": "The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.",
+            "enum": [
+                "in_progress",
+                "completed",
+                "amended",
+                "entered_in_error",
+                "stopped"
+            ],
+            "title": "QoQuestionnaireResponseStatusEnum",
+            "type": "string"
+        },
+        "QoQuestionnaireStatus": {
+            "additionalProperties": false,
+            "description": "The status of the questionnaire, indicating whether it is \tdraft, active, retired or unknown.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_valueAttachement": {
+                    "description": "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_valueCodeableConcept": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueCoding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data."
+                },
+                "fhir_valuePeriod": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TimeInterval"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')."
+                },
+                "fhir_valueRange": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirReferenceRange"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A set of ordered Quantity values defined by a low and high limit."
+                },
+                "fhir_valueRatio": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirValueRatio"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio."
+                },
+                "fhir_valueReference": {
+                    "description": "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_atTime": {
+                    "description": "The time at which an InstantaneousEvent occurred.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasValue": {
+                    "$ref": "#/$defs/QoQuestionnaireStatusEnum",
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The status of the questionnaire, indicating whether it is \tdraft, active, retired or unknown."
+                },
+                "saref_isValueOfProperty": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SarefProperty"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Links a property value to the property or property of interest it is a value of."
+                }
+            },
+            "required": [
+                "saref_hasValue",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoQuestionnaireStatus",
+            "type": "object"
+        },
+        "QoQuestionnaireStatusEnum": {
+            "description": "Questionnaires must have one of the following status (FHIR inspired):",
+            "enum": [
+                "draft",
+                "active",
+                "retired",
+                "unknown"
+            ],
+            "title": "QoQuestionnaireStatusEnum",
+            "type": "string"
+        },
+        "QoSection": {
+            "additionalProperties": false,
+            "description": "A section of questions in the questionnaire.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/ProvOrganization"
+                    },
+                    "type": "array"
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_hasOrderedQuestion": {
+                    "description": "The Question that is part of this Questionnaire or Section, with their display order.",
+                    "items": {
+                        "$ref": "#/$defs/QoOrderedQuestion"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "qo_hasOrderedSection": {
+                    "description": "The Section that is part of this Questionnaire or Section, with their display order.",
+                    "items": {
+                        "$ref": "#/$defs/QoOrderedSection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "dcterms_creator",
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "QoSection",
+            "type": "object"
+        },
+        "QuantityValue": {
+            "additionalProperties": false,
+            "description": "A measured amount (or an amount that can potentially be measured).",
+            "properties": {
+                "saref_hasValue": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes.",
+                    "type": "string"
+                },
+                "saref_isMeasuredIn": {
+                    "description": "A relationship identifying the unit of measure used for a certain entity.",
+                    "pattern": "^ucum",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "QuantityValue",
+            "type": "object"
+        },
+        "S4ehawActivity": {
+            "additionalProperties": false,
+            "description": "The activity of a patient/user, i.e. daily and nocturnal activities.",
+            "properties": {
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "S4ehawActivity",
+            "type": "object"
+        },
+        "SarefProperty": {
+            "additionalProperties": false,
+            "description": "Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A property can apply to different features of interest.",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_referenceRange": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirReferenceRange"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used."
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "SarefProperty",
+            "type": "object"
+        },
+        "SarefPropertyValue": {
+            "additionalProperties": false,
+            "description": "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty).",
+            "properties": {
+                "dcterms_created": {
+                    "description": "The date and time when the entity was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_modified": {
+                    "description": "The date and time when the entity was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_valueAttachement": {
+                    "description": "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fhir_valueCodeableConcept": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueCoding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data."
+                },
+                "fhir_valuePeriod": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TimeInterval"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')."
+                },
+                "fhir_valueRange": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirReferenceRange"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A set of ordered Quantity values defined by a low and high limit."
+                },
+                "fhir_valueRatio": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FhirValueRatio"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio."
+                },
+                "fhir_valueReference": {
+                    "description": "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_atTime": {
+                    "description": "The time at which an InstantaneousEvent occurred.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasAttributedTo": {
+                    "description": "Attribution is the ascribing of an entity to an agent.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasValue": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes.",
+                    "type": "string"
+                },
+                "saref_isValueOfProperty": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SarefProperty"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Links a property value to the property or property of interest it is a value of."
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "SarefPropertyValue",
+            "type": "object"
+        },
+        "SuloProcess": {
+            "additionalProperties": false,
+            "description": "a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process.",
+            "properties": {
+                "dcterms_creator": {
+                    "description": "An entity responsible for making the resource.",
+                    "items": {
+                        "$ref": "#/$defs/FoafAgent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_hasPart": {
+                    "description": "A related resource that is included either physically or logically in the described resource.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dcterms_isPartOf": {
+                    "description": "A related resource in which the described resource is physically or logically included.",
+                    "items": {
+                        "$ref": "#/$defs/OwlThing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "fhir_status": {
+                    "description": "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owl_versionInfo": {
+                    "description": "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_generatedAtTime": {
+                    "description": "The time at which an entity was completely created and is available for use.",
+                    "items": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_hadPrimarySource": {
+                    "description": "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain.",
+                    "items": {
+                        "$ref": "#/$defs/ProvEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_type": {
+                    "description": "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.",
+                    "items": {
+                        "$ref": "#/$defs/SuloProcess"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rdfs_comment": {
+                    "description": "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rdfs_label": {
+                    "description": "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "saref_hasProperty": {
+                    "description": "Links a feature kind or a feature of interest to one of its properties.",
+                    "items": {
+                        "$ref": "#/$defs/SarefProperty"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "saref_hasPropertyValue": {
+                    "description": "Links a feature kind, a feature of interest, or a property of interest, to a property value.",
+                    "items": {
+                        "$ref": "#/$defs/SarefPropertyValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "rdfs_label",
+                "rdfs_comment"
+            ],
+            "title": "SuloProcess",
+            "type": "object"
+        },
+        "TimeDuration": {
+            "additionalProperties": false,
+            "description": "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit",
+            "properties": {
+                "saref_hasValue": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes.",
+                    "type": "string"
+                },
+                "saref_isMeasuredIn": {
+                    "description": "A relationship identifying the unit of measure used for a certain entity.",
+                    "pattern": "^ucum",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TimeDuration",
+            "type": "object"
+        },
+        "TimeInterval": {
+            "additionalProperties": false,
+            "description": "A temporal entity with an extent or duration",
+            "properties": {
+                "prov_endedAtTime": {
+                    "description": "The time at which an activity ended.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_startedAtTime": {
+                    "description": "The time at which an activity started.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TimeInterval",
+            "type": "object"
+        },
+        "ValueCoding": {
+            "additionalProperties": false,
+            "description": "A coded value with a unique code for each display text, typically used for standardized questionnaires.",
+            "properties": {
+                "code": {
+                    "description": "The code representing the value (e.g. code '1' for value 'Yes').",
+                    "type": "string"
+                },
+                "display": {
+                    "description": "The human-readable display text for the code (e.g. code '1' for value 'Yes').",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code",
+                "display"
+            ],
+            "title": "ValueCoding",
+            "type": "object"
+        }
+    },
+    "$id": "https://ns.faqir.org/q-o",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "Questionnaire-Ontology",
+    "type": "object",
+    "version": "2.0.0"
+}

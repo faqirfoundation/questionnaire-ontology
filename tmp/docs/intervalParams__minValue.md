@@ -3,12 +3,12 @@
 
 The minimum value of the interval.
 
-URI: [datamodel:intervalParams__minValue](https://w3id.org/faqir/datamodel/intervalParams__minValue)
+URI: [qo:intervalParams__minValue](https://ns.faqir.org/q-o#intervalParams__minValue)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Float](types/Float.md)
+None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
 
 ## Parents
 
@@ -19,3 +19,9 @@ None &#8594;  <sub>1..1</sub> [Float](types/Float.md)
 ## Used by
 
  * [IntervalParams](IntervalParams.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | phro:minValue |

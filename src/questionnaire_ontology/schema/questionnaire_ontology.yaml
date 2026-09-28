@@ -1,0 +1,1086 @@
+---
+id: https://ns.faqir.org/q-o
+name: Questionnaire-Ontology
+title: Questionnaire-Ontology
+version: 2.0.0
+description: |-
+  FAQIR Questionnaire Ontology
+license: Apache Software License 2.0
+see_also:
+  - https://github.com/faqirfoundation/questionnaire-ontology
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  fhir: http://hl7.org/fhir/
+  foaf: http://xmlns.com/foaf/0.1/
+  omop: https://www.ohdsi.org/data-standardization/
+  openEHR: http://openehr.org/v1/StructureDefinition/
+  owl: http://www.w3.org/2002/07/owl#
+  phro: https://ns.faqir.org/phr-o#
+  prov: http://www.w3.org/ns/prov# 
+  qo: https://ns.faqir.org/q-o#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  saref: https://saref.etsi.org/core/
+  schema: http://schema.org/
+  snomed: http://snomed.info/id/
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: https://www.w3.org/TR/vocab-ssn/
+  sphn:	https://biomedit.ch/rdf/sphn-schema/sphn#
+  sulo: https://aidava-dev.github.io/sulo/ontospy/index.html
+  s4ehaw: https://saref.etsi.org/saref4ehaw/
+  time: http://www.w3.org/2006/time#
+  ucum: https://unitsofmeasure.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: qo
+
+default_range: string
+
+imports:
+  - https://w3id.org/linkml/types
+
+# =============================================================================
+# ENUMS
+# =============================================================================
+enums:
+  # =============================================================================
+  # Types
+  # =============================================================================
+  qo_QuestionType:
+    description: "The type of question asked in the questionnaire. It defines the expected answer format."
+    enum_uri: qo:QuestionType
+    permissible_values:
+      choice:
+        description: "A question with predefined options to choose from. Multiple choices may be allowed."
+        meaning: "http://hl7.org/fhir/item-type#coding"
+        mappings:
+          - fhir:QuestionnaireResponse.item.answer.valueCoding
+      openChoice:
+        description: "A question with predefined options to choose from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple choices may be allowed."
+        meaning: qo:open-choice
+        narrow_mappings:
+          - fhir:QuestionnaireResponse.item.answer.valueCoding
+      numberInterval:
+        description: "A question that expects a numeric answer in between a minimum and maximum value."
+        meaning: qo:numberInterval
+        narrow_mappings:
+          - fhir:QuestionnaireResponse.item.answer.valueInteger
+          - xsd:decimal  # xsd:decimal
+          - xsd:integer # xsd:integer
+          - xsd:float   # xsd:float
+      decimal:
+        description: "A question that expects a numerical answer, either integer or float."
+        meaning: "http://hl7.org/fhir/item-type#decimal"
+        narrow_mappings:
+          - xsd:decimal  # xsd:decimal
+          - xsd:integer # xsd:integer
+          - xsd:float   # xsd:float
+      time:
+        description: Question with a time (hour:minute:second) answer independent of date. (valueTime).
+        meaning: "http://hl7.org/fhir/item-type#time"
+        mappings:
+          - xsd:time  # xsd:time
+      dateTime:
+        description: "A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+zz:zz."
+        meaning: "http://hl7.org/fhir/item-type#dateTime"
+        mappings:
+          - xsd:dateTime  # xsd:dateTime
+      text:
+        description: "A question that expects a free text answer."
+        meaning: "http://hl7.org/fhir/item-type#string"
+        mappings:
+          - xsd:string  # xsd:string
+          - xsd2:text   # xsd:text
+
+  # =============================================================================
+  # Statuses
+  # =============================================================================
+  qo_QuestionnaireStatusEnum:
+    description: "Questionnaires must have one of the following status (FHIR inspired): " 
+    enum_uri: qo:QuestionnaireStatus
+    permissible_values:
+      draft: 
+        description: "This resource is still under development and is not yet considered to be ready for normal use."
+        meaning: fhir:resource-status-draft
+        mappings:
+          - fhir:codesystem-resource-status.html#resource-status-draft
+      active: 
+        description: "This resource is ready for normal use."
+        meaning: fhir:resource-status-active
+        mappings:
+          - fhir:codesystem-resource-status.html#resource-status-active
+      retired:
+        description: "This resource has been withdrawn or superseded and should no longer be used."
+        meaning: fhir:resource-status-retired
+        mappings:
+          - fhir:codesystem-resource-status.html#resource-status-inactive
+      unknown:
+        description: "The authoring system does not know which of the status values currently applies for this resource. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, it's just not known which one."
+        meaning: fhir:resource-status-unknown
+        mappings:
+          - fhir:codesystem-resource-status.html#resource-status-unknown
+
+  qo_QuestionnaireResponseStatusEnum:
+    description: "The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    enum_uri: qo:QuestionnaireResponseStatus
+    permissible_values:
+      in_progress:
+        description: "This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it."
+        meaning: fhir:questionnaire-answers-status-in-progress
+        mappings:
+          - fhir:valueset-resource-status.html
+      completed:
+        description: "This QuestionnaireResponse has been filled out with answers and the current content is regarded as definitive."
+        meaning: fhir:questionnaire-answers-status-completed
+        mappings:
+          - fhir:valueset-resource-status.html
+      amended:
+        description: "This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards."
+        meaning: fhir:questionnaire-answers-status-amended
+        mappings:
+          - fhir:valueset-resource-status.html
+      entered_in_error:
+        description: "This QuestionnaireResponse was entered in error and voided."
+        meaning: fhir:questionnaire-answers-status-entered-in-error
+        mappings:
+          - fhir:valueset-resource-status.html
+      stopped:
+        description: "This QuestionnaireResponse has been partially filled out with answers but has been abandoned. No subsequent changes can be made."
+        meaning: fhir:questionnaire-answers-status-stopped
+        mappings:
+          - fhir:valueset-resource-status.html
+
+# =============================================================================
+# CLASSES
+# =============================================================================
+classes:
+  # =============================================================================
+  # Upper Level Classes
+  # =============================================================================
+  owl_Thing:
+    description: "This defines IOT as the set of OWL individuals."
+    class_uri: owl:Thing
+    slots:
+      - owl_versionInfo
+      - rdfs_label
+      - rdfs_comment
+      #Provenance graph 
+      - prov_hadPrimarySource
+      - prov_wasGeneratedBy
+
+  prov_Attribution:
+    description: "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ]."
+    class_uri: prov:Attribution
+
+  # =============================================================================
+  # Agent Classes
+  # =============================================================================
+  foaf_Agent:
+    is_a: owl_Thing
+    description: "An agent (eg. person, group, software or physical artifact)."
+    class_uri: foaf:Agent
+    mappings:
+      - prov:Agent
+    slots:
+      - prov_type
+      - dcterms_hasPart
+      - dcterms_isPartOf 
+      - prov_generatedAtTime
+      - fhir_status
+      - dcterms_creator
+      - saref_hasProperty
+      - saref_hasPropertyValue
+      
+  foaf_Person:
+    description: "A person."
+    class_uri: foaf:Person
+    is_a: foaf_Agent
+    mappings:
+      - omop:Person
+      - fhir:Person
+      - schema:Person
+
+  prov_Organization:
+    description: "An organization is a social or legal institution such as a company, society, etc."
+    class_uri: prov:Organization
+    is_a: foaf_Agent
+    exact_mappings:
+      - fhir:Organization
+      - foaf:Organization
+      - openEHR:Organisation
+
+  # =============================================================================
+  # Temporal Classes
+  # =============================================================================
+  sulo_Process:
+    description: "a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process."
+    is_a: owl_Thing
+    class_uri: sulo:Process
+    mappings:
+      - prov:Activity
+    slots:
+      - prov_type
+      - dcterms_hasPart
+      - dcterms_isPartOf 
+      - prov_generatedAtTime
+      - fhir_status
+      - dcterms_creator
+      - saref_hasProperty
+      - saref_hasPropertyValue
+
+  s4ehaw_Activity:
+      description: "The activity of a patient/user, i.e. daily and nocturnal activities."
+      is_a: sulo_Process
+      class_uri: s4ehaw:activity
+
+  fhir_Procedure:
+    description: "An action that is being or was performed on an individual or entity"
+    class_uri: fhir:Procedure
+    is_a: sulo_Process
+
+  # =============================================================================
+  # Entity Classes
+  # =============================================================================
+  prov_Entity:
+    description: "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary."
+    is_a: owl_Thing
+    class_uri: prov:Entity
+    mappings:
+        - sulo:Object
+    slots:
+        - prov_wasAttributedTo
+        - dcterms_created
+        - dcterms_modified
+        - prov_type
+        - dcterms_hasPart
+        - dcterms_isPartOf 
+        - prov_generatedAtTime
+        - fhir_status
+        - dcterms_creator
+        - saref_hasProperty
+        - saref_hasPropertyValue
+          
+  saref_Property:
+      description: "Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A property can apply to different features of interest."
+      is_a: prov_Entity
+      class_uri: saref:Property
+      attributes: 
+          fhir_referenceRange:
+              description: "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used."
+              range: fhir_ReferenceRange
+              required: false
+              multivalued: false
+              slot_uri: fhir:Observation.referenceRange
+
+  saref_PropertyValue:
+      description: "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty)."
+      is_a: prov_Entity
+      class_uri: saref:PropertyValue
+      mappings:
+          - sosa:Result
+      attributes:
+          fhir_valueCodeableConcept:
+              description: "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data."
+              range: ValueCoding
+              required: false
+              multivalued: false
+              slot_uri: fhir:valueCodeableConcept
+          fhir_valueRange:
+              description: "A set of ordered Quantity values defined by a low and high limit."
+              range: fhir_ReferenceRange
+              required: false
+              multivalued: false
+              slot_uri: fhir:valueRange
+          fhir_valueRatio:
+              description: "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio."
+              range: fhir_ValueRatio
+              required: false
+              multivalued: false
+              slot_uri: fhir:valueRatio
+          fhir_valuePeriod:
+              description: "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')."
+              range: time_Interval
+              required: false
+              multivalued: false
+              slot_uri: fhir:valuePeriod
+          fhir_valueAttachement:
+              description: "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type."
+              range: uriorcurie
+              required: false
+              multivalued: false
+              slot_uri: fhir:valueAttachement
+      slots:
+          - prov_atTime
+          - saref_hasValue
+          - saref_isValueOfProperty
+          - fhir_valueReference
+
+
+  # =============================================================================
+  # Data Type Classes
+  # =============================================================================
+  QuantityValue:
+    description: "A measured amount (or an amount that can potentially be measured)."
+    class_uri: fhir:datatypes.Quantity
+    slots:
+      - saref_isMeasuredIn
+      - saref_hasValue
+
+  NumericalParams:
+    description: "Parameters for quantitative values, including unit and precision."
+    class_uri: phro:NumericalParams
+    attributes: 
+      numericalUnit:
+        description: "The unit of measure for the quantitative value, from UCUM standard."
+        range: uriorcurie
+        pattern: '^ucum:'
+        required: false
+        slot_uri: ucum:units
+      numericalPrecision:
+        description: "The precision of the quantitative value, e.g. number of decimal places."
+        range: integer
+        minimum_value: 0
+        required: false
+        slot_uri: phro:precision
+
+  ValueCoding:
+    description: "A coded value with a unique code for each display text, typically used for standardized questionnaires."
+    class_uri: fhir:Coding
+    attributes: 
+      code:
+        description: "The code representing the value (e.g. code '1' for value 'Yes')."
+        range: string
+        required: true
+        slot_uri: fhir:code
+      display:
+        description: "The human-readable display text for the code (e.g. code '1' for value 'Yes')."
+        range: string
+        required: true
+        slot_uri: fhir:display
+
+  fhir_ValueRatio:
+    description: "A ratio of two Quantity values - a numerator and a denominator"
+    class_uri: fhir:datatype.Ratio
+    attributes:
+      numerator:
+        range: QuantityValue
+        required: true
+        multivalued: false
+        slot_uri: fhir:numerator
+      denominator:
+        range: QuantityValue
+        required: true
+        multivalued: false
+        slot_uri: fhir:denominator
+
+  IntervalParams:
+    description: "Parameters for interval values, including minimum and maximum values."
+    class_uri: phro:IntervalParams
+    attributes:
+      minValue:
+        description: "The minimum value of the interval."
+        range: float 
+        required: false
+        slot_uri: phro:minValue
+      minLabel:
+        description: "The label for the minimum value of the interval."
+        range: string 
+        required: false
+        slot_uri: phro:minLabel
+      maxValue:
+        description: "The maximum value of the interval."
+        range: float 
+        required: false
+        slot_uri: phro:maxValue
+      maxLabel:
+        description: "The label for the maximum value of the interval."
+        range: string 
+        required: false
+        slot_uri: phro:maxLabel
+
+  time_Interval:
+    description: "A temporal entity with an extent or duration"
+    class_uri: time:Interval
+    slots:
+      - prov_startedAtTime
+      - prov_endedAtTime
+
+  time_Duration:
+    description: "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit"
+    class_uri: time:Duration
+    slots:
+      - saref_hasValue
+      - saref_isMeasuredIn
+
+  fhir_ReferenceRange:
+    description: "Guidance on how to interpret the value by comparison to a normal or 
+      recommended range. Multiple reference ranges are interpreted as an 'OR'. In other 
+      words, to represent two distinct target populations, two referenceRange elements 
+      would be used."
+    class_uri: fhir:Observation.referenceRange
+    attributes: 
+      lowRange:
+        description: "Low range, if relevant."
+        range: QuantityValue
+        required: false
+        multivalued: false
+        slot_uri: phro:lowRange
+      highRange:
+        description: "High range, if relevant."
+        range: QuantityValue
+        required: false
+        multivalued: false
+        slot_uri: phro:highRange
+      normalValue:
+        description: "Normal value, if relevant."
+        range: QuantityValue
+        required: false
+        multivalued: true
+        slot_uri: phro:normalValue
+
+  # =============================================================================
+  # QUESTIONNAIRE Classes
+  # =============================================================================
+  qo_Questionnaire:
+    description: "A questionnaire that can be answered (collection of questions)."
+    is_a: prov_Entity
+    class_uri: qo:Questionnaire
+    narrow_mappings:
+      - fhir:Questionnaire
+    slots:
+      - qo_hasOrderedQuestion 
+      - qo_hasOrderedSection
+    slot_usage:
+      dcterms_created:
+        description: "The date and time when the questionnaire was created."
+        required: true
+      dcterms_modified:
+        description: "The date and time when the questionnaire was last updated."
+        required: true
+        mappings:
+          - prov:endedAtTime
+          - fhir:Questionnaire.date
+      dcterms_creator:
+        description: "The Organization that has created this Questionnaire."
+        range: prov_Organization
+        required: true
+        multivalued: true
+        mappings:
+          - fhir:Questionnaire.author
+      dcterms_isPartOf:
+        description: "Process this questionnaire is part of." 
+        range: sulo_Process #fhir:Procedure, phro:CareProcess, sphn:HealthEncounter
+        required: false
+        multivalued: true 
+      fhir_status:
+        range: qo_QuestionnaireStatus
+        required: true
+        multivalued: false 
+      qo_hasOrderedQuestion:
+        domain: qo_Questionnaire
+      qo_hasOrderedSection:
+        domain: qo_Questionnaire
+
+  qo_QuestionnaireStatus:
+    description: "The status of the questionnaire, indicating whether it is 	draft, active, retired or unknown."
+    is_a: saref_PropertyValue
+    class_uri: qo:QuestionnaireStatus
+    slot_usage:
+      saref_hasValue: #attributes
+        description: "The status of the questionnaire, indicating whether it is 	draft, active, retired or unknown."
+        range: qo_QuestionnaireStatusEnum
+        required: true
+        narrow_mappings:
+          - fhir:Questionnaire.status
+
+  qo_OrderedSection:
+    description: "Section's position within a specific questionnaire or section."
+    is_a: prov_Entity
+    class_uri: qo:OrderedSection
+    slots:
+      - qo_section
+      - qo_order
+    slot_usage:
+      qo_order:
+        description: "Section position in the questionnaire or section (1-based index)."
+    unique_keys:
+      unique_section_order_per_questionnaire:  
+        description: "Section order values must be unique"
+        unique_key_slots:
+          - qo_order  
+
+  qo_Section:
+    description: "A section of questions in the questionnaire."
+    is_a: prov_Entity
+    class_uri: qo:Section
+    narrow_mappings:
+      - fhir:Questionnaire.item.where(type='group')
+    slots:
+      - qo_hasOrderedQuestion
+      - qo_hasOrderedSection
+    slot_usage:
+      dcterms_creator:
+        range: prov_Organization
+        required: true
+        mappings:
+          - fhir:Questionnaire.author
+      qo_hasOrderedQuestion:
+        domain: qo_Section
+      qo_hasOrderedSection:
+        domain: qo_Section
+        
+  qo_OrderedQuestion:
+    description: "Question's position within a specific questionnaire or section."
+    is_a: prov_Entity
+    class_uri: qo:OrderedQuestion
+    slot_usage:
+      qo_order:
+        description: "Question position in the questionnaire or section (1-based index)."
+    attributes:
+      qo_required:
+        range: boolean
+        description: "Whether the question can be left un-answered (false) or an answer is mandatory (true)."
+        required: true
+        minimum_value: 1
+        slot_uri: qo:required
+        narrow_mappings:
+          - fhir:Questionnaire.item.required
+    slots:
+      - qo_question
+      - qo_hardValidity
+      - qo_temporalValidity
+      - qo_conditionalValidity
+      - qo_order
+    unique_keys:
+      unique_question_order_per_questionnaire:  
+        description: "Question order values must be unique"
+        unique_key_slots:
+          - qo_order  
+
+  qo_Question:
+    description: "A question."
+    is_a: prov_Entity
+    class_uri: qo:Question
+    narrow_mappings:
+      - fhir:Questionnaire.item.where(type='question')
+    attributes:
+      qo_tag:
+        description: "Internal English identifier, e.g., 'q_pain_level'."
+        range: string
+        required: true
+        multivalued: true
+        slot_uri: qo:tag
+      qo_numericalParams: 
+        description: "Unit and Precision limiting the quantitative answer for the question."
+        range: NumericalParams
+        multivalued: false
+        required: false
+        slot_uri: qo:numericalParams
+      qo_codingParams:
+        description: "Code and Display of each option offered as answer to the choice or open-choice question."
+        range: ValueCoding
+        multivalued: true
+        required: false
+        slot_uri: qo:codingParams
+      qo_codingOrdinal:
+        description: "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical)."
+        range: boolean
+        ifabsent: false
+        slot_uri: qo:codingOrdinal
+      qo_intervalParams:
+        description: "Minimum and Maximum limiting the range the answer must be in for the question."
+        range: IntervalParams
+        multivalued: false
+        required: false
+        slot_uri: qo:intervalParams
+    slot_usage:
+      prov_type:
+        description: "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers."
+        range: qo_QuestionType
+        required: true
+      dcterms_creator:
+        range: prov_Organization
+        required: true
+    slots:
+      - qo_multivalued
+    rules:
+      - description: "If prov_type is 'choice' or 'openChoice', codingParams is required."
+        preconditions:
+          slot_conditions:
+            prov_type:
+              equals_string_in: ["choice", "openChoice"]  # Only validate if prov_type is 'choice' or 'openChoice'
+        postconditions:
+          slot_conditions:
+            qo_codingParams:
+              required: true
+      - description: "If prov_type is 'numberInterval', numericalParams and intervalParams are required."
+        preconditions:
+          slot_conditions:
+            prov_type:
+              equals_string_in: ["numberInterval"]  # Only validate if prov_type is 'numberInterval'
+        postconditions:
+          slot_conditions:
+            qo_numericalParams:
+              required: true
+            qo_intervalParams:
+              required: true
+      - description: "If prov_type is 'decimal', numericalParams is required."
+        preconditions:
+          slot_conditions:
+            prov_type:
+              equals_string_in: ["decimal"]  # Only validate if prov_type is 'decimal'
+        postconditions:
+          slot_conditions:
+            qo_numericalParams:
+              required: true
+
+  # =============================================================================
+  # QUESTIONNAIRE RESPONSE Classes
+  # =============================================================================
+  qo_QuestionnaireResponse:
+    description: "A response to a questionnaire (collection of answers)."
+    is_a: prov_Entity
+    class_uri: qo:QuestionnaireResponse
+    slot_usage:
+      dcterms_created:
+        description: "The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished)."
+        required: true
+        mappings:
+          - fhir:QuestionnaireResponse.authored
+      dcterms_modified:
+        description: "The date and time when the questionnaire response was last updated."
+        required: true
+        mappings:
+           - prov:endedAtTime
+      dcterms_isPartOf:
+        description: "Process this questionnaire response instance is part of." 
+        range: sulo_Process
+        required: false
+        multivalued: true 
+      prov_wasAttributedTo:
+        range: foaf_Person
+        required: true
+        multivalued: false 
+      fhir_status:
+        range: qo_QuestionnaireResponseStatus
+        required: true
+        multivalued: false 
+    slots:
+      - qo_responds
+      - qo_hasAnswer
+
+  qo_QuestionnaireResponseStatus:
+    description: "The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    is_a: saref_PropertyValue
+    class_uri: qo:QuestionnaireResponseStatus
+    slot_usage: #attributes
+      saref_hasValue: 
+        description: "The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+        range: qo_QuestionnaireResponseStatusEnum
+        required: true
+        multivalued: false
+        inlined: false
+        #slot_uri: saref:hasValue
+        narrow_mappings:
+          - fhir:QuestionnaireResponse.status
+
+  qo_Answer:
+    description: "Answer in the questionnaire response."
+    is_a: prov_Entity
+    class_uri: qo:Answer
+    mappings:
+      - fhir:QuestionnaireResponse.item.answer
+    attributes:
+      qo_answerValue:
+        description: "The value of the answer to: a decimal or numberInterval type of question, which is a numeric value; a choice, openChoice or text type of question, which is a stringValue; dateTime type of question, which is a datetime value."
+        any_of:
+          - range: float
+          - range: string
+          - range: datetime
+        multivalued: false 
+        required: false 
+        slot_uri: qo:answerValue
+        narrow_mappings:
+          - fhir:QuestionnaireResponse.item.answer 
+      qo_isEmpty:
+        description: "True if the answer is intentionally left empty."
+        range: boolean
+        ifabsent: false
+        slot_uri: qo:isEmpty
+    slots:
+      - qo_toQuestion
+    slot_usage:
+      prov_generatedAtTime:
+        required: true
+        multivalued: false
+
+# =============================================================================
+# SLOTS
+# =============================================================================
+slots:
+  # =============================================================================
+  # Common & Provenance Slots
+  # =============================================================================
+  rdfs_label:
+    description: "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals."
+    domain: owl_Thing
+    range: string
+    required: true
+    multivalued: true
+    slot_uri: rdfs:label
+
+  rdfs_comment:
+    description: "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation."
+    domain: owl_Thing
+    range: string
+    required: true
+    multivalued: true
+    slot_uri: rdfs:comment
+
+  owl_versionInfo:
+    description: "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory."
+    domain: owl_Thing
+    range: string
+    required: false
+    multivalued: false
+    slot_uri: owl:versionInfo
+    close_mappings:
+      - saref:hasVersion
+
+  dcterms_isPartOf:
+    description: "A related resource in which the described resource is physically or logically included."
+    domain: owl_Thing
+    range: owl_Thing
+    required: false
+    multivalued: true
+    slot_uri: dcterms:isPartOf
+    inverse: dcterms_hasPart
+
+  dcterms_hasPart:
+    description: "A related resource that is included either physically or logically in the described resource."
+    domain: owl_Thing
+    range: owl_Thing
+    required: false
+    multivalued: true
+    slot_uri: dcterms:hasPart
+    inverse: dcterms_isPartOf
+
+  prov_type:
+    description: "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs."
+    domain: owl_Thing
+    range: uriorcurie
+    required: false
+    multivalued: true
+    slot_uri: prov:type
+    narrow_mappings: 
+      - schema:procedureType
+    exact_mappings:
+      - rdf:type
+      - sphn:hasTypeCode
+
+  fhir_status:
+    description: "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state."
+    is_a: saref_hasPropertyValue
+    domain: owl_Thing
+    required: false
+    multivalued: true
+    slot_uri: fhir:resource-status
+
+  dcterms_creator:
+    description: "An entity responsible for making the resource."
+    domain: owl_Thing
+    range: foaf_Agent
+    required: false
+    multivalued: true
+    slot_uri: dcterms:creator
+  
+  saref_hasProperty:
+    description: "Links a feature kind or a feature of interest to one of its properties."
+    slot_uri: saref:hasProperty
+    mappings:
+      - ssn:hasProperty
+    domain: owl_Thing
+    range: saref_Property
+    required: false
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  saref_hasPropertyValue:
+    description: "Links a feature kind, a feature of interest, or a property of interest, to a property value."
+    slot_uri: saref:hasPropertyValue
+    domain: owl_Thing
+    range: saref_PropertyValue
+    required: false
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  prov_hadPrimarySource:
+    description: "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain."
+    domain: owl_Thing
+    range: prov_Entity
+    required: false
+    multivalued: true
+    slot_uri: prov:hadPrimarySource
+
+  prov_wasGeneratedBy:
+    description: "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."
+    domain: owl_Thing
+    range: sulo_Process
+    required: false
+    multivalued: true
+    slot_uri: prov:wasGeneratedBy
+
+  prov_generatedAtTime:
+    description: "The time at which an entity was completely created and is available for use."
+    domain: owl_Thing
+    range: datetime
+    required: false
+    multivalued: true
+    slot_uri: prov:generatedAtTime
+
+  prov_generated:
+    description: "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."
+    domain: sulo_Process
+    range: owl_Thing
+    required: false
+    multivalued: true
+    slot_uri: prov:generated
+    inverse: prov_wasGeneratedBy  
+
+  prov_wasAttributedTo:
+    description: "Attribution is the ascribing of an entity to an agent."
+    domain: prov_Entity
+    range: foaf_Agent
+    required: false
+    multivalued: true
+    slot_uri: prov:wasAttributedTo
+
+  prov_qualifiedAttribution:
+    description: "Attribution is the ascribing of an entity to an agent. When an entity e is attributed to agent ag, entity e was generated by some unspecified activity that in turn was associated to agent ag. Thus, this relation is useful when the activity is not known, or irrelevant."
+    slot_uri: prov:qualifiedAttribution
+    domain: owl_Thing
+    range: prov_Attribution
+    required: false
+    multivalued: true
+
+  # =============================================================================
+  # Time Slots
+  # =============================================================================
+  prov_startedAtTime:  
+    description: "The time at which an activity started."
+    domain: sulo_Process
+    range: datetime
+    required: false
+    multivalued: false
+    slot_uri: prov:startedAtTime
+
+  prov_endedAtTime:  
+    description: "The time at which an activity ended."
+    domain: sulo_Process
+    range: datetime
+    required: false
+    multivalued: false
+    slot_uri: prov:endedAtTime
+
+  prov_atTime:
+    description: "The time at which an InstantaneousEvent occurred."
+    domain: sulo_Process 
+    range: datetime
+    required: false
+    multivalued: false
+    slot_uri: prov:atTime
+    mappings:
+      - saref:hasTimestamp
+      - fhir:DeviceMetric.calibration.time
+      - sosa:phenomenonTime
+
+  time_hasDuration:
+    description: "Duration of a temporal entity, expressed as a scaled value or nominal value"
+    slot_uri: time:hasDuration
+    range: time_Duration
+    required: false
+    multivalued: false
+    mappings:
+      - sphn:hasDuration
+       
+  dcterms_created:
+      description: "The date and time when the entity was created."
+      range: datetime
+      required: false
+      slot_uri: dcterms:created
+      
+  dcterms_modified:
+      description: "The date and time when the entity was last updated."
+      range: datetime
+      required: false
+      slot_uri: dcterms:modified
+
+  # =============================================================================
+  # Value & Unit Slots
+  # =============================================================================
+  saref_isValueOfProperty:
+    description: "Links a property value to the property or property of interest it is a value of."
+    slot_uri: saref:isValueOfProperty
+    domain: saref_PropertyValue
+    range: saref_Property  
+    required: false
+    multivalued: false
+
+  saref_isMeasuredIn : 
+    description: "A relationship identifying the unit of measure used for a certain entity."
+    range: uriorcurie
+    pattern: '^ucum'
+    required: false
+    multivalued: false
+    slot_uri: saref:isMeasuredIn
+
+  fhir_valueReference:
+    description: "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type."
+    range: uriorcurie
+    required: false
+    multivalued: false
+    slot_uri: fhir:valueReference
+
+  saref_hasValue:
+    description: "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes."
+    slot_uri: saref:hasValue
+    required: false
+    multivalued: false
+    any_of:
+      - range: integer
+      - range: float
+      - range: double
+      - range: decimal
+      - range: date
+      - range: datetime
+      - range: uriorcurie
+      - range: string  
+    
+  s4ehaw_minimumValue:
+    description: "The minimum allowable value of a measurement."
+    range: float
+    required: false
+    multivalued: false
+    slot_uri: s4ehaw:minimumValue
+
+  s4ehaw_maximumValue:
+    description: "The maximum allowable value of a measurement."
+    range: float
+    required: false
+    multivalued: false
+    slot_uri: s4ehaw:maximumValue
+         
+  # =============================================================================
+  # QUESTIONNAIRE Slots
+  # =============================================================================
+  qo_multivalued:
+    description: "Indicates whether this question allows multiple answers (true) or it's single answer (false)."
+    range: boolean
+    ifabsent: false
+    slot_uri: qo:multivalued
+
+  #Order wrapper slots
+  qo_order:
+    description: "Position in the questionnaire or section (1-based index)."
+    range: integer
+    required: true
+    minimum_value: 1
+    slot_uri: qo:order
+
+  # Validity slots
+  qo_hardValidity:
+    description: "if true, the temporal duration is a strict deadline; if false, it is an orientative guideline."
+    range: boolean
+    required: false
+    ifabsent: false
+    slot_uri: qo:hardValidity
+
+  qo_temporalValidity:
+    description: "The time duration during which the answer is considered valid."
+    range: time_Duration
+    required: true
+    slot_uri: qo:temporalValidity
+
+  qo_conditionalValidity:
+    description: "a condition (expressed in a machine-readable rule language) that would invalidate the answer earlier than the temporal duration, e.g., 'a documented smoking cessation intervention' invalidates the answer to 'Do you smoke?''."
+    range: string
+    required: true
+    slot_uri: qo:conditionalValidity
+
+  qo_question:
+    description: "Question indexed in this OrderedQuestion."
+    is_a: dcterms_hasPart
+    domain: qo_OrderedQuestion
+    range: qo_Question
+    required: true
+    multivalued: false
+    slot_uri: qo:question
+
+  # Questionnaire relationships
+  qo_hasOrderedQuestion:
+    description: "The Question that is part of this Questionnaire or Section, with their display order."
+    is_a: dcterms_hasPart
+    range: qo_OrderedQuestion
+    multivalued: true
+    inlined_as_list: true # Critical for ordered list
+    required: false
+    slot_uri: qo:hasOrderedQuestion
+    narrow_mappings:
+      - fhir:Questionnaire.item.where(type='question')
+
+  qo_hasOrderedSection:
+    description: "The Section that is part of this Questionnaire or Section, with their display order."
+    is_a: dcterms_hasPart
+    range: qo_OrderedSection
+    multivalued: true
+    inlined_as_list: true # Critical for ordered list
+    required: false
+    slot_uri: qo:hasOrderedSection
+    narrow_mappings:
+      - fhir:Questionnaire.item.where(type='group')
+
+  # OrderedSection relationships
+  qo_section:
+    description: "Section indexed in this OrderedSection."
+    is_a: dcterms_hasPart
+    domain: qo_OrderedSection
+    range: qo_Section
+    required: true
+    multivalued: false
+    slot_uri: qo:section
+
+  # =============================================================================
+  # QUESTIONNAIRE RESPONSE Slots
+  # =============================================================================
+  qo_responds:
+    description: "The Questionnaire that this QuestionnaireResponse is for."
+    domain: qo_QuestionnaireResponse
+    range: qo_Questionnaire
+    required: true
+    multivalued: false
+    slot_uri: qo:responds
+    narrow_mappings:
+      - fhir:questionnaireResponse.questionnaire
+
+  qo_hasAnswer:
+    description: "The Answer that is part of this QuestionnaireResponse."
+    domain: qo_QuestionnaireResponse
+    range: qo_Answer
+    required: true
+    multivalued: true
+    slot_uri: qo:hasAnswer
+    narrow_mappings:
+      - fhir:questionnaireResponse.item.answer
+
+  qo_toQuestion:
+    description: "The Question that this Answer is for."
+    domain: qo_Answer
+    range: qo_Question
+    required: true
+    multivalued: false
+    slot_uri: qo:toQuestion
+    narrow_mappings:
+      - fhir:QuestionnaireResponse.item.answer.question

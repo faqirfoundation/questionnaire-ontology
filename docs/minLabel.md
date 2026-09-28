@@ -9,7 +9,7 @@ _The label for the minimum value of the interval._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/minLabel](https://w3id.org/faqir/datamodel/minLabel)
+URI: [phro:minLabel](https://ns.faqir.org/phr-o#minLabel)
 Alias: minLabel
 
 <!-- no inheritance hierarchy -->
@@ -49,7 +49,7 @@ Alias: minLabel
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -58,8 +58,8 @@ Alias: minLabel
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/minLabel |
-| native | https://w3id.org/faqir/datamodel/minLabel |
+| self | phro:minLabel |
+| native | qo:minLabel |
 
 
 
@@ -70,8 +70,9 @@ Alias: minLabel
 ```yaml
 name: minLabel
 description: The label for the minimum value of the interval.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: phro:minLabel
 alias: minLabel
 owner: IntervalParams
 domain_of:

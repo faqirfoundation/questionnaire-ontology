@@ -3,7 +3,7 @@
 
 The quantitative value, which can be an integer or a float.
 
-URI: [datamodel:valueNumerical__numericalValue](https://w3id.org/faqir/datamodel/valueNumerical__numericalValue)
+URI: [qo:valueNumerical__numericalValue](https://ns.faqir.org/q-o#valueNumerical__numericalValue)
 
 
 ## Domain and Range
@@ -19,4 +19,9 @@ None &#8594;  <sub>1..1</sub> [Decimal](types/Decimal.md)
 ## Used by
 
  * [ValueNumerical](ValueNumerical.md)
- * [Weight](Weight.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | phro:numericalValue |

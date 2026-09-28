@@ -9,7 +9,7 @@ _A date and time value, typically in ISO 8601 format._
 
 
 
-URI: [faqir:ValueDateTime](https://faqir.org/datamodel/ValueDateTime)
+URI: [phro:ValueDateTime](https://ns.faqir.org/phr-o#ValueDateTime)
 
 
 
@@ -45,8 +45,7 @@ URI: [faqir:ValueDateTime](https://faqir.org/datamodel/ValueDateTime)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Answer](Answer.md) | [answerValueDateTime](answerValueDateTime.md) | range | [ValueDateTime](ValueDateTime.md) |
-| [ScoreParameter](ScoreParameter.md) | [scoreParameterValueDateTime](scoreParameterValueDateTime.md) | range | [ValueDateTime](ValueDateTime.md) |
+| [QoAnswer](QoAnswer.md) | [qo_answerValue](qo_answerValue.md) | any_of[range] | [ValueDateTime](ValueDateTime.md) |
 
 
 
@@ -64,7 +63,7 @@ URI: [faqir:ValueDateTime](https://faqir.org/datamodel/ValueDateTime)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -73,9 +72,8 @@ URI: [faqir:ValueDateTime](https://faqir.org/datamodel/ValueDateTime)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | faqir:ValueDateTime |
-| native | https://w3id.org/faqir/datamodel/ValueDateTime |
-| undefined | xsd:dateTime |
+| self | phro:ValueDateTime |
+| native | qo:ValueDateTime |
 
 
 
@@ -93,19 +91,18 @@ URI: [faqir:ValueDateTime](https://faqir.org/datamodel/ValueDateTime)
 ```yaml
 name: ValueDateTime
 description: A date and time value, typically in ISO 8601 format.
-from_schema: https://w3id.org/faqir/datamodel
-mappings:
-- xsd:dateTime
+from_schema: https://ns.faqir.org/q-o
 attributes:
   dateTimeValue:
     name: dateTimeValue
     description: The date and time value in ISO 8601 format.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: xsd:dateTime
     domain_of:
     - ValueDateTime
     range: datetime
-class_uri: faqir:ValueDateTime
+class_uri: phro:ValueDateTime
 
 ```
 </details>
@@ -116,21 +113,20 @@ class_uri: faqir:ValueDateTime
 ```yaml
 name: ValueDateTime
 description: A date and time value, typically in ISO 8601 format.
-from_schema: https://w3id.org/faqir/datamodel
-mappings:
-- xsd:dateTime
+from_schema: https://ns.faqir.org/q-o
 attributes:
   dateTimeValue:
     name: dateTimeValue
     description: The date and time value in ISO 8601 format.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: xsd:dateTime
     alias: dateTimeValue
     owner: ValueDateTime
     domain_of:
     - ValueDateTime
     range: datetime
-class_uri: faqir:ValueDateTime
+class_uri: phro:ValueDateTime
 
 ```
 </details>

@@ -9,7 +9,7 @@ _The maximum value of the interval._
 
 
 
-URI: [https://w3id.org/faqir/datamodel/maxValue](https://w3id.org/faqir/datamodel/maxValue)
+URI: [phro:maxValue](https://ns.faqir.org/phr-o#maxValue)
 Alias: maxValue
 
 <!-- no inheritance hierarchy -->
@@ -34,8 +34,6 @@ Alias: maxValue
 
 * Range: [Float](Float.md)
 
-* Required: True
-
 
 
 
@@ -51,7 +49,7 @@ Alias: maxValue
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -60,8 +58,8 @@ Alias: maxValue
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/maxValue |
-| native | https://w3id.org/faqir/datamodel/maxValue |
+| self | phro:maxValue |
+| native | qo:maxValue |
 
 
 
@@ -72,14 +70,15 @@ Alias: maxValue
 ```yaml
 name: maxValue
 description: The maximum value of the interval.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: phro:maxValue
 alias: maxValue
 owner: IntervalParams
 domain_of:
 - IntervalParams
 range: float
-required: true
+required: false
 
 ```
 </details>

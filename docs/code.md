@@ -3,13 +3,13 @@
 # Slot: code 
 
 
-_The code representing the value (e.g. code '1' for display 'Yes')._
+_The code representing the value (e.g. code '1' for value 'Yes')._
 
 
 
 
 
-URI: [https://w3id.org/faqir/datamodel/code](https://w3id.org/faqir/datamodel/code)
+URI: [fhir:code](http://hl7.org/fhir/code)
 Alias: code
 
 <!-- no inheritance hierarchy -->
@@ -51,7 +51,7 @@ Alias: code
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -60,8 +60,8 @@ Alias: code
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/faqir/datamodel/code |
-| native | https://w3id.org/faqir/datamodel/code |
+| self | fhir:code |
+| native | qo:code |
 
 
 
@@ -71,9 +71,10 @@ Alias: code
 <details>
 ```yaml
 name: code
-description: The code representing the value (e.g. code '1' for display 'Yes').
-from_schema: https://w3id.org/faqir/datamodel
+description: The code representing the value (e.g. code '1' for value 'Yes').
+from_schema: https://ns.faqir.org/q-o
 rank: 1000
+slot_uri: fhir:code
 alias: code
 owner: ValueCoding
 domain_of:

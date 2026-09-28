@@ -3,12 +3,12 @@
 
 The string value, which can be any text.
 
-URI: [datamodel:valueString__stringValue](https://w3id.org/faqir/datamodel/valueString__stringValue)
+URI: [qo:valueString__stringValue](https://ns.faqir.org/q-o#valueString__stringValue)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
@@ -19,3 +19,9 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [ValueString](ValueString.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | xsd:string |

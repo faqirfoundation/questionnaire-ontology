@@ -1,9 +1,0 @@
----
-answerId: "https://pods.faqir.org/questionnaire/answer_05_EQ_VAS_01"
-answerInQuestionnaireResponse: "https://pods.faqir.org/questionnaire/response_01_simple"
-answerToQuestion: "https://pods.faqir.org/questionnaire/question_05_EQ_VAS"
-questionType: numberInterval
-answerIsEmpty: false
-answerTimeStamp: "2025-07-11T10:35:11Z"
-answerValueNumerical:
-  numericalValue: 83

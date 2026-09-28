@@ -1,8 +1,0 @@
-@prefix faqir: <https://faqir.org/datamodel/> .
-@prefix ns1: <https://w3id.org/faqir/datamodel/entities/procedure/> .
-
-<https://pods.faqir.org/moveUp_kpc> a faqir:Procedure ;
-    faqir:procedureHasQuestionnaire <https://pods.faqir.org/bx6F2K6h3CDKCadPo> ;
-    faqir:procedurePerformedByOrg <https://www.moveup.care/> ;
-    ns1:procedureLabel "Knee Prom" .
-

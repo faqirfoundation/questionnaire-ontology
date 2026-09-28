@@ -1,8 +1,0 @@
----
-organizationId: "https://www.faqir.org"
-organizationLabel: "FAQIR Foundation"
-organizationType: research
-organizationManagesVault: 
-  - "https://pods.faqir.org/123"
-organizationAuthorsSection:
-  - "https://pods.faqir.org/section_03_EQ_VAS"

@@ -3,12 +3,12 @@
 
 The maximum value of the interval.
 
-URI: [datamodel:intervalParams__maxValue](https://w3id.org/faqir/datamodel/intervalParams__maxValue)
+URI: [qo:intervalParams__maxValue](https://ns.faqir.org/q-o#intervalParams__maxValue)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Float](types/Float.md)
+None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
 
 ## Parents
 
@@ -19,3 +19,9 @@ None &#8594;  <sub>1..1</sub> [Float](types/Float.md)
 ## Used by
 
  * [IntervalParams](IntervalParams.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | phro:maxValue |

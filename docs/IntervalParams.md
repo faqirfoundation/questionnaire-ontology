@@ -9,7 +9,7 @@ _Parameters for interval values, including minimum and maximum values._
 
 
 
-URI: [faqir:IntervalParams](https://faqir.org/datamodel/IntervalParams)
+URI: [phro:IntervalParams](https://ns.faqir.org/phr-o#IntervalParams)
 
 
 
@@ -41,9 +41,9 @@ URI: [faqir:IntervalParams](https://faqir.org/datamodel/IntervalParams)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [minValue](minValue.md) | 1 <br/> [Float](Float.md) | The minimum value of the interval | direct |
+| [minValue](minValue.md) | 0..1 <br/> [Float](Float.md) | The minimum value of the interval | direct |
 | [minLabel](minLabel.md) | 0..1 <br/> [String](String.md) | The label for the minimum value of the interval | direct |
-| [maxValue](maxValue.md) | 1 <br/> [Float](Float.md) | The maximum value of the interval | direct |
+| [maxValue](maxValue.md) | 0..1 <br/> [Float](Float.md) | The maximum value of the interval | direct |
 | [maxLabel](maxLabel.md) | 0..1 <br/> [String](String.md) | The label for the maximum value of the interval | direct |
 
 
@@ -54,8 +54,7 @@ URI: [faqir:IntervalParams](https://faqir.org/datamodel/IntervalParams)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Question](Question.md) | [questionIntervalParams](questionIntervalParams.md) | range | [IntervalParams](IntervalParams.md) |
-| [ScoreDefinition](ScoreDefinition.md) | [scoreDefinitionIntervalParams](scoreDefinitionIntervalParams.md) | range | [IntervalParams](IntervalParams.md) |
+| [QoQuestion](QoQuestion.md) | [qo_intervalParams](qo_intervalParams.md) | range | [IntervalParams](IntervalParams.md) |
 
 
 
@@ -73,7 +72,7 @@ URI: [faqir:IntervalParams](https://faqir.org/datamodel/IntervalParams)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -82,8 +81,8 @@ URI: [faqir:IntervalParams](https://faqir.org/datamodel/IntervalParams)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | faqir:IntervalParams |
-| native | https://w3id.org/faqir/datamodel/IntervalParams |
+| self | phro:IntervalParams |
+| native | qo:IntervalParams |
 
 
 
@@ -101,22 +100,24 @@ URI: [faqir:IntervalParams](https://faqir.org/datamodel/IntervalParams)
 ```yaml
 name: IntervalParams
 description: Parameters for interval values, including minimum and maximum values.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 attributes:
   minValue:
     name: minValue
     description: The minimum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:minValue
     domain_of:
     - IntervalParams
     range: float
-    required: true
+    required: false
   minLabel:
     name: minLabel
     description: The label for the minimum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:minLabel
     domain_of:
     - IntervalParams
     range: string
@@ -124,22 +125,24 @@ attributes:
   maxValue:
     name: maxValue
     description: The maximum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:maxValue
     domain_of:
     - IntervalParams
     range: float
-    required: true
+    required: false
   maxLabel:
     name: maxLabel
     description: The label for the maximum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:maxLabel
     domain_of:
     - IntervalParams
     range: string
     required: false
-class_uri: faqir:IntervalParams
+class_uri: phro:IntervalParams
 
 ```
 </details>
@@ -150,24 +153,26 @@ class_uri: faqir:IntervalParams
 ```yaml
 name: IntervalParams
 description: Parameters for interval values, including minimum and maximum values.
-from_schema: https://w3id.org/faqir/datamodel
+from_schema: https://ns.faqir.org/q-o
 attributes:
   minValue:
     name: minValue
     description: The minimum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:minValue
     alias: minValue
     owner: IntervalParams
     domain_of:
     - IntervalParams
     range: float
-    required: true
+    required: false
   minLabel:
     name: minLabel
     description: The label for the minimum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:minLabel
     alias: minLabel
     owner: IntervalParams
     domain_of:
@@ -177,26 +182,28 @@ attributes:
   maxValue:
     name: maxValue
     description: The maximum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:maxValue
     alias: maxValue
     owner: IntervalParams
     domain_of:
     - IntervalParams
     range: float
-    required: true
+    required: false
   maxLabel:
     name: maxLabel
     description: The label for the maximum value of the interval.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:maxLabel
     alias: maxLabel
     owner: IntervalParams
     domain_of:
     - IntervalParams
     range: string
     required: false
-class_uri: faqir:IntervalParams
+class_uri: phro:IntervalParams
 
 ```
 </details>

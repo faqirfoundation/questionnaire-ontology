@@ -1,0 +1,457 @@
+ syntax="proto3";
+ package
+// metamodel_version: 1.7.0
+// version: 2.0.0
+// An action that is being or was performed on an individual or entity
+message FhirProcedure
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used.
+message FhirReferenceRange
+ {
+  quantityValue lowRange = 0
+  quantityValue highRange = 0
+ repeated  quantityValue normalValue = 0
+ }
+// A ratio of two Quantity values - a numerator and a denominator
+message FhirValueRatio
+ {
+  quantityValue numerator = 0
+  quantityValue denominator = 0
+ }
+// An agent (eg. person, group, software or physical artifact).
+message FoafAgent
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// A person.
+message FoafPerson
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// Parameters for interval values, including minimum and maximum values.
+message IntervalParams
+ {
+  float minValue = 0
+  string minLabel = 0
+  float maxValue = 0
+  string maxLabel = 0
+ }
+// Parameters for quantitative values, including unit and precision.
+message NumericalParams
+ {
+  uriorcurie numericalUnit = 0
+  integer numericalPrecision = 0
+ }
+// This defines IOT as the set of OWL individuals.
+message OwlThing
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ }
+// An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.
+message ProvEntity
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// An organization is a social or legal institution such as a company, society, etc.
+message ProvOrganization
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// Answer in the questionnaire response.
+message QoAnswer
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  qoQuestion qoToQuestion = 0
+  string qoAnswerValue = 0
+  boolean qoIsEmpty = 0
+ repeated  datetime provGeneratedAtTime = 0
+ }
+// Question's position within a specific questionnaire or section.
+message QoOrderedQuestion
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  qoQuestion qoQuestion = 0
+  boolean qoHardValidity = 0
+  timeDuration qoTemporalValidity = 0
+  string qoConditionalValidity = 0
+  integer qoOrder = 0
+  boolean qoRequired = 0
+ }
+// Section's position within a specific questionnaire or section.
+message QoOrderedSection
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  qoSection qoSection = 0
+  integer qoOrder = 0
+ }
+// A question.
+message QoQuestion
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  boolean qoMultivalued = 0
+ repeated  string qoTag = 0
+  numericalParams qoNumericalParams = 0
+ repeated  valueCoding qoCodingParams = 0
+  boolean qoCodingOrdinal = 0
+  intervalParams qoIntervalParams = 0
+ repeated  qoQuestionType provType = 0
+ repeated  provOrganization dctermsCreator = 0
+ }
+// A questionnaire that can be answered (collection of questions).
+message QoQuestionnaire
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ repeated  qoOrderedQuestion qoHasOrderedQuestion = 0
+ repeated  qoOrderedSection qoHasOrderedSection = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  provOrganization dctermsCreator = 0
+ repeated  suloProcess dctermsIsPartOf = 0
+ repeated  qoQuestionnaireStatus fhirStatus = 0
+ }
+// A response to a questionnaire (collection of answers).
+message QoQuestionnaireResponse
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  qoQuestionnaire qoResponds = 0
+ repeated  qoAnswer qoHasAnswer = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  suloProcess dctermsIsPartOf = 0
+ repeated  foafPerson provWasAttributedTo = 0
+ repeated  qoQuestionnaireResponseStatus fhirStatus = 0
+ }
+// The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
+message QoQuestionnaireResponseStatus
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  datetime provAtTime = 0
+  sarefProperty sarefIsValueOfProperty = 0
+  uriorcurie fhirValueReference = 0
+  valueCoding fhirValueCodeableConcept = 0
+  fhirReferenceRange fhirValueRange = 0
+  fhirValueRatio fhirValueRatio = 0
+  timeInterval fhirValuePeriod = 0
+  uriorcurie fhirValueAttachement = 0
+  qoQuestionnaireResponseStatusEnum sarefHasValue = 0
+ }
+// The status of the questionnaire, indicating whether it is 	draft, active, retired or unknown.
+message QoQuestionnaireStatus
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  datetime provAtTime = 0
+  sarefProperty sarefIsValueOfProperty = 0
+  uriorcurie fhirValueReference = 0
+  valueCoding fhirValueCodeableConcept = 0
+  fhirReferenceRange fhirValueRange = 0
+  fhirValueRatio fhirValueRatio = 0
+  timeInterval fhirValuePeriod = 0
+  uriorcurie fhirValueAttachement = 0
+  qoQuestionnaireStatusEnum sarefHasValue = 0
+ }
+// A section of questions in the questionnaire.
+message QoSection
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ repeated  qoOrderedQuestion qoHasOrderedQuestion = 0
+ repeated  qoOrderedSection qoHasOrderedSection = 0
+ repeated  provOrganization dctermsCreator = 0
+ }
+// A measured amount (or an amount that can potentially be measured).
+message QuantityValue
+ {
+  uriorcurie sarefIsMeasuredIn = 0
+  string sarefHasValue = 0
+ }
+// The activity of a patient/user, i.e. daily and nocturnal activities.
+message S4ehawActivity
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A property can apply to different features of interest.
+message SarefProperty
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  fhirReferenceRange fhirReferenceRange = 0
+ }
+// Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty).
+message SarefPropertyValue
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  foafAgent provWasAttributedTo = 0
+  datetime dctermsCreated = 0
+  datetime dctermsModified = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+  datetime provAtTime = 0
+  string sarefHasValue = 0
+  sarefProperty sarefIsValueOfProperty = 0
+  uriorcurie fhirValueReference = 0
+  valueCoding fhirValueCodeableConcept = 0
+  fhirReferenceRange fhirValueRange = 0
+  fhirValueRatio fhirValueRatio = 0
+  timeInterval fhirValuePeriod = 0
+  uriorcurie fhirValueAttachement = 0
+ }
+// a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process.
+message SuloProcess
+ {
+  string owlVersionInfo = 0
+ repeated  string rdfsLabel = 0
+ repeated  string rdfsComment = 0
+ repeated  provEntity provHadPrimarySource = 0
+ repeated  suloProcess provWasGeneratedBy = 0
+ repeated  uriorcurie provType = 0
+ repeated  owlThing dctermsHasPart = 0
+ repeated  owlThing dctermsIsPartOf = 0
+ repeated  datetime provGeneratedAtTime = 0
+ repeated  sarefPropertyValue fhirStatus = 0
+ repeated  foafAgent dctermsCreator = 0
+ repeated  sarefProperty sarefHasProperty = 0
+ repeated  sarefPropertyValue sarefHasPropertyValue = 0
+ }
+// Duration of a temporal extent expressed as a decimal number scaled by a temporal unit
+message TimeDuration
+ {
+  string sarefHasValue = 0
+  uriorcurie sarefIsMeasuredIn = 0
+ }
+// A temporal entity with an extent or duration
+message TimeInterval
+ {
+  datetime provStartedAtTime = 0
+  datetime provEndedAtTime = 0
+ }
+// A coded value with a unique code for each display text, typically used for standardized questionnaires.
+message ValueCoding
+ {
+  string code = 0
+  string display = 0
+ }

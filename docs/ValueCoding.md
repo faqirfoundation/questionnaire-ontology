@@ -9,7 +9,7 @@ _A coded value with a unique code for each display text, typically used for stan
 
 
 
-URI: [faqir:ValueCoding](https://faqir.org/datamodel/ValueCoding)
+URI: [fhir:Coding](http://hl7.org/fhir/Coding)
 
 
 
@@ -48,7 +48,10 @@ URI: [faqir:ValueCoding](https://faqir.org/datamodel/ValueCoding)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Question](Question.md) | [questionCodingParams](questionCodingParams.md) | range | [ValueCoding](ValueCoding.md) |
+| [SarefPropertyValue](SarefPropertyValue.md) | [fhir_valueCodeableConcept](fhir_valueCodeableConcept.md) | range | [ValueCoding](ValueCoding.md) |
+| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [fhir_valueCodeableConcept](fhir_valueCodeableConcept.md) | range | [ValueCoding](ValueCoding.md) |
+| [QoQuestion](QoQuestion.md) | [qo_codingParams](qo_codingParams.md) | range | [ValueCoding](ValueCoding.md) |
+| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [fhir_valueCodeableConcept](fhir_valueCodeableConcept.md) | range | [ValueCoding](ValueCoding.md) |
 
 
 
@@ -66,7 +69,7 @@ URI: [faqir:ValueCoding](https://faqir.org/datamodel/ValueCoding)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -75,9 +78,8 @@ URI: [faqir:ValueCoding](https://faqir.org/datamodel/ValueCoding)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | faqir:ValueCoding |
-| native | https://w3id.org/faqir/datamodel/ValueCoding |
-| undefined | fhir:Coding |
+| self | fhir:Coding |
+| native | qo:ValueCoding |
 
 
 
@@ -96,30 +98,30 @@ URI: [faqir:ValueCoding](https://faqir.org/datamodel/ValueCoding)
 name: ValueCoding
 description: A coded value with a unique code for each display text, typically used
   for standardized questionnaires.
-from_schema: https://w3id.org/faqir/datamodel
-mappings:
-- fhir:Coding
+from_schema: https://ns.faqir.org/q-o
 attributes:
   code:
     name: code
-    description: The code representing the value (e.g. code '1' for display 'Yes').
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    description: The code representing the value (e.g. code '1' for value 'Yes').
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: fhir:code
     domain_of:
     - ValueCoding
     range: string
     required: true
   display:
     name: display
-    description: The human-readable display text for the code (e.g. code '1' for display
+    description: The human-readable display text for the code (e.g. code '1' for value
       'Yes').
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: fhir:display
     domain_of:
     - ValueCoding
     range: string
     required: true
-class_uri: faqir:ValueCoding
+class_uri: fhir:Coding
 
 ```
 </details>
@@ -131,15 +133,14 @@ class_uri: faqir:ValueCoding
 name: ValueCoding
 description: A coded value with a unique code for each display text, typically used
   for standardized questionnaires.
-from_schema: https://w3id.org/faqir/datamodel
-mappings:
-- fhir:Coding
+from_schema: https://ns.faqir.org/q-o
 attributes:
   code:
     name: code
-    description: The code representing the value (e.g. code '1' for display 'Yes').
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    description: The code representing the value (e.g. code '1' for value 'Yes').
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: fhir:code
     alias: code
     owner: ValueCoding
     domain_of:
@@ -148,17 +149,18 @@ attributes:
     required: true
   display:
     name: display
-    description: The human-readable display text for the code (e.g. code '1' for display
+    description: The human-readable display text for the code (e.g. code '1' for value
       'Yes').
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: fhir:display
     alias: display
     owner: ValueCoding
     domain_of:
     - ValueCoding
     range: string
     required: true
-class_uri: faqir:ValueCoding
+class_uri: fhir:Coding
 
 ```
 </details>

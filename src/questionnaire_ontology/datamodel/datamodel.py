@@ -1,10 +1,10 @@
-# Auto generated from datamodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-01T17:46:04
-# Schema: datamodel
+# Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
+# Generation date: 2026-09-28T17:47:08
+# Schema: Questionnaire-Ontology
 #
-# id: https://w3id.org/faqir/datamodel
-# description: The datamodel used in faqir vaults.
-# license: MIT
+# id: https://ns.faqir.org/q-o
+# description: FAQIR Questionnaire Ontology
+# license: Apache Software License 2.0
 
 import dataclasses
 import re
@@ -59,24 +59,34 @@ from rdflib import (
 from linkml_runtime.utils.metamodelcore import Bool, Curie, Decimal, ElementIdentifier, NCName, NodeIdentifier, URI, URIorCURIE, XSDDate, XSDDateTime, XSDTime
 
 metamodel_version = "1.7.0"
-version = None
+version = "2.0.0"
 
 # Namespaces
-DATAMODEL = CurieNamespace('datamodel', 'https://w3id.org/faqir/datamodel/')
-EUVOC = CurieNamespace('euVoc', 'http://publications.europa.eu/resource/authority/resource-type/')
-FAQIR = CurieNamespace('faqir', 'https://faqir.org/datamodel/')
-FHIR = CurieNamespace('fhir', 'https://www.hl7.org/fhir/')
+DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
+FHIR = CurieNamespace('fhir', 'http://hl7.org/fhir/')
+FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-LOINC = CurieNamespace('loinc', 'https://loinc.org/')
-PROV = CurieNamespace('prov', 'https://www.w3.org/TR/prov-overview/')
-QUESTIONNAIRE = CurieNamespace('questionnaire', 'https://w3id.org/faqir/datamodel/questionnaire/')
+OMOP = CurieNamespace('omop', 'https://www.ohdsi.org/data-standardization/')
+OPENEHR = CurieNamespace('openEHR', 'http://openehr.org/v1/StructureDefinition/')
+OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
+PHRO = CurieNamespace('phro', 'https://ns.faqir.org/phr-o#')
+PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
+QO = CurieNamespace('qo', 'https://ns.faqir.org/q-o#')
+RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
+S4EHAW = CurieNamespace('s4ehaw', 'https://saref.etsi.org/saref4ehaw/')
+SAREF = CurieNamespace('saref', 'https://saref.etsi.org/core/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 SHEX = CurieNamespace('shex', 'http://www.w3.org/ns/shex#')
-SKOS = CurieNamespace('skos', 'http://www.w3.org/2004/02/skos/core#')
-TYPES = CurieNamespace('types', 'https://w3id.org/faqir/datamodel/core/types')
+SNOMED = CurieNamespace('snomed', 'http://snomed.info/id/')
+SOSA = CurieNamespace('sosa', 'http://www.w3.org/ns/sosa/')
+SPHN = CurieNamespace('sphn', 'https://biomedit.ch/rdf/sphn-schema/sphn#')
+SSN = CurieNamespace('ssn', 'https://www.w3.org/TR/vocab-ssn/')
+SULO = CurieNamespace('sulo', 'https://aidava-dev.github.io/sulo/ontospy/index.html')
+TIME = CurieNamespace('time', 'http://www.w3.org/2006/time#')
 UCUM = CurieNamespace('ucum', 'https://unitsofmeasure.org/')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
-DEFAULT_ = DATAMODEL
+DEFAULT_ = QO
 
 
 # Types
@@ -85,7 +95,7 @@ class String(str):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "string"
-    type_model_uri = DATAMODEL.String
+    type_model_uri = QO.String
 
 
 class Integer(int):
@@ -93,7 +103,7 @@ class Integer(int):
     type_class_uri = XSD["integer"]
     type_class_curie = "xsd:integer"
     type_name = "integer"
-    type_model_uri = DATAMODEL.Integer
+    type_model_uri = QO.Integer
 
 
 class Boolean(Bool):
@@ -101,7 +111,7 @@ class Boolean(Bool):
     type_class_uri = XSD["boolean"]
     type_class_curie = "xsd:boolean"
     type_name = "boolean"
-    type_model_uri = DATAMODEL.Boolean
+    type_model_uri = QO.Boolean
 
 
 class Float(float):
@@ -109,7 +119,7 @@ class Float(float):
     type_class_uri = XSD["float"]
     type_class_curie = "xsd:float"
     type_name = "float"
-    type_model_uri = DATAMODEL.Float
+    type_model_uri = QO.Float
 
 
 class Double(float):
@@ -117,7 +127,7 @@ class Double(float):
     type_class_uri = XSD["double"]
     type_class_curie = "xsd:double"
     type_name = "double"
-    type_model_uri = DATAMODEL.Double
+    type_model_uri = QO.Double
 
 
 class Decimal(Decimal):
@@ -125,7 +135,7 @@ class Decimal(Decimal):
     type_class_uri = XSD["decimal"]
     type_class_curie = "xsd:decimal"
     type_name = "decimal"
-    type_model_uri = DATAMODEL.Decimal
+    type_model_uri = QO.Decimal
 
 
 class Time(XSDTime):
@@ -133,7 +143,7 @@ class Time(XSDTime):
     type_class_uri = XSD["time"]
     type_class_curie = "xsd:time"
     type_name = "time"
-    type_model_uri = DATAMODEL.Time
+    type_model_uri = QO.Time
 
 
 class Date(XSDDate):
@@ -141,7 +151,7 @@ class Date(XSDDate):
     type_class_uri = XSD["date"]
     type_class_curie = "xsd:date"
     type_name = "date"
-    type_model_uri = DATAMODEL.Date
+    type_model_uri = QO.Date
 
 
 class Datetime(XSDDateTime):
@@ -149,7 +159,7 @@ class Datetime(XSDDateTime):
     type_class_uri = XSD["dateTime"]
     type_class_curie = "xsd:dateTime"
     type_name = "datetime"
-    type_model_uri = DATAMODEL.Datetime
+    type_model_uri = QO.Datetime
 
 
 class DateOrDatetime(str):
@@ -157,7 +167,7 @@ class DateOrDatetime(str):
     type_class_uri = LINKML["DateOrDatetime"]
     type_class_curie = "linkml:DateOrDatetime"
     type_name = "date_or_datetime"
-    type_model_uri = DATAMODEL.DateOrDatetime
+    type_model_uri = QO.DateOrDatetime
 
 
 class Uriorcurie(URIorCURIE):
@@ -165,7 +175,7 @@ class Uriorcurie(URIorCURIE):
     type_class_uri = XSD["anyURI"]
     type_class_curie = "xsd:anyURI"
     type_name = "uriorcurie"
-    type_model_uri = DATAMODEL.Uriorcurie
+    type_model_uri = QO.Uriorcurie
 
 
 class Curie(Curie):
@@ -173,7 +183,7 @@ class Curie(Curie):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "curie"
-    type_model_uri = DATAMODEL.Curie
+    type_model_uri = QO.Curie
 
 
 class Uri(URI):
@@ -181,7 +191,7 @@ class Uri(URI):
     type_class_uri = XSD["anyURI"]
     type_class_curie = "xsd:anyURI"
     type_name = "uri"
-    type_model_uri = DATAMODEL.Uri
+    type_model_uri = QO.Uri
 
 
 class Ncname(NCName):
@@ -189,7 +199,7 @@ class Ncname(NCName):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "ncname"
-    type_model_uri = DATAMODEL.Ncname
+    type_model_uri = QO.Ncname
 
 
 class Objectidentifier(ElementIdentifier):
@@ -197,7 +207,7 @@ class Objectidentifier(ElementIdentifier):
     type_class_uri = SHEX["iri"]
     type_class_curie = "shex:iri"
     type_name = "objectidentifier"
-    type_model_uri = DATAMODEL.Objectidentifier
+    type_model_uri = QO.Objectidentifier
 
 
 class Nodeidentifier(NodeIdentifier):
@@ -205,7 +215,7 @@ class Nodeidentifier(NodeIdentifier):
     type_class_uri = SHEX["nonLiteral"]
     type_class_curie = "shex:nonLiteral"
     type_name = "nodeidentifier"
-    type_model_uri = DATAMODEL.Nodeidentifier
+    type_model_uri = QO.Nodeidentifier
 
 
 class Jsonpointer(str):
@@ -213,7 +223,7 @@ class Jsonpointer(str):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "jsonpointer"
-    type_model_uri = DATAMODEL.Jsonpointer
+    type_model_uri = QO.Jsonpointer
 
 
 class Jsonpath(str):
@@ -221,7 +231,7 @@ class Jsonpath(str):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "jsonpath"
-    type_model_uri = DATAMODEL.Jsonpath
+    type_model_uri = QO.Jsonpath
 
 
 class Sparqlpath(str):
@@ -229,138 +239,425 @@ class Sparqlpath(str):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "sparqlpath"
-    type_model_uri = DATAMODEL.Sparqlpath
+    type_model_uri = QO.Sparqlpath
 
 
 # Class references
-class VaultVaultId(URIorCURIE):
-    pass
 
-
-class OrganizationOrganizationId(URIorCURIE):
-    pass
-
-
-class ProcedureProcedureId(URIorCURIE):
-    pass
-
-
-class QuestionnaireResponseQuestionnaireResponseId(URIorCURIE):
-    pass
-
-
-class AnswerAnswerId(URIorCURIE):
-    pass
-
-
-class OrderedQuestionOrderedQuestionId(URIorCURIE):
-    pass
-
-
-class QuestionQuestionId(URIorCURIE):
-    pass
-
-
-class QuestionRepresentationQuestionRepresentationId(URIorCURIE):
-    pass
-
-
-class QuestionnaireQuestionnaireId(URIorCURIE):
-    pass
-
-
-class OrderedSectionOrderedSectionId(URIorCURIE):
-    pass
-
-
-class SectionSectionId(URIorCURIE):
-    pass
-
-
-class ScoreDefinitionScoreDefinitionId(URIorCURIE):
-    pass
-
-
-class ScoreParameterScoreParameterId(URIorCURIE):
-    pass
-
-
-class ScoreValueScoreValueId(URIorCURIE):
-    pass
 
 
 @dataclass(repr=False)
-class FullName(YAMLRoot):
+class OwlThing(YAMLRoot):
     """
-    Structured full name.
+    This defines IOT as the set of OWL individuals.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = DATAMODEL["vault/FullName"]
-    class_class_curie: ClassVar[str] = "datamodel:vault/FullName"
-    class_name: ClassVar[str] = "FullName"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.FullName
+    class_class_uri: ClassVar[URIRef] = OWL["Thing"]
+    class_class_curie: ClassVar[str] = "owl:Thing"
+    class_name: ClassVar[str] = "owl_Thing"
+    class_model_uri: ClassVar[URIRef] = QO.OwlThing
 
-    first_name: Optional[str] = None
-    middle_name: Optional[str] = None
-    family_name: Optional[str] = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    owl_versionInfo: Optional[str] = None
+    prov_hadPrimarySource: Optional[Union[Union[dict, "ProvEntity"], list[Union[dict, "ProvEntity"]]]] = empty_list()
+    prov_wasGeneratedBy: Optional[Union[Union[dict, "SuloProcess"], list[Union[dict, "SuloProcess"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.first_name is not None and not isinstance(self.first_name, str):
-            self.first_name = str(self.first_name)
+        if self._is_empty(self.rdfs_label):
+            self.MissingRequiredField("rdfs_label")
+        if not isinstance(self.rdfs_label, list):
+            self.rdfs_label = [self.rdfs_label] if self.rdfs_label is not None else []
+        self.rdfs_label = [v if isinstance(v, str) else str(v) for v in self.rdfs_label]
 
-        if self.middle_name is not None and not isinstance(self.middle_name, str):
-            self.middle_name = str(self.middle_name)
+        if self._is_empty(self.rdfs_comment):
+            self.MissingRequiredField("rdfs_comment")
+        if not isinstance(self.rdfs_comment, list):
+            self.rdfs_comment = [self.rdfs_comment] if self.rdfs_comment is not None else []
+        self.rdfs_comment = [v if isinstance(v, str) else str(v) for v in self.rdfs_comment]
 
-        if self.family_name is not None and not isinstance(self.family_name, str):
-            self.family_name = str(self.family_name)
+        if self.owl_versionInfo is not None and not isinstance(self.owl_versionInfo, str):
+            self.owl_versionInfo = str(self.owl_versionInfo)
+
+        if not isinstance(self.prov_hadPrimarySource, list):
+            self.prov_hadPrimarySource = [self.prov_hadPrimarySource] if self.prov_hadPrimarySource is not None else []
+        self.prov_hadPrimarySource = [v if isinstance(v, ProvEntity) else ProvEntity(**as_dict(v)) for v in self.prov_hadPrimarySource]
+
+        if not isinstance(self.prov_wasGeneratedBy, list):
+            self.prov_wasGeneratedBy = [self.prov_wasGeneratedBy] if self.prov_wasGeneratedBy is not None else []
+        self.prov_wasGeneratedBy = [v if isinstance(v, SuloProcess) else SuloProcess(**as_dict(v)) for v in self.prov_wasGeneratedBy]
+
+        super().__post_init__(**kwargs)
+
+
+class ProvAttribution(YAMLRoot):
+    """
+    An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation
+    from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo
+    :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ].
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PROV["Attribution"]
+    class_class_curie: ClassVar[str] = "prov:Attribution"
+    class_name: ClassVar[str] = "prov_Attribution"
+    class_model_uri: ClassVar[URIRef] = QO.ProvAttribution
+
+
+@dataclass(repr=False)
+class FoafAgent(OwlThing):
+    """
+    An agent (eg. person, group, software or physical artifact).
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = FOAF["Agent"]
+    class_class_curie: ClassVar[str] = "foaf:Agent"
+    class_name: ClassVar[str] = "foaf_Agent"
+    class_model_uri: ClassVar[URIRef] = QO.FoafAgent
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    prov_type: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    dcterms_hasPart: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
+    dcterms_isPartOf: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
+    prov_generatedAtTime: Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]] = empty_list()
+    fhir_status: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
+    dcterms_creator: Optional[Union[Union[dict, "FoafAgent"], list[Union[dict, "FoafAgent"]]]] = empty_list()
+    saref_hasProperty: Optional[Union[Union[dict, "SarefProperty"], list[Union[dict, "SarefProperty"]]]] = empty_list()
+    saref_hasPropertyValue: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if not isinstance(self.prov_type, list):
+            self.prov_type = [self.prov_type] if self.prov_type is not None else []
+        self.prov_type = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.prov_type]
+
+        if not isinstance(self.dcterms_hasPart, list):
+            self.dcterms_hasPart = [self.dcterms_hasPart] if self.dcterms_hasPart is not None else []
+        self.dcterms_hasPart = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_hasPart]
+
+        if not isinstance(self.dcterms_isPartOf, list):
+            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
+        self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
+
+        if not isinstance(self.prov_generatedAtTime, list):
+            self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
+        self.prov_generatedAtTime = [v if isinstance(v, XSDDateTime) else XSDDateTime(v) for v in self.prov_generatedAtTime]
+
+        if not isinstance(self.fhir_status, list):
+            self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
+        self.fhir_status = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.fhir_status]
+
+        if not isinstance(self.dcterms_creator, list):
+            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
+        self.dcterms_creator = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.dcterms_creator]
+
+        if not isinstance(self.saref_hasProperty, list):
+            self.saref_hasProperty = [self.saref_hasProperty] if self.saref_hasProperty is not None else []
+        self.saref_hasProperty = [v if isinstance(v, SarefProperty) else SarefProperty(**as_dict(v)) for v in self.saref_hasProperty]
+
+        if not isinstance(self.saref_hasPropertyValue, list):
+            self.saref_hasPropertyValue = [self.saref_hasPropertyValue] if self.saref_hasPropertyValue is not None else []
+        self.saref_hasPropertyValue = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.saref_hasPropertyValue]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class ValueNumerical(YAMLRoot):
+class FoafPerson(FoafAgent):
     """
-    Base class for quantitative values, they may have units and precision.
+    A person.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["ValueNumerical"]
-    class_class_curie: ClassVar[str] = "faqir:ValueNumerical"
-    class_name: ClassVar[str] = "ValueNumerical"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ValueNumerical
+    class_class_uri: ClassVar[URIRef] = FOAF["Person"]
+    class_class_curie: ClassVar[str] = "foaf:Person"
+    class_name: ClassVar[str] = "foaf_Person"
+    class_model_uri: ClassVar[URIRef] = QO.FoafPerson
 
-    numericalValue: Decimal = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+
+@dataclass(repr=False)
+class ProvOrganization(FoafAgent):
+    """
+    An organization is a social or legal institution such as a company, society, etc.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PROV["Organization"]
+    class_class_curie: ClassVar[str] = "prov:Organization"
+    class_name: ClassVar[str] = "prov_Organization"
+    class_model_uri: ClassVar[URIRef] = QO.ProvOrganization
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+
+@dataclass(repr=False)
+class SuloProcess(OwlThing):
+    """
+    a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SULO["Process"]
+    class_class_curie: ClassVar[str] = "sulo:Process"
+    class_name: ClassVar[str] = "sulo_Process"
+    class_model_uri: ClassVar[URIRef] = QO.SuloProcess
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    prov_type: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    dcterms_hasPart: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
+    dcterms_isPartOf: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
+    prov_generatedAtTime: Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]] = empty_list()
+    fhir_status: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
+    dcterms_creator: Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]] = empty_list()
+    saref_hasProperty: Optional[Union[Union[dict, "SarefProperty"], list[Union[dict, "SarefProperty"]]]] = empty_list()
+    saref_hasPropertyValue: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.numericalValue):
-            self.MissingRequiredField("numericalValue")
-        if not isinstance(self.numericalValue, Decimal):
-            self.numericalValue = Decimal(self.numericalValue)
+        if not isinstance(self.prov_type, list):
+            self.prov_type = [self.prov_type] if self.prov_type is not None else []
+        self.prov_type = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.prov_type]
+
+        if not isinstance(self.dcterms_hasPart, list):
+            self.dcterms_hasPart = [self.dcterms_hasPart] if self.dcterms_hasPart is not None else []
+        self.dcterms_hasPart = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_hasPart]
+
+        if not isinstance(self.dcterms_isPartOf, list):
+            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
+        self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
+
+        if not isinstance(self.prov_generatedAtTime, list):
+            self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
+        self.prov_generatedAtTime = [v if isinstance(v, XSDDateTime) else XSDDateTime(v) for v in self.prov_generatedAtTime]
+
+        if not isinstance(self.fhir_status, list):
+            self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
+        self.fhir_status = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.fhir_status]
+
+        if not isinstance(self.dcterms_creator, list):
+            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
+        self.dcterms_creator = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.dcterms_creator]
+
+        if not isinstance(self.saref_hasProperty, list):
+            self.saref_hasProperty = [self.saref_hasProperty] if self.saref_hasProperty is not None else []
+        self.saref_hasProperty = [v if isinstance(v, SarefProperty) else SarefProperty(**as_dict(v)) for v in self.saref_hasProperty]
+
+        if not isinstance(self.saref_hasPropertyValue, list):
+            self.saref_hasPropertyValue = [self.saref_hasPropertyValue] if self.saref_hasPropertyValue is not None else []
+        self.saref_hasPropertyValue = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.saref_hasPropertyValue]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class Weight(ValueNumerical):
+class S4ehawActivity(SuloProcess):
     """
-    Weight.
+    The activity of a patient/user, i.e. daily and nocturnal activities.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = DATAMODEL["vault/Weight"]
-    class_class_curie: ClassVar[str] = "datamodel:vault/Weight"
-    class_name: ClassVar[str] = "Weight"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Weight
+    class_class_uri: ClassVar[URIRef] = S4EHAW["activity"]
+    class_class_curie: ClassVar[str] = "s4ehaw:activity"
+    class_name: ClassVar[str] = "s4ehaw_Activity"
+    class_model_uri: ClassVar[URIRef] = QO.S4ehawActivity
 
-    numericalValue: Decimal = None
-    weightType: Union[str, "WeightType"] = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+
+@dataclass(repr=False)
+class FhirProcedure(SuloProcess):
+    """
+    An action that is being or was performed on an individual or entity
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = FHIR["Procedure"]
+    class_class_curie: ClassVar[str] = "fhir:Procedure"
+    class_name: ClassVar[str] = "fhir_Procedure"
+    class_model_uri: ClassVar[URIRef] = QO.FhirProcedure
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+
+@dataclass(repr=False)
+class ProvEntity(OwlThing):
+    """
+    An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real
+    or imaginary.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PROV["Entity"]
+    class_class_curie: ClassVar[str] = "prov:Entity"
+    class_name: ClassVar[str] = "prov_Entity"
+    class_model_uri: ClassVar[URIRef] = QO.ProvEntity
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    prov_wasAttributedTo: Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]] = empty_list()
+    dcterms_created: Optional[Union[str, XSDDateTime]] = None
+    dcterms_modified: Optional[Union[str, XSDDateTime]] = None
+    prov_type: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    dcterms_hasPart: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
+    dcterms_isPartOf: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
+    prov_generatedAtTime: Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]] = empty_list()
+    fhir_status: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
+    dcterms_creator: Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]] = empty_list()
+    saref_hasProperty: Optional[Union[Union[dict, "SarefProperty"], list[Union[dict, "SarefProperty"]]]] = empty_list()
+    saref_hasPropertyValue: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.weightType):
-            self.MissingRequiredField("weightType")
-        if not isinstance(self.weightType, WeightType):
-            self.weightType = WeightType(self.weightType)
+        if not isinstance(self.prov_wasAttributedTo, list):
+            self.prov_wasAttributedTo = [self.prov_wasAttributedTo] if self.prov_wasAttributedTo is not None else []
+        self.prov_wasAttributedTo = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.prov_wasAttributedTo]
+
+        if self.dcterms_created is not None and not isinstance(self.dcterms_created, XSDDateTime):
+            self.dcterms_created = XSDDateTime(self.dcterms_created)
+
+        if self.dcterms_modified is not None and not isinstance(self.dcterms_modified, XSDDateTime):
+            self.dcterms_modified = XSDDateTime(self.dcterms_modified)
+
+        if not isinstance(self.prov_type, list):
+            self.prov_type = [self.prov_type] if self.prov_type is not None else []
+        self.prov_type = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.prov_type]
+
+        if not isinstance(self.dcterms_hasPart, list):
+            self.dcterms_hasPart = [self.dcterms_hasPart] if self.dcterms_hasPart is not None else []
+        self.dcterms_hasPart = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_hasPart]
+
+        if not isinstance(self.dcterms_isPartOf, list):
+            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
+        self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
+
+        if not isinstance(self.prov_generatedAtTime, list):
+            self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
+        self.prov_generatedAtTime = [v if isinstance(v, XSDDateTime) else XSDDateTime(v) for v in self.prov_generatedAtTime]
+
+        if not isinstance(self.fhir_status, list):
+            self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
+        self.fhir_status = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.fhir_status]
+
+        if not isinstance(self.dcterms_creator, list):
+            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
+        self.dcterms_creator = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.dcterms_creator]
+
+        if not isinstance(self.saref_hasProperty, list):
+            self.saref_hasProperty = [self.saref_hasProperty] if self.saref_hasProperty is not None else []
+        self.saref_hasProperty = [v if isinstance(v, SarefProperty) else SarefProperty(**as_dict(v)) for v in self.saref_hasProperty]
+
+        if not isinstance(self.saref_hasPropertyValue, list):
+            self.saref_hasPropertyValue = [self.saref_hasPropertyValue] if self.saref_hasPropertyValue is not None else []
+        self.saref_hasPropertyValue = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.saref_hasPropertyValue]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SarefProperty(ProvEntity):
+    """
+    Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A
+    property can apply to different features of interest.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SAREF["Property"]
+    class_class_curie: ClassVar[str] = "saref:Property"
+    class_name: ClassVar[str] = "saref_Property"
+    class_model_uri: ClassVar[URIRef] = QO.SarefProperty
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    fhir_referenceRange: Optional[Union[dict, "FhirReferenceRange"]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.fhir_referenceRange is not None and not isinstance(self.fhir_referenceRange, FhirReferenceRange):
+            self.fhir_referenceRange = FhirReferenceRange(**as_dict(self.fhir_referenceRange))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SarefPropertyValue(ProvEntity):
+    """
+    Describes the value for a property. The property value is optionally linked to its value expressed as an RDF
+    literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the
+    properties or properties of interest it is a value of (OP saref:isValueOfProperty).
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SAREF["PropertyValue"]
+    class_class_curie: ClassVar[str] = "saref:PropertyValue"
+    class_name: ClassVar[str] = "saref_PropertyValue"
+    class_model_uri: ClassVar[URIRef] = QO.SarefPropertyValue
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    prov_atTime: Optional[Union[str, XSDDateTime]] = None
+    saref_hasValue: Optional[str] = None
+    saref_isValueOfProperty: Optional[Union[dict, SarefProperty]] = None
+    fhir_valueReference: Optional[Union[str, URIorCURIE]] = None
+    fhir_valueCodeableConcept: Optional[Union[dict, "ValueCoding"]] = None
+    fhir_valueRange: Optional[Union[dict, "FhirReferenceRange"]] = None
+    fhir_valueRatio: Optional[Union[dict, "FhirValueRatio"]] = None
+    fhir_valuePeriod: Optional[Union[dict, "TimeInterval"]] = None
+    fhir_valueAttachement: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.prov_atTime is not None and not isinstance(self.prov_atTime, XSDDateTime):
+            self.prov_atTime = XSDDateTime(self.prov_atTime)
+
+        if self.saref_hasValue is not None and not isinstance(self.saref_hasValue, str):
+            self.saref_hasValue = str(self.saref_hasValue)
+
+        if self.saref_isValueOfProperty is not None and not isinstance(self.saref_isValueOfProperty, SarefProperty):
+            self.saref_isValueOfProperty = SarefProperty(**as_dict(self.saref_isValueOfProperty))
+
+        if self.fhir_valueReference is not None and not isinstance(self.fhir_valueReference, URIorCURIE):
+            self.fhir_valueReference = URIorCURIE(self.fhir_valueReference)
+
+        if self.fhir_valueCodeableConcept is not None and not isinstance(self.fhir_valueCodeableConcept, ValueCoding):
+            self.fhir_valueCodeableConcept = ValueCoding(**as_dict(self.fhir_valueCodeableConcept))
+
+        if self.fhir_valueRange is not None and not isinstance(self.fhir_valueRange, FhirReferenceRange):
+            self.fhir_valueRange = FhirReferenceRange(**as_dict(self.fhir_valueRange))
+
+        if self.fhir_valueRatio is not None and not isinstance(self.fhir_valueRatio, FhirValueRatio):
+            self.fhir_valueRatio = FhirValueRatio(**as_dict(self.fhir_valueRatio))
+
+        if self.fhir_valuePeriod is not None and not isinstance(self.fhir_valuePeriod, TimeInterval):
+            self.fhir_valuePeriod = TimeInterval(**as_dict(self.fhir_valuePeriod))
+
+        if self.fhir_valueAttachement is not None and not isinstance(self.fhir_valueAttachement, URIorCURIE):
+            self.fhir_valueAttachement = URIorCURIE(self.fhir_valueAttachement)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class QuantityValue(YAMLRoot):
+    """
+    A measured amount (or an amount that can potentially be measured).
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = FHIR["datatypes.Quantity"]
+    class_class_curie: ClassVar[str] = "fhir:datatypes.Quantity"
+    class_name: ClassVar[str] = "QuantityValue"
+    class_model_uri: ClassVar[URIRef] = QO.QuantityValue
+
+    saref_isMeasuredIn: Optional[Union[str, URIorCURIE]] = None
+    saref_hasValue: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.saref_isMeasuredIn is not None and not isinstance(self.saref_isMeasuredIn, URIorCURIE):
+            self.saref_isMeasuredIn = URIorCURIE(self.saref_isMeasuredIn)
+
+        if self.saref_hasValue is not None and not isinstance(self.saref_hasValue, str):
+            self.saref_hasValue = str(self.saref_hasValue)
 
         super().__post_init__(**kwargs)
 
@@ -372,101 +669,20 @@ class NumericalParams(YAMLRoot):
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["NumericalParams"]
-    class_class_curie: ClassVar[str] = "faqir:NumericalParams"
+    class_class_uri: ClassVar[URIRef] = PHRO["NumericalParams"]
+    class_class_curie: ClassVar[str] = "phro:NumericalParams"
     class_name: ClassVar[str] = "NumericalParams"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.NumericalParams
+    class_model_uri: ClassVar[URIRef] = QO.NumericalParams
 
-    numericalUnit: Optional[Union[str, "UnitOfMeasure"]] = None
+    numericalUnit: Optional[Union[str, URIorCURIE]] = None
     numericalPrecision: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.numericalUnit is not None and not isinstance(self.numericalUnit, UnitOfMeasure):
-            self.numericalUnit = UnitOfMeasure(self.numericalUnit)
+        if self.numericalUnit is not None and not isinstance(self.numericalUnit, URIorCURIE):
+            self.numericalUnit = URIorCURIE(self.numericalUnit)
 
         if self.numericalPrecision is not None and not isinstance(self.numericalPrecision, int):
             self.numericalPrecision = int(self.numericalPrecision)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class IntervalParams(YAMLRoot):
-    """
-    Parameters for interval values, including minimum and maximum values.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["IntervalParams"]
-    class_class_curie: ClassVar[str] = "faqir:IntervalParams"
-    class_name: ClassVar[str] = "IntervalParams"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.IntervalParams
-
-    minValue: float = None
-    maxValue: float = None
-    minLabel: Optional[str] = None
-    maxLabel: Optional[str] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.minValue):
-            self.MissingRequiredField("minValue")
-        if not isinstance(self.minValue, float):
-            self.minValue = float(self.minValue)
-
-        if self._is_empty(self.maxValue):
-            self.MissingRequiredField("maxValue")
-        if not isinstance(self.maxValue, float):
-            self.maxValue = float(self.maxValue)
-
-        if self.minLabel is not None and not isinstance(self.minLabel, str):
-            self.minLabel = str(self.minLabel)
-
-        if self.maxLabel is not None and not isinstance(self.maxLabel, str):
-            self.maxLabel = str(self.maxLabel)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class ValueString(YAMLRoot):
-    """
-    A string value, typically used for text or identifiers.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["ValueString"]
-    class_class_curie: ClassVar[str] = "faqir:ValueString"
-    class_name: ClassVar[str] = "ValueString"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ValueString
-
-    stringValue: str = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.stringValue):
-            self.MissingRequiredField("stringValue")
-        if not isinstance(self.stringValue, str):
-            self.stringValue = str(self.stringValue)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class ValueDateTime(YAMLRoot):
-    """
-    A date and time value, typically in ISO 8601 format.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["ValueDateTime"]
-    class_class_curie: ClassVar[str] = "faqir:ValueDateTime"
-    class_name: ClassVar[str] = "ValueDateTime"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ValueDateTime
-
-    dateTimeValue: Optional[Union[str, XSDDateTime]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self.dateTimeValue is not None and not isinstance(self.dateTimeValue, XSDDateTime):
-            self.dateTimeValue = XSDDateTime(self.dateTimeValue)
 
         super().__post_init__(**kwargs)
 
@@ -478,10 +694,10 @@ class ValueCoding(YAMLRoot):
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["ValueCoding"]
-    class_class_curie: ClassVar[str] = "faqir:ValueCoding"
+    class_class_uri: ClassVar[URIRef] = FHIR["Coding"]
+    class_class_curie: ClassVar[str] = "fhir:Coding"
     class_name: ClassVar[str] = "ValueCoding"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ValueCoding
+    class_model_uri: ClassVar[URIRef] = QO.ValueCoding
 
     code: str = None
     display: str = None
@@ -501,990 +717,584 @@ class ValueCoding(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Metadata(YAMLRoot):
+class FhirValueRatio(YAMLRoot):
     """
-    Base class for metadata tracking (e.g. schema versioning & last updated).
+    A ratio of two Quantity values - a numerator and a denominator
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["Metadata"]
-    class_class_curie: ClassVar[str] = "faqir:Metadata"
-    class_name: ClassVar[str] = "Metadata"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Metadata
+    class_class_uri: ClassVar[URIRef] = FHIR["datatype.Ratio"]
+    class_class_curie: ClassVar[str] = "fhir:datatype.Ratio"
+    class_name: ClassVar[str] = "fhir_ValueRatio"
+    class_model_uri: ClassVar[URIRef] = QO.FhirValueRatio
 
-    lastUpdated: Union[str, XSDDateTime] = None
+    numerator: Union[dict, QuantityValue] = None
+    denominator: Union[dict, QuantityValue] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.lastUpdated):
-            self.MissingRequiredField("lastUpdated")
-        if not isinstance(self.lastUpdated, XSDDateTime):
-            self.lastUpdated = XSDDateTime(self.lastUpdated)
+        if self._is_empty(self.numerator):
+            self.MissingRequiredField("numerator")
+        if not isinstance(self.numerator, QuantityValue):
+            self.numerator = QuantityValue(**as_dict(self.numerator))
+
+        if self._is_empty(self.denominator):
+            self.MissingRequiredField("denominator")
+        if not isinstance(self.denominator, QuantityValue):
+            self.denominator = QuantityValue(**as_dict(self.denominator))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class Vault(Metadata):
+class IntervalParams(YAMLRoot):
     """
-    The FAQIR healthdata vault.
+    Parameters for interval values, including minimum and maximum values.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["vault"]
-    class_class_curie: ClassVar[str] = "faqir:vault"
-    class_name: ClassVar[str] = "Vault"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Vault
+    class_class_uri: ClassVar[URIRef] = PHRO["IntervalParams"]
+    class_class_curie: ClassVar[str] = "phro:IntervalParams"
+    class_name: ClassVar[str] = "IntervalParams"
+    class_model_uri: ClassVar[URIRef] = QO.IntervalParams
 
-    vaultId: Union[str, VaultVaultId] = None
-    lastUpdated: Union[str, XSDDateTime] = None
-    vaultManagedByOrg: Union[str, OrganizationOrganizationId] = None
-    hasQuestionnaireResponse: Optional[Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]]] = empty_list()
-    birthdate: Optional[Union[str, XSDDateTime]] = None
-    weight: Optional[Union[dict, Weight]] = None
-    full_name: Optional[Union[dict, FullName]] = None
+    minValue: Optional[float] = None
+    minLabel: Optional[str] = None
+    maxValue: Optional[float] = None
+    maxLabel: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.vaultId):
-            self.MissingRequiredField("vaultId")
-        if not isinstance(self.vaultId, VaultVaultId):
-            self.vaultId = VaultVaultId(self.vaultId)
+        if self.minValue is not None and not isinstance(self.minValue, float):
+            self.minValue = float(self.minValue)
 
-        if self._is_empty(self.vaultManagedByOrg):
-            self.MissingRequiredField("vaultManagedByOrg")
-        if not isinstance(self.vaultManagedByOrg, OrganizationOrganizationId):
-            self.vaultManagedByOrg = OrganizationOrganizationId(self.vaultManagedByOrg)
+        if self.minLabel is not None and not isinstance(self.minLabel, str):
+            self.minLabel = str(self.minLabel)
 
-        if not isinstance(self.hasQuestionnaireResponse, list):
-            self.hasQuestionnaireResponse = [self.hasQuestionnaireResponse] if self.hasQuestionnaireResponse is not None else []
-        self.hasQuestionnaireResponse = [v if isinstance(v, QuestionnaireResponseQuestionnaireResponseId) else QuestionnaireResponseQuestionnaireResponseId(v) for v in self.hasQuestionnaireResponse]
+        if self.maxValue is not None and not isinstance(self.maxValue, float):
+            self.maxValue = float(self.maxValue)
 
-        if self.birthdate is not None and not isinstance(self.birthdate, XSDDateTime):
-            self.birthdate = XSDDateTime(self.birthdate)
-
-        if self.weight is not None and not isinstance(self.weight, Weight):
-            self.weight = Weight(**as_dict(self.weight))
-
-        if self.full_name is not None and not isinstance(self.full_name, FullName):
-            self.full_name = FullName(**as_dict(self.full_name))
+        if self.maxLabel is not None and not isinstance(self.maxLabel, str):
+            self.maxLabel = str(self.maxLabel)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class Organization(YAMLRoot):
+class TimeInterval(YAMLRoot):
     """
-    An entity acting in a healthcare context
+    A temporal entity with an extent or duration
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["Organization"]
-    class_class_curie: ClassVar[str] = "faqir:Organization"
-    class_name: ClassVar[str] = "Organization"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Organization
+    class_class_uri: ClassVar[URIRef] = TIME["Interval"]
+    class_class_curie: ClassVar[str] = "time:Interval"
+    class_name: ClassVar[str] = "time_Interval"
+    class_model_uri: ClassVar[URIRef] = QO.TimeInterval
 
-    organizationId: Union[str, OrganizationOrganizationId] = None
-    organizationLabel: str = None
-    organizationType: Union[str, "OrganizationType"] = None
-    organizationAuthorsQuestionnaire: Optional[Union[Union[str, QuestionnaireQuestionnaireId], list[Union[str, QuestionnaireQuestionnaireId]]]] = empty_list()
-    organizationAuthorsSection: Optional[Union[Union[str, SectionSectionId], list[Union[str, SectionSectionId]]]] = empty_list()
-    organizationAuthorsQuestion: Optional[Union[Union[str, QuestionQuestionId], list[Union[str, QuestionQuestionId]]]] = empty_list()
-    organizationAuthorsScoreDefinition: Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]] = empty_list()
-    organizationManagesVault: Optional[Union[Union[str, VaultVaultId], list[Union[str, VaultVaultId]]]] = empty_list()
+    prov_startedAtTime: Optional[Union[str, XSDDateTime]] = None
+    prov_endedAtTime: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.organizationId):
-            self.MissingRequiredField("organizationId")
-        if not isinstance(self.organizationId, OrganizationOrganizationId):
-            self.organizationId = OrganizationOrganizationId(self.organizationId)
+        if self.prov_startedAtTime is not None and not isinstance(self.prov_startedAtTime, XSDDateTime):
+            self.prov_startedAtTime = XSDDateTime(self.prov_startedAtTime)
 
-        if self._is_empty(self.organizationLabel):
-            self.MissingRequiredField("organizationLabel")
-        if not isinstance(self.organizationLabel, str):
-            self.organizationLabel = str(self.organizationLabel)
-
-        if self._is_empty(self.organizationType):
-            self.MissingRequiredField("organizationType")
-        if not isinstance(self.organizationType, OrganizationType):
-            self.organizationType = OrganizationType(self.organizationType)
-
-        if not isinstance(self.organizationAuthorsQuestionnaire, list):
-            self.organizationAuthorsQuestionnaire = [self.organizationAuthorsQuestionnaire] if self.organizationAuthorsQuestionnaire is not None else []
-        self.organizationAuthorsQuestionnaire = [v if isinstance(v, QuestionnaireQuestionnaireId) else QuestionnaireQuestionnaireId(v) for v in self.organizationAuthorsQuestionnaire]
-
-        if not isinstance(self.organizationAuthorsSection, list):
-            self.organizationAuthorsSection = [self.organizationAuthorsSection] if self.organizationAuthorsSection is not None else []
-        self.organizationAuthorsSection = [v if isinstance(v, SectionSectionId) else SectionSectionId(v) for v in self.organizationAuthorsSection]
-
-        if not isinstance(self.organizationAuthorsQuestion, list):
-            self.organizationAuthorsQuestion = [self.organizationAuthorsQuestion] if self.organizationAuthorsQuestion is not None else []
-        self.organizationAuthorsQuestion = [v if isinstance(v, QuestionQuestionId) else QuestionQuestionId(v) for v in self.organizationAuthorsQuestion]
-
-        if not isinstance(self.organizationAuthorsScoreDefinition, list):
-            self.organizationAuthorsScoreDefinition = [self.organizationAuthorsScoreDefinition] if self.organizationAuthorsScoreDefinition is not None else []
-        self.organizationAuthorsScoreDefinition = [v if isinstance(v, ScoreDefinitionScoreDefinitionId) else ScoreDefinitionScoreDefinitionId(v) for v in self.organizationAuthorsScoreDefinition]
-
-        if not isinstance(self.organizationManagesVault, list):
-            self.organizationManagesVault = [self.organizationManagesVault] if self.organizationManagesVault is not None else []
-        self.organizationManagesVault = [v if isinstance(v, VaultVaultId) else VaultVaultId(v) for v in self.organizationManagesVault]
+        if self.prov_endedAtTime is not None and not isinstance(self.prov_endedAtTime, XSDDateTime):
+            self.prov_endedAtTime = XSDDateTime(self.prov_endedAtTime)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class Procedure(YAMLRoot):
+class TimeDuration(YAMLRoot):
     """
-    A clinical or administrative process that uses resources like questionnaires
+    Duration of a temporal extent expressed as a decimal number scaled by a temporal unit
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["Procedure"]
-    class_class_curie: ClassVar[str] = "faqir:Procedure"
-    class_name: ClassVar[str] = "Procedure"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Procedure
+    class_class_uri: ClassVar[URIRef] = TIME["Duration"]
+    class_class_curie: ClassVar[str] = "time:Duration"
+    class_name: ClassVar[str] = "time_Duration"
+    class_model_uri: ClassVar[URIRef] = QO.TimeDuration
 
-    procedureId: Union[str, ProcedureProcedureId] = None
-    procedureLabel: str = None
-    procedurePerformedByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
-    procedureHasQuestionnaire: Optional[Union[Union[str, QuestionnaireQuestionnaireId], list[Union[str, QuestionnaireQuestionnaireId]]]] = empty_list()
-    procedureDescription: Optional[str] = None
+    saref_hasValue: Optional[str] = None
+    saref_isMeasuredIn: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.procedureId):
-            self.MissingRequiredField("procedureId")
-        if not isinstance(self.procedureId, ProcedureProcedureId):
-            self.procedureId = ProcedureProcedureId(self.procedureId)
+        if self.saref_hasValue is not None and not isinstance(self.saref_hasValue, str):
+            self.saref_hasValue = str(self.saref_hasValue)
 
-        if self._is_empty(self.procedureLabel):
-            self.MissingRequiredField("procedureLabel")
-        if not isinstance(self.procedureLabel, str):
-            self.procedureLabel = str(self.procedureLabel)
-
-        if not isinstance(self.procedurePerformedByOrg, list):
-            self.procedurePerformedByOrg = [self.procedurePerformedByOrg] if self.procedurePerformedByOrg is not None else []
-        self.procedurePerformedByOrg = [v if isinstance(v, OrganizationOrganizationId) else OrganizationOrganizationId(v) for v in self.procedurePerformedByOrg]
-
-        if not isinstance(self.procedureHasQuestionnaire, list):
-            self.procedureHasQuestionnaire = [self.procedureHasQuestionnaire] if self.procedureHasQuestionnaire is not None else []
-        self.procedureHasQuestionnaire = [v if isinstance(v, QuestionnaireQuestionnaireId) else QuestionnaireQuestionnaireId(v) for v in self.procedureHasQuestionnaire]
-
-        if self.procedureDescription is not None and not isinstance(self.procedureDescription, str):
-            self.procedureDescription = str(self.procedureDescription)
+        if self.saref_isMeasuredIn is not None and not isinstance(self.saref_isMeasuredIn, URIorCURIE):
+            self.saref_isMeasuredIn = URIorCURIE(self.saref_isMeasuredIn)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class QuestionnaireResponse(YAMLRoot):
+class FhirReferenceRange(YAMLRoot):
     """
-    A response to a questionnaire (collection of answers).
+    Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges
+    are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange
+    elements would be used.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["QuestionnaireResponse"]
-    class_class_curie: ClassVar[str] = "faqir:QuestionnaireResponse"
-    class_name: ClassVar[str] = "QuestionnaireResponse"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.QuestionnaireResponse
+    class_class_uri: ClassVar[URIRef] = FHIR["Observation.referenceRange"]
+    class_class_curie: ClassVar[str] = "fhir:Observation.referenceRange"
+    class_name: ClassVar[str] = "fhir_ReferenceRange"
+    class_model_uri: ClassVar[URIRef] = QO.FhirReferenceRange
 
-    questionnaireResponseId: Union[str, QuestionnaireResponseQuestionnaireResponseId] = None
-    questionnaireResponseBySubject: Union[str, VaultVaultId] = None
-    questionnaireResponseToQuestionnaire: Union[str, QuestionnaireQuestionnaireId] = None
-    questionnaireResponseHasAnswer: Union[Union[str, AnswerAnswerId], list[Union[str, AnswerAnswerId]]] = None
-    questionnaireResponseStatus: Union[str, "QuestionnaireResponseStatus"] = None
-    questionnaireResponseTimeStamp: Union[str, XSDDateTime] = None
-    questionnaireResponseLastUpdated: Union[str, XSDDateTime] = None
-    questionnaireResponseHasDerivedScoreValue: Optional[Union[Union[str, ScoreValueScoreValueId], list[Union[str, ScoreValueScoreValueId]]]] = empty_list()
+    lowRange: Optional[Union[dict, QuantityValue]] = None
+    highRange: Optional[Union[dict, QuantityValue]] = None
+    normalValue: Optional[Union[Union[dict, QuantityValue], list[Union[dict, QuantityValue]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.questionnaireResponseId):
-            self.MissingRequiredField("questionnaireResponseId")
-        if not isinstance(self.questionnaireResponseId, QuestionnaireResponseQuestionnaireResponseId):
-            self.questionnaireResponseId = QuestionnaireResponseQuestionnaireResponseId(self.questionnaireResponseId)
+        if self.lowRange is not None and not isinstance(self.lowRange, QuantityValue):
+            self.lowRange = QuantityValue(**as_dict(self.lowRange))
 
-        if self._is_empty(self.questionnaireResponseBySubject):
-            self.MissingRequiredField("questionnaireResponseBySubject")
-        if not isinstance(self.questionnaireResponseBySubject, VaultVaultId):
-            self.questionnaireResponseBySubject = VaultVaultId(self.questionnaireResponseBySubject)
+        if self.highRange is not None and not isinstance(self.highRange, QuantityValue):
+            self.highRange = QuantityValue(**as_dict(self.highRange))
 
-        if self._is_empty(self.questionnaireResponseToQuestionnaire):
-            self.MissingRequiredField("questionnaireResponseToQuestionnaire")
-        if not isinstance(self.questionnaireResponseToQuestionnaire, QuestionnaireQuestionnaireId):
-            self.questionnaireResponseToQuestionnaire = QuestionnaireQuestionnaireId(self.questionnaireResponseToQuestionnaire)
-
-        if self._is_empty(self.questionnaireResponseHasAnswer):
-            self.MissingRequiredField("questionnaireResponseHasAnswer")
-        if not isinstance(self.questionnaireResponseHasAnswer, list):
-            self.questionnaireResponseHasAnswer = [self.questionnaireResponseHasAnswer] if self.questionnaireResponseHasAnswer is not None else []
-        self.questionnaireResponseHasAnswer = [v if isinstance(v, AnswerAnswerId) else AnswerAnswerId(v) for v in self.questionnaireResponseHasAnswer]
-
-        if self._is_empty(self.questionnaireResponseStatus):
-            self.MissingRequiredField("questionnaireResponseStatus")
-        if not isinstance(self.questionnaireResponseStatus, QuestionnaireResponseStatus):
-            self.questionnaireResponseStatus = QuestionnaireResponseStatus(self.questionnaireResponseStatus)
-
-        if self._is_empty(self.questionnaireResponseTimeStamp):
-            self.MissingRequiredField("questionnaireResponseTimeStamp")
-        if not isinstance(self.questionnaireResponseTimeStamp, XSDDateTime):
-            self.questionnaireResponseTimeStamp = XSDDateTime(self.questionnaireResponseTimeStamp)
-
-        if self._is_empty(self.questionnaireResponseLastUpdated):
-            self.MissingRequiredField("questionnaireResponseLastUpdated")
-        if not isinstance(self.questionnaireResponseLastUpdated, XSDDateTime):
-            self.questionnaireResponseLastUpdated = XSDDateTime(self.questionnaireResponseLastUpdated)
-
-        if not isinstance(self.questionnaireResponseHasDerivedScoreValue, list):
-            self.questionnaireResponseHasDerivedScoreValue = [self.questionnaireResponseHasDerivedScoreValue] if self.questionnaireResponseHasDerivedScoreValue is not None else []
-        self.questionnaireResponseHasDerivedScoreValue = [v if isinstance(v, ScoreValueScoreValueId) else ScoreValueScoreValueId(v) for v in self.questionnaireResponseHasDerivedScoreValue]
+        if not isinstance(self.normalValue, list):
+            self.normalValue = [self.normalValue] if self.normalValue is not None else []
+        self.normalValue = [v if isinstance(v, QuantityValue) else QuantityValue(**as_dict(v)) for v in self.normalValue]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class Answer(YAMLRoot):
-    """
-    Answer in the questionnaire response.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["Answer"]
-    class_class_curie: ClassVar[str] = "faqir:Answer"
-    class_name: ClassVar[str] = "Answer"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Answer
-
-    answerId: Union[str, AnswerAnswerId] = None
-    answerInQuestionnaireResponse: Union[str, QuestionnaireResponseQuestionnaireResponseId] = None
-    answerToQuestion: Union[str, QuestionQuestionId] = None
-    questionType: Union[str, "QuestionType"] = None
-    answerTimeStamp: Union[str, XSDDateTime] = None
-    answerValueNumerical: Optional[Union[dict, ValueNumerical]] = None
-    answerValueString: Optional[Union[Union[dict, ValueString], list[Union[dict, ValueString]]]] = empty_list()
-    answerValueDateTime: Optional[Union[dict, ValueDateTime]] = None
-    answerIsEmpty: Optional[Union[bool, Bool]] = False
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.answerId):
-            self.MissingRequiredField("answerId")
-        if not isinstance(self.answerId, AnswerAnswerId):
-            self.answerId = AnswerAnswerId(self.answerId)
-
-        if self._is_empty(self.answerInQuestionnaireResponse):
-            self.MissingRequiredField("answerInQuestionnaireResponse")
-        if not isinstance(self.answerInQuestionnaireResponse, QuestionnaireResponseQuestionnaireResponseId):
-            self.answerInQuestionnaireResponse = QuestionnaireResponseQuestionnaireResponseId(self.answerInQuestionnaireResponse)
-
-        if self._is_empty(self.answerToQuestion):
-            self.MissingRequiredField("answerToQuestion")
-        if not isinstance(self.answerToQuestion, QuestionQuestionId):
-            self.answerToQuestion = QuestionQuestionId(self.answerToQuestion)
-
-        if self._is_empty(self.questionType):
-            self.MissingRequiredField("questionType")
-        if not isinstance(self.questionType, QuestionType):
-            self.questionType = QuestionType(self.questionType)
-
-        if self._is_empty(self.answerTimeStamp):
-            self.MissingRequiredField("answerTimeStamp")
-        if not isinstance(self.answerTimeStamp, XSDDateTime):
-            self.answerTimeStamp = XSDDateTime(self.answerTimeStamp)
-
-        if self.answerValueNumerical is not None and not isinstance(self.answerValueNumerical, ValueNumerical):
-            self.answerValueNumerical = ValueNumerical(**as_dict(self.answerValueNumerical))
-
-        self._normalize_inlined_as_dict(slot_name="answerValueString", slot_type=ValueString, key_name="stringValue", keyed=False)
-
-        if self.answerValueDateTime is not None and not isinstance(self.answerValueDateTime, ValueDateTime):
-            self.answerValueDateTime = ValueDateTime(**as_dict(self.answerValueDateTime))
-
-        if self.answerIsEmpty is not None and not isinstance(self.answerIsEmpty, Bool):
-            self.answerIsEmpty = Bool(self.answerIsEmpty)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class OrderedQuestion(YAMLRoot):
-    """
-    Question's position within a specific questionnaire or section.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["OrderedQuestion"]
-    class_class_curie: ClassVar[str] = "faqir:OrderedQuestion"
-    class_name: ClassVar[str] = "OrderedQuestion"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.OrderedQuestion
-
-    orderedQuestionId: Union[str, OrderedQuestionOrderedQuestionId] = None
-    orderedQuestionHasQuestion: Union[str, QuestionQuestionId] = None
-    questionOrder: int = None
-    orderedQuestionPartOfQuestionnaire: Optional[Union[str, QuestionnaireQuestionnaireId]] = None
-    orderedQuestionPartOfSection: Optional[Union[str, SectionSectionId]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.orderedQuestionId):
-            self.MissingRequiredField("orderedQuestionId")
-        if not isinstance(self.orderedQuestionId, OrderedQuestionOrderedQuestionId):
-            self.orderedQuestionId = OrderedQuestionOrderedQuestionId(self.orderedQuestionId)
-
-        if self._is_empty(self.orderedQuestionHasQuestion):
-            self.MissingRequiredField("orderedQuestionHasQuestion")
-        if not isinstance(self.orderedQuestionHasQuestion, QuestionQuestionId):
-            self.orderedQuestionHasQuestion = QuestionQuestionId(self.orderedQuestionHasQuestion)
-
-        if self._is_empty(self.questionOrder):
-            self.MissingRequiredField("questionOrder")
-        if not isinstance(self.questionOrder, int):
-            self.questionOrder = int(self.questionOrder)
-
-        if self.orderedQuestionPartOfQuestionnaire is not None and not isinstance(self.orderedQuestionPartOfQuestionnaire, QuestionnaireQuestionnaireId):
-            self.orderedQuestionPartOfQuestionnaire = QuestionnaireQuestionnaireId(self.orderedQuestionPartOfQuestionnaire)
-
-        if self.orderedQuestionPartOfSection is not None and not isinstance(self.orderedQuestionPartOfSection, SectionSectionId):
-            self.orderedQuestionPartOfSection = SectionSectionId(self.orderedQuestionPartOfSection)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class Question(YAMLRoot):
-    """
-    A question in the questionnaire.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["Question"]
-    class_class_curie: ClassVar[str] = "faqir:Question"
-    class_name: ClassVar[str] = "Question"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Question
-
-    questionId: Union[str, QuestionQuestionId] = None
-    questionType: Union[str, "QuestionType"] = None
-    questionHasQuestionRepresentation: Union[dict[Union[str, QuestionRepresentationQuestionRepresentationId], Union[dict, "QuestionRepresentation"]], list[Union[dict, "QuestionRepresentation"]]] = empty_dict()
-    questionTag: str = None
-    questionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
-    questionInOrderedQuestion: Optional[Union[Union[str, OrderedQuestionOrderedQuestionId], list[Union[str, OrderedQuestionOrderedQuestionId]]]] = empty_list()
-    questionHasAnswer: Optional[Union[Union[str, AnswerAnswerId], list[Union[str, AnswerAnswerId]]]] = empty_list()
-    questionUsedInScoreDefinition: Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]] = empty_list()
-    questionNumericalParams: Optional[Union[dict, NumericalParams]] = None
-    questionCodingParams: Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]] = empty_list()
-    questionIntervalParams: Optional[Union[dict, IntervalParams]] = None
-    questionRequired: Optional[Union[bool, Bool]] = False
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.questionId):
-            self.MissingRequiredField("questionId")
-        if not isinstance(self.questionId, QuestionQuestionId):
-            self.questionId = QuestionQuestionId(self.questionId)
-
-        if self._is_empty(self.questionType):
-            self.MissingRequiredField("questionType")
-        if not isinstance(self.questionType, QuestionType):
-            self.questionType = QuestionType(self.questionType)
-
-        if self._is_empty(self.questionHasQuestionRepresentation):
-            self.MissingRequiredField("questionHasQuestionRepresentation")
-        self._normalize_inlined_as_list(slot_name="questionHasQuestionRepresentation", slot_type=QuestionRepresentation, key_name="questionRepresentationId", keyed=True)
-
-        if self._is_empty(self.questionTag):
-            self.MissingRequiredField("questionTag")
-        if not isinstance(self.questionTag, str):
-            self.questionTag = str(self.questionTag)
-
-        if not isinstance(self.questionAuthoredByOrg, list):
-            self.questionAuthoredByOrg = [self.questionAuthoredByOrg] if self.questionAuthoredByOrg is not None else []
-        self.questionAuthoredByOrg = [v if isinstance(v, OrganizationOrganizationId) else OrganizationOrganizationId(v) for v in self.questionAuthoredByOrg]
-
-        if not isinstance(self.questionInOrderedQuestion, list):
-            self.questionInOrderedQuestion = [self.questionInOrderedQuestion] if self.questionInOrderedQuestion is not None else []
-        self.questionInOrderedQuestion = [v if isinstance(v, OrderedQuestionOrderedQuestionId) else OrderedQuestionOrderedQuestionId(v) for v in self.questionInOrderedQuestion]
-
-        if not isinstance(self.questionHasAnswer, list):
-            self.questionHasAnswer = [self.questionHasAnswer] if self.questionHasAnswer is not None else []
-        self.questionHasAnswer = [v if isinstance(v, AnswerAnswerId) else AnswerAnswerId(v) for v in self.questionHasAnswer]
-
-        if not isinstance(self.questionUsedInScoreDefinition, list):
-            self.questionUsedInScoreDefinition = [self.questionUsedInScoreDefinition] if self.questionUsedInScoreDefinition is not None else []
-        self.questionUsedInScoreDefinition = [v if isinstance(v, ScoreDefinitionScoreDefinitionId) else ScoreDefinitionScoreDefinitionId(v) for v in self.questionUsedInScoreDefinition]
-
-        if self.questionNumericalParams is not None and not isinstance(self.questionNumericalParams, NumericalParams):
-            self.questionNumericalParams = NumericalParams(**as_dict(self.questionNumericalParams))
-
-        self._normalize_inlined_as_dict(slot_name="questionCodingParams", slot_type=ValueCoding, key_name="code", keyed=False)
-
-        if self.questionIntervalParams is not None and not isinstance(self.questionIntervalParams, IntervalParams):
-            self.questionIntervalParams = IntervalParams(**as_dict(self.questionIntervalParams))
-
-        if self.questionRequired is not None and not isinstance(self.questionRequired, Bool):
-            self.questionRequired = Bool(self.questionRequired)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class QuestionRepresentation(YAMLRoot):
-    """
-    The text representation of the question, in a specific language.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = FAQIR["QuestionRepresentation"]
-    class_class_curie: ClassVar[str] = "faqir:QuestionRepresentation"
-    class_name: ClassVar[str] = "QuestionRepresentation"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.QuestionRepresentation
-
-    questionRepresentationId: Union[str, QuestionRepresentationQuestionRepresentationId] = None
-    questionRepresentationOfQuestion: Union[str, QuestionQuestionId] = None
-    questionRepresentationText: str = None
-    questionRepresentationLanguage: str = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.questionRepresentationId):
-            self.MissingRequiredField("questionRepresentationId")
-        if not isinstance(self.questionRepresentationId, QuestionRepresentationQuestionRepresentationId):
-            self.questionRepresentationId = QuestionRepresentationQuestionRepresentationId(self.questionRepresentationId)
-
-        if self._is_empty(self.questionRepresentationOfQuestion):
-            self.MissingRequiredField("questionRepresentationOfQuestion")
-        if not isinstance(self.questionRepresentationOfQuestion, QuestionQuestionId):
-            self.questionRepresentationOfQuestion = QuestionQuestionId(self.questionRepresentationOfQuestion)
-
-        if self._is_empty(self.questionRepresentationText):
-            self.MissingRequiredField("questionRepresentationText")
-        if not isinstance(self.questionRepresentationText, str):
-            self.questionRepresentationText = str(self.questionRepresentationText)
-
-        if self._is_empty(self.questionRepresentationLanguage):
-            self.MissingRequiredField("questionRepresentationLanguage")
-        if not isinstance(self.questionRepresentationLanguage, str):
-            self.questionRepresentationLanguage = str(self.questionRepresentationLanguage)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class Questionnaire(YAMLRoot):
+class QoQuestionnaire(ProvEntity):
     """
     A questionnaire that can be answered (collection of questions).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["Questionnaire"]
-    class_class_curie: ClassVar[str] = "faqir:Questionnaire"
-    class_name: ClassVar[str] = "Questionnaire"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Questionnaire
+    class_class_uri: ClassVar[URIRef] = QO["Questionnaire"]
+    class_class_curie: ClassVar[str] = "qo:Questionnaire"
+    class_name: ClassVar[str] = "qo_Questionnaire"
+    class_model_uri: ClassVar[URIRef] = QO.QoQuestionnaire
 
-    questionnaireId: Union[str, QuestionnaireQuestionnaireId] = None
-    questionnaireLabel: str = None
-    questionnaireStatus: Union[str, "QuestionnaireStatus"] = None
-    questionnaireVersion: str = None
-    questionnaireLastUpdated: Union[str, XSDDateTime] = None
-    questionnaireHasQuestionnaireResponse: Optional[Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]]] = empty_list()
-    questionnaireHasOrderedQuestion: Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]] = empty_dict()
-    questionnaireHasOrderedSection: Optional[Union[dict[Union[str, OrderedSectionOrderedSectionId], Union[dict, "OrderedSection"]], list[Union[dict, "OrderedSection"]]]] = empty_dict()
-    questionnaireAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
-    questionnairePartOfProcedure: Optional[Union[Union[str, ProcedureProcedureId], list[Union[str, ProcedureProcedureId]]]] = empty_list()
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    dcterms_created: Union[str, XSDDateTime] = None
+    dcterms_modified: Union[str, XSDDateTime] = None
+    dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
+    fhir_status: Union[Union[dict, "QoQuestionnaireStatus"], list[Union[dict, "QoQuestionnaireStatus"]]] = None
+    qo_hasOrderedQuestion: Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]] = empty_list()
+    qo_hasOrderedSection: Optional[Union[Union[dict, "QoOrderedSection"], list[Union[dict, "QoOrderedSection"]]]] = empty_list()
+    dcterms_isPartOf: Optional[Union[Union[dict, SuloProcess], list[Union[dict, SuloProcess]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.questionnaireId):
-            self.MissingRequiredField("questionnaireId")
-        if not isinstance(self.questionnaireId, QuestionnaireQuestionnaireId):
-            self.questionnaireId = QuestionnaireQuestionnaireId(self.questionnaireId)
+        if self._is_empty(self.dcterms_created):
+            self.MissingRequiredField("dcterms_created")
+        if not isinstance(self.dcterms_created, XSDDateTime):
+            self.dcterms_created = XSDDateTime(self.dcterms_created)
 
-        if self._is_empty(self.questionnaireLabel):
-            self.MissingRequiredField("questionnaireLabel")
-        if not isinstance(self.questionnaireLabel, str):
-            self.questionnaireLabel = str(self.questionnaireLabel)
+        if self._is_empty(self.dcterms_modified):
+            self.MissingRequiredField("dcterms_modified")
+        if not isinstance(self.dcterms_modified, XSDDateTime):
+            self.dcterms_modified = XSDDateTime(self.dcterms_modified)
 
-        if self._is_empty(self.questionnaireStatus):
-            self.MissingRequiredField("questionnaireStatus")
-        if not isinstance(self.questionnaireStatus, QuestionnaireStatus):
-            self.questionnaireStatus = QuestionnaireStatus(self.questionnaireStatus)
+        if self._is_empty(self.dcterms_creator):
+            self.MissingRequiredField("dcterms_creator")
+        if not isinstance(self.dcterms_creator, list):
+            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
+        self.dcterms_creator = [v if isinstance(v, ProvOrganization) else ProvOrganization(**as_dict(v)) for v in self.dcterms_creator]
 
-        if self._is_empty(self.questionnaireVersion):
-            self.MissingRequiredField("questionnaireVersion")
-        if not isinstance(self.questionnaireVersion, str):
-            self.questionnaireVersion = str(self.questionnaireVersion)
+        if self._is_empty(self.fhir_status):
+            self.MissingRequiredField("fhir_status")
+        if not isinstance(self.fhir_status, list):
+            self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
+        self.fhir_status = [v if isinstance(v, QoQuestionnaireStatus) else QoQuestionnaireStatus(**as_dict(v)) for v in self.fhir_status]
 
-        if self._is_empty(self.questionnaireLastUpdated):
-            self.MissingRequiredField("questionnaireLastUpdated")
-        if not isinstance(self.questionnaireLastUpdated, XSDDateTime):
-            self.questionnaireLastUpdated = XSDDateTime(self.questionnaireLastUpdated)
+        if not isinstance(self.qo_hasOrderedQuestion, list):
+            self.qo_hasOrderedQuestion = [self.qo_hasOrderedQuestion] if self.qo_hasOrderedQuestion is not None else []
+        self.qo_hasOrderedQuestion = [v if isinstance(v, QoOrderedQuestion) else QoOrderedQuestion(**as_dict(v)) for v in self.qo_hasOrderedQuestion]
 
-        if not isinstance(self.questionnaireHasQuestionnaireResponse, list):
-            self.questionnaireHasQuestionnaireResponse = [self.questionnaireHasQuestionnaireResponse] if self.questionnaireHasQuestionnaireResponse is not None else []
-        self.questionnaireHasQuestionnaireResponse = [v if isinstance(v, QuestionnaireResponseQuestionnaireResponseId) else QuestionnaireResponseQuestionnaireResponseId(v) for v in self.questionnaireHasQuestionnaireResponse]
+        if not isinstance(self.qo_hasOrderedSection, list):
+            self.qo_hasOrderedSection = [self.qo_hasOrderedSection] if self.qo_hasOrderedSection is not None else []
+        self.qo_hasOrderedSection = [v if isinstance(v, QoOrderedSection) else QoOrderedSection(**as_dict(v)) for v in self.qo_hasOrderedSection]
 
-        self._normalize_inlined_as_list(slot_name="questionnaireHasOrderedQuestion", slot_type=OrderedQuestion, key_name="orderedQuestionId", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="questionnaireHasOrderedSection", slot_type=OrderedSection, key_name="orderedSectionId", keyed=True)
-
-        if not isinstance(self.questionnaireAuthoredByOrg, list):
-            self.questionnaireAuthoredByOrg = [self.questionnaireAuthoredByOrg] if self.questionnaireAuthoredByOrg is not None else []
-        self.questionnaireAuthoredByOrg = [v if isinstance(v, OrganizationOrganizationId) else OrganizationOrganizationId(v) for v in self.questionnaireAuthoredByOrg]
-
-        if not isinstance(self.questionnairePartOfProcedure, list):
-            self.questionnairePartOfProcedure = [self.questionnairePartOfProcedure] if self.questionnairePartOfProcedure is not None else []
-        self.questionnairePartOfProcedure = [v if isinstance(v, ProcedureProcedureId) else ProcedureProcedureId(v) for v in self.questionnairePartOfProcedure]
+        if not isinstance(self.dcterms_isPartOf, list):
+            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
+        self.dcterms_isPartOf = [v if isinstance(v, SuloProcess) else SuloProcess(**as_dict(v)) for v in self.dcterms_isPartOf]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class OrderedSection(YAMLRoot):
+class QoQuestionnaireStatus(SarefPropertyValue):
+    """
+    The status of the questionnaire, indicating whether it is     draft, active, retired or unknown.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = QO["QuestionnaireStatus"]
+    class_class_curie: ClassVar[str] = "qo:QuestionnaireStatus"
+    class_name: ClassVar[str] = "qo_QuestionnaireStatus"
+    class_model_uri: ClassVar[URIRef] = QO.QoQuestionnaireStatus
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    saref_hasValue: Union[str, "QoQuestionnaireStatusEnum"] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.saref_hasValue):
+            self.MissingRequiredField("saref_hasValue")
+        if not isinstance(self.saref_hasValue, QoQuestionnaireStatusEnum):
+            self.saref_hasValue = QoQuestionnaireStatusEnum(self.saref_hasValue)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class QoOrderedSection(ProvEntity):
     """
     Section's position within a specific questionnaire or section.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["OrderedSection"]
-    class_class_curie: ClassVar[str] = "faqir:OrderedSection"
-    class_name: ClassVar[str] = "OrderedSection"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.OrderedSection
+    class_class_uri: ClassVar[URIRef] = QO["OrderedSection"]
+    class_class_curie: ClassVar[str] = "qo:OrderedSection"
+    class_name: ClassVar[str] = "qo_OrderedSection"
+    class_model_uri: ClassVar[URIRef] = QO.QoOrderedSection
 
-    orderedSectionId: Union[str, OrderedSectionOrderedSectionId] = None
-    orderedSectionHasSection: Union[str, SectionSectionId] = None
-    sectionOrder: int = None
-    orderedSectionPartOfQuestionnaire: Optional[Union[str, QuestionnaireQuestionnaireId]] = None
-    orderedSectionPartOfSection: Optional[Union[str, SectionSectionId]] = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    qo_section: Union[dict, "QoSection"] = None
+    qo_order: int = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.orderedSectionId):
-            self.MissingRequiredField("orderedSectionId")
-        if not isinstance(self.orderedSectionId, OrderedSectionOrderedSectionId):
-            self.orderedSectionId = OrderedSectionOrderedSectionId(self.orderedSectionId)
+        if self._is_empty(self.qo_section):
+            self.MissingRequiredField("qo_section")
+        if not isinstance(self.qo_section, QoSection):
+            self.qo_section = QoSection(**as_dict(self.qo_section))
 
-        if self._is_empty(self.orderedSectionHasSection):
-            self.MissingRequiredField("orderedSectionHasSection")
-        if not isinstance(self.orderedSectionHasSection, SectionSectionId):
-            self.orderedSectionHasSection = SectionSectionId(self.orderedSectionHasSection)
-
-        if self._is_empty(self.sectionOrder):
-            self.MissingRequiredField("sectionOrder")
-        if not isinstance(self.sectionOrder, int):
-            self.sectionOrder = int(self.sectionOrder)
-
-        if self.orderedSectionPartOfQuestionnaire is not None and not isinstance(self.orderedSectionPartOfQuestionnaire, QuestionnaireQuestionnaireId):
-            self.orderedSectionPartOfQuestionnaire = QuestionnaireQuestionnaireId(self.orderedSectionPartOfQuestionnaire)
-
-        if self.orderedSectionPartOfSection is not None and not isinstance(self.orderedSectionPartOfSection, SectionSectionId):
-            self.orderedSectionPartOfSection = SectionSectionId(self.orderedSectionPartOfSection)
+        if self._is_empty(self.qo_order):
+            self.MissingRequiredField("qo_order")
+        if not isinstance(self.qo_order, int):
+            self.qo_order = int(self.qo_order)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class Section(YAMLRoot):
+class QoSection(ProvEntity):
     """
     A section of questions in the questionnaire.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["Section"]
-    class_class_curie: ClassVar[str] = "faqir:Section"
-    class_name: ClassVar[str] = "Section"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.Section
+    class_class_uri: ClassVar[URIRef] = QO["Section"]
+    class_class_curie: ClassVar[str] = "qo:Section"
+    class_name: ClassVar[str] = "qo_Section"
+    class_model_uri: ClassVar[URIRef] = QO.QoSection
 
-    sectionId: Union[str, SectionSectionId] = None
-    sectionLabel: str = None
-    sectionHasOrderedQuestion: Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]] = empty_dict()
-    sectionHasOrderedSection: Optional[Union[dict[Union[str, OrderedSectionOrderedSectionId], Union[dict, OrderedSection]], list[Union[dict, OrderedSection]]]] = empty_dict()
-    sectionInOrderedSection: Optional[Union[Union[str, OrderedSectionOrderedSectionId], list[Union[str, OrderedSectionOrderedSectionId]]]] = empty_list()
-    sectionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
+    qo_hasOrderedQuestion: Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]] = empty_list()
+    qo_hasOrderedSection: Optional[Union[Union[dict, QoOrderedSection], list[Union[dict, QoOrderedSection]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.sectionId):
-            self.MissingRequiredField("sectionId")
-        if not isinstance(self.sectionId, SectionSectionId):
-            self.sectionId = SectionSectionId(self.sectionId)
+        if self._is_empty(self.dcterms_creator):
+            self.MissingRequiredField("dcterms_creator")
+        if not isinstance(self.dcterms_creator, list):
+            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
+        self.dcterms_creator = [v if isinstance(v, ProvOrganization) else ProvOrganization(**as_dict(v)) for v in self.dcterms_creator]
 
-        if self._is_empty(self.sectionLabel):
-            self.MissingRequiredField("sectionLabel")
-        if not isinstance(self.sectionLabel, str):
-            self.sectionLabel = str(self.sectionLabel)
+        if not isinstance(self.qo_hasOrderedQuestion, list):
+            self.qo_hasOrderedQuestion = [self.qo_hasOrderedQuestion] if self.qo_hasOrderedQuestion is not None else []
+        self.qo_hasOrderedQuestion = [v if isinstance(v, QoOrderedQuestion) else QoOrderedQuestion(**as_dict(v)) for v in self.qo_hasOrderedQuestion]
 
-        self._normalize_inlined_as_list(slot_name="sectionHasOrderedQuestion", slot_type=OrderedQuestion, key_name="orderedQuestionId", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="sectionHasOrderedSection", slot_type=OrderedSection, key_name="orderedSectionId", keyed=True)
-
-        if not isinstance(self.sectionInOrderedSection, list):
-            self.sectionInOrderedSection = [self.sectionInOrderedSection] if self.sectionInOrderedSection is not None else []
-        self.sectionInOrderedSection = [v if isinstance(v, OrderedSectionOrderedSectionId) else OrderedSectionOrderedSectionId(v) for v in self.sectionInOrderedSection]
-
-        if not isinstance(self.sectionAuthoredByOrg, list):
-            self.sectionAuthoredByOrg = [self.sectionAuthoredByOrg] if self.sectionAuthoredByOrg is not None else []
-        self.sectionAuthoredByOrg = [v if isinstance(v, OrganizationOrganizationId) else OrganizationOrganizationId(v) for v in self.sectionAuthoredByOrg]
+        if not isinstance(self.qo_hasOrderedSection, list):
+            self.qo_hasOrderedSection = [self.qo_hasOrderedSection] if self.qo_hasOrderedSection is not None else []
+        self.qo_hasOrderedSection = [v if isinstance(v, QoOrderedSection) else QoOrderedSection(**as_dict(v)) for v in self.qo_hasOrderedSection]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class ScoreDefinition(YAMLRoot):
+class QoOrderedQuestion(ProvEntity):
     """
-    A score calculated from questions.
+    Question's position within a specific questionnaire or section.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["ScoreDefinition"]
-    class_class_curie: ClassVar[str] = "faqir:ScoreDefinition"
-    class_name: ClassVar[str] = "ScoreDefinition"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ScoreDefinition
+    class_class_uri: ClassVar[URIRef] = QO["OrderedQuestion"]
+    class_class_curie: ClassVar[str] = "qo:OrderedQuestion"
+    class_name: ClassVar[str] = "qo_OrderedQuestion"
+    class_model_uri: ClassVar[URIRef] = QO.QoOrderedQuestion
 
-    scoreDefinitionId: Union[str, ScoreDefinitionScoreDefinitionId] = None
-    scoreDefinitionType: Union[str, "ScoreType"] = None
-    scoreDefinitionUsesQuestion: Union[Union[str, QuestionQuestionId], list[Union[str, QuestionQuestionId]]] = None
-    scoreDefinitionLabel: str = None
-    scoreDefinitionFormula: str = None
-    scoreDefinitionHasScoreParameter: Optional[Union[Union[str, ScoreParameterScoreParameterId], list[Union[str, ScoreParameterScoreParameterId]]]] = empty_list()
-    scoreDefinitionHasScoreValue: Optional[Union[Union[str, ScoreValueScoreValueId], list[Union[str, ScoreValueScoreValueId]]]] = empty_list()
-    scoreDefinitionAuthoredByOrg: Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]] = empty_list()
-    scoreDefinitionIntervalParams: Optional[Union[dict, IntervalParams]] = None
-    scoreDefinitionCategories: Optional[Union[str, list[str]]] = empty_list()
-    scoreDefinitionInterpretationGuide: Optional[str] = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    qo_question: Union[dict, "QoQuestion"] = None
+    qo_temporalValidity: Union[dict, TimeDuration] = None
+    qo_conditionalValidity: str = None
+    qo_order: int = None
+    qo_required: Union[bool, Bool] = None
+    qo_hardValidity: Optional[Union[bool, Bool]] = False
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.scoreDefinitionId):
-            self.MissingRequiredField("scoreDefinitionId")
-        if not isinstance(self.scoreDefinitionId, ScoreDefinitionScoreDefinitionId):
-            self.scoreDefinitionId = ScoreDefinitionScoreDefinitionId(self.scoreDefinitionId)
+        if self._is_empty(self.qo_question):
+            self.MissingRequiredField("qo_question")
+        if not isinstance(self.qo_question, QoQuestion):
+            self.qo_question = QoQuestion(**as_dict(self.qo_question))
 
-        if self._is_empty(self.scoreDefinitionType):
-            self.MissingRequiredField("scoreDefinitionType")
-        if not isinstance(self.scoreDefinitionType, ScoreType):
-            self.scoreDefinitionType = ScoreType(self.scoreDefinitionType)
+        if self._is_empty(self.qo_temporalValidity):
+            self.MissingRequiredField("qo_temporalValidity")
+        if not isinstance(self.qo_temporalValidity, TimeDuration):
+            self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
 
-        if self._is_empty(self.scoreDefinitionUsesQuestion):
-            self.MissingRequiredField("scoreDefinitionUsesQuestion")
-        if not isinstance(self.scoreDefinitionUsesQuestion, list):
-            self.scoreDefinitionUsesQuestion = [self.scoreDefinitionUsesQuestion] if self.scoreDefinitionUsesQuestion is not None else []
-        self.scoreDefinitionUsesQuestion = [v if isinstance(v, QuestionQuestionId) else QuestionQuestionId(v) for v in self.scoreDefinitionUsesQuestion]
+        if self._is_empty(self.qo_conditionalValidity):
+            self.MissingRequiredField("qo_conditionalValidity")
+        if not isinstance(self.qo_conditionalValidity, str):
+            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
-        if self._is_empty(self.scoreDefinitionLabel):
-            self.MissingRequiredField("scoreDefinitionLabel")
-        if not isinstance(self.scoreDefinitionLabel, str):
-            self.scoreDefinitionLabel = str(self.scoreDefinitionLabel)
+        if self._is_empty(self.qo_order):
+            self.MissingRequiredField("qo_order")
+        if not isinstance(self.qo_order, int):
+            self.qo_order = int(self.qo_order)
 
-        if self._is_empty(self.scoreDefinitionFormula):
-            self.MissingRequiredField("scoreDefinitionFormula")
-        if not isinstance(self.scoreDefinitionFormula, str):
-            self.scoreDefinitionFormula = str(self.scoreDefinitionFormula)
+        if self._is_empty(self.qo_required):
+            self.MissingRequiredField("qo_required")
+        if not isinstance(self.qo_required, Bool):
+            self.qo_required = Bool(self.qo_required)
 
-        if not isinstance(self.scoreDefinitionHasScoreParameter, list):
-            self.scoreDefinitionHasScoreParameter = [self.scoreDefinitionHasScoreParameter] if self.scoreDefinitionHasScoreParameter is not None else []
-        self.scoreDefinitionHasScoreParameter = [v if isinstance(v, ScoreParameterScoreParameterId) else ScoreParameterScoreParameterId(v) for v in self.scoreDefinitionHasScoreParameter]
-
-        if not isinstance(self.scoreDefinitionHasScoreValue, list):
-            self.scoreDefinitionHasScoreValue = [self.scoreDefinitionHasScoreValue] if self.scoreDefinitionHasScoreValue is not None else []
-        self.scoreDefinitionHasScoreValue = [v if isinstance(v, ScoreValueScoreValueId) else ScoreValueScoreValueId(v) for v in self.scoreDefinitionHasScoreValue]
-
-        if not isinstance(self.scoreDefinitionAuthoredByOrg, list):
-            self.scoreDefinitionAuthoredByOrg = [self.scoreDefinitionAuthoredByOrg] if self.scoreDefinitionAuthoredByOrg is not None else []
-        self.scoreDefinitionAuthoredByOrg = [v if isinstance(v, OrganizationOrganizationId) else OrganizationOrganizationId(v) for v in self.scoreDefinitionAuthoredByOrg]
-
-        if self.scoreDefinitionIntervalParams is not None and not isinstance(self.scoreDefinitionIntervalParams, IntervalParams):
-            self.scoreDefinitionIntervalParams = IntervalParams(**as_dict(self.scoreDefinitionIntervalParams))
-
-        if not isinstance(self.scoreDefinitionCategories, list):
-            self.scoreDefinitionCategories = [self.scoreDefinitionCategories] if self.scoreDefinitionCategories is not None else []
-        self.scoreDefinitionCategories = [v if isinstance(v, str) else str(v) for v in self.scoreDefinitionCategories]
-
-        if self.scoreDefinitionInterpretationGuide is not None and not isinstance(self.scoreDefinitionInterpretationGuide, str):
-            self.scoreDefinitionInterpretationGuide = str(self.scoreDefinitionInterpretationGuide)
+        if self.qo_hardValidity is not None and not isinstance(self.qo_hardValidity, Bool):
+            self.qo_hardValidity = Bool(self.qo_hardValidity)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class ScoreParameter(YAMLRoot):
+class QoQuestion(ProvEntity):
     """
-    Parameters for score definitions, such as min/max values, categories or constants needed.
+    A question.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["ScoreParameter"]
-    class_class_curie: ClassVar[str] = "faqir:ScoreParameter"
-    class_name: ClassVar[str] = "ScoreParameter"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ScoreParameter
+    class_class_uri: ClassVar[URIRef] = QO["Question"]
+    class_class_curie: ClassVar[str] = "qo:Question"
+    class_name: ClassVar[str] = "qo_Question"
+    class_model_uri: ClassVar[URIRef] = QO.QoQuestion
 
-    scoreParameterId: Union[str, ScoreParameterScoreParameterId] = None
-    scoreParameterPartOfScoreDefinition: Union[str, ScoreDefinitionScoreDefinitionId] = None
-    scoreParameterLabel: str = None
-    scoreParameterType: Union[str, "ScoreParameterType"] = None
-    scoreParameterValueNumerical: Optional[Union[dict, ValueNumerical]] = None
-    scoreParameterValueDateTime: Optional[Union[dict, ValueDateTime]] = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    qo_tag: Union[str, list[str]] = None
+    prov_type: Union[Union[str, "QoQuestionType"], list[Union[str, "QoQuestionType"]]] = None
+    dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
+    qo_multivalued: Optional[Union[bool, Bool]] = False
+    qo_numericalParams: Optional[Union[dict, NumericalParams]] = None
+    qo_codingParams: Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]] = empty_list()
+    qo_codingOrdinal: Optional[Union[bool, Bool]] = False
+    qo_intervalParams: Optional[Union[dict, IntervalParams]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.scoreParameterId):
-            self.MissingRequiredField("scoreParameterId")
-        if not isinstance(self.scoreParameterId, ScoreParameterScoreParameterId):
-            self.scoreParameterId = ScoreParameterScoreParameterId(self.scoreParameterId)
+        if self._is_empty(self.qo_tag):
+            self.MissingRequiredField("qo_tag")
+        if not isinstance(self.qo_tag, list):
+            self.qo_tag = [self.qo_tag] if self.qo_tag is not None else []
+        self.qo_tag = [v if isinstance(v, str) else str(v) for v in self.qo_tag]
 
-        if self._is_empty(self.scoreParameterPartOfScoreDefinition):
-            self.MissingRequiredField("scoreParameterPartOfScoreDefinition")
-        if not isinstance(self.scoreParameterPartOfScoreDefinition, ScoreDefinitionScoreDefinitionId):
-            self.scoreParameterPartOfScoreDefinition = ScoreDefinitionScoreDefinitionId(self.scoreParameterPartOfScoreDefinition)
+        if self._is_empty(self.prov_type):
+            self.MissingRequiredField("prov_type")
+        if not isinstance(self.prov_type, list):
+            self.prov_type = [self.prov_type] if self.prov_type is not None else []
+        self.prov_type = [v if isinstance(v, QoQuestionType) else QoQuestionType(v) for v in self.prov_type]
 
-        if self._is_empty(self.scoreParameterLabel):
-            self.MissingRequiredField("scoreParameterLabel")
-        if not isinstance(self.scoreParameterLabel, str):
-            self.scoreParameterLabel = str(self.scoreParameterLabel)
+        if self._is_empty(self.dcterms_creator):
+            self.MissingRequiredField("dcterms_creator")
+        if not isinstance(self.dcterms_creator, list):
+            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
+        self.dcterms_creator = [v if isinstance(v, ProvOrganization) else ProvOrganization(**as_dict(v)) for v in self.dcterms_creator]
 
-        if self._is_empty(self.scoreParameterType):
-            self.MissingRequiredField("scoreParameterType")
-        if not isinstance(self.scoreParameterType, ScoreParameterType):
-            self.scoreParameterType = ScoreParameterType(self.scoreParameterType)
+        if self.qo_multivalued is not None and not isinstance(self.qo_multivalued, Bool):
+            self.qo_multivalued = Bool(self.qo_multivalued)
 
-        if self.scoreParameterValueNumerical is not None and not isinstance(self.scoreParameterValueNumerical, ValueNumerical):
-            self.scoreParameterValueNumerical = ValueNumerical(**as_dict(self.scoreParameterValueNumerical))
+        if self.qo_numericalParams is not None and not isinstance(self.qo_numericalParams, NumericalParams):
+            self.qo_numericalParams = NumericalParams(**as_dict(self.qo_numericalParams))
 
-        if self.scoreParameterValueDateTime is not None and not isinstance(self.scoreParameterValueDateTime, ValueDateTime):
-            self.scoreParameterValueDateTime = ValueDateTime(**as_dict(self.scoreParameterValueDateTime))
+        if not isinstance(self.qo_codingParams, list):
+            self.qo_codingParams = [self.qo_codingParams] if self.qo_codingParams is not None else []
+        self.qo_codingParams = [v if isinstance(v, ValueCoding) else ValueCoding(**as_dict(v)) for v in self.qo_codingParams]
+
+        if self.qo_codingOrdinal is not None and not isinstance(self.qo_codingOrdinal, Bool):
+            self.qo_codingOrdinal = Bool(self.qo_codingOrdinal)
+
+        if self.qo_intervalParams is not None and not isinstance(self.qo_intervalParams, IntervalParams):
+            self.qo_intervalParams = IntervalParams(**as_dict(self.qo_intervalParams))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class ScoreValue(YAMLRoot):
+class QoQuestionnaireResponse(ProvEntity):
     """
-    The score value calculated from a QuestionnaireResponse following a ScoreDefinition.
+    A response to a questionnaire (collection of answers).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FAQIR["ScoreValue"]
-    class_class_curie: ClassVar[str] = "faqir:ScoreValue"
-    class_name: ClassVar[str] = "ScoreValue"
-    class_model_uri: ClassVar[URIRef] = DATAMODEL.ScoreValue
+    class_class_uri: ClassVar[URIRef] = QO["QuestionnaireResponse"]
+    class_class_curie: ClassVar[str] = "qo:QuestionnaireResponse"
+    class_name: ClassVar[str] = "qo_QuestionnaireResponse"
+    class_model_uri: ClassVar[URIRef] = QO.QoQuestionnaireResponse
 
-    scoreValueId: Union[str, ScoreValueScoreValueId] = None
-    scoreDefinitionType: Union[str, "ScoreType"] = None
-    scoreValueBasedOnScoreDefinition: Union[str, ScoreDefinitionScoreDefinitionId] = None
-    scoreValueDerivedFromQuestionnaireResponse: Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]] = None
-    scoreValueTimeStamp: Union[str, XSDDateTime] = None
-    scoreValueStatus: Union[str, "ScoreValueStatus"] = None
-    scoreValueString: Optional[Union[dict, ValueString]] = None
-    scoreValueNumerical: Optional[Union[dict, ValueNumerical]] = None
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    qo_responds: Union[dict, QoQuestionnaire] = None
+    qo_hasAnswer: Union[Union[dict, "QoAnswer"], list[Union[dict, "QoAnswer"]]] = None
+    dcterms_created: Union[str, XSDDateTime] = None
+    dcterms_modified: Union[str, XSDDateTime] = None
+    prov_wasAttributedTo: Union[Union[dict, FoafPerson], list[Union[dict, FoafPerson]]] = None
+    fhir_status: Union[Union[dict, "QoQuestionnaireResponseStatus"], list[Union[dict, "QoQuestionnaireResponseStatus"]]] = None
+    dcterms_isPartOf: Optional[Union[Union[dict, SuloProcess], list[Union[dict, SuloProcess]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.scoreValueId):
-            self.MissingRequiredField("scoreValueId")
-        if not isinstance(self.scoreValueId, ScoreValueScoreValueId):
-            self.scoreValueId = ScoreValueScoreValueId(self.scoreValueId)
+        if self._is_empty(self.qo_responds):
+            self.MissingRequiredField("qo_responds")
+        if not isinstance(self.qo_responds, QoQuestionnaire):
+            self.qo_responds = QoQuestionnaire(**as_dict(self.qo_responds))
 
-        if self._is_empty(self.scoreDefinitionType):
-            self.MissingRequiredField("scoreDefinitionType")
-        if not isinstance(self.scoreDefinitionType, ScoreType):
-            self.scoreDefinitionType = ScoreType(self.scoreDefinitionType)
+        if self._is_empty(self.qo_hasAnswer):
+            self.MissingRequiredField("qo_hasAnswer")
+        if not isinstance(self.qo_hasAnswer, list):
+            self.qo_hasAnswer = [self.qo_hasAnswer] if self.qo_hasAnswer is not None else []
+        self.qo_hasAnswer = [v if isinstance(v, QoAnswer) else QoAnswer(**as_dict(v)) for v in self.qo_hasAnswer]
 
-        if self._is_empty(self.scoreValueBasedOnScoreDefinition):
-            self.MissingRequiredField("scoreValueBasedOnScoreDefinition")
-        if not isinstance(self.scoreValueBasedOnScoreDefinition, ScoreDefinitionScoreDefinitionId):
-            self.scoreValueBasedOnScoreDefinition = ScoreDefinitionScoreDefinitionId(self.scoreValueBasedOnScoreDefinition)
+        if self._is_empty(self.dcterms_created):
+            self.MissingRequiredField("dcterms_created")
+        if not isinstance(self.dcterms_created, XSDDateTime):
+            self.dcterms_created = XSDDateTime(self.dcterms_created)
 
-        if self._is_empty(self.scoreValueDerivedFromQuestionnaireResponse):
-            self.MissingRequiredField("scoreValueDerivedFromQuestionnaireResponse")
-        if not isinstance(self.scoreValueDerivedFromQuestionnaireResponse, list):
-            self.scoreValueDerivedFromQuestionnaireResponse = [self.scoreValueDerivedFromQuestionnaireResponse] if self.scoreValueDerivedFromQuestionnaireResponse is not None else []
-        self.scoreValueDerivedFromQuestionnaireResponse = [v if isinstance(v, QuestionnaireResponseQuestionnaireResponseId) else QuestionnaireResponseQuestionnaireResponseId(v) for v in self.scoreValueDerivedFromQuestionnaireResponse]
+        if self._is_empty(self.dcterms_modified):
+            self.MissingRequiredField("dcterms_modified")
+        if not isinstance(self.dcterms_modified, XSDDateTime):
+            self.dcterms_modified = XSDDateTime(self.dcterms_modified)
 
-        if self._is_empty(self.scoreValueTimeStamp):
-            self.MissingRequiredField("scoreValueTimeStamp")
-        if not isinstance(self.scoreValueTimeStamp, XSDDateTime):
-            self.scoreValueTimeStamp = XSDDateTime(self.scoreValueTimeStamp)
+        if self._is_empty(self.prov_wasAttributedTo):
+            self.MissingRequiredField("prov_wasAttributedTo")
+        if not isinstance(self.prov_wasAttributedTo, list):
+            self.prov_wasAttributedTo = [self.prov_wasAttributedTo] if self.prov_wasAttributedTo is not None else []
+        self.prov_wasAttributedTo = [v if isinstance(v, FoafPerson) else FoafPerson(**as_dict(v)) for v in self.prov_wasAttributedTo]
 
-        if self._is_empty(self.scoreValueStatus):
-            self.MissingRequiredField("scoreValueStatus")
-        if not isinstance(self.scoreValueStatus, ScoreValueStatus):
-            self.scoreValueStatus = ScoreValueStatus(self.scoreValueStatus)
+        if self._is_empty(self.fhir_status):
+            self.MissingRequiredField("fhir_status")
+        if not isinstance(self.fhir_status, list):
+            self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
+        self.fhir_status = [v if isinstance(v, QoQuestionnaireResponseStatus) else QoQuestionnaireResponseStatus(**as_dict(v)) for v in self.fhir_status]
 
-        if self.scoreValueString is not None and not isinstance(self.scoreValueString, ValueString):
-            self.scoreValueString = ValueString(**as_dict(self.scoreValueString))
+        if not isinstance(self.dcterms_isPartOf, list):
+            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
+        self.dcterms_isPartOf = [v if isinstance(v, SuloProcess) else SuloProcess(**as_dict(v)) for v in self.dcterms_isPartOf]
 
-        if self.scoreValueNumerical is not None and not isinstance(self.scoreValueNumerical, ValueNumerical):
-            self.scoreValueNumerical = ValueNumerical(**as_dict(self.scoreValueNumerical))
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class QoQuestionnaireResponseStatus(SarefPropertyValue):
+    """
+    The status of the questionnaire response, indicating whether it is 'in-progress', 'completed', 'amended',
+    'entered-in-error' or 'stopped'.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = QO["QuestionnaireResponseStatus"]
+    class_class_curie: ClassVar[str] = "qo:QuestionnaireResponseStatus"
+    class_name: ClassVar[str] = "qo_QuestionnaireResponseStatus"
+    class_model_uri: ClassVar[URIRef] = QO.QoQuestionnaireResponseStatus
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    saref_hasValue: Union[str, "QoQuestionnaireResponseStatusEnum"] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.saref_hasValue):
+            self.MissingRequiredField("saref_hasValue")
+        if not isinstance(self.saref_hasValue, QoQuestionnaireResponseStatusEnum):
+            self.saref_hasValue = QoQuestionnaireResponseStatusEnum(self.saref_hasValue)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class QoAnswer(ProvEntity):
+    """
+    Answer in the questionnaire response.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = QO["Answer"]
+    class_class_curie: ClassVar[str] = "qo:Answer"
+    class_name: ClassVar[str] = "qo_Answer"
+    class_model_uri: ClassVar[URIRef] = QO.QoAnswer
+
+    rdfs_label: Union[str, list[str]] = None
+    rdfs_comment: Union[str, list[str]] = None
+    qo_toQuestion: Union[dict, QoQuestion] = None
+    prov_generatedAtTime: Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]] = None
+    qo_answerValue: Optional[str] = None
+    qo_isEmpty: Optional[Union[bool, Bool]] = False
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.qo_toQuestion):
+            self.MissingRequiredField("qo_toQuestion")
+        if not isinstance(self.qo_toQuestion, QoQuestion):
+            self.qo_toQuestion = QoQuestion(**as_dict(self.qo_toQuestion))
+
+        if self._is_empty(self.prov_generatedAtTime):
+            self.MissingRequiredField("prov_generatedAtTime")
+        if not isinstance(self.prov_generatedAtTime, list):
+            self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
+        self.prov_generatedAtTime = [v if isinstance(v, XSDDateTime) else XSDDateTime(v) for v in self.prov_generatedAtTime]
+
+        if self.qo_answerValue is not None and not isinstance(self.qo_answerValue, str):
+            self.qo_answerValue = str(self.qo_answerValue)
+
+        if self.qo_isEmpty is not None and not isinstance(self.qo_isEmpty, Bool):
+            self.qo_isEmpty = Bool(self.qo_isEmpty)
 
         super().__post_init__(**kwargs)
 
 
 # Enumerations
-class WeightType(EnumDefinitionImpl):
-    """
-    Allowed LOINC codes for weight.
-    """
-    BODY_WEIGHT_MEASURED = PermissibleValue(
-        text="BODY_WEIGHT_MEASURED",
-        description="Body weight measured",
-        meaning=LOINC["3141-9"])
-    BODY_WEIGHT_STATED = PermissibleValue(
-        text="BODY_WEIGHT_STATED",
-        description="Body weight Stated",
-        meaning=LOINC["3142-7"])
-
-    _defn = EnumDefinition(
-        name="WeightType",
-        description="Allowed LOINC codes for weight.",
-    )
-
-class MassUnit(EnumDefinitionImpl):
-    """
-    Allowed units from UCUM standard for mass.
-    """
-    kg = PermissibleValue(
-        text="kg",
-        description="Kilogram",
-        meaning=UCUM["kg"])
-
-    _defn = EnumDefinition(
-        name="MassUnit",
-        description="Allowed units from UCUM standard for mass.",
-    )
-
-class UnitOfMeasure(EnumDefinitionImpl):
-    """
-    Allowed units from UCUM standard.
-    """
-    kg = PermissibleValue(
-        text="kg",
-        description="Kilograms",
-        meaning=UCUM["kg"])
-    g = PermissibleValue(
-        text="g",
-        description="Grams",
-        meaning=UCUM["g"])
-    lb = PermissibleValue(
-        text="lb",
-        description="Pounds",
-        meaning=UCUM["lb_av"])
-    cm = PermissibleValue(
-        text="cm",
-        description="Centimeters",
-        meaning=UCUM["cm"])
-    m = PermissibleValue(
-        text="m",
-        description="Meters",
-        meaning=UCUM["m"])
-    h = PermissibleValue(
-        text="h",
-        description="Hours",
-        meaning=UCUM["h"])
-    min = PermissibleValue(
-        text="min",
-        description="Minutes",
-        meaning=UCUM["min"])
-
-    _defn = EnumDefinition(
-        name="UnitOfMeasure",
-        description="Allowed units from UCUM standard.",
-    )
-
-class OrganizationType(EnumDefinitionImpl):
-    """
-    Type of organization: hospital, government, professional, research or serviceProvider.
-    """
-    hospital = PermissibleValue(
-        text="hospital",
-        meaning=FHIR["organization-type#prov"])
-    government = PermissibleValue(
-        text="government",
-        meaning=FHIR["organization-type#gov"])
-    professional = PermissibleValue(
-        text="professional",
-        meaning=FHIR["organization-type#ind"])
-    research = PermissibleValue(
-        text="research",
-        meaning=FHIR["organization-type#edu"])
-    serviceProvider = PermissibleValue(
-        text="serviceProvider",
-        meaning=FHIR["organization-type#bus"])
-
-    _defn = EnumDefinition(
-        name="OrganizationType",
-        description="Type of organization: hospital, government, professional, research or serviceProvider.",
-    )
-
-class QuestionType(EnumDefinitionImpl):
+class QoQuestionType(EnumDefinitionImpl):
     """
     The type of question asked in the questionnaire. It defines the expected answer format.
     """
     choice = PermissibleValue(
         text="choice",
         description="A question with predefined options to choose from. Multiple choices may be allowed.",
-        meaning=FHIR["choice"])
+        meaning=FHIR["item-type#coding"])
     openChoice = PermissibleValue(
         text="openChoice",
-        description="""A question with predefined options to choose from plus a last {valueCoding: {'code': '-1', 'display': 'Other'}} that allows text input. Multiple choices may be allowed.""",
-        meaning=FHIR["open-choice"])
+        description="""A question with predefined options to choose from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple choices may be allowed.""",
+        meaning=QO["open-choice"])
     numberInterval = PermissibleValue(
         text="numberInterval",
         description="A question that expects a numeric answer in between a minimum and maximum value.",
-        meaning=FHIR["number"])
+        meaning=QO["numberInterval"])
     decimal = PermissibleValue(
         text="decimal",
         description="A question that expects a numerical answer, either integer or float.",
-        meaning=FHIR["decimal"])
+        meaning=FHIR["item-type#decimal"])
+    time = PermissibleValue(
+        text="time",
+        description="Question with a time (hour:minute:second) answer independent of date. (valueTime).",
+        meaning=FHIR["item-type#time"])
     dateTime = PermissibleValue(
         text="dateTime",
         description="A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+zz:zz.",
-        meaning=FHIR["dateTime"])
+        meaning=FHIR["item-type#dateTime"])
     text = PermissibleValue(
         text="text",
         description="A question that expects a free text answer.",
-        meaning=FHIR["string"])
+        meaning=FHIR["item-type#string"])
 
     _defn = EnumDefinition(
-        name="QuestionType",
+        name="QoQuestionType",
         description="The type of question asked in the questionnaire. It defines the expected answer format.",
     )
 
-class ScoreType(EnumDefinitionImpl):
-    """
-    The type of score definition, which can be numerical or categorical.
-    """
-    numerical_continuous = PermissibleValue(
-        text="numerical_continuous",
-        description="Continuous numerical score (e.g., 0.785, 82.5)",
-        meaning=XSD["float"])
-    numerical_integer = PermissibleValue(
-        text="numerical_integer",
-        description="Integer numerical score (e.g., 5, 10, 27)",
-        meaning=XSD["integer"])
-    numerical_percentage = PermissibleValue(
-        text="numerical_percentage",
-        description="Percentage score (0-100%)",
-        meaning=XSD["float"])
-    numerical_z_score = PermissibleValue(
-        text="numerical_z_score",
-        description="Standardized Z-score (mean=0, std=1)",
-        meaning=XSD["float"])
-    numerical_t_score = PermissibleValue(
-        text="numerical_t_score",
-        description="Standardized T-score (mean=50, std=10)",
-        meaning=XSD["float"])
-    categorical = PermissibleValue(
-        text="categorical",
-        description="Ordinal categories (e.g., Low, Medium, High or Yes, No or Type a, Type b)",
-        meaning=XSD["NMTOKENS"])
-
-    _defn = EnumDefinition(
-        name="ScoreType",
-        description="The type of score definition, which can be numerical or categorical.",
-    )
-
-class ScoreParameterType(EnumDefinitionImpl):
-    """
-    The type of parameter used in the score definition.
-    """
-    numerical = PermissibleValue(
-        text="numerical",
-        description="Numerical parameter (e.g., 0.785, 82)",
-        meaning=XSD["float"])
-    dateTime = PermissibleValue(
-        text="dateTime",
-        description="dateTime parameter formatted as YYYY-MM-DDThh:mm:ss+zz:zz.",
-        meaning=XSD["dateTime"])
-
-    _defn = EnumDefinition(
-        name="ScoreParameterType",
-        description="The type of parameter used in the score definition.",
-    )
-
-class QuestionnaireStatus(EnumDefinitionImpl):
+class QoQuestionnaireStatusEnum(EnumDefinitionImpl):
     """
     Questionnaires must have one of the following status (FHIR inspired):
     """
@@ -1506,11 +1316,11 @@ class QuestionnaireStatus(EnumDefinitionImpl):
         meaning=FHIR["resource-status-unknown"])
 
     _defn = EnumDefinition(
-        name="QuestionnaireStatus",
+        name="QoQuestionnaireStatusEnum",
         description="Questionnaires must have one of the following status (FHIR inspired):",
     )
 
-class QuestionnaireResponseStatus(EnumDefinitionImpl):
+class QoQuestionnaireResponseStatusEnum(EnumDefinitionImpl):
     """
     The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended',
     'entered-in-error' or 'stopped'.
@@ -1537,400 +1347,280 @@ class QuestionnaireResponseStatus(EnumDefinitionImpl):
         meaning=FHIR["questionnaire-answers-status-stopped"])
 
     _defn = EnumDefinition(
-        name="QuestionnaireResponseStatus",
+        name="QoQuestionnaireResponseStatusEnum",
         description="""The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.""",
-    )
-
-class ScoreValueStatus(EnumDefinitionImpl):
-    """
-    The status of a score value, indicating its validity and completeness.
-    """
-    valid = PermissibleValue(
-        text="valid",
-        description="Score is valid and complete")
-    incomplete = PermissibleValue(
-        text="incomplete",
-        description="Score calculated with missing optional data")
-    estimated = PermissibleValue(
-        text="estimated",
-        description="Score is an estimate due to missing data")
-    warning = PermissibleValue(
-        text="warning",
-        description="Score calculated with warnings or anomalies")
-    error = PermissibleValue(
-        text="error",
-        description="Score calculation error or invalid data")
-    pending = PermissibleValue(
-        text="pending",
-        description="Score calculation is pending")
-    amended = PermissibleValue(
-        text="amended",
-        description="Score has been amended after initial calculation")
-
-    _defn = EnumDefinition(
-        name="ScoreValueStatus",
-        description="The status of a score value, indicating its validity and completeness.",
     )
 
 # Slots
 class slots:
     pass
 
-slots.hasQuestionnaireResponse = Slot(uri=DATAMODEL['vault/hasQuestionnaireResponse'], name="hasQuestionnaireResponse", curie=DATAMODEL.curie('vault/hasQuestionnaireResponse'),
-                   model_uri=DATAMODEL.hasQuestionnaireResponse, domain=Vault, range=Optional[Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]]])
+slots.rdfs_label = Slot(uri=RDFS.label, name="rdfs_label", curie=RDFS.curie('label'),
+                   model_uri=QO.rdfs_label, domain=OwlThing, range=Union[str, list[str]])
 
-slots.vaultManagedByOrg = Slot(uri=DATAMODEL['vault/vaultManagedByOrg'], name="vaultManagedByOrg", curie=DATAMODEL.curie('vault/vaultManagedByOrg'),
-                   model_uri=DATAMODEL.vaultManagedByOrg, domain=Vault, range=Union[str, OrganizationOrganizationId])
+slots.rdfs_comment = Slot(uri=RDFS.comment, name="rdfs_comment", curie=RDFS.curie('comment'),
+                   model_uri=QO.rdfs_comment, domain=OwlThing, range=Union[str, list[str]])
 
-slots.id = Slot(uri=FAQIR.id, name="id", curie=FAQIR.curie('id'),
-                   model_uri=DATAMODEL.id, domain=None, range=URIRef)
+slots.owl_versionInfo = Slot(uri=OWL.versionInfo, name="owl_versionInfo", curie=OWL.curie('versionInfo'),
+                   model_uri=QO.owl_versionInfo, domain=OwlThing, range=Optional[str])
 
-slots.organizationAuthorsQuestionnaire = Slot(uri=FAQIR.organizationAuthorsQuestionnaire, name="organizationAuthorsQuestionnaire", curie=FAQIR.curie('organizationAuthorsQuestionnaire'),
-                   model_uri=DATAMODEL.organizationAuthorsQuestionnaire, domain=Organization, range=Optional[Union[Union[str, QuestionnaireQuestionnaireId], list[Union[str, QuestionnaireQuestionnaireId]]]], mappings = [PROV["wasAssociatedWith"]])
+slots.dcterms_isPartOf = Slot(uri=DCTERMS.isPartOf, name="dcterms_isPartOf", curie=DCTERMS.curie('isPartOf'),
+                   model_uri=QO.dcterms_isPartOf, domain=OwlThing, range=Optional[Union[Union[dict, "OwlThing"], list[Union[dict, "OwlThing"]]]])
 
-slots.organizationAuthorsSection = Slot(uri=FAQIR.organizationAuthorsSection, name="organizationAuthorsSection", curie=FAQIR.curie('organizationAuthorsSection'),
-                   model_uri=DATAMODEL.organizationAuthorsSection, domain=Organization, range=Optional[Union[Union[str, SectionSectionId], list[Union[str, SectionSectionId]]]], mappings = [PROV["wasAssociatedWith"]])
+slots.dcterms_hasPart = Slot(uri=DCTERMS.hasPart, name="dcterms_hasPart", curie=DCTERMS.curie('hasPart'),
+                   model_uri=QO.dcterms_hasPart, domain=OwlThing, range=Optional[Union[Union[dict, "OwlThing"], list[Union[dict, "OwlThing"]]]])
 
-slots.organizationAuthorsQuestion = Slot(uri=FAQIR.organizationAuthorsQuestion, name="organizationAuthorsQuestion", curie=FAQIR.curie('organizationAuthorsQuestion'),
-                   model_uri=DATAMODEL.organizationAuthorsQuestion, domain=Organization, range=Optional[Union[Union[str, QuestionQuestionId], list[Union[str, QuestionQuestionId]]]], mappings = [PROV["wasAssociatedWith"]])
+slots.prov_type = Slot(uri=PROV.type, name="prov_type", curie=PROV.curie('type'),
+                   model_uri=QO.prov_type, domain=OwlThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
-slots.organizationAuthorsScoreDefinition = Slot(uri=FAQIR.organizationAuthorsScoreDefinition, name="organizationAuthorsScoreDefinition", curie=FAQIR.curie('organizationAuthorsScoreDefinition'),
-                   model_uri=DATAMODEL.organizationAuthorsScoreDefinition, domain=Organization, range=Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]], mappings = [PROV["wasAssociatedWith"]])
+slots.fhir_status = Slot(uri=FHIR['resource-status'], name="fhir_status", curie=FHIR.curie('resource-status'),
+                   model_uri=QO.fhir_status, domain=OwlThing, range=Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]])
 
-slots.organizationManagesVault = Slot(uri=FAQIR.organizationManagesVault, name="organizationManagesVault", curie=FAQIR.curie('organizationManagesVault'),
-                   model_uri=DATAMODEL.organizationManagesVault, domain=Organization, range=Optional[Union[Union[str, VaultVaultId], list[Union[str, VaultVaultId]]]])
+slots.dcterms_creator = Slot(uri=DCTERMS.creator, name="dcterms_creator", curie=DCTERMS.curie('creator'),
+                   model_uri=QO.dcterms_creator, domain=OwlThing, range=Optional[Union[Union[dict, "FoafAgent"], list[Union[dict, "FoafAgent"]]]])
 
-slots.organizationPerformsProcedure = Slot(uri=FAQIR.organizationPerformsProcedure, name="organizationPerformsProcedure", curie=FAQIR.curie('organizationPerformsProcedure'),
-                   model_uri=DATAMODEL.organizationPerformsProcedure, domain=Organization, range=Optional[Union[Union[str, ProcedureProcedureId], list[Union[str, ProcedureProcedureId]]]])
+slots.saref_hasProperty = Slot(uri=SAREF.hasProperty, name="saref_hasProperty", curie=SAREF.curie('hasProperty'),
+                   model_uri=QO.saref_hasProperty, domain=OwlThing, range=Optional[Union[Union[dict, "SarefProperty"], list[Union[dict, "SarefProperty"]]]], mappings = [SSN["hasProperty"]])
 
-slots.procedurePerformedByOrg = Slot(uri=FAQIR.procedurePerformedByOrg, name="procedurePerformedByOrg", curie=FAQIR.curie('procedurePerformedByOrg'),
-                   model_uri=DATAMODEL.procedurePerformedByOrg, domain=Procedure, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]])
+slots.saref_hasPropertyValue = Slot(uri=SAREF.hasPropertyValue, name="saref_hasPropertyValue", curie=SAREF.curie('hasPropertyValue'),
+                   model_uri=QO.saref_hasPropertyValue, domain=OwlThing, range=Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]])
 
-slots.procedureHasQuestionnaire = Slot(uri=FAQIR.procedureHasQuestionnaire, name="procedureHasQuestionnaire", curie=FAQIR.curie('procedureHasQuestionnaire'),
-                   model_uri=DATAMODEL.procedureHasQuestionnaire, domain=Procedure, range=Optional[Union[Union[str, QuestionnaireQuestionnaireId], list[Union[str, QuestionnaireQuestionnaireId]]]])
+slots.prov_hadPrimarySource = Slot(uri=PROV.hadPrimarySource, name="prov_hadPrimarySource", curie=PROV.curie('hadPrimarySource'),
+                   model_uri=QO.prov_hadPrimarySource, domain=OwlThing, range=Optional[Union[Union[dict, "ProvEntity"], list[Union[dict, "ProvEntity"]]]])
 
-slots.questionType = Slot(uri=FAQIR.questionType, name="questionType", curie=FAQIR.curie('questionType'),
-                   model_uri=DATAMODEL.questionType, domain=None, range=Union[str, "QuestionType"])
+slots.prov_wasGeneratedBy = Slot(uri=PROV.wasGeneratedBy, name="prov_wasGeneratedBy", curie=PROV.curie('wasGeneratedBy'),
+                   model_uri=QO.prov_wasGeneratedBy, domain=OwlThing, range=Optional[Union[Union[dict, "SuloProcess"], list[Union[dict, "SuloProcess"]]]])
 
-slots.scoreDefinitionType = Slot(uri=FAQIR.scoreDefinitionType, name="scoreDefinitionType", curie=FAQIR.curie('scoreDefinitionType'),
-                   model_uri=DATAMODEL.scoreDefinitionType, domain=None, range=Union[str, "ScoreType"])
+slots.prov_generatedAtTime = Slot(uri=PROV.generatedAtTime, name="prov_generatedAtTime", curie=PROV.curie('generatedAtTime'),
+                   model_uri=QO.prov_generatedAtTime, domain=OwlThing, range=Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]])
 
-slots.questionnaireResponseBySubject = Slot(uri=FAQIR.questionnaireResponseBySubject, name="questionnaireResponseBySubject", curie=FAQIR.curie('questionnaireResponseBySubject'),
-                   model_uri=DATAMODEL.questionnaireResponseBySubject, domain=QuestionnaireResponse, range=Union[str, VaultVaultId], mappings = [FHIR["questionnaireResponse.subject"]])
+slots.prov_generated = Slot(uri=PROV.generated, name="prov_generated", curie=PROV.curie('generated'),
+                   model_uri=QO.prov_generated, domain=SuloProcess, range=Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]])
 
-slots.questionnaireResponseToQuestionnaire = Slot(uri=FAQIR.questionnaireResponseToQuestionnaire, name="questionnaireResponseToQuestionnaire", curie=FAQIR.curie('questionnaireResponseToQuestionnaire'),
-                   model_uri=DATAMODEL.questionnaireResponseToQuestionnaire, domain=QuestionnaireResponse, range=Union[str, QuestionnaireQuestionnaireId], mappings = [FHIR["questionnaireResponse.questionnaire"]])
+slots.prov_wasAttributedTo = Slot(uri=PROV.wasAttributedTo, name="prov_wasAttributedTo", curie=PROV.curie('wasAttributedTo'),
+                   model_uri=QO.prov_wasAttributedTo, domain=ProvEntity, range=Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]])
 
-slots.questionnaireResponseHasAnswer = Slot(uri=FAQIR.questionnaireResponseHasAnswer, name="questionnaireResponseHasAnswer", curie=FAQIR.curie('questionnaireResponseHasAnswer'),
-                   model_uri=DATAMODEL.questionnaireResponseHasAnswer, domain=QuestionnaireResponse, range=Union[Union[str, AnswerAnswerId], list[Union[str, AnswerAnswerId]]], mappings = [FHIR["questionnaireResponse.item.answer"]])
+slots.prov_qualifiedAttribution = Slot(uri=PROV.qualifiedAttribution, name="prov_qualifiedAttribution", curie=PROV.curie('qualifiedAttribution'),
+                   model_uri=QO.prov_qualifiedAttribution, domain=OwlThing, range=Optional[Union[Union[dict, "ProvAttribution"], list[Union[dict, "ProvAttribution"]]]])
 
-slots.questionnaireResponseHasDerivedScoreValue = Slot(uri=FAQIR.questionnaireResponseHasDerivedScoreValue, name="questionnaireResponseHasDerivedScoreValue", curie=FAQIR.curie('questionnaireResponseHasDerivedScoreValue'),
-                   model_uri=DATAMODEL.questionnaireResponseHasDerivedScoreValue, domain=QuestionnaireResponse, range=Optional[Union[Union[str, ScoreValueScoreValueId], list[Union[str, ScoreValueScoreValueId]]]])
+slots.prov_startedAtTime = Slot(uri=PROV.startedAtTime, name="prov_startedAtTime", curie=PROV.curie('startedAtTime'),
+                   model_uri=QO.prov_startedAtTime, domain=SuloProcess, range=Optional[Union[str, XSDDateTime]])
 
-slots.answerInQuestionnaireResponse = Slot(uri=FAQIR.answerInQuestionnaireResponse, name="answerInQuestionnaireResponse", curie=FAQIR.curie('answerInQuestionnaireResponse'),
-                   model_uri=DATAMODEL.answerInQuestionnaireResponse, domain=Answer, range=Union[str, QuestionnaireResponseQuestionnaireResponseId], mappings = [FHIR["QuestionnaireResponse.item.answer"]])
+slots.prov_endedAtTime = Slot(uri=PROV.endedAtTime, name="prov_endedAtTime", curie=PROV.curie('endedAtTime'),
+                   model_uri=QO.prov_endedAtTime, domain=SuloProcess, range=Optional[Union[str, XSDDateTime]])
 
-slots.answerToQuestion = Slot(uri=FAQIR.answerToQuestion, name="answerToQuestion", curie=FAQIR.curie('answerToQuestion'),
-                   model_uri=DATAMODEL.answerToQuestion, domain=Answer, range=Union[str, QuestionQuestionId], mappings = [FHIR["QuestionnaireResponse.item.answer.question"]])
+slots.prov_atTime = Slot(uri=PROV.atTime, name="prov_atTime", curie=PROV.curie('atTime'),
+                   model_uri=QO.prov_atTime, domain=SuloProcess, range=Optional[Union[str, XSDDateTime]], mappings = [SAREF["hasTimestamp"], FHIR["DeviceMetric.calibration.time"], SOSA["phenomenonTime"]])
 
-slots.questionnaireHasQuestionnaireResponse = Slot(uri=FAQIR.questionnaireHasQuestionnaireResponse, name="questionnaireHasQuestionnaireResponse", curie=FAQIR.curie('questionnaireHasQuestionnaireResponse'),
-                   model_uri=DATAMODEL.questionnaireHasQuestionnaireResponse, domain=Questionnaire, range=Optional[Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]]], mappings = [FHIR["QuestionnaireResponse"]])
+slots.time_hasDuration = Slot(uri=TIME.hasDuration, name="time_hasDuration", curie=TIME.curie('hasDuration'),
+                   model_uri=QO.time_hasDuration, domain=None, range=Optional[Union[dict, TimeDuration]], mappings = [SPHN["hasDuration"]])
 
-slots.questionnaireHasOrderedQuestion = Slot(uri=FAQIR.questionnaireHasOrderedQuestion, name="questionnaireHasOrderedQuestion", curie=FAQIR.curie('questionnaireHasOrderedQuestion'),
-                   model_uri=DATAMODEL.questionnaireHasOrderedQuestion, domain=Questionnaire, range=Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]], mappings = [FHIR["Questionnaire.item.where(type='question')"]])
+slots.dcterms_created = Slot(uri=DCTERMS.created, name="dcterms_created", curie=DCTERMS.curie('created'),
+                   model_uri=QO.dcterms_created, domain=None, range=Optional[Union[str, XSDDateTime]])
 
-slots.questionnaireHasOrderedSection = Slot(uri=FAQIR.questionnaireHasOrderedSection, name="questionnaireHasOrderedSection", curie=FAQIR.curie('questionnaireHasOrderedSection'),
-                   model_uri=DATAMODEL.questionnaireHasOrderedSection, domain=Questionnaire, range=Optional[Union[dict[Union[str, OrderedSectionOrderedSectionId], Union[dict, "OrderedSection"]], list[Union[dict, "OrderedSection"]]]], mappings = [FHIR["Questionnaire.item.where(type='group')"]])
+slots.dcterms_modified = Slot(uri=DCTERMS.modified, name="dcterms_modified", curie=DCTERMS.curie('modified'),
+                   model_uri=QO.dcterms_modified, domain=None, range=Optional[Union[str, XSDDateTime]])
 
-slots.questionnaireAuthoredByOrg = Slot(uri=FAQIR.questionnaireAuthoredByOrg, name="questionnaireAuthoredByOrg", curie=FAQIR.curie('questionnaireAuthoredByOrg'),
-                   model_uri=DATAMODEL.questionnaireAuthoredByOrg, domain=Questionnaire, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]], mappings = [FHIR["Questionnaire.author"]])
+slots.saref_isValueOfProperty = Slot(uri=SAREF.isValueOfProperty, name="saref_isValueOfProperty", curie=SAREF.curie('isValueOfProperty'),
+                   model_uri=QO.saref_isValueOfProperty, domain=SarefPropertyValue, range=Optional[Union[dict, SarefProperty]])
 
-slots.questionnairePartOfProcedure = Slot(uri=FAQIR.questionnairePartOfProcedure, name="questionnairePartOfProcedure", curie=FAQIR.curie('questionnairePartOfProcedure'),
-                   model_uri=DATAMODEL.questionnairePartOfProcedure, domain=Questionnaire, range=Optional[Union[Union[str, ProcedureProcedureId], list[Union[str, ProcedureProcedureId]]]])
+slots.saref_isMeasuredIn = Slot(uri=SAREF.isMeasuredIn, name="saref_isMeasuredIn", curie=SAREF.curie('isMeasuredIn'),
+                   model_uri=QO.saref_isMeasuredIn, domain=None, range=Optional[Union[str, URIorCURIE]],
+                   pattern=re.compile(r'^ucum'))
 
-slots.questionInOrderedQuestion = Slot(uri=FAQIR.questionInOrderedQuestion, name="questionInOrderedQuestion", curie=FAQIR.curie('questionInOrderedQuestion'),
-                   model_uri=DATAMODEL.questionInOrderedQuestion, domain=Question, range=Optional[Union[Union[str, OrderedQuestionOrderedQuestionId], list[Union[str, OrderedQuestionOrderedQuestionId]]]])
+slots.fhir_valueReference = Slot(uri=FHIR.valueReference, name="fhir_valueReference", curie=FHIR.curie('valueReference'),
+                   model_uri=QO.fhir_valueReference, domain=None, range=Optional[Union[str, URIorCURIE]])
 
-slots.questionHasAnswer = Slot(uri=FAQIR.questionHasAnswer, name="questionHasAnswer", curie=FAQIR.curie('questionHasAnswer'),
-                   model_uri=DATAMODEL.questionHasAnswer, domain=Question, range=Optional[Union[Union[str, AnswerAnswerId], list[Union[str, AnswerAnswerId]]]], mappings = [FHIR["Questionnaire.item.answer"]])
+slots.saref_hasValue = Slot(uri=SAREF.hasValue, name="saref_hasValue", curie=SAREF.curie('hasValue'),
+                   model_uri=QO.saref_hasValue, domain=None, range=Optional[str])
 
-slots.questionAuthoredByOrg = Slot(uri=FAQIR.questionAuthoredByOrg, name="questionAuthoredByOrg", curie=FAQIR.curie('questionAuthoredByOrg'),
-                   model_uri=DATAMODEL.questionAuthoredByOrg, domain=Question, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]])
+slots.s4ehaw_minimumValue = Slot(uri=S4EHAW.minimumValue, name="s4ehaw_minimumValue", curie=S4EHAW.curie('minimumValue'),
+                   model_uri=QO.s4ehaw_minimumValue, domain=None, range=Optional[float])
 
-slots.questionUsedInScoreDefinition = Slot(uri=FAQIR.questionUsedInScoreDefinition, name="questionUsedInScoreDefinition", curie=FAQIR.curie('questionUsedInScoreDefinition'),
-                   model_uri=DATAMODEL.questionUsedInScoreDefinition, domain=Question, range=Optional[Union[Union[str, ScoreDefinitionScoreDefinitionId], list[Union[str, ScoreDefinitionScoreDefinitionId]]]])
+slots.s4ehaw_maximumValue = Slot(uri=S4EHAW.maximumValue, name="s4ehaw_maximumValue", curie=S4EHAW.curie('maximumValue'),
+                   model_uri=QO.s4ehaw_maximumValue, domain=None, range=Optional[float])
 
-slots.questionHasQuestionRepresentation = Slot(uri=FAQIR.questionHasQuestionRepresentation, name="questionHasQuestionRepresentation", curie=FAQIR.curie('questionHasQuestionRepresentation'),
-                   model_uri=DATAMODEL.questionHasQuestionRepresentation, domain=Question, range=Union[dict[Union[str, QuestionRepresentationQuestionRepresentationId], Union[dict, "QuestionRepresentation"]], list[Union[dict, "QuestionRepresentation"]]])
+slots.qo_multivalued = Slot(uri=QO.multivalued, name="qo_multivalued", curie=QO.curie('multivalued'),
+                   model_uri=QO.qo_multivalued, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.orderedQuestionHasQuestion = Slot(uri=FAQIR.orderedQuestionHasQuestion, name="orderedQuestionHasQuestion", curie=FAQIR.curie('orderedQuestionHasQuestion'),
-                   model_uri=DATAMODEL.orderedQuestionHasQuestion, domain=OrderedQuestion, range=Union[str, QuestionQuestionId])
+slots.qo_order = Slot(uri=QO.order, name="qo_order", curie=QO.curie('order'),
+                   model_uri=QO.qo_order, domain=None, range=int)
 
-slots.orderedQuestionPartOfQuestionnaire = Slot(uri=FAQIR.orderedQuestionPartOfQuestionnaire, name="orderedQuestionPartOfQuestionnaire", curie=FAQIR.curie('orderedQuestionPartOfQuestionnaire'),
-                   model_uri=DATAMODEL.orderedQuestionPartOfQuestionnaire, domain=OrderedQuestion, range=Optional[Union[str, QuestionnaireQuestionnaireId]], mappings = [FHIR["Questionnaire.item"]])
+slots.qo_hardValidity = Slot(uri=QO.hardValidity, name="qo_hardValidity", curie=QO.curie('hardValidity'),
+                   model_uri=QO.qo_hardValidity, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.orderedQuestionPartOfSection = Slot(uri=FAQIR.orderedQuestionPartOfSection, name="orderedQuestionPartOfSection", curie=FAQIR.curie('orderedQuestionPartOfSection'),
-                   model_uri=DATAMODEL.orderedQuestionPartOfSection, domain=OrderedQuestion, range=Optional[Union[str, SectionSectionId]], mappings = [FHIR["Questionnaire.item"]])
+slots.qo_temporalValidity = Slot(uri=QO.temporalValidity, name="qo_temporalValidity", curie=QO.curie('temporalValidity'),
+                   model_uri=QO.qo_temporalValidity, domain=None, range=Union[dict, TimeDuration])
 
-slots.questionRepresentationOfQuestion = Slot(uri=FAQIR.questionRepresentationOfQuestion, name="questionRepresentationOfQuestion", curie=FAQIR.curie('questionRepresentationOfQuestion'),
-                   model_uri=DATAMODEL.questionRepresentationOfQuestion, domain=QuestionRepresentation, range=Union[str, QuestionQuestionId])
+slots.qo_conditionalValidity = Slot(uri=QO.conditionalValidity, name="qo_conditionalValidity", curie=QO.curie('conditionalValidity'),
+                   model_uri=QO.qo_conditionalValidity, domain=None, range=str)
 
-slots.sectionHasOrderedQuestion = Slot(uri=FAQIR.sectionHasOrderedQuestion, name="sectionHasOrderedQuestion", curie=FAQIR.curie('sectionHasOrderedQuestion'),
-                   model_uri=DATAMODEL.sectionHasOrderedQuestion, domain=Section, range=Optional[Union[dict[Union[str, OrderedQuestionOrderedQuestionId], Union[dict, OrderedQuestion]], list[Union[dict, OrderedQuestion]]]], mappings = [FHIR["Questionnaire.item.where(type='question')"]])
+slots.qo_question = Slot(uri=QO.question, name="qo_question", curie=QO.curie('question'),
+                   model_uri=QO.qo_question, domain=QoOrderedQuestion, range=Union[dict, "QoQuestion"])
 
-slots.sectionHasOrderedSection = Slot(uri=FAQIR.sectionHasOrderedSection, name="sectionHasOrderedSection", curie=FAQIR.curie('sectionHasOrderedSection'),
-                   model_uri=DATAMODEL.sectionHasOrderedSection, domain=Section, range=Optional[Union[dict[Union[str, OrderedSectionOrderedSectionId], Union[dict, OrderedSection]], list[Union[dict, OrderedSection]]]], mappings = [FHIR["Questionnaire.item.where(type='group')"]])
+slots.qo_hasOrderedQuestion = Slot(uri=QO.hasOrderedQuestion, name="qo_hasOrderedQuestion", curie=QO.curie('hasOrderedQuestion'),
+                   model_uri=QO.qo_hasOrderedQuestion, domain=OwlThing, range=Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]])
 
-slots.sectionInOrderedSection = Slot(uri=FAQIR.sectionInOrderedSection, name="sectionInOrderedSection", curie=FAQIR.curie('sectionInOrderedSection'),
-                   model_uri=DATAMODEL.sectionInOrderedSection, domain=Section, range=Optional[Union[Union[str, OrderedSectionOrderedSectionId], list[Union[str, OrderedSectionOrderedSectionId]]]])
+slots.qo_hasOrderedSection = Slot(uri=QO.hasOrderedSection, name="qo_hasOrderedSection", curie=QO.curie('hasOrderedSection'),
+                   model_uri=QO.qo_hasOrderedSection, domain=OwlThing, range=Optional[Union[Union[dict, "QoOrderedSection"], list[Union[dict, "QoOrderedSection"]]]])
 
-slots.sectionAuthoredByOrg = Slot(uri=FAQIR.sectionAuthoredByOrg, name="sectionAuthoredByOrg", curie=FAQIR.curie('sectionAuthoredByOrg'),
-                   model_uri=DATAMODEL.sectionAuthoredByOrg, domain=Section, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]], mappings = [FHIR["Questionnaire.author"]])
+slots.qo_section = Slot(uri=QO.section, name="qo_section", curie=QO.curie('section'),
+                   model_uri=QO.qo_section, domain=QoOrderedSection, range=Union[dict, "QoSection"])
 
-slots.orderedSectionPartOfQuestionnaire = Slot(uri=FAQIR.orderedSectionPartOfQuestionnaire, name="orderedSectionPartOfQuestionnaire", curie=FAQIR.curie('orderedSectionPartOfQuestionnaire'),
-                   model_uri=DATAMODEL.orderedSectionPartOfQuestionnaire, domain=OrderedSection, range=Optional[Union[str, QuestionnaireQuestionnaireId]], mappings = [FHIR["Questionnaire.item"]])
+slots.qo_responds = Slot(uri=QO.responds, name="qo_responds", curie=QO.curie('responds'),
+                   model_uri=QO.qo_responds, domain=QoQuestionnaireResponse, range=Union[dict, QoQuestionnaire])
 
-slots.orderedSectionPartOfSection = Slot(uri=FAQIR.orderedSectionPartOfSection, name="orderedSectionPartOfSection", curie=FAQIR.curie('orderedSectionPartOfSection'),
-                   model_uri=DATAMODEL.orderedSectionPartOfSection, domain=OrderedSection, range=Optional[Union[str, SectionSectionId]], mappings = [FHIR["Questionnaire.item"]])
+slots.qo_hasAnswer = Slot(uri=QO.hasAnswer, name="qo_hasAnswer", curie=QO.curie('hasAnswer'),
+                   model_uri=QO.qo_hasAnswer, domain=QoQuestionnaireResponse, range=Union[Union[dict, "QoAnswer"], list[Union[dict, "QoAnswer"]]])
 
-slots.orderedSectionHasSection = Slot(uri=FAQIR.orderedSectionHasSection, name="orderedSectionHasSection", curie=FAQIR.curie('orderedSectionHasSection'),
-                   model_uri=DATAMODEL.orderedSectionHasSection, domain=OrderedSection, range=Union[str, SectionSectionId])
+slots.qo_toQuestion = Slot(uri=QO.toQuestion, name="qo_toQuestion", curie=QO.curie('toQuestion'),
+                   model_uri=QO.qo_toQuestion, domain=QoAnswer, range=Union[dict, QoQuestion])
 
-slots.scoreDefinitionHasScoreParameter = Slot(uri=FAQIR.scoreDefinitionHasScoreParameter, name="scoreDefinitionHasScoreParameter", curie=FAQIR.curie('scoreDefinitionHasScoreParameter'),
-                   model_uri=DATAMODEL.scoreDefinitionHasScoreParameter, domain=ScoreDefinition, range=Optional[Union[Union[str, ScoreParameterScoreParameterId], list[Union[str, ScoreParameterScoreParameterId]]]])
+slots.sarefProperty__fhir_referenceRange = Slot(uri=FHIR['Observation.referenceRange'], name="sarefProperty__fhir_referenceRange", curie=FHIR.curie('Observation.referenceRange'),
+                   model_uri=QO.sarefProperty__fhir_referenceRange, domain=None, range=Optional[Union[dict, FhirReferenceRange]])
 
-slots.scoreDefinitionUsesQuestion = Slot(uri=FAQIR.scoreDefinitionUsesQuestion, name="scoreDefinitionUsesQuestion", curie=FAQIR.curie('scoreDefinitionUsesQuestion'),
-                   model_uri=DATAMODEL.scoreDefinitionUsesQuestion, domain=ScoreDefinition, range=Union[Union[str, QuestionQuestionId], list[Union[str, QuestionQuestionId]]])
+slots.sarefPropertyValue__fhir_valueCodeableConcept = Slot(uri=FHIR.valueCodeableConcept, name="sarefPropertyValue__fhir_valueCodeableConcept", curie=FHIR.curie('valueCodeableConcept'),
+                   model_uri=QO.sarefPropertyValue__fhir_valueCodeableConcept, domain=None, range=Optional[Union[dict, ValueCoding]])
 
-slots.scoreDefinitionHasScoreValue = Slot(uri=FAQIR.scoreDefinitionHasScoreValue, name="scoreDefinitionHasScoreValue", curie=FAQIR.curie('scoreDefinitionHasScoreValue'),
-                   model_uri=DATAMODEL.scoreDefinitionHasScoreValue, domain=ScoreDefinition, range=Optional[Union[Union[str, ScoreValueScoreValueId], list[Union[str, ScoreValueScoreValueId]]]])
+slots.sarefPropertyValue__fhir_valueRange = Slot(uri=FHIR.valueRange, name="sarefPropertyValue__fhir_valueRange", curie=FHIR.curie('valueRange'),
+                   model_uri=QO.sarefPropertyValue__fhir_valueRange, domain=None, range=Optional[Union[dict, FhirReferenceRange]])
 
-slots.scoreDefinitionAuthoredByOrg = Slot(uri=FAQIR.scoreDefinitionAuthoredByOrg, name="scoreDefinitionAuthoredByOrg", curie=FAQIR.curie('scoreDefinitionAuthoredByOrg'),
-                   model_uri=DATAMODEL.scoreDefinitionAuthoredByOrg, domain=ScoreDefinition, range=Optional[Union[Union[str, OrganizationOrganizationId], list[Union[str, OrganizationOrganizationId]]]], mappings = [FHIR["Questionnaire.author"]])
+slots.sarefPropertyValue__fhir_valueRatio = Slot(uri=FHIR.valueRatio, name="sarefPropertyValue__fhir_valueRatio", curie=FHIR.curie('valueRatio'),
+                   model_uri=QO.sarefPropertyValue__fhir_valueRatio, domain=None, range=Optional[Union[dict, FhirValueRatio]])
 
-slots.scoreParameterPartOfScoreDefinition = Slot(uri=FAQIR.scoreParameterPartOfScoreDefinition, name="scoreParameterPartOfScoreDefinition", curie=FAQIR.curie('scoreParameterPartOfScoreDefinition'),
-                   model_uri=DATAMODEL.scoreParameterPartOfScoreDefinition, domain=ScoreParameter, range=Union[str, ScoreDefinitionScoreDefinitionId])
+slots.sarefPropertyValue__fhir_valuePeriod = Slot(uri=FHIR.valuePeriod, name="sarefPropertyValue__fhir_valuePeriod", curie=FHIR.curie('valuePeriod'),
+                   model_uri=QO.sarefPropertyValue__fhir_valuePeriod, domain=None, range=Optional[Union[dict, TimeInterval]])
 
-slots.scoreValueBasedOnScoreDefinition = Slot(uri=FAQIR.scoreValueBasedOnScoreDefinition, name="scoreValueBasedOnScoreDefinition", curie=FAQIR.curie('scoreValueBasedOnScoreDefinition'),
-                   model_uri=DATAMODEL.scoreValueBasedOnScoreDefinition, domain=ScoreValue, range=Union[str, ScoreDefinitionScoreDefinitionId])
-
-slots.scoreValueDerivedFromQuestionnaireResponse = Slot(uri=FAQIR.scoreValueDerivedFromQuestionnaireResponse, name="scoreValueDerivedFromQuestionnaireResponse", curie=FAQIR.curie('scoreValueDerivedFromQuestionnaireResponse'),
-                   model_uri=DATAMODEL.scoreValueDerivedFromQuestionnaireResponse, domain=ScoreValue, range=Union[Union[str, QuestionnaireResponseQuestionnaireResponseId], list[Union[str, QuestionnaireResponseQuestionnaireResponseId]]])
-
-slots.vault__vaultId = Slot(uri=DATAMODEL['vault/vaultId'], name="vault__vaultId", curie=DATAMODEL.curie('vault/vaultId'),
-                   model_uri=DATAMODEL.vault__vaultId, domain=None, range=URIRef)
-
-slots.vault__birthdate = Slot(uri=DATAMODEL['vault/birthdate'], name="vault__birthdate", curie=DATAMODEL.curie('vault/birthdate'),
-                   model_uri=DATAMODEL.vault__birthdate, domain=None, range=Optional[Union[str, XSDDateTime]])
-
-slots.vault__weight = Slot(uri=DATAMODEL['vault/weight'], name="vault__weight", curie=DATAMODEL.curie('vault/weight'),
-                   model_uri=DATAMODEL.vault__weight, domain=None, range=Optional[Union[dict, Weight]])
-
-slots.vault__full_name = Slot(uri=DATAMODEL['vault/full_name'], name="vault__full_name", curie=DATAMODEL.curie('vault/full_name'),
-                   model_uri=DATAMODEL.vault__full_name, domain=None, range=Optional[Union[dict, FullName]])
-
-slots.fullName__first_name = Slot(uri=DATAMODEL['vault/first_name'], name="fullName__first_name", curie=DATAMODEL.curie('vault/first_name'),
-                   model_uri=DATAMODEL.fullName__first_name, domain=None, range=Optional[str])
-
-slots.fullName__middle_name = Slot(uri=DATAMODEL['vault/middle_name'], name="fullName__middle_name", curie=DATAMODEL.curie('vault/middle_name'),
-                   model_uri=DATAMODEL.fullName__middle_name, domain=None, range=Optional[str])
-
-slots.fullName__family_name = Slot(uri=DATAMODEL['vault/family_name'], name="fullName__family_name", curie=DATAMODEL.curie('vault/family_name'),
-                   model_uri=DATAMODEL.fullName__family_name, domain=None, range=Optional[str])
-
-slots.weight__weightType = Slot(uri=DATAMODEL['vault/weightType'], name="weight__weightType", curie=DATAMODEL.curie('vault/weightType'),
-                   model_uri=DATAMODEL.weight__weightType, domain=None, range=Union[str, "WeightType"])
-
-slots.valueNumerical__numericalValue = Slot(uri=TYPES['/numericalValue'], name="valueNumerical__numericalValue", curie=TYPES.curie('/numericalValue'),
-                   model_uri=DATAMODEL.valueNumerical__numericalValue, domain=None, range=Decimal)
+slots.sarefPropertyValue__fhir_valueAttachement = Slot(uri=FHIR.valueAttachement, name="sarefPropertyValue__fhir_valueAttachement", curie=FHIR.curie('valueAttachement'),
+                   model_uri=QO.sarefPropertyValue__fhir_valueAttachement, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.numericalParams__numericalUnit = Slot(uri=UCUM.units, name="numericalParams__numericalUnit", curie=UCUM.curie('units'),
-                   model_uri=DATAMODEL.numericalParams__numericalUnit, domain=None, range=Optional[Union[str, "UnitOfMeasure"]])
+                   model_uri=QO.numericalParams__numericalUnit, domain=None, range=Optional[Union[str, URIorCURIE]],
+                   pattern=re.compile(r'^ucum:'))
 
-slots.numericalParams__numericalPrecision = Slot(uri=TYPES['/numericalPrecision'], name="numericalParams__numericalPrecision", curie=TYPES.curie('/numericalPrecision'),
-                   model_uri=DATAMODEL.numericalParams__numericalPrecision, domain=None, range=Optional[int])
+slots.numericalParams__numericalPrecision = Slot(uri=PHRO.precision, name="numericalParams__numericalPrecision", curie=PHRO.curie('precision'),
+                   model_uri=QO.numericalParams__numericalPrecision, domain=None, range=Optional[int])
 
-slots.intervalParams__minValue = Slot(uri=TYPES['/minValue'], name="intervalParams__minValue", curie=TYPES.curie('/minValue'),
-                   model_uri=DATAMODEL.intervalParams__minValue, domain=None, range=float)
+slots.valueCoding__code = Slot(uri=FHIR.code, name="valueCoding__code", curie=FHIR.curie('code'),
+                   model_uri=QO.valueCoding__code, domain=None, range=str)
 
-slots.intervalParams__minLabel = Slot(uri=TYPES['/minLabel'], name="intervalParams__minLabel", curie=TYPES.curie('/minLabel'),
-                   model_uri=DATAMODEL.intervalParams__minLabel, domain=None, range=Optional[str])
+slots.valueCoding__display = Slot(uri=FHIR.display, name="valueCoding__display", curie=FHIR.curie('display'),
+                   model_uri=QO.valueCoding__display, domain=None, range=str)
 
-slots.intervalParams__maxValue = Slot(uri=TYPES['/maxValue'], name="intervalParams__maxValue", curie=TYPES.curie('/maxValue'),
-                   model_uri=DATAMODEL.intervalParams__maxValue, domain=None, range=float)
+slots.fhirValueRatio__numerator = Slot(uri=FHIR.numerator, name="fhirValueRatio__numerator", curie=FHIR.curie('numerator'),
+                   model_uri=QO.fhirValueRatio__numerator, domain=None, range=Union[dict, QuantityValue])
 
-slots.intervalParams__maxLabel = Slot(uri=TYPES['/maxLabel'], name="intervalParams__maxLabel", curie=TYPES.curie('/maxLabel'),
-                   model_uri=DATAMODEL.intervalParams__maxLabel, domain=None, range=Optional[str])
+slots.fhirValueRatio__denominator = Slot(uri=FHIR.denominator, name="fhirValueRatio__denominator", curie=FHIR.curie('denominator'),
+                   model_uri=QO.fhirValueRatio__denominator, domain=None, range=Union[dict, QuantityValue])
 
-slots.valueString__stringValue = Slot(uri=TYPES['/stringValue'], name="valueString__stringValue", curie=TYPES.curie('/stringValue'),
-                   model_uri=DATAMODEL.valueString__stringValue, domain=None, range=str)
+slots.intervalParams__minValue = Slot(uri=PHRO.minValue, name="intervalParams__minValue", curie=PHRO.curie('minValue'),
+                   model_uri=QO.intervalParams__minValue, domain=None, range=Optional[float])
 
-slots.valueDateTime__dateTimeValue = Slot(uri=TYPES['/dateTimeValue'], name="valueDateTime__dateTimeValue", curie=TYPES.curie('/dateTimeValue'),
-                   model_uri=DATAMODEL.valueDateTime__dateTimeValue, domain=None, range=Optional[Union[str, XSDDateTime]])
+slots.intervalParams__minLabel = Slot(uri=PHRO.minLabel, name="intervalParams__minLabel", curie=PHRO.curie('minLabel'),
+                   model_uri=QO.intervalParams__minLabel, domain=None, range=Optional[str])
 
-slots.valueCoding__code = Slot(uri=TYPES['/code'], name="valueCoding__code", curie=TYPES.curie('/code'),
-                   model_uri=DATAMODEL.valueCoding__code, domain=None, range=str)
+slots.intervalParams__maxValue = Slot(uri=PHRO.maxValue, name="intervalParams__maxValue", curie=PHRO.curie('maxValue'),
+                   model_uri=QO.intervalParams__maxValue, domain=None, range=Optional[float])
 
-slots.valueCoding__display = Slot(uri=TYPES['/display'], name="valueCoding__display", curie=TYPES.curie('/display'),
-                   model_uri=DATAMODEL.valueCoding__display, domain=None, range=str)
+slots.intervalParams__maxLabel = Slot(uri=PHRO.maxLabel, name="intervalParams__maxLabel", curie=PHRO.curie('maxLabel'),
+                   model_uri=QO.intervalParams__maxLabel, domain=None, range=Optional[str])
 
-slots.metadata__lastUpdated = Slot(uri=DATAMODEL['core/versions/lastUpdated'], name="metadata__lastUpdated", curie=DATAMODEL.curie('core/versions/lastUpdated'),
-                   model_uri=DATAMODEL.metadata__lastUpdated, domain=None, range=Union[str, XSDDateTime])
+slots.fhirReferenceRange__lowRange = Slot(uri=PHRO.lowRange, name="fhirReferenceRange__lowRange", curie=PHRO.curie('lowRange'),
+                   model_uri=QO.fhirReferenceRange__lowRange, domain=None, range=Optional[Union[dict, QuantityValue]])
 
-slots.organization__organizationId = Slot(uri=DATAMODEL['entities/organization/organizationId'], name="organization__organizationId", curie=DATAMODEL.curie('entities/organization/organizationId'),
-                   model_uri=DATAMODEL.organization__organizationId, domain=None, range=URIRef)
+slots.fhirReferenceRange__highRange = Slot(uri=PHRO.highRange, name="fhirReferenceRange__highRange", curie=PHRO.curie('highRange'),
+                   model_uri=QO.fhirReferenceRange__highRange, domain=None, range=Optional[Union[dict, QuantityValue]])
 
-slots.organization__organizationLabel = Slot(uri=DATAMODEL['entities/organization/organizationLabel'], name="organization__organizationLabel", curie=DATAMODEL.curie('entities/organization/organizationLabel'),
-                   model_uri=DATAMODEL.organization__organizationLabel, domain=None, range=str)
+slots.fhirReferenceRange__normalValue = Slot(uri=PHRO.normalValue, name="fhirReferenceRange__normalValue", curie=PHRO.curie('normalValue'),
+                   model_uri=QO.fhirReferenceRange__normalValue, domain=None, range=Optional[Union[Union[dict, QuantityValue], list[Union[dict, QuantityValue]]]])
 
-slots.organization__organizationType = Slot(uri=DATAMODEL['entities/organization/organizationType'], name="organization__organizationType", curie=DATAMODEL.curie('entities/organization/organizationType'),
-                   model_uri=DATAMODEL.organization__organizationType, domain=None, range=Union[str, "OrganizationType"])
+slots.qoOrderedQuestion__qo_required = Slot(uri=QO.required, name="qoOrderedQuestion__qo_required", curie=QO.curie('required'),
+                   model_uri=QO.qoOrderedQuestion__qo_required, domain=None, range=Union[bool, Bool])
 
-slots.procedure__procedureId = Slot(uri=DATAMODEL['entities/procedure/procedureId'], name="procedure__procedureId", curie=DATAMODEL.curie('entities/procedure/procedureId'),
-                   model_uri=DATAMODEL.procedure__procedureId, domain=None, range=URIRef)
+slots.qoQuestion__qo_tag = Slot(uri=QO.tag, name="qoQuestion__qo_tag", curie=QO.curie('tag'),
+                   model_uri=QO.qoQuestion__qo_tag, domain=None, range=Union[str, list[str]])
 
-slots.procedure__procedureLabel = Slot(uri=DATAMODEL['entities/procedure/procedureLabel'], name="procedure__procedureLabel", curie=DATAMODEL.curie('entities/procedure/procedureLabel'),
-                   model_uri=DATAMODEL.procedure__procedureLabel, domain=None, range=str)
+slots.qoQuestion__qo_numericalParams = Slot(uri=QO.numericalParams, name="qoQuestion__qo_numericalParams", curie=QO.curie('numericalParams'),
+                   model_uri=QO.qoQuestion__qo_numericalParams, domain=None, range=Optional[Union[dict, NumericalParams]])
 
-slots.procedure__procedureDescription = Slot(uri=DATAMODEL['entities/procedure/procedureDescription'], name="procedure__procedureDescription", curie=DATAMODEL.curie('entities/procedure/procedureDescription'),
-                   model_uri=DATAMODEL.procedure__procedureDescription, domain=None, range=Optional[str])
+slots.qoQuestion__qo_codingParams = Slot(uri=QO.codingParams, name="qoQuestion__qo_codingParams", curie=QO.curie('codingParams'),
+                   model_uri=QO.qoQuestion__qo_codingParams, domain=None, range=Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]])
 
-slots.questionnaireResponse__questionnaireResponseId = Slot(uri=QUESTIONNAIRE['classes/questionnaireResponseId'], name="questionnaireResponse__questionnaireResponseId", curie=QUESTIONNAIRE.curie('classes/questionnaireResponseId'),
-                   model_uri=DATAMODEL.questionnaireResponse__questionnaireResponseId, domain=None, range=URIRef)
+slots.qoQuestion__qo_codingOrdinal = Slot(uri=QO.codingOrdinal, name="qoQuestion__qo_codingOrdinal", curie=QO.curie('codingOrdinal'),
+                   model_uri=QO.qoQuestion__qo_codingOrdinal, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.questionnaireResponse__questionnaireResponseStatus = Slot(uri=QUESTIONNAIRE['classes/questionnaireResponseStatus'], name="questionnaireResponse__questionnaireResponseStatus", curie=QUESTIONNAIRE.curie('classes/questionnaireResponseStatus'),
-                   model_uri=DATAMODEL.questionnaireResponse__questionnaireResponseStatus, domain=None, range=Union[str, "QuestionnaireResponseStatus"], mappings = [FHIR["QuestionnaireResponse.status"]])
+slots.qoQuestion__qo_intervalParams = Slot(uri=QO.intervalParams, name="qoQuestion__qo_intervalParams", curie=QO.curie('intervalParams'),
+                   model_uri=QO.qoQuestion__qo_intervalParams, domain=None, range=Optional[Union[dict, IntervalParams]])
 
-slots.questionnaireResponse__questionnaireResponseTimeStamp = Slot(uri=QUESTIONNAIRE['classes/questionnaireResponseTimeStamp'], name="questionnaireResponse__questionnaireResponseTimeStamp", curie=QUESTIONNAIRE.curie('classes/questionnaireResponseTimeStamp'),
-                   model_uri=DATAMODEL.questionnaireResponse__questionnaireResponseTimeStamp, domain=None, range=Union[str, XSDDateTime], mappings = [FHIR["QuestionnaireResponse.authored"]])
+slots.qoAnswer__qo_answerValue = Slot(uri=QO.answerValue, name="qoAnswer__qo_answerValue", curie=QO.curie('answerValue'),
+                   model_uri=QO.qoAnswer__qo_answerValue, domain=None, range=Optional[str])
 
-slots.questionnaireResponse__questionnaireResponseLastUpdated = Slot(uri=QUESTIONNAIRE['classes/questionnaireResponseLastUpdated'], name="questionnaireResponse__questionnaireResponseLastUpdated", curie=QUESTIONNAIRE.curie('classes/questionnaireResponseLastUpdated'),
-                   model_uri=DATAMODEL.questionnaireResponse__questionnaireResponseLastUpdated, domain=None, range=Union[str, XSDDateTime])
+slots.qoAnswer__qo_isEmpty = Slot(uri=QO.isEmpty, name="qoAnswer__qo_isEmpty", curie=QO.curie('isEmpty'),
+                   model_uri=QO.qoAnswer__qo_isEmpty, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.answer__answerId = Slot(uri=QUESTIONNAIRE['classes/answerId'], name="answer__answerId", curie=QUESTIONNAIRE.curie('classes/answerId'),
-                   model_uri=DATAMODEL.answer__answerId, domain=None, range=URIRef)
+slots.qo_Questionnaire_dcterms_created = Slot(uri=DCTERMS.created, name="qo_Questionnaire_dcterms_created", curie=DCTERMS.curie('created'),
+                   model_uri=QO.qo_Questionnaire_dcterms_created, domain=QoQuestionnaire, range=Union[str, XSDDateTime])
 
-slots.answer__answerValueNumerical = Slot(uri=QUESTIONNAIRE['classes/answerValueNumerical'], name="answer__answerValueNumerical", curie=QUESTIONNAIRE.curie('classes/answerValueNumerical'),
-                   model_uri=DATAMODEL.answer__answerValueNumerical, domain=None, range=Optional[Union[dict, ValueNumerical]], mappings = [FHIR["QuestionnaireResponse.item.answer.valueDecimal"]])
+slots.qo_Questionnaire_dcterms_modified = Slot(uri=DCTERMS.modified, name="qo_Questionnaire_dcterms_modified", curie=DCTERMS.curie('modified'),
+                   model_uri=QO.qo_Questionnaire_dcterms_modified, domain=QoQuestionnaire, range=Union[str, XSDDateTime], mappings = [PROV["endedAtTime"], FHIR["Questionnaire.date"]])
 
-slots.answer__answerValueString = Slot(uri=QUESTIONNAIRE['classes/answerValueString'], name="answer__answerValueString", curie=QUESTIONNAIRE.curie('classes/answerValueString'),
-                   model_uri=DATAMODEL.answer__answerValueString, domain=None, range=Optional[Union[Union[dict, ValueString], list[Union[dict, ValueString]]]], mappings = [FHIR["QuestionnaireResponse.item.answer.valueString"]])
+slots.qo_Questionnaire_dcterms_creator = Slot(uri=DCTERMS.creator, name="qo_Questionnaire_dcterms_creator", curie=DCTERMS.curie('creator'),
+                   model_uri=QO.qo_Questionnaire_dcterms_creator, domain=QoQuestionnaire, range=Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]], mappings = [FHIR["Questionnaire.author"]])
 
-slots.answer__answerValueDateTime = Slot(uri=QUESTIONNAIRE['classes/answerValueDateTime'], name="answer__answerValueDateTime", curie=QUESTIONNAIRE.curie('classes/answerValueDateTime'),
-                   model_uri=DATAMODEL.answer__answerValueDateTime, domain=None, range=Optional[Union[dict, ValueDateTime]], mappings = [FHIR["QuestionnaireResponse.item.answer.valueDateTime"]])
+slots.qo_Questionnaire_dcterms_isPartOf = Slot(uri=DCTERMS.isPartOf, name="qo_Questionnaire_dcterms_isPartOf", curie=DCTERMS.curie('isPartOf'),
+                   model_uri=QO.qo_Questionnaire_dcterms_isPartOf, domain=QoQuestionnaire, range=Optional[Union[Union[dict, SuloProcess], list[Union[dict, SuloProcess]]]])
 
-slots.answer__answerIsEmpty = Slot(uri=QUESTIONNAIRE['classes/answerIsEmpty'], name="answer__answerIsEmpty", curie=QUESTIONNAIRE.curie('classes/answerIsEmpty'),
-                   model_uri=DATAMODEL.answer__answerIsEmpty, domain=None, range=Optional[Union[bool, Bool]])
+slots.qo_Questionnaire_fhir_status = Slot(uri=FHIR['resource-status'], name="qo_Questionnaire_fhir_status", curie=FHIR.curie('resource-status'),
+                   model_uri=QO.qo_Questionnaire_fhir_status, domain=QoQuestionnaire, range=Union[Union[dict, "QoQuestionnaireStatus"], list[Union[dict, "QoQuestionnaireStatus"]]])
 
-slots.answer__answerTimeStamp = Slot(uri=QUESTIONNAIRE['classes/answerTimeStamp'], name="answer__answerTimeStamp", curie=QUESTIONNAIRE.curie('classes/answerTimeStamp'),
-                   model_uri=DATAMODEL.answer__answerTimeStamp, domain=None, range=Union[str, XSDDateTime])
+slots.qo_Questionnaire_qo_hasOrderedQuestion = Slot(uri=QO.hasOrderedQuestion, name="qo_Questionnaire_qo_hasOrderedQuestion", curie=QO.curie('hasOrderedQuestion'),
+                   model_uri=QO.qo_Questionnaire_qo_hasOrderedQuestion, domain=QoQuestionnaire, range=Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]])
 
-slots.orderedQuestion__orderedQuestionId = Slot(uri=QUESTIONNAIRE['classes/orderedQuestionId'], name="orderedQuestion__orderedQuestionId", curie=QUESTIONNAIRE.curie('classes/orderedQuestionId'),
-                   model_uri=DATAMODEL.orderedQuestion__orderedQuestionId, domain=None, range=URIRef)
+slots.qo_Questionnaire_qo_hasOrderedSection = Slot(uri=QO.hasOrderedSection, name="qo_Questionnaire_qo_hasOrderedSection", curie=QO.curie('hasOrderedSection'),
+                   model_uri=QO.qo_Questionnaire_qo_hasOrderedSection, domain=QoQuestionnaire, range=Optional[Union[Union[dict, "QoOrderedSection"], list[Union[dict, "QoOrderedSection"]]]])
 
-slots.orderedQuestion__questionOrder = Slot(uri=QUESTIONNAIRE['classes/questionOrder'], name="orderedQuestion__questionOrder", curie=QUESTIONNAIRE.curie('classes/questionOrder'),
-                   model_uri=DATAMODEL.orderedQuestion__questionOrder, domain=None, range=int)
+slots.qo_QuestionnaireStatus_saref_hasValue = Slot(uri=SAREF.hasValue, name="qo_QuestionnaireStatus_saref_hasValue", curie=SAREF.curie('hasValue'),
+                   model_uri=QO.qo_QuestionnaireStatus_saref_hasValue, domain=QoQuestionnaireStatus, range=Union[str, "QoQuestionnaireStatusEnum"])
 
-slots.question__questionId = Slot(uri=QUESTIONNAIRE['classes/questionId'], name="question__questionId", curie=QUESTIONNAIRE.curie('classes/questionId'),
-                   model_uri=DATAMODEL.question__questionId, domain=None, range=URIRef)
+slots.qo_OrderedSection_qo_order = Slot(uri=QO.order, name="qo_OrderedSection_qo_order", curie=QO.curie('order'),
+                   model_uri=QO.qo_OrderedSection_qo_order, domain=QoOrderedSection, range=int)
 
-slots.question__questionTag = Slot(uri=QUESTIONNAIRE['classes/questionTag'], name="question__questionTag", curie=QUESTIONNAIRE.curie('classes/questionTag'),
-                   model_uri=DATAMODEL.question__questionTag, domain=None, range=str)
+slots.qo_Section_dcterms_creator = Slot(uri=DCTERMS.creator, name="qo_Section_dcterms_creator", curie=DCTERMS.curie('creator'),
+                   model_uri=QO.qo_Section_dcterms_creator, domain=QoSection, range=Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]], mappings = [FHIR["Questionnaire.author"]])
 
-slots.question__questionNumericalParams = Slot(uri=QUESTIONNAIRE['classes/questionNumericalParams'], name="question__questionNumericalParams", curie=QUESTIONNAIRE.curie('classes/questionNumericalParams'),
-                   model_uri=DATAMODEL.question__questionNumericalParams, domain=None, range=Optional[Union[dict, NumericalParams]])
+slots.qo_Section_qo_hasOrderedQuestion = Slot(uri=QO.hasOrderedQuestion, name="qo_Section_qo_hasOrderedQuestion", curie=QO.curie('hasOrderedQuestion'),
+                   model_uri=QO.qo_Section_qo_hasOrderedQuestion, domain=QoSection, range=Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]])
 
-slots.question__questionCodingParams = Slot(uri=QUESTIONNAIRE['classes/questionCodingParams'], name="question__questionCodingParams", curie=QUESTIONNAIRE.curie('classes/questionCodingParams'),
-                   model_uri=DATAMODEL.question__questionCodingParams, domain=None, range=Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]])
+slots.qo_Section_qo_hasOrderedSection = Slot(uri=QO.hasOrderedSection, name="qo_Section_qo_hasOrderedSection", curie=QO.curie('hasOrderedSection'),
+                   model_uri=QO.qo_Section_qo_hasOrderedSection, domain=QoSection, range=Optional[Union[Union[dict, QoOrderedSection], list[Union[dict, QoOrderedSection]]]])
 
-slots.question__questionIntervalParams = Slot(uri=QUESTIONNAIRE['classes/questionIntervalParams'], name="question__questionIntervalParams", curie=QUESTIONNAIRE.curie('classes/questionIntervalParams'),
-                   model_uri=DATAMODEL.question__questionIntervalParams, domain=None, range=Optional[Union[dict, IntervalParams]])
+slots.qo_OrderedQuestion_qo_order = Slot(uri=QO.order, name="qo_OrderedQuestion_qo_order", curie=QO.curie('order'),
+                   model_uri=QO.qo_OrderedQuestion_qo_order, domain=QoOrderedQuestion, range=int)
 
-slots.question__questionRequired = Slot(uri=QUESTIONNAIRE['classes/questionRequired'], name="question__questionRequired", curie=QUESTIONNAIRE.curie('classes/questionRequired'),
-                   model_uri=DATAMODEL.question__questionRequired, domain=None, range=Optional[Union[bool, Bool]], mappings = [FHIR["Questionnaire.item.required"]])
+slots.qo_Question_prov_type = Slot(uri=PROV.type, name="qo_Question_prov_type", curie=PROV.curie('type'),
+                   model_uri=QO.qo_Question_prov_type, domain=QoQuestion, range=Union[Union[str, "QoQuestionType"], list[Union[str, "QoQuestionType"]]])
 
-slots.questionRepresentation__questionRepresentationId = Slot(uri=QUESTIONNAIRE['classes/questionRepresentationId'], name="questionRepresentation__questionRepresentationId", curie=QUESTIONNAIRE.curie('classes/questionRepresentationId'),
-                   model_uri=DATAMODEL.questionRepresentation__questionRepresentationId, domain=None, range=URIRef)
+slots.qo_Question_dcterms_creator = Slot(uri=DCTERMS.creator, name="qo_Question_dcterms_creator", curie=DCTERMS.curie('creator'),
+                   model_uri=QO.qo_Question_dcterms_creator, domain=QoQuestion, range=Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]])
 
-slots.questionRepresentation__questionRepresentationText = Slot(uri=QUESTIONNAIRE['classes/questionRepresentationText'], name="questionRepresentation__questionRepresentationText", curie=QUESTIONNAIRE.curie('classes/questionRepresentationText'),
-                   model_uri=DATAMODEL.questionRepresentation__questionRepresentationText, domain=None, range=str)
+slots.qo_QuestionnaireResponse_dcterms_created = Slot(uri=DCTERMS.created, name="qo_QuestionnaireResponse_dcterms_created", curie=DCTERMS.curie('created'),
+                   model_uri=QO.qo_QuestionnaireResponse_dcterms_created, domain=QoQuestionnaireResponse, range=Union[str, XSDDateTime], mappings = [FHIR["QuestionnaireResponse.authored"]])
 
-slots.questionRepresentation__questionRepresentationLanguage = Slot(uri=QUESTIONNAIRE['classes/questionRepresentationLanguage'], name="questionRepresentation__questionRepresentationLanguage", curie=QUESTIONNAIRE.curie('classes/questionRepresentationLanguage'),
-                   model_uri=DATAMODEL.questionRepresentation__questionRepresentationLanguage, domain=None, range=str,
-                   pattern=re.compile(r'^[a-z]{2}(-[A-Z]{2})?$'))
+slots.qo_QuestionnaireResponse_dcterms_modified = Slot(uri=DCTERMS.modified, name="qo_QuestionnaireResponse_dcterms_modified", curie=DCTERMS.curie('modified'),
+                   model_uri=QO.qo_QuestionnaireResponse_dcterms_modified, domain=QoQuestionnaireResponse, range=Union[str, XSDDateTime], mappings = [PROV["endedAtTime"]])
 
-slots.questionnaire__questionnaireId = Slot(uri=QUESTIONNAIRE['classes/questionnaireId'], name="questionnaire__questionnaireId", curie=QUESTIONNAIRE.curie('classes/questionnaireId'),
-                   model_uri=DATAMODEL.questionnaire__questionnaireId, domain=None, range=URIRef)
+slots.qo_QuestionnaireResponse_dcterms_isPartOf = Slot(uri=DCTERMS.isPartOf, name="qo_QuestionnaireResponse_dcterms_isPartOf", curie=DCTERMS.curie('isPartOf'),
+                   model_uri=QO.qo_QuestionnaireResponse_dcterms_isPartOf, domain=QoQuestionnaireResponse, range=Optional[Union[Union[dict, SuloProcess], list[Union[dict, SuloProcess]]]])
 
-slots.questionnaire__questionnaireLabel = Slot(uri=QUESTIONNAIRE['classes/questionnaireLabel'], name="questionnaire__questionnaireLabel", curie=QUESTIONNAIRE.curie('classes/questionnaireLabel'),
-                   model_uri=DATAMODEL.questionnaire__questionnaireLabel, domain=None, range=str)
+slots.qo_QuestionnaireResponse_prov_wasAttributedTo = Slot(uri=PROV.wasAttributedTo, name="qo_QuestionnaireResponse_prov_wasAttributedTo", curie=PROV.curie('wasAttributedTo'),
+                   model_uri=QO.qo_QuestionnaireResponse_prov_wasAttributedTo, domain=QoQuestionnaireResponse, range=Union[Union[dict, FoafPerson], list[Union[dict, FoafPerson]]])
 
-slots.questionnaire__questionnaireStatus = Slot(uri=QUESTIONNAIRE['classes/questionnaireStatus'], name="questionnaire__questionnaireStatus", curie=QUESTIONNAIRE.curie('classes/questionnaireStatus'),
-                   model_uri=DATAMODEL.questionnaire__questionnaireStatus, domain=None, range=Union[str, "QuestionnaireStatus"], mappings = [FHIR["Questionnaire.status"]])
+slots.qo_QuestionnaireResponse_fhir_status = Slot(uri=FHIR['resource-status'], name="qo_QuestionnaireResponse_fhir_status", curie=FHIR.curie('resource-status'),
+                   model_uri=QO.qo_QuestionnaireResponse_fhir_status, domain=QoQuestionnaireResponse, range=Union[Union[dict, "QoQuestionnaireResponseStatus"], list[Union[dict, "QoQuestionnaireResponseStatus"]]])
 
-slots.questionnaire__questionnaireVersion = Slot(uri=QUESTIONNAIRE['classes/questionnaireVersion'], name="questionnaire__questionnaireVersion", curie=QUESTIONNAIRE.curie('classes/questionnaireVersion'),
-                   model_uri=DATAMODEL.questionnaire__questionnaireVersion, domain=None, range=str,
-                   pattern=re.compile(r'^\d+\.\d+\.\d+$'))
+slots.qo_QuestionnaireResponseStatus_saref_hasValue = Slot(uri=SAREF.hasValue, name="qo_QuestionnaireResponseStatus_saref_hasValue", curie=SAREF.curie('hasValue'),
+                   model_uri=QO.qo_QuestionnaireResponseStatus_saref_hasValue, domain=QoQuestionnaireResponseStatus, range=Union[str, "QoQuestionnaireResponseStatusEnum"])
 
-slots.questionnaire__questionnaireLastUpdated = Slot(uri=QUESTIONNAIRE['classes/questionnaireLastUpdated'], name="questionnaire__questionnaireLastUpdated", curie=QUESTIONNAIRE.curie('classes/questionnaireLastUpdated'),
-                   model_uri=DATAMODEL.questionnaire__questionnaireLastUpdated, domain=None, range=Union[str, XSDDateTime], mappings = [FHIR["Questionnaire.date"]])
+slots.qo_Answer_prov_generatedAtTime = Slot(uri=PROV.generatedAtTime, name="qo_Answer_prov_generatedAtTime", curie=PROV.curie('generatedAtTime'),
+                   model_uri=QO.qo_Answer_prov_generatedAtTime, domain=QoAnswer, range=Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]])
 
-slots.orderedSection__orderedSectionId = Slot(uri=QUESTIONNAIRE['classes/orderedSectionId'], name="orderedSection__orderedSectionId", curie=QUESTIONNAIRE.curie('classes/orderedSectionId'),
-                   model_uri=DATAMODEL.orderedSection__orderedSectionId, domain=None, range=URIRef)
-
-slots.orderedSection__sectionOrder = Slot(uri=QUESTIONNAIRE['classes/sectionOrder'], name="orderedSection__sectionOrder", curie=QUESTIONNAIRE.curie('classes/sectionOrder'),
-                   model_uri=DATAMODEL.orderedSection__sectionOrder, domain=None, range=int)
-
-slots.section__sectionId = Slot(uri=QUESTIONNAIRE['classes/sectionId'], name="section__sectionId", curie=QUESTIONNAIRE.curie('classes/sectionId'),
-                   model_uri=DATAMODEL.section__sectionId, domain=None, range=URIRef)
-
-slots.section__sectionLabel = Slot(uri=QUESTIONNAIRE['classes/sectionLabel'], name="section__sectionLabel", curie=QUESTIONNAIRE.curie('classes/sectionLabel'),
-                   model_uri=DATAMODEL.section__sectionLabel, domain=None, range=str)
-
-slots.scoreDefinition__scoreDefinitionId = Slot(uri=QUESTIONNAIRE['classes/scoreDefinitionId'], name="scoreDefinition__scoreDefinitionId", curie=QUESTIONNAIRE.curie('classes/scoreDefinitionId'),
-                   model_uri=DATAMODEL.scoreDefinition__scoreDefinitionId, domain=None, range=URIRef)
-
-slots.scoreDefinition__scoreDefinitionLabel = Slot(uri=QUESTIONNAIRE['classes/scoreDefinitionLabel'], name="scoreDefinition__scoreDefinitionLabel", curie=QUESTIONNAIRE.curie('classes/scoreDefinitionLabel'),
-                   model_uri=DATAMODEL.scoreDefinition__scoreDefinitionLabel, domain=None, range=str)
-
-slots.scoreDefinition__scoreDefinitionIntervalParams = Slot(uri=QUESTIONNAIRE['classes/scoreDefinitionIntervalParams'], name="scoreDefinition__scoreDefinitionIntervalParams", curie=QUESTIONNAIRE.curie('classes/scoreDefinitionIntervalParams'),
-                   model_uri=DATAMODEL.scoreDefinition__scoreDefinitionIntervalParams, domain=None, range=Optional[Union[dict, IntervalParams]])
-
-slots.scoreDefinition__scoreDefinitionFormula = Slot(uri=QUESTIONNAIRE['classes/scoreDefinitionFormula'], name="scoreDefinition__scoreDefinitionFormula", curie=QUESTIONNAIRE.curie('classes/scoreDefinitionFormula'),
-                   model_uri=DATAMODEL.scoreDefinition__scoreDefinitionFormula, domain=None, range=str)
-
-slots.scoreDefinition__scoreDefinitionCategories = Slot(uri=QUESTIONNAIRE['classes/scoreDefinitionCategories'], name="scoreDefinition__scoreDefinitionCategories", curie=QUESTIONNAIRE.curie('classes/scoreDefinitionCategories'),
-                   model_uri=DATAMODEL.scoreDefinition__scoreDefinitionCategories, domain=None, range=Optional[Union[str, list[str]]])
-
-slots.scoreDefinition__scoreDefinitionInterpretationGuide = Slot(uri=QUESTIONNAIRE['classes/scoreDefinitionInterpretationGuide'], name="scoreDefinition__scoreDefinitionInterpretationGuide", curie=QUESTIONNAIRE.curie('classes/scoreDefinitionInterpretationGuide'),
-                   model_uri=DATAMODEL.scoreDefinition__scoreDefinitionInterpretationGuide, domain=None, range=Optional[str])
-
-slots.scoreParameter__scoreParameterId = Slot(uri=QUESTIONNAIRE['classes/scoreParameterId'], name="scoreParameter__scoreParameterId", curie=QUESTIONNAIRE.curie('classes/scoreParameterId'),
-                   model_uri=DATAMODEL.scoreParameter__scoreParameterId, domain=None, range=URIRef)
-
-slots.scoreParameter__scoreParameterLabel = Slot(uri=QUESTIONNAIRE['classes/scoreParameterLabel'], name="scoreParameter__scoreParameterLabel", curie=QUESTIONNAIRE.curie('classes/scoreParameterLabel'),
-                   model_uri=DATAMODEL.scoreParameter__scoreParameterLabel, domain=None, range=str)
-
-slots.scoreParameter__scoreParameterType = Slot(uri=QUESTIONNAIRE['classes/scoreParameterType'], name="scoreParameter__scoreParameterType", curie=QUESTIONNAIRE.curie('classes/scoreParameterType'),
-                   model_uri=DATAMODEL.scoreParameter__scoreParameterType, domain=None, range=Union[str, "ScoreParameterType"])
-
-slots.scoreParameter__scoreParameterValueNumerical = Slot(uri=QUESTIONNAIRE['classes/scoreParameterValueNumerical'], name="scoreParameter__scoreParameterValueNumerical", curie=QUESTIONNAIRE.curie('classes/scoreParameterValueNumerical'),
-                   model_uri=DATAMODEL.scoreParameter__scoreParameterValueNumerical, domain=None, range=Optional[Union[dict, ValueNumerical]])
-
-slots.scoreParameter__scoreParameterValueDateTime = Slot(uri=QUESTIONNAIRE['classes/scoreParameterValueDateTime'], name="scoreParameter__scoreParameterValueDateTime", curie=QUESTIONNAIRE.curie('classes/scoreParameterValueDateTime'),
-                   model_uri=DATAMODEL.scoreParameter__scoreParameterValueDateTime, domain=None, range=Optional[Union[dict, ValueDateTime]])
-
-slots.scoreValue__scoreValueId = Slot(uri=QUESTIONNAIRE['classes/scoreValueId'], name="scoreValue__scoreValueId", curie=QUESTIONNAIRE.curie('classes/scoreValueId'),
-                   model_uri=DATAMODEL.scoreValue__scoreValueId, domain=None, range=URIRef)
-
-slots.scoreValue__scoreValueString = Slot(uri=QUESTIONNAIRE['classes/scoreValueString'], name="scoreValue__scoreValueString", curie=QUESTIONNAIRE.curie('classes/scoreValueString'),
-                   model_uri=DATAMODEL.scoreValue__scoreValueString, domain=None, range=Optional[Union[dict, ValueString]])
-
-slots.scoreValue__scoreValueNumerical = Slot(uri=QUESTIONNAIRE['classes/scoreValueNumerical'], name="scoreValue__scoreValueNumerical", curie=QUESTIONNAIRE.curie('classes/scoreValueNumerical'),
-                   model_uri=DATAMODEL.scoreValue__scoreValueNumerical, domain=None, range=Optional[Union[dict, ValueNumerical]])
-
-slots.scoreValue__scoreValueTimeStamp = Slot(uri=QUESTIONNAIRE['classes/scoreValueTimeStamp'], name="scoreValue__scoreValueTimeStamp", curie=QUESTIONNAIRE.curie('classes/scoreValueTimeStamp'),
-                   model_uri=DATAMODEL.scoreValue__scoreValueTimeStamp, domain=None, range=Union[str, XSDDateTime])
-
-slots.scoreValue__scoreValueStatus = Slot(uri=QUESTIONNAIRE['classes/scoreValueStatus'], name="scoreValue__scoreValueStatus", curie=QUESTIONNAIRE.curie('classes/scoreValueStatus'),
-                   model_uri=DATAMODEL.scoreValue__scoreValueStatus, domain=None, range=Union[str, "ScoreValueStatus"])

@@ -3,14 +3,14 @@
 
 Parameters for quantitative values, including unit and precision.
 
-URI: [datamodel:NumericalParams](https://w3id.org/faqir/datamodel/NumericalParams)
+URI: [qo:NumericalParams](https://ns.faqir.org/q-o#NumericalParams)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Question]++-%20questionNumericalParams%200..1>[NumericalParams&#124;numericalUnit:UnitOfMeasure%20%3F;numericalPrecision:integer%20%3F],[Question])](https://yuml.me/diagram/nofunky;dir:TB/class/[Question]++-%20questionNumericalParams%200..1>[NumericalParams&#124;numericalUnit:UnitOfMeasure%20%3F;numericalPrecision:integer%20%3F],[Question])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[QoQuestion]++-%20qo_numericalParams%200..1>[NumericalParams&#124;numericalUnit:uriorcurie%20%3F;numericalPrecision:integer%20%3F],[QoQuestion])](https://yuml.me/diagram/nofunky;dir:TB/class/[QoQuestion]++-%20qo_numericalParams%200..1>[NumericalParams&#124;numericalUnit:uriorcurie%20%3F;numericalPrecision:integer%20%3F],[QoQuestion])
 
 ## Referenced by Class
 
- *  **None** *[➞questionNumericalParams](question__questionNumericalParams.md)*  <sub>0..1</sub>  **[NumericalParams](NumericalParams.md)**
+ *  **None** *[➞qo_numericalParams](qoQuestion__qo_numericalParams.md)*  <sub>0..1</sub>  **[NumericalParams](NumericalParams.md)**
 
 ## Attributes
 
@@ -19,7 +19,7 @@ URI: [datamodel:NumericalParams](https://w3id.org/faqir/datamodel/NumericalParam
 
  * [➞numericalUnit](numericalParams__numericalUnit.md)  <sub>0..1</sub>
      * Description: The unit of measure for the quantitative value, from UCUM standard.
-     * Range: [UnitOfMeasure](UnitOfMeasure.md)
+     * Range: [Uriorcurie](types/Uriorcurie.md)
  * [➞numericalPrecision](numericalParams__numericalPrecision.md)  <sub>0..1</sub>
      * Description: The precision of the quantitative value, e.g. number of decimal places.
      * Range: [Integer](types/Integer.md)
@@ -28,4 +28,4 @@ URI: [datamodel:NumericalParams](https://w3id.org/faqir/datamodel/NumericalParam
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | faqir:NumericalParams |
+| **Mappings:** | | phro:NumericalParams |

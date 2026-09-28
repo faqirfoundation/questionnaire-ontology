@@ -3,7 +3,7 @@
 
 The label for the maximum value of the interval.
 
-URI: [datamodel:intervalParams__maxLabel](https://w3id.org/faqir/datamodel/intervalParams__maxLabel)
+URI: [qo:intervalParams__maxLabel](https://ns.faqir.org/q-o#intervalParams__maxLabel)
 
 
 ## Domain and Range
@@ -19,3 +19,9 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 ## Used by
 
  * [IntervalParams](IntervalParams.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | phro:maxLabel |

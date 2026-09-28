@@ -3,13 +3,8 @@
 # Class: ValueNumerical 
 
 
-_Base class for quantitative values, they may have units and precision._
 
-
-
-
-
-URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
+URI: [phro:ValueNumerical](https://ns.faqir.org/phr-o#ValueNumerical)
 
 
 
@@ -20,9 +15,6 @@ URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
  classDiagram
     class ValueNumerical
     click ValueNumerical href "../ValueNumerical"
-      ValueNumerical <|-- Weight
-        click Weight href "../Weight"
-      
       ValueNumerical : numericalValue
         
       
@@ -31,11 +23,7 @@ URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
 
 
 
-
-## Inheritance
-* **ValueNumerical**
-    * [Weight](Weight.md)
-
+<!-- no inheritance hierarchy -->
 
 
 ## Slots
@@ -52,9 +40,7 @@ URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Answer](Answer.md) | [answerValueNumerical](answerValueNumerical.md) | range | [ValueNumerical](ValueNumerical.md) |
-| [ScoreParameter](ScoreParameter.md) | [scoreParameterValueNumerical](scoreParameterValueNumerical.md) | range | [ValueNumerical](ValueNumerical.md) |
-| [ScoreValue](ScoreValue.md) | [scoreValueNumerical](scoreValueNumerical.md) | range | [ValueNumerical](ValueNumerical.md) |
+| [QoAnswer](QoAnswer.md) | [qo_answerValue](qo_answerValue.md) | any_of[range] | [ValueNumerical](ValueNumerical.md) |
 
 
 
@@ -72,7 +58,7 @@ URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
 ### Schema Source
 
 
-* from schema: https://w3id.org/faqir/datamodel
+* from schema: https://ns.faqir.org/q-o
 
 
 
@@ -81,8 +67,8 @@ URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | faqir:ValueNumerical |
-| native | https://w3id.org/faqir/datamodel/ValueNumerical |
+| self | phro:ValueNumerical |
+| native | qo:ValueNumerical |
 
 
 
@@ -99,19 +85,20 @@ URI: [faqir:ValueNumerical](https://faqir.org/datamodel/ValueNumerical)
 <details>
 ```yaml
 name: ValueNumerical
-description: Base class for quantitative values, they may have units and precision.
-from_schema: https://w3id.org/faqir/datamodel
+description: ''
+from_schema: https://ns.faqir.org/q-o
 attributes:
   numericalValue:
     name: numericalValue
     description: The quantitative value, which can be an integer or a float.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:numericalValue
     domain_of:
     - ValueNumerical
     range: decimal
     required: true
-class_uri: faqir:ValueNumerical
+class_uri: phro:ValueNumerical
 
 ```
 </details>
@@ -121,21 +108,22 @@ class_uri: faqir:ValueNumerical
 <details>
 ```yaml
 name: ValueNumerical
-description: Base class for quantitative values, they may have units and precision.
-from_schema: https://w3id.org/faqir/datamodel
+description: ''
+from_schema: https://ns.faqir.org/q-o
 attributes:
   numericalValue:
     name: numericalValue
     description: The quantitative value, which can be an integer or a float.
-    from_schema: https://w3id.org/faqir/datamodel/core/types
+    from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    slot_uri: phro:numericalValue
     alias: numericalValue
     owner: ValueNumerical
     domain_of:
     - ValueNumerical
     range: decimal
     required: true
-class_uri: faqir:ValueNumerical
+class_uri: phro:ValueNumerical
 
 ```
 </details>

@@ -1,9 +1,0 @@
----
-answerId: "https://pods.faqir.org/answer_03_emergency_contact_name_01"
-answerInQuestionnaireResponse: "https://pods.faqir.org/questionnaire_01_simple"
-answerToQuestion: "https://pods.faqir.org/question_03_emergency_contact_name"
-questionType: txt # text
-answerIsEmpty: false
-answerTimeStamp: "2021-08-27T00:00:01.0008Z"
-answerValueString:
-  - stringValue: "Penelope Cruz"

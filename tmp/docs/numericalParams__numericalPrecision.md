@@ -3,7 +3,7 @@
 
 The precision of the quantitative value, e.g. number of decimal places.
 
-URI: [datamodel:numericalParams__numericalPrecision](https://w3id.org/faqir/datamodel/numericalParams__numericalPrecision)
+URI: [qo:numericalParams__numericalPrecision](https://ns.faqir.org/q-o#numericalParams__numericalPrecision)
 
 
 ## Domain and Range
@@ -19,3 +19,9 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 ## Used by
 
  * [NumericalParams](NumericalParams.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | phro:precision |
