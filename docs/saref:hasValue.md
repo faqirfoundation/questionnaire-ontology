@@ -1,6 +1,6 @@
 
 
-# Slot: saref_hasValue 
+# Slot: saref:hasValue 
 
 
 _Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes._
@@ -10,7 +10,7 @@ _Value of a property value expressed as an RDF literal. Note that, even if decim
 
 
 URI: [saref:hasValue](https://saref.etsi.org/core/hasValue)
-Alias: saref_hasValue
+Alias: saref:hasValue
 
 <!-- no inheritance hierarchy -->
 
@@ -22,10 +22,10 @@ Alias: saref_hasValue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
+| [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
 | [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  yes  |
-| [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
+| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  yes  |
 
 
@@ -63,7 +63,7 @@ Alias: saref_hasValue
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | saref:hasValue |
-| native | qo:saref_hasValue |
+| native | qo:saref:hasValue |
 
 
 
@@ -72,13 +72,13 @@ Alias: saref_hasValue
 
 <details>
 ```yaml
-name: saref_hasValue
+name: saref:hasValue
 description: Value of a property value expressed as an RDF literal. Note that, even
   if decimal values are expected, values could use other datatypes.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: saref:hasValue
-alias: saref_hasValue
+alias: saref:hasValue
 domain_of:
 - saref_PropertyValue
 - QuantityValue

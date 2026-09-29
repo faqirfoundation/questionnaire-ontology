@@ -110,7 +110,8 @@ _gen-project: _ensure_pymodel_dir _compile_sheets
     mv {{dest}}/*.py {{pymodel}}
     @if [ ! -z "${{gen_owl_args}}" ]; then \
       mkdir -p {{dest}}/owl || true && \
-      poetry run gen-owl {{gen_owl_args}} {{source_schema_path}} > {{dest}}/owl/{{schema_name}}.owl.ttl || true ; \
+      poetry run gen-owl --use-slot-uris {{gen_owl_args}} {{source_schema_path}} > {{dest}}/owl/{{schema_name}}.owl.ttl || true && \
+      poetry run python scripts/post_process_owl.py {{dest}}/owl/{{schema_name}}.owl.ttl || true ; \
     fi
     @if [ ! ${{gen_java_args}} ]; then \
       poetry run gen-java {{gen_java_args}} --output-directory {{dest}}/java/ {{source_schema_path}} || true ; \
@@ -165,6 +166,7 @@ _gen-owl: _generate_owl_classes
     linkml generate owl \
         src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
         > project/owl/questionnaire_ontology.owl.ttl  
+    poetry run python scripts/post_process_owl.py project/owl/questionnaire_ontology.owl.ttl
         
 # Generate python classes
 _gen-shacl: _generate_shacl_classes

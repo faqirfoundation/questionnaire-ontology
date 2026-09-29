@@ -58,7 +58,7 @@ name: qo_QuestionnaireStatusEnum
 description: 'Questionnaires must have one of the following status (FHIR inspired): '
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
-enum_uri: qo:QuestionnaireStatus
+enum_uri: qo:QuestionnaireStatusEnum
 permissible_values:
   draft:
     text: draft

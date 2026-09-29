@@ -1,7 +1,7 @@
 ---
 id: https://ns.faqir.org/q-o
 name: Questionnaire-Ontology
-title: Questionnaire-Ontology
+title: Questionnaire Ontology
 version: 2.0.0
 description: |-
   FAQIR Questionnaire Ontology
@@ -32,7 +32,7 @@ prefixes:
   schema: http://schema.org/
   snomed: http://snomed.info/id/
   sosa: http://www.w3.org/ns/sosa/
-  ssn: https://www.w3.org/TR/vocab-ssn/
+  ssn: http://www.w3.org/ns/ssn/
   sphn:	https://biomedit.ch/rdf/sphn-schema/sphn#
   sulo: https://aidava-dev.github.io/sulo/ontospy/index.html
   s4ehaw: https://saref.etsi.org/saref4ehaw/
@@ -104,7 +104,7 @@ enums:
   # =============================================================================
   qo_QuestionnaireStatusEnum:
     description: "Questionnaires must have one of the following status (FHIR inspired): " 
-    enum_uri: qo:QuestionnaireStatus
+    enum_uri: qo:QuestionnaireStatusEnum
     permissible_values:
       draft: 
         description: "This resource is still under development and is not yet considered to be ready for normal use."
@@ -129,7 +129,7 @@ enums:
 
   qo_QuestionnaireResponseStatusEnum:
     description: "The questionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
-    enum_uri: qo:QuestionnaireResponseStatus
+    enum_uri: qo:QuestionnaireResponseStatusEnum
     permissible_values:
       in_progress:
         description: "This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it."
@@ -167,6 +167,7 @@ classes:
   owl_Thing:
     description: "This defines IOT as the set of OWL individuals."
     class_uri: owl:Thing
+    imported_from: owl
     slots:
       - owl_versionInfo
       - rdfs_label

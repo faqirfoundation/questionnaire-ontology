@@ -237,6 +237,8 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 * from schema: https://ns.faqir.org/q-o
 
 
+* imported from: owl
+
 
 
 ## Mappings
@@ -263,6 +265,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 name: owl_Thing
 description: This defines IOT as the set of OWL individuals.
 from_schema: https://ns.faqir.org/q-o
+imported_from: owl
 slots:
 - owl_versionInfo
 - rdfs_label
@@ -281,6 +284,7 @@ class_uri: owl:Thing
 name: owl_Thing
 description: This defines IOT as the set of OWL individuals.
 from_schema: https://ns.faqir.org/q-o
+imported_from: owl
 attributes:
   owl_versionInfo:
     name: owl_versionInfo

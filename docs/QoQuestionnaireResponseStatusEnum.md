@@ -60,7 +60,7 @@ description: 'The questionnaire response status must be one of the following: ''
   ''completed'', ''amended'', ''entered-in-error'' or ''stopped''.'
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
-enum_uri: qo:QuestionnaireResponseStatus
+enum_uri: qo:QuestionnaireResponseStatusEnum
 permissible_values:
   in_progress:
     text: in_progress

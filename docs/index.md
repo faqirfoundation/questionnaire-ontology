@@ -1,4 +1,4 @@
-# Questionnaire-Ontology
+# Questionnaire Ontology
 
 FAQIR Questionnaire Ontology
 

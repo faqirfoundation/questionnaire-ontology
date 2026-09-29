@@ -1,5 +1,5 @@
 # Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-29T12:23:11
+# Generation date: 2026-09-29T13:57:40
 # Schema: Questionnaire-Ontology
 #
 # id: https://ns.faqir.org/q-o
@@ -56,6 +56,7 @@ from rdflib import (
     URIRef
 )
 
+from . owl import OwlThing
 from linkml_runtime.utils.metamodelcore import Bool, Curie, Decimal, ElementIdentifier, NCName, NodeIdentifier, URI, URIorCURIE, XSDDate, XSDDateTime, XSDTime
 
 metamodel_version = "1.7.0"
@@ -81,7 +82,7 @@ SHEX = CurieNamespace('shex', 'http://www.w3.org/ns/shex#')
 SNOMED = CurieNamespace('snomed', 'http://snomed.info/id/')
 SOSA = CurieNamespace('sosa', 'http://www.w3.org/ns/sosa/')
 SPHN = CurieNamespace('sphn', 'https://biomedit.ch/rdf/sphn-schema/sphn#')
-SSN = CurieNamespace('ssn', 'https://www.w3.org/TR/vocab-ssn/')
+SSN = CurieNamespace('ssn', 'http://www.w3.org/ns/ssn/')
 SULO = CurieNamespace('sulo', 'https://aidava-dev.github.io/sulo/ontospy/index.html')
 TIME = CurieNamespace('time', 'http://www.w3.org/2006/time#')
 UCUM = CurieNamespace('ucum', 'https://unitsofmeasure.org/')
@@ -244,51 +245,6 @@ class Sparqlpath(str):
 
 # Class references
 
-
-
-@dataclass(repr=False)
-class OwlThing(YAMLRoot):
-    """
-    This defines IOT as the set of OWL individuals.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OWL["Thing"]
-    class_class_curie: ClassVar[str] = "owl:Thing"
-    class_name: ClassVar[str] = "owl_Thing"
-    class_model_uri: ClassVar[URIRef] = QO.OwlThing
-
-    rdfs_label: Union[str, list[str]] = None
-    rdfs_comment: Union[str, list[str]] = None
-    owl_versionInfo: Optional[str] = None
-    prov_hadPrimarySource: Optional[Union[Union[dict, "ProvEntity"], list[Union[dict, "ProvEntity"]]]] = empty_list()
-    prov_wasGeneratedBy: Optional[Union[Union[dict, "SuloProcess"], list[Union[dict, "SuloProcess"]]]] = empty_list()
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.rdfs_label):
-            self.MissingRequiredField("rdfs_label")
-        if not isinstance(self.rdfs_label, list):
-            self.rdfs_label = [self.rdfs_label] if self.rdfs_label is not None else []
-        self.rdfs_label = [v if isinstance(v, str) else str(v) for v in self.rdfs_label]
-
-        if self._is_empty(self.rdfs_comment):
-            self.MissingRequiredField("rdfs_comment")
-        if not isinstance(self.rdfs_comment, list):
-            self.rdfs_comment = [self.rdfs_comment] if self.rdfs_comment is not None else []
-        self.rdfs_comment = [v if isinstance(v, str) else str(v) for v in self.rdfs_comment]
-
-        if self.owl_versionInfo is not None and not isinstance(self.owl_versionInfo, str):
-            self.owl_versionInfo = str(self.owl_versionInfo)
-
-        if not isinstance(self.prov_hadPrimarySource, list):
-            self.prov_hadPrimarySource = [self.prov_hadPrimarySource] if self.prov_hadPrimarySource is not None else []
-        self.prov_hadPrimarySource = [v if isinstance(v, ProvEntity) else ProvEntity(**as_dict(v)) for v in self.prov_hadPrimarySource]
-
-        if not isinstance(self.prov_wasGeneratedBy, list):
-            self.prov_wasGeneratedBy = [self.prov_wasGeneratedBy] if self.prov_wasGeneratedBy is not None else []
-        self.prov_wasGeneratedBy = [v if isinstance(v, SuloProcess) else SuloProcess(**as_dict(v)) for v in self.prov_wasGeneratedBy]
-
-        super().__post_init__(**kwargs)
 
 
 class ProvAttribution(YAMLRoot):
