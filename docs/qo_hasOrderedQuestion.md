@@ -27,8 +27,8 @@ Alias: qo_hasOrderedQuestion
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoSection](QoSection.md) | A logical grouping or thematic partition of items within a structured survey ... |  yes  |
 | [QoQuestionnaire](QoQuestionnaire.md) | A structured, reusable instrument or template composed of ordered items desig... |  yes  |
+| [QoSection](QoSection.md) | A logical grouping or thematic partition of items within a structured survey ... |  yes  |
 
 
 

@@ -22,9 +22,9 @@ Alias: saref_hasValue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  yes  |
-| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
 | [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
+| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
+| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  yes  |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  yes  |
 | [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
 
