@@ -22,7 +22,7 @@ Alias: qo_required
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  no  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
 
 
 
@@ -35,8 +35,6 @@ Alias: qo_required
 * Range: [Boolean](Boolean.md)
 
 * Required: True
-
-* Minimum Value: 1
 
 
 
@@ -87,7 +85,6 @@ domain_of:
 - qo_OrderedQuestion
 range: boolean
 required: true
-minimum_value: 1
 
 ```
 </details>

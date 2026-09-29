@@ -3,7 +3,7 @@
 # Slot: qo_hardValidity 
 
 
-_if true, the temporal duration is a strict deadline; if false, it is an orientative guideline._
+_Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_hardValidity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  no  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
 
 
 
@@ -69,8 +69,9 @@ Alias: qo_hardValidity
 <details>
 ```yaml
 name: qo_hardValidity
-description: if true, the temporal duration is a strict deadline; if false, it is
-  an orientative guideline.
+description: Specifies the operational enforcement mechanism of a duration limit;
+  when true, expiration acts as a strict invalidation threshold for re-use, whereas
+  when false, it serves as a non-binding recommendation.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:hardValidity

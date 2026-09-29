@@ -5,9 +5,16 @@ title: Questionnaire-Ontology
 version: 2.0.0
 description: |-
   FAQIR Questionnaire Ontology
+created_on: "2026-09-30T00:00:00.000Z"
 license: Apache Software License 2.0
 see_also:
   - https://github.com/faqirfoundation/questionnaire-ontology
+contributors: 
+  - https://orcid.org/0009-0007-4180-1305
+  - https://orcid.org/0009-0003-8884-7838
+  - https://orcid.org/0000-0001-9913-3898
+  - https://orcid.org/0000-0002-9685-5016
+  - https://orcid.org/0000-0003-0858-6651
 
 prefixes:
   dcterms: http://purl.org/dc/terms/
@@ -48,22 +55,22 @@ enums:
   # Types
   # =============================================================================
   qo_QuestionType:
-    description: "The type of question asked in the questionnaire. It defines the expected answer format."
+    description: "Specifies the structural classification and data-type constraints governing acceptable inputs for an inquiry item."
     enum_uri: qo:QuestionType
     permissible_values:
       choice:
-        description: "A question with predefined options to choose from. Multiple choices may be allowed."
+        description: "An inquiry format offering a fixed set of standardized coded options for selection."
         meaning: "http://hl7.org/fhir/item-type#coding"
         mappings:
           - fhir:QuestionnaireResponse.item.answer.valueCoding
       openChoice:
-        description: "A question with predefined options to choose from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple choices may be allowed."
-        meaning: qo:open-choice
+        description: "A question with predefined options to select from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple selection may be allowed."
+        meaning: "https://ns.faqir.org/q-o#open-choice"
         narrow_mappings:
           - fhir:QuestionnaireResponse.item.answer.valueCoding
       numberInterval:
         description: "A question that expects a numeric answer in between a minimum and maximum value."
-        meaning: qo:numberInterval
+        meaning: "https://ns.faqir.org/q-o#numberInterval"
         narrow_mappings:
           - fhir:QuestionnaireResponse.item.answer.valueInteger
           - xsd:decimal  # xsd:decimal
@@ -77,21 +84,20 @@ enums:
           - xsd:integer # xsd:integer
           - xsd:float   # xsd:float
       time:
-        description: Question with a time (hour:minute:second) answer independent of date. (valueTime).
+        description: "An inquiry item constraining acceptable input strictly to a clock time (hour, minute, second) without a date component."
         meaning: "http://hl7.org/fhir/item-type#time"
         mappings:
           - xsd:time  # xsd:time
       dateTime:
-        description: "A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+zz:zz."
+        description: "An inquiry item constraining acceptable input strictly to a date and time, formatted as YYYY-MM-DDThh:mm:ss+zz:zz."
         meaning: "http://hl7.org/fhir/item-type#dateTime"
         mappings:
           - xsd:dateTime  # xsd:dateTime
       text:
-        description: "A question that expects a free text answer."
+        description: "An inquiry item that expects a free string answer."
         meaning: "http://hl7.org/fhir/item-type#string"
         mappings:
           - xsd:string  # xsd:string
-          - xsd2:text   # xsd:text
 
   # =============================================================================
   # Statuses
@@ -102,52 +108,52 @@ enums:
     permissible_values:
       draft: 
         description: "This resource is still under development and is not yet considered to be ready for normal use."
-        meaning: fhir:resource-status-draft
+        meaning: "http://hl7.org/fhir/resource-status-draft"
         mappings:
           - fhir:codesystem-resource-status.html#resource-status-draft
       active: 
         description: "This resource is ready for normal use."
-        meaning: fhir:resource-status-active
+        meaning: "http://hl7.org/fhir/resource-status-active"
         mappings:
           - fhir:codesystem-resource-status.html#resource-status-active
       retired:
         description: "This resource has been withdrawn or superseded and should no longer be used."
-        meaning: fhir:resource-status-retired
+        meaning: "http://hl7.org/fhir/resource-status-retired"
         mappings:
           - fhir:codesystem-resource-status.html#resource-status-inactive
       unknown:
         description: "The authoring system does not know which of the status values currently applies for this resource. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, it's just not known which one."
-        meaning: fhir:resource-status-unknown
+        meaning: "http://hl7.org/fhir/resource-status-unknown"
         mappings:
           - fhir:codesystem-resource-status.html#resource-status-unknown
 
   qo_QuestionnaireResponseStatusEnum:
-    description: "The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    description: "The questionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
     enum_uri: qo:QuestionnaireResponseStatus
     permissible_values:
       in_progress:
         description: "This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it."
-        meaning: fhir:questionnaire-answers-status-in-progress
+        meaning: "http://hl7.org/fhir/questionnaire-answers-status-in-progress"
         mappings:
           - fhir:valueset-resource-status.html
       completed:
         description: "This QuestionnaireResponse has been filled out with answers and the current content is regarded as definitive."
-        meaning: fhir:questionnaire-answers-status-completed
+        meaning: "http://hl7.org/fhir/questionnaire-answers-status-completed"
         mappings:
           - fhir:valueset-resource-status.html
       amended:
         description: "This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards."
-        meaning: fhir:questionnaire-answers-status-amended
+        meaning: "http://hl7.org/fhir/questionnaire-answers-status-amended"
         mappings:
           - fhir:valueset-resource-status.html
       entered_in_error:
         description: "This QuestionnaireResponse was entered in error and voided."
-        meaning: fhir:questionnaire-answers-status-entered-in-error
+        meaning: "http://hl7.org/fhir/questionnaire-answers-status-entered-in-error"
         mappings:
           - fhir:valueset-resource-status.html
       stopped:
         description: "This QuestionnaireResponse has been partially filled out with answers but has been abandoned. No subsequent changes can be made."
-        meaning: fhir:questionnaire-answers-status-stopped
+        meaning: "http://hl7.org/fhir/questionnaire-answers-status-stopped"
         mappings:
           - fhir:valueset-resource-status.html
 
@@ -271,7 +277,7 @@ classes:
               range: fhir_ReferenceRange
               required: false
               multivalued: false
-              slot_uri: fhir:Observation.referenceRange
+              slot_uri: "http://hl7.org/fhir/Observation.referenceRange"
 
   saref_PropertyValue:
       description: "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty)."
@@ -304,12 +310,12 @@ classes:
               required: false
               multivalued: false
               slot_uri: fhir:valuePeriod
-          fhir_valueAttachement:
+          fhir_valueAttachment:
               description: "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type."
               range: uriorcurie
               required: false
               multivalued: false
-              slot_uri: fhir:valueAttachement
+              slot_uri: fhir:valueAttachment
       slots:
           - prov_atTime
           - saref_hasValue
@@ -322,7 +328,7 @@ classes:
   # =============================================================================
   QuantityValue:
     description: "A measured amount (or an amount that can potentially be measured)."
-    class_uri: fhir:datatypes.Quantity
+    class_uri: fhir:Quantity
     slots:
       - saref_isMeasuredIn
       - saref_hasValue
@@ -361,7 +367,7 @@ classes:
 
   fhir_ValueRatio:
     description: "A ratio of two Quantity values - a numerator and a denominator"
-    class_uri: fhir:datatype.Ratio
+    class_uri: fhir:Ratio
     attributes:
       numerator:
         range: QuantityValue
@@ -418,7 +424,7 @@ classes:
       recommended range. Multiple reference ranges are interpreted as an 'OR'. In other 
       words, to represent two distinct target populations, two referenceRange elements 
       would be used."
-    class_uri: fhir:Observation.referenceRange
+    class_uri: "http://hl7.org/fhir/Observation.referenceRange"
     attributes: 
       lowRange:
         description: "Low range, if relevant."
@@ -443,7 +449,7 @@ classes:
   # QUESTIONNAIRE Classes
   # =============================================================================
   qo_Questionnaire:
-    description: "A questionnaire that can be answered (collection of questions)."
+    description: "A structured, reusable instrument or template composed of ordered items designed to collect standardized information from an individual or system."
     is_a: prov_Entity
     class_uri: qo:Questionnaire
     narrow_mappings:
@@ -483,19 +489,19 @@ classes:
         domain: qo_Questionnaire
 
   qo_QuestionnaireStatus:
-    description: "The status of the questionnaire, indicating whether it is 	draft, active, retired or unknown."
+    description: "Defines the lifecycle state governing the operational readiness and availability of a survey template."
     is_a: saref_PropertyValue
     class_uri: qo:QuestionnaireStatus
     slot_usage:
-      saref_hasValue: #attributes
-        description: "The status of the questionnaire, indicating whether it is 	draft, active, retired or unknown."
+      saref_hasValue: 
+        description: "The status of the questionnaire, indicating whether it is	draft active, retired or unknown."
         range: qo_QuestionnaireStatusEnum
         required: true
         narrow_mappings:
           - fhir:Questionnaire.status
 
   qo_OrderedSection:
-    description: "Section's position within a specific questionnaire or section."
+    description: "A contextual wrapper that binds a thematic grouping of inquiry items to a specific sequence index within a survey template or parent group."
     is_a: prov_Entity
     class_uri: qo:OrderedSection
     slots:
@@ -511,7 +517,7 @@ classes:
           - qo_order  
 
   qo_Section:
-    description: "A section of questions in the questionnaire."
+    description: "A logical grouping or thematic partition of items within a structured survey instrument."
     is_a: prov_Entity
     class_uri: qo:Section
     narrow_mappings:
@@ -531,7 +537,7 @@ classes:
         domain: qo_Section
         
   qo_OrderedQuestion:
-    description: "Question's position within a specific questionnaire or section."
+    description: "A contextual wrapper that binds an inquiry item to a specific sequence index within a survey template or parent group."
     is_a: prov_Entity
     class_uri: qo:OrderedQuestion
     slot_usage:
@@ -542,7 +548,6 @@ classes:
         range: boolean
         description: "Whether the question can be left un-answered (false) or an answer is mandatory (true)."
         required: true
-        minimum_value: 1
         slot_uri: qo:required
         narrow_mappings:
           - fhir:Questionnaire.item.required
@@ -559,37 +564,37 @@ classes:
           - qo_order  
 
   qo_Question:
-    description: "A question."
+    description: "An individual inquiry item within an instrument that specifies an information requirement and constrains the acceptable response format."
     is_a: prov_Entity
     class_uri: qo:Question
     narrow_mappings:
       - fhir:Questionnaire.item.where(type='question')
     attributes:
       qo_tag:
-        description: "Internal English identifier, e.g., 'q_pain_level'."
+        description: "A machine-readable alphanumeric code or mnemonic string used for internal reference and translation lookup."
         range: string
         required: true
         multivalued: true
         slot_uri: qo:tag
       qo_numericalParams: 
-        description: "Unit and Precision limiting the quantitative answer for the question."
+        description: "Specifies measurement units and decimal precision constraints governing acceptable quantitative input."
         range: NumericalParams
         multivalued: false
         required: false
         slot_uri: qo:numericalParams
       qo_codingParams:
-        description: "Code and Display of each option offered as answer to the choice or open-choice question."
+        description: "Defines the permissible standardized concept codes and human-readable labels available for selection."
         range: ValueCoding
         multivalued: true
         required: false
         slot_uri: qo:codingParams
       qo_codingOrdinal:
-        description: "Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical)."
+        description: "Specifies whether permissible selection options possess a meaningful inherent ranking (true) or represent nominal categories (false)."
         range: boolean
         ifabsent: false
         slot_uri: qo:codingOrdinal
       qo_intervalParams:
-        description: "Minimum and Maximum limiting the range the answer must be in for the question."
+        description: "Defines lower and upper boundary limits bounding acceptable numeric values."
         range: IntervalParams
         multivalued: false
         required: false
@@ -639,7 +644,7 @@ classes:
   # QUESTIONNAIRE RESPONSE Classes
   # =============================================================================
   qo_QuestionnaireResponse:
-    description: "A response to a questionnaire (collection of answers)."
+    description: "A completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument."
     is_a: prov_Entity
     class_uri: qo:QuestionnaireResponse
     slot_usage:
@@ -671,12 +676,12 @@ classes:
       - qo_hasAnswer
 
   qo_QuestionnaireResponseStatus:
-    description: "The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    description: "Defines the lifecycle state governing the operational readiness and availability of a completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument."
     is_a: saref_PropertyValue
     class_uri: qo:QuestionnaireResponseStatus
     slot_usage: #attributes
       saref_hasValue: 
-        description: "The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+        description: "The status of the questionnaire response, indicating whether it is 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
         range: qo_QuestionnaireResponseStatusEnum
         required: true
         multivalued: false
@@ -686,14 +691,14 @@ classes:
           - fhir:QuestionnaireResponse.status
 
   qo_Answer:
-    description: "Answer in the questionnaire response."
+    description: "A recorded value, or selection provided in response to a specific inquiry item."
     is_a: prov_Entity
     class_uri: qo:Answer
     mappings:
       - fhir:QuestionnaireResponse.item.answer
     attributes:
       qo_answerValue:
-        description: "The value of the answer to: a decimal or numberInterval type of question, which is a numeric value; a choice, openChoice or text type of question, which is a stringValue; dateTime type of question, which is a datetime value."
+        description: "The recorded literal payload (numeric scalar, textual/coded string, or timestamp) representing the output of a specific inquiry execution."
         any_of:
           - range: float
           - range: string
@@ -704,7 +709,7 @@ classes:
         narrow_mappings:
           - fhir:QuestionnaireResponse.item.answer 
       qo_isEmpty:
-        description: "True if the answer is intentionally left empty."
+        description: "Specifies an explicit assertion that an item was purposefully omitted or unpopulated by the respondent rather than skipped due to systemic error."
         range: boolean
         ifabsent: false
         slot_uri: qo:isEmpty
@@ -750,7 +755,6 @@ slots:
 
   dcterms_isPartOf:
     description: "A related resource in which the described resource is physically or logically included."
-    domain: owl_Thing
     range: owl_Thing
     required: false
     multivalued: true
@@ -759,7 +763,6 @@ slots:
 
   dcterms_hasPart:
     description: "A related resource that is included either physically or logically in the described resource."
-    domain: owl_Thing
     range: owl_Thing
     required: false
     multivalued: true
@@ -768,7 +771,6 @@ slots:
 
   prov_type:
     description: "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs."
-    domain: owl_Thing
     range: uriorcurie
     required: false
     multivalued: true
@@ -782,14 +784,12 @@ slots:
   fhir_status:
     description: "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state."
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     required: false
     multivalued: true
     slot_uri: fhir:resource-status
 
   dcterms_creator:
     description: "An entity responsible for making the resource."
-    domain: owl_Thing
     range: foaf_Agent
     required: false
     multivalued: true
@@ -800,7 +800,6 @@ slots:
     slot_uri: saref:hasProperty
     mappings:
       - ssn:hasProperty
-    domain: owl_Thing
     range: saref_Property
     required: false
     multivalued: true
@@ -810,7 +809,6 @@ slots:
   saref_hasPropertyValue:
     description: "Links a feature kind, a feature of interest, or a property of interest, to a property value."
     slot_uri: saref:hasPropertyValue
-    domain: owl_Thing
     range: saref_PropertyValue
     required: false
     multivalued: true
@@ -835,7 +833,6 @@ slots:
 
   prov_generatedAtTime:
     description: "The time at which an entity was completely created and is available for use."
-    domain: owl_Thing
     range: datetime
     required: false
     multivalued: true
@@ -861,7 +858,7 @@ slots:
   prov_qualifiedAttribution:
     description: "Attribution is the ascribing of an entity to an agent. When an entity e is attributed to agent ag, entity e was generated by some unspecified activity that in turn was associated to agent ag. Thus, this relation is useful when the activity is not known, or irrelevant."
     slot_uri: prov:qualifiedAttribution
-    domain: owl_Thing
+    domain: prov_Entity
     range: prov_Attribution
     required: false
     multivalued: true
@@ -932,7 +929,7 @@ slots:
   saref_isMeasuredIn : 
     description: "A relationship identifying the unit of measure used for a certain entity."
     range: uriorcurie
-    pattern: '^ucum'
+    pattern: '^ucum:'
     required: false
     multivalued: false
     slot_uri: saref:isMeasuredIn
@@ -977,14 +974,14 @@ slots:
   # QUESTIONNAIRE Slots
   # =============================================================================
   qo_multivalued:
-    description: "Indicates whether this question allows multiple answers (true) or it's single answer (false)."
+    description: "Indicates whether this question allows more than one answer (true) or only one (false)."
     range: boolean
     ifabsent: false
     slot_uri: qo:multivalued
 
   #Order wrapper slots
   qo_order:
-    description: "Position in the questionnaire or section (1-based index)."
+    description: "An integer specifying the sequence or display arrangement (1-based index) of an item within a container."
     range: integer
     required: true
     minimum_value: 1
@@ -992,26 +989,27 @@ slots:
 
   # Validity slots
   qo_hardValidity:
-    description: "if true, the temporal duration is a strict deadline; if false, it is an orientative guideline."
+    description: "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation."
     range: boolean
     required: false
     ifabsent: false
     slot_uri: qo:hardValidity
 
   qo_temporalValidity:
-    description: "The time duration during which the answer is considered valid."
+    description: "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration."
+    is_a: time_hasDuration
     range: time_Duration
     required: true
     slot_uri: qo:temporalValidity
 
   qo_conditionalValidity:
-    description: "a condition (expressed in a machine-readable rule language) that would invalidate the answer earlier than the temporal duration, e.g., 'a documented smoking cessation intervention' invalidates the answer to 'Do you smoke?''."
+    description: "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration."
     range: string
     required: true
     slot_uri: qo:conditionalValidity
 
   qo_question:
-    description: "Question indexed in this OrderedQuestion."
+    description: "Identifies the specific inquiry item referenced at a given positional index."
     is_a: dcterms_hasPart
     domain: qo_OrderedQuestion
     range: qo_Question
@@ -1021,7 +1019,7 @@ slots:
 
   # Questionnaire relationships
   qo_hasOrderedQuestion:
-    description: "The Question that is part of this Questionnaire or Section, with their display order."
+    description: "Associates a survey container or group with a sequence-indexed wrapper holding an individual inquiry item."
     is_a: dcterms_hasPart
     range: qo_OrderedQuestion
     multivalued: true
@@ -1032,7 +1030,7 @@ slots:
       - fhir:Questionnaire.item.where(type='question')
 
   qo_hasOrderedSection:
-    description: "The Section that is part of this Questionnaire or Section, with their display order."
+    description: "Associates a survey container or group with a sequence-indexed wrapper holding a nested thematic subgroup."
     is_a: dcterms_hasPart
     range: qo_OrderedSection
     multivalued: true
@@ -1044,7 +1042,7 @@ slots:
 
   # OrderedSection relationships
   qo_section:
-    description: "Section indexed in this OrderedSection."
+    description: "Identifies the specific thematic grouping referenced at a given positional index."
     is_a: dcterms_hasPart
     domain: qo_OrderedSection
     range: qo_Section
@@ -1056,27 +1054,27 @@ slots:
   # QUESTIONNAIRE RESPONSE Slots
   # =============================================================================
   qo_responds:
-    description: "The Questionnaire that this QuestionnaireResponse is for."
+    description: "Links a record instance back to the underlying survey template it answers."
     domain: qo_QuestionnaireResponse
     range: qo_Questionnaire
     required: true
     multivalued: false
     slot_uri: qo:responds
     narrow_mappings:
-      - fhir:questionnaireResponse.questionnaire
+      - fhir:QuestionnaireResponse.questionnaire
 
   qo_hasAnswer:
-    description: "The Answer that is part of this QuestionnaireResponse."
+    description: "Associates a recorded instance with its constituent individual response values."
     domain: qo_QuestionnaireResponse
     range: qo_Answer
     required: true
     multivalued: true
     slot_uri: qo:hasAnswer
     narrow_mappings:
-      - fhir:questionnaireResponse.item.answer
+      - fhir:QuestionnaireResponse.item.answer
 
   qo_toQuestion:
-    description: "The Question that this Answer is for."
+    description: "Links a recorded response value back to its originating inquiry item definition."
     domain: qo_Answer
     range: qo_Question
     required: true

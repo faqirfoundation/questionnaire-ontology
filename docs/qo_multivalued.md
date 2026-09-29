@@ -3,7 +3,7 @@
 # Slot: qo_multivalued 
 
 
-_Indicates whether this question allows multiple answers (true) or it's single answer (false)._
+_Indicates whether this question allows more than one answer (true) or only one (false)._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_multivalued
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
 
 
 
@@ -69,8 +69,8 @@ Alias: qo_multivalued
 <details>
 ```yaml
 name: qo_multivalued
-description: Indicates whether this question allows multiple answers (true) or it's
-  single answer (false).
+description: Indicates whether this question allows more than one answer (true) or
+  only one (false).
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:multivalued

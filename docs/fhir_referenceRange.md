@@ -9,7 +9,7 @@ _Guidance on how to interpret the value by comparison to a normal or recommended
 
 
 
-URI: [fhir:Observation.referenceRange](http://hl7.org/fhir/Observation.referenceRange)
+URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observation.referenceRange)
 Alias: fhir_referenceRange
 
 <!-- no inheritance hierarchy -->
@@ -58,7 +58,7 @@ Alias: fhir_referenceRange
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | fhir:Observation.referenceRange |
+| self | http://hl7.org/fhir/Observation.referenceRange |
 | native | qo:fhir_referenceRange |
 
 
@@ -75,7 +75,7 @@ description: Guidance on how to interpret the value by comparison to a normal or
   used.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
-slot_uri: fhir:Observation.referenceRange
+slot_uri: http://hl7.org/fhir/Observation.referenceRange
 alias: fhir_referenceRange
 owner: saref_Property
 domain_of:

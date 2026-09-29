@@ -3,7 +3,7 @@
 # Slot: qo_intervalParams 
 
 
-_Minimum and Maximum limiting the range the answer must be in for the question._
+_Defines lower and upper boundary limits bounding acceptable numeric values._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_intervalParams
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
 
 
 
@@ -69,8 +69,7 @@ Alias: qo_intervalParams
 <details>
 ```yaml
 name: qo_intervalParams
-description: Minimum and Maximum limiting the range the answer must be in for the
-  question.
+description: Defines lower and upper boundary limits bounding acceptable numeric values.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:intervalParams

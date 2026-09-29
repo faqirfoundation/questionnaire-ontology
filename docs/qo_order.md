@@ -3,7 +3,7 @@
 # Slot: qo_order 
 
 
-_Position in the questionnaire or section (1-based index)._
+_An integer specifying the sequence or display arrangement (1-based index) of an item within a container._
 
 
 
@@ -22,8 +22,8 @@ Alias: qo_order
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedSection](QoOrderedSection.md) | Section's position within a specific questionnaire or section |  yes  |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  yes  |
+| [QoOrderedSection](QoOrderedSection.md) | A contextual wrapper that binds a thematic grouping of inquiry items to a spe... |  yes  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  yes  |
 
 
 
@@ -74,7 +74,8 @@ Alias: qo_order
 <details>
 ```yaml
 name: qo_order
-description: Position in the questionnaire or section (1-based index).
+description: An integer specifying the sequence or display arrangement (1-based index)
+  of an item within a container.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:order

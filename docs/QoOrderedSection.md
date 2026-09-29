@@ -3,7 +3,7 @@
 # Class: QoOrderedSection 
 
 
-_Section's position within a specific questionnaire or section._
+_A contextual wrapper that binds a thematic grouping of inquiry items to a specific sequence index within a survey template or parent group._
 
 
 
@@ -167,7 +167,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_section](qo_section.md) | 1..* <br/> [QoSection](QoSection.md) | Section indexed in this OrderedSection | direct |
+| [qo_section](qo_section.md) | 1..* <br/> [QoSection](QoSection.md) | Identifies the specific thematic grouping referenced at a given positional in... | direct |
 | [qo_order](qo_order.md) | 1 <br/> [Integer](Integer.md) | Section position in the questionnaire or section (1-based index) | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
@@ -241,7 +241,8 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
 <details>
 ```yaml
 name: qo_OrderedSection
-description: Section's position within a specific questionnaire or section.
+description: A contextual wrapper that binds a thematic grouping of inquiry items
+  to a specific sequence index within a survey template or parent group.
 from_schema: https://ns.faqir.org/q-o
 is_a: prov_Entity
 slots:
@@ -267,7 +268,8 @@ unique_keys:
 <details>
 ```yaml
 name: qo_OrderedSection
-description: Section's position within a specific questionnaire or section.
+description: A contextual wrapper that binds a thematic grouping of inquiry items
+  to a specific sequence index within a survey template or parent group.
 from_schema: https://ns.faqir.org/q-o
 is_a: prov_Entity
 slot_usage:
@@ -277,7 +279,8 @@ slot_usage:
 attributes:
   qo_section:
     name: qo_section
-    description: Section indexed in this OrderedSection.
+    description: Identifies the specific thematic grouping referenced at a given positional
+      index.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: dcterms_hasPart
@@ -353,7 +356,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_OrderedSection
@@ -370,7 +372,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_OrderedSection
@@ -388,7 +389,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_OrderedSection
@@ -406,7 +406,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_OrderedSection
@@ -424,7 +423,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_OrderedSection
@@ -442,7 +440,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_OrderedSection
@@ -460,7 +457,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_OrderedSection
@@ -479,7 +475,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_OrderedSection

@@ -3,7 +3,7 @@
 # Slot: qo_isEmpty 
 
 
-_True if the answer is intentionally left empty._
+_Specifies an explicit assertion that an item was purposefully omitted or unpopulated by the respondent rather than skipped due to systemic error._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_isEmpty
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoAnswer](QoAnswer.md) | Answer in the questionnaire response |  no  |
+| [QoAnswer](QoAnswer.md) | A recorded value, or selection provided in response to a specific inquiry ite... |  no  |
 
 
 
@@ -69,7 +69,8 @@ Alias: qo_isEmpty
 <details>
 ```yaml
 name: qo_isEmpty
-description: True if the answer is intentionally left empty.
+description: Specifies an explicit assertion that an item was purposefully omitted
+  or unpopulated by the respondent rather than skipped due to systemic error.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:isEmpty

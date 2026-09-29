@@ -1,16 +1,16 @@
 
 
-# Slot: fhir_valueRange 
+# Slot: fhir_valueAttachment 
 
 
-_A set of ordered Quantity values defined by a low and high limit._
+_This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type._
 
 
 
 
 
-URI: [fhir:valueRange](http://hl7.org/fhir/valueRange)
-Alias: fhir_valueRange
+URI: [fhir:valueAttachment](http://hl7.org/fhir/valueAttachment)
+Alias: fhir_valueAttachment
 
 <!-- no inheritance hierarchy -->
 
@@ -34,7 +34,7 @@ Alias: fhir_valueRange
 
 ## Properties
 
-* Range: [FhirReferenceRange](FhirReferenceRange.md)
+* Range: [Uriorcurie](Uriorcurie.md)
 
 
 
@@ -60,8 +60,8 @@ Alias: fhir_valueRange
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | fhir:valueRange |
-| native | qo:fhir_valueRange |
+| self | fhir:valueAttachment |
+| native | qo:fhir_valueAttachment |
 
 
 
@@ -70,16 +70,19 @@ Alias: fhir_valueRange
 
 <details>
 ```yaml
-name: fhir_valueRange
-description: A set of ordered Quantity values defined by a low and high limit.
+name: fhir_valueAttachment
+description: This type is for containing or referencing attachments - additional data
+  content defined in other formats. The most common use of this type is to include
+  images or reports in some report format such as PDF. However, it can be used for
+  any data that has a MIME type.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
-slot_uri: fhir:valueRange
-alias: fhir_valueRange
+slot_uri: fhir:valueAttachment
+alias: fhir_valueAttachment
 owner: saref_PropertyValue
 domain_of:
 - saref_PropertyValue
-range: fhir_ReferenceRange
+range: uriorcurie
 required: false
 multivalued: false
 

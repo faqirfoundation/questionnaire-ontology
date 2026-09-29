@@ -9,7 +9,7 @@ _Guidance on how to interpret the value by comparison to a normal or recommended
 
 
 
-URI: [fhir:Observation.referenceRange](http://hl7.org/fhir/Observation.referenceRange)
+URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observation.referenceRange)
 
 
 
@@ -108,7 +108,7 @@ URI: [fhir:Observation.referenceRange](http://hl7.org/fhir/Observation.reference
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | fhir:Observation.referenceRange |
+| self | http://hl7.org/fhir/Observation.referenceRange |
 | native | qo:FhirReferenceRange |
 
 
@@ -165,7 +165,7 @@ attributes:
     range: QuantityValue
     required: false
     multivalued: true
-class_uri: fhir:Observation.referenceRange
+class_uri: http://hl7.org/fhir/Observation.referenceRange
 
 ```
 </details>
@@ -220,7 +220,7 @@ attributes:
     range: QuantityValue
     required: false
     multivalued: true
-class_uri: fhir:Observation.referenceRange
+class_uri: http://hl7.org/fhir/Observation.referenceRange
 
 ```
 </details>

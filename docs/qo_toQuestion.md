@@ -3,7 +3,7 @@
 # Slot: qo_toQuestion 
 
 
-_The Question that this Answer is for._
+_Links a recorded response value back to its originating inquiry item definition._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_toQuestion
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoAnswer](QoAnswer.md) | Answer in the questionnaire response |  no  |
+| [QoAnswer](QoAnswer.md) | A recorded value, or selection provided in response to a specific inquiry ite... |  no  |
 
 
 
@@ -72,7 +72,8 @@ Alias: qo_toQuestion
 <details>
 ```yaml
 name: qo_toQuestion
-description: The Question that this Answer is for.
+description: Links a recorded response value back to its originating inquiry item
+  definition.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:QuestionnaireResponse.item.answer.question

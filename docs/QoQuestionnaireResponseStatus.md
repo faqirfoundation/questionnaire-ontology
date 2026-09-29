@@ -3,7 +3,7 @@
 # Class: QoQuestionnaireResponseStatus 
 
 
-_The status of the questionnaire response, indicating whether it is 	'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'._
+_Defines the lifecycle state governing the operational readiness and availability of a completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument._
 
 
 
@@ -71,7 +71,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
     
 
         
-      QoQuestionnaireResponseStatus : fhir_valueAttachement
+      QoQuestionnaireResponseStatus : fhir_valueAttachment
         
       QoQuestionnaireResponseStatus : fhir_valueCodeableConcept
         
@@ -228,14 +228,14 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [prov_atTime](prov_atTime.md) | 0..1 <br/> [Datetime](Datetime.md) | The time at which an InstantaneousEvent occurred | [SarefPropertyValue](SarefPropertyValue.md) |
-| [saref_hasValue](saref_hasValue.md) | 1 <br/> [QoQuestionnaireResponseStatusEnum](QoQuestionnaireResponseStatusEnum.md)&nbsp;or&nbsp;<br />[Integer](Integer.md)&nbsp;or&nbsp;<br />[Float](Float.md)&nbsp;or&nbsp;<br />[Double](Double.md)&nbsp;or&nbsp;<br />[Decimal](Decimal.md)&nbsp;or&nbsp;<br />[Date](Date.md)&nbsp;or&nbsp;<br />[Datetime](Datetime.md)&nbsp;or&nbsp;<br />[Uriorcurie](Uriorcurie.md)&nbsp;or&nbsp;<br />[String](String.md) | The status of the questionnaire response, indicating whether it is 	'in-progr... | [SarefPropertyValue](SarefPropertyValue.md) |
+| [saref_hasValue](saref_hasValue.md) | 1 <br/> [QoQuestionnaireResponseStatusEnum](QoQuestionnaireResponseStatusEnum.md)&nbsp;or&nbsp;<br />[Integer](Integer.md)&nbsp;or&nbsp;<br />[Float](Float.md)&nbsp;or&nbsp;<br />[Double](Double.md)&nbsp;or&nbsp;<br />[Decimal](Decimal.md)&nbsp;or&nbsp;<br />[Date](Date.md)&nbsp;or&nbsp;<br />[Datetime](Datetime.md)&nbsp;or&nbsp;<br />[Uriorcurie](Uriorcurie.md)&nbsp;or&nbsp;<br />[String](String.md) | The status of the questionnaire response, indicating whether it is 'in-progre... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [saref_isValueOfProperty](saref_isValueOfProperty.md) | 0..1 <br/> [SarefProperty](SarefProperty.md) | Links a property value to the property or property of interest it is a value ... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valueReference](fhir_valueReference.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The Reference type contains at least one of a reference (literal reference), ... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valueCodeableConcept](fhir_valueCodeableConcept.md) | 0..1 <br/> [ValueCoding](ValueCoding.md) | A CodeableConcept represents a value that is usually supplied by providing a ... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valueRange](fhir_valueRange.md) | 0..1 <br/> [FhirReferenceRange](FhirReferenceRange.md) | A set of ordered Quantity values defined by a low and high limit | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valueRatio](fhir_valueRatio.md) | 0..1 <br/> [FhirValueRatio](FhirValueRatio.md) | A relationship between two Quantity values expressed as a numerator and a den... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valuePeriod](fhir_valuePeriod.md) | 0..1 <br/> [TimeInterval](TimeInterval.md) | A time period defined by a start and end date/time | [SarefPropertyValue](SarefPropertyValue.md) |
-| [fhir_valueAttachement](fhir_valueAttachement.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | This type is for containing or referencing attachments - additional data cont... | [SarefPropertyValue](SarefPropertyValue.md) |
+| [fhir_valueAttachment](fhir_valueAttachment.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | This type is for containing or referencing attachments - additional data cont... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -306,15 +306,16 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 <details>
 ```yaml
 name: qo_QuestionnaireResponseStatus
-description: "The status of the questionnaire response, indicating whether it is \t\
-  'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+description: Defines the lifecycle state governing the operational readiness and availability
+  of a completed or partially completed instance containing recorded values collected
+  from a specific execution of a survey instrument.
 from_schema: https://ns.faqir.org/q-o
 is_a: saref_PropertyValue
 slot_usage:
   saref_hasValue:
     name: saref_hasValue
-    description: "The status of the questionnaire response, indicating whether it\
-      \ is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    description: The status of the questionnaire response, indicating whether it is
+      'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
     narrow_mappings:
     - fhir:QuestionnaireResponse.status
     range: qo_QuestionnaireResponseStatusEnum
@@ -331,15 +332,16 @@ class_uri: qo:QuestionnaireResponseStatus
 <details>
 ```yaml
 name: qo_QuestionnaireResponseStatus
-description: "The status of the questionnaire response, indicating whether it is \t\
-  'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+description: Defines the lifecycle state governing the operational readiness and availability
+  of a completed or partially completed instance containing recorded values collected
+  from a specific execution of a survey instrument.
 from_schema: https://ns.faqir.org/q-o
 is_a: saref_PropertyValue
 slot_usage:
   saref_hasValue:
     name: saref_hasValue
-    description: "The status of the questionnaire response, indicating whether it\
-      \ is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    description: The status of the questionnaire response, indicating whether it is
+      'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
     narrow_mappings:
     - fhir:QuestionnaireResponse.status
     range: qo_QuestionnaireResponseStatusEnum
@@ -367,8 +369,8 @@ attributes:
     multivalued: false
   saref_hasValue:
     name: saref_hasValue
-    description: "The status of the questionnaire response, indicating whether it\
-      \ is \t'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'."
+    description: The status of the questionnaire response, indicating whether it is
+      'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
     - fhir:QuestionnaireResponse.status
@@ -486,16 +488,16 @@ attributes:
     range: time_Interval
     required: false
     multivalued: false
-  fhir_valueAttachement:
-    name: fhir_valueAttachement
+  fhir_valueAttachment:
+    name: fhir_valueAttachment
     description: This type is for containing or referencing attachments - additional
       data content defined in other formats. The most common use of this type is to
       include images or reports in some report format such as PDF. However, it can
       be used for any data that has a MIME type.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    slot_uri: fhir:valueAttachement
-    alias: fhir_valueAttachement
+    slot_uri: fhir:valueAttachment
+    alias: fhir_valueAttachment
     owner: qo_QuestionnaireResponseStatus
     domain_of:
     - saref_PropertyValue
@@ -551,7 +553,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_QuestionnaireResponseStatus
@@ -568,7 +569,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_QuestionnaireResponseStatus
@@ -586,7 +586,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_QuestionnaireResponseStatus
@@ -604,7 +603,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_QuestionnaireResponseStatus
@@ -622,7 +620,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_QuestionnaireResponseStatus
@@ -640,7 +637,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_QuestionnaireResponseStatus
@@ -658,7 +654,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_QuestionnaireResponseStatus
@@ -677,7 +672,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_QuestionnaireResponseStatus

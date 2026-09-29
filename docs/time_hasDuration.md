@@ -12,7 +12,12 @@ _Duration of a temporal entity, expressed as a scaled value or nominal value_
 URI: [time:hasDuration](http://www.w3.org/2006/time#hasDuration)
 Alias: time_hasDuration
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* **time_hasDuration**
+    * [qo_temporalValidity](qo_temporalValidity.md)
+
 
 
 

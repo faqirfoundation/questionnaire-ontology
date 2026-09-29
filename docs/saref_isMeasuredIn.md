@@ -22,8 +22,8 @@ Alias: saref_isMeasuredIn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
 | [QuantityValue](QuantityValue.md) | A measured amount (or an amount that can potentially be measured) |  no  |
+| [TimeDuration](TimeDuration.md) | Duration of a temporal extent expressed as a decimal number scaled by a tempo... |  no  |
 
 
 
@@ -35,7 +35,7 @@ Alias: saref_isMeasuredIn
 
 * Range: [Uriorcurie](Uriorcurie.md)
 
-* Regex pattern: `^ucum`
+* Regex pattern: `^ucum:`
 
 
 
@@ -83,7 +83,7 @@ domain_of:
 range: uriorcurie
 required: false
 multivalued: false
-pattern: ^ucum
+pattern: '^ucum:'
 
 ```
 </details>

@@ -3,7 +3,7 @@
 # Slot: qo_hasAnswer 
 
 
-_The Answer that is part of this QuestionnaireResponse._
+_Associates a recorded instance with its constituent individual response values._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_hasAnswer
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A response to a questionnaire (collection of answers) |  no  |
+| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A completed or partially completed instance containing recorded values collec... |  no  |
 
 
 
@@ -64,7 +64,7 @@ Alias: qo_hasAnswer
 | ---  | ---  |
 | self | qo:hasAnswer |
 | native | qo:qo_hasAnswer |
-| narrow | fhir:questionnaireResponse.item.answer |
+| narrow | fhir:QuestionnaireResponse.item.answer |
 
 
 
@@ -74,10 +74,11 @@ Alias: qo_hasAnswer
 <details>
 ```yaml
 name: qo_hasAnswer
-description: The Answer that is part of this QuestionnaireResponse.
+description: Associates a recorded instance with its constituent individual response
+  values.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
-- fhir:questionnaireResponse.item.answer
+- fhir:QuestionnaireResponse.item.answer
 rank: 1000
 domain: qo_QuestionnaireResponse
 slot_uri: qo:hasAnswer

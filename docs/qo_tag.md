@@ -3,7 +3,7 @@
 # Slot: qo_tag 
 
 
-_Internal English identifier, e.g., 'q_pain_level'._
+_A machine-readable alphanumeric code or mnemonic string used for internal reference and translation lookup._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_tag
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
 
 
 
@@ -73,7 +73,8 @@ Alias: qo_tag
 <details>
 ```yaml
 name: qo_tag
-description: Internal English identifier, e.g., 'q_pain_level'.
+description: A machine-readable alphanumeric code or mnemonic string used for internal
+  reference and translation lookup.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:tag

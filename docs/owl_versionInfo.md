@@ -22,25 +22,25 @@ Alias: owl_versionInfo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProvEntity](ProvEntity.md) | An entity is a physical, digital, conceptual, or other kind of thing with som... |  no  |
-| [SuloProcess](SuloProcess.md) | a process is a entity that unfolds in time, has temporal parts, and has objec... |  no  |
-| [QoAnswer](QoAnswer.md) | Answer in the questionnaire response |  no  |
-| [OwlThing](OwlThing.md) | This defines IOT as the set of OWL individuals |  no  |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | The status of the questionnaire response, indicating whether it is 	'in-progr... |  no  |
-| [ProvOrganization](ProvOrganization.md) | An organization is a social or legal institution such as a company, society, ... |  no  |
-| [FoafAgent](FoafAgent.md) | An agent (eg |  no  |
-| [S4ehawActivity](S4ehawActivity.md) | The activity of a patient/user, i |  no  |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | The status of the questionnaire, indicating whether it is 	draft, active, ret... |  no  |
-| [QoSection](QoSection.md) | A section of questions in the questionnaire |  no  |
-| [FoafPerson](FoafPerson.md) | A person |  no  |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
-| [FhirProcedure](FhirProcedure.md) | An action that is being or was performed on an individual or entity |  no  |
-| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
-| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A response to a questionnaire (collection of answers) |  no  |
-| [QoOrderedSection](QoOrderedSection.md) | Section's position within a specific questionnaire or section |  no  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
 | [SarefProperty](SarefProperty.md) | Identifiable qualities of features of interest that can be target of devices,... |  no  |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  no  |
-| [QoQuestionnaire](QoQuestionnaire.md) | A questionnaire that can be answered (collection of questions) |  no  |
+| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
+| [FhirProcedure](FhirProcedure.md) | An action that is being or was performed on an individual or entity |  no  |
+| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
+| [FoafAgent](FoafAgent.md) | An agent (eg |  no  |
+| [QoQuestionnaire](QoQuestionnaire.md) | A structured, reusable instrument or template composed of ordered items desig... |  no  |
+| [ProvEntity](ProvEntity.md) | An entity is a physical, digital, conceptual, or other kind of thing with som... |  no  |
+| [OwlThing](OwlThing.md) | This defines IOT as the set of OWL individuals |  no  |
+| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
+| [S4ehawActivity](S4ehawActivity.md) | The activity of a patient/user, i |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
+| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A completed or partially completed instance containing recorded values collec... |  no  |
+| [SuloProcess](SuloProcess.md) | a process is a entity that unfolds in time, has temporal parts, and has objec... |  no  |
+| [QoOrderedSection](QoOrderedSection.md) | A contextual wrapper that binds a thematic grouping of inquiry items to a spe... |  no  |
+| [QoAnswer](QoAnswer.md) | A recorded value, or selection provided in response to a specific inquiry ite... |  no  |
+| [ProvOrganization](ProvOrganization.md) | An organization is a social or legal institution such as a company, society, ... |  no  |
+| [FoafPerson](FoafPerson.md) | A person |  no  |
+| [QoSection](QoSection.md) | A logical grouping or thematic partition of items within a structured survey ... |  no  |
 
 
 

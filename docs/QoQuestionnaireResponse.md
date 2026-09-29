@@ -3,7 +3,7 @@
 # Class: QoQuestionnaireResponse 
 
 
-_A response to a questionnaire (collection of answers)._
+_A completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument._
 
 
 
@@ -176,8 +176,8 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_responds](qo_responds.md) | 1 <br/> [QoQuestionnaire](QoQuestionnaire.md) | The Questionnaire that this QuestionnaireResponse is for | direct |
-| [qo_hasAnswer](qo_hasAnswer.md) | 1..* <br/> [QoAnswer](QoAnswer.md) | The Answer that is part of this QuestionnaireResponse | direct |
+| [qo_responds](qo_responds.md) | 1 <br/> [QoQuestionnaire](QoQuestionnaire.md) | Links a record instance back to the underlying survey template it answers | direct |
+| [qo_hasAnswer](qo_hasAnswer.md) | 1..* <br/> [QoAnswer](QoAnswer.md) | Associates a recorded instance with its constituent individual response value... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | 1 <br/> [FoafPerson](FoafPerson.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 1 <br/> [Datetime](Datetime.md) | The date and time when the questionnaire response was created (when the quest... | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 1 <br/> [Datetime](Datetime.md) | The date and time when the questionnaire response was last updated | [ProvEntity](ProvEntity.md) |
@@ -249,7 +249,8 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
 <details>
 ```yaml
 name: qo_QuestionnaireResponse
-description: A response to a questionnaire (collection of answers).
+description: A completed or partially completed instance containing recorded values
+  collected from a specific execution of a survey instrument.
 from_schema: https://ns.faqir.org/q-o
 is_a: prov_Entity
 slots:
@@ -295,7 +296,8 @@ class_uri: qo:QuestionnaireResponse
 <details>
 ```yaml
 name: qo_QuestionnaireResponse
-description: A response to a questionnaire (collection of answers).
+description: A completed or partially completed instance containing recorded values
+  collected from a specific execution of a survey instrument.
 from_schema: https://ns.faqir.org/q-o
 is_a: prov_Entity
 slot_usage:
@@ -331,10 +333,11 @@ slot_usage:
 attributes:
   qo_responds:
     name: qo_responds
-    description: The Questionnaire that this QuestionnaireResponse is for.
+    description: Links a record instance back to the underlying survey template it
+      answers.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
-    - fhir:questionnaireResponse.questionnaire
+    - fhir:QuestionnaireResponse.questionnaire
     rank: 1000
     domain: qo_QuestionnaireResponse
     slot_uri: qo:responds
@@ -347,10 +350,11 @@ attributes:
     multivalued: false
   qo_hasAnswer:
     name: qo_hasAnswer
-    description: The Answer that is part of this QuestionnaireResponse.
+    description: Associates a recorded instance with its constituent individual response
+      values.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
-    - fhir:questionnaireResponse.item.answer
+    - fhir:QuestionnaireResponse.item.answer
     rank: 1000
     domain: qo_QuestionnaireResponse
     slot_uri: qo:hasAnswer
@@ -415,7 +419,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_QuestionnaireResponse
@@ -432,7 +435,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_QuestionnaireResponse
@@ -449,7 +451,6 @@ attributes:
     description: Process this questionnaire response instance is part of.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_QuestionnaireResponse
@@ -467,7 +468,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_QuestionnaireResponse
@@ -485,7 +485,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_QuestionnaireResponse
@@ -503,7 +502,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_QuestionnaireResponse
@@ -521,7 +519,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_QuestionnaireResponse
@@ -540,7 +537,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_QuestionnaireResponse

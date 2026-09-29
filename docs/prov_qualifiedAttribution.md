@@ -68,7 +68,7 @@ description: Attribution is the ascribing of an entity to an agent. When an enti
   activity is not known, or irrelevant.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
-domain: owl_Thing
+domain: prov_Entity
 slot_uri: prov:qualifiedAttribution
 alias: prov_qualifiedAttribution
 range: prov_Attribution

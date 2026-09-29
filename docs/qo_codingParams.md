@@ -3,7 +3,7 @@
 # Slot: qo_codingParams 
 
 
-_Code and Display of each option offered as answer to the choice or open-choice question._
+_Defines the permissible standardized concept codes and human-readable labels available for selection._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_codingParams
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
 
 
 
@@ -71,8 +71,8 @@ Alias: qo_codingParams
 <details>
 ```yaml
 name: qo_codingParams
-description: Code and Display of each option offered as answer to the choice or open-choice
-  question.
+description: Defines the permissible standardized concept codes and human-readable
+  labels available for selection.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:codingParams

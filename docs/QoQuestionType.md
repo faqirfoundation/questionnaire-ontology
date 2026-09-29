@@ -3,7 +3,7 @@
 
 
 
-_The type of question asked in the questionnaire. It defines the expected answer format._
+_Specifies the structural classification and data-type constraints governing acceptable inputs for an inquiry item._
 
 
 
@@ -13,13 +13,13 @@ URI: [QoQuestionType](QoQuestionType.md)
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| choice | http://hl7.org/fhir/item-type#coding | A question with predefined options to choose from |
-| openChoice | qo:open-choice | A question with predefined options to choose from plus a last valueCoding: {'... |
-| numberInterval | qo:numberInterval | A question that expects a numeric answer in between a minimum and maximum val... |
+| choice | http://hl7.org/fhir/item-type#coding | An inquiry format offering a fixed set of standardized coded options for sele... |
+| openChoice | https://ns.faqir.org/q-o#open-choice | A question with predefined options to select from plus a last valueCoding: {'... |
+| numberInterval | https://ns.faqir.org/q-o#numberInterval | A question that expects a numeric answer in between a minimum and maximum val... |
 | decimal | http://hl7.org/fhir/item-type#decimal | A question that expects a numerical answer, either integer or float |
-| time | http://hl7.org/fhir/item-type#time | Question with a time (hour:minute:second) answer independent of date |
-| dateTime | http://hl7.org/fhir/item-type#dateTime | A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+z... |
-| text | http://hl7.org/fhir/item-type#string | A question that expects a free text answer |
+| time | http://hl7.org/fhir/item-type#time | An inquiry item constraining acceptable input strictly to a clock time (hour,... |
+| dateTime | http://hl7.org/fhir/item-type#dateTime | An inquiry item constraining acceptable input strictly to a date and time, fo... |
+| text | http://hl7.org/fhir/item-type#string | An inquiry item that expects a free string answer |
 
 
 
@@ -58,32 +58,32 @@ URI: [QoQuestionType](QoQuestionType.md)
 <details>
 ```yaml
 name: qo_QuestionType
-description: The type of question asked in the questionnaire. It defines the expected
-  answer format.
+description: Specifies the structural classification and data-type constraints governing
+  acceptable inputs for an inquiry item.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 enum_uri: qo:QuestionType
 permissible_values:
   choice:
     text: choice
-    description: A question with predefined options to choose from. Multiple choices
-      may be allowed.
+    description: An inquiry format offering a fixed set of standardized coded options
+      for selection.
     meaning: http://hl7.org/fhir/item-type#coding
     mappings:
     - fhir:QuestionnaireResponse.item.answer.valueCoding
   openChoice:
     text: openChoice
-    description: 'A question with predefined options to choose from plus a last valueCoding:
+    description: 'A question with predefined options to select from plus a last valueCoding:
       {''code'': ''-1'', ''display'': ''Other''} that allows text input. Multiple
-      choices may be allowed.'
-    meaning: qo:open-choice
+      selection may be allowed.'
+    meaning: https://ns.faqir.org/q-o#open-choice
     narrow_mappings:
     - fhir:QuestionnaireResponse.item.answer.valueCoding
   numberInterval:
     text: numberInterval
     description: A question that expects a numeric answer in between a minimum and
       maximum value.
-    meaning: qo:numberInterval
+    meaning: https://ns.faqir.org/q-o#numberInterval
     narrow_mappings:
     - fhir:QuestionnaireResponse.item.answer.valueInteger
     - xsd:decimal
@@ -99,24 +99,24 @@ permissible_values:
     - xsd:float
   time:
     text: time
-    description: Question with a time (hour:minute:second) answer independent of date.
-      (valueTime).
+    description: An inquiry item constraining acceptable input strictly to a clock
+      time (hour, minute, second) without a date component.
     meaning: http://hl7.org/fhir/item-type#time
     mappings:
     - xsd:time
   dateTime:
     text: dateTime
-    description: A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+zz:zz.
+    description: An inquiry item constraining acceptable input strictly to a date
+      and time, formatted as YYYY-MM-DDThh:mm:ss+zz:zz.
     meaning: http://hl7.org/fhir/item-type#dateTime
     mappings:
     - xsd:dateTime
   text:
     text: text
-    description: A question that expects a free text answer.
+    description: An inquiry item that expects a free string answer.
     meaning: http://hl7.org/fhir/item-type#string
     mappings:
     - xsd:string
-    - xsd2:text
 
 ```
 </details>

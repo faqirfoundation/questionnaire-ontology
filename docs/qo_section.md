@@ -3,7 +3,7 @@
 # Slot: qo_section 
 
 
-_Section indexed in this OrderedSection._
+_Identifies the specific thematic grouping referenced at a given positional index._
 
 
 
@@ -27,7 +27,7 @@ Alias: qo_section
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedSection](QoOrderedSection.md) | Section's position within a specific questionnaire or section |  no  |
+| [QoOrderedSection](QoOrderedSection.md) | A contextual wrapper that binds a thematic grouping of inquiry items to a spe... |  no  |
 
 
 
@@ -78,7 +78,8 @@ Alias: qo_section
 <details>
 ```yaml
 name: qo_section
-description: Section indexed in this OrderedSection.
+description: Identifies the specific thematic grouping referenced at a given positional
+  index.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 is_a: dcterms_hasPart

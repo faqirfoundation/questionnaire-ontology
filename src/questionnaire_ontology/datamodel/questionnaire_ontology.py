@@ -1,5 +1,5 @@
 # Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-28T18:06:16
+# Generation date: 2026-09-29T12:23:11
 # Schema: Questionnaire-Ontology
 #
 # id: https://ns.faqir.org/q-o
@@ -604,7 +604,7 @@ class SarefPropertyValue(ProvEntity):
     fhir_valueRange: Optional[Union[dict, "FhirReferenceRange"]] = None
     fhir_valueRatio: Optional[Union[dict, "FhirValueRatio"]] = None
     fhir_valuePeriod: Optional[Union[dict, "TimeInterval"]] = None
-    fhir_valueAttachement: Optional[Union[str, URIorCURIE]] = None
+    fhir_valueAttachment: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.prov_atTime is not None and not isinstance(self.prov_atTime, XSDDateTime):
@@ -631,8 +631,8 @@ class SarefPropertyValue(ProvEntity):
         if self.fhir_valuePeriod is not None and not isinstance(self.fhir_valuePeriod, TimeInterval):
             self.fhir_valuePeriod = TimeInterval(**as_dict(self.fhir_valuePeriod))
 
-        if self.fhir_valueAttachement is not None and not isinstance(self.fhir_valueAttachement, URIorCURIE):
-            self.fhir_valueAttachement = URIorCURIE(self.fhir_valueAttachement)
+        if self.fhir_valueAttachment is not None and not isinstance(self.fhir_valueAttachment, URIorCURIE):
+            self.fhir_valueAttachment = URIorCURIE(self.fhir_valueAttachment)
 
         super().__post_init__(**kwargs)
 
@@ -644,8 +644,8 @@ class QuantityValue(YAMLRoot):
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FHIR["datatypes.Quantity"]
-    class_class_curie: ClassVar[str] = "fhir:datatypes.Quantity"
+    class_class_uri: ClassVar[URIRef] = FHIR["Quantity"]
+    class_class_curie: ClassVar[str] = "fhir:Quantity"
     class_name: ClassVar[str] = "QuantityValue"
     class_model_uri: ClassVar[URIRef] = QO.QuantityValue
 
@@ -723,8 +723,8 @@ class FhirValueRatio(YAMLRoot):
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = FHIR["datatype.Ratio"]
-    class_class_curie: ClassVar[str] = "fhir:datatype.Ratio"
+    class_class_uri: ClassVar[URIRef] = FHIR["Ratio"]
+    class_class_curie: ClassVar[str] = "fhir:Ratio"
     class_name: ClassVar[str] = "fhir_ValueRatio"
     class_model_uri: ClassVar[URIRef] = QO.FhirValueRatio
 
@@ -863,7 +863,8 @@ class FhirReferenceRange(YAMLRoot):
 @dataclass(repr=False)
 class QoQuestionnaire(ProvEntity):
     """
-    A questionnaire that can be answered (collection of questions).
+    A structured, reusable instrument or template composed of ordered items designed to collect standardized
+    information from an individual or system.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -923,7 +924,7 @@ class QoQuestionnaire(ProvEntity):
 @dataclass(repr=False)
 class QoQuestionnaireStatus(SarefPropertyValue):
     """
-    The status of the questionnaire, indicating whether it is     draft, active, retired or unknown.
+    Defines the lifecycle state governing the operational readiness and availability of a survey template.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -948,7 +949,8 @@ class QoQuestionnaireStatus(SarefPropertyValue):
 @dataclass(repr=False)
 class QoOrderedSection(ProvEntity):
     """
-    Section's position within a specific questionnaire or section.
+    A contextual wrapper that binds a thematic grouping of inquiry items to a specific sequence index within a survey
+    template or parent group.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -979,7 +981,7 @@ class QoOrderedSection(ProvEntity):
 @dataclass(repr=False)
 class QoSection(ProvEntity):
     """
-    A section of questions in the questionnaire.
+    A logical grouping or thematic partition of items within a structured survey instrument.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1015,7 +1017,8 @@ class QoSection(ProvEntity):
 @dataclass(repr=False)
 class QoOrderedQuestion(ProvEntity):
     """
-    Question's position within a specific questionnaire or section.
+    A contextual wrapper that binds an inquiry item to a specific sequence index within a survey template or parent
+    group.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1068,7 +1071,8 @@ class QoOrderedQuestion(ProvEntity):
 @dataclass(repr=False)
 class QoQuestion(ProvEntity):
     """
-    A question.
+    An individual inquiry item within an instrument that specifies an information requirement and constrains the
+    acceptable response format.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1129,7 +1133,8 @@ class QoQuestion(ProvEntity):
 @dataclass(repr=False)
 class QoQuestionnaireResponse(ProvEntity):
     """
-    A response to a questionnaire (collection of answers).
+    A completed or partially completed instance containing recorded values collected from a specific execution of a
+    survey instrument.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1192,8 +1197,8 @@ class QoQuestionnaireResponse(ProvEntity):
 @dataclass(repr=False)
 class QoQuestionnaireResponseStatus(SarefPropertyValue):
     """
-    The status of the questionnaire response, indicating whether it is 'in-progress', 'completed', 'amended',
-    'entered-in-error' or 'stopped'.
+    Defines the lifecycle state governing the operational readiness and availability of a completed or partially
+    completed instance containing recorded values collected from a specific execution of a survey instrument.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1218,7 +1223,7 @@ class QoQuestionnaireResponseStatus(SarefPropertyValue):
 @dataclass(repr=False)
 class QoAnswer(ProvEntity):
     """
-    Answer in the questionnaire response.
+    A recorded value, or selection provided in response to a specific inquiry item.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1258,15 +1263,15 @@ class QoAnswer(ProvEntity):
 # Enumerations
 class QoQuestionType(EnumDefinitionImpl):
     """
-    The type of question asked in the questionnaire. It defines the expected answer format.
+    Specifies the structural classification and data-type constraints governing acceptable inputs for an inquiry item.
     """
     choice = PermissibleValue(
         text="choice",
-        description="A question with predefined options to choose from. Multiple choices may be allowed.",
+        description="An inquiry format offering a fixed set of standardized coded options for selection.",
         meaning=FHIR["item-type#coding"])
     openChoice = PermissibleValue(
         text="openChoice",
-        description="""A question with predefined options to choose from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple choices may be allowed.""",
+        description="""A question with predefined options to select from plus a last valueCoding: {'code': '-1', 'display': 'Other'} that allows text input. Multiple selection may be allowed.""",
         meaning=QO["open-choice"])
     numberInterval = PermissibleValue(
         text="numberInterval",
@@ -1278,20 +1283,20 @@ class QoQuestionType(EnumDefinitionImpl):
         meaning=FHIR["item-type#decimal"])
     time = PermissibleValue(
         text="time",
-        description="Question with a time (hour:minute:second) answer independent of date. (valueTime).",
+        description="""An inquiry item constraining acceptable input strictly to a clock time (hour, minute, second) without a date component.""",
         meaning=FHIR["item-type#time"])
     dateTime = PermissibleValue(
         text="dateTime",
-        description="A question that expects a dateTime answer, formatted as YYYY-MM-DDThh:mm:ss+zz:zz.",
+        description="""An inquiry item constraining acceptable input strictly to a date and time, formatted as YYYY-MM-DDThh:mm:ss+zz:zz.""",
         meaning=FHIR["item-type#dateTime"])
     text = PermissibleValue(
         text="text",
-        description="A question that expects a free text answer.",
+        description="An inquiry item that expects a free string answer.",
         meaning=FHIR["item-type#string"])
 
     _defn = EnumDefinition(
         name="QoQuestionType",
-        description="The type of question asked in the questionnaire. It defines the expected answer format.",
+        description="""Specifies the structural classification and data-type constraints governing acceptable inputs for an inquiry item.""",
     )
 
 class QoQuestionnaireStatusEnum(EnumDefinitionImpl):
@@ -1322,7 +1327,7 @@ class QoQuestionnaireStatusEnum(EnumDefinitionImpl):
 
 class QoQuestionnaireResponseStatusEnum(EnumDefinitionImpl):
     """
-    The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended',
+    The questionnaire response status must be one of the following: 'in-progress', 'completed', 'amended',
     'entered-in-error' or 'stopped'.
     """
     in_progress = PermissibleValue(
@@ -1348,7 +1353,7 @@ class QoQuestionnaireResponseStatusEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="QoQuestionnaireResponseStatusEnum",
-        description="""The quesionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.""",
+        description="""The questionnaire response status must be one of the following: 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.""",
     )
 
 # Slots
@@ -1365,25 +1370,25 @@ slots.owl_versionInfo = Slot(uri=OWL.versionInfo, name="owl_versionInfo", curie=
                    model_uri=QO.owl_versionInfo, domain=OwlThing, range=Optional[str])
 
 slots.dcterms_isPartOf = Slot(uri=DCTERMS.isPartOf, name="dcterms_isPartOf", curie=DCTERMS.curie('isPartOf'),
-                   model_uri=QO.dcterms_isPartOf, domain=OwlThing, range=Optional[Union[Union[dict, "OwlThing"], list[Union[dict, "OwlThing"]]]])
+                   model_uri=QO.dcterms_isPartOf, domain=None, range=Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]])
 
 slots.dcterms_hasPart = Slot(uri=DCTERMS.hasPart, name="dcterms_hasPart", curie=DCTERMS.curie('hasPart'),
-                   model_uri=QO.dcterms_hasPart, domain=OwlThing, range=Optional[Union[Union[dict, "OwlThing"], list[Union[dict, "OwlThing"]]]])
+                   model_uri=QO.dcterms_hasPart, domain=None, range=Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]])
 
 slots.prov_type = Slot(uri=PROV.type, name="prov_type", curie=PROV.curie('type'),
-                   model_uri=QO.prov_type, domain=OwlThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+                   model_uri=QO.prov_type, domain=None, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.fhir_status = Slot(uri=FHIR['resource-status'], name="fhir_status", curie=FHIR.curie('resource-status'),
-                   model_uri=QO.fhir_status, domain=OwlThing, range=Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]])
+                   model_uri=QO.fhir_status, domain=None, range=Optional[Union[Union[dict, SarefPropertyValue], list[Union[dict, SarefPropertyValue]]]])
 
 slots.dcterms_creator = Slot(uri=DCTERMS.creator, name="dcterms_creator", curie=DCTERMS.curie('creator'),
-                   model_uri=QO.dcterms_creator, domain=OwlThing, range=Optional[Union[Union[dict, "FoafAgent"], list[Union[dict, "FoafAgent"]]]])
+                   model_uri=QO.dcterms_creator, domain=None, range=Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]])
 
 slots.saref_hasProperty = Slot(uri=SAREF.hasProperty, name="saref_hasProperty", curie=SAREF.curie('hasProperty'),
-                   model_uri=QO.saref_hasProperty, domain=OwlThing, range=Optional[Union[Union[dict, "SarefProperty"], list[Union[dict, "SarefProperty"]]]], mappings = [SSN["hasProperty"]])
+                   model_uri=QO.saref_hasProperty, domain=None, range=Optional[Union[Union[dict, SarefProperty], list[Union[dict, SarefProperty]]]], mappings = [SSN["hasProperty"]])
 
 slots.saref_hasPropertyValue = Slot(uri=SAREF.hasPropertyValue, name="saref_hasPropertyValue", curie=SAREF.curie('hasPropertyValue'),
-                   model_uri=QO.saref_hasPropertyValue, domain=OwlThing, range=Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]])
+                   model_uri=QO.saref_hasPropertyValue, domain=None, range=Optional[Union[Union[dict, SarefPropertyValue], list[Union[dict, SarefPropertyValue]]]])
 
 slots.prov_hadPrimarySource = Slot(uri=PROV.hadPrimarySource, name="prov_hadPrimarySource", curie=PROV.curie('hadPrimarySource'),
                    model_uri=QO.prov_hadPrimarySource, domain=OwlThing, range=Optional[Union[Union[dict, "ProvEntity"], list[Union[dict, "ProvEntity"]]]])
@@ -1392,7 +1397,7 @@ slots.prov_wasGeneratedBy = Slot(uri=PROV.wasGeneratedBy, name="prov_wasGenerate
                    model_uri=QO.prov_wasGeneratedBy, domain=OwlThing, range=Optional[Union[Union[dict, "SuloProcess"], list[Union[dict, "SuloProcess"]]]])
 
 slots.prov_generatedAtTime = Slot(uri=PROV.generatedAtTime, name="prov_generatedAtTime", curie=PROV.curie('generatedAtTime'),
-                   model_uri=QO.prov_generatedAtTime, domain=OwlThing, range=Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]])
+                   model_uri=QO.prov_generatedAtTime, domain=None, range=Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]])
 
 slots.prov_generated = Slot(uri=PROV.generated, name="prov_generated", curie=PROV.curie('generated'),
                    model_uri=QO.prov_generated, domain=SuloProcess, range=Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]])
@@ -1401,7 +1406,7 @@ slots.prov_wasAttributedTo = Slot(uri=PROV.wasAttributedTo, name="prov_wasAttrib
                    model_uri=QO.prov_wasAttributedTo, domain=ProvEntity, range=Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]])
 
 slots.prov_qualifiedAttribution = Slot(uri=PROV.qualifiedAttribution, name="prov_qualifiedAttribution", curie=PROV.curie('qualifiedAttribution'),
-                   model_uri=QO.prov_qualifiedAttribution, domain=OwlThing, range=Optional[Union[Union[dict, "ProvAttribution"], list[Union[dict, "ProvAttribution"]]]])
+                   model_uri=QO.prov_qualifiedAttribution, domain=ProvEntity, range=Optional[Union[Union[dict, ProvAttribution], list[Union[dict, ProvAttribution]]]])
 
 slots.prov_startedAtTime = Slot(uri=PROV.startedAtTime, name="prov_startedAtTime", curie=PROV.curie('startedAtTime'),
                    model_uri=QO.prov_startedAtTime, domain=SuloProcess, range=Optional[Union[str, XSDDateTime]])
@@ -1426,7 +1431,7 @@ slots.saref_isValueOfProperty = Slot(uri=SAREF.isValueOfProperty, name="saref_is
 
 slots.saref_isMeasuredIn = Slot(uri=SAREF.isMeasuredIn, name="saref_isMeasuredIn", curie=SAREF.curie('isMeasuredIn'),
                    model_uri=QO.saref_isMeasuredIn, domain=None, range=Optional[Union[str, URIorCURIE]],
-                   pattern=re.compile(r'^ucum'))
+                   pattern=re.compile(r'^ucum:'))
 
 slots.fhir_valueReference = Slot(uri=FHIR.valueReference, name="fhir_valueReference", curie=FHIR.curie('valueReference'),
                    model_uri=QO.fhir_valueReference, domain=None, range=Optional[Union[str, URIorCURIE]])
@@ -1459,10 +1464,10 @@ slots.qo_question = Slot(uri=QO.question, name="qo_question", curie=QO.curie('qu
                    model_uri=QO.qo_question, domain=QoOrderedQuestion, range=Union[dict, "QoQuestion"])
 
 slots.qo_hasOrderedQuestion = Slot(uri=QO.hasOrderedQuestion, name="qo_hasOrderedQuestion", curie=QO.curie('hasOrderedQuestion'),
-                   model_uri=QO.qo_hasOrderedQuestion, domain=OwlThing, range=Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]])
+                   model_uri=QO.qo_hasOrderedQuestion, domain=None, range=Optional[Union[Union[dict, QoOrderedQuestion], list[Union[dict, QoOrderedQuestion]]]])
 
 slots.qo_hasOrderedSection = Slot(uri=QO.hasOrderedSection, name="qo_hasOrderedSection", curie=QO.curie('hasOrderedSection'),
-                   model_uri=QO.qo_hasOrderedSection, domain=OwlThing, range=Optional[Union[Union[dict, "QoOrderedSection"], list[Union[dict, "QoOrderedSection"]]]])
+                   model_uri=QO.qo_hasOrderedSection, domain=None, range=Optional[Union[Union[dict, QoOrderedSection], list[Union[dict, QoOrderedSection]]]])
 
 slots.qo_section = Slot(uri=QO.section, name="qo_section", curie=QO.curie('section'),
                    model_uri=QO.qo_section, domain=QoOrderedSection, range=Union[dict, "QoSection"])
@@ -1491,8 +1496,8 @@ slots.sarefPropertyValue__fhir_valueRatio = Slot(uri=FHIR.valueRatio, name="sare
 slots.sarefPropertyValue__fhir_valuePeriod = Slot(uri=FHIR.valuePeriod, name="sarefPropertyValue__fhir_valuePeriod", curie=FHIR.curie('valuePeriod'),
                    model_uri=QO.sarefPropertyValue__fhir_valuePeriod, domain=None, range=Optional[Union[dict, TimeInterval]])
 
-slots.sarefPropertyValue__fhir_valueAttachement = Slot(uri=FHIR.valueAttachement, name="sarefPropertyValue__fhir_valueAttachement", curie=FHIR.curie('valueAttachement'),
-                   model_uri=QO.sarefPropertyValue__fhir_valueAttachement, domain=None, range=Optional[Union[str, URIorCURIE]])
+slots.sarefPropertyValue__fhir_valueAttachment = Slot(uri=FHIR.valueAttachment, name="sarefPropertyValue__fhir_valueAttachment", curie=FHIR.curie('valueAttachment'),
+                   model_uri=QO.sarefPropertyValue__fhir_valueAttachment, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.numericalParams__numericalUnit = Slot(uri=UCUM.units, name="numericalParams__numericalUnit", curie=UCUM.curie('units'),
                    model_uri=QO.numericalParams__numericalUnit, domain=None, range=Optional[Union[str, URIorCURIE]],

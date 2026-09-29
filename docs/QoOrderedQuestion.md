@@ -3,7 +3,7 @@
 # Class: QoOrderedQuestion 
 
 
-_Question's position within a specific questionnaire or section._
+_A contextual wrapper that binds an inquiry item to a specific sequence index within a survey template or parent group._
 
 
 
@@ -184,10 +184,10 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_question](qo_question.md) | 1..* <br/> [QoQuestion](QoQuestion.md) | Question indexed in this OrderedQuestion | direct |
-| [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | if true, the temporal duration is a strict deadline; if false, it is an orien... | direct |
-| [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | The time duration during which the answer is considered valid | direct |
-| [qo_conditionalValidity](qo_conditionalValidity.md) | 1 <br/> [String](String.md) | a condition (expressed in a machine-readable rule language) that would invali... | direct |
+| [qo_question](qo_question.md) | 1..* <br/> [QoQuestion](QoQuestion.md) | Identifies the specific inquiry item referenced at a given positional index | direct |
+| [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies the operational enforcement mechanism of a duration limit; when tru... | direct |
+| [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | Defines the time extent following generation during which a recorded answer r... | direct |
+| [qo_conditionalValidity](qo_conditionalValidity.md) | 1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
 | [qo_order](qo_order.md) | 1 <br/> [Integer](Integer.md) | Question position in the questionnaire or section (1-based index) | direct |
 | [qo_required](qo_required.md) | 1 <br/> [Boolean](Boolean.md) | Whether the question can be left un-answered (false) or an answer is mandator... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
@@ -262,7 +262,8 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 <details>
 ```yaml
 name: qo_OrderedQuestion
-description: Question's position within a specific questionnaire or section.
+description: A contextual wrapper that binds an inquiry item to a specific sequence
+  index within a survey template or parent group.
 from_schema: https://ns.faqir.org/q-o
 is_a: prov_Entity
 slots:
@@ -289,7 +290,6 @@ attributes:
     - qo_OrderedQuestion
     range: boolean
     required: true
-    minimum_value: 1
 class_uri: qo:OrderedQuestion
 unique_keys:
   unique_question_order_per_questionnaire:
@@ -306,7 +306,8 @@ unique_keys:
 <details>
 ```yaml
 name: qo_OrderedQuestion
-description: Question's position within a specific questionnaire or section.
+description: A contextual wrapper that binds an inquiry item to a specific sequence
+  index within a survey template or parent group.
 from_schema: https://ns.faqir.org/q-o
 is_a: prov_Entity
 slot_usage:
@@ -329,10 +330,10 @@ attributes:
     - qo_OrderedQuestion
     range: boolean
     required: true
-    minimum_value: 1
   qo_question:
     name: qo_question
-    description: Question indexed in this OrderedQuestion.
+    description: Identifies the specific inquiry item referenced at a given positional
+      index.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: dcterms_hasPart
@@ -347,8 +348,9 @@ attributes:
     multivalued: true
   qo_hardValidity:
     name: qo_hardValidity
-    description: if true, the temporal duration is a strict deadline; if false, it
-      is an orientative guideline.
+    description: Specifies the operational enforcement mechanism of a duration limit;
+      when true, expiration acts as a strict invalidation threshold for re-use, whereas
+      when false, it serves as a non-binding recommendation.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:hardValidity
@@ -361,9 +363,11 @@ attributes:
     required: false
   qo_temporalValidity:
     name: qo_temporalValidity
-    description: The time duration during which the answer is considered valid.
+    description: Defines the time extent following generation during which a recorded
+      answer remains valid for automated longitudinal reuse without requiring re-administration.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
+    is_a: time_hasDuration
     slot_uri: qo:temporalValidity
     alias: qo_temporalValidity
     owner: qo_OrderedQuestion
@@ -373,9 +377,9 @@ attributes:
     required: true
   qo_conditionalValidity:
     name: qo_conditionalValidity
-    description: a condition (expressed in a machine-readable rule language) that
-      would invalidate the answer earlier than the temporal duration, e.g., 'a documented
-      smoking cessation intervention' invalidates the answer to 'Do you smoke?''.
+    description: A machine-readable rule statement defining an intervening event or
+      state change that revokes the validity of a recorded observation prior to its
+      natural temporal expiration.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:conditionalValidity
@@ -448,7 +452,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_OrderedQuestion
@@ -465,7 +468,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_OrderedQuestion
@@ -483,7 +485,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_OrderedQuestion
@@ -501,7 +502,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_OrderedQuestion
@@ -519,7 +519,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_OrderedQuestion
@@ -537,7 +536,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_OrderedQuestion
@@ -555,7 +553,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_OrderedQuestion
@@ -574,7 +571,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_OrderedQuestion

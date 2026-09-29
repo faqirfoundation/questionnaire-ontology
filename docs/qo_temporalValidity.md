@@ -3,7 +3,7 @@
 # Slot: qo_temporalValidity 
 
 
-_The time duration during which the answer is considered valid._
+_Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration._
 
 
 
@@ -12,7 +12,12 @@ _The time duration during which the answer is considered valid._
 URI: [qo:temporalValidity](https://ns.faqir.org/q-o#temporalValidity)
 Alias: qo_temporalValidity
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [time_hasDuration](time_hasDuration.md)
+    * **qo_temporalValidity**
+
 
 
 
@@ -22,7 +27,7 @@ Alias: qo_temporalValidity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  no  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
 
 
 
@@ -71,9 +76,11 @@ Alias: qo_temporalValidity
 <details>
 ```yaml
 name: qo_temporalValidity
-description: The time duration during which the answer is considered valid.
+description: Defines the time extent following generation during which a recorded
+  answer remains valid for automated longitudinal reuse without requiring re-administration.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
+is_a: time_hasDuration
 slot_uri: qo:temporalValidity
 alias: qo_temporalValidity
 domain_of:

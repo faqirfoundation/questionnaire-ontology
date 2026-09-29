@@ -3,7 +3,7 @@
 # Class: QoQuestion 
 
 
-_A question._
+_An individual inquiry item within an instrument that specifies an information requirement and constrains the acceptable response format._
 
 
 
@@ -202,12 +202,12 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_multivalued](qo_multivalued.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether this question allows multiple answers (true) or it's single... | direct |
-| [qo_tag](qo_tag.md) | 1..* <br/> [String](String.md) | Internal English identifier, e | direct |
-| [qo_numericalParams](qo_numericalParams.md) | 0..1 <br/> [NumericalParams](NumericalParams.md) | Unit and Precision limiting the quantitative answer for the question | direct |
-| [qo_codingParams](qo_codingParams.md) | * <br/> [ValueCoding](ValueCoding.md) | Code and Display of each option offered as answer to the choice or open-choic... | direct |
-| [qo_codingOrdinal](qo_codingOrdinal.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the choices in a choice or open-choice question are ordered (tru... | direct |
-| [qo_intervalParams](qo_intervalParams.md) | 0..1 <br/> [IntervalParams](IntervalParams.md) | Minimum and Maximum limiting the range the answer must be in for the question | direct |
+| [qo_multivalued](qo_multivalued.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether this question allows more than one answer (true) or only on... | direct |
+| [qo_tag](qo_tag.md) | 1..* <br/> [String](String.md) | A machine-readable alphanumeric code or mnemonic string used for internal ref... | direct |
+| [qo_numericalParams](qo_numericalParams.md) | 0..1 <br/> [NumericalParams](NumericalParams.md) | Specifies measurement units and decimal precision constraints governing accep... | direct |
+| [qo_codingParams](qo_codingParams.md) | * <br/> [ValueCoding](ValueCoding.md) | Defines the permissible standardized concept codes and human-readable labels ... | direct |
+| [qo_codingOrdinal](qo_codingOrdinal.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies whether permissible selection options possess a meaningful inherent... | direct |
+| [qo_intervalParams](qo_intervalParams.md) | 0..1 <br/> [IntervalParams](IntervalParams.md) | Defines lower and upper boundary limits bounding acceptable numeric values | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -280,7 +280,8 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 <details>
 ```yaml
 name: qo_Question
-description: A question.
+description: An individual inquiry item within an instrument that specifies an information
+  requirement and constrains the acceptable response format.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:Questionnaire.item.where(type='question')
@@ -301,7 +302,8 @@ slot_usage:
 attributes:
   qo_tag:
     name: qo_tag
-    description: Internal English identifier, e.g., 'q_pain_level'.
+    description: A machine-readable alphanumeric code or mnemonic string used for
+      internal reference and translation lookup.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:tag
@@ -312,7 +314,8 @@ attributes:
     multivalued: true
   qo_numericalParams:
     name: qo_numericalParams
-    description: Unit and Precision limiting the quantitative answer for the question.
+    description: Specifies measurement units and decimal precision constraints governing
+      acceptable quantitative input.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:numericalParams
@@ -323,8 +326,8 @@ attributes:
     multivalued: false
   qo_codingParams:
     name: qo_codingParams
-    description: Code and Display of each option offered as answer to the choice or
-      open-choice question.
+    description: Defines the permissible standardized concept codes and human-readable
+      labels available for selection.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:codingParams
@@ -335,8 +338,8 @@ attributes:
     multivalued: true
   qo_codingOrdinal:
     name: qo_codingOrdinal
-    description: Indicates if the choices in a choice or open-choice question are
-      ordered (true) or unordered (false, categorical).
+    description: Specifies whether permissible selection options possess a meaningful
+      inherent ranking (true) or represent nominal categories (false).
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:codingOrdinal
@@ -346,8 +349,8 @@ attributes:
     range: boolean
   qo_intervalParams:
     name: qo_intervalParams
-    description: Minimum and Maximum limiting the range the answer must be in for
-      the question.
+    description: Defines lower and upper boundary limits bounding acceptable numeric
+      values.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:intervalParams
@@ -408,7 +411,8 @@ rules:
 <details>
 ```yaml
 name: qo_Question
-description: A question.
+description: An individual inquiry item within an instrument that specifies an information
+  requirement and constrains the acceptable response format.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:Questionnaire.item.where(type='question')
@@ -427,7 +431,8 @@ slot_usage:
 attributes:
   qo_tag:
     name: qo_tag
-    description: Internal English identifier, e.g., 'q_pain_level'.
+    description: A machine-readable alphanumeric code or mnemonic string used for
+      internal reference and translation lookup.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:tag
@@ -440,7 +445,8 @@ attributes:
     multivalued: true
   qo_numericalParams:
     name: qo_numericalParams
-    description: Unit and Precision limiting the quantitative answer for the question.
+    description: Specifies measurement units and decimal precision constraints governing
+      acceptable quantitative input.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:numericalParams
@@ -453,8 +459,8 @@ attributes:
     multivalued: false
   qo_codingParams:
     name: qo_codingParams
-    description: Code and Display of each option offered as answer to the choice or
-      open-choice question.
+    description: Defines the permissible standardized concept codes and human-readable
+      labels available for selection.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:codingParams
@@ -467,8 +473,8 @@ attributes:
     multivalued: true
   qo_codingOrdinal:
     name: qo_codingOrdinal
-    description: Indicates if the choices in a choice or open-choice question are
-      ordered (true) or unordered (false, categorical).
+    description: Specifies whether permissible selection options possess a meaningful
+      inherent ranking (true) or represent nominal categories (false).
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:codingOrdinal
@@ -480,8 +486,8 @@ attributes:
     range: boolean
   qo_intervalParams:
     name: qo_intervalParams
-    description: Minimum and Maximum limiting the range the answer must be in for
-      the question.
+    description: Defines lower and upper boundary limits bounding acceptable numeric
+      values.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:intervalParams
@@ -494,8 +500,8 @@ attributes:
     multivalued: false
   qo_multivalued:
     name: qo_multivalued
-    description: Indicates whether this question allows multiple answers (true) or
-      it's single answer (false).
+    description: Indicates whether this question allows more than one answer (true)
+      or only one (false).
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:multivalued
@@ -554,7 +560,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_Question
@@ -571,7 +576,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_Question
@@ -589,7 +593,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_Question
@@ -607,7 +610,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_Question
@@ -625,7 +627,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_Question
@@ -643,7 +644,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_Question
@@ -661,7 +661,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_Question
@@ -680,7 +679,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_Question

@@ -3,7 +3,7 @@
 # Slot: qo_codingOrdinal 
 
 
-_Indicates if the choices in a choice or open-choice question are ordered (true) or unordered (false, categorical)._
+_Specifies whether permissible selection options possess a meaningful inherent ranking (true) or represent nominal categories (false)._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_codingOrdinal
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
 
 
 
@@ -69,8 +69,8 @@ Alias: qo_codingOrdinal
 <details>
 ```yaml
 name: qo_codingOrdinal
-description: Indicates if the choices in a choice or open-choice question are ordered
-  (true) or unordered (false, categorical).
+description: Specifies whether permissible selection options possess a meaningful
+  inherent ranking (true) or represent nominal categories (false).
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:codingOrdinal

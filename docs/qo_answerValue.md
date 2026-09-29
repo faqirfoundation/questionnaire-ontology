@@ -3,7 +3,7 @@
 # Slot: qo_answerValue 
 
 
-_The value of the answer to: a decimal or numberInterval type of question, which is a numeric value; a choice, openChoice or text type of question, which is a stringValue; dateTime type of question, which is a datetime value._
+_The recorded literal payload (numeric scalar, textual/coded string, or timestamp) representing the output of a specific inquiry execution._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_answerValue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoAnswer](QoAnswer.md) | Answer in the questionnaire response |  no  |
+| [QoAnswer](QoAnswer.md) | A recorded value, or selection provided in response to a specific inquiry ite... |  no  |
 
 
 
@@ -70,9 +70,8 @@ Alias: qo_answerValue
 <details>
 ```yaml
 name: qo_answerValue
-description: 'The value of the answer to: a decimal or numberInterval type of question,
-  which is a numeric value; a choice, openChoice or text type of question, which is
-  a stringValue; dateTime type of question, which is a datetime value.'
+description: The recorded literal payload (numeric scalar, textual/coded string, or
+  timestamp) representing the output of a specific inquiry execution.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:QuestionnaireResponse.item.answer

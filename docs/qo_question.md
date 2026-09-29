@@ -3,7 +3,7 @@
 # Slot: qo_question 
 
 
-_Question indexed in this OrderedQuestion._
+_Identifies the specific inquiry item referenced at a given positional index._
 
 
 
@@ -27,7 +27,7 @@ Alias: qo_question
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  no  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
 
 
 
@@ -78,7 +78,8 @@ Alias: qo_question
 <details>
 ```yaml
 name: qo_question
-description: Question indexed in this OrderedQuestion.
+description: Identifies the specific inquiry item referenced at a given positional
+  index.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 is_a: dcterms_hasPart

@@ -3,7 +3,7 @@
 # Slot: qo_responds 
 
 
-_The Questionnaire that this QuestionnaireResponse is for._
+_Links a record instance back to the underlying survey template it answers._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_responds
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A response to a questionnaire (collection of answers) |  no  |
+| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A completed or partially completed instance containing recorded values collec... |  no  |
 
 
 
@@ -62,7 +62,7 @@ Alias: qo_responds
 | ---  | ---  |
 | self | qo:responds |
 | native | qo:qo_responds |
-| narrow | fhir:questionnaireResponse.questionnaire |
+| narrow | fhir:QuestionnaireResponse.questionnaire |
 
 
 
@@ -72,10 +72,10 @@ Alias: qo_responds
 <details>
 ```yaml
 name: qo_responds
-description: The Questionnaire that this QuestionnaireResponse is for.
+description: Links a record instance back to the underlying survey template it answers.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
-- fhir:questionnaireResponse.questionnaire
+- fhir:QuestionnaireResponse.questionnaire
 rank: 1000
 domain: qo_QuestionnaireResponse
 slot_uri: qo:responds

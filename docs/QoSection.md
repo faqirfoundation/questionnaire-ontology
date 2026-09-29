@@ -3,7 +3,7 @@
 # Class: QoSection 
 
 
-_A section of questions in the questionnaire._
+_A logical grouping or thematic partition of items within a structured survey instrument._
 
 
 
@@ -176,8 +176,8 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_hasOrderedQuestion](qo_hasOrderedQuestion.md) | * <br/> [QoOrderedQuestion](QoOrderedQuestion.md) | The Question that is part of this Questionnaire or Section, with their displa... | direct |
-| [qo_hasOrderedSection](qo_hasOrderedSection.md) | * <br/> [QoOrderedSection](QoOrderedSection.md) | The Section that is part of this Questionnaire or Section, with their display... | direct |
+| [qo_hasOrderedQuestion](qo_hasOrderedQuestion.md) | * <br/> [QoOrderedQuestion](QoOrderedQuestion.md) | Associates a survey container or group with a sequence-indexed wrapper holdin... | direct |
+| [qo_hasOrderedSection](qo_hasOrderedSection.md) | * <br/> [QoOrderedSection](QoOrderedSection.md) | Associates a survey container or group with a sequence-indexed wrapper holdin... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -251,7 +251,8 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 <details>
 ```yaml
 name: qo_Section
-description: A section of questions in the questionnaire.
+description: A logical grouping or thematic partition of items within a structured
+  survey instrument.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:Questionnaire.item.where(type='group')
@@ -282,7 +283,8 @@ class_uri: qo:Section
 <details>
 ```yaml
 name: qo_Section
-description: A section of questions in the questionnaire.
+description: A logical grouping or thematic partition of items within a structured
+  survey instrument.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:Questionnaire.item.where(type='group')
@@ -303,8 +305,8 @@ slot_usage:
 attributes:
   qo_hasOrderedQuestion:
     name: qo_hasOrderedQuestion
-    description: The Question that is part of this Questionnaire or Section, with
-      their display order.
+    description: Associates a survey container or group with a sequence-indexed wrapper
+      holding an individual inquiry item.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
     - fhir:Questionnaire.item.where(type='question')
@@ -324,8 +326,8 @@ attributes:
     inlined_as_list: true
   qo_hasOrderedSection:
     name: qo_hasOrderedSection
-    description: The Section that is part of this Questionnaire or Section, with their
-      display order.
+    description: Associates a survey container or group with a sequence-indexed wrapper
+      holding a nested thematic subgroup.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
     - fhir:Questionnaire.item.where(type='group')
@@ -392,7 +394,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_Section
@@ -409,7 +410,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_Section
@@ -427,7 +427,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_Section
@@ -445,7 +444,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_Section
@@ -463,7 +461,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_Section
@@ -483,7 +480,6 @@ attributes:
     mappings:
     - fhir:Questionnaire.author
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_Section
@@ -501,7 +497,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_Section
@@ -520,7 +515,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_Section

@@ -153,7 +153,7 @@ attributes:
     range: uriorcurie
     required: false
     multivalued: false
-    pattern: ^ucum
+    pattern: '^ucum:'
 class_uri: time:Duration
 
 ```

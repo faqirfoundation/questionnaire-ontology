@@ -3,7 +3,7 @@
 # Class: QoAnswer 
 
 
-_Answer in the questionnaire response._
+_A recorded value, or selection provided in response to a specific inquiry item._
 
 
 
@@ -169,9 +169,9 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_toQuestion](qo_toQuestion.md) | 1 <br/> [QoQuestion](QoQuestion.md) | The Question that this Answer is for | direct |
-| [qo_answerValue](qo_answerValue.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Float](Float.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[Datetime](Datetime.md) | The value of the answer to: a decimal or numberInterval type of question, whi... | direct |
-| [qo_isEmpty](qo_isEmpty.md) | 0..1 <br/> [Boolean](Boolean.md) | True if the answer is intentionally left empty | direct |
+| [qo_toQuestion](qo_toQuestion.md) | 1 <br/> [QoQuestion](QoQuestion.md) | Links a recorded response value back to its originating inquiry item definiti... | direct |
+| [qo_answerValue](qo_answerValue.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Float](Float.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[Datetime](Datetime.md) | The recorded literal payload (numeric scalar, textual/coded string, or timest... | direct |
+| [qo_isEmpty](qo_isEmpty.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies an explicit assertion that an item was purposefully omitted or unpo... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -244,7 +244,8 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
 <details>
 ```yaml
 name: qo_Answer
-description: Answer in the questionnaire response.
+description: A recorded value, or selection provided in response to a specific inquiry
+  item.
 from_schema: https://ns.faqir.org/q-o
 mappings:
 - fhir:QuestionnaireResponse.item.answer
@@ -259,9 +260,8 @@ slot_usage:
 attributes:
   qo_answerValue:
     name: qo_answerValue
-    description: 'The value of the answer to: a decimal or numberInterval type of
-      question, which is a numeric value; a choice, openChoice or text type of question,
-      which is a stringValue; dateTime type of question, which is a datetime value.'
+    description: The recorded literal payload (numeric scalar, textual/coded string,
+      or timestamp) representing the output of a specific inquiry execution.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
     - fhir:QuestionnaireResponse.item.answer
@@ -277,7 +277,8 @@ attributes:
     - range: datetime
   qo_isEmpty:
     name: qo_isEmpty
-    description: True if the answer is intentionally left empty.
+    description: Specifies an explicit assertion that an item was purposefully omitted
+      or unpopulated by the respondent rather than skipped due to systemic error.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:isEmpty
@@ -295,7 +296,8 @@ class_uri: qo:Answer
 <details>
 ```yaml
 name: qo_Answer
-description: Answer in the questionnaire response.
+description: A recorded value, or selection provided in response to a specific inquiry
+  item.
 from_schema: https://ns.faqir.org/q-o
 mappings:
 - fhir:QuestionnaireResponse.item.answer
@@ -308,9 +310,8 @@ slot_usage:
 attributes:
   qo_answerValue:
     name: qo_answerValue
-    description: 'The value of the answer to: a decimal or numberInterval type of
-      question, which is a numeric value; a choice, openChoice or text type of question,
-      which is a stringValue; dateTime type of question, which is a datetime value.'
+    description: The recorded literal payload (numeric scalar, textual/coded string,
+      or timestamp) representing the output of a specific inquiry execution.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
     - fhir:QuestionnaireResponse.item.answer
@@ -329,7 +330,8 @@ attributes:
     - range: datetime
   qo_isEmpty:
     name: qo_isEmpty
-    description: True if the answer is intentionally left empty.
+    description: Specifies an explicit assertion that an item was purposefully omitted
+      or unpopulated by the respondent rather than skipped due to systemic error.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     slot_uri: qo:isEmpty
@@ -341,7 +343,8 @@ attributes:
     range: boolean
   qo_toQuestion:
     name: qo_toQuestion
-    description: The Question that this Answer is for.
+    description: Links a recorded response value back to its originating inquiry item
+      definition.
     from_schema: https://ns.faqir.org/q-o
     narrow_mappings:
     - fhir:QuestionnaireResponse.item.answer.question
@@ -404,7 +407,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: qo_Answer
@@ -421,7 +423,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: qo_Answer
@@ -439,7 +440,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: qo_Answer
@@ -457,7 +457,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: qo_Answer
@@ -475,7 +474,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: qo_Answer
@@ -493,7 +491,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: qo_Answer
@@ -511,7 +508,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: qo_Answer
@@ -530,7 +526,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: qo_Answer

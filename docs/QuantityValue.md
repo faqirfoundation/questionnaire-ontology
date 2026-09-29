@@ -9,7 +9,7 @@ _A measured amount (or an amount that can potentially be measured)._
 
 
 
-URI: [fhir:datatypes.Quantity](http://hl7.org/fhir/datatypes.Quantity)
+URI: [fhir:Quantity](http://hl7.org/fhir/Quantity)
 
 
 
@@ -79,7 +79,7 @@ URI: [fhir:datatypes.Quantity](http://hl7.org/fhir/datatypes.Quantity)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | fhir:datatypes.Quantity |
+| self | fhir:Quantity |
 | native | qo:QuantityValue |
 
 
@@ -102,7 +102,7 @@ from_schema: https://ns.faqir.org/q-o
 slots:
 - saref_isMeasuredIn
 - saref_hasValue
-class_uri: fhir:datatypes.Quantity
+class_uri: fhir:Quantity
 
 ```
 </details>
@@ -130,7 +130,7 @@ attributes:
     range: uriorcurie
     required: false
     multivalued: false
-    pattern: ^ucum
+    pattern: '^ucum:'
   saref_hasValue:
     name: saref_hasValue
     description: Value of a property value expressed as an RDF literal. Note that,
@@ -156,7 +156,7 @@ attributes:
     - range: datetime
     - range: uriorcurie
     - range: string
-class_uri: fhir:datatypes.Quantity
+class_uri: fhir:Quantity
 
 ```
 </details>

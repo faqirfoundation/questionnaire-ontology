@@ -3,7 +3,7 @@
 # Slot: qo_hasOrderedSection 
 
 
-_The Section that is part of this Questionnaire or Section, with their display order._
+_Associates a survey container or group with a sequence-indexed wrapper holding a nested thematic subgroup._
 
 
 
@@ -27,8 +27,8 @@ Alias: qo_hasOrderedSection
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestionnaire](QoQuestionnaire.md) | A questionnaire that can be answered (collection of questions) |  yes  |
-| [QoSection](QoSection.md) | A section of questions in the questionnaire |  yes  |
+| [QoQuestionnaire](QoQuestionnaire.md) | A structured, reusable instrument or template composed of ordered items desig... |  yes  |
+| [QoSection](QoSection.md) | A logical grouping or thematic partition of items within a structured survey ... |  yes  |
 
 
 
@@ -78,14 +78,13 @@ Alias: qo_hasOrderedSection
 <details>
 ```yaml
 name: qo_hasOrderedSection
-description: The Section that is part of this Questionnaire or Section, with their
-  display order.
+description: Associates a survey container or group with a sequence-indexed wrapper
+  holding a nested thematic subgroup.
 from_schema: https://ns.faqir.org/q-o
 narrow_mappings:
 - fhir:Questionnaire.item.where(type='group')
 rank: 1000
 is_a: dcterms_hasPart
-domain: owl_Thing
 slot_uri: qo:hasOrderedSection
 alias: qo_hasOrderedSection
 domain_of:

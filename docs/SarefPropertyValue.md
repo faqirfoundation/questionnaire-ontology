@@ -78,7 +78,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
     
 
         
-      SarefPropertyValue : fhir_valueAttachement
+      SarefPropertyValue : fhir_valueAttachment
         
       SarefPropertyValue : fhir_valueCodeableConcept
         
@@ -234,7 +234,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 | [fhir_valueRange](fhir_valueRange.md) | 0..1 <br/> [FhirReferenceRange](FhirReferenceRange.md) | A set of ordered Quantity values defined by a low and high limit | direct |
 | [fhir_valueRatio](fhir_valueRatio.md) | 0..1 <br/> [FhirValueRatio](FhirValueRatio.md) | A relationship between two Quantity values expressed as a numerator and a den... | direct |
 | [fhir_valuePeriod](fhir_valuePeriod.md) | 0..1 <br/> [TimeInterval](TimeInterval.md) | A time period defined by a start and end date/time | direct |
-| [fhir_valueAttachement](fhir_valueAttachement.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | This type is for containing or referencing attachments - additional data cont... | direct |
+| [fhir_valueAttachment](fhir_valueAttachment.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | This type is for containing or referencing attachments - additional data cont... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -411,15 +411,15 @@ attributes:
     range: time_Interval
     required: false
     multivalued: false
-  fhir_valueAttachement:
-    name: fhir_valueAttachement
+  fhir_valueAttachment:
+    name: fhir_valueAttachment
     description: This type is for containing or referencing attachments - additional
       data content defined in other formats. The most common use of this type is to
       include images or reports in some report format such as PDF. However, it can
       be used for any data that has a MIME type.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    slot_uri: fhir:valueAttachement
+    slot_uri: fhir:valueAttachment
     domain_of:
     - saref_PropertyValue
     range: uriorcurie
@@ -507,16 +507,16 @@ attributes:
     range: time_Interval
     required: false
     multivalued: false
-  fhir_valueAttachement:
-    name: fhir_valueAttachement
+  fhir_valueAttachment:
+    name: fhir_valueAttachment
     description: This type is for containing or referencing attachments - additional
       data content defined in other formats. The most common use of this type is to
       include images or reports in some report format such as PDF. However, it can
       be used for any data that has a MIME type.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    slot_uri: fhir:valueAttachement
-    alias: fhir_valueAttachement
+    slot_uri: fhir:valueAttachment
+    alias: fhir_valueAttachment
     owner: saref_PropertyValue
     domain_of:
     - saref_PropertyValue
@@ -645,7 +645,6 @@ attributes:
     narrow_mappings:
     - schema:procedureType
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:type
     alias: prov_type
     owner: saref_PropertyValue
@@ -662,7 +661,6 @@ attributes:
       in the described resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:hasPart
     alias: dcterms_hasPart
     owner: saref_PropertyValue
@@ -680,7 +678,6 @@ attributes:
       or logically included.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:isPartOf
     alias: dcterms_isPartOf
     owner: saref_PropertyValue
@@ -698,7 +695,6 @@ attributes:
       for use.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: prov:generatedAtTime
     alias: prov_generatedAtTime
     owner: saref_PropertyValue
@@ -716,7 +712,6 @@ attributes:
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
     is_a: saref_hasPropertyValue
-    domain: owl_Thing
     slot_uri: fhir:resource-status
     alias: fhir_status
     owner: saref_PropertyValue
@@ -734,7 +729,6 @@ attributes:
     description: An entity responsible for making the resource.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: dcterms:creator
     alias: dcterms_creator
     owner: saref_PropertyValue
@@ -752,7 +746,6 @@ attributes:
     mappings:
     - ssn:hasProperty
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasProperty
     alias: saref_hasProperty
     owner: saref_PropertyValue
@@ -771,7 +764,6 @@ attributes:
       to a property value.
     from_schema: https://ns.faqir.org/q-o
     rank: 1000
-    domain: owl_Thing
     slot_uri: saref:hasPropertyValue
     alias: saref_hasPropertyValue
     owner: saref_PropertyValue

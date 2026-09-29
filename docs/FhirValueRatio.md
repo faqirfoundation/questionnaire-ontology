@@ -9,7 +9,7 @@ _A ratio of two Quantity values - a numerator and a denominator_
 
 
 
-URI: [fhir:datatype.Ratio](http://hl7.org/fhir/datatype.Ratio)
+URI: [fhir:Ratio](http://hl7.org/fhir/Ratio)
 
 
 
@@ -95,7 +95,7 @@ URI: [fhir:datatype.Ratio](http://hl7.org/fhir/datatype.Ratio)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | fhir:datatype.Ratio |
+| self | fhir:Ratio |
 | native | qo:FhirValueRatio |
 
 
@@ -136,7 +136,7 @@ attributes:
     range: QuantityValue
     required: true
     multivalued: false
-class_uri: fhir:datatype.Ratio
+class_uri: fhir:Ratio
 
 ```
 </details>
@@ -173,7 +173,7 @@ attributes:
     range: QuantityValue
     required: true
     multivalued: false
-class_uri: fhir:datatype.Ratio
+class_uri: fhir:Ratio
 
 ```
 </details>

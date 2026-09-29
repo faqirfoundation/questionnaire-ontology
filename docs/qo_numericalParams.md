@@ -3,7 +3,7 @@
 # Slot: qo_numericalParams 
 
 
-_Unit and Precision limiting the quantitative answer for the question._
+_Specifies measurement units and decimal precision constraints governing acceptable quantitative input._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_numericalParams
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestion](QoQuestion.md) | A question |  no  |
+| [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
 
 
 
@@ -69,7 +69,8 @@ Alias: qo_numericalParams
 <details>
 ```yaml
 name: qo_numericalParams
-description: Unit and Precision limiting the quantitative answer for the question.
+description: Specifies measurement units and decimal precision constraints governing
+  acceptable quantitative input.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:numericalParams

@@ -3,7 +3,7 @@
 # Slot: qo_conditionalValidity 
 
 
-_a condition (expressed in a machine-readable rule language) that would invalidate the answer earlier than the temporal duration, e.g., 'a documented smoking cessation intervention' invalidates the answer to 'Do you smoke?''._
+_A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration._
 
 
 
@@ -22,7 +22,7 @@ Alias: qo_conditionalValidity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | Question's position within a specific questionnaire or section |  no  |
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
 
 
 
@@ -71,9 +71,9 @@ Alias: qo_conditionalValidity
 <details>
 ```yaml
 name: qo_conditionalValidity
-description: a condition (expressed in a machine-readable rule language) that would
-  invalidate the answer earlier than the temporal duration, e.g., 'a documented smoking
-  cessation intervention' invalidates the answer to 'Do you smoke?''.
+description: A machine-readable rule statement defining an intervening event or state
+  change that revokes the validity of a recorded observation prior to its natural
+  temporal expiration.
 from_schema: https://ns.faqir.org/q-o
 rank: 1000
 slot_uri: qo:conditionalValidity
