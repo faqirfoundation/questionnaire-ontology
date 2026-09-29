@@ -69,7 +69,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
       FhirProcedure : owl_versionInfo
         
-      FhirProcedure : prov_generatedAtTime
+      FhirProcedure : prov_endedAtTime
         
       FhirProcedure : prov_hadPrimarySource
         
@@ -81,6 +81,8 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         click ProvEntity href "../ProvEntity"
     
 
+        
+      FhirProcedure : prov_startedAtTime
         
       FhirProcedure : prov_type
         
@@ -142,11 +144,12 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
 | [prov_type](prov_type.md) | * <br/> [Uriorcurie](Uriorcurie.md) | The attribute prov:type provides further typing information for any construct... | [SuloProcess](SuloProcess.md) |
 | [dcterms_hasPart](dcterms_hasPart.md) | * <br/> [OwlThing](OwlThing.md) | A related resource that is included either physically or logically in the des... | [SuloProcess](SuloProcess.md) |
 | [dcterms_isPartOf](dcterms_isPartOf.md) | * <br/> [OwlThing](OwlThing.md) | A related resource in which the described resource is physically or logically... | [SuloProcess](SuloProcess.md) |
-| [prov_generatedAtTime](prov_generatedAtTime.md) | * <br/> [Datetime](Datetime.md) | The time at which an entity was completely created and is available for use | [SuloProcess](SuloProcess.md) |
 | [fhir_status](fhir_status.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | A code specifying the state of the observation/procedure/questionnaire | [SuloProcess](SuloProcess.md) |
 | [dcterms_creator](dcterms_creator.md) | * <br/> [FoafAgent](FoafAgent.md) | An entity responsible for making the resource | [SuloProcess](SuloProcess.md) |
 | [saref_hasProperty](saref_hasProperty.md) | * <br/> [SarefProperty](SarefProperty.md) | Links a feature kind or a feature of interest to one of its properties | [SuloProcess](SuloProcess.md) |
 | [saref_hasPropertyValue](saref_hasPropertyValue.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | Links a feature kind, a feature of interest, or a property of interest, to a ... | [SuloProcess](SuloProcess.md) |
+| [prov_startedAtTime](prov_startedAtTime.md) | 0..1 <br/> [Datetime](Datetime.md) | The time at which an activity started | [SuloProcess](SuloProcess.md) |
+| [prov_endedAtTime](prov_endedAtTime.md) | 0..1 <br/> [Datetime](Datetime.md) | The time at which an activity ended | [SuloProcess](SuloProcess.md) |
 | [owl_versionInfo](owl_versionInfo.md) | 0..1 <br/> [String](String.md) | An owl:versionInfo statement generally has as its object a string giving info... | [OwlThing](OwlThing.md) |
 | [rdfs_label](rdfs_label.md) | 1..* <br/> [String](String.md) | human-readable version of a resource's name | [OwlThing](OwlThing.md) |
 | [rdfs_comment](rdfs_comment.md) | 1..* <br/> [String](String.md) | A textual comment helps clarify the meaning of RDF classes and properties | [OwlThing](OwlThing.md) |
@@ -271,22 +274,6 @@ attributes:
     range: owl_Thing
     required: false
     multivalued: true
-  prov_generatedAtTime:
-    name: prov_generatedAtTime
-    description: The time at which an entity was completely created and is available
-      for use.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: prov:generatedAtTime
-    alias: prov_generatedAtTime
-    owner: fhir_Procedure
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: datetime
-    required: false
-    multivalued: true
   fhir_status:
     name: fhir_status
     description: A code specifying the state of the observation/procedure/questionnaire...
@@ -358,6 +345,36 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  prov_startedAtTime:
+    name: prov_startedAtTime
+    description: The time at which an activity started.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: sulo_Process
+    slot_uri: prov:startedAtTime
+    alias: prov_startedAtTime
+    owner: fhir_Procedure
+    domain_of:
+    - sulo_Process
+    - time_Interval
+    range: datetime
+    required: false
+    multivalued: false
+  prov_endedAtTime:
+    name: prov_endedAtTime
+    description: The time at which an activity ended.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: sulo_Process
+    slot_uri: prov:endedAtTime
+    alias: prov_endedAtTime
+    owner: fhir_Procedure
+    domain_of:
+    - sulo_Process
+    - time_Interval
+    range: datetime
+    required: false
+    multivalued: false
   owl_versionInfo:
     name: owl_versionInfo
     description: An owl:versionInfo statement generally has as its object a string

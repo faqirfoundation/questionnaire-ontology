@@ -1,5 +1,5 @@
 # Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-29T13:57:40
+# Generation date: 2026-09-29T17:34:30
 # Schema: Questionnaire-Ontology
 #
 # id: https://ns.faqir.org/q-o
@@ -367,11 +367,12 @@ class SuloProcess(OwlThing):
     prov_type: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     dcterms_hasPart: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
     dcterms_isPartOf: Optional[Union[Union[dict, OwlThing], list[Union[dict, OwlThing]]]] = empty_list()
-    prov_generatedAtTime: Optional[Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]]] = empty_list()
     fhir_status: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
     dcterms_creator: Optional[Union[Union[dict, FoafAgent], list[Union[dict, FoafAgent]]]] = empty_list()
     saref_hasProperty: Optional[Union[Union[dict, "SarefProperty"], list[Union[dict, "SarefProperty"]]]] = empty_list()
     saref_hasPropertyValue: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
+    prov_startedAtTime: Optional[Union[str, XSDDateTime]] = None
+    prov_endedAtTime: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.prov_type, list):
@@ -385,10 +386,6 @@ class SuloProcess(OwlThing):
         if not isinstance(self.dcterms_isPartOf, list):
             self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
         self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
-
-        if not isinstance(self.prov_generatedAtTime, list):
-            self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
-        self.prov_generatedAtTime = [v if isinstance(v, XSDDateTime) else XSDDateTime(v) for v in self.prov_generatedAtTime]
 
         if not isinstance(self.fhir_status, list):
             self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
@@ -405,6 +402,12 @@ class SuloProcess(OwlThing):
         if not isinstance(self.saref_hasPropertyValue, list):
             self.saref_hasPropertyValue = [self.saref_hasPropertyValue] if self.saref_hasPropertyValue is not None else []
         self.saref_hasPropertyValue = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.saref_hasPropertyValue]
+
+        if self.prov_startedAtTime is not None and not isinstance(self.prov_startedAtTime, XSDDateTime):
+            self.prov_startedAtTime = XSDDateTime(self.prov_startedAtTime)
+
+        if self.prov_endedAtTime is not None and not isinstance(self.prov_endedAtTime, XSDDateTime):
+            self.prov_endedAtTime = XSDDateTime(self.prov_endedAtTime)
 
         super().__post_init__(**kwargs)
 
@@ -987,10 +990,10 @@ class QoOrderedQuestion(ProvEntity):
     rdfs_comment: Union[str, list[str]] = None
     qo_question: Union[dict, "QoQuestion"] = None
     qo_temporalValidity: Union[dict, TimeDuration] = None
-    qo_conditionalValidity: str = None
     qo_order: int = None
     qo_required: Union[bool, Bool] = None
     qo_hardValidity: Optional[Union[bool, Bool]] = False
+    qo_conditionalValidity: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.qo_question):
@@ -1002,11 +1005,6 @@ class QoOrderedQuestion(ProvEntity):
             self.MissingRequiredField("qo_temporalValidity")
         if not isinstance(self.qo_temporalValidity, TimeDuration):
             self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
-
-        if self._is_empty(self.qo_conditionalValidity):
-            self.MissingRequiredField("qo_conditionalValidity")
-        if not isinstance(self.qo_conditionalValidity, str):
-            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
         if self._is_empty(self.qo_order):
             self.MissingRequiredField("qo_order")
@@ -1020,6 +1018,9 @@ class QoOrderedQuestion(ProvEntity):
 
         if self.qo_hardValidity is not None and not isinstance(self.qo_hardValidity, Bool):
             self.qo_hardValidity = Bool(self.qo_hardValidity)
+
+        if self.qo_conditionalValidity is not None and not isinstance(self.qo_conditionalValidity, str):
+            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
         super().__post_init__(**kwargs)
 
@@ -1414,7 +1415,7 @@ slots.qo_temporalValidity = Slot(uri=QO.temporalValidity, name="qo_temporalValid
                    model_uri=QO.qo_temporalValidity, domain=None, range=Union[dict, TimeDuration])
 
 slots.qo_conditionalValidity = Slot(uri=QO.conditionalValidity, name="qo_conditionalValidity", curie=QO.curie('conditionalValidity'),
-                   model_uri=QO.qo_conditionalValidity, domain=None, range=str)
+                   model_uri=QO.qo_conditionalValidity, domain=None, range=Optional[str])
 
 slots.qo_question = Slot(uri=QO.question, name="qo_question", curie=QO.curie('question'),
                    model_uri=QO.qo_question, domain=QoOrderedQuestion, range=Union[dict, "QoQuestion"])

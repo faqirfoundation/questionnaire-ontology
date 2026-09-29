@@ -34,8 +34,6 @@ Alias: qo_conditionalValidity
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -81,7 +79,7 @@ alias: qo_conditionalValidity
 domain_of:
 - qo_OrderedQuestion
 range: string
-required: true
+required: false
 
 ```
 </details>

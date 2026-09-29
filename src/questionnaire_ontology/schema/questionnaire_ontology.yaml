@@ -230,11 +230,12 @@ classes:
       - prov_type
       - dcterms_hasPart
       - dcterms_isPartOf 
-      - prov_generatedAtTime
       - fhir_status
       - dcterms_creator
       - saref_hasProperty
       - saref_hasPropertyValue
+      - prov_startedAtTime
+      - prov_endedAtTime
 
   s4ehaw_Activity:
       description: "The activity of a patient/user, i.e. daily and nocturnal activities."
@@ -1006,7 +1007,7 @@ slots:
   qo_conditionalValidity:
     description: "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration."
     range: string
-    required: true
+    required: false
     slot_uri: qo:conditionalValidity
 
   qo_question:

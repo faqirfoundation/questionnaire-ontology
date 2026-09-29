@@ -700,7 +700,6 @@ attributes:
     owner: saref_PropertyValue
     domain_of:
     - foaf_Agent
-    - sulo_Process
     - prov_Entity
     range: datetime
     required: false

@@ -187,7 +187,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 | [qo_question](qo_question.md) | 1..* <br/> [QoQuestion](QoQuestion.md) | Identifies the specific inquiry item referenced at a given positional index | direct |
 | [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies the operational enforcement mechanism of a duration limit; when tru... | direct |
 | [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | Defines the time extent following generation during which a recorded answer r... | direct |
-| [qo_conditionalValidity](qo_conditionalValidity.md) | 1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
+| [qo_conditionalValidity](qo_conditionalValidity.md) | 0..1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
 | [qo_order](qo_order.md) | 1 <br/> [Integer](Integer.md) | Question position in the questionnaire or section (1-based index) | direct |
 | [qo_required](qo_required.md) | 1 <br/> [Boolean](Boolean.md) | Whether the question can be left un-answered (false) or an answer is mandator... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
@@ -388,7 +388,7 @@ attributes:
     domain_of:
     - qo_OrderedQuestion
     range: string
-    required: true
+    required: false
   qo_order:
     name: qo_order
     description: Question position in the questionnaire or section (1-based index).
@@ -507,7 +507,6 @@ attributes:
     owner: qo_OrderedQuestion
     domain_of:
     - foaf_Agent
-    - sulo_Process
     - prov_Entity
     range: datetime
     required: false

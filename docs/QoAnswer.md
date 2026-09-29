@@ -462,7 +462,6 @@ attributes:
     owner: qo_Answer
     domain_of:
     - foaf_Agent
-    - sulo_Process
     - prov_Entity
     range: datetime
     required: true

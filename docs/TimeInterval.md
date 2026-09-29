@@ -123,6 +123,7 @@ attributes:
     alias: prov_startedAtTime
     owner: time_Interval
     domain_of:
+    - sulo_Process
     - time_Interval
     range: datetime
     required: false
@@ -137,6 +138,7 @@ attributes:
     alias: prov_endedAtTime
     owner: time_Interval
     domain_of:
+    - sulo_Process
     - time_Interval
     range: datetime
     required: false
