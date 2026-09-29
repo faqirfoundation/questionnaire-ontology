@@ -1,0 +1,115 @@
+classDiagram
+direction TB
+    class owl_Thing {
+      owl:versionInfo
+      rdfs:label
+      rdfs:comment
+      prov:hadPrimarySource
+      prov:wasGeneratedBy
+    }
+
+    class foaf_Agent {
+      prov:type
+      dcterms:hasPart
+      dcterms:isPartOf 
+      prov:generatedAtTime
+      fhir:status
+      dcterms:creator
+      saref:hasProperty
+      saref:hasPropertyValue
+    }
+    foaf_Agent --|> owl_Thing : "rdfs_subClassOf"
+
+    class foaf_Person {
+    }
+    foaf_Person --|> foaf_Agent : "rdfs_subClassOf"
+
+    class prov_Organization {
+    }
+    prov_Organization --|> foaf_Agent : "rdfs_subClassOf"
+
+    class sulo_Process {
+      prov:type
+      dcterms:hasPart
+      dcterms:isPartOf 
+      fhir:status
+      dcterms:creator
+      saref:hasProperty
+      saref:hasPropertyValue
+      prov:startedAtTime
+      prov:endedAtTime
+    }
+    sulo_Process --|> owl_Thing : "rdfs_subClassOf"
+
+    class prov_Entity {
+        dcterms:created
+        dcterms:modified
+        prov:type
+        dcterms:hasPart
+        dcterms:isPartOf 
+        prov:generatedAtTime
+        saref:hasProperty
+        saref:hasPropertyValue
+    }
+    prov_Entity --|> owl_Thing : "rdfs_subClassOf"
+    prov_Entity --> saref_PropertyValue : "fhir_status"
+    prov_Entity --> foaf_Agent : "prov_wasAttributedTo"
+    prov_Entity --> foaf_Agent : "dcterms_creator"
+
+    class saref_PropertyValue {
+        prov:atTime
+        saref:hasValue
+        saref:isValueOfProperty
+    }
+    saref_PropertyValue --|> prov_Entity : "rdfs_subClassOf"
+
+    class qo_Questionnaire {
+    }
+    qo_Questionnaire --|> prov_Entity : "rdfs_subClassOf"
+    qo_Questionnaire --> qo_OrderedQuestion : "qo_hasOrderedQuestion" 
+    qo_Questionnaire --> qo_OrderedSection : "qo_hasOrderedSection"
+
+    class qo_OrderedSection {
+        qo:order int
+    }
+    qo_OrderedSection --|> prov_Entity : "rdfs_subClassOf"
+    qo_OrderedSection --> qo_Section : "qo_section"
+
+    class qo_Section {
+    }
+    qo_Section --|> prov_Entity : "rdfs_subClassOf"
+    qo_Section --> qo_OrderedQuestion : "qo_hasOrderedQuestion" 
+    qo_Section --> qo_OrderedSection : "qo_hasOrderedSection"
+
+    class qo_OrderedQuestion {
+        qo:order int
+        qo:required bool
+        qo:hardValidity bool
+        qo:temporalValidity duration
+        qo:conditionalValidity string
+    }
+    qo_OrderedQuestion --|> prov_Entity : "rdfs_subClassOf"
+    qo_OrderedQuestion --> qo_Question : "qo_question"
+
+    class qo_Question {
+        qo:tag
+        qo:multivalued
+        qo:numericalParams
+        qo:codingParams
+        qo:codingOrdinal
+        qo:intervalParams
+    }
+    qo_Question --|> prov_Entity : "rdfs_subClassOf"
+
+    class qo_QuestionnaireResponse {
+    }
+    qo_QuestionnaireResponse --|> prov_Entity : "rdfs_subClassOf"
+    qo_QuestionnaireResponse --> qo_Questionnaire : "qo_responds"
+    qo_QuestionnaireResponse --> qo_Answer : "qo_hasAnswer"
+
+    class qo_Answer {
+        qo:answerValue
+        qo:isEmpty
+    }
+    qo_Answer --|> prov_Entity : "rdfs_subClassOf"
+    qo_Answer --> qo_Question : "qo_toQuestion"

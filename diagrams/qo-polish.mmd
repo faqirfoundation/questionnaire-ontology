@@ -1,0 +1,85 @@
+classDiagram
+direction TB
+
+    %% ==========================================
+    %% UPPER / PROVENANCE CORE
+    %% ==========================================
+    class prov_Entity {
+        +owl:versionInfo string
+        +rdfs:label string
+        +rdfs:comment string
+        +prov:wasGeneratedBy uriorcurie
+        +dcterms:created datetime
+        +dcterms:modified datetime
+        +prov:type uriorcurie
+    }
+
+    class saref_PropertyValue {
+        +prov:atTime datetime
+        +saref:hasValue literal
+        +saref:isValueOfProperty uriorcurie
+    }
+    prov_Entity <|-- saref_PropertyValue
+    prov_Entity "1" --> "0..1" saref_PropertyValue : fhir_status
+
+    %% ==========================================
+    %% QUESTIONNAIRE TEMPLATE STRUCTURE
+    %% ==========================================
+    class qo_Questionnaire {
+    }
+    prov_Entity <|-- qo_Questionnaire
+
+    class qo_Section {
+    }
+    prov_Entity <|-- qo_Section
+
+    class qo_OrderedSection {
+        +qo:order int
+    }
+    prov_Entity <|-- qo_OrderedSection
+
+    class qo_OrderedQuestion {
+        +qo:order int
+        +qo:required bool
+        +qo:hardValidity bool
+        +qo:temporalValidity time:Duration
+        +qo:conditionalValidity string
+    }
+    prov_Entity <|-- qo_OrderedQuestion
+
+    class qo_Question {
+        +qo:tag string
+        +prov:type QuestionType
+        +qo:multivalued bool
+        +qo:codingOrdinal bool
+    }
+    prov_Entity <|-- qo_Question
+
+    %% Template Relationships
+    qo_Questionnaire "1" --> "0..*" qo_OrderedSection : qo_hasOrderedSection
+    qo_Questionnaire "1" --> "0..*" qo_OrderedQuestion : qo_hasOrderedQuestion
+
+    qo_Section "1" --> "0..*" qo_OrderedSection : qo_hasOrderedSection
+    qo_Section "1" --> "0..*" qo_OrderedQuestion : qo_hasOrderedQuestion
+
+    qo_OrderedSection "0..*" --> "1" qo_Section : qo_section
+    qo_OrderedQuestion "0..*" --> "1" qo_Question : qo_question
+
+    %% ==========================================
+    %% RESPONSE / EXECUTION STRUCTURE
+    %% ==========================================
+    class qo_QuestionnaireResponse {
+    }
+    prov_Entity <|-- qo_QuestionnaireResponse
+
+    class qo_Answer {
+        +qo:answerValue literal
+        +qo:isEmpty bool
+        +prov:generatedAtTime datetime
+    }
+    prov_Entity <|-- qo_Answer
+
+    %% Response Relationships
+    qo_QuestionnaireResponse "0..*" --> "1" qo_Questionnaire : qo_responds
+    qo_QuestionnaireResponse "1" --> "1..*" qo_Answer : qo_hasAnswer
+    qo_Answer "0..*" --> "1" qo_Question : qo_toQuestion
