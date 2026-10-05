@@ -25,7 +25,6 @@ Alias: time_hasDuration
 
 
 
-
 ## Properties
 
 * Range: [TimeDuration](TimeDuration.md)
@@ -33,9 +32,7 @@ Alias: time_hasDuration
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

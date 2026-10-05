@@ -22,19 +22,15 @@ Alias: dcterms_modified
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A completed or partially completed instance containing recorded values collec... |  yes  |
 | [QoOrderedSection](QoOrderedSection.md) | A contextual wrapper that binds a thematic grouping of inquiry items to a spe... |  no  |
 | [ProvEntity](ProvEntity.md) | An entity is a physical, digital, conceptual, or other kind of thing with som... |  no  |
-| [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
-| [QoSection](QoSection.md) | A logical grouping or thematic partition of items within a structured survey ... |  no  |
 | [QoQuestionnaire](QoQuestionnaire.md) | A structured, reusable instrument or template composed of ordered items desig... |  yes  |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
-| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
-| [SarefProperty](SarefProperty.md) | Identifiable qualities of features of interest that can be target of devices,... |  no  |
-| [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | A completed or partially completed instance containing recorded values collec... |  yes  |
+| [QoSection](QoSection.md) | A logical grouping or thematic partition of items within a structured survey ... |  no  |
 | [QoAnswer](QoAnswer.md) | A recorded value, or selection provided in response to a specific inquiry ite... |  no  |
 | [QoQuestion](QoQuestion.md) | An individual inquiry item within an instrument that specifies an information... |  no  |
-
+| [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  no  |
+| [SarefProperty](SarefProperty.md) | Identifiable qualities of features of interest that can be target of devices,... |  no  |
 
 
 
@@ -48,9 +44,7 @@ Alias: dcterms_modified
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

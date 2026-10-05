@@ -15,13 +15,12 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
 
 
 
-
 ```mermaid
  classDiagram
     class SarefProperty
-    click SarefProperty href "../SarefProperty"
+    click SarefProperty href "../SarefProperty/"
       ProvEntity <|-- SarefProperty
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
       
       SarefProperty : dcterms_created
         
@@ -32,7 +31,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -43,7 +42,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -54,7 +53,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -67,7 +66,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "0..1" FhirReferenceRange : fhir_referenceRange
-        click FhirReferenceRange href "../FhirReferenceRange"
+        click FhirReferenceRange href "../FhirReferenceRange/"
     
 
         
@@ -78,7 +77,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -93,7 +92,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -106,7 +105,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -117,7 +116,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -132,7 +131,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -143,7 +142,7 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
         
         
         SarefProperty --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -200,17 +199,14 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
 | [ProvEntity](ProvEntity.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [SarefProperty](SarefProperty.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [SarefPropertyValue](SarefPropertyValue.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | range | [SarefProperty](SarefProperty.md) |
-| [SarefPropertyValue](SarefPropertyValue.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoQuestionnaire](QoQuestionnaire.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | range | [SarefProperty](SarefProperty.md) |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoSection](QoSection.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoQuestion](QoQuestion.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | range | [SarefProperty](SarefProperty.md) |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 | [QoAnswer](QoAnswer.md) | [saref_hasProperty](saref_hasProperty.md) | range | [SarefProperty](SarefProperty.md) |
 
 
@@ -218,8 +214,8 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -240,7 +236,6 @@ URI: [saref:Property](https://saref.etsi.org/core/Property)
 | ---  | ---  |
 | self | saref:Property |
 | native | qo:SarefProperty |
-
 
 
 

@@ -15,11 +15,10 @@ URI: [fhir:Quantity](http://hl7.org/fhir/Quantity)
 
 
 
-
 ```mermaid
  classDiagram
     class QuantityValue
-    click QuantityValue href "../QuantityValue"
+    click QuantityValue href "../QuantityValue/"
       QuantityValue : saref_hasValue
         
       QuantityValue : saref_isMeasuredIn
@@ -59,8 +58,8 @@ URI: [fhir:Quantity](http://hl7.org/fhir/Quantity)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -81,7 +80,6 @@ URI: [fhir:Quantity](http://hl7.org/fhir/Quantity)
 | ---  | ---  |
 | self | fhir:Quantity |
 | native | qo:QuantityValue |
-
 
 
 

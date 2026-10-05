@@ -15,62 +15,13 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 
 
 
-
 ```mermaid
  classDiagram
     class QoQuestionnaireResponseStatus
-    click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus"
+    click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus/"
       SarefPropertyValue <|-- QoQuestionnaireResponseStatus
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
       
-      QoQuestionnaireResponseStatus : dcterms_created
-        
-      QoQuestionnaireResponseStatus : dcterms_creator
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
-    
-
-        
-      QoQuestionnaireResponseStatus : dcterms_hasPart
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
-    
-
-        
-      QoQuestionnaireResponseStatus : dcterms_isPartOf
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
-    
-
-        
-      QoQuestionnaireResponseStatus : dcterms_modified
-        
-      QoQuestionnaireResponseStatus : fhir_status
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
-    
-
-        
       QoQuestionnaireResponseStatus : fhir_valueAttachment
         
       QoQuestionnaireResponseStatus : fhir_valueCodeableConcept
@@ -80,7 +31,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "0..1" ValueCoding : fhir_valueCodeableConcept
-        click ValueCoding href "../ValueCoding"
+        click ValueCoding href "../ValueCoding/"
     
 
         
@@ -91,7 +42,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "0..1" TimeInterval : fhir_valuePeriod
-        click TimeInterval href "../TimeInterval"
+        click TimeInterval href "../TimeInterval/"
     
 
         
@@ -102,7 +53,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "0..1" FhirReferenceRange : fhir_valueRange
-        click FhirReferenceRange href "../FhirReferenceRange"
+        click FhirReferenceRange href "../FhirReferenceRange/"
     
 
         
@@ -113,7 +64,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "0..1" FhirValueRatio : fhir_valueRatio
-        click FhirValueRatio href "../FhirValueRatio"
+        click FhirValueRatio href "../FhirValueRatio/"
     
 
         
@@ -123,8 +74,6 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
       QoQuestionnaireResponseStatus : prov_atTime
         
-      QoQuestionnaireResponseStatus : prov_generatedAtTime
-        
       QoQuestionnaireResponseStatus : prov_hadPrimarySource
         
           
@@ -132,20 +81,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
-    
-
-        
-      QoQuestionnaireResponseStatus : prov_type
-        
-      QoQuestionnaireResponseStatus : prov_wasAttributedTo
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -156,35 +92,13 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
       QoQuestionnaireResponseStatus : rdfs_comment
         
       QoQuestionnaireResponseStatus : rdfs_label
-        
-      QoQuestionnaireResponseStatus : saref_hasProperty
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
-    
-
-        
-      QoQuestionnaireResponseStatus : saref_hasPropertyValue
-        
-          
-    
-        
-        
-        QoQuestionnaireResponseStatus --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
-    
-
         
       QoQuestionnaireResponseStatus : saref_hasValue
         
@@ -193,7 +107,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "1" QoQuestionnaireResponseStatusEnum : saref_hasValue
-        click QoQuestionnaireResponseStatusEnum href "../QoQuestionnaireResponseStatusEnum"
+        click QoQuestionnaireResponseStatusEnum href "../QoQuestionnaireResponseStatusEnum/"
     
 
         
@@ -204,7 +118,7 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
         
         
         QoQuestionnaireResponseStatus --> "0..1" SarefProperty : saref_isValueOfProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -217,9 +131,8 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 
 ## Inheritance
 * [OwlThing](OwlThing.md)
-    * [ProvEntity](ProvEntity.md)
-        * [SarefPropertyValue](SarefPropertyValue.md)
-            * **QoQuestionnaireResponseStatus**
+    * [SarefPropertyValue](SarefPropertyValue.md)
+        * **QoQuestionnaireResponseStatus**
 
 
 
@@ -236,17 +149,6 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 | [fhir_valueRatio](fhir_valueRatio.md) | 0..1 <br/> [FhirValueRatio](FhirValueRatio.md) | A relationship between two Quantity values expressed as a numerator and a den... | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valuePeriod](fhir_valuePeriod.md) | 0..1 <br/> [TimeInterval](TimeInterval.md) | A time period defined by a start and end date/time | [SarefPropertyValue](SarefPropertyValue.md) |
 | [fhir_valueAttachment](fhir_valueAttachment.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | This type is for containing or referencing attachments - additional data cont... | [SarefPropertyValue](SarefPropertyValue.md) |
-| [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
-| [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
-| [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
-| [prov_type](prov_type.md) | * <br/> [Uriorcurie](Uriorcurie.md) | The attribute prov:type provides further typing information for any construct... | [ProvEntity](ProvEntity.md) |
-| [dcterms_hasPart](dcterms_hasPart.md) | * <br/> [OwlThing](OwlThing.md) | A related resource that is included either physically or logically in the des... | [ProvEntity](ProvEntity.md) |
-| [dcterms_isPartOf](dcterms_isPartOf.md) | * <br/> [OwlThing](OwlThing.md) | A related resource in which the described resource is physically or logically... | [ProvEntity](ProvEntity.md) |
-| [prov_generatedAtTime](prov_generatedAtTime.md) | * <br/> [Datetime](Datetime.md) | The time at which an entity was completely created and is available for use | [ProvEntity](ProvEntity.md) |
-| [fhir_status](fhir_status.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | A code specifying the state of the observation/procedure/questionnaire | [ProvEntity](ProvEntity.md) |
-| [dcterms_creator](dcterms_creator.md) | * <br/> [FoafAgent](FoafAgent.md) | An entity responsible for making the resource | [ProvEntity](ProvEntity.md) |
-| [saref_hasProperty](saref_hasProperty.md) | * <br/> [SarefProperty](SarefProperty.md) | Links a feature kind or a feature of interest to one of its properties | [ProvEntity](ProvEntity.md) |
-| [saref_hasPropertyValue](saref_hasPropertyValue.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | Links a feature kind, a feature of interest, or a property of interest, to a ... | [ProvEntity](ProvEntity.md) |
 | [owl_versionInfo](owl_versionInfo.md) | 0..1 <br/> [String](String.md) | An owl:versionInfo statement generally has as its object a string giving info... | [OwlThing](OwlThing.md) |
 | [rdfs_label](rdfs_label.md) | 1..* <br/> [String](String.md) | human-readable version of a resource's name | [OwlThing](OwlThing.md) |
 | [rdfs_comment](rdfs_comment.md) | 1..* <br/> [String](String.md) | A textual comment helps clarify the meaning of RDF classes and properties | [OwlThing](OwlThing.md) |
@@ -268,8 +170,8 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -290,7 +192,6 @@ URI: [qo:QuestionnaireResponseStatus](https://ns.faqir.org/q-o#QuestionnaireResp
 | ---  | ---  |
 | self | qo:QuestionnaireResponseStatus |
 | native | qo:QoQuestionnaireResponseStatus |
-
 
 
 
@@ -504,185 +405,6 @@ attributes:
     range: uriorcurie
     required: false
     multivalued: false
-  prov_wasAttributedTo:
-    name: prov_wasAttributedTo
-    description: Attribution is the ascribing of an entity to an agent.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    domain: prov_Entity
-    slot_uri: prov:wasAttributedTo
-    alias: prov_wasAttributedTo
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - prov_Entity
-    range: foaf_Agent
-    required: false
-    multivalued: true
-  dcterms_created:
-    name: dcterms_created
-    description: The date and time when the entity was created.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:created
-    alias: dcterms_created
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - prov_Entity
-    range: datetime
-    required: false
-  dcterms_modified:
-    name: dcterms_modified
-    description: The date and time when the entity was last updated.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:modified
-    alias: dcterms_modified
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - prov_Entity
-    range: datetime
-    required: false
-  prov_type:
-    name: prov_type
-    description: The attribute prov:type provides further typing information for any
-      construct with an optional set of attribute-value pairs.
-    from_schema: https://ns.faqir.org/q-o
-    exact_mappings:
-    - rdf:type
-    - sphn:hasTypeCode
-    narrow_mappings:
-    - schema:procedureType
-    rank: 1000
-    slot_uri: prov:type
-    alias: prov_type
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: uriorcurie
-    required: false
-    multivalued: true
-  dcterms_hasPart:
-    name: dcterms_hasPart
-    description: A related resource that is included either physically or logically
-      in the described resource.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:hasPart
-    alias: dcterms_hasPart
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    inverse: dcterms_isPartOf
-    range: owl_Thing
-    required: false
-    multivalued: true
-  dcterms_isPartOf:
-    name: dcterms_isPartOf
-    description: A related resource in which the described resource is physically
-      or logically included.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:isPartOf
-    alias: dcterms_isPartOf
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    inverse: dcterms_hasPart
-    range: owl_Thing
-    required: false
-    multivalued: true
-  prov_generatedAtTime:
-    name: prov_generatedAtTime
-    description: The time at which an entity was completely created and is available
-      for use.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: prov:generatedAtTime
-    alias: prov_generatedAtTime
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - prov_Entity
-    range: datetime
-    required: false
-    multivalued: true
-  fhir_status:
-    name: fhir_status
-    description: A code specifying the state of the observation/procedure/questionnaire...
-      Generally, this will be the in-progress or completed state.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    is_a: saref_hasPropertyValue
-    slot_uri: fhir:resource-status
-    alias: fhir_status
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_PropertyValue
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  dcterms_creator:
-    name: dcterms_creator
-    description: An entity responsible for making the resource.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:creator
-    alias: dcterms_creator
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: foaf_Agent
-    required: false
-    multivalued: true
-  saref_hasProperty:
-    name: saref_hasProperty
-    description: Links a feature kind or a feature of interest to one of its properties.
-    from_schema: https://ns.faqir.org/q-o
-    mappings:
-    - ssn:hasProperty
-    rank: 1000
-    slot_uri: saref:hasProperty
-    alias: saref_hasProperty
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_Property
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  saref_hasPropertyValue:
-    name: saref_hasPropertyValue
-    description: Links a feature kind, a feature of interest, or a property of interest,
-      to a property value.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: saref:hasPropertyValue
-    alias: saref_hasPropertyValue
-    owner: qo_QuestionnaireResponseStatus
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_PropertyValue
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   owl_versionInfo:
     name: owl_versionInfo
     description: An owl:versionInfo statement generally has as its object a string

@@ -22,10 +22,9 @@ Alias: fhir_valueReference
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
 | [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
-
+| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
 
 
 
@@ -39,9 +38,7 @@ Alias: fhir_valueReference
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

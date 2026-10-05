@@ -15,11 +15,10 @@ URI: [fhir:Ratio](http://hl7.org/fhir/Ratio)
 
 
 
-
 ```mermaid
  classDiagram
     class FhirValueRatio
-    click FhirValueRatio href "../FhirValueRatio"
+    click FhirValueRatio href "../FhirValueRatio/"
       FhirValueRatio : denominator
         
           
@@ -27,7 +26,7 @@ URI: [fhir:Ratio](http://hl7.org/fhir/Ratio)
         
         
         FhirValueRatio --> "1" QuantityValue : denominator
-        click QuantityValue href "../QuantityValue"
+        click QuantityValue href "../QuantityValue/"
     
 
         
@@ -38,7 +37,7 @@ URI: [fhir:Ratio](http://hl7.org/fhir/Ratio)
         
         
         FhirValueRatio --> "1" QuantityValue : numerator
-        click QuantityValue href "../QuantityValue"
+        click QuantityValue href "../QuantityValue/"
     
 
         
@@ -75,8 +74,8 @@ URI: [fhir:Ratio](http://hl7.org/fhir/Ratio)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -97,7 +96,6 @@ URI: [fhir:Ratio](http://hl7.org/fhir/Ratio)
 | ---  | ---  |
 | self | fhir:Ratio |
 | native | qo:FhirValueRatio |
-
 
 
 

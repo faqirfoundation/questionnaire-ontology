@@ -29,7 +29,6 @@ Alias: display
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: display
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

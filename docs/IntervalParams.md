@@ -15,11 +15,10 @@ URI: [phro:IntervalParams](https://ns.faqir.org/phr-o#IntervalParams)
 
 
 
-
 ```mermaid
  classDiagram
     class IntervalParams
-    click IntervalParams href "../IntervalParams"
+    click IntervalParams href "../IntervalParams/"
       IntervalParams : maxLabel
         
       IntervalParams : maxValue
@@ -61,8 +60,8 @@ URI: [phro:IntervalParams](https://ns.faqir.org/phr-o#IntervalParams)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -83,7 +82,6 @@ URI: [phro:IntervalParams](https://ns.faqir.org/phr-o#IntervalParams)
 | ---  | ---  |
 | self | phro:IntervalParams |
 | native | qo:IntervalParams |
-
 
 
 

@@ -15,69 +15,20 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 
 
 
-
 ```mermaid
  classDiagram
     class SarefPropertyValue
-    click SarefPropertyValue href "../SarefPropertyValue"
-      ProvEntity <|-- SarefPropertyValue
-        click ProvEntity href "../ProvEntity"
+    click SarefPropertyValue href "../SarefPropertyValue/"
+      OwlThing <|-- SarefPropertyValue
+        click OwlThing href "../OwlThing/"
       
 
       SarefPropertyValue <|-- QoQuestionnaireStatus
-        click QoQuestionnaireStatus href "../QoQuestionnaireStatus"
+        click QoQuestionnaireStatus href "../QoQuestionnaireStatus/"
       SarefPropertyValue <|-- QoQuestionnaireResponseStatus
-        click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus"
+        click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus/"
       
-      
-      SarefPropertyValue : dcterms_created
-        
-      SarefPropertyValue : dcterms_creator
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
-    
 
-        
-      SarefPropertyValue : dcterms_hasPart
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
-    
-
-        
-      SarefPropertyValue : dcterms_isPartOf
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
-    
-
-        
-      SarefPropertyValue : dcterms_modified
-        
-      SarefPropertyValue : fhir_status
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
-    
-
-        
       SarefPropertyValue : fhir_valueAttachment
         
       SarefPropertyValue : fhir_valueCodeableConcept
@@ -87,7 +38,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" ValueCoding : fhir_valueCodeableConcept
-        click ValueCoding href "../ValueCoding"
+        click ValueCoding href "../ValueCoding/"
     
 
         
@@ -98,7 +49,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" TimeInterval : fhir_valuePeriod
-        click TimeInterval href "../TimeInterval"
+        click TimeInterval href "../TimeInterval/"
     
 
         
@@ -109,7 +60,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" FhirReferenceRange : fhir_valueRange
-        click FhirReferenceRange href "../FhirReferenceRange"
+        click FhirReferenceRange href "../FhirReferenceRange/"
     
 
         
@@ -120,7 +71,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" FhirValueRatio : fhir_valueRatio
-        click FhirValueRatio href "../FhirValueRatio"
+        click FhirValueRatio href "../FhirValueRatio/"
     
 
         
@@ -130,8 +81,6 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
       SarefPropertyValue : prov_atTime
         
-      SarefPropertyValue : prov_generatedAtTime
-        
       SarefPropertyValue : prov_hadPrimarySource
         
           
@@ -139,20 +88,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
-    
-
-        
-      SarefPropertyValue : prov_type
-        
-      SarefPropertyValue : prov_wasAttributedTo
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -163,35 +99,13 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
       SarefPropertyValue : rdfs_comment
         
       SarefPropertyValue : rdfs_label
-        
-      SarefPropertyValue : saref_hasProperty
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
-    
-
-        
-      SarefPropertyValue : saref_hasPropertyValue
-        
-          
-    
-        
-        
-        SarefPropertyValue --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
-    
-
         
       SarefPropertyValue : saref_hasValue
         
@@ -202,7 +116,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" SarefProperty : saref_isValueOfProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -215,10 +129,9 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 
 ## Inheritance
 * [OwlThing](OwlThing.md)
-    * [ProvEntity](ProvEntity.md)
-        * **SarefPropertyValue**
-            * [QoQuestionnaireStatus](QoQuestionnaireStatus.md)
-            * [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md)
+    * **SarefPropertyValue**
+        * [QoQuestionnaireStatus](QoQuestionnaireStatus.md)
+        * [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md)
 
 
 
@@ -235,17 +148,6 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 | [fhir_valueRatio](fhir_valueRatio.md) | 0..1 <br/> [FhirValueRatio](FhirValueRatio.md) | A relationship between two Quantity values expressed as a numerator and a den... | direct |
 | [fhir_valuePeriod](fhir_valuePeriod.md) | 0..1 <br/> [TimeInterval](TimeInterval.md) | A time period defined by a start and end date/time | direct |
 | [fhir_valueAttachment](fhir_valueAttachment.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | This type is for containing or referencing attachments - additional data cont... | direct |
-| [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
-| [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
-| [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
-| [prov_type](prov_type.md) | * <br/> [Uriorcurie](Uriorcurie.md) | The attribute prov:type provides further typing information for any construct... | [ProvEntity](ProvEntity.md) |
-| [dcterms_hasPart](dcterms_hasPart.md) | * <br/> [OwlThing](OwlThing.md) | A related resource that is included either physically or logically in the des... | [ProvEntity](ProvEntity.md) |
-| [dcterms_isPartOf](dcterms_isPartOf.md) | * <br/> [OwlThing](OwlThing.md) | A related resource in which the described resource is physically or logically... | [ProvEntity](ProvEntity.md) |
-| [prov_generatedAtTime](prov_generatedAtTime.md) | * <br/> [Datetime](Datetime.md) | The time at which an entity was completely created and is available for use | [ProvEntity](ProvEntity.md) |
-| [fhir_status](fhir_status.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | A code specifying the state of the observation/procedure/questionnaire | [ProvEntity](ProvEntity.md) |
-| [dcterms_creator](dcterms_creator.md) | * <br/> [FoafAgent](FoafAgent.md) | An entity responsible for making the resource | [ProvEntity](ProvEntity.md) |
-| [saref_hasProperty](saref_hasProperty.md) | * <br/> [SarefProperty](SarefProperty.md) | Links a feature kind or a feature of interest to one of its properties | [ProvEntity](ProvEntity.md) |
-| [saref_hasPropertyValue](saref_hasPropertyValue.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | Links a feature kind, a feature of interest, or a property of interest, to a ... | [ProvEntity](ProvEntity.md) |
 | [owl_versionInfo](owl_versionInfo.md) | 0..1 <br/> [String](String.md) | An owl:versionInfo statement generally has as its object a string giving info... | [OwlThing](OwlThing.md) |
 | [rdfs_label](rdfs_label.md) | 1..* <br/> [String](String.md) | human-readable version of a resource's name | [OwlThing](OwlThing.md) |
 | [rdfs_comment](rdfs_comment.md) | 1..* <br/> [String](String.md) | A textual comment helps clarify the meaning of RDF classes and properties | [OwlThing](OwlThing.md) |
@@ -277,12 +179,8 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 | [SarefProperty](SarefProperty.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [SarefProperty](SarefProperty.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [SarefPropertyValue](SarefPropertyValue.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | domain | [SarefPropertyValue](SarefPropertyValue.md) |
-| [SarefPropertyValue](SarefPropertyValue.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
-| [SarefPropertyValue](SarefPropertyValue.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoQuestionnaire](QoQuestionnaire.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | domain | [SarefPropertyValue](SarefPropertyValue.md) |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoSection](QoSection.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
@@ -293,8 +191,6 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 | [QoQuestion](QoQuestion.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | domain | [SarefPropertyValue](SarefPropertyValue.md) |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoAnswer](QoAnswer.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoAnswer](QoAnswer.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 
@@ -303,8 +199,8 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -332,7 +228,6 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -349,7 +244,7 @@ description: Describes the value for a property. The property value is optionall
 from_schema: https://ns.faqir.org/q-o
 mappings:
 - sosa:Result
-is_a: prov_Entity
+is_a: owl_Thing
 slots:
 - prov_atTime
 - saref_hasValue
@@ -442,7 +337,7 @@ description: Describes the value for a property. The property value is optionall
 from_schema: https://ns.faqir.org/q-o
 mappings:
 - sosa:Result
-is_a: prov_Entity
+is_a: owl_Thing
 attributes:
   fhir_valueCodeableConcept:
     name: fhir_valueCodeableConcept
@@ -596,185 +491,6 @@ attributes:
     range: uriorcurie
     required: false
     multivalued: false
-  prov_wasAttributedTo:
-    name: prov_wasAttributedTo
-    description: Attribution is the ascribing of an entity to an agent.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    domain: prov_Entity
-    slot_uri: prov:wasAttributedTo
-    alias: prov_wasAttributedTo
-    owner: saref_PropertyValue
-    domain_of:
-    - prov_Entity
-    range: foaf_Agent
-    required: false
-    multivalued: true
-  dcterms_created:
-    name: dcterms_created
-    description: The date and time when the entity was created.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:created
-    alias: dcterms_created
-    owner: saref_PropertyValue
-    domain_of:
-    - prov_Entity
-    range: datetime
-    required: false
-  dcterms_modified:
-    name: dcterms_modified
-    description: The date and time when the entity was last updated.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:modified
-    alias: dcterms_modified
-    owner: saref_PropertyValue
-    domain_of:
-    - prov_Entity
-    range: datetime
-    required: false
-  prov_type:
-    name: prov_type
-    description: The attribute prov:type provides further typing information for any
-      construct with an optional set of attribute-value pairs.
-    from_schema: https://ns.faqir.org/q-o
-    exact_mappings:
-    - rdf:type
-    - sphn:hasTypeCode
-    narrow_mappings:
-    - schema:procedureType
-    rank: 1000
-    slot_uri: prov:type
-    alias: prov_type
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: uriorcurie
-    required: false
-    multivalued: true
-  dcterms_hasPart:
-    name: dcterms_hasPart
-    description: A related resource that is included either physically or logically
-      in the described resource.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:hasPart
-    alias: dcterms_hasPart
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    inverse: dcterms_isPartOf
-    range: owl_Thing
-    required: false
-    multivalued: true
-  dcterms_isPartOf:
-    name: dcterms_isPartOf
-    description: A related resource in which the described resource is physically
-      or logically included.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:isPartOf
-    alias: dcterms_isPartOf
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    inverse: dcterms_hasPart
-    range: owl_Thing
-    required: false
-    multivalued: true
-  prov_generatedAtTime:
-    name: prov_generatedAtTime
-    description: The time at which an entity was completely created and is available
-      for use.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: prov:generatedAtTime
-    alias: prov_generatedAtTime
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - prov_Entity
-    range: datetime
-    required: false
-    multivalued: true
-  fhir_status:
-    name: fhir_status
-    description: A code specifying the state of the observation/procedure/questionnaire...
-      Generally, this will be the in-progress or completed state.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    is_a: saref_hasPropertyValue
-    slot_uri: fhir:resource-status
-    alias: fhir_status
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_PropertyValue
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  dcterms_creator:
-    name: dcterms_creator
-    description: An entity responsible for making the resource.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: dcterms:creator
-    alias: dcterms_creator
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: foaf_Agent
-    required: false
-    multivalued: true
-  saref_hasProperty:
-    name: saref_hasProperty
-    description: Links a feature kind or a feature of interest to one of its properties.
-    from_schema: https://ns.faqir.org/q-o
-    mappings:
-    - ssn:hasProperty
-    rank: 1000
-    slot_uri: saref:hasProperty
-    alias: saref_hasProperty
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_Property
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  saref_hasPropertyValue:
-    name: saref_hasPropertyValue
-    description: Links a feature kind, a feature of interest, or a property of interest,
-      to a property value.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    slot_uri: saref:hasPropertyValue
-    alias: saref_hasPropertyValue
-    owner: saref_PropertyValue
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_PropertyValue
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   owl_versionInfo:
     name: owl_versionInfo
     description: An owl:versionInfo statement generally has as its object a string

@@ -34,7 +34,6 @@ Alias: qo_question
 
 
 
-
 ## Properties
 
 * Range: [QoQuestion](QoQuestion.md)
@@ -46,9 +45,7 @@ Alias: qo_question
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

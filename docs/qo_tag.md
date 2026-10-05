@@ -29,7 +29,6 @@ Alias: qo_tag
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -41,9 +40,7 @@ Alias: qo_tag
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

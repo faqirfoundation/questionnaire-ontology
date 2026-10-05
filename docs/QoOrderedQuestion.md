@@ -15,13 +15,12 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 
 
 
-
 ```mermaid
  classDiagram
     class QoOrderedQuestion
-    click QoOrderedQuestion href "../QoOrderedQuestion"
+    click QoOrderedQuestion href "../QoOrderedQuestion/"
       ProvEntity <|-- QoOrderedQuestion
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
       
       QoOrderedQuestion : dcterms_created
         
@@ -32,7 +31,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -43,7 +42,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -54,7 +53,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -67,7 +66,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -82,7 +81,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -95,7 +94,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -106,7 +105,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -123,7 +122,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "1..*" QoQuestion : qo_question
-        click QoQuestion href "../QoQuestion"
+        click QoQuestion href "../QoQuestion/"
     
 
         
@@ -136,7 +135,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "1" TimeDuration : qo_temporalValidity
-        click TimeDuration href "../TimeDuration"
+        click TimeDuration href "../TimeDuration/"
     
 
         
@@ -151,7 +150,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -162,7 +161,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
         
         
         QoOrderedQuestion --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -224,8 +223,8 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -246,7 +245,6 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 | ---  | ---  |
 | self | qo:OrderedQuestion |
 | native | qo:QoOrderedQuestion |
-
 
 
 

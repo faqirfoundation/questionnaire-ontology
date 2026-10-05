@@ -29,7 +29,6 @@ Alias: qo_responds
 
 
 
-
 ## Properties
 
 * Range: [QoQuestionnaire](QoQuestionnaire.md)
@@ -39,9 +38,7 @@ Alias: qo_responds
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

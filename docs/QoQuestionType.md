@@ -7,7 +7,7 @@ _Specifies the structural classification and data-type constraints governing acc
 
 
 
-URI: [QoQuestionType](QoQuestionType.md)
+URI: [qo:QuestionType](https://ns.faqir.org/q-o#QuestionType)
 
 ## Permissible Values
 
@@ -34,9 +34,7 @@ URI: [QoQuestionType](QoQuestionType.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

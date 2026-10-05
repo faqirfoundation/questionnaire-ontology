@@ -29,7 +29,6 @@ Alias: qo_answerValue
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)&nbsp;or&nbsp;<br />[Float](Float.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[Datetime](Datetime.md)
@@ -37,9 +36,7 @@ Alias: qo_answerValue
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: qo_conditionalValidity
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: qo_conditionalValidity
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

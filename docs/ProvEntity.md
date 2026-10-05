@@ -15,35 +15,32 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
 
 
 
-
 ```mermaid
  classDiagram
     class ProvEntity
-    click ProvEntity href "../ProvEntity"
+    click ProvEntity href "../ProvEntity/"
       OwlThing <|-- ProvEntity
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
       
 
       ProvEntity <|-- SarefProperty
-        click SarefProperty href "../SarefProperty"
-      ProvEntity <|-- SarefPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefProperty href "../SarefProperty/"
       ProvEntity <|-- QoQuestionnaire
-        click QoQuestionnaire href "../QoQuestionnaire"
+        click QoQuestionnaire href "../QoQuestionnaire/"
       ProvEntity <|-- QoOrderedSection
-        click QoOrderedSection href "../QoOrderedSection"
+        click QoOrderedSection href "../QoOrderedSection/"
       ProvEntity <|-- QoSection
-        click QoSection href "../QoSection"
+        click QoSection href "../QoSection/"
       ProvEntity <|-- QoOrderedQuestion
-        click QoOrderedQuestion href "../QoOrderedQuestion"
+        click QoOrderedQuestion href "../QoOrderedQuestion/"
       ProvEntity <|-- QoQuestion
-        click QoQuestion href "../QoQuestion"
+        click QoQuestion href "../QoQuestion/"
       ProvEntity <|-- QoQuestionnaireResponse
-        click QoQuestionnaireResponse href "../QoQuestionnaireResponse"
+        click QoQuestionnaireResponse href "../QoQuestionnaireResponse/"
       ProvEntity <|-- QoAnswer
-        click QoAnswer href "../QoAnswer"
+        click QoAnswer href "../QoAnswer/"
       
-      
+
       ProvEntity : dcterms_created
         
       ProvEntity : dcterms_creator
@@ -53,7 +50,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -64,7 +61,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -75,7 +72,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -88,7 +85,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -103,7 +100,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -116,7 +113,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -127,7 +124,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -142,7 +139,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -153,7 +150,7 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
         
         
         ProvEntity --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -168,7 +165,6 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
 * [OwlThing](OwlThing.md)
     * **ProvEntity**
         * [SarefProperty](SarefProperty.md)
-        * [SarefPropertyValue](SarefPropertyValue.md)
         * [QoQuestionnaire](QoQuestionnaire.md)
         * [QoOrderedSection](QoOrderedSection.md)
         * [QoSection](QoSection.md)
@@ -219,11 +215,9 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
 | [ProvEntity](ProvEntity.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
 | [SarefProperty](SarefProperty.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [SarefProperty](SarefProperty.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
-| [SarefPropertyValue](SarefPropertyValue.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [SarefPropertyValue](SarefPropertyValue.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
 | [QoQuestionnaire](QoQuestionnaire.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [QoQuestionnaire](QoQuestionnaire.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
@@ -235,7 +229,6 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
 | [QoQuestion](QoQuestion.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
 | [QoAnswer](QoAnswer.md) | [prov_wasAttributedTo](prov_wasAttributedTo.md) | domain | [ProvEntity](ProvEntity.md) |
 | [QoAnswer](QoAnswer.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | range | [ProvEntity](ProvEntity.md) |
@@ -245,8 +238,8 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -268,7 +261,6 @@ URI: [prov:Entity](http://www.w3.org/ns/prov#Entity)
 | self | prov:Entity |
 | native | qo:ProvEntity |
 | undefined | sulo:Object |
-
 
 
 

@@ -22,9 +22,8 @@ Alias: qo_order
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoOrderedSection](QoOrderedSection.md) | A contextual wrapper that binds a thematic grouping of inquiry items to a spe... |  yes  |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | A contextual wrapper that binds an inquiry item to a specific sequence index ... |  yes  |
-
+| [QoOrderedSection](QoOrderedSection.md) | A contextual wrapper that binds a thematic grouping of inquiry items to a spe... |  yes  |
 
 
 
@@ -42,9 +41,7 @@ Alias: qo_order
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

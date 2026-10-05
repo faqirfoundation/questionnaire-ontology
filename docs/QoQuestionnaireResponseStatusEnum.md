@@ -7,7 +7,7 @@ _The questionnaire response status must be one of the following: 'in-progress', 
 
 
 
-URI: [QoQuestionnaireResponseStatusEnum](QoQuestionnaireResponseStatusEnum.md)
+URI: [qo:QuestionnaireResponseStatusEnum](https://ns.faqir.org/q-o#QuestionnaireResponseStatusEnum)
 
 ## Permissible Values
 
@@ -32,9 +32,7 @@ URI: [QoQuestionnaireResponseStatusEnum](QoQuestionnaireResponseStatusEnum.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -15,11 +15,10 @@ URI: [time:Duration](http://www.w3.org/2006/time#Duration)
 
 
 
-
 ```mermaid
  classDiagram
     class TimeDuration
-    click TimeDuration href "../TimeDuration"
+    click TimeDuration href "../TimeDuration/"
       TimeDuration : saref_hasValue
         
       TimeDuration : saref_isMeasuredIn
@@ -55,8 +54,8 @@ URI: [time:Duration](http://www.w3.org/2006/time#Duration)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -77,7 +76,6 @@ URI: [time:Duration](http://www.w3.org/2006/time#Duration)
 | ---  | ---  |
 | self | time:Duration |
 | native | qo:TimeDuration |
-
 
 
 

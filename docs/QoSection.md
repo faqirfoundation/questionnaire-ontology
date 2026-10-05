@@ -15,13 +15,12 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 
 
 
-
 ```mermaid
  classDiagram
     class QoSection
-    click QoSection href "../QoSection"
+    click QoSection href "../QoSection/"
       ProvEntity <|-- QoSection
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
       
       QoSection : dcterms_created
         
@@ -32,7 +31,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "1..*" ProvOrganization : dcterms_creator
-        click ProvOrganization href "../ProvOrganization"
+        click ProvOrganization href "../ProvOrganization/"
     
 
         
@@ -43,7 +42,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -54,7 +53,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -67,7 +66,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -82,7 +81,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -95,7 +94,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -106,7 +105,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -117,7 +116,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" QoOrderedQuestion : qo_hasOrderedQuestion
-        click QoOrderedQuestion href "../QoOrderedQuestion"
+        click QoOrderedQuestion href "../QoOrderedQuestion/"
     
 
         
@@ -128,7 +127,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" QoOrderedSection : qo_hasOrderedSection
-        click QoOrderedSection href "../QoOrderedSection"
+        click QoOrderedSection href "../QoOrderedSection/"
     
 
         
@@ -143,7 +142,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -154,7 +153,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         
         QoSection --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -212,8 +211,8 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -235,7 +234,6 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 | self | qo:Section |
 | native | qo:QoSection |
 | narrow | fhir:Questionnaire.item.where(type='group') |
-
 
 
 

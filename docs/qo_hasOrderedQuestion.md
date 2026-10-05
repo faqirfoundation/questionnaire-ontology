@@ -35,7 +35,6 @@ Alias: qo_hasOrderedQuestion
 
 
 
-
 ## Properties
 
 * Range: [QoOrderedQuestion](QoOrderedQuestion.md)
@@ -45,9 +44,7 @@ Alias: qo_hasOrderedQuestion
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

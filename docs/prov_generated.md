@@ -20,7 +20,6 @@ Alias: prov_generated
 
 
 
-
 ## Properties
 
 * Range: [OwlThing](OwlThing.md)
@@ -30,9 +29,7 @@ Alias: prov_generated
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

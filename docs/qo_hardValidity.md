@@ -29,7 +29,6 @@ Alias: qo_hardValidity
 
 
 
-
 ## Properties
 
 * Range: [Boolean](Boolean.md)
@@ -37,9 +36,7 @@ Alias: qo_hardValidity
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -20,7 +20,6 @@ Alias: s4ehaw_minimumValue
 
 
 
-
 ## Properties
 
 * Range: [Float](Float.md)
@@ -28,9 +27,7 @@ Alias: s4ehaw_minimumValue
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

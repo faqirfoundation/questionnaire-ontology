@@ -34,7 +34,6 @@ Alias: qo_section
 
 
 
-
 ## Properties
 
 * Range: [QoSection](QoSection.md)
@@ -46,9 +45,7 @@ Alias: qo_section
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

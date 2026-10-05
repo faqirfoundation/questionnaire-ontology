@@ -29,7 +29,6 @@ Alias: qo_numericalParams
 
 
 
-
 ## Properties
 
 * Range: [NumericalParams](NumericalParams.md)
@@ -37,9 +36,7 @@ Alias: qo_numericalParams
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: highRange
 
 
 
-
 ## Properties
 
 * Range: [QuantityValue](QuantityValue.md)
@@ -37,9 +36,7 @@ Alias: highRange
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

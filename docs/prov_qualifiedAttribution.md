@@ -20,7 +20,6 @@ Alias: prov_qualifiedAttribution
 
 
 
-
 ## Properties
 
 * Range: [ProvAttribution](ProvAttribution.md)
@@ -30,9 +29,7 @@ Alias: prov_qualifiedAttribution
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

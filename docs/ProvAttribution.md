@@ -15,11 +15,10 @@ URI: [prov:Attribution](http://www.w3.org/ns/prov#Attribution)
 
 
 
-
 ```mermaid
  classDiagram
     class ProvAttribution
-    click ProvAttribution href "../ProvAttribution"
+    click ProvAttribution href "../ProvAttribution/"
       
 ```
 
@@ -42,8 +41,8 @@ URI: [prov:Attribution](http://www.w3.org/ns/prov#Attribution)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -64,7 +63,6 @@ URI: [prov:Attribution](http://www.w3.org/ns/prov#Attribution)
 | ---  | ---  |
 | self | prov:Attribution |
 | native | qo:ProvAttribution |
-
 
 
 

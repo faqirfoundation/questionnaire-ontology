@@ -23,10 +23,9 @@ Alias: prov_startedAtTime
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [FhirProcedure](FhirProcedure.md) | An action that is being or was performed on an individual or entity |  no  |
-| [TimeInterval](TimeInterval.md) | A temporal entity with an extent or duration |  no  |
 | [SuloProcess](SuloProcess.md) | a process is a entity that unfolds in time, has temporal parts, and has objec... |  no  |
+| [TimeInterval](TimeInterval.md) | A temporal entity with an extent or duration |  no  |
 | [S4ehawActivity](S4ehawActivity.md) | The activity of a patient/user, i |  no  |
-
 
 
 
@@ -40,9 +39,7 @@ Alias: prov_startedAtTime
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

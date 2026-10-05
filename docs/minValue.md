@@ -29,7 +29,6 @@ Alias: minValue
 
 
 
-
 ## Properties
 
 * Range: [Float](Float.md)
@@ -37,9 +36,7 @@ Alias: minValue
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

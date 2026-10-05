@@ -15,13 +15,12 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
 
 
 
-
 ```mermaid
  classDiagram
     class S4ehawActivity
-    click S4ehawActivity href "../S4ehawActivity"
+    click S4ehawActivity href "../S4ehawActivity/"
       SuloProcess <|-- S4ehawActivity
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
       
       S4ehawActivity : dcterms_creator
         
@@ -30,7 +29,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -41,7 +40,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -52,7 +51,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -63,7 +62,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -78,7 +77,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -93,7 +92,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -108,7 +107,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -119,7 +118,7 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
         
         
         S4ehawActivity --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -164,8 +163,8 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -186,7 +185,6 @@ URI: [s4ehaw:activity](https://saref.etsi.org/saref4ehaw/activity)
 | ---  | ---  |
 | self | s4ehaw:activity |
 | native | qo:S4ehawActivity |
-
 
 
 

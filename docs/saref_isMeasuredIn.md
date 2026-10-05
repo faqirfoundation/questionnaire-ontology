@@ -30,7 +30,6 @@ Alias: saref_isMeasuredIn
 
 
 
-
 ## Properties
 
 * Range: [Uriorcurie](Uriorcurie.md)
@@ -40,9 +39,7 @@ Alias: saref_isMeasuredIn
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

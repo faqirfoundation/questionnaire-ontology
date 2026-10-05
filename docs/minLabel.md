@@ -29,7 +29,6 @@ Alias: minLabel
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: minLabel
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

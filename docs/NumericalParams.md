@@ -15,11 +15,10 @@ URI: [phro:NumericalParams](https://ns.faqir.org/phr-o#NumericalParams)
 
 
 
-
 ```mermaid
  classDiagram
     class NumericalParams
-    click NumericalParams href "../NumericalParams"
+    click NumericalParams href "../NumericalParams/"
       NumericalParams : numericalPrecision
         
       NumericalParams : numericalUnit
@@ -55,8 +54,8 @@ URI: [phro:NumericalParams](https://ns.faqir.org/phr-o#NumericalParams)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -77,7 +76,6 @@ URI: [phro:NumericalParams](https://ns.faqir.org/phr-o#NumericalParams)
 | ---  | ---  |
 | self | phro:NumericalParams |
 | native | qo:NumericalParams |
-
 
 
 

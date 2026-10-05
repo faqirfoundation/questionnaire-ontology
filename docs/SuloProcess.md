@@ -15,21 +15,20 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
 
 
 
-
 ```mermaid
  classDiagram
     class SuloProcess
-    click SuloProcess href "../SuloProcess"
+    click SuloProcess href "../SuloProcess/"
       OwlThing <|-- SuloProcess
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
       
 
       SuloProcess <|-- S4ehawActivity
-        click S4ehawActivity href "../S4ehawActivity"
+        click S4ehawActivity href "../S4ehawActivity/"
       SuloProcess <|-- FhirProcedure
-        click FhirProcedure href "../FhirProcedure"
+        click FhirProcedure href "../FhirProcedure/"
       
-      
+
       SuloProcess : dcterms_creator
         
           
@@ -37,7 +36,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
     
 
         
@@ -48,7 +47,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -59,7 +58,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing"
+        click OwlThing href "../OwlThing/"
     
 
         
@@ -70,7 +69,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -85,7 +84,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -100,7 +99,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -115,7 +114,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty"
+        click SarefProperty href "../SarefProperty/"
     
 
         
@@ -126,7 +125,7 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
         
         
         SuloProcess --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue"
+        click SarefPropertyValue href "../SarefPropertyValue/"
     
 
         
@@ -210,8 +209,8 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -233,7 +232,6 @@ URI: [sulo:Process](https://aidava-dev.github.io/sulo/ontospy/index.htmlProcess)
 | self | sulo:Process |
 | native | qo:SuloProcess |
 | undefined | prov:Activity |
-
 
 
 

@@ -34,7 +34,6 @@ Alias: qo_temporalValidity
 
 
 
-
 ## Properties
 
 * Range: [TimeDuration](TimeDuration.md)
@@ -44,9 +43,7 @@ Alias: qo_temporalValidity
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

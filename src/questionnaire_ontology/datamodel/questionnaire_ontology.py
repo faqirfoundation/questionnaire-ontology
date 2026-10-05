@@ -1,5 +1,5 @@
 # Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-29T17:37:18
+# Generation date: 2026-10-05T13:00:12
 # Schema: Questionnaire-Ontology
 #
 # id: https://ns.faqir.org/q-o
@@ -540,7 +540,7 @@ class SarefProperty(ProvEntity):
 
 
 @dataclass(repr=False)
-class SarefPropertyValue(ProvEntity):
+class SarefPropertyValue(OwlThing):
     """
     Describes the value for a property. The property value is optionally linked to its value expressed as an RDF
     literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the

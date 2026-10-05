@@ -15,17 +15,18 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 
 
 
-
 ```mermaid
  classDiagram
     class OwlThing
-    click OwlThing href "../OwlThing"
+    click OwlThing href "../OwlThing/"
       OwlThing <|-- FoafAgent
-        click FoafAgent href "../FoafAgent"
+        click FoafAgent href "../FoafAgent/"
       OwlThing <|-- SuloProcess
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
       OwlThing <|-- ProvEntity
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
+      OwlThing <|-- SarefPropertyValue
+        click SarefPropertyValue href "../SarefPropertyValue/"
       
       OwlThing : owl_versionInfo
         
@@ -36,7 +37,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
         
         
         OwlThing --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity"
+        click ProvEntity href "../ProvEntity/"
     
 
         
@@ -47,7 +48,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
         
         
         OwlThing --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess"
+        click SuloProcess href "../SuloProcess/"
     
 
         
@@ -67,6 +68,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
     * [FoafAgent](FoafAgent.md)
     * [SuloProcess](SuloProcess.md)
     * [ProvEntity](ProvEntity.md)
+    * [SarefPropertyValue](SarefPropertyValue.md)
 
 
 
@@ -149,8 +151,6 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 | [SarefProperty](SarefProperty.md) | [rdfs_comment](rdfs_comment.md) | domain | [OwlThing](OwlThing.md) |
 | [SarefProperty](SarefProperty.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | domain | [OwlThing](OwlThing.md) |
 | [SarefProperty](SarefProperty.md) | [prov_wasGeneratedBy](prov_wasGeneratedBy.md) | domain | [OwlThing](OwlThing.md) |
-| [SarefPropertyValue](SarefPropertyValue.md) | [dcterms_hasPart](dcterms_hasPart.md) | range | [OwlThing](OwlThing.md) |
-| [SarefPropertyValue](SarefPropertyValue.md) | [dcterms_isPartOf](dcterms_isPartOf.md) | range | [OwlThing](OwlThing.md) |
 | [SarefPropertyValue](SarefPropertyValue.md) | [owl_versionInfo](owl_versionInfo.md) | domain | [OwlThing](OwlThing.md) |
 | [SarefPropertyValue](SarefPropertyValue.md) | [rdfs_label](rdfs_label.md) | domain | [OwlThing](OwlThing.md) |
 | [SarefPropertyValue](SarefPropertyValue.md) | [rdfs_comment](rdfs_comment.md) | domain | [OwlThing](OwlThing.md) |
@@ -162,8 +162,6 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 | [QoQuestionnaire](QoQuestionnaire.md) | [rdfs_comment](rdfs_comment.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaire](QoQuestionnaire.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaire](QoQuestionnaire.md) | [prov_wasGeneratedBy](prov_wasGeneratedBy.md) | domain | [OwlThing](OwlThing.md) |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [dcterms_hasPart](dcterms_hasPart.md) | range | [OwlThing](OwlThing.md) |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [dcterms_isPartOf](dcterms_isPartOf.md) | range | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [owl_versionInfo](owl_versionInfo.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [rdfs_label](rdfs_label.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [rdfs_comment](rdfs_comment.md) | domain | [OwlThing](OwlThing.md) |
@@ -203,8 +201,6 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [rdfs_comment](rdfs_comment.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [prov_hadPrimarySource](prov_hadPrimarySource.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireResponse](QoQuestionnaireResponse.md) | [prov_wasGeneratedBy](prov_wasGeneratedBy.md) | domain | [OwlThing](OwlThing.md) |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [dcterms_hasPart](dcterms_hasPart.md) | range | [OwlThing](OwlThing.md) |
-| [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [dcterms_isPartOf](dcterms_isPartOf.md) | range | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [owl_versionInfo](owl_versionInfo.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [rdfs_label](rdfs_label.md) | domain | [OwlThing](OwlThing.md) |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | [rdfs_comment](rdfs_comment.md) | domain | [OwlThing](OwlThing.md) |
@@ -223,8 +219,8 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -247,7 +243,6 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 | ---  | ---  |
 | self | owl:Thing |
 | native | qo:OwlThing |
-
 
 
 
