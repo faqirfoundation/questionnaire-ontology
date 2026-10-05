@@ -15,12 +15,13 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 
 
 
+
 ```mermaid
  classDiagram
     class QoQuestion
-    click QoQuestion href "../QoQuestion/"
+    click QoQuestion href "../QoQuestion"
       ProvEntity <|-- QoQuestion
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
       
       QoQuestion : dcterms_created
         
@@ -31,7 +32,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "1..*" ProvOrganization : dcterms_creator
-        click ProvOrganization href "../ProvOrganization/"
+        click ProvOrganization href "../ProvOrganization"
     
 
         
@@ -42,7 +43,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -53,7 +54,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -66,7 +67,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -81,7 +82,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -92,7 +93,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "1..*" QoQuestionType : prov_type
-        click QoQuestionType href "../QoQuestionType/"
+        click QoQuestionType href "../QoQuestionType"
     
 
         
@@ -103,7 +104,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -114,7 +115,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -127,7 +128,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" ValueCoding : qo_codingParams
-        click ValueCoding href "../ValueCoding/"
+        click ValueCoding href "../ValueCoding"
     
 
         
@@ -138,7 +139,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "0..1" IntervalParams : qo_intervalParams
-        click IntervalParams href "../IntervalParams/"
+        click IntervalParams href "../IntervalParams"
     
 
         
@@ -151,7 +152,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "0..1" NumericalParams : qo_numericalParams
-        click NumericalParams href "../NumericalParams/"
+        click NumericalParams href "../NumericalParams"
     
 
         
@@ -168,7 +169,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -179,7 +180,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
         
         
         QoQuestion --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -238,38 +239,10 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 
 
 
-## Rules
-
-
-### 
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'prov_type': {'equals_string_in': ['choice', 'openChoice']}}``` |```{'qo_codingParams': {'required': True}}``` | |
-
-
-
-### 
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'prov_type': {'equals_string_in': ['numberInterval']}}``` |```{'qo_numericalParams': {'required': True}, 'qo_intervalParams': {'required': True}}``` | |
-
-
-
-### 
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'prov_type': {'equals_string_in': ['decimal']}}``` |```{'qo_numericalParams': {'required': True}}``` | |
-
-
-
-
-
 
 
 ## Identifier and Mapping Information
+
 
 
 
@@ -291,6 +264,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 | self | qo:Question |
 | native | qo:QoQuestion |
 | narrow | fhir:Questionnaire.item.where(type='question') |
+
 
 
 

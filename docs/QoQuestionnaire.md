@@ -15,12 +15,13 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
 
 
 
+
 ```mermaid
  classDiagram
     class QoQuestionnaire
-    click QoQuestionnaire href "../QoQuestionnaire/"
+    click QoQuestionnaire href "../QoQuestionnaire"
       ProvEntity <|-- QoQuestionnaire
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
       
       QoQuestionnaire : dcterms_created
         
@@ -31,7 +32,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "1..*" ProvOrganization : dcterms_creator
-        click ProvOrganization href "../ProvOrganization/"
+        click ProvOrganization href "../ProvOrganization"
     
 
         
@@ -42,7 +43,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -53,7 +54,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" SuloProcess : dcterms_isPartOf
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -66,7 +67,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "1" QoQuestionnaireStatus : fhir_status
-        click QoQuestionnaireStatus href "../QoQuestionnaireStatus/"
+        click QoQuestionnaireStatus href "../QoQuestionnaireStatus"
     
 
         
@@ -81,7 +82,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -94,7 +95,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -105,7 +106,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -116,7 +117,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" QoOrderedQuestion : qo_hasOrderedQuestion
-        click QoOrderedQuestion href "../QoOrderedQuestion/"
+        click QoOrderedQuestion href "../QoOrderedQuestion"
     
 
         
@@ -127,7 +128,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" QoOrderedSection : qo_hasOrderedSection
-        click QoOrderedSection href "../QoOrderedSection/"
+        click QoOrderedSection href "../QoOrderedSection"
     
 
         
@@ -142,7 +143,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -153,7 +154,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
         
         
         QoQuestionnaire --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -211,8 +212,8 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -234,6 +235,7 @@ URI: [qo:Questionnaire](https://ns.faqir.org/q-o#Questionnaire)
 | self | qo:Questionnaire |
 | native | qo:QoQuestionnaire |
 | narrow | fhir:Questionnaire |
+
 
 
 

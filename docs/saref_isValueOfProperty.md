@@ -22,9 +22,10 @@ Alias: saref_isValueOfProperty
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
 | [SarefPropertyValue](SarefPropertyValue.md) | Describes the value for a property |  no  |
 | [QoQuestionnaireResponseStatus](QoQuestionnaireResponseStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
+| [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | Defines the lifecycle state governing the operational readiness and availabil... |  no  |
+
 
 
 
@@ -38,7 +39,9 @@ Alias: saref_isValueOfProperty
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

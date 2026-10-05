@@ -7,7 +7,7 @@ _Questionnaires must have one of the following status (FHIR inspired): _
 
 
 
-URI: [qo:QuestionnaireStatusEnum](https://ns.faqir.org/q-o#QuestionnaireStatusEnum)
+URI: [QoQuestionnaireStatusEnum](QoQuestionnaireStatusEnum.md)
 
 ## Permissible Values
 
@@ -31,7 +31,9 @@ URI: [qo:QuestionnaireStatusEnum](https://ns.faqir.org/q-o#QuestionnaireStatusEn
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

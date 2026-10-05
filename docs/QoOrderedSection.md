@@ -15,12 +15,13 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
 
 
 
+
 ```mermaid
  classDiagram
     class QoOrderedSection
-    click QoOrderedSection href "../QoOrderedSection/"
+    click QoOrderedSection href "../QoOrderedSection"
       ProvEntity <|-- QoOrderedSection
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
       
       QoOrderedSection : dcterms_created
         
@@ -31,7 +32,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -42,7 +43,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -53,7 +54,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -66,7 +67,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -81,7 +82,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -94,7 +95,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -105,7 +106,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -118,7 +119,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "1..*" QoSection : qo_section
-        click QoSection href "../QoSection/"
+        click QoSection href "../QoSection"
     
 
         
@@ -133,7 +134,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -144,7 +145,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
         
         
         QoOrderedSection --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -202,8 +203,8 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -224,6 +225,7 @@ URI: [qo:OrderedSection](https://ns.faqir.org/q-o#OrderedSection)
 | ---  | ---  |
 | self | qo:OrderedSection |
 | native | qo:QoOrderedSection |
+
 
 
 

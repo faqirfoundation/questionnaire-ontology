@@ -29,6 +29,7 @@ Alias: qo_hasAnswer
 
 
 
+
 ## Properties
 
 * Range: [QoAnswer](QoAnswer.md)
@@ -40,7 +41,9 @@ Alias: qo_hasAnswer
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

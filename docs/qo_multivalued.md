@@ -29,6 +29,7 @@ Alias: qo_multivalued
 
 
 
+
 ## Properties
 
 * Range: [Boolean](Boolean.md)
@@ -36,7 +37,9 @@ Alias: qo_multivalued
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

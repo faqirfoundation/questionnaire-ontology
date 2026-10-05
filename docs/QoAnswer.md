@@ -15,12 +15,13 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
 
 
 
+
 ```mermaid
  classDiagram
     class QoAnswer
-    click QoAnswer href "../QoAnswer/"
+    click QoAnswer href "../QoAnswer"
       ProvEntity <|-- QoAnswer
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
       
       QoAnswer : dcterms_created
         
@@ -31,7 +32,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -42,7 +43,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -53,7 +54,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -66,7 +67,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -81,7 +82,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -94,7 +95,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" FoafAgent : prov_wasAttributedTo
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -105,7 +106,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -120,7 +121,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "1" QoQuestion : qo_toQuestion
-        click QoQuestion href "../QoQuestion/"
+        click QoQuestion href "../QoQuestion"
     
 
         
@@ -135,7 +136,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -146,7 +147,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
         
         
         QoAnswer --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -204,8 +205,8 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -227,6 +228,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
 | self | qo:Answer |
 | native | qo:QoAnswer |
 | undefined | fhir:QuestionnaireResponse.item.answer |
+
 
 
 

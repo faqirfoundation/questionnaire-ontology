@@ -29,6 +29,7 @@ Alias: maxValue
 
 
 
+
 ## Properties
 
 * Range: [Float](Float.md)
@@ -36,7 +37,9 @@ Alias: maxValue
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

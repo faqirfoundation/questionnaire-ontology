@@ -29,6 +29,7 @@ Alias: maxLabel
 
 
 
+
 ## Properties
 
 * Range: [String](String.md)
@@ -36,7 +37,9 @@ Alias: maxLabel
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

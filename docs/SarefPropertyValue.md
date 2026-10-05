@@ -15,20 +15,21 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 
 
 
+
 ```mermaid
  classDiagram
     class SarefPropertyValue
-    click SarefPropertyValue href "../SarefPropertyValue/"
+    click SarefPropertyValue href "../SarefPropertyValue"
       OwlThing <|-- SarefPropertyValue
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
       
 
       SarefPropertyValue <|-- QoQuestionnaireStatus
-        click QoQuestionnaireStatus href "../QoQuestionnaireStatus/"
+        click QoQuestionnaireStatus href "../QoQuestionnaireStatus"
       SarefPropertyValue <|-- QoQuestionnaireResponseStatus
-        click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus/"
+        click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus"
       
-
+      
       SarefPropertyValue : fhir_valueAttachment
         
       SarefPropertyValue : fhir_valueCodeableConcept
@@ -38,7 +39,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" ValueCoding : fhir_valueCodeableConcept
-        click ValueCoding href "../ValueCoding/"
+        click ValueCoding href "../ValueCoding"
     
 
         
@@ -49,7 +50,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" TimeInterval : fhir_valuePeriod
-        click TimeInterval href "../TimeInterval/"
+        click TimeInterval href "../TimeInterval"
     
 
         
@@ -60,7 +61,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" FhirReferenceRange : fhir_valueRange
-        click FhirReferenceRange href "../FhirReferenceRange/"
+        click FhirReferenceRange href "../FhirReferenceRange"
     
 
         
@@ -71,7 +72,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" FhirValueRatio : fhir_valueRatio
-        click FhirValueRatio href "../FhirValueRatio/"
+        click FhirValueRatio href "../FhirValueRatio"
     
 
         
@@ -88,7 +89,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -99,7 +100,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -116,7 +117,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
         
         
         SarefPropertyValue --> "0..1" SarefProperty : saref_isValueOfProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -199,8 +200,8 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -222,6 +223,7 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 | self | saref:PropertyValue |
 | native | qo:SarefPropertyValue |
 | undefined | sosa:Result |
+
 
 
 

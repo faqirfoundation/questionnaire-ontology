@@ -1,0 +1,624 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix omop: <https://www.ohdsi.org/data-standardization/> .
+@prefix openEHR: <http://openehr.org/v1/StructureDefinition/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phro: <https://ns.faqir.org/phr-o#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qo: <https://ns.faqir.org/q-o#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix schema: <http://schema.org/> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sphn:	<https://biomedit.ch/rdf/sphn-schema/sphn#> .
+@prefix sulo: <https://aidava-dev.github.io/sulo/ontospy/index.html> .
+@prefix s4ehaw: <https://saref.etsi.org/saref4ehaw/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix ucum: <https://unitsofmeasure.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# =============================================================================
+# WHOQOL-BREF QUESTIONNAIRE
+# =============================================================================
+<https://pods.faqir.org/questionnaire_WHOQOL_BREF> a qo:Questionnaire ;
+    rdfs:label "WHOQOL-BREF" ;
+    dcterms:created "2026-06-30T13:03:38.431356+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-06-30T13:03:38.431356+00:00"^^xsd:dateTime ;
+    dcterms:creator <https://www.who.int/> ;
+    owl:versionInfo "1.0.0";
+    rdfs:comment """This assessment asks how you feel about your quality of life, health, or other areas of your life. Please answer all the questions. If you are unsure about which response to give to a question, please choose the one that appears most appropriate. This can often be your first response. """@en ;
+    qo:hasOrderedSection <https://pods.faqir.org/orderedsection_WHOQOL_BREF_01>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_02>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_03>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_04>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_05>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_06>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_07>,
+        <https://pods.faqir.org/orderedsection_WHOQOL_BREF_08> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> ; 
+    fhir:status <https://pods.faqir.org/questionnaire_WHOQOL_BREF-active> .
+
+<https://pods.faqir.org/questionnaire_WHOQOL_BREF-active> a qo:QuestionnaireStatus ;
+    saref:hasValue <http://hl7.org/fhir/resource-status-active> ;
+    prov:atTime "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 1
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_01> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_01> ;
+    qo:order 1 ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_01> a qo:Section ;
+    rdfs:label "Please read each question, assess your feelings, and circle the number on the scale for each question that gives the best answer for you." ;
+    dcterms:created "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-06-30T13:03:38.431356+00:00"^^xsd:dateTime ;
+    dcterms:creator <https://www.who.int/> ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "If you are unsure about which response to give to a question, please choose the one that appears most appropriate. This can often be your first response. "@en ;
+    qo:hasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_G1> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> ; 
+    fhir:status <https://pods.faqir.org/section_WHOQOL_BREF_01-active> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_01-active> a qo:SectionStatus ;
+    saref:hasValue <http://hl7.org/fhir/resource-status-active> ;
+    prov:atTime "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_G1> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_G1> ;
+    qo:order 1 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_G1> a qo:Question ;
+    rdfs:label "How would you rate your quality of life?" ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag "WHOQOL-BREF-G1", snomed:405152002 ; # Quality of life satisfaction (observable entity) ;
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryPoor_1>, 
+        <https://pods.faqir.org/valuecoding_poor_2>, 
+        <https://pods.faqir.org/valuecoding_neither_3>, 
+        <https://pods.faqir.org/valuecoding_good_4>, 
+        <https://pods.faqir.org/valuecoding_veryGood_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 2
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_02> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_02> ;
+    qo:order 2 ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex>.
+
+<https://pods.faqir.org/section_WHOQOL_BREF_02> a qo:Section ;
+    rdfs:label "Please read each question, assess your feelings, and circle the number on the scale for each question that gives the best answer for you." ;
+    dcterms:created "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-06-30T13:03:38.431356+00:00"^^xsd:dateTime ;
+    dcterms:creator <https://www.who.int/> ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "If you are unsure about which response to give to a question, please choose the one that appears most appropriate. This can often be your first response. "@en ;
+    qo:hasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_G4> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> ; 
+    fhir:status <https://pods.faqir.org/section_WHOQOL_BREF_02-active> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_02-active> a qo:SectionStatus ;
+    saref:hasValue <http://hl7.org/fhir/resource-status-active> ;
+    prov:atTime "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_G4> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_G4> ;
+    qo:order 2 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_G4> a qo:Question ;
+    rdfs:label "How satisfied are you with your health?" ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag "WHOQOL-BREF-G4", snomed:405153007 ; # Personal wellbeing status
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+        <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
+        <https://pods.faqir.org/valuecoding_neither_3>, 
+        <https://pods.faqir.org/valuecoding_satisfied_4>, 
+        <https://pods.faqir.org/valuecoding_verySatisfied_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 3
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_03> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_03> ;
+    qo:order 3 ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_03> a qo:Section ;
+    rdfs:label "The following questions ask about how much you have experienced certain things in the last two weeks." ;
+    dcterms:created "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-06-30T13:03:38.431356+00:00"^^xsd:dateTime ;
+    dcterms:creator <https://www.who.int/> ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "If you are unsure about which response to give to a question, please choose the one that appears most appropriate. This can often be your first response. "@en ;
+    qo:hasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_03>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_04>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_05>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_06> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> ; 
+    fhir:status <https://pods.faqir.org/section_WHOQOL_BREF_03-active> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_03-active> a qo:SectionStatus ;
+    saref:hasValue <http://hl7.org/fhir/resource-status-active> ;
+    prov:atTime "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_03> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_03> ;
+    qo:order 1 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_03> a qo:Question ;
+    rdfs:label "To what extent do you feel that (physical) pain prevents you from doing what you need to do?" ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag "WHOQOL-BREF-F1.4", snomed:405160001 ; # Pain level: disruptive effects (observable entity)
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_04> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_04> ;
+    qo:order 2 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_04> a qo:Question ;
+    rdfs:label "How much do you need any medical treatment to function in your daily life?" ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag "WHOQOL-BREF-F11.3" ; 
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_05> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_05> ;
+    qo:order 3 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_05> a qo:Question ;
+    rdfs:label "How much do you enjoy life?" ;
+    owl:versionInfo "1.0.0", snomed:247794008 ; #Enjoyment of life (observable entity)
+    qo:tag "WHOQOL-BREF-F4.1" ; 
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_06> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_06> ;
+    qo:order 4 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_06> a qo:Question ;
+    rdfs:label "To what extent do you feel your life to be meaningful?" ;
+    owl:versionInfo "1.0.0" ; 
+    qo:tag "WHOQOL-BREF-F24.2" ; 
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 4
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_04> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_04> ;
+    qo:order 4 ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_04> a qo:Section ;
+    rdfs:label "The following questions ask about how much you have experienced certain things in the last two weeks." ;
+    dcterms:created "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-06-30T13:03:38.431356+00:00"^^xsd:dateTime ;
+    dcterms:creator <https://www.who.int/> ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "If you are unsure about which response to give to a question, please choose the one that appears most appropriate. This can often be your first response. "@en ;
+    qo:hasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_07>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_08>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_09> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> ; 
+    fhir:status <https://pods.faqir.org/section_WHOQOL_BREF_04-active> .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_04-active> a qo:SectionStatus ;
+    saref:hasValue <http://hl7.org/fhir/resource-status-active> ;
+    prov:atTime "2000-05-01T00:00:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_07> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_07> ;
+    qo:order 1 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_07> a qo:Question ;
+    rdfs:label "How well are you able to concentrate?" ;
+    owl:versionInfo "1.0.0" ; 
+    qo:tag "WHOQOL-BREF-F5.3", snomed:247760006 ; # Ability to concentrate (observable entity)
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_08> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_08> ;
+    qo:order 2 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_08> a qo:Question ;
+    rdfs:label "How safe do you feel in your daily life?" ;
+    owl:versionInfo "1.0.0" ; 
+    qo:tag "WHOQOL-BREF-F16.1", snomed:449892005 ; # Feeling safe (finding)
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_09> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_09> ;
+    qo:order 3 ;
+    qo:required true ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/duration_14days> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/question_WHOQOL_BREF_09> a qo:Question ;
+    rdfs:label "How healthy is your physical environment?" ;
+    owl:versionInfo "1.0.0" ; 
+    qo:tag "WHOQOL-BREF-F22.1", snomed:224777007 ; # Physical environment (environment)
+    dcterms:creator <https://www.who.int> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+        <https://pods.faqir.org/valuecoding_aLittle_2>, 
+        <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
+        <https://pods.faqir.org/valuecoding_veryMuch_4>, 
+        <https://pods.faqir.org/valuecoding_anExtremeAmount_5> ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 5
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_05> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_05> ;
+    qo:order 5 .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 6
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_06> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_06> ;
+    qo:order 6 .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 7
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_07> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_07> ;
+    qo:order 7 .
+
+    # =============================================================================
+    # WHOQOL-BREF SECTION 8
+    # =============================================================================
+<https://pods.faqir.org/orderedsection_WHOQOL_BREF_08> a qo:OrderedSection ;
+    qo:section <https://pods.faqir.org/section_WHOQOL_BREF_08> ;
+    qo:order 8 .
+
+# =============================================================================
+# WHOQOL-BREF 
+# =============================================================================
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_10> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_10> ;
+    qo:order 1 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_11> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_11> ;
+    qo:order 2 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_12> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_12> ;
+    qo:order 3 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_13> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_13> ;
+    qo:order 4 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_14> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_14> ;
+    qo:order 5 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_15> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_15> ;
+    qo:order 1 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_16> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_16> ;
+    qo:order 1 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_17> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_17> ;
+    qo:order 2 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_18> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_18> ;
+    qo:order 3 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_19> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_19> ;
+    qo:order 4 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_20> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_20> ;
+    qo:order 5 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_21> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_21> ;
+    qo:order 6 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_22> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_22> ;
+    qo:order 7 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_23> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_23> ;
+    qo:order 8 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_24> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_24> ;
+    qo:order 9 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_25> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_25> ;
+    qo:order 10 .
+
+<https://pods.faqir.org/orderedquestion_WHOQOL_BREF_26> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_WHOQOL_BREF_26> ;
+    qo:order 1 .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_05> a qo:Section ;
+    qo:sectionHasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_10>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_11>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_12>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_13>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_14> ;
+    qo:sectionLabel "Not at all / A little / Moderately / Mostly / Completely" .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_06> a qo:Section ;
+    qo:sectionHasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_15> ;
+    qo:sectionLabel "Very poor / Poor / Neither poor nor good / Good / Very good" .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_07> a qo:Section ;
+    qo:sectionHasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_16>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_17>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_18>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_19>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_20>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_21>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_22>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_23>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_24>,
+        <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_25> ;
+    qo:sectionLabel "Very dissatisfied / Dissatisfied / Neither satisfied nor dissatisfied / Satisfied / Very satisfied" .
+
+<https://pods.faqir.org/section_WHOQOL_BREF_08> a qo:Section ;
+    qo:sectionHasOrderedQuestion <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_26> ;
+    qo:sectionLabel "Never / Seldom / Quite often / Very often / Always" .
+
+
+
+
+#{Representative RDF instantiation of the WHOQOL-BREF demonstrating decoupled atomic questions, contextual wrappers, and patient response payloads.}, label={lst:whoqol_bref-instance}, basicstyle=\ttfamily\scriptsize, breaklines=true]
+
+faqir:duration_14days a time:Duration ;
+    saref:hasValue 14.0 ;
+    saref:isMeasuredIn ucum:d .
+
+# Execution Response Instance
+faqir:response_WHOQOL_BREF_01 a qo:QuestionnaireResponse ;
+    prov:wasAttributedTo <https://pods.faqir.org/234> ;
+    qo:hasAnswer faqir:answer_WHOQOL_BREF_01_a01 .
+
+faqir:answer_WHOQOL_BREF_01_a01 a qo:Answer ;
+    qo:toQuestion faqir:orderedquestion_WHOQOL_BREF_01 ;
+    qo:isEmpty false ; 
+    prov:generatedAtTime "2026-06-30T14:57:33.168913+00:00"^^xsd:dateTime ;
+    qo:answerValue  "1" .
+
+# =============================================================================
+# PROVENANCE & AUXILIAR Classes
+# =============================================================================
+<https://pods.faqir.org/swat4hcls-whoqol-2027-ex> a sulo:Process ;
+    rdfs:label "Modelling of WHOQOL-BREF 1.0"@en ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "Modelling of WHOQOL-BREF 1.0 in FAQIR Q-O, included in the paper 'A Semantic Model for Reusable Questionnaires and Temporal Answer Validity in Healthcare', presented at SWAT4HCLS 2027"@en ;
+    prov:startedAtTime "2026-09-11T17:00:00+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-30T17:00:00+00:00"^^xsd:dateTime .
+
+<https://pods.faqir.org/valuecoding_veryPoor_1> a fhir:Coding ;
+    fhir:code "1" ;
+    fhir:display "Very poor" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_poor_2> a fhir:Coding ;
+    fhir:code "2" ;
+    fhir:display "Poor" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_neither_3> a fhir:Coding ;
+    fhir:code "3" ;
+    fhir:display "Neither poor nor good" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_good_4> a fhir:Coding ;
+    fhir:code "4" ;
+    fhir:display "Good" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_veryGood_5> a fhir:Coding ;
+    fhir:code "5" ;
+    fhir:display "Very good" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_veryDissatisfied_1> a fhir:Coding ;
+    fhir:code "1" ;
+    fhir:display "Very dissatisfied" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_dissatisfied_2> a fhir:Coding ;
+    fhir:code "2" ;
+    fhir:display "Dissatisfied" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_neither_3> a fhir:Coding ;
+    fhir:code "3" ;
+    fhir:display "Neither satisfied nor dissatisfied" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_satisfied_4> a fhir:Coding ;
+    fhir:code "4" ;
+    fhir:display "Satisfied" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_verySatisfied_5> a fhir:Coding ;
+    fhir:code "5" ;
+    fhir:display "Very satisfied" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_notAtAll_1> a fhir:Coding ;
+    fhir:code "1" ;
+    fhir:display "Not at all" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_aLittle_2> a fhir:Coding ;
+    fhir:code "2" ;
+    fhir:display "A little" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_aModerateAmount_3> a fhir:Coding ;
+    fhir:code "3" ;
+    fhir:display "A moderate amount" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_veryMuch_4> a fhir:Coding ;
+    fhir:code "4" ;
+    fhir:display "Very much" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
+
+<https://pods.faqir.org/valuecoding_anExtremeAmount_5> a fhir:Coding ;
+    fhir:code "5" ;
+    fhir:display "An extreme amount" ;
+    prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .

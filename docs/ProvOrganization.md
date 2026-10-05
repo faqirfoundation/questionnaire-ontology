@@ -15,12 +15,13 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
 
 
 
+
 ```mermaid
  classDiagram
     class ProvOrganization
-    click ProvOrganization href "../ProvOrganization/"
+    click ProvOrganization href "../ProvOrganization"
       FoafAgent <|-- ProvOrganization
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
       
       ProvOrganization : dcterms_creator
         
@@ -29,7 +30,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -40,7 +41,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -51,7 +52,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -62,7 +63,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -77,7 +78,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -90,7 +91,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -105,7 +106,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -116,7 +117,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
         
         
         ProvOrganization --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -169,8 +170,8 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -192,6 +193,7 @@ URI: [prov:Organization](http://www.w3.org/ns/prov#Organization)
 | self | prov:Organization |
 | native | qo:ProvOrganization |
 | exact | fhir:Organization, foaf:Organization, openEHR:Organisation |
+
 
 
 

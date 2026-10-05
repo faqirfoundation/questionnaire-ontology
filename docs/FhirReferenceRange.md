@@ -15,10 +15,11 @@ URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observ
 
 
 
+
 ```mermaid
  classDiagram
     class FhirReferenceRange
-    click FhirReferenceRange href "../FhirReferenceRange/"
+    click FhirReferenceRange href "../FhirReferenceRange"
       FhirReferenceRange : highRange
         
           
@@ -26,7 +27,7 @@ URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observ
         
         
         FhirReferenceRange --> "0..1" QuantityValue : highRange
-        click QuantityValue href "../QuantityValue/"
+        click QuantityValue href "../QuantityValue"
     
 
         
@@ -37,7 +38,7 @@ URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observ
         
         
         FhirReferenceRange --> "0..1" QuantityValue : lowRange
-        click QuantityValue href "../QuantityValue/"
+        click QuantityValue href "../QuantityValue"
     
 
         
@@ -48,7 +49,7 @@ URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observ
         
         
         FhirReferenceRange --> "*" QuantityValue : normalValue
-        click QuantityValue href "../QuantityValue/"
+        click QuantityValue href "../QuantityValue"
     
 
         
@@ -87,8 +88,8 @@ URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observ
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -109,6 +110,7 @@ URI: [http://hl7.org/fhir/Observation.referenceRange](http://hl7.org/fhir/Observ
 | ---  | ---  |
 | self | http://hl7.org/fhir/Observation.referenceRange |
 | native | qo:FhirReferenceRange |
+
 
 
 

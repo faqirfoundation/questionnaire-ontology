@@ -15,18 +15,19 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 
 
 
+
 ```mermaid
  classDiagram
     class OwlThing
-    click OwlThing href "../OwlThing/"
+    click OwlThing href "../OwlThing"
       OwlThing <|-- FoafAgent
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
       OwlThing <|-- SuloProcess
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
       OwlThing <|-- ProvEntity
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
       OwlThing <|-- SarefPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
       
       OwlThing : owl_versionInfo
         
@@ -37,7 +38,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
         
         
         OwlThing --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -48,7 +49,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
         
         
         OwlThing --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -219,8 +220,8 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -243,6 +244,7 @@ URI: [owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 | ---  | ---  |
 | self | owl:Thing |
 | native | qo:OwlThing |
+
 
 
 

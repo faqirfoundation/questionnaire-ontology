@@ -15,20 +15,21 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 
 
 
+
 ```mermaid
  classDiagram
     class FoafAgent
-    click FoafAgent href "../FoafAgent/"
+    click FoafAgent href "../FoafAgent"
       OwlThing <|-- FoafAgent
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
       
 
       FoafAgent <|-- FoafPerson
-        click FoafPerson href "../FoafPerson/"
+        click FoafPerson href "../FoafPerson"
       FoafAgent <|-- ProvOrganization
-        click ProvOrganization href "../ProvOrganization/"
+        click ProvOrganization href "../ProvOrganization"
       
-
+      
       FoafAgent : dcterms_creator
         
           
@@ -36,7 +37,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -47,7 +48,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -58,7 +59,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -69,7 +70,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -84,7 +85,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -97,7 +98,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -112,7 +113,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -123,7 +124,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
         
         FoafAgent --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -194,8 +195,8 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -217,6 +218,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 | self | foaf:Agent |
 | native | qo:FoafAgent |
 | undefined | prov:Agent |
+
 
 
 

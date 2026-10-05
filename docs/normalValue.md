@@ -29,6 +29,7 @@ Alias: normalValue
 
 
 
+
 ## Properties
 
 * Range: [QuantityValue](QuantityValue.md)
@@ -38,7 +39,9 @@ Alias: normalValue
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

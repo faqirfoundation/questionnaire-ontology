@@ -35,6 +35,7 @@ Alias: qo_hasOrderedSection
 
 
 
+
 ## Properties
 
 * Range: [QoOrderedSection](QoOrderedSection.md)
@@ -44,7 +45,9 @@ Alias: qo_hasOrderedSection
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

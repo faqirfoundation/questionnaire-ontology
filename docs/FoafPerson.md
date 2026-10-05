@@ -15,12 +15,13 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 
 
 
+
 ```mermaid
  classDiagram
     class FoafPerson
-    click FoafPerson href "../FoafPerson/"
+    click FoafPerson href "../FoafPerson"
       FoafAgent <|-- FoafPerson
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
       
       FoafPerson : dcterms_creator
         
@@ -29,7 +30,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -40,7 +41,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -51,7 +52,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -62,7 +63,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -77,7 +78,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -90,7 +91,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -105,7 +106,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -116,7 +117,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
         
         FoafPerson --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -167,8 +168,8 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -190,6 +191,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 | self | foaf:Person |
 | native | qo:FoafPerson |
 | undefined | omop:Person, fhir:Person, schema:Person |
+
 
 
 

@@ -15,10 +15,11 @@ URI: [fhir:Coding](http://hl7.org/fhir/Coding)
 
 
 
+
 ```mermaid
  classDiagram
     class ValueCoding
-    click ValueCoding href "../ValueCoding/"
+    click ValueCoding href "../ValueCoding"
       ValueCoding : code
         
       ValueCoding : display
@@ -57,8 +58,8 @@ URI: [fhir:Coding](http://hl7.org/fhir/Coding)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -79,6 +80,7 @@ URI: [fhir:Coding](http://hl7.org/fhir/Coding)
 | ---  | ---  |
 | self | fhir:Coding |
 | native | qo:ValueCoding |
+
 
 
 

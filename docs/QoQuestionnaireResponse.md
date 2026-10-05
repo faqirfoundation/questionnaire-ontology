@@ -15,12 +15,13 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
 
 
 
+
 ```mermaid
  classDiagram
     class QoQuestionnaireResponse
-    click QoQuestionnaireResponse href "../QoQuestionnaireResponse/"
+    click QoQuestionnaireResponse href "../QoQuestionnaireResponse"
       ProvEntity <|-- QoQuestionnaireResponse
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
       
       QoQuestionnaireResponse : dcterms_created
         
@@ -31,7 +32,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -42,7 +43,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -53,7 +54,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" SuloProcess : dcterms_isPartOf
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -66,7 +67,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "1" QoQuestionnaireResponseStatus : fhir_status
-        click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus/"
+        click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus"
     
 
         
@@ -81,7 +82,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -94,7 +95,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "1" FoafPerson : prov_wasAttributedTo
-        click FoafPerson href "../FoafPerson/"
+        click FoafPerson href "../FoafPerson"
     
 
         
@@ -105,7 +106,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -116,7 +117,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "1..*" QoAnswer : qo_hasAnswer
-        click QoAnswer href "../QoAnswer/"
+        click QoAnswer href "../QoAnswer"
     
 
         
@@ -127,7 +128,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "1" QoQuestionnaire : qo_responds
-        click QoQuestionnaire href "../QoQuestionnaire/"
+        click QoQuestionnaire href "../QoQuestionnaire"
     
 
         
@@ -142,7 +143,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -153,7 +154,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
         
         
         QoQuestionnaireResponse --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -210,8 +211,8 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -232,6 +233,7 @@ URI: [qo:QuestionnaireResponse](https://ns.faqir.org/q-o#QuestionnaireResponse)
 | ---  | ---  |
 | self | qo:QuestionnaireResponse |
 | native | qo:QoQuestionnaireResponse |
+
 
 
 

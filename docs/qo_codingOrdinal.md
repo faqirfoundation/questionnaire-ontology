@@ -29,6 +29,7 @@ Alias: qo_codingOrdinal
 
 
 
+
 ## Properties
 
 * Range: [Boolean](Boolean.md)
@@ -36,7 +37,9 @@ Alias: qo_codingOrdinal
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

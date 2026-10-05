@@ -15,10 +15,11 @@ URI: [time:Interval](http://www.w3.org/2006/time#Interval)
 
 
 
+
 ```mermaid
  classDiagram
     class TimeInterval
-    click TimeInterval href "../TimeInterval/"
+    click TimeInterval href "../TimeInterval"
       TimeInterval : prov_endedAtTime
         
       TimeInterval : prov_startedAtTime
@@ -56,8 +57,8 @@ URI: [time:Interval](http://www.w3.org/2006/time#Interval)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -78,6 +79,7 @@ URI: [time:Interval](http://www.w3.org/2006/time#Interval)
 | ---  | ---  |
 | self | time:Interval |
 | native | qo:TimeInterval |
+
 
 
 

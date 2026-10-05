@@ -15,12 +15,13 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
 
 
 
+
 ```mermaid
  classDiagram
     class QoQuestionnaireStatus
-    click QoQuestionnaireStatus href "../QoQuestionnaireStatus/"
+    click QoQuestionnaireStatus href "../QoQuestionnaireStatus"
       SarefPropertyValue <|-- QoQuestionnaireStatus
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
       
       QoQuestionnaireStatus : fhir_valueAttachment
         
@@ -31,7 +32,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "0..1" ValueCoding : fhir_valueCodeableConcept
-        click ValueCoding href "../ValueCoding/"
+        click ValueCoding href "../ValueCoding"
     
 
         
@@ -42,7 +43,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "0..1" TimeInterval : fhir_valuePeriod
-        click TimeInterval href "../TimeInterval/"
+        click TimeInterval href "../TimeInterval"
     
 
         
@@ -53,7 +54,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "0..1" FhirReferenceRange : fhir_valueRange
-        click FhirReferenceRange href "../FhirReferenceRange/"
+        click FhirReferenceRange href "../FhirReferenceRange"
     
 
         
@@ -64,7 +65,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "0..1" FhirValueRatio : fhir_valueRatio
-        click FhirValueRatio href "../FhirValueRatio/"
+        click FhirValueRatio href "../FhirValueRatio"
     
 
         
@@ -81,7 +82,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -92,7 +93,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -107,7 +108,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "1" QoQuestionnaireStatusEnum : saref_hasValue
-        click QoQuestionnaireStatusEnum href "../QoQuestionnaireStatusEnum/"
+        click QoQuestionnaireStatusEnum href "../QoQuestionnaireStatusEnum"
     
 
         
@@ -118,7 +119,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
         
         
         QoQuestionnaireStatus --> "0..1" SarefProperty : saref_isValueOfProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -170,8 +171,8 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -192,6 +193,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
 | ---  | ---  |
 | self | qo:QuestionnaireStatus |
 | native | qo:QoQuestionnaireStatus |
+
 
 
 

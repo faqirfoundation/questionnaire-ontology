@@ -24,6 +24,7 @@ Alias: denominator
 
 
 
+
 ## Properties
 
 * Range: [QuantityValue](QuantityValue.md)
@@ -33,7 +34,9 @@ Alias: denominator
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

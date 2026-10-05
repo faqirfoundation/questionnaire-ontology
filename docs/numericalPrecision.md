@@ -29,6 +29,7 @@ Alias: numericalPrecision
 
 
 
+
 ## Properties
 
 * Range: [Integer](Integer.md)
@@ -38,7 +39,9 @@ Alias: numericalPrecision
 
 
 
+
 ## Identifier and Mapping Information
+
 
 
 

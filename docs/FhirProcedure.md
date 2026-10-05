@@ -15,12 +15,13 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
 
 
 
+
 ```mermaid
  classDiagram
     class FhirProcedure
-    click FhirProcedure href "../FhirProcedure/"
+    click FhirProcedure href "../FhirProcedure"
       SuloProcess <|-- FhirProcedure
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
       
       FhirProcedure : dcterms_creator
         
@@ -29,7 +30,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" FoafAgent : dcterms_creator
-        click FoafAgent href "../FoafAgent/"
+        click FoafAgent href "../FoafAgent"
     
 
         
@@ -40,7 +41,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" OwlThing : dcterms_hasPart
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -51,7 +52,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" OwlThing : dcterms_isPartOf
-        click OwlThing href "../OwlThing/"
+        click OwlThing href "../OwlThing"
     
 
         
@@ -62,7 +63,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -77,7 +78,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" ProvEntity : prov_hadPrimarySource
-        click ProvEntity href "../ProvEntity/"
+        click ProvEntity href "../ProvEntity"
     
 
         
@@ -92,7 +93,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" SuloProcess : prov_wasGeneratedBy
-        click SuloProcess href "../SuloProcess/"
+        click SuloProcess href "../SuloProcess"
     
 
         
@@ -107,7 +108,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" SarefProperty : saref_hasProperty
-        click SarefProperty href "../SarefProperty/"
+        click SarefProperty href "../SarefProperty"
     
 
         
@@ -118,7 +119,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
         
         
         FhirProcedure --> "*" SarefPropertyValue : saref_hasPropertyValue
-        click SarefPropertyValue href "../SarefPropertyValue/"
+        click SarefPropertyValue href "../SarefPropertyValue"
     
 
         
@@ -163,8 +164,8 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
 
 
 
-
 ## Identifier and Mapping Information
+
 
 
 
@@ -185,6 +186,7 @@ URI: [fhir:Procedure](http://hl7.org/fhir/Procedure)
 | ---  | ---  |
 | self | fhir:Procedure |
 | native | qo:FhirProcedure |
+
 
 
 
