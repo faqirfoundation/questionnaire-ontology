@@ -1,0 +1,45 @@
+classDiagram
+direction TB
+    class qo_Questionnaire {
+    }
+    qo_Questionnaire "0..*" --> "0..*" qo_OrderedQuestion : "qo_hasOrderedQuestion" 
+    qo_Questionnaire "0..*" --> "0..*" qo_OrderedSection : "qo_hasOrderedSection"
+
+    class qo_OrderedSection {
+        qo:order int
+    }
+    qo_OrderedSection "0..*" --> "1" qo_Section : "qo_section"
+
+    class qo_Section {
+    }
+    qo_Section "0..*" --> "0..*" qo_OrderedQuestion : "qo_hasOrderedQuestion" 
+    qo_Section "0..*" --> "0..*" qo_OrderedSection : "qo_hasOrderedSection"
+
+    class qo_OrderedQuestion {
+        qo:order int
+        qo:required bool
+        qo:hardValidity bool
+        qo:temporalValidity duration
+        qo:conditionalValidity string
+    }
+    qo_OrderedQuestion "0..*" --> "1" qo_Question : "qo_question"
+
+    class qo_Question {
+        qo:tag string
+        qo:multivalued bool
+        qo:numericalParams 
+        qo:codingParams
+        qo:codingOrdinal bool
+        qo:intervalParams
+    }
+
+    class qo_QuestionnaireResponse {
+    }
+    qo_QuestionnaireResponse "0..*" --> "1" qo_Questionnaire : "qo_responds"
+    qo_QuestionnaireResponse "1" --> "1..*" qo_Answer : "qo_hasAnswer"
+
+    class qo_Answer {
+        qo:answerValue float, datetime, string, uriorcurie
+        qo:isEmpty bool
+    }
+    qo_Answer "0..*" --> "1" qo_OrderedQuestion : "qo_toQuestion"

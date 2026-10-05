@@ -283,7 +283,7 @@ classes:
 
   saref_PropertyValue:
       description: "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty)."
-      is_a: prov_Entity
+      is_a: owl_Thing
       class_uri: saref:PropertyValue
       mappings:
           - sosa:Result
