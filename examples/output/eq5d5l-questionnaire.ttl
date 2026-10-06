@@ -256,7 +256,6 @@
         <https://pods.faqir.org/answer_EQ_5D_5L_05_a01>,
         <https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01> ;
     fhir:status <https://pods.faqir.org/response_EQ_5D_5L_01-completed> ;
-    owl:versionInfo "1.0.0" ;
     rdfs:comment "Example response to the EQ-5D-5L 3.0 questionnaire modelled in the FAQIR Questionnaire Ontology."@en ;
     prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .

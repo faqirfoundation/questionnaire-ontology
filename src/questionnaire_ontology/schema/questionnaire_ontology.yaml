@@ -459,6 +459,9 @@ classes:
     slots:
       - qo_hasOrderedQuestion 
       - qo_hasOrderedSection
+      - qo_hardValidity
+      - qo_temporalValidity
+      - qo_conditionalValidity
     slot_usage:
       dcterms_created:
         description: "The date and time when the questionnaire was created."
@@ -509,6 +512,9 @@ classes:
     slots:
       - qo_section
       - qo_order
+      - qo_hardValidity
+      - qo_temporalValidity
+      - qo_conditionalValidity
     slot_usage:
       qo_order:
         description: "Section position in the questionnaire or section (1-based index)."
@@ -527,6 +533,9 @@ classes:
     slots:
       - qo_hasOrderedQuestion
       - qo_hasOrderedSection
+      - qo_hardValidity
+      - qo_temporalValidity
+      - qo_conditionalValidity
     slot_usage:
       dcterms_creator:
         range: prov_Organization
@@ -611,6 +620,9 @@ classes:
         required: true
     slots:
       - qo_multivalued
+      - qo_hardValidity
+      - qo_temporalValidity
+      - qo_conditionalValidity
     rules:
       - description: "If prov_type is 'choice' or 'openChoice', codingParams is required."
         preconditions:
