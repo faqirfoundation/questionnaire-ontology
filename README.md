@@ -41,6 +41,23 @@ The **FAQIR Questionnaire Ontology (QO)** is a FAIR-by-design semantic framework
 │   └── output/                             # Validated RDF Turtle instance graphs
 │       ├── eq5d5l-questionnaire.ttl
 │       └── whoqol-bref-questionnaire.ttl
+└── sparql/                     # Executable SPARQL queries & outputs
+│   ├── README.md               # Guide explaining how to run queries against output/*.ttl
+│   ├── cq1_composition/
+│   │   ├── query.rq
+│   │   └── results.json         # Query execution result (JSON)
+│   ├── cq2_datatype_constraints/
+│   │   ├── query.rq
+│   │   └── results.json
+│   ├── cq3_temporal_validity/
+│   │   ├── query.rq
+│   │   └── results.json
+│   ├── cq4_deferral_eligibility/
+│   │   ├── query.rq
+│   │   └── results.json
+│   └── cq5_cross_instrument/
+│       ├── query.rq
+│       └── results.json
 ├── diagrams/                               # Architecture & UML Mermaid diagrams (PNG/SVG)
 ├── docs/                                   # LinkML auto-generated Markdown docs & submitted paper
 ├── scripts/
