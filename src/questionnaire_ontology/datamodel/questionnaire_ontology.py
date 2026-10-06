@@ -1,5 +1,5 @@
 # Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-05T14:13:35
+# Generation date: 2026-10-06T11:45:07
 # Schema: Questionnaire-Ontology
 #
 # id: https://ns.faqir.org/q-o
@@ -834,15 +834,23 @@ class QoQuestionnaire(ProvEntity):
 
     rdfs_label: Union[str, list[str]] = None
     rdfs_comment: Union[str, list[str]] = None
+    qo_temporalValidity: Union[dict, TimeDuration] = None
     dcterms_created: Union[str, XSDDateTime] = None
     dcterms_modified: Union[str, XSDDateTime] = None
     dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
     fhir_status: Union[Union[dict, "QoQuestionnaireStatus"], list[Union[dict, "QoQuestionnaireStatus"]]] = None
     qo_hasOrderedQuestion: Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]] = empty_list()
     qo_hasOrderedSection: Optional[Union[Union[dict, "QoOrderedSection"], list[Union[dict, "QoOrderedSection"]]]] = empty_list()
+    qo_hardValidity: Optional[Union[bool, Bool]] = False
+    qo_conditionalValidity: Optional[str] = None
     dcterms_isPartOf: Optional[Union[Union[dict, SuloProcess], list[Union[dict, SuloProcess]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.qo_temporalValidity):
+            self.MissingRequiredField("qo_temporalValidity")
+        if not isinstance(self.qo_temporalValidity, TimeDuration):
+            self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
+
         if self._is_empty(self.dcterms_created):
             self.MissingRequiredField("dcterms_created")
         if not isinstance(self.dcterms_created, XSDDateTime):
@@ -872,6 +880,12 @@ class QoQuestionnaire(ProvEntity):
         if not isinstance(self.qo_hasOrderedSection, list):
             self.qo_hasOrderedSection = [self.qo_hasOrderedSection] if self.qo_hasOrderedSection is not None else []
         self.qo_hasOrderedSection = [v if isinstance(v, QoOrderedSection) else QoOrderedSection(**as_dict(v)) for v in self.qo_hasOrderedSection]
+
+        if self.qo_hardValidity is not None and not isinstance(self.qo_hardValidity, Bool):
+            self.qo_hardValidity = Bool(self.qo_hardValidity)
+
+        if self.qo_conditionalValidity is not None and not isinstance(self.qo_conditionalValidity, str):
+            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
         if not isinstance(self.dcterms_isPartOf, list):
             self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
@@ -922,6 +936,9 @@ class QoOrderedSection(ProvEntity):
     rdfs_comment: Union[str, list[str]] = None
     qo_section: Union[dict, "QoSection"] = None
     qo_order: int = None
+    qo_temporalValidity: Union[dict, TimeDuration] = None
+    qo_hardValidity: Optional[Union[bool, Bool]] = False
+    qo_conditionalValidity: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.qo_section):
@@ -933,6 +950,17 @@ class QoOrderedSection(ProvEntity):
             self.MissingRequiredField("qo_order")
         if not isinstance(self.qo_order, int):
             self.qo_order = int(self.qo_order)
+
+        if self._is_empty(self.qo_temporalValidity):
+            self.MissingRequiredField("qo_temporalValidity")
+        if not isinstance(self.qo_temporalValidity, TimeDuration):
+            self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
+
+        if self.qo_hardValidity is not None and not isinstance(self.qo_hardValidity, Bool):
+            self.qo_hardValidity = Bool(self.qo_hardValidity)
+
+        if self.qo_conditionalValidity is not None and not isinstance(self.qo_conditionalValidity, str):
+            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
         super().__post_init__(**kwargs)
 
@@ -951,11 +979,19 @@ class QoSection(ProvEntity):
 
     rdfs_label: Union[str, list[str]] = None
     rdfs_comment: Union[str, list[str]] = None
+    qo_temporalValidity: Union[dict, TimeDuration] = None
     dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
     qo_hasOrderedQuestion: Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]] = empty_list()
     qo_hasOrderedSection: Optional[Union[Union[dict, QoOrderedSection], list[Union[dict, QoOrderedSection]]]] = empty_list()
+    qo_hardValidity: Optional[Union[bool, Bool]] = False
+    qo_conditionalValidity: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.qo_temporalValidity):
+            self.MissingRequiredField("qo_temporalValidity")
+        if not isinstance(self.qo_temporalValidity, TimeDuration):
+            self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
+
         if self._is_empty(self.dcterms_creator):
             self.MissingRequiredField("dcterms_creator")
         if not isinstance(self.dcterms_creator, list):
@@ -969,6 +1005,12 @@ class QoSection(ProvEntity):
         if not isinstance(self.qo_hasOrderedSection, list):
             self.qo_hasOrderedSection = [self.qo_hasOrderedSection] if self.qo_hasOrderedSection is not None else []
         self.qo_hasOrderedSection = [v if isinstance(v, QoOrderedSection) else QoOrderedSection(**as_dict(v)) for v in self.qo_hasOrderedSection]
+
+        if self.qo_hardValidity is not None and not isinstance(self.qo_hardValidity, Bool):
+            self.qo_hardValidity = Bool(self.qo_hardValidity)
+
+        if self.qo_conditionalValidity is not None and not isinstance(self.qo_conditionalValidity, str):
+            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
         super().__post_init__(**kwargs)
 
@@ -1040,16 +1082,24 @@ class QoQuestion(ProvEntity):
 
     rdfs_label: Union[str, list[str]] = None
     rdfs_comment: Union[str, list[str]] = None
+    qo_temporalValidity: Union[dict, TimeDuration] = None
     qo_tag: Union[str, list[str]] = None
     prov_type: Union[Union[str, "QoQuestionType"], list[Union[str, "QoQuestionType"]]] = None
     dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
     qo_multivalued: Optional[Union[bool, Bool]] = False
+    qo_hardValidity: Optional[Union[bool, Bool]] = False
+    qo_conditionalValidity: Optional[str] = None
     qo_numericalParams: Optional[Union[dict, NumericalParams]] = None
     qo_codingParams: Optional[Union[Union[dict, ValueCoding], list[Union[dict, ValueCoding]]]] = empty_list()
     qo_codingOrdinal: Optional[Union[bool, Bool]] = False
     qo_intervalParams: Optional[Union[dict, IntervalParams]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.qo_temporalValidity):
+            self.MissingRequiredField("qo_temporalValidity")
+        if not isinstance(self.qo_temporalValidity, TimeDuration):
+            self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
+
         if self._is_empty(self.qo_tag):
             self.MissingRequiredField("qo_tag")
         if not isinstance(self.qo_tag, list):
@@ -1070,6 +1120,12 @@ class QoQuestion(ProvEntity):
 
         if self.qo_multivalued is not None and not isinstance(self.qo_multivalued, Bool):
             self.qo_multivalued = Bool(self.qo_multivalued)
+
+        if self.qo_hardValidity is not None and not isinstance(self.qo_hardValidity, Bool):
+            self.qo_hardValidity = Bool(self.qo_hardValidity)
+
+        if self.qo_conditionalValidity is not None and not isinstance(self.qo_conditionalValidity, str):
+            self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
         if self.qo_numericalParams is not None and not isinstance(self.qo_numericalParams, NumericalParams):
             self.qo_numericalParams = NumericalParams(**as_dict(self.qo_numericalParams))

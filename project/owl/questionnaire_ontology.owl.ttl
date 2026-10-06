@@ -87,22 +87,22 @@ time:hasDuration a owl:ObjectProperty ;
 qo:FhirValueRatio a owl:Class ;
     rdfs:label "fhir_ValueRatio" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:numerator ],
-        [ a owl:Restriction ;
             owl:allValuesFrom qo:QuantityValue ;
-            owl:onProperty qo:denominator ],
+            owl:onProperty qo:numerator ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty qo:denominator ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:QuantityValue ;
+            owl:onProperty qo:denominator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty qo:numerator ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty qo:denominator ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty qo:numerator ] ;
     skos:definition "A ratio of two Quantity values - a numerator and a denominator" ;
     skos:exactMatch fhir:Ratio ;
@@ -121,40 +121,40 @@ qo:FoafPerson a owl:Class ;
 qo:IntervalParams a owl:Class ;
     rdfs:label "IntervalParams" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:minValue ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:float ;
             owl:onProperty qo:maxValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:maxValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:maxLabel ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty qo:maxLabel ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty qo:minLabel ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:maxLabel ],
+            owl:onProperty qo:minValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:minValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:minLabel ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:maxValue ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:float ;
             owl:onProperty qo:minValue ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:minLabel ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:minLabel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:maxValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:minValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty qo:minLabel ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:maxValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:minLabel ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty qo:maxLabel ] ;
     skos:definition "Parameters for interval values, including minimum and maximum values." ;
     skos:exactMatch phro:IntervalParams ;
@@ -163,6 +163,15 @@ qo:IntervalParams a owl:Class ;
 qo:NumericalParams a owl:Class ;
     rdfs:label "NumericalParams" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty qo:numericalPrecision ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:numericalPrecision ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty qo:numericalUnit ],
         [ a owl:Restriction ;
@@ -173,15 +182,6 @@ qo:NumericalParams a owl:Class ;
             owl:onProperty qo:numericalUnit ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty qo:numericalPrecision ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
-                                owl:onDatatype xsd:integer ;
-                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
-            owl:onProperty qo:numericalPrecision ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty qo:numericalPrecision ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -215,10 +215,10 @@ qo:QoQuestionnaireResponseStatus a owl:Class ;
 qo:QoQuestionnaireStatus a owl:Class ;
     rdfs:label "qo_QuestionnaireStatus" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom qo:QuestionnaireStatusEnum ;
+            owl:minCardinality 1 ;
             owl:onProperty saref:hasValue ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom qo:QuestionnaireStatusEnum ;
             owl:onProperty saref:hasValue ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -234,20 +234,20 @@ qo:TimeInterval a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty prov:startedAtTime ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:startedAtTime ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:endedAtTime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:endedAtTime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:startedAtTime ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty prov:endedAtTime ] ;
+            owl:onProperty prov:endedAtTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:endedAtTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:startedAtTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:endedAtTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:startedAtTime ] ;
     skos:definition "A temporal entity with an extent or duration" ;
     skos:exactMatch time:Interval ;
     skos:inScheme <https://ns.faqir.org/q-o> .
@@ -362,29 +362,29 @@ prov:hadPrimarySource a owl:ObjectProperty ;
 qo:FhirReferenceRange a owl:Class ;
     rdfs:label "fhir_ReferenceRange" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:lowRange ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:QuantityValue ;
-            owl:onProperty qo:normalValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:QuantityValue ;
-            owl:onProperty qo:highRange ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:highRange ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:normalValue ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:highRange ],
-        [ a owl:Restriction ;
             owl:allValuesFrom qo:QuantityValue ;
             owl:onProperty qo:lowRange ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:lowRange ] ;
+            owl:onProperty qo:lowRange ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:highRange ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:highRange ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:lowRange ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QuantityValue ;
+            owl:onProperty qo:highRange ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QuantityValue ;
+            owl:onProperty qo:normalValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:normalValue ] ;
     skos:definition "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used." ;
     skos:exactMatch fhir:Observation.referenceRange ;
     skos:inScheme <https://ns.faqir.org/q-o> .
@@ -392,34 +392,43 @@ qo:FhirReferenceRange a owl:Class ;
 qo:QoQuestionnaire a owl:Class ;
     rdfs:label "qo_Questionnaire" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:modified ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:SuloProcess ;
-            owl:onProperty dcterms:isPartOf ],
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcterms:modified ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty fhir:status ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:ProvOrganization ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:hasOrderedSection ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcterms:created ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcterms:modified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QoOrderedQuestion ;
+            owl:onProperty qo:hasOrderedQuestion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
             owl:allValuesFrom qo:QoQuestionnaireStatus ;
+            owl:onProperty fhir:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hasOrderedQuestion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty fhir:status ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:QoOrderedSection ;
@@ -428,17 +437,35 @@ qo:QoQuestionnaire a owl:Class ;
             owl:minCardinality 1 ;
             owl:onProperty dcterms:modified ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:created ],
+            owl:allValuesFrom qo:TimeDuration ;
+            owl:onProperty qo:temporalValidity ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoOrderedQuestion ;
-            owl:onProperty qo:hasOrderedQuestion ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hardValidity ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dcterms:created ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty qo:hasOrderedQuestion ],
+            owl:onProperty dcterms:isPartOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:SuloProcess ;
+            owl:onProperty dcterms:isPartOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcterms:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:ProvOrganization ;
+            owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hasOrderedSection ],
         qo:ProvEntity ;
     skos:definition "A structured, reusable instrument or template composed of ordered items designed to collect standardized information from an individual or system." ;
     skos:exactMatch qo:Questionnaire ;
@@ -449,43 +476,13 @@ qo:QoQuestionnaireResponse a owl:Class ;
     rdfs:label "qo_QuestionnaireResponse" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty dcterms:created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:responds ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty fhir:status ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty prov:wasAttributedTo ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty qo:responds ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoAnswer ;
-            owl:onProperty qo:hasAnswer ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dcterms:modified ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:hasAnswer ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcterms:modified ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoQuestionnaireResponseStatus ;
-            owl:onProperty fhir:status ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:modified ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:SuloProcess ;
-            owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:FoafPerson ;
             owl:onProperty prov:wasAttributedTo ],
@@ -493,11 +490,41 @@ qo:QoQuestionnaireResponse a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty dcterms:created ],
         [ a owl:Restriction ;
+            owl:allValuesFrom qo:QoQuestionnaire ;
+            owl:onProperty qo:responds ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QoAnswer ;
+            owl:onProperty qo:hasAnswer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:hasAnswer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcterms:modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:responds ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QoQuestionnaireResponseStatus ;
+            owl:onProperty fhir:status ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoQuestionnaire ;
-            owl:onProperty qo:responds ],
+            owl:allValuesFrom qo:SuloProcess ;
+            owl:onProperty dcterms:isPartOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcterms:created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcterms:modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcterms:created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty fhir:status ],
         qo:ProvEntity ;
     skos:definition "A completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument." ;
     skos:exactMatch qo:QuestionnaireResponse ;
@@ -506,23 +533,50 @@ qo:QoQuestionnaireResponse a owl:Class ;
 qo:QoSection a owl:Class ;
     rdfs:label "qo_Section" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hasOrderedSection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:TimeDuration ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
             owl:allValuesFrom qo:ProvOrganization ;
             owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QoOrderedQuestion ;
+            owl:onProperty qo:hasOrderedQuestion ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dcterms:creator ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:hasOrderedSection ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:hasOrderedQuestion ],
-        [ a owl:Restriction ;
             owl:allValuesFrom qo:QoOrderedSection ;
             owl:onProperty qo:hasOrderedSection ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoOrderedQuestion ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty qo:hasOrderedQuestion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:conditionalValidity ],
         qo:ProvEntity ;
     skos:definition "A logical grouping or thematic partition of items within a structured survey instrument." ;
     skos:exactMatch qo:Section ;
@@ -532,20 +586,20 @@ qo:QoSection a owl:Class ;
 qo:ValueCoding a owl:Class ;
     rdfs:label "ValueCoding" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty qo:display ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty qo:display ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:code ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:code ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty qo:display ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:code ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty qo:code ] ;
@@ -660,72 +714,44 @@ qo:ProvOrganization a owl:Class ;
 qo:QoAnswer a owl:Class ;
     rdfs:label "qo_Answer" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:answerValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom qo:QoQuestion ;
             owl:onProperty qo:toQuestion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty prov:generatedAtTime ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:isEmpty ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty prov:generatedAtTime ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:answerValue ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty qo:isEmpty ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:toQuestion ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:unionOf ( xsd:float xsd:string xsd:dateTime ) ] ;
             owl:onProperty qo:answerValue ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty prov:generatedAtTime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:isEmpty ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:isEmpty ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoQuestion ;
             owl:onProperty qo:toQuestion ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty qo:answerValue ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:toQuestion ],
+            owl:minCardinality 0 ;
+            owl:onProperty qo:isEmpty ],
         qo:ProvEntity ;
     skos:definition "A recorded value, or selection provided in response to a specific inquiry item." ;
     skos:exactMatch qo:Answer ;
     skos:inScheme <https://ns.faqir.org/q-o> ;
     skos:mappingRelation fhir:QuestionnaireResponse.item.answer .
-
-qo:TimeDuration a owl:Class ;
-    rdfs:label "time_Duration" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saref:isMeasuredIn ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:anyURI [ a rdfs:Datatype ;
-                                owl:onDatatype xsd:string ;
-                                owl:withRestrictions ( [ xsd:pattern "^ucum:" ] ) ] ) ] ;
-            owl:onProperty saref:isMeasuredIn ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:hasValue ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saref:hasValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:unionOf ( xsd:integer xsd:float xsd:double xsd:decimal xsd:date xsd:dateTime xsd:anyURI xsd:string ) ] ;
-            owl:onProperty saref:hasValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:isMeasuredIn ] ;
-    skos:definition "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit" ;
-    skos:exactMatch time:Duration ;
-    skos:inScheme <https://ns.faqir.org/q-o> .
 
 qo:answerValue a owl:DatatypeProperty ;
     rdfs:label "qo_answerValue" ;
@@ -748,12 +774,6 @@ qo:codingParams a owl:ObjectProperty ;
     skos:definition "Defines the permissible standardized concept codes and human-readable labels available for selection." ;
     skos:inScheme <https://ns.faqir.org/q-o> .
 
-qo:conditionalValidity a owl:DatatypeProperty ;
-    rdfs:label "qo_conditionalValidity" ;
-    rdfs:range xsd:string ;
-    skos:definition "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
-    skos:inScheme <https://ns.faqir.org/q-o> .
-
 qo:denominator a owl:ObjectProperty ;
     rdfs:label "denominator" ;
     skos:inScheme <https://ns.faqir.org/q-o> .
@@ -761,12 +781,6 @@ qo:denominator a owl:ObjectProperty ;
 qo:display a owl:DatatypeProperty ;
     rdfs:label "display" ;
     skos:definition "The human-readable display text for the code (e.g. code '1' for value 'Yes')." ;
-    skos:inScheme <https://ns.faqir.org/q-o> .
-
-qo:hardValidity a owl:DatatypeProperty ;
-    rdfs:label "qo_hardValidity" ;
-    rdfs:range xsd:boolean ;
-    skos:definition "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
     skos:inScheme <https://ns.faqir.org/q-o> .
 
 qo:highRange a owl:ObjectProperty ;
@@ -854,13 +868,6 @@ qo:section a owl:ObjectProperty ;
     skos:definition "Identifies the specific thematic grouping referenced at a given positional index." ;
     skos:inScheme <https://ns.faqir.org/q-o> .
 
-qo:temporalValidity a owl:ObjectProperty ;
-    rdfs:label "qo_temporalValidity" ;
-    rdfs:range qo:TimeDuration ;
-    rdfs:subPropertyOf time:hasDuration ;
-    skos:definition "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
-    skos:inScheme <https://ns.faqir.org/q-o> .
-
 qo:toQuestion a owl:ObjectProperty ;
     rdfs:label "qo_toQuestion" ;
     rdfs:domain qo:QoAnswer ;
@@ -886,26 +893,32 @@ prov:wasAttributedTo a owl:ObjectProperty ;
 qo:QoOrderedQuestion a owl:Class ;
     rdfs:label "qo_OrderedQuestion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:temporalValidity ],
+            owl:minCardinality 0 ;
+            owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:order ],
+            owl:onProperty qo:required ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:question ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:QoQuestion ;
             owl:onProperty qo:question ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:hardValidity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:hardValidity ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty qo:hardValidity ],
+            owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty qo:order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty qo:required ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
@@ -913,32 +926,26 @@ qo:QoOrderedQuestion a owl:Class ;
                                 owl:withRestrictions ( [ xsd:minInclusive 1 ] ) ] ) ] ;
             owl:onProperty qo:order ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty qo:required ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:question ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:conditionalValidity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:temporalValidity ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty qo:conditionalValidity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:required ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:TimeDuration ;
-            owl:onProperty qo:temporalValidity ],
+            owl:onProperty qo:hardValidity ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
+            owl:allValuesFrom qo:TimeDuration ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty qo:required ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty qo:order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:hardValidity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty qo:question ],
@@ -951,8 +958,38 @@ qo:QoOrderedQuestion a owl:Class ;
 qo:QoOrderedSection a owl:Class ;
     rdfs:label "qo_OrderedSection" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty qo:order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:QoSection ;
+            owl:onProperty qo:section ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:section ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:section ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
@@ -960,17 +997,14 @@ qo:QoOrderedSection a owl:Class ;
                                 owl:withRestrictions ( [ xsd:minInclusive 1 ] ) ] ) ] ;
             owl:onProperty qo:order ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty qo:section ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:QoSection ;
-            owl:onProperty qo:section ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:section ],
+            owl:allValuesFrom qo:TimeDuration ;
+            owl:onProperty qo:temporalValidity ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty qo:order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
         qo:ProvEntity ;
     owl:hasKey ( qo:order ) ;
     skos:definition "A contextual wrapper that binds a thematic grouping of inquiry items to a specific sequence index within a survey template or parent group." ;
@@ -1002,26 +1036,26 @@ qo:QuantityValue a owl:Class ;
     rdfs:label "QuantityValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:unionOf ( xsd:integer xsd:float xsd:double xsd:decimal xsd:date xsd:dateTime xsd:anyURI xsd:string ) ] ;
+                    owl:intersectionOf ( xsd:anyURI [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:string ;
+                                owl:withRestrictions ( [ xsd:pattern "^ucum:" ] ) ] ) ] ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty saref:hasValue ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty saref:isMeasuredIn ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:anyURI [ a rdfs:Datatype ;
-                                owl:onDatatype xsd:string ;
-                                owl:withRestrictions ( [ xsd:pattern "^ucum:" ] ) ] ) ] ;
-            owl:onProperty saref:isMeasuredIn ],
+                    owl:unionOf ( xsd:integer xsd:float xsd:double xsd:decimal xsd:date xsd:dateTime xsd:anyURI xsd:string ) ] ;
+            owl:onProperty saref:hasValue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty saref:hasValue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty saref:isMeasuredIn ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saref:hasValue ] ;
+            owl:onProperty saref:isMeasuredIn ] ;
     skos:definition "A measured amount (or an amount that can potentially be measured)." ;
     skos:exactMatch fhir:Quantity ;
     skos:inScheme <https://ns.faqir.org/q-o> .
@@ -1078,10 +1112,10 @@ qo:SarefProperty a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty fhir:referenceRange ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:FhirReferenceRange ;
+            owl:maxCardinality 1 ;
             owl:onProperty fhir:referenceRange ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom qo:FhirReferenceRange ;
             owl:onProperty fhir:referenceRange ],
         qo:ProvEntity ;
     skos:definition "Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A property can apply to different features of interest." ;
@@ -1107,53 +1141,53 @@ saref:isMeasuredIn a owl:DatatypeProperty ;
 qo:QoQuestion a owl:Class ;
     rdfs:label "qo_Question" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:ProvOrganization ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty qo:multivalued ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:NumericalParams ;
-            owl:onProperty qo:numericalParams ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty qo:hardValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty qo:intervalParams ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty qo:tag ],
+            owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty qo:codingOrdinal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:TimeDuration ;
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:conditionalValidity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty qo:numericalParams ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:codingParams ],
+            owl:minCardinality 1 ;
+            owl:onProperty qo:temporalValidity ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:intervalParams ],
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty qo:hardValidity ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty qo:codingOrdinal ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:codingOrdinal ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:ValueCoding ;
-            owl:onProperty qo:codingParams ],
+            owl:minCardinality 0 ;
+            owl:onProperty qo:hardValidity ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty prov:type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty qo:codingOrdinal ],
+            owl:allValuesFrom qo:ProvOrganization ;
+            owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:multivalued ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty qo:tag ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty qo:numericalParams ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty qo:multivalued ],
@@ -1162,10 +1196,37 @@ qo:QoQuestion a owl:Class ;
             owl:onProperty qo:intervalParams ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty qo:multivalued ],
+            owl:onProperty qo:temporalValidity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:codingOrdinal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:ValueCoding ;
+            owl:onProperty qo:codingParams ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:numericalParams ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:NumericalParams ;
+            owl:onProperty qo:numericalParams ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty qo:tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty qo:intervalParams ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:conditionalValidity ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:QuestionType ;
             owl:onProperty prov:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty qo:codingParams ],
         qo:ProvEntity ;
     skos:definition "An individual inquiry item within an instrument that specifies an information requirement and constrains the acceptable response format." ;
     skos:exactMatch qo:Question ;
@@ -1175,78 +1236,14 @@ qo:QoQuestion a owl:Class ;
 qo:SarefPropertyValue a owl:Class ;
     rdfs:label "saref_PropertyValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty fhir:valueReference ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:valueRatio ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty fhir:valueRange ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty fhir:valueRatio ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:hasValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:valuePeriod ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:atTime ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty fhir:valueAttachment ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:atTime ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty fhir:valueCodeableConcept ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:isValueOfProperty ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saref:isValueOfProperty ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty fhir:valueReference ],
-        [ a owl:Restriction ;
             owl:allValuesFrom qo:SarefProperty ;
             owl:onProperty saref:isValueOfProperty ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:valueRange ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty fhir:valuePeriod ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty saref:hasValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:unionOf ( xsd:integer xsd:float xsd:double xsd:decimal xsd:date xsd:dateTime xsd:anyURI xsd:string ) ] ;
-            owl:onProperty saref:hasValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty fhir:valueAttachment ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:atTime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:valueAttachment ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:valueReference ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:ValueCoding ;
-            owl:onProperty fhir:valueCodeableConcept ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:valueCodeableConcept ],
+            owl:onProperty fhir:valueRatio ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:FhirValueRatio ;
             owl:onProperty fhir:valueRatio ],
@@ -1254,13 +1251,105 @@ qo:SarefPropertyValue a owl:Class ;
             owl:allValuesFrom qo:FhirReferenceRange ;
             owl:onProperty fhir:valueRange ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty prov:atTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:unionOf ( xsd:integer xsd:float xsd:double xsd:decimal xsd:date xsd:dateTime xsd:anyURI xsd:string ) ] ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:valueRatio ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:valueCodeableConcept ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty fhir:valueReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:atTime ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty fhir:valueCodeableConcept ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty fhir:valueAttachment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:valueReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:valuePeriod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saref:isValueOfProperty ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:valueRange ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:valueAttachment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty fhir:valueAttachment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty fhir:valueReference ],
+        [ a owl:Restriction ;
             owl:allValuesFrom qo:TimeInterval ;
             owl:onProperty fhir:valuePeriod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:ValueCoding ;
+            owl:onProperty fhir:valueCodeableConcept ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty fhir:valueRange ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:isValueOfProperty ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:atTime ],
         qo:OwlThing ;
     skos:definition "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty)." ;
     skos:exactMatch saref:PropertyValue ;
     skos:inScheme <https://ns.faqir.org/q-o> ;
     skos:mappingRelation sosa:Result .
+
+qo:TimeDuration a owl:Class ;
+    rdfs:label "time_Duration" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:unionOf ( xsd:integer xsd:float xsd:double xsd:decimal xsd:date xsd:dateTime xsd:anyURI xsd:string ) ] ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:anyURI [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:string ;
+                                owl:withRestrictions ( [ xsd:pattern "^ucum:" ] ) ] ) ] ;
+            owl:onProperty saref:isMeasuredIn ] ;
+    skos:definition "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit" ;
+    skos:exactMatch time:Duration ;
+    skos:inScheme <https://ns.faqir.org/q-o> .
 
 saref:hasPropertyValue a owl:ObjectProperty ;
     rdfs:label "saref_hasPropertyValue" ;
@@ -1271,53 +1360,53 @@ saref:hasPropertyValue a owl:ObjectProperty ;
 qo:FoafAgent a owl:Class ;
     rdfs:label "foaf_Agent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty prov:type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:FoafAgent ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:generatedAtTime ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:SarefProperty ;
-            owl:onProperty saref:hasProperty ],
-        [ a owl:Restriction ;
             owl:allValuesFrom qo:OwlThing ;
             owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty fhir:status ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:OwlThing ;
-            owl:onProperty dcterms:hasPart ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:status ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty prov:generatedAtTime ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty prov:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:hasProperty ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:SarefPropertyValue ;
+            owl:onProperty saref:hasPropertyValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:OwlThing ;
+            owl:onProperty dcterms:hasPart ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:hasPropertyValue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:SarefProperty ;
             owl:onProperty saref:hasProperty ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty prov:type ],
+            owl:onProperty prov:generatedAtTime ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:SarefPropertyValue ;
-            owl:onProperty saref:hasPropertyValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:hasPropertyValue ],
+            owl:allValuesFrom qo:FoafAgent ;
+            owl:onProperty dcterms:creator ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dcterms:hasPart ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty prov:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcterms:creator ],
         qo:OwlThing ;
     skos:definition "An agent (eg. person, group, software or physical artifact)." ;
     skos:exactMatch foaf:Agent ;
@@ -1368,63 +1457,63 @@ qo:SuloProcess a owl:Class ;
     rdfs:label "sulo_Process" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty dcterms:isPartOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:OwlThing ;
+            owl:onProperty dcterms:hasPart ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty fhir:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty fhir:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:OwlThing ;
+            owl:onProperty dcterms:isPartOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:FoafAgent ;
+            owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty prov:startedAtTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcterms:creator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:SarefPropertyValue ;
             owl:onProperty saref:hasPropertyValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty prov:endedAtTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:startedAtTime ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:SarefProperty ;
             owl:onProperty saref:hasProperty ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dcterms:isPartOf ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty prov:type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcterms:hasPart ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:FoafAgent ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty fhir:status ],
+            owl:onProperty saref:hasPropertyValue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty saref:hasProperty ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:OwlThing ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:endedAtTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:endedAtTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty dcterms:hasPart ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:startedAtTime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty fhir:status ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:SarefPropertyValue ;
-            owl:onProperty saref:hasPropertyValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:endedAtTime ],
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty prov:type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:endedAtTime ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:endedAtTime ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:startedAtTime ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:OwlThing ;
-            owl:onProperty dcterms:isPartOf ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty prov:startedAtTime ],
         qo:OwlThing ;
     skos:definition "a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process." ;
@@ -1467,79 +1556,98 @@ qo:ProvEntity a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty dcterms:created ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:SarefPropertyValue ;
-            owl:onProperty saref:hasPropertyValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty dcterms:created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty prov:type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcterms:modified ],
+            owl:minCardinality 0 ;
+            owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty prov:generatedAtTime ],
+            owl:onProperty dcterms:hasPart ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty fhir:status ],
         [ a owl:Restriction ;
-            owl:allValuesFrom qo:FoafAgent ;
-            owl:onProperty prov:wasAttributedTo ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dcterms:created ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcterms:hasPart ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom qo:OwlThing ;
-            owl:onProperty dcterms:isPartOf ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:hasProperty ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saref:hasPropertyValue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty dcterms:modified ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcterms:isPartOf ],
+            owl:onProperty dcterms:creator ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty prov:type ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:wasAttributedTo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:generatedAtTime ],
+        [ a owl:Restriction ;
             owl:allValuesFrom qo:SarefProperty ;
             owl:onProperty saref:hasProperty ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty dcterms:modified ],
+        [ a owl:Restriction ;
             owl:allValuesFrom qo:OwlThing ;
             owl:onProperty dcterms:hasPart ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:FoafAgent ;
+            owl:onProperty prov:wasAttributedTo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:SarefPropertyValue ;
+            owl:onProperty saref:hasPropertyValue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dcterms:modified ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dcterms:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:generatedAtTime ],
+            owl:onProperty saref:hasPropertyValue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty prov:wasAttributedTo ],
+            owl:onProperty dcterms:created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcterms:modified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom qo:OwlThing ;
+            owl:onProperty dcterms:isPartOf ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:FoafAgent ;
             owl:onProperty dcterms:creator ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty dcterms:created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saref:hasProperty ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:generatedAtTime ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty fhir:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty prov:type ],
         qo:OwlThing ;
     skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary." ;
     skos:exactMatch prov:Entity ;
     skos:inScheme <https://ns.faqir.org/q-o> ;
     skos:mappingRelation sulo:Object .
+
+qo:conditionalValidity a owl:DatatypeProperty ;
+    rdfs:label "qo_conditionalValidity" ;
+    rdfs:range xsd:string ;
+    skos:definition "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
+    skos:inScheme <https://ns.faqir.org/q-o> .
+
+qo:hardValidity a owl:DatatypeProperty ;
+    rdfs:label "qo_hardValidity" ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
+    skos:inScheme <https://ns.faqir.org/q-o> .
+
+qo:temporalValidity a owl:ObjectProperty ;
+    rdfs:label "qo_temporalValidity" ;
+    rdfs:range qo:TimeDuration ;
+    rdfs:subPropertyOf time:hasDuration ;
+    skos:definition "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
+    skos:inScheme <https://ns.faqir.org/q-o> .
 
 saref:hasValue a owl:DatatypeProperty ;
     rdfs:label "saref_hasValue" ;
@@ -1554,46 +1662,38 @@ qo:OwlThing a owl:Class ;
             owl:allValuesFrom qo:ProvEntity ;
             owl:onProperty prov:hadPrimarySource ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty owl:versionInfo ],
+            owl:minCardinality 0 ;
+            owl:onProperty prov:hadPrimarySource ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:wasGeneratedBy ],
         [ a owl:Restriction ;
             owl:allValuesFrom qo:SuloProcess ;
             owl:onProperty prov:wasGeneratedBy ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty rdfs:comment ],
+            owl:onProperty owl:versionInfo ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty rdfs:comment ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty owl:versionInfo ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:hadPrimarySource ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty owl:versionInfo ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:wasGeneratedBy ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty rdfs:comment ] ;
     skos:definition "This defines IOT as the set of OWL individuals." ;
     skos:exactMatch owl:Thing ;
     skos:inScheme <https://ns.faqir.org/q-o> .
-
-[] rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty qo:codingParams ;
-            owl:someValuesFrom owl:Thing ] ;
-    owl:intersectionOf ( [ a owl:Restriction ;
-                owl:onProperty prov:type ;
-                owl:someValuesFrom [ a rdfs:Datatype ;
-                        owl:oneOf ( "choice" "openChoice" ) ] ] qo:QoQuestion ) .
 
 [] rdfs:subClassOf [ owl:intersectionOf ( [ a owl:Restriction ;
                         owl:onProperty qo:intervalParams ;
@@ -1610,4 +1710,12 @@ qo:OwlThing a owl:Class ;
     owl:intersectionOf ( [ a owl:Restriction ;
                 owl:onProperty prov:type ;
                 owl:someValuesFrom "decimal" ] qo:QoQuestion ) .
+
+[] rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty qo:codingParams ;
+            owl:someValuesFrom owl:Thing ] ;
+    owl:intersectionOf ( [ a owl:Restriction ;
+                owl:onProperty prov:type ;
+                owl:someValuesFrom [ a rdfs:Datatype ;
+                        owl:oneOf ( "choice" "openChoice" ) ] ] qo:QoQuestion ) .
 

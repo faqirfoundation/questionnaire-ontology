@@ -48,7 +48,11 @@ URI: [time:Duration](http://www.w3.org/2006/time#Duration)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [QoQuestionnaire](QoQuestionnaire.md) | [qo_temporalValidity](qo_temporalValidity.md) | range | [TimeDuration](TimeDuration.md) |
+| [QoOrderedSection](QoOrderedSection.md) | [qo_temporalValidity](qo_temporalValidity.md) | range | [TimeDuration](TimeDuration.md) |
+| [QoSection](QoSection.md) | [qo_temporalValidity](qo_temporalValidity.md) | range | [TimeDuration](TimeDuration.md) |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | [qo_temporalValidity](qo_temporalValidity.md) | range | [TimeDuration](TimeDuration.md) |
+| [QoQuestion](QoQuestion.md) | [qo_temporalValidity](qo_temporalValidity.md) | range | [TimeDuration](TimeDuration.md) |
 
 
 

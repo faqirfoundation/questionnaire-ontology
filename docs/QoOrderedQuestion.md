@@ -358,7 +358,11 @@ attributes:
     alias: qo_hardValidity
     owner: qo_OrderedQuestion
     domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
     - qo_OrderedQuestion
+    - qo_Question
     range: boolean
     required: false
   qo_temporalValidity:
@@ -372,7 +376,11 @@ attributes:
     alias: qo_temporalValidity
     owner: qo_OrderedQuestion
     domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
     - qo_OrderedQuestion
+    - qo_Question
     range: time_Duration
     required: true
   qo_conditionalValidity:
@@ -386,7 +394,11 @@ attributes:
     alias: qo_conditionalValidity
     owner: qo_OrderedQuestion
     domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
     - qo_OrderedQuestion
+    - qo_Question
     range: string
     required: false
   qo_order:

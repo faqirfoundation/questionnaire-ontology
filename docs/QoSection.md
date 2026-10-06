@@ -110,6 +110,10 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
     
 
         
+      QoSection : qo_conditionalValidity
+        
+      QoSection : qo_hardValidity
+        
       QoSection : qo_hasOrderedQuestion
         
           
@@ -129,6 +133,17 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
         
         QoSection --> "*" QoOrderedSection : qo_hasOrderedSection
         click QoOrderedSection href "../QoOrderedSection"
+    
+
+        
+      QoSection : qo_temporalValidity
+        
+          
+    
+        
+        
+        QoSection --> "1" TimeDuration : qo_temporalValidity
+        click TimeDuration href "../TimeDuration"
     
 
         
@@ -178,6 +193,9 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 | ---  | --- | --- | --- |
 | [qo_hasOrderedQuestion](qo_hasOrderedQuestion.md) | * <br/> [QoOrderedQuestion](QoOrderedQuestion.md) | Associates a survey container or group with a sequence-indexed wrapper holdin... | direct |
 | [qo_hasOrderedSection](qo_hasOrderedSection.md) | * <br/> [QoOrderedSection](QoOrderedSection.md) | Associates a survey container or group with a sequence-indexed wrapper holdin... | direct |
+| [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies the operational enforcement mechanism of a duration limit; when tru... | direct |
+| [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | Defines the time extent following generation during which a recorded answer r... | direct |
+| [qo_conditionalValidity](qo_conditionalValidity.md) | 0..1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -260,6 +278,9 @@ is_a: prov_Entity
 slots:
 - qo_hasOrderedQuestion
 - qo_hasOrderedSection
+- qo_hardValidity
+- qo_temporalValidity
+- qo_conditionalValidity
 slot_usage:
   dcterms_creator:
     name: dcterms_creator
@@ -345,6 +366,61 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  qo_hardValidity:
+    name: qo_hardValidity
+    description: Specifies the operational enforcement mechanism of a duration limit;
+      when true, expiration acts as a strict invalidation threshold for re-use, whereas
+      when false, it serves as a non-binding recommendation.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: qo:hardValidity
+    ifabsent: 'False'
+    alias: qo_hardValidity
+    owner: qo_Section
+    domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
+    - qo_OrderedQuestion
+    - qo_Question
+    range: boolean
+    required: false
+  qo_temporalValidity:
+    name: qo_temporalValidity
+    description: Defines the time extent following generation during which a recorded
+      answer remains valid for automated longitudinal reuse without requiring re-administration.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    is_a: time_hasDuration
+    slot_uri: qo:temporalValidity
+    alias: qo_temporalValidity
+    owner: qo_Section
+    domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
+    - qo_OrderedQuestion
+    - qo_Question
+    range: time_Duration
+    required: true
+  qo_conditionalValidity:
+    name: qo_conditionalValidity
+    description: A machine-readable rule statement defining an intervening event or
+      state change that revokes the validity of a recorded observation prior to its
+      natural temporal expiration.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: qo:conditionalValidity
+    alias: qo_conditionalValidity
+    owner: qo_Section
+    domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
+    - qo_OrderedQuestion
+    - qo_Question
+    range: string
+    required: false
   prov_wasAttributedTo:
     name: prov_wasAttributedTo
     description: Attribution is the ascribing of an entity to an agent.

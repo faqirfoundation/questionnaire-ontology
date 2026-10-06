@@ -132,6 +132,10 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
     
 
         
+      QoQuestion : qo_conditionalValidity
+        
+      QoQuestion : qo_hardValidity
+        
       QoQuestion : qo_intervalParams
         
           
@@ -157,6 +161,17 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 
         
       QoQuestion : qo_tag
+        
+      QoQuestion : qo_temporalValidity
+        
+          
+    
+        
+        
+        QoQuestion --> "1" TimeDuration : qo_temporalValidity
+        click TimeDuration href "../TimeDuration"
+    
+
         
       QoQuestion : rdfs_comment
         
@@ -203,6 +218,9 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [qo_multivalued](qo_multivalued.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether this question allows more than one answer (true) or only on... | direct |
+| [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies the operational enforcement mechanism of a duration limit; when tru... | direct |
+| [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | Defines the time extent following generation during which a recorded answer r... | direct |
+| [qo_conditionalValidity](qo_conditionalValidity.md) | 0..1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
 | [qo_tag](qo_tag.md) | 1..* <br/> [String](String.md) | A machine-readable alphanumeric code or mnemonic string used for internal ref... | direct |
 | [qo_numericalParams](qo_numericalParams.md) | 0..1 <br/> [NumericalParams](NumericalParams.md) | Specifies measurement units and decimal precision constraints governing accep... | direct |
 | [qo_codingParams](qo_codingParams.md) | * <br/> [ValueCoding](ValueCoding.md) | Defines the permissible standardized concept codes and human-readable labels ... | direct |
@@ -288,6 +306,9 @@ narrow_mappings:
 is_a: prov_Entity
 slots:
 - qo_multivalued
+- qo_hardValidity
+- qo_temporalValidity
+- qo_conditionalValidity
 slot_usage:
   prov_type:
     name: prov_type
@@ -511,6 +532,61 @@ attributes:
     domain_of:
     - qo_Question
     range: boolean
+  qo_hardValidity:
+    name: qo_hardValidity
+    description: Specifies the operational enforcement mechanism of a duration limit;
+      when true, expiration acts as a strict invalidation threshold for re-use, whereas
+      when false, it serves as a non-binding recommendation.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: qo:hardValidity
+    ifabsent: 'False'
+    alias: qo_hardValidity
+    owner: qo_Question
+    domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
+    - qo_OrderedQuestion
+    - qo_Question
+    range: boolean
+    required: false
+  qo_temporalValidity:
+    name: qo_temporalValidity
+    description: Defines the time extent following generation during which a recorded
+      answer remains valid for automated longitudinal reuse without requiring re-administration.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    is_a: time_hasDuration
+    slot_uri: qo:temporalValidity
+    alias: qo_temporalValidity
+    owner: qo_Question
+    domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
+    - qo_OrderedQuestion
+    - qo_Question
+    range: time_Duration
+    required: true
+  qo_conditionalValidity:
+    name: qo_conditionalValidity
+    description: A machine-readable rule statement defining an intervening event or
+      state change that revokes the validity of a recorded observation prior to its
+      natural temporal expiration.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: qo:conditionalValidity
+    alias: qo_conditionalValidity
+    owner: qo_Question
+    domain_of:
+    - qo_Questionnaire
+    - qo_OrderedSection
+    - qo_Section
+    - qo_OrderedQuestion
+    - qo_Question
+    range: string
+    required: false
   prov_wasAttributedTo:
     name: prov_wasAttributedTo
     description: Attribution is the ascribing of an entity to an agent.
