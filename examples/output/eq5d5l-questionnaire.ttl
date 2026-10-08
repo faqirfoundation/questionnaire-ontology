@@ -1,0 +1,344 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix omop: <https://www.ohdsi.org/data-standardization/> .
+@prefix openEHR: <http://openehr.org/v1/StructureDefinition/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phro: <https://ns.faqir.org/phr-o#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qo: <https://ns.faqir.org/q-o#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix schema: <http://schema.org/> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sphn:	<https://biomedit.ch/rdf/sphn-schema/sphn#> .
+@prefix sulo: <https://aidava-dev.github.io/sulo/ontospy/index.html> .
+@prefix s4ehaw: <https://saref.etsi.org/saref4ehaw/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix ucum: <https://unitsofmeasure.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# =============================================================================
+# EQ-5D-5L 3.0 QUESTIONNAIRE
+# =============================================================================
+<https://pods.faqir.org/questionnaire_EQ_5D_5L> a qo:Questionnaire ;
+    rdfs:label "EQ-5D-5L" ;
+    dcterms:created "2009-01-01T11:52:00+00:00"^^xsd:dateTime ;
+    dcterms:modified "2019-09-01T11:52:00+00:00"^^xsd:dateTime ;
+    dcterms:creator "https://euroqol.org/" ;
+    owl:versionInfo "3.0" ;
+    rdfs:comment "EQ-5D is a standardised measure of health status developed by the EuroQol Group to provide a simple, generic measure of health for clinical and economic appraisal."@en ;
+    qo:hasOrderedQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_01>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_02>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_03>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_04>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_05>,
+        <https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> ; 
+    fhir:status <https://pods.faqir.org/questionnaire_EQ_5D_5L-active> .
+
+<https://pods.faqir.org/questionnaire_EQ_5D_5L-active> a qo:QuestionnaireStatus ;
+    saref:hasValue <http://hl7.org/fhir/resource-status-active> ;
+    prov:atTime "2019-09-01T11:52:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_01> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_EQ_5D_5L_01> ;
+    qo:order "1"^^xsd:integer ;
+    qo:required false ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/1day> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_01> a qo:Question ;
+    rdfs:label "MOBILITY. Please tick the ONE box that best describes your health TODAY."@en ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag snomed:246197003 ; # Mobility (attribute)
+    dcterms:creator <https://euroqol.org/> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:codingParams [ a fhir:Coding ;
+            fhir:code "3" ;
+            fhir:display "I have moderate problems in walking about"@en ],
+        [ a fhir:Coding ;
+            fhir:code "4" ;
+            fhir:display "I have severe problems in walking about"@en ],
+        [ a fhir:Coding ;
+            fhir:code "1" ;
+            fhir:display "I have no problems in walking about"@en ],
+        [ a fhir:Coding ;
+            fhir:code "2" ;
+            fhir:display "I have slight problems in walking about"@en ],
+        [ a fhir:Coding ;
+            fhir:code "5" ;
+            fhir:display "I am unable to walk about"@en ] ;
+    qo:codingOrdinal false ;
+    qo:multivalued false ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_02> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_EQ_5D_5L_02> ;
+    qo:order "2"^^xsd:integer ;
+    qo:required false ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/1day> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_02> a qo:Question ;
+    rdfs:label "SELF-CARE. Please tick the ONE box that best describes your health TODAY."@en ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag snomed:284773001 ; # Ability to perform personal care activity (observable entity)
+    dcterms:creator <https://euroqol.org/> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:codingParams [ a fhir:Coding ;
+            fhir:code "3" ;
+            fhir:display "I have moderate problems washing or dressing myself"@en ],
+        [ a fhir:Coding ;
+            fhir:code "1" ;
+            fhir:display "I have no problems washing or dressing myself"@en ],
+        [ a fhir:Coding ;
+            fhir:code "4" ;
+            fhir:display "I have severe problems washing or dressing myself"@en ],
+        [ a fhir:Coding ;
+            fhir:code "2" ;
+            fhir:display "I have slight problems washing or dressing myself"@en ],
+        [ a fhir:Coding ;
+            fhir:code "5" ;
+            fhir:display "I am unable to wash or dress myself"@en ] ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_03> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_EQ_5D_5L_03> ;
+    qo:order "3"^^xsd:integer ;
+    qo:required false ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/1day> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_03> a qo:Question ;
+    rdfs:label "USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities). Please tick the ONE box that best describes your health TODAY."@en ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag snomed:129025006 ; # Activity of daily living (observable entity)
+    dcterms:creator <https://euroqol.org/> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:codingParams [ a fhir:Coding ;
+            fhir:code "3" ;
+            fhir:display "I have moderate problems doing my usual activities"@en ],
+        [ a fhir:Coding ;
+            fhir:code "5" ;
+            fhir:display "I am unable to do my usual activities"@en ],
+        [ a fhir:Coding ;
+            fhir:code "4" ;
+            fhir:display "I have severe problems doing my usual activities"@en ],
+        [ a fhir:Coding ;
+            fhir:code "1" ;
+            fhir:display "I have no problems doing my usual activities"@en ],
+        [ a fhir:Coding ;
+            fhir:code "2" ;
+            fhir:display "I have slight problems doing my usual activities"@en ] ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_04> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_EQ_5D_5L_04> ;
+    qo:order "4"^^xsd:integer ;
+    qo:required false ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/1day> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_04> a qo:Question ;
+    rdfs:label "PAIN / DISCOMFORT. Please tick the ONE box that best describes your health TODAY."@en ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag snomed:22253000, snomed:247347003 ; # Pain (finding), Discomfort (finding)
+    dcterms:creator <https://euroqol.org/> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:codingParams [ a fhir:Coding ;
+            fhir:code "5" ;
+            fhir:display "I have extreme pain or discomfort"@en ],
+        [ a fhir:Coding ;
+            fhir:code "3" ;
+            fhir:display "I have moderate pain or discomfort"@en ],
+        [ a fhir:Coding ;
+            fhir:code "1" ;
+            fhir:display "I have no pain or discomfort"@en ],
+        [ a fhir:Coding ;
+            fhir:code "4" ;
+            fhir:display "I have severe pain or discomfort"@en ],
+        [ a fhir:Coding ;
+            fhir:code "2" ;
+            fhir:display "I have slight pain or discomfort"@en ] ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_05> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_EQ_5D_5L_05> ;
+    qo:order "5"^^xsd:integer ;
+    qo:required false ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/1day> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_05> a qo:Question ;
+    rdfs:label "ANXIETY / DEPRESSION. Please tick the ONE box that best describes your health TODAY."@en ;
+    owl:versionInfo "1.0.0" ;
+    qo:tag snomed:48694002, snomed:35489007 ; #Anxiety (finding), Depressive disorder (disorder)
+    dcterms:creator <https://euroqol.org/> ;
+    prov:type <http://hl7.org/fhir/item-type#coding> ;
+    qo:codingParams [ a fhir:Coding ;
+            fhir:code "5" ;
+            fhir:display "I am extremely anxious or depressed"@en ],
+        [ a fhir:Coding ;
+            fhir:code "3" ;
+            fhir:display "I am moderately anxious or depressed"@en ],
+        [ a fhir:Coding ;
+            fhir:code "1" ;
+            fhir:display "I am not anxious or depressed"@en ],
+        [ a fhir:Coding ;
+            fhir:code "4" ;
+            fhir:display "I am severely anxious or depressed"@en ],
+        [ a fhir:Coding ;
+            fhir:code "2" ;
+            fhir:display "I am slightly anxious or depressed"@en ] ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
+
+<https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS> a qo:OrderedQuestion ;
+    qo:question <https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS> ;
+    qo:order "6"^^xsd:integer ;
+    qo:required false ;
+    qo:hardValidity true ;
+    qo:temporalValidity <https://pods.faqir.org/1day> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS> a qo:Question ;
+    rdfs:label """We would like to know how good or bad your health is TODAY.
+            This scale is numbered from 0 to 100.
+            100 means the *best* health you can imagine.
+            0 means the *worst* health you can imagine.
+            Mark an X on the scale to indicate how your health is TODAY.
+            Now, please write the number you marked on the scale."""@en ;    
+    owl:versionInfo "1.0.0" ;                            
+    qo:tag snomed:304734002 ; # Health value scale (assessment scale)
+    dcterms:creator <https://euroqol.org/> ;
+    prov:type <http://hl7.org/fhir/item-type#decimal> ;
+    qo:intervalParams <https://pods.faqir.org/interval-0-100-health> ;                    
+    qo:numericalParams <https://pods.faqir.org/0-precision> ;
+    prov:hadPrimarySource <https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .                      
+
+# =============================================================================
+# EQ-5D-5L 3.0 QUESTIONNAIRE RESPONSE
+# =============================================================================
+<https://pods.faqir.org/response_EQ_5D_5L_01> a qo:QuestionnaireResponse ;
+    rdfs:label "EQ-5D-5L 3.0 response by patient123"@en ;
+    qo:responds <https://pods.faqir.org/questionnaire_EQ_5D_5L> ;
+    dcterms:created "2025-07-11T10:35:00+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-09-29T17:06:00+00:00"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://pods.faqir.org/patient123> ;
+    qo:hasAnswer <https://pods.faqir.org/answer_EQ_5D_5L_01_a01>,
+        <https://pods.faqir.org/answer_EQ_5D_5L_02_a01>,
+        <https://pods.faqir.org/answer_EQ_5D_5L_03_a01>,
+        <https://pods.faqir.org/answer_EQ_5D_5L_04_a01>,
+        <https://pods.faqir.org/answer_EQ_5D_5L_05_a01>,
+        <https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01> ;
+    fhir:status <https://pods.faqir.org/response_EQ_5D_5L_01-completed> ;
+    rdfs:comment "Example response to the EQ-5D-5L 3.0 questionnaire modelled in the FAQIR Questionnaire Ontology."@en ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/response_EQ_5D_5L_01-completed> a qo:QuestionnaireResponseStatus ;
+    saref:hasValue <http://hl7.org/fhir/questionnaire-answers-status-completed> ;
+    prov:atTime "2025-07-11T10:35:00+00:00"^^xsd:dateTime ;
+    saref:isValueOfProperty snomed:263490005 ; #Status (attribute)
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/answer_EQ_5D_5L_01_a01> a qo:Answer ;
+    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_01> ;
+    qo:isEmpty false ; 
+    qo:answerValue "1" ;
+    prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/answer_EQ_5D_5L_02_a01> a qo:Answer ;
+    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_02> ;
+    qo:isEmpty true ;
+    prov:generatedAtTime "2025-07-11T10:35:08+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/answer_EQ_5D_5L_03_a01> a qo:Answer ;
+    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_03> ;
+    qo:isEmpty false ; 
+    qo:answerValue  "3" ;
+    prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/answer_EQ_5D_5L_04_a01> a qo:Answer ;
+    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_04> ;
+    qo:isEmpty false ;
+    qo:answerValue "2"; 
+    prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
+
+<https://pods.faqir.org/answer_EQ_5D_5L_05_a01> a qo:Answer ;
+    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_05> ;
+    qo:isEmpty false ;
+    qo:answerValue "1" ;
+    prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+<https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01> a qo:Answer ;
+    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS> ;
+    qo:isEmpty false ;
+    qo:answerValue "67.0"^^xsd:float ;
+    prov:generatedAtTime "2025-07-11T10:35:11+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
+    prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
+
+# =============================================================================
+# PROVENANCE & AUXILIAR Classes
+# =============================================================================
+<https://pods.faqir.org/swat4hcls-eq5h-2027-ex> a sulo:Process ;
+    rdfs:label "Modelling of EQ-5D-5L 3.0" ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "Modelling of EQ-5D-5L 3.0 in FAQIR Q-O, included in the paper 'A Semantic Model for Reusable Questionnaires and Temporal Answer Validity in Healthcare', presented at SWAT4HCLS 2027"@en ;
+    prov:startedAtTime "2026-09-11T17:00:00+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-30T17:00:00+00:00"^^xsd:dateTime .
+
+<https://pods.faqir.org/1day> a time:Duration ;
+    rdfs:label "One day duration"@en ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "Period of time of 1 day"@en ;
+    saref:hasValue "1.0"^^xsd:float ;
+    saref:isMeasuredIn ucum:d .
+
+<https://pods.faqir.org/interval-0-100-health> a phro:IntervalParams ;
+    rdfs:label "Health Interval 0 to 100"@en ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:comment "Numerical health interval from 0 (worst health you can imagine) to 100 (best health you can imagine)"@en ;
+    phro:maxLabel "The best health you can imagine"@en ;     
+    phro:maxValue "100.0"^^xsd:float ;                    
+    phro:minLabel "The worst health you can imagine"@en ;    
+    phro:minValue "0.0"^^xsd:float .
+
+ <https://pods.faqir.org/0-precision> a phro:NumericalParams ;      
+    phro:precision "0.0"^^xsd:float .

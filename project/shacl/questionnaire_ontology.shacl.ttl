@@ -1,0 +1,2050 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phro: <https://ns.faqir.org/phr-o#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qo: <https://ns.faqir.org/q-o#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s4ehaw: <https://saref.etsi.org/saref4ehaw/> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sulo: <https://aidava-dev.github.io/sulo/ontospy/index.html> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix ucum: <https://unitsofmeasure.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fhir:Procedure a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An action that is being or was performed on an individual or entity" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity started." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path prov:startedAtTime ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:label ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:hasPart ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path fhir:resource-status ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path dcterms:creator ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity ended." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:endedAtTime ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:type ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path rdfs:comment ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path saref:hasProperty ] ;
+    sh:targetClass fhir:Procedure .
+
+prov:Attribution a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ]." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass prov:Attribution .
+
+qo:QuestionnaireResponse a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the questionnaire response was created (when the questionnaire starts to be answered, not when it's finished)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path dcterms:created ],
+        [ sh:class qo:Questionnaire ;
+            sh:description "Links a record instance back to the underlying survey template it answers." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path qo:responds ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 16 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path rdfs:comment ],
+        [ sh:class qo:Answer ;
+            sh:description "Associates a recorded instance with its constituent individual response values." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path qo:hasAnswer ],
+        [ sh:class qo:QuestionnaireResponseStatus ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path fhir:resource-status ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path dcterms:hasPart ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path prov:type ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path dcterms:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class foaf:Person ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path saref:hasProperty ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path rdfs:label ],
+        [ sh:class sulo:Process ;
+            sh:description "Process this questionnaire response instance is part of." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the questionnaire response was last updated." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path dcterms:modified ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 17 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path saref:hasPropertyValue ] ;
+    sh:targetClass qo:QuestionnaireResponse .
+
+s4ehaw:activity a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "The activity of a patient/user, i.e. daily and nocturnal activities." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity started." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path prov:startedAtTime ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:hasPart ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path dcterms:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path rdfs:comment ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path fhir:resource-status ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity ended." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:endedAtTime ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path saref:hasProperty ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:type ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path owl:versionInfo ] ;
+    sh:targetClass s4ehaw:activity .
+
+foaf:Person a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A person." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:hasPart ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path owl:versionInfo ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path rdfs:label ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path saref:hasProperty ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path fhir:resource-status ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:type ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path dcterms:creator ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path prov:generatedAtTime ] ;
+    sh:targetClass foaf:Person .
+
+phro:IntervalParams a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Parameters for interval values, including minimum and maximum values." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:float ;
+            sh:description "The maximum value of the interval." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path phro:maxValue ],
+        [ sh:datatype xsd:string ;
+            sh:description "The label for the minimum value of the interval." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path phro:minLabel ],
+        [ sh:datatype xsd:float ;
+            sh:description "The minimum value of the interval." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path phro:minValue ],
+        [ sh:datatype xsd:string ;
+            sh:description "The label for the maximum value of the interval." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path phro:maxLabel ] ;
+    sh:targetClass phro:IntervalParams .
+
+phro:NumericalParams a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Parameters for quantitative values, including unit and precision." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:anyURI ;
+            sh:description "The unit of measure for the quantitative value, from UCUM standard." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path ucum:units ;
+            sh:pattern "^ucum:" ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The precision of the quantitative value, e.g. number of decimal places." ;
+            sh:maxCount 1 ;
+            sh:minInclusive 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path phro:precision ] ;
+    sh:targetClass phro:NumericalParams .
+
+qo:Answer a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A recorded value, or selection provided in response to a specific inquiry item." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 18 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path dcterms:creator ],
+        [ sh:description "The recorded literal payload (numeric scalar, textual/coded string, or timestamp) representing the output of a specific inquiry execution." ;
+            sh:maxCount 1 ;
+            sh:or ( [ sh:datatype xsd:float ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:dateTime ;
+                        sh:nodeKind sh:Literal ] ) ;
+            sh:order 1 ;
+            sh:path qo:answerValue ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 17 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path saref:hasProperty ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path fhir:resource-status ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path dcterms:hasPart ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path dcterms:created ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class qo:Question ;
+            sh:description "Links a recorded response value back to its originating inquiry item definition." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path qo:toQuestion ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path prov:type ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path dcterms:modified ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Specifies an explicit assertion that an item was purposefully omitted or unpopulated by the respondent rather than skipped due to systemic error." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path qo:isEmpty ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path owl:versionInfo ] ;
+    sh:targetClass qo:Answer .
+
+qo:Questionnaire a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A structured, reusable instrument or template composed of ordered items designed to collect standardized information from an individual or system." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:boolean ;
+            sh:description "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path qo:hardValidity ],
+        [ sh:class qo:OrderedSection ;
+            sh:description "Associates a survey container or group with a sequence-indexed wrapper holding a nested thematic subgroup." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path qo:hasOrderedSection ],
+        [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class qo:QuestionnaireStatus ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path fhir:resource-status ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:type ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 19 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the questionnaire was last updated." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path dcterms:modified ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path saref:hasProperty ],
+        [ sh:class prov:Organization ;
+            sh:description "The Organization that has created this Questionnaire." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path dcterms:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path owl:versionInfo ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class qo:OrderedQuestion ;
+            sh:description "Associates a survey container or group with a sequence-indexed wrapper holding an individual inquiry item." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path qo:hasOrderedQuestion ],
+        [ sh:class sulo:Process ;
+            sh:description "Process this questionnaire is part of." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path rdfs:label ],
+        [ sh:class time:Duration ;
+            sh:description "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path qo:temporalValidity ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path dcterms:hasPart ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the questionnaire was created." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path dcterms:created ],
+        [ sh:datatype xsd:string ;
+            sh:description "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path qo:conditionalValidity ] ;
+    sh:targetClass qo:Questionnaire .
+
+qo:QuestionnaireResponseStatus a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Defines the lifecycle state governing the operational readiness and availability of a completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:anyURI ;
+            sh:description "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path fhir:valueAttachment ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path owl:versionInfo ],
+        [ sh:description "The status of the questionnaire response, indicating whether it is 'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:integer ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:float ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:double ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:decimal ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:date ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:dateTime ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:anyURI ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] ) ;
+            sh:order 1 ;
+            sh:path saref:hasValue ],
+        [ sh:class time:Interval ;
+            sh:description "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path fhir:valuePeriod ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class fhir:Coding ;
+            sh:description "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path fhir:valueCodeableConcept ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:label ],
+        [ sh:class saref:Property ;
+            sh:description "Links a property value to the property or property of interest it is a value of." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path saref:isValueOfProperty ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an InstantaneousEvent occurred." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:atTime ],
+        [ sh:class fhir:Ratio ;
+            sh:description "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path fhir:valueRatio ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path fhir:valueReference ],
+        [ sh:class fhir:Observation.referenceRange ;
+            sh:description "A set of ordered Quantity values defined by a low and high limit." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path fhir:valueRange ] ;
+    sh:targetClass qo:QuestionnaireResponseStatus .
+
+qo:QuestionnaireStatus a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Defines the lifecycle state governing the operational readiness and availability of a survey template." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "The status of the questionnaire, indicating whether it is	draft active, retired or unknown." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:integer ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:float ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:double ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:decimal ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:date ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:dateTime ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:anyURI ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] ) ;
+            sh:order 1 ;
+            sh:path saref:hasValue ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class saref:Property ;
+            sh:description "Links a property value to the property or property of interest it is a value of." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path saref:isValueOfProperty ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class fhir:Observation.referenceRange ;
+            sh:description "A set of ordered Quantity values defined by a low and high limit." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path fhir:valueRange ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path fhir:valueAttachment ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path fhir:valueReference ],
+        [ sh:class time:Interval ;
+            sh:description "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path fhir:valuePeriod ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an InstantaneousEvent occurred." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:atTime ],
+        [ sh:class fhir:Ratio ;
+            sh:description "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path fhir:valueRatio ],
+        [ sh:class fhir:Coding ;
+            sh:description "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path fhir:valueCodeableConcept ] ;
+    sh:targetClass qo:QuestionnaireStatus .
+
+qo:Section a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A logical grouping or thematic partition of items within a structured survey instrument." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class prov:Organization ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path dcterms:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path rdfs:comment ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path saref:hasProperty ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class qo:OrderedQuestion ;
+            sh:description "Associates a survey container or group with a sequence-indexed wrapper holding an individual inquiry item." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path qo:hasOrderedQuestion ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path fhir:resource-status ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path qo:hardValidity ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path dcterms:modified ],
+        [ sh:class time:Duration ;
+            sh:description "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path qo:temporalValidity ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path dcterms:created ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:type ],
+        [ sh:class qo:OrderedSection ;
+            sh:description "Associates a survey container or group with a sequence-indexed wrapper holding a nested thematic subgroup." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path qo:hasOrderedSection ],
+        [ sh:datatype xsd:string ;
+            sh:description "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path qo:conditionalValidity ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path rdfs:label ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 19 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path dcterms:hasPart ] ;
+    sh:targetClass qo:Section .
+
+qo:OrderedQuestion a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A contextual wrapper that binds an inquiry item to a specific sequence index within a survey template or parent group." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path rdfs:label ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path dcterms:hasPart ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 21 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path dcterms:modified ],
+        [ sh:datatype xsd:integer ;
+            sh:description "Question position in the questionnaire or section (1-based index)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path qo:order ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path qo:hardValidity ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 19 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path dcterms:created ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:datatype xsd:string ;
+            sh:description "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path qo:conditionalValidity ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path fhir:resource-status ],
+        [ sh:class time:Duration ;
+            sh:description "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path qo:temporalValidity ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 16 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path owl:versionInfo ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class qo:Question ;
+            sh:description "Identifies the specific inquiry item referenced at a given positional index." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path qo:question ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path saref:hasProperty ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the question can be left un-answered (false) or an answer is mandatory (true)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path qo:required ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path prov:type ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path dcterms:creator ] ;
+    sh:targetClass qo:OrderedQuestion .
+
+qo:OrderedSection a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A contextual wrapper that binds a thematic grouping of inquiry items to a specific sequence index within a survey template or parent group." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:boolean ;
+            sh:description "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path qo:hardValidity ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path dcterms:hasPart ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path owl:versionInfo ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path dcterms:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path rdfs:label ],
+        [ sh:class time:Duration ;
+            sh:description "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path qo:temporalValidity ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path saref:hasProperty ],
+        [ sh:class qo:Section ;
+            sh:description "Identifies the specific thematic grouping referenced at a given positional index." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path qo:section ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path fhir:resource-status ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path dcterms:modified ],
+        [ sh:datatype xsd:integer ;
+            sh:description "Section position in the questionnaire or section (1-based index)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minInclusive 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path qo:order ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path dcterms:created ],
+        [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 19 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:string ;
+            sh:description "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path qo:conditionalValidity ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:type ] ;
+    sh:targetClass qo:OrderedSection .
+
+qo:Question a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An individual inquiry item within an instrument that specifies an information requirement and constrains the acceptable response format." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A machine-readable rule statement defining an intervening event or state change that revokes the validity of a recorded observation prior to its natural temporal expiration." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path qo:conditionalValidity ],
+        [ sh:class fhir:Coding ;
+            sh:description "Defines the permissible standardized concept codes and human-readable labels available for selection." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path qo:codingParams ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Specifies whether permissible selection options possess a meaningful inherent ranking (true) or represent nominal categories (false)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path qo:codingOrdinal ],
+        [ sh:class prov:Organization ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 17 ;
+            sh:path dcterms:creator ],
+        [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path dcterms:hasPart ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 20 ;
+            sh:path owl:versionInfo ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 16 ;
+            sh:path fhir:resource-status ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 23 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 18 ;
+            sh:path saref:hasProperty ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Specifies the operational enforcement mechanism of a duration limit; when true, expiration acts as a strict invalidation threshold for re-use, whereas when false, it serves as a non-binding recommendation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path qo:hardValidity ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 21 ;
+            sh:path rdfs:label ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 19 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Indicates whether this question allows more than one answer (true) or only one (false)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path qo:multivalued ],
+        [ sh:class time:Duration ;
+            sh:description "Defines the time extent following generation during which a recorded answer remains valid for automated longitudinal reuse without requiring re-administration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path qo:temporalValidity ],
+        [ sh:class phro:IntervalParams ;
+            sh:description "Defines lower and upper boundary limits bounding acceptable numeric values." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path qo:intervalParams ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path dcterms:modified ],
+        [ sh:datatype xsd:string ;
+            sh:description "A machine-readable alphanumeric code or mnemonic string used for internal reference and translation lookup." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path qo:tag ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path dcterms:created ],
+        [ sh:description "Type of the question (e.g., choice, openChoice, numberInterval, decimal, dateTime, text). Determines valid answers." ;
+            sh:in ( <http://hl7.org/fhir/item-type#coding> qo:open-choice qo:numberInterval <http://hl7.org/fhir/item-type#decimal> <http://hl7.org/fhir/item-type#time> <http://hl7.org/fhir/item-type#dateTime> <http://hl7.org/fhir/item-type#string> ) ;
+            sh:minCount 1 ;
+            sh:order 12 ;
+            sh:path prov:type ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 22 ;
+            sh:path rdfs:comment ],
+        [ sh:class phro:NumericalParams ;
+            sh:description "Specifies measurement units and decimal precision constraints governing acceptable quantitative input." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path qo:numericalParams ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 24 ;
+            sh:path prov:wasGeneratedBy ] ;
+    sh:targetClass qo:Question .
+
+fhir:Ratio a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A ratio of two Quantity values - a numerator and a denominator" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class fhir:Quantity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path fhir:denominator ],
+        [ sh:class fhir:Quantity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path fhir:numerator ] ;
+    sh:targetClass fhir:Ratio .
+
+time:Interval a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A temporal entity with an extent or duration" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity started." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:startedAtTime ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity ended." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path prov:endedAtTime ] ;
+    sh:targetClass time:Interval .
+
+prov:Organization a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An organization is a social or legal institution such as a company, society, etc." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:type ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path dcterms:creator ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path saref:hasProperty ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path fhir:resource-status ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path owl:versionInfo ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:hasPart ] ;
+    sh:targetClass prov:Organization .
+
+fhir:Coding a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A coded value with a unique code for each display text, typically used for standardized questionnaires." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The code representing the value (e.g. code '1' for value 'Yes')." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path fhir:code ],
+        [ sh:datatype xsd:string ;
+            sh:description "The human-readable display text for the code (e.g. code '1' for value 'Yes')." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path fhir:display ] ;
+    sh:targetClass fhir:Coding .
+
+fhir:Quantity a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A measured amount (or an amount that can potentially be measured)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:anyURI ;
+            sh:description "A relationship identifying the unit of measure used for a certain entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path saref:isMeasuredIn ;
+            sh:pattern "^ucum:" ],
+        [ sh:description "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes." ;
+            sh:maxCount 1 ;
+            sh:or ( [ sh:datatype xsd:integer ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:float ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:double ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:decimal ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:date ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:dateTime ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:anyURI ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] ) ;
+            sh:order 1 ;
+            sh:path saref:hasValue ] ;
+    sh:targetClass fhir:Quantity .
+
+time:Duration a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes." ;
+            sh:maxCount 1 ;
+            sh:or ( [ sh:datatype xsd:integer ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:float ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:double ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:decimal ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:date ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:dateTime ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:anyURI ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] ) ;
+            sh:order 0 ;
+            sh:path saref:hasValue ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "A relationship identifying the unit of measure used for a certain entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path saref:isMeasuredIn ;
+            sh:pattern "^ucum:" ] ;
+    sh:targetClass time:Duration .
+
+fhir:Observation.referenceRange a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class fhir:Quantity ;
+            sh:description "High range, if relevant." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path phro:highRange ],
+        [ sh:class fhir:Quantity ;
+            sh:description "Low range, if relevant." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path phro:lowRange ],
+        [ sh:class fhir:Quantity ;
+            sh:description "Normal value, if relevant." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path phro:normalValue ] ;
+    sh:targetClass fhir:Observation.referenceRange .
+
+saref:Property a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Identifiable qualities of features of interest that can be target of devices, such as observed or controlled. A property can apply to different features of interest." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path saref:hasProperty ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path rdfs:label ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 16 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path dcterms:hasPart ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path dcterms:created ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path dcterms:modified ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path prov:type ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path dcterms:creator ],
+        [ sh:class fhir:Observation.referenceRange ;
+            sh:description "Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an 'OR'. In other words, to represent two distinct target populations, two referenceRange elements would be used." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path fhir:Observation.referenceRange ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path fhir:resource-status ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path rdfs:comment ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path saref:hasPropertyValue ] ;
+    sh:targetClass saref:Property .
+
+prov:Entity a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary." ;
+    sh:ignoredProperties ( rdf:type qo:required qo:answerValue qo:responds fhir:Observation.referenceRange qo:conditionalValidity qo:tag qo:codingOrdinal qo:hardValidity qo:hasOrderedSection qo:section qo:toQuestion qo:isEmpty qo:codingParams qo:hasOrderedQuestion qo:hasAnswer qo:order qo:temporalValidity qo:intervalParams qo:numericalParams qo:question qo:multivalued ) ;
+    sh:property [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path dcterms:creator ],
+        [ sh:class foaf:Agent ;
+            sh:description "Attribution is the ascribing of an entity to an agent." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path dcterms:created ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path prov:type ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The date and time when the entity was last updated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path dcterms:modified ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path rdfs:comment ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path saref:hasProperty ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path fhir:resource-status ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path dcterms:hasPart ] ;
+    sh:targetClass prov:Entity .
+
+foaf:Agent a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An agent (eg. person, group, software or physical artifact)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path rdfs:label ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path fhir:resource-status ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:type ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path saref:hasProperty ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:hasPart ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an entity was completely created and is available for use." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:comment ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path dcterms:creator ] ;
+    sh:targetClass foaf:Agent .
+
+sulo:Process a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "a process is a entity that unfolds in time, has temporal parts, and has objects that participate in the process." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class saref:PropertyValue ;
+            sh:description "A code specifying the state of the observation/procedure/questionnaire... Generally, this will be the in-progress or completed state." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path fhir:resource-status ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource that is included either physically or logically in the described resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path dcterms:hasPart ],
+        [ sh:class foaf:Agent ;
+            sh:description "An entity responsible for making the resource." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path dcterms:creator ],
+        [ sh:class saref:Property ;
+            sh:description "Links a feature kind or a feature of interest to one of its properties." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path saref:hasProperty ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity ended." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path prov:endedAtTime ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path rdfs:comment ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:label ],
+        [ sh:class saref:PropertyValue ;
+            sh:description "Links a feature kind, a feature of interest, or a property of interest, to a property value." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path saref:hasPropertyValue ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an activity started." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path prov:startedAtTime ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The attribute prov:type provides further typing information for any construct with an optional set of attribute-value pairs." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:type ],
+        [ sh:class owl:Thing ;
+            sh:description "A related resource in which the described resource is physically or logically included." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path dcterms:isPartOf ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path prov:wasGeneratedBy ] ;
+    sh:targetClass sulo:Process .
+
+owl:Thing a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "This defines IOT as the set of OWL individuals." ;
+    sh:ignoredProperties ( dcterms:modified dcterms:hasPart rdf:type fhir:valueAttachment qo:required qo:answerValue fhir:Observation.referenceRange qo:responds prov:endedAtTime fhir:valueReference qo:conditionalValidity qo:tag qo:codingOrdinal qo:hardValidity prov:wasAttributedTo qo:hasOrderedSection saref:isValueOfProperty qo:section prov:type dcterms:creator fhir:valueRatio qo:toQuestion qo:isEmpty dcterms:isPartOf qo:codingParams qo:hasOrderedQuestion fhir:resource-status dcterms:created qo:hasAnswer saref:hasValue prov:startedAtTime saref:hasProperty prov:generatedAtTime fhir:valuePeriod qo:order qo:temporalValidity qo:intervalParams qo:numericalParams saref:hasPropertyValue fhir:valueRange fhir:valueCodeableConcept qo:question qo:multivalued prov:atTime ) ;
+    sh:property [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path owl:versionInfo ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path rdfs:comment ] ;
+    sh:targetClass owl:Thing .
+
+saref:PropertyValue a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Describes the value for a property. The property value is optionally linked to its value expressed as an RDF literal (DP saref:hasValue), optionally to the unit of measurement (OP saref:isMeasuredIn), and optionally to the properties or properties of interest it is a value of (OP saref:isValueOfProperty)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "human-readable version of a resource's name. Multilingual labels are supported using the language tagging facility of RDF literals." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:string ;
+            sh:description "A textual comment helps clarify the meaning of RDF classes and properties. Such in-line documentation complements the use of both formal techniques (Ontology and rule languages) and informal (prose documentation, examples, test cases). A variety of documentation forms can be combined to indicate the intended meaning of the classes and properties described in an RDF vocabulary. Since RDF vocabularies are expressed as RDF graphs, vocabularies defined in other namespaces may be used to provide richer documentation." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path rdfs:comment ],
+        [ sh:class prov:Entity ;
+            sh:description "A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic's study, without benefit from hindsight. Because of the directness of primary sources, they 'speak for themselves' in ways that cannot be captured through the filter of secondary sources. As such, it is important for secondary sources to reference those primary sources from which they were derived, so that their reliability can be investigated. A primary source relation is a particular case of derivation of secondary materials from their primary sources. It is recognized that the determination of primary sources can be up to interpretation, and should be done according to conventions accepted within the application's domain." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path prov:hadPrimarySource ],
+        [ sh:description "Value of a property value expressed as an RDF literal. Note that, even if decimal values are expected, values could use other datatypes." ;
+            sh:maxCount 1 ;
+            sh:or ( [ sh:datatype xsd:integer ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:float ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:double ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:decimal ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:date ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:dateTime ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:anyURI ;
+                        sh:nodeKind sh:Literal ] [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] ) ;
+            sh:order 1 ;
+            sh:path saref:hasValue ],
+        [ sh:class time:Interval ;
+            sh:description "A time period defined by a start and end date/time. A period specifies a range of times. The context of use will specify whether the entire range applies (e.g. 'the patient was an inpatient of the hospital for this time range') or one value from the period applies (e.g. 'give to the patient between 2 and 4 pm on 24-Jun 2013')." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path fhir:valuePeriod ],
+        [ sh:datatype xsd:dateTime ;
+            sh:description "The time at which an InstantaneousEvent occurred." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path prov:atTime ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "This type is for containing or referencing attachments - additional data content defined in other formats. The most common use of this type is to include images or reports in some report format such as PDF. However, it can be used for any data that has a MIME type." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path fhir:valueAttachment ],
+        [ sh:class fhir:Ratio ;
+            sh:description "A relationship between two Quantity values expressed as a numerator and a denominator. The Ratio datatype should only be used to express a relationship of two numbers if the relationship cannot be suitably expressed using a Quantity and a common unit. Where the denominator value is known to be fixed to '1', Quantity should be used instead of Ratio." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path fhir:valueRatio ],
+        [ sh:class saref:Property ;
+            sh:description "Links a property value to the property or property of interest it is a value of." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path saref:isValueOfProperty ],
+        [ sh:datatype xsd:string ;
+            sh:description "An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords. This statement does not contribute to the logical meaning of the ontology other than that given by the RDF(S) model theory." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path owl:versionInfo ],
+        [ sh:datatype xsd:anyURI ;
+            sh:description "The Reference type contains at least one of a reference (literal reference), an identifier (logical reference), and a display (text description of target). In addition, it may contain a target type." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path fhir:valueReference ],
+        [ sh:class fhir:Coding ;
+            sh:description "A CodeableConcept represents a value that is usually supplied by providing a reference to one or more terminologies or ontologies but may also be defined by the provision of text. This is a common pattern in healthcare data." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path fhir:valueCodeableConcept ],
+        [ sh:class sulo:Process ;
+            sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path prov:wasGeneratedBy ],
+        [ sh:class fhir:Observation.referenceRange ;
+            sh:description "A set of ordered Quantity values defined by a low and high limit." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path fhir:valueRange ] ;
+    sh:targetClass saref:PropertyValue .
+
+

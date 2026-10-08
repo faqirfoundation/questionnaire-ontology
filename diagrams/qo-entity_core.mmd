@@ -1,0 +1,76 @@
+classDiagram
+direction TB
+    class prov_Entity {
+      owl:versionInfo string
+      rdfs:label string
+      rdfs:comment string
+      prov:hadPrimarySource uriorcurie
+      prov:wasGeneratedBy uriorcurie
+      dcterms:created datetime
+      dcterms:modified datetime
+      prov:type uriorcurie
+      dcterms:hasPart uriorcurie
+      dcterms:isPartOf uriorcurie
+      prov:generatedAtTime datetime
+      prov:wasAttributedTo foaf:Agent
+      dcterms:creator foaf:Agent
+    }
+    prov_Entity "0..*" --> "0..*" saref_PropertyValue : "fhir_status"
+
+    class saref_PropertyValue {
+        prov:atTime datetime
+        saref:hasValue float, datetime, string, uriorcurie
+        saref:isValueOfProperty uriorcurie
+    }
+    saref_PropertyValue --|> owl_Thing : "rdfs_subClassOf"
+
+    class qo_Questionnaire {
+    }
+    qo_Questionnaire --|> prov_Entity : "rdfs_subClassOf"
+    qo_Questionnaire "0..*" --> "0..*" qo_OrderedQuestion : "qo_hasOrderedQuestion" 
+    qo_Questionnaire "0..*" --> "0..*" qo_OrderedSection : "qo_hasOrderedSection"
+
+    class qo_OrderedSection {
+        qo:order int
+    }
+    qo_OrderedSection --|> prov_Entity : "rdfs_subClassOf"
+    qo_OrderedSection "0..*" --> "1" qo_Section : "qo_section"
+
+    class qo_Section {
+    }
+    qo_Section --|> prov_Entity : "rdfs_subClassOf"
+    qo_Section "0..*" --> "0..*" qo_OrderedQuestion : "qo_hasOrderedQuestion" 
+    qo_Section "0..*" --> "0..*" qo_OrderedSection : "qo_hasOrderedSection"
+
+    class qo_OrderedQuestion {
+        qo:order int
+        qo:required bool
+        qo:hardValidity bool
+        qo:temporalValidity duration
+        qo:conditionalValidity string
+    }
+    qo_OrderedQuestion --|> prov_Entity : "rdfs_subClassOf"
+    qo_OrderedQuestion "0..*" --> "1" qo_Question : "qo_question"
+
+    class qo_Question {
+        qo:tag string
+        qo:multivalued bool
+        qo:numericalParams 
+        qo:codingParams
+        qo:codingOrdinal bool
+        qo:intervalParams
+    }
+    qo_Question --|> prov_Entity : "rdfs_subClassOf"
+
+    class qo_QuestionnaireResponse {
+    }
+    qo_QuestionnaireResponse --|> prov_Entity : "rdfs_subClassOf"
+    qo_QuestionnaireResponse "0..*" --> "1" qo_Questionnaire : "qo_responds"
+    qo_QuestionnaireResponse "1" --> "1..*" qo_Answer : "qo_hasAnswer"
+
+    class qo_Answer {
+        qo:answerValue float, datetime, string, uriorcurie
+        qo:isEmpty bool
+    }
+    qo_Answer --|> prov_Entity : "rdfs_subClassOf"
+    qo_Answer "0..*" --> "1" qo_OrderedQuestion : "qo_toQuestion"
