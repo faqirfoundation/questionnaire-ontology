@@ -536,6 +536,7 @@ classes:
       - qo_hardValidity
       - qo_temporalValidity
       - qo_conditionalValidity
+      - fhir_status
     slot_usage:
       dcterms_creator:
         range: prov_Organization
@@ -546,6 +547,10 @@ classes:
         domain: qo_Section
       qo_hasOrderedSection:
         domain: qo_Section
+      fhir_status:
+        range: qo_QuestionnaireStatus
+        required: true
+        multivalued: false 
         
   qo_OrderedQuestion:
     description: "A contextual wrapper that binds an inquiry item to a specific sequence index within a survey template or parent group."
@@ -583,7 +588,9 @@ classes:
     attributes:
       qo_tag:
         description: "A machine-readable alphanumeric code or mnemonic string used for internal reference and translation lookup."
-        range: string
+        any_of:   
+          - range: string
+          - range: uriorcurie
         required: true
         multivalued: true
         slot_uri: qo:tag
@@ -1090,7 +1097,7 @@ slots:
   qo_toQuestion:
     description: "Links a recorded response value back to its originating inquiry item definition."
     domain: qo_Answer
-    range: qo_Question
+    range: qo_OrderedQuestion
     required: true
     multivalued: false
     slot_uri: qo:toQuestion

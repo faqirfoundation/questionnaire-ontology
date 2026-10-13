@@ -268,7 +268,7 @@
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
 
 <https://pods.faqir.org/answer_EQ_5D_5L_01_a01> a qo:Answer ;
-    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_01> ;
+    qo:toQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_01> ;
     qo:isEmpty false ; 
     qo:answerValue "1" ;
     prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
@@ -276,14 +276,14 @@
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
 
 <https://pods.faqir.org/answer_EQ_5D_5L_02_a01> a qo:Answer ;
-    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_02> ;
+    qo:toQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_02> ;
     qo:isEmpty true ;
     prov:generatedAtTime "2025-07-11T10:35:08+00:00"^^xsd:dateTime ;
     prov:hadPrimarySource <https://github.com/faqirfoundation/questionnaire-ontology> ;
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
 
 <https://pods.faqir.org/answer_EQ_5D_5L_03_a01> a qo:Answer ;
-    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_03> ;
+    qo:toQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_03> ;
     qo:isEmpty false ; 
     qo:answerValue  "3" ;
     prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
@@ -291,7 +291,7 @@
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
 
 <https://pods.faqir.org/answer_EQ_5D_5L_04_a01> a qo:Answer ;
-    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_04> ;
+    qo:toQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_04> ;
     qo:isEmpty false ;
     qo:answerValue "2"; 
     prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
@@ -299,7 +299,7 @@
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> . 
 
 <https://pods.faqir.org/answer_EQ_5D_5L_05_a01> a qo:Answer ;
-    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_05> ;
+    qo:toQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_05> ;
     qo:isEmpty false ;
     qo:answerValue "1" ;
     prov:generatedAtTime "2025-07-11T10:35:05+00:00"^^xsd:dateTime ;
@@ -307,7 +307,7 @@
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-eq5h-2027-ex> .
 
 <https://pods.faqir.org/answer_EQ_5D_5L_EQ_VAS_a01> a qo:Answer ;
-    qo:toQuestion <https://pods.faqir.org/question_EQ_5D_5L_EQ_VAS> ;
+    qo:toQuestion <https://pods.faqir.org/orderedquestion_EQ_5D_5L_EQ_VAS> ;
     qo:isEmpty false ;
     qo:answerValue "67.0"^^xsd:float ;
     prov:generatedAtTime "2025-07-11T10:35:11+00:00"^^xsd:dateTime ;

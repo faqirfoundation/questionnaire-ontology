@@ -95,7 +95,7 @@
     qo:tag "WHOQOL-BREF-G1", snomed:405152002 ; # Quality of life satisfaction (observable entity) ;
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryPoor_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryPoor_1>, 
         <https://pods.faqir.org/valuecoding_poor_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_good_4>, 
@@ -133,7 +133,7 @@
 
 <https://pods.faqir.org/orderedquestion_WHOQOL_BREF_G4> a qo:OrderedQuestion ;
     qo:question <https://pods.faqir.org/question_WHOQOL_BREF_G4> ;
-    qo:order 2 ;
+    qo:order 1 ;
     qo:required true ;
     prov:hadPrimarySource <https://www.who.int/tools/whoqol/whoqol-bref> ;
     prov:wasGeneratedBy <https://pods.faqir.org/swat4hcls-whoqol-2027-ex> .
@@ -144,7 +144,7 @@
     qo:tag "WHOQOL-BREF-G4", snomed:405153007 ; # Personal wellbeing status
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -198,7 +198,7 @@
     qo:tag "WHOQOL-BREF-F1.4", snomed:405160001 ; # Pain level: disruptive effects (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -219,7 +219,7 @@
     qo:tag "WHOQOL-BREF-F11.3" ; 
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -240,7 +240,7 @@
     qo:tag "WHOQOL-BREF-F4.1" ; 
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -261,7 +261,7 @@
     qo:tag "WHOQOL-BREF-F24.2" ; 
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -314,7 +314,7 @@
     qo:tag "WHOQOL-BREF-F5.3", snomed:247760006 ; # Ability to concentrate (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -335,7 +335,7 @@
     qo:tag "WHOQOL-BREF-F16.1", snomed:449892005 ; # Feeling safe (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -356,7 +356,7 @@
     qo:tag "WHOQOL-BREF-F22.1", snomed:224777007 ; # Physical environment (environment)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_aModerateAmount_3>, 
         <https://pods.faqir.org/valuecoding_veryMuch_4>, 
@@ -411,7 +411,7 @@
     qo:tag "WHOQOL-BREF-F2.1", snomed:301325005 ; # Finding of general energy (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_moderately_3>, 
         <https://pods.faqir.org/valuecoding_mostly_4>, 
@@ -432,7 +432,7 @@
     qo:tag "WHOQOL-BREF-F7.1", snomed:247638003 ; # Preoccupation with specific bodily feature (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_moderately_3>, 
         <https://pods.faqir.org/valuecoding_mostly_4>, 
@@ -453,7 +453,7 @@
     qo:tag "WHOQOL-BREF-F18.1" ; 
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_moderately_3>, 
         <https://pods.faqir.org/valuecoding_mostly_4>, 
@@ -474,7 +474,7 @@
     qo:tag "WHOQOL-BREF-F20.1", snomed:310385006 ; # Information status (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_moderately_3>, 
         <https://pods.faqir.org/valuecoding_mostly_4>, 
@@ -495,7 +495,7 @@
     qo:tag "WHOQOL-BREF-F21.1", snomed:300740003 ; # Does participate in leisure activities (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_notAtAll_1>, 
         <https://pods.faqir.org/valuecoding_aLittle_2>, 
         <https://pods.faqir.org/valuecoding_moderately_3>, 
         <https://pods.faqir.org/valuecoding_mostly_4>, 
@@ -545,7 +545,7 @@
     qo:tag "WHOQOL-BREF-F9.1", snomed:363803005 ; # Mobility (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryPoor_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryPoor_1>, 
         <https://pods.faqir.org/valuecoding_poor_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_good_4>, 
@@ -604,7 +604,7 @@
     qo:tag "WHOQOL-BREF-F3.3", snomed:248254009 ; # Quality of sleep (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -625,7 +625,7 @@
     qo:tag "WHOQOL-BREF-F10.3", snomed:1297080006 ; # Ability to perform activity of daily living (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -646,7 +646,7 @@
     qo:tag "WHOQOL-BREF-F12.4", snomed:301707001 ; # Ability to perform occupation and employment activities (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -667,7 +667,7 @@
     qo:tag "WHOQOL-BREF-F6.3", snomed:365939001 ; # Finding related to self-esteem (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -688,7 +688,7 @@
     qo:tag "WHOQOL-BREF-F13.3", snomed:225706007 ; # Interpersonal relationship finding (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -709,7 +709,7 @@
     qo:tag "WHOQOL-BREF-F15.3", snomed:118199002 ; # Finding relating to sexuality and sexual activity (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -730,7 +730,7 @@
     qo:tag "WHOQOL-BREF-F14.4", snomed:365469004 ; # Household, family and support network finding (finding)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -751,7 +751,7 @@
     qo:tag "WHOQOL-BREF-F17.3", snomed:224209007 ; # Residence and accommodation circumstances (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -772,7 +772,7 @@
     qo:tag "WHOQOL-BREF-F19.3", snomed:224891009 ; # Healthcare services (qualifier value)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -793,7 +793,7 @@
     qo:tag "WHOQOL-BREF-F23.3", snomed:424483007 ; # Transportation details (observable entity)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
@@ -843,7 +843,7 @@
     qo:tag "WHOQOL-BREF-F8.1", snomed:17029006, snomed:48694002, snomed:35489007, snomed:46206005 ; # Feeling despair (finding), Anxiety (finding), Depressive disorder (disorder), Mood disorder (disorder)
     dcterms:creator <https://www.who.int> ;
     prov:type <http://hl7.org/fhir/item-type#coding> ;
-    qo:questionCodingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
+    qo:codingParams <https://pods.faqir.org/valuecoding_veryDissatisfied_1>, 
         <https://pods.faqir.org/valuecoding_dissatisfied_2>, 
         <https://pods.faqir.org/valuecoding_neither_3>, 
         <https://pods.faqir.org/valuecoding_satisfied_4>, 
