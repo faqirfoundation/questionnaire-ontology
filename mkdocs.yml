@@ -17,8 +17,8 @@ nav:
   # - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://faqirinstitute.github.io/questionnaire_ontology
-repo_url: https://github.com/faqir/questionnaire_ontology
+site_url: https://faqirfoundation.github.io/questionnaire-ontology/
+repo_url: https://github.com/faqirfoundation/questionnaire-ontology
 markdown_extensions:
   - tables
 extra_javascript:

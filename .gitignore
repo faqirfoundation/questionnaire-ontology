@@ -1,0 +1,19 @@
+# Scratch output of `just test` (_test-schema runs gen-project into tmp/)
+tmp/
+# MkDocs build output; gh-deploy publishes it to the gh-pages branch
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp

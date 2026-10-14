@@ -32,7 +32,7 @@ Alias: qo_toQuestion
 
 ## Properties
 
-* Range: [QoQuestion](QoQuestion.md)
+* Range: [QoOrderedQuestion](QoOrderedQuestion.md)
 
 * Required: True
 
@@ -83,7 +83,7 @@ slot_uri: qo:toQuestion
 alias: qo_toQuestion
 domain_of:
 - qo_Answer
-range: qo_Question
+range: qo_OrderedQuestion
 required: true
 multivalued: false
 

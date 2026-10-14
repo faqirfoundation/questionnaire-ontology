@@ -288,6 +288,7 @@ attributes:
     - foaf_Agent
     - sulo_Process
     - prov_Entity
+    - qo_Section
     range: saref_PropertyValue
     required: false
     multivalued: true

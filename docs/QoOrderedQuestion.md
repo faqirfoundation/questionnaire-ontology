@@ -218,6 +218,7 @@ URI: [qo:OrderedQuestion](https://ns.faqir.org/q-o#OrderedQuestion)
 | [QoQuestionnaire](QoQuestionnaire.md) | [qo_hasOrderedQuestion](qo_hasOrderedQuestion.md) | range | [QoOrderedQuestion](QoOrderedQuestion.md) |
 | [QoSection](QoSection.md) | [qo_hasOrderedQuestion](qo_hasOrderedQuestion.md) | range | [QoOrderedQuestion](QoOrderedQuestion.md) |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | [qo_question](qo_question.md) | domain | [QoOrderedQuestion](QoOrderedQuestion.md) |
+| [QoAnswer](QoAnswer.md) | [qo_toQuestion](qo_toQuestion.md) | range | [QoOrderedQuestion](QoOrderedQuestion.md) |
 
 
 
@@ -537,6 +538,7 @@ attributes:
     - foaf_Agent
     - sulo_Process
     - prov_Entity
+    - qo_Section
     range: saref_PropertyValue
     required: false
     multivalued: true

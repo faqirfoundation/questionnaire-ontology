@@ -184,7 +184,6 @@ URI: [saref:PropertyValue](https://saref.etsi.org/core/PropertyValue)
 | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | [saref_isValueOfProperty](saref_isValueOfProperty.md) | domain | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoOrderedSection](QoOrderedSection.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
-| [QoSection](QoSection.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoSection](QoSection.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | [fhir_status](fhir_status.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | [saref_hasPropertyValue](saref_hasPropertyValue.md) | range | [SarefPropertyValue](SarefPropertyValue.md) |

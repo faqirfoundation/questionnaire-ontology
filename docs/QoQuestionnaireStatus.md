@@ -165,6 +165,7 @@ URI: [qo:QuestionnaireStatus](https://ns.faqir.org/q-o#QuestionnaireStatus)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [QoQuestionnaire](QoQuestionnaire.md) | [fhir_status](fhir_status.md) | range | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) |
+| [QoSection](QoSection.md) | [fhir_status](fhir_status.md) | range | [QoQuestionnaireStatus](QoQuestionnaireStatus.md) |
 
 
 
