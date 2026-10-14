@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://faqirfoundation.github.io/questionnaire-ontology/QoQuestionnaireResponseStatus/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<title>Class: QoQuestionnaireResponseStatus - questionnaire_ontology</title>
+<link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../css/ansi-colours.css" rel="stylesheet"/>
+<link href="../css/jupyter-cells.css" rel="stylesheet"/>
+<link href="../css/pandas-dataframe.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-qoquestionnaireresponsestatus">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="questionnaire_ontology" class="md-header__button md-logo" data-md-component="logo" href=".." title="questionnaire_ontology">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            questionnaire_ontology
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: QoQuestionnaireResponseStatus
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/faqirfoundation/questionnaire-ontology" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="questionnaire_ontology" class="md-nav__button md-logo" data-md-component="logo" href=".." title="questionnaire_ontology">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    questionnaire_ontology
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/faqirfoundation/questionnaire-ontology" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Index
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    About
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+<span class="md-ellipsis">
+      Inheritance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+<span class="md-ellipsis">
+      Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+<span class="md-ellipsis">
+      Usages
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+<span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+</a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+<span class="md-ellipsis">
+      Schema Source
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+<span class="md-ellipsis">
+      Mappings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+<span class="md-ellipsis">
+      LinkML Source
+    </span>
+</a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+<span class="md-ellipsis">
+      Direct
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+<span class="md-ellipsis">
+      Induced
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-qoquestionnaireresponsestatus">Class: QoQuestionnaireResponseStatus</h1>
+<p><em>Defines the lifecycle state governing the operational readiness and availability of a completed or partially completed instance containing recorded values collected from a specific execution of a survey instrument.</em></p>
+<p>URI: <a href="https://ns.faqir.org/q-o#QuestionnaireResponseStatus">qo:QuestionnaireResponseStatus</a></p>
+<div class="mermaid"> classDiagram
+    class QoQuestionnaireResponseStatus
+    click QoQuestionnaireResponseStatus href "../QoQuestionnaireResponseStatus"
+      SarefPropertyValue &lt;|-- QoQuestionnaireResponseStatus
+        click SarefPropertyValue href "../SarefPropertyValue"
+
+      QoQuestionnaireResponseStatus : fhir_valueAttachment
+
+      QoQuestionnaireResponseStatus : fhir_valueCodeableConcept
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "0..1" ValueCoding : fhir_valueCodeableConcept
+        click ValueCoding href "../ValueCoding"
+
+
+
+      QoQuestionnaireResponseStatus : fhir_valuePeriod
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "0..1" TimeInterval : fhir_valuePeriod
+        click TimeInterval href "../TimeInterval"
+
+
+
+      QoQuestionnaireResponseStatus : fhir_valueRange
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "0..1" FhirReferenceRange : fhir_valueRange
+        click FhirReferenceRange href "../FhirReferenceRange"
+
+
+
+      QoQuestionnaireResponseStatus : fhir_valueRatio
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "0..1" FhirValueRatio : fhir_valueRatio
+        click FhirValueRatio href "../FhirValueRatio"
+
+
+
+      QoQuestionnaireResponseStatus : fhir_valueReference
+
+      QoQuestionnaireResponseStatus : owl_versionInfo
+
+      QoQuestionnaireResponseStatus : prov_atTime
+
+      QoQuestionnaireResponseStatus : prov_hadPrimarySource
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "*" ProvEntity : prov_hadPrimarySource
+        click ProvEntity href "../ProvEntity"
+
+
+
+      QoQuestionnaireResponseStatus : prov_wasGeneratedBy
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "*" SuloProcess : prov_wasGeneratedBy
+        click SuloProcess href "../SuloProcess"
+
+
+
+      QoQuestionnaireResponseStatus : rdfs_comment
+
+      QoQuestionnaireResponseStatus : rdfs_label
+
+      QoQuestionnaireResponseStatus : saref_hasValue
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "1" QoQuestionnaireResponseStatusEnum : saref_hasValue
+        click QoQuestionnaireResponseStatusEnum href "../QoQuestionnaireResponseStatusEnum"
+
+
+
+      QoQuestionnaireResponseStatus : saref_isValueOfProperty
+
+
+
+
+
+        QoQuestionnaireResponseStatus --&gt; "0..1" SarefProperty : saref_isValueOfProperty
+        click SarefProperty href "../SarefProperty"
+
+
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../OwlThing/">OwlThing</a><ul>
+<li><a href="../SarefPropertyValue/">SarefPropertyValue</a><ul>
+<li><strong>QoQuestionnaireResponseStatus</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../prov_atTime/">prov_atTime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>The time at which an InstantaneousEvent occurred</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../saref_hasValue/">saref_hasValue</a></td>
+<td>1 <br/> <a href="../QoQuestionnaireResponseStatusEnum/">QoQuestionnaireResponseStatusEnum</a> or <br/><a href="../Integer/">Integer</a> or <br/><a href="../Float/">Float</a> or <br/><a href="../Double/">Double</a> or <br/><a href="../Decimal/">Decimal</a> or <br/><a href="../Date/">Date</a> or <br/><a href="../Datetime/">Datetime</a> or <br/><a href="../Uriorcurie/">Uriorcurie</a> or <br/><a href="../String/">String</a></td>
+<td>The status of the questionnaire response, indicating whether it is 'in-progre...</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../saref_isValueOfProperty/">saref_isValueOfProperty</a></td>
+<td>0..1 <br/> <a href="../SarefProperty/">SarefProperty</a></td>
+<td>Links a property value to the property or property of interest it is a value ...</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../fhir_valueReference/">fhir_valueReference</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>The Reference type contains at least one of a reference (literal reference), ...</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../fhir_valueCodeableConcept/">fhir_valueCodeableConcept</a></td>
+<td>0..1 <br/> <a href="../ValueCoding/">ValueCoding</a></td>
+<td>A CodeableConcept represents a value that is usually supplied by providing a ...</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../fhir_valueRange/">fhir_valueRange</a></td>
+<td>0..1 <br/> <a href="../FhirReferenceRange/">FhirReferenceRange</a></td>
+<td>A set of ordered Quantity values defined by a low and high limit</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../fhir_valueRatio/">fhir_valueRatio</a></td>
+<td>0..1 <br/> <a href="../FhirValueRatio/">FhirValueRatio</a></td>
+<td>A relationship between two Quantity values expressed as a numerator and a den...</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../fhir_valuePeriod/">fhir_valuePeriod</a></td>
+<td>0..1 <br/> <a href="../TimeInterval/">TimeInterval</a></td>
+<td>A time period defined by a start and end date/time</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../fhir_valueAttachment/">fhir_valueAttachment</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>This type is for containing or referencing attachments - additional data cont...</td>
+<td><a href="../SarefPropertyValue/">SarefPropertyValue</a></td>
+</tr>
+<tr>
+<td><a href="../owl_versionInfo/">owl_versionInfo</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>An owl:versionInfo statement generally has as its object a string giving info...</td>
+<td><a href="../OwlThing/">OwlThing</a></td>
+</tr>
+<tr>
+<td><a href="../rdfs_label/">rdfs_label</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>human-readable version of a resource's name</td>
+<td><a href="../OwlThing/">OwlThing</a></td>
+</tr>
+<tr>
+<td><a href="../rdfs_comment/">rdfs_comment</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>A textual comment helps clarify the meaning of RDF classes and properties</td>
+<td><a href="../OwlThing/">OwlThing</a></td>
+</tr>
+<tr>
+<td><a href="../prov_hadPrimarySource/">prov_hadPrimarySource</a></td>
+<td>* <br/> <a href="../ProvEntity/">ProvEntity</a></td>
+<td>A primary source for a topic refers to something produced by some agent with ...</td>
+<td><a href="../OwlThing/">OwlThing</a></td>
+</tr>
+<tr>
+<td><a href="../prov_wasGeneratedBy/">prov_wasGeneratedBy</a></td>
+<td>* <br/> <a href="../SuloProcess/">SuloProcess</a></td>
+<td>Generation is the completion of production of a new entity by an activity</td>
+<td><a href="../OwlThing/">OwlThing</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../QoQuestionnaireResponse/">QoQuestionnaireResponse</a></td>
+<td><a href="../fhir_status/">fhir_status</a></td>
+<td>range</td>
+<td><a href="./">QoQuestionnaireResponseStatus</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://ns.faqir.org/q-o</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>qo:QuestionnaireResponseStatus</td>
+</tr>
+<tr>
+<td>native</td>
+<td>qo:QoQuestionnaireResponseStatus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: qo_QuestionnaireResponseStatus
+description: Defines the lifecycle state governing the operational readiness and availability
+  of a completed or partially completed instance containing recorded values collected
+  from a specific execution of a survey instrument.
+from_schema: https://ns.faqir.org/q-o
+is_a: saref_PropertyValue
+slot_usage:
+  saref_hasValue:
+    name: saref_hasValue
+    description: The status of the questionnaire response, indicating whether it is
+      'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
+    narrow_mappings:
+    - fhir:QuestionnaireResponse.status
+    range: qo_QuestionnaireResponseStatusEnum
+    required: true
+    multivalued: false
+    inlined: false
+class_uri: qo:QuestionnaireResponseStatus
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: qo_QuestionnaireResponseStatus
+description: Defines the lifecycle state governing the operational readiness and availability
+  of a completed or partially completed instance containing recorded values collected
+  from a specific execution of a survey instrument.
+from_schema: https://ns.faqir.org/q-o
+is_a: saref_PropertyValue
+slot_usage:
+  saref_hasValue:
+    name: saref_hasValue
+    description: The status of the questionnaire response, indicating whether it is
+      'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
+    narrow_mappings:
+    - fhir:QuestionnaireResponse.status
+    range: qo_QuestionnaireResponseStatusEnum
+    required: true
+    multivalued: false
+    inlined: false
+attributes:
+  prov_atTime:
+    name: prov_atTime
+    description: The time at which an InstantaneousEvent occurred.
+    from_schema: https://ns.faqir.org/q-o
+    mappings:
+    - saref:hasTimestamp
+    - fhir:DeviceMetric.calibration.time
+    - sosa:phenomenonTime
+    rank: 1000
+    domain: sulo_Process
+    slot_uri: prov:atTime
+    alias: prov_atTime
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: datetime
+    required: false
+    multivalued: false
+  saref_hasValue:
+    name: saref_hasValue
+    description: The status of the questionnaire response, indicating whether it is
+      'in-progress', 'completed', 'amended', 'entered-in-error' or 'stopped'.
+    from_schema: https://ns.faqir.org/q-o
+    narrow_mappings:
+    - fhir:QuestionnaireResponse.status
+    rank: 1000
+    slot_uri: saref:hasValue
+    alias: saref_hasValue
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    - QuantityValue
+    - time_Duration
+    range: qo_QuestionnaireResponseStatusEnum
+    required: true
+    multivalued: false
+    inlined: false
+    any_of:
+    - range: integer
+    - range: float
+    - range: double
+    - range: decimal
+    - range: date
+    - range: datetime
+    - range: uriorcurie
+    - range: string
+  saref_isValueOfProperty:
+    name: saref_isValueOfProperty
+    description: Links a property value to the property or property of interest it
+      is a value of.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: saref_PropertyValue
+    slot_uri: saref:isValueOfProperty
+    alias: saref_isValueOfProperty
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: saref_Property
+    required: false
+    multivalued: false
+  fhir_valueReference:
+    name: fhir_valueReference
+    description: The Reference type contains at least one of a reference (literal
+      reference), an identifier (logical reference), and a display (text description
+      of target). In addition, it may contain a target type.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: fhir:valueReference
+    alias: fhir_valueReference
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: uriorcurie
+    required: false
+    multivalued: false
+  fhir_valueCodeableConcept:
+    name: fhir_valueCodeableConcept
+    description: A CodeableConcept represents a value that is usually supplied by
+      providing a reference to one or more terminologies or ontologies but may also
+      be defined by the provision of text. This is a common pattern in healthcare
+      data.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: fhir:valueCodeableConcept
+    alias: fhir_valueCodeableConcept
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: ValueCoding
+    required: false
+    multivalued: false
+  fhir_valueRange:
+    name: fhir_valueRange
+    description: A set of ordered Quantity values defined by a low and high limit.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: fhir:valueRange
+    alias: fhir_valueRange
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: fhir_ReferenceRange
+    required: false
+    multivalued: false
+  fhir_valueRatio:
+    name: fhir_valueRatio
+    description: A relationship between two Quantity values expressed as a numerator
+      and a denominator. The Ratio datatype should only be used to express a relationship
+      of two numbers if the relationship cannot be suitably expressed using a Quantity
+      and a common unit. Where the denominator value is known to be fixed to '1',
+      Quantity should be used instead of Ratio.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: fhir:valueRatio
+    alias: fhir_valueRatio
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: fhir_ValueRatio
+    required: false
+    multivalued: false
+  fhir_valuePeriod:
+    name: fhir_valuePeriod
+    description: A time period defined by a start and end date/time. A period specifies
+      a range of times. The context of use will specify whether the entire range applies
+      (e.g. 'the patient was an inpatient of the hospital for this time range') or
+      one value from the period applies (e.g. 'give to the patient between 2 and 4
+      pm on 24-Jun 2013').
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: fhir:valuePeriod
+    alias: fhir_valuePeriod
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: time_Interval
+    required: false
+    multivalued: false
+  fhir_valueAttachment:
+    name: fhir_valueAttachment
+    description: This type is for containing or referencing attachments - additional
+      data content defined in other formats. The most common use of this type is to
+      include images or reports in some report format such as PDF. However, it can
+      be used for any data that has a MIME type.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    slot_uri: fhir:valueAttachment
+    alias: fhir_valueAttachment
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - saref_PropertyValue
+    range: uriorcurie
+    required: false
+    multivalued: false
+  owl_versionInfo:
+    name: owl_versionInfo
+    description: An owl:versionInfo statement generally has as its object a string
+      giving information about this version, for example RCS/CVS keywords. This statement
+      does not contribute to the logical meaning of the ontology other than that given
+      by the RDF(S) model theory.
+    from_schema: https://ns.faqir.org/q-o
+    close_mappings:
+    - saref:hasVersion
+    rank: 1000
+    domain: owl_Thing
+    slot_uri: owl:versionInfo
+    alias: owl_versionInfo
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - owl_Thing
+    range: string
+    required: false
+    multivalued: false
+  rdfs_label:
+    name: rdfs_label
+    description: human-readable version of a resource's name. Multilingual labels
+      are supported using the language tagging facility of RDF literals.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: owl_Thing
+    slot_uri: rdfs:label
+    alias: rdfs_label
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - owl_Thing
+    range: string
+    required: true
+    multivalued: true
+  rdfs_comment:
+    name: rdfs_comment
+    description: A textual comment helps clarify the meaning of RDF classes and properties.
+      Such in-line documentation complements the use of both formal techniques (Ontology
+      and rule languages) and informal (prose documentation, examples, test cases).
+      A variety of documentation forms can be combined to indicate the intended meaning
+      of the classes and properties described in an RDF vocabulary. Since RDF vocabularies
+      are expressed as RDF graphs, vocabularies defined in other namespaces may be
+      used to provide richer documentation.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: owl_Thing
+    slot_uri: rdfs:comment
+    alias: rdfs_comment
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - owl_Thing
+    range: string
+    required: true
+    multivalued: true
+  prov_hadPrimarySource:
+    name: prov_hadPrimarySource
+    description: A primary source for a topic refers to something produced by some
+      agent with direct experience and knowledge about the topic, at the time of the
+      topic's study, without benefit from hindsight. Because of the directness of
+      primary sources, they 'speak for themselves' in ways that cannot be captured
+      through the filter of secondary sources. As such, it is important for secondary
+      sources to reference those primary sources from which they were derived, so
+      that their reliability can be investigated. A primary source relation is a particular
+      case of derivation of secondary materials from their primary sources. It is
+      recognized that the determination of primary sources can be up to interpretation,
+      and should be done according to conventions accepted within the application's
+      domain.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: owl_Thing
+    slot_uri: prov:hadPrimarySource
+    alias: prov_hadPrimarySource
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - owl_Thing
+    range: prov_Entity
+    required: false
+    multivalued: true
+  prov_wasGeneratedBy:
+    name: prov_wasGeneratedBy
+    description: Generation is the completion of production of a new entity by an
+      activity. This entity did not exist before generation and becomes available
+      for usage after this generation.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    domain: owl_Thing
+    slot_uri: prov:wasGeneratedBy
+    alias: prov_wasGeneratedBy
+    owner: qo_QuestionnaireResponseStatus
+    domain_of:
+    - owl_Thing
+    range: sulo_Process
+    required: false
+    multivalued: true
+class_uri: qo:QuestionnaireResponseStatus
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../javascripts/tablesort.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
