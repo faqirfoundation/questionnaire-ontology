@@ -3,6 +3,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![LinkML](https://img.shields.io/badge/Schema-LinkML-green.svg)](https://linkml.io)
 [![W3C RDF/OWL](https://img.shields.io/badge/Format-RDF%2FOWL%2FSHACL-orange.svg)](project/)
+[![Docs](https://img.shields.io/badge/Docs-GitHub_Pages-blue.svg)](https://faqirfoundation.github.io/questionnaire-ontology/)
 
 The **FAQIR Questionnaire Ontology (QO)** is a FAIR-by-design semantic framework that transforms static, document-based questionnaire artifacts (e.g., PDFs, paper forms) into queryable, machine-readable Knowledge Graphs. 
 
@@ -10,6 +11,8 @@ The **FAQIR Questionnaire Ontology (QO)** is a FAIR-by-design semantic framework
 
 > 📖 **Paper Reference:** This repository contains the official semantic source schema, generated artifacts, and validation use cases for the paper:  
 > *"A Semantic Model for Reusable Questionnaires and Temporal Answer Validity in Healthcare"* (submitted to SWAT4HCLS 2027).
+
+> 📚 **Documentation:** Browse the ontology documentation (classes, slots, enumerations and diagrams) at **[faqirfoundation.github.io/questionnaire-ontology](https://faqirfoundation.github.io/questionnaire-ontology/)**.
 
 ---
 
