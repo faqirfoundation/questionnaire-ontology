@@ -1,0 +1,56 @@
+# CQ1 - Composition
+# Which atomic questions and sections constitute a given questionnaire
+# template, and what are their positional sequence indices?
+#
+# A qo:Questionnaire (or a qo:Section) never points to its items directly:
+# each item is wrapped in a sequence-indexed wrapper that carries qo:order.
+#   container --qo:hasOrderedQuestion--> qo:OrderedQuestion --qo:question--> qo:Question
+#   container --qo:hasOrderedSection-->  qo:OrderedSection  --qo:section-->  qo:Section
+# Sections may nest, so every container reachable from the questionnaire
+# through (qo:hasOrderedSection/qo:section)* is expanded.
+
+PREFIX qo:   <https://ns.faqir.org/q-o#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?questionnaire ?container ?containerOrder ?itemType ?item ?order ?label
+WHERE {
+  # Questionnaire template to inspect (replace or extend as needed)
+  VALUES ?questionnaire { <https://pods.faqir.org/questionnaire_WHOQOL_BREF> }
+
+  ?questionnaire a qo:Questionnaire .
+
+  # The questionnaire itself plus every (nested) section it contains
+  ?questionnaire (qo:hasOrderedSection/qo:section)* ?container .
+
+  # Position of the container within its parent (unbound for the questionnaire)
+  OPTIONAL {
+    ?containerWrapper qo:section ?container ;
+                      qo:order   ?containerOrder .
+  }
+
+  # Direct constituents of the container, through their ordered wrappers
+  {
+    ?container qo:hasOrderedSection ?wrapper .
+    ?wrapper   a qo:OrderedSection ;
+               qo:section ?item ;
+               qo:order   ?order .
+    ?item      a qo:Section .
+    BIND(qo:Section AS ?itemType)
+  }
+  UNION
+  {
+    ?container qo:hasOrderedQuestion ?wrapper .
+    ?wrapper   a qo:OrderedQuestion ;
+               qo:question ?item ;
+               qo:order    ?order .
+    ?item      a qo:Question .
+    BIND(qo:Question AS ?itemType)
+  }
+
+  # Human-readable label (untagged or English, other languages are left out for clarity)
+  OPTIONAL {
+    ?item rdfs:label ?label .
+    FILTER(lang(?label) = "" || langMatches(lang(?label), "en"))
+  }
+}
+ORDER BY ?questionnaire COALESCE(?containerOrder, 0) ?order

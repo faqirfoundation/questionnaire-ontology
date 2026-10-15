@@ -1,0 +1,68 @@
+{ "head": {
+    "vars": [ "question" , "label" , "typeIRI" , "questionType" , "multivalued" , "codingOrdinal" , "code" , "display" , "minValue" , "minLabel" , "maxValue" , "maxLabel" , "unit" , "precision" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "question": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_G4" } ,
+        "label": { "type": "literal" , "value": "How satisfied are you with your health?" } ,
+        "typeIRI": { "type": "uri" , "value": "http://hl7.org/fhir/item-type#coding" } ,
+        "questionType": { "type": "literal" , "value": "choice" } ,
+        "multivalued": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "codingOrdinal": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "code": { "type": "literal" , "value": "1" } ,
+        "display": { "type": "literal" , "value": "Very dissatisfied" }
+      } ,
+      { 
+        "question": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_G4" } ,
+        "label": { "type": "literal" , "value": "How satisfied are you with your health?" } ,
+        "typeIRI": { "type": "uri" , "value": "http://hl7.org/fhir/item-type#coding" } ,
+        "questionType": { "type": "literal" , "value": "choice" } ,
+        "multivalued": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "codingOrdinal": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "code": { "type": "literal" , "value": "2" } ,
+        "display": { "type": "literal" , "value": "Dissatisfied" }
+      } ,
+      { 
+        "question": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_G4" } ,
+        "label": { "type": "literal" , "value": "How satisfied are you with your health?" } ,
+        "typeIRI": { "type": "uri" , "value": "http://hl7.org/fhir/item-type#coding" } ,
+        "questionType": { "type": "literal" , "value": "choice" } ,
+        "multivalued": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "codingOrdinal": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "code": { "type": "literal" , "value": "3" } ,
+        "display": { "type": "literal" , "value": "Neither poor nor good" }
+      } ,
+      { 
+        "question": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_G4" } ,
+        "label": { "type": "literal" , "value": "How satisfied are you with your health?" } ,
+        "typeIRI": { "type": "uri" , "value": "http://hl7.org/fhir/item-type#coding" } ,
+        "questionType": { "type": "literal" , "value": "choice" } ,
+        "multivalued": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "codingOrdinal": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "code": { "type": "literal" , "value": "3" } ,
+        "display": { "type": "literal" , "value": "Neither satisfied nor dissatisfied" }
+      } ,
+      { 
+        "question": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_G4" } ,
+        "label": { "type": "literal" , "value": "How satisfied are you with your health?" } ,
+        "typeIRI": { "type": "uri" , "value": "http://hl7.org/fhir/item-type#coding" } ,
+        "questionType": { "type": "literal" , "value": "choice" } ,
+        "multivalued": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "codingOrdinal": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "code": { "type": "literal" , "value": "4" } ,
+        "display": { "type": "literal" , "value": "Satisfied" }
+      } ,
+      { 
+        "question": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_G4" } ,
+        "label": { "type": "literal" , "value": "How satisfied are you with your health?" } ,
+        "typeIRI": { "type": "uri" , "value": "http://hl7.org/fhir/item-type#coding" } ,
+        "questionType": { "type": "literal" , "value": "choice" } ,
+        "multivalued": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "codingOrdinal": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "code": { "type": "literal" , "value": "5" } ,
+        "display": { "type": "literal" , "value": "Very satisfied" }
+      }
+    ]
+  }
+}

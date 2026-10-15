@@ -1,0 +1,55 @@
+# CQ5 - Cross-instrument overlap
+# Which distinct validated instruments share the same atomic question or
+# SNOMED CT clinical concept tag?
+#
+# Questions are reached from each instrument as in CQ1:
+#   qo:Questionnaire (--qo:hasOrderedSection--> qo:OrderedSection --qo:section--> qo:Section)*
+#                     --qo:hasOrderedQuestion--> qo:OrderedQuestion --qo:question--> qo:Question
+# Two questions of distinct instruments match when they are the same atomic
+# qo:Question, or when they share at least one qo:tag (e.g. a SNOMED CT
+# concept). Questions may carry several tags; sharing any of them is enough,
+# and all shared tags are listed for review.
+
+PREFIX qo:   <https://ns.faqir.org/q-o#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?instrumentA ?questionA ?labelA ?instrumentB ?questionB ?labelB
+       ?sameQuestion
+       (GROUP_CONCAT(DISTINCT STR(?tag); SEPARATOR=" | ") AS ?sharedTags)
+WHERE {
+  # Pair of instruments to compare (replace or add rows as needed)
+  VALUES (?instrumentA ?instrumentB) {
+    (<https://pods.faqir.org/questionnaire_WHOQOL_BREF> <https://pods.faqir.org/questionnaire_EQ_5D_5L>)
+  }
+
+  # Distinct instruments
+  ?instrumentA a qo:Questionnaire .
+  ?instrumentB a qo:Questionnaire .
+  FILTER(?instrumentA != ?instrumentB)
+
+  # Atomic questions of each instrument, at any section depth
+  ?instrumentA (qo:hasOrderedSection/qo:section)*/qo:hasOrderedQuestion/qo:question ?questionA .
+  ?instrumentB (qo:hasOrderedSection/qo:section)*/qo:hasOrderedQuestion/qo:question ?questionB .
+  ?questionA a qo:Question .
+  ?questionB a qo:Question .
+
+  # Same atomic question, or at least one shared tag
+  OPTIONAL {
+    ?questionA qo:tag ?tag .
+    ?questionB qo:tag ?tag .
+  }
+  FILTER(?questionA = ?questionB || BOUND(?tag))
+  BIND(?questionA = ?questionB AS ?sameQuestion)
+
+  # Human-readable labels (untagged or English, other languages are left out for clarity)
+  OPTIONAL {
+    ?questionA rdfs:label ?labelA .
+    FILTER(lang(?labelA) = "" || langMatches(lang(?labelA), "en"))
+  }
+  OPTIONAL {
+    ?questionB rdfs:label ?labelB .
+    FILTER(lang(?labelB) = "" || langMatches(lang(?labelB), "en"))
+  }
+}
+GROUP BY ?instrumentA ?questionA ?labelA ?instrumentB ?questionB ?labelB ?sameQuestion
+ORDER BY ?instrumentA ?instrumentB ?questionA ?questionB

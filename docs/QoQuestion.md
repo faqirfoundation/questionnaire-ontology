@@ -221,7 +221,7 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 | [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies the operational enforcement mechanism of a duration limit; when tru... | direct |
 | [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | Defines the time extent following generation during which a recorded answer r... | direct |
 | [qo_conditionalValidity](qo_conditionalValidity.md) | 0..1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
-| [qo_tag](qo_tag.md) | 1..* <br/> [String](String.md) | A machine-readable alphanumeric code or mnemonic string used for internal ref... | direct |
+| [qo_tag](qo_tag.md) | 1..* <br/> [String](String.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[Uriorcurie](Uriorcurie.md) | A machine-readable alphanumeric code or mnemonic string used for internal ref... | direct |
 | [qo_numericalParams](qo_numericalParams.md) | 0..1 <br/> [NumericalParams](NumericalParams.md) | Specifies measurement units and decimal precision constraints governing accep... | direct |
 | [qo_codingParams](qo_codingParams.md) | * <br/> [ValueCoding](ValueCoding.md) | Defines the permissible standardized concept codes and human-readable labels ... | direct |
 | [qo_codingOrdinal](qo_codingOrdinal.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies whether permissible selection options possess a meaningful inherent... | direct |
@@ -252,7 +252,6 @@ URI: [qo:Question](https://ns.faqir.org/q-o#Question)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [QoOrderedQuestion](QoOrderedQuestion.md) | [qo_question](qo_question.md) | range | [QoQuestion](QoQuestion.md) |
-| [QoAnswer](QoAnswer.md) | [qo_toQuestion](qo_toQuestion.md) | range | [QoQuestion](QoQuestion.md) |
 
 
 
@@ -330,9 +329,11 @@ attributes:
     slot_uri: qo:tag
     domain_of:
     - qo_Question
-    range: string
     required: true
     multivalued: true
+    any_of:
+    - range: string
+    - range: uriorcurie
   qo_numericalParams:
     name: qo_numericalParams
     description: Specifies measurement units and decimal precision constraints governing
@@ -464,6 +465,9 @@ attributes:
     range: string
     required: true
     multivalued: true
+    any_of:
+    - range: string
+    - range: uriorcurie
   qo_numericalParams:
     name: qo_numericalParams
     description: Specifies measurement units and decimal precision constraints governing
@@ -709,6 +713,7 @@ attributes:
     - foaf_Agent
     - sulo_Process
     - prov_Entity
+    - qo_Section
     range: saref_PropertyValue
     required: false
     multivalued: true

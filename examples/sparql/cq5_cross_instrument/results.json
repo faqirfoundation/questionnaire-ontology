@@ -1,0 +1,18 @@
+{ "head": {
+    "vars": [ "instrumentA" , "questionA" , "labelA" , "instrumentB" , "questionB" , "labelB" , "sameQuestion" , "sharedTags" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "instrumentA": { "type": "uri" , "value": "https://pods.faqir.org/questionnaire_WHOQOL_BREF" } ,
+        "questionA": { "type": "uri" , "value": "https://pods.faqir.org/question_WHOQOL_BREF_26" } ,
+        "labelA": { "type": "literal" , "value": "How often do you have negative feelings such as blue mood, despair, anxiety, depression?" } ,
+        "instrumentB": { "type": "uri" , "value": "https://pods.faqir.org/questionnaire_EQ_5D_5L" } ,
+        "questionB": { "type": "uri" , "value": "https://pods.faqir.org/question_EQ_5D_5L_05" } ,
+        "labelB": { "type": "literal" , "xml:lang": "en" , "value": "ANXIETY / DEPRESSION. Please tick the ONE box that best describes your health TODAY." } ,
+        "sameQuestion": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#boolean" , "value": "false" } ,
+        "sharedTags": { "type": "literal" , "value": "http://snomed.info/id/48694002 | http://snomed.info/id/35489007" }
+      }
+    ]
+  }
+}

@@ -89,9 +89,9 @@ alias all := site
 # Generate site locally
 site: _gen-project _gendoc
 
-# Deploy site
-deploy: site
-  mkd-gh-deploy
+# Deploy site to GitHub Pages
+deploy: _gendoc _gen-python _gen-owl _gen-shacl
+    poetry run mkdocs gh-deploy --force
 
 _compile_sheets:
     @if [ "{{use_schemasheets}}" != "No" ]; then \
@@ -157,20 +157,20 @@ _gendoc: _ensure_docdir
 
 # Generate python classes
 _gen-python: _generate_python_classes
-    linkml generate python \
+    poetry run linkml generate python \
         src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
         > src/questionnaire_ontology/datamodel/questionnaire_ontology.py  
         
 # Generate OWL 
 _gen-owl: _generate_owl_classes
-    linkml generate owl \
+    poetry run linkml generate owl \
         src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
         > project/owl/questionnaire_ontology.owl.ttl  
     poetry run python scripts/post_process_owl.py project/owl/questionnaire_ontology.owl.ttl
         
 # Generate python classes
 _gen-shacl: _generate_shacl_classes
-    linkml generate shacl \
+    poetry run linkml generate shacl \
         src/questionnaire_ontology/schema/questionnaire_ontology.yaml \
         > project/shacl/questionnaire_ontology.shacl.ttl    
 

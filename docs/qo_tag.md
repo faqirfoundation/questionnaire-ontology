@@ -32,7 +32,7 @@ Alias: qo_tag
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [String](String.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[Uriorcurie](Uriorcurie.md)
 
 * Multivalued: True
 
@@ -85,6 +85,9 @@ domain_of:
 range: string
 required: true
 multivalued: true
+any_of:
+- range: string
+- range: uriorcurie
 
 ```
 </details>

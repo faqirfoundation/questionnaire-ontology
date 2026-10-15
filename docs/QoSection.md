@@ -66,8 +66,8 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
     
         
         
-        QoSection --> "*" SarefPropertyValue : fhir_status
-        click SarefPropertyValue href "../SarefPropertyValue"
+        QoSection --> "1" QoQuestionnaireStatus : fhir_status
+        click QoQuestionnaireStatus href "../QoQuestionnaireStatus"
     
 
         
@@ -196,6 +196,7 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 | [qo_hardValidity](qo_hardValidity.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies the operational enforcement mechanism of a duration limit; when tru... | direct |
 | [qo_temporalValidity](qo_temporalValidity.md) | 1 <br/> [TimeDuration](TimeDuration.md) | Defines the time extent following generation during which a recorded answer r... | direct |
 | [qo_conditionalValidity](qo_conditionalValidity.md) | 0..1 <br/> [String](String.md) | A machine-readable rule statement defining an intervening event or state chan... | direct |
+| [fhir_status](fhir_status.md) | 1 <br/> [QoQuestionnaireStatus](QoQuestionnaireStatus.md) | A code specifying the state of the observation/procedure/questionnaire | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
 | [dcterms_created](dcterms_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was created | [ProvEntity](ProvEntity.md) |
 | [dcterms_modified](dcterms_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when the entity was last updated | [ProvEntity](ProvEntity.md) |
@@ -203,7 +204,6 @@ URI: [qo:Section](https://ns.faqir.org/q-o#Section)
 | [dcterms_hasPart](dcterms_hasPart.md) | * <br/> [OwlThing](OwlThing.md) | A related resource that is included either physically or logically in the des... | [ProvEntity](ProvEntity.md) |
 | [dcterms_isPartOf](dcterms_isPartOf.md) | * <br/> [OwlThing](OwlThing.md) | A related resource in which the described resource is physically or logically... | [ProvEntity](ProvEntity.md) |
 | [prov_generatedAtTime](prov_generatedAtTime.md) | * <br/> [Datetime](Datetime.md) | The time at which an entity was completely created and is available for use | [ProvEntity](ProvEntity.md) |
-| [fhir_status](fhir_status.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | A code specifying the state of the observation/procedure/questionnaire | [ProvEntity](ProvEntity.md) |
 | [dcterms_creator](dcterms_creator.md) | 1..* <br/> [ProvOrganization](ProvOrganization.md) | An entity responsible for making the resource | [ProvEntity](ProvEntity.md) |
 | [saref_hasProperty](saref_hasProperty.md) | * <br/> [SarefProperty](SarefProperty.md) | Links a feature kind or a feature of interest to one of its properties | [ProvEntity](ProvEntity.md) |
 | [saref_hasPropertyValue](saref_hasPropertyValue.md) | * <br/> [SarefPropertyValue](SarefPropertyValue.md) | Links a feature kind, a feature of interest, or a property of interest, to a ... | [ProvEntity](ProvEntity.md) |
@@ -281,6 +281,7 @@ slots:
 - qo_hardValidity
 - qo_temporalValidity
 - qo_conditionalValidity
+- fhir_status
 slot_usage:
   dcterms_creator:
     name: dcterms_creator
@@ -294,6 +295,11 @@ slot_usage:
   qo_hasOrderedSection:
     name: qo_hasOrderedSection
     domain: qo_Section
+  fhir_status:
+    name: fhir_status
+    range: qo_QuestionnaireStatus
+    required: true
+    multivalued: false
 class_uri: qo:Section
 
 ```
@@ -323,6 +329,11 @@ slot_usage:
   qo_hasOrderedSection:
     name: qo_hasOrderedSection
     domain: qo_Section
+  fhir_status:
+    name: fhir_status
+    range: qo_QuestionnaireStatus
+    required: true
+    multivalued: false
 attributes:
   qo_hasOrderedQuestion:
     name: qo_hasOrderedQuestion
@@ -421,6 +432,26 @@ attributes:
     - qo_Question
     range: string
     required: false
+  fhir_status:
+    name: fhir_status
+    description: A code specifying the state of the observation/procedure/questionnaire...
+      Generally, this will be the in-progress or completed state.
+    from_schema: https://ns.faqir.org/q-o
+    rank: 1000
+    is_a: saref_hasPropertyValue
+    slot_uri: fhir:resource-status
+    alias: fhir_status
+    owner: qo_Section
+    domain_of:
+    - foaf_Agent
+    - sulo_Process
+    - prov_Entity
+    - qo_Section
+    range: qo_QuestionnaireStatus
+    required: true
+    multivalued: false
+    inlined: true
+    inlined_as_list: true
   prov_wasAttributedTo:
     name: prov_wasAttributedTo
     description: Attribution is the ascribing of an entity to an agent.
@@ -529,25 +560,6 @@ attributes:
     range: datetime
     required: false
     multivalued: true
-  fhir_status:
-    name: fhir_status
-    description: A code specifying the state of the observation/procedure/questionnaire...
-      Generally, this will be the in-progress or completed state.
-    from_schema: https://ns.faqir.org/q-o
-    rank: 1000
-    is_a: saref_hasPropertyValue
-    slot_uri: fhir:resource-status
-    alias: fhir_status
-    owner: qo_Section
-    domain_of:
-    - foaf_Agent
-    - sulo_Process
-    - prov_Entity
-    range: saref_PropertyValue
-    required: false
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   dcterms_creator:
     name: dcterms_creator
     description: An entity responsible for making the resource.

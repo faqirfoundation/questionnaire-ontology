@@ -491,6 +491,7 @@ attributes:
     - foaf_Agent
     - sulo_Process
     - prov_Entity
+    - qo_Section
     range: qo_QuestionnaireResponseStatus
     required: true
     multivalued: false

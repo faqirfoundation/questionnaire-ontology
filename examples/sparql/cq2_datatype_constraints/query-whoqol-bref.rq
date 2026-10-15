@@ -1,0 +1,93 @@
+# CQ2 - Datatype constraints
+# What input datatype, permissible coding options, or numeric range
+# parameters govern a specific atomic question?
+#
+# The constraints live on the context-agnostic qo:Question itself:
+#   qo:Question --prov:type-->          qo:QuestionType meaning (e.g. fhir item-type#coding)
+#   qo:Question --qo:codingParams-->    fhir:Coding            (fhir:code, fhir:display)
+#   qo:Question --qo:intervalParams-->  phro:IntervalParams    (phro:minValue/minLabel, phro:maxValue/maxLabel)
+#   qo:Question --qo:numericalParams--> phro:NumericalParams   (ucum:units, phro:precision)
+# Which of them are present depends on the question type (see the qo_Question
+# rules in the schema), so all of them are OPTIONAL. Choice questions return
+# one row per permissible coding option.
+
+PREFIX qo:   <https://ns.faqir.org/q-o#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX fhir: <http://hl7.org/fhir/>
+PREFIX phro: <https://ns.faqir.org/phr-o#>
+PREFIX ucum: <https://unitsofmeasure.org/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?question ?label ?typeIRI ?questionType ?multivalued
+       ?codingOrdinal ?code ?display
+       ?minValue ?minLabel ?maxValue ?maxLabel
+       ?unit ?precision
+WHERE {
+  # Atomic question(s) to inspect (replace or extend as needed)
+  VALUES ?question {
+    <https://pods.faqir.org/question_WHOQOL_BREF_G4>
+  }
+
+  ?question a qo:Question ;
+            prov:type ?typeIRI .
+
+  # Permissible value of qo_QuestionType whose meaning is the declared prov:type
+  OPTIONAL {
+    VALUES (?typeIRI ?questionType) {
+      (<http://hl7.org/fhir/item-type#coding>      "choice")
+      (<https://ns.faqir.org/q-o#open-choice>      "openChoice")
+      (<https://ns.faqir.org/q-o#numberInterval>   "numberInterval")
+      (<http://hl7.org/fhir/item-type#decimal>     "decimal")
+      (<http://hl7.org/fhir/item-type#time>        "time")
+      (<http://hl7.org/fhir/item-type#dateTime>    "dateTime")
+      (<http://hl7.org/fhir/item-type#string>      "text")
+    }
+  }
+
+  # Cardinality and ordinality of the answer (both default to false in the schema)
+  OPTIONAL { ?question qo:multivalued   ?multivaluedDeclared }
+  OPTIONAL { ?question qo:codingOrdinal ?codingOrdinalDeclared }
+  BIND(COALESCE(?multivaluedDeclared, false) AS ?multivalued)
+
+  # Permissible coding options (choice / openChoice)
+  OPTIONAL {
+    ?question qo:codingParams ?coding .
+    ?coding   fhir:code ?code .
+    OPTIONAL {
+      ?coding fhir:display ?display .
+      FILTER(lang(?display) = "" || langMatches(lang(?display), "en"))
+    }
+  }
+  # qo:codingOrdinal only applies when coding options exist
+  BIND(IF(BOUND(?code), COALESCE(?codingOrdinalDeclared, false), ?codingOrdinalDeclared) AS ?codingOrdinal)
+
+  # Numeric range (numberInterval)
+  OPTIONAL {
+    ?question qo:intervalParams ?interval .
+    OPTIONAL { ?interval phro:minValue ?minValue }
+    OPTIONAL { ?interval phro:maxValue ?maxValue }
+    OPTIONAL {
+      ?interval phro:minLabel ?minLabel .
+      FILTER(lang(?minLabel) = "" || langMatches(lang(?minLabel), "en"))
+    }
+    OPTIONAL {
+      ?interval phro:maxLabel ?maxLabel .
+      FILTER(lang(?maxLabel) = "" || langMatches(lang(?maxLabel), "en"))
+    }
+  }
+
+  # Unit and precision (numberInterval / decimal)
+  OPTIONAL {
+    ?question qo:numericalParams ?numerical .
+    OPTIONAL { ?numerical ucum:units     ?unit }
+    OPTIONAL { ?numerical phro:precision ?precision }
+  }
+
+  # Human-readable label (untagged or English, other languages are left out for clarity)
+  OPTIONAL {
+    ?question rdfs:label ?label .
+    FILTER(lang(?label) = "" || langMatches(lang(?label), "en"))
+  }
+}
+ORDER BY ?question COALESCE(xsd:integer(?code), 0) ?code

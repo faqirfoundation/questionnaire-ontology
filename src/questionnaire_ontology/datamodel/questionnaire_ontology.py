@@ -1,5 +1,5 @@
 # Auto generated from questionnaire_ontology.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-06T13:53:51
+# Generation date: 2026-10-14T14:31:22
 # Schema: Questionnaire-Ontology
 #
 # id: https://ns.faqir.org/q-o
@@ -289,13 +289,9 @@ class FoafAgent(OwlThing):
             self.prov_type = [self.prov_type] if self.prov_type is not None else []
         self.prov_type = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.prov_type]
 
-        if not isinstance(self.dcterms_hasPart, list):
-            self.dcterms_hasPart = [self.dcterms_hasPart] if self.dcterms_hasPart is not None else []
-        self.dcterms_hasPart = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_hasPart]
+        self._normalize_inlined_as_dict(slot_name="dcterms_hasPart", slot_type=OwlThing, key_name="rdfs_label", keyed=False)
 
-        if not isinstance(self.dcterms_isPartOf, list):
-            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
-        self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
+        self._normalize_inlined_as_dict(slot_name="dcterms_isPartOf", slot_type=OwlThing, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.prov_generatedAtTime, list):
             self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
@@ -305,9 +301,7 @@ class FoafAgent(OwlThing):
             self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
         self.fhir_status = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.fhir_status]
 
-        if not isinstance(self.dcterms_creator, list):
-            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
-        self.dcterms_creator = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.dcterms_creator]
+        self._normalize_inlined_as_dict(slot_name="dcterms_creator", slot_type=FoafAgent, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.saref_hasProperty, list):
             self.saref_hasProperty = [self.saref_hasProperty] if self.saref_hasProperty is not None else []
@@ -379,21 +373,15 @@ class SuloProcess(OwlThing):
             self.prov_type = [self.prov_type] if self.prov_type is not None else []
         self.prov_type = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.prov_type]
 
-        if not isinstance(self.dcterms_hasPart, list):
-            self.dcterms_hasPart = [self.dcterms_hasPart] if self.dcterms_hasPart is not None else []
-        self.dcterms_hasPart = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_hasPart]
+        self._normalize_inlined_as_dict(slot_name="dcterms_hasPart", slot_type=OwlThing, key_name="rdfs_label", keyed=False)
 
-        if not isinstance(self.dcterms_isPartOf, list):
-            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
-        self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
+        self._normalize_inlined_as_dict(slot_name="dcterms_isPartOf", slot_type=OwlThing, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.fhir_status, list):
             self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
         self.fhir_status = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.fhir_status]
 
-        if not isinstance(self.dcterms_creator, list):
-            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
-        self.dcterms_creator = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.dcterms_creator]
+        self._normalize_inlined_as_dict(slot_name="dcterms_creator", slot_type=FoafAgent, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.saref_hasProperty, list):
             self.saref_hasProperty = [self.saref_hasProperty] if self.saref_hasProperty is not None else []
@@ -470,9 +458,7 @@ class ProvEntity(OwlThing):
     saref_hasPropertyValue: Optional[Union[Union[dict, "SarefPropertyValue"], list[Union[dict, "SarefPropertyValue"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if not isinstance(self.prov_wasAttributedTo, list):
-            self.prov_wasAttributedTo = [self.prov_wasAttributedTo] if self.prov_wasAttributedTo is not None else []
-        self.prov_wasAttributedTo = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.prov_wasAttributedTo]
+        self._normalize_inlined_as_dict(slot_name="prov_wasAttributedTo", slot_type=FoafAgent, key_name="rdfs_label", keyed=False)
 
         if self.dcterms_created is not None and not isinstance(self.dcterms_created, XSDDateTime):
             self.dcterms_created = XSDDateTime(self.dcterms_created)
@@ -484,13 +470,9 @@ class ProvEntity(OwlThing):
             self.prov_type = [self.prov_type] if self.prov_type is not None else []
         self.prov_type = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.prov_type]
 
-        if not isinstance(self.dcterms_hasPart, list):
-            self.dcterms_hasPart = [self.dcterms_hasPart] if self.dcterms_hasPart is not None else []
-        self.dcterms_hasPart = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_hasPart]
+        self._normalize_inlined_as_dict(slot_name="dcterms_hasPart", slot_type=OwlThing, key_name="rdfs_label", keyed=False)
 
-        if not isinstance(self.dcterms_isPartOf, list):
-            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
-        self.dcterms_isPartOf = [v if isinstance(v, OwlThing) else OwlThing(**as_dict(v)) for v in self.dcterms_isPartOf]
+        self._normalize_inlined_as_dict(slot_name="dcterms_isPartOf", slot_type=OwlThing, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.prov_generatedAtTime, list):
             self.prov_generatedAtTime = [self.prov_generatedAtTime] if self.prov_generatedAtTime is not None else []
@@ -500,9 +482,7 @@ class ProvEntity(OwlThing):
             self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
         self.fhir_status = [v if isinstance(v, SarefPropertyValue) else SarefPropertyValue(**as_dict(v)) for v in self.fhir_status]
 
-        if not isinstance(self.dcterms_creator, list):
-            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
-        self.dcterms_creator = [v if isinstance(v, FoafAgent) else FoafAgent(**as_dict(v)) for v in self.dcterms_creator]
+        self._normalize_inlined_as_dict(slot_name="dcterms_creator", slot_type=FoafAgent, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.saref_hasProperty, list):
             self.saref_hasProperty = [self.saref_hasProperty] if self.saref_hasProperty is not None else []
@@ -863,9 +843,7 @@ class QoQuestionnaire(ProvEntity):
 
         if self._is_empty(self.dcterms_creator):
             self.MissingRequiredField("dcterms_creator")
-        if not isinstance(self.dcterms_creator, list):
-            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
-        self.dcterms_creator = [v if isinstance(v, ProvOrganization) else ProvOrganization(**as_dict(v)) for v in self.dcterms_creator]
+        self._normalize_inlined_as_dict(slot_name="dcterms_creator", slot_type=ProvOrganization, key_name="rdfs_label", keyed=False)
 
         if self._is_empty(self.fhir_status):
             self.MissingRequiredField("fhir_status")
@@ -887,9 +865,7 @@ class QoQuestionnaire(ProvEntity):
         if self.qo_conditionalValidity is not None and not isinstance(self.qo_conditionalValidity, str):
             self.qo_conditionalValidity = str(self.qo_conditionalValidity)
 
-        if not isinstance(self.dcterms_isPartOf, list):
-            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
-        self.dcterms_isPartOf = [v if isinstance(v, SuloProcess) else SuloProcess(**as_dict(v)) for v in self.dcterms_isPartOf]
+        self._normalize_inlined_as_dict(slot_name="dcterms_isPartOf", slot_type=SuloProcess, key_name="rdfs_label", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -980,6 +956,7 @@ class QoSection(ProvEntity):
     rdfs_label: Union[str, list[str]] = None
     rdfs_comment: Union[str, list[str]] = None
     qo_temporalValidity: Union[dict, TimeDuration] = None
+    fhir_status: Union[Union[dict, QoQuestionnaireStatus], list[Union[dict, QoQuestionnaireStatus]]] = None
     dcterms_creator: Union[Union[dict, ProvOrganization], list[Union[dict, ProvOrganization]]] = None
     qo_hasOrderedQuestion: Optional[Union[Union[dict, "QoOrderedQuestion"], list[Union[dict, "QoOrderedQuestion"]]]] = empty_list()
     qo_hasOrderedSection: Optional[Union[Union[dict, QoOrderedSection], list[Union[dict, QoOrderedSection]]]] = empty_list()
@@ -992,11 +969,15 @@ class QoSection(ProvEntity):
         if not isinstance(self.qo_temporalValidity, TimeDuration):
             self.qo_temporalValidity = TimeDuration(**as_dict(self.qo_temporalValidity))
 
+        if self._is_empty(self.fhir_status):
+            self.MissingRequiredField("fhir_status")
+        if not isinstance(self.fhir_status, list):
+            self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
+        self.fhir_status = [v if isinstance(v, QoQuestionnaireStatus) else QoQuestionnaireStatus(**as_dict(v)) for v in self.fhir_status]
+
         if self._is_empty(self.dcterms_creator):
             self.MissingRequiredField("dcterms_creator")
-        if not isinstance(self.dcterms_creator, list):
-            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
-        self.dcterms_creator = [v if isinstance(v, ProvOrganization) else ProvOrganization(**as_dict(v)) for v in self.dcterms_creator]
+        self._normalize_inlined_as_dict(slot_name="dcterms_creator", slot_type=ProvOrganization, key_name="rdfs_label", keyed=False)
 
         if not isinstance(self.qo_hasOrderedQuestion, list):
             self.qo_hasOrderedQuestion = [self.qo_hasOrderedQuestion] if self.qo_hasOrderedQuestion is not None else []
@@ -1114,9 +1095,7 @@ class QoQuestion(ProvEntity):
 
         if self._is_empty(self.dcterms_creator):
             self.MissingRequiredField("dcterms_creator")
-        if not isinstance(self.dcterms_creator, list):
-            self.dcterms_creator = [self.dcterms_creator] if self.dcterms_creator is not None else []
-        self.dcterms_creator = [v if isinstance(v, ProvOrganization) else ProvOrganization(**as_dict(v)) for v in self.dcterms_creator]
+        self._normalize_inlined_as_dict(slot_name="dcterms_creator", slot_type=ProvOrganization, key_name="rdfs_label", keyed=False)
 
         if self.qo_multivalued is not None and not isinstance(self.qo_multivalued, Bool):
             self.qo_multivalued = Bool(self.qo_multivalued)
@@ -1130,9 +1109,7 @@ class QoQuestion(ProvEntity):
         if self.qo_numericalParams is not None and not isinstance(self.qo_numericalParams, NumericalParams):
             self.qo_numericalParams = NumericalParams(**as_dict(self.qo_numericalParams))
 
-        if not isinstance(self.qo_codingParams, list):
-            self.qo_codingParams = [self.qo_codingParams] if self.qo_codingParams is not None else []
-        self.qo_codingParams = [v if isinstance(v, ValueCoding) else ValueCoding(**as_dict(v)) for v in self.qo_codingParams]
+        self._normalize_inlined_as_dict(slot_name="qo_codingParams", slot_type=ValueCoding, key_name="code", keyed=False)
 
         if self.qo_codingOrdinal is not None and not isinstance(self.qo_codingOrdinal, Bool):
             self.qo_codingOrdinal = Bool(self.qo_codingOrdinal)
@@ -1174,9 +1151,7 @@ class QoQuestionnaireResponse(ProvEntity):
 
         if self._is_empty(self.qo_hasAnswer):
             self.MissingRequiredField("qo_hasAnswer")
-        if not isinstance(self.qo_hasAnswer, list):
-            self.qo_hasAnswer = [self.qo_hasAnswer] if self.qo_hasAnswer is not None else []
-        self.qo_hasAnswer = [v if isinstance(v, QoAnswer) else QoAnswer(**as_dict(v)) for v in self.qo_hasAnswer]
+        self._normalize_inlined_as_dict(slot_name="qo_hasAnswer", slot_type=QoAnswer, key_name="rdfs_label", keyed=False)
 
         if self._is_empty(self.dcterms_created):
             self.MissingRequiredField("dcterms_created")
@@ -1190,9 +1165,7 @@ class QoQuestionnaireResponse(ProvEntity):
 
         if self._is_empty(self.prov_wasAttributedTo):
             self.MissingRequiredField("prov_wasAttributedTo")
-        if not isinstance(self.prov_wasAttributedTo, list):
-            self.prov_wasAttributedTo = [self.prov_wasAttributedTo] if self.prov_wasAttributedTo is not None else []
-        self.prov_wasAttributedTo = [v if isinstance(v, FoafPerson) else FoafPerson(**as_dict(v)) for v in self.prov_wasAttributedTo]
+        self._normalize_inlined_as_dict(slot_name="prov_wasAttributedTo", slot_type=FoafPerson, key_name="rdfs_label", keyed=False)
 
         if self._is_empty(self.fhir_status):
             self.MissingRequiredField("fhir_status")
@@ -1200,9 +1173,7 @@ class QoQuestionnaireResponse(ProvEntity):
             self.fhir_status = [self.fhir_status] if self.fhir_status is not None else []
         self.fhir_status = [v if isinstance(v, QoQuestionnaireResponseStatus) else QoQuestionnaireResponseStatus(**as_dict(v)) for v in self.fhir_status]
 
-        if not isinstance(self.dcterms_isPartOf, list):
-            self.dcterms_isPartOf = [self.dcterms_isPartOf] if self.dcterms_isPartOf is not None else []
-        self.dcterms_isPartOf = [v if isinstance(v, SuloProcess) else SuloProcess(**as_dict(v)) for v in self.dcterms_isPartOf]
+        self._normalize_inlined_as_dict(slot_name="dcterms_isPartOf", slot_type=SuloProcess, key_name="rdfs_label", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -1247,7 +1218,7 @@ class QoAnswer(ProvEntity):
 
     rdfs_label: Union[str, list[str]] = None
     rdfs_comment: Union[str, list[str]] = None
-    qo_toQuestion: Union[dict, QoQuestion] = None
+    qo_toQuestion: Union[dict, QoOrderedQuestion] = None
     prov_generatedAtTime: Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]] = None
     qo_answerValue: Optional[str] = None
     qo_isEmpty: Optional[Union[bool, Bool]] = False
@@ -1255,8 +1226,8 @@ class QoAnswer(ProvEntity):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.qo_toQuestion):
             self.MissingRequiredField("qo_toQuestion")
-        if not isinstance(self.qo_toQuestion, QoQuestion):
-            self.qo_toQuestion = QoQuestion(**as_dict(self.qo_toQuestion))
+        if not isinstance(self.qo_toQuestion, QoOrderedQuestion):
+            self.qo_toQuestion = QoOrderedQuestion(**as_dict(self.qo_toQuestion))
 
         if self._is_empty(self.prov_generatedAtTime):
             self.MissingRequiredField("prov_generatedAtTime")
@@ -1492,7 +1463,7 @@ slots.qo_hasAnswer = Slot(uri=QO.hasAnswer, name="qo_hasAnswer", curie=QO.curie(
                    model_uri=QO.qo_hasAnswer, domain=QoQuestionnaireResponse, range=Union[Union[dict, "QoAnswer"], list[Union[dict, "QoAnswer"]]])
 
 slots.qo_toQuestion = Slot(uri=QO.toQuestion, name="qo_toQuestion", curie=QO.curie('toQuestion'),
-                   model_uri=QO.qo_toQuestion, domain=QoAnswer, range=Union[dict, QoQuestion])
+                   model_uri=QO.qo_toQuestion, domain=QoAnswer, range=Union[dict, QoOrderedQuestion])
 
 slots.sarefProperty__fhir_referenceRange = Slot(uri=FHIR['Observation.referenceRange'], name="sarefProperty__fhir_referenceRange", curie=FHIR.curie('Observation.referenceRange'),
                    model_uri=QO.sarefProperty__fhir_referenceRange, domain=None, range=Optional[Union[dict, FhirReferenceRange]])
@@ -1612,6 +1583,9 @@ slots.qo_Section_qo_hasOrderedQuestion = Slot(uri=QO.hasOrderedQuestion, name="q
 slots.qo_Section_qo_hasOrderedSection = Slot(uri=QO.hasOrderedSection, name="qo_Section_qo_hasOrderedSection", curie=QO.curie('hasOrderedSection'),
                    model_uri=QO.qo_Section_qo_hasOrderedSection, domain=QoSection, range=Optional[Union[Union[dict, QoOrderedSection], list[Union[dict, QoOrderedSection]]]])
 
+slots.qo_Section_fhir_status = Slot(uri=FHIR['resource-status'], name="qo_Section_fhir_status", curie=FHIR.curie('resource-status'),
+                   model_uri=QO.qo_Section_fhir_status, domain=QoSection, range=Union[Union[dict, QoQuestionnaireStatus], list[Union[dict, QoQuestionnaireStatus]]])
+
 slots.qo_OrderedQuestion_qo_order = Slot(uri=QO.order, name="qo_OrderedQuestion_qo_order", curie=QO.curie('order'),
                    model_uri=QO.qo_OrderedQuestion_qo_order, domain=QoOrderedQuestion, range=int)
 
@@ -1641,4 +1615,3 @@ slots.qo_QuestionnaireResponseStatus_saref_hasValue = Slot(uri=SAREF.hasValue, n
 
 slots.qo_Answer_prov_generatedAtTime = Slot(uri=PROV.generatedAtTime, name="qo_Answer_prov_generatedAtTime", curie=PROV.curie('generatedAtTime'),
                    model_uri=QO.qo_Answer_prov_generatedAtTime, domain=QoAnswer, range=Union[Union[str, XSDDateTime], list[Union[str, XSDDateTime]]])
-

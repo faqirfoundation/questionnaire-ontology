@@ -120,8 +120,8 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
     
         
         
-        QoAnswer --> "1" QoQuestion : qo_toQuestion
-        click QoQuestion href "../QoQuestion"
+        QoAnswer --> "1" QoOrderedQuestion : qo_toQuestion
+        click QoOrderedQuestion href "../QoOrderedQuestion"
     
 
         
@@ -169,7 +169,7 @@ URI: [qo:Answer](https://ns.faqir.org/q-o#Answer)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [qo_toQuestion](qo_toQuestion.md) | 1 <br/> [QoQuestion](QoQuestion.md) | Links a recorded response value back to its originating inquiry item definiti... | direct |
+| [qo_toQuestion](qo_toQuestion.md) | 1 <br/> [QoOrderedQuestion](QoOrderedQuestion.md) | Links a recorded response value back to its originating inquiry item definiti... | direct |
 | [qo_answerValue](qo_answerValue.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Float](Float.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[Datetime](Datetime.md) | The recorded literal payload (numeric scalar, textual/coded string, or timest... | direct |
 | [qo_isEmpty](qo_isEmpty.md) | 0..1 <br/> [Boolean](Boolean.md) | Specifies an explicit assertion that an item was purposefully omitted or unpo... | direct |
 | [prov_wasAttributedTo](prov_wasAttributedTo.md) | * <br/> [FoafAgent](FoafAgent.md) | Attribution is the ascribing of an entity to an agent | [ProvEntity](ProvEntity.md) |
@@ -355,7 +355,7 @@ attributes:
     owner: qo_Answer
     domain_of:
     - qo_Answer
-    range: qo_Question
+    range: qo_OrderedQuestion
     required: true
     multivalued: false
   prov_wasAttributedTo:
@@ -480,6 +480,7 @@ attributes:
     - foaf_Agent
     - sulo_Process
     - prov_Entity
+    - qo_Section
     range: saref_PropertyValue
     required: false
     multivalued: true
